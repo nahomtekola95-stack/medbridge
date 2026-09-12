@@ -1,0 +1,13 @@
+{
+  "name": "medbridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hospital medicines with no-pump alternatives, dosing calculators and country profiles. Offline-first.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "build:static": "node scripts/build-static.js",
+    "check": "node scripts/check-data.js"
+  }
+}

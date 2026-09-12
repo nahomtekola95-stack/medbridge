@@ -1,0 +1,35 @@
+# fly.io deployment. Full app: accounts, practice notes, admin console.
+#   fly launch --no-deploy --name medbridge-et
+#   fly volumes create medbridge_data --size 1 --region jnb
+#   fly secrets set MB_ADMIN_EMAIL=you@example.com MB_ADMIN_PASSWORD='<strong password>'
+#   fly deploy
+app = "medbridge-et"
+primary_region = "jnb"          # Johannesburg — closest region to Ethiopia
+
+[build]
+
+[env]
+  NODE_ENV = "production"
+  PORT = "8080"
+  MB_DATA = "/data"
+
+[[mounts]]
+  source = "medbridge_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "suspend"
+  auto_start_machines = true
+  min_machines_running = 1
+
+  [http_service.http_options.response.headers]
+    X-Content-Type-Options = "nosniff"
+
+[[http_service.checks]]
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/api/healthz"

@@ -1,0 +1,22 @@
+# Render deployment. A persistent disk is required — SQLite lives on it.
+services:
+  - type: web
+    name: medbridge
+    runtime: node
+    plan: starter          # a paid plan is required for a persistent disk
+    buildCommand: ""
+    startCommand: node server/server.js
+    healthCheckPath: /api/healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MB_DATA
+        value: /data
+      - key: MB_ADMIN_EMAIL
+        sync: false
+      - key: MB_ADMIN_PASSWORD
+        sync: false
+    disk:
+      name: medbridge-data
+      mountPath: /data
+      sizeGB: 1

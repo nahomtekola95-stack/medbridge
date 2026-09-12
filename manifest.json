@@ -1,0 +1,15 @@
+{
+  "name": "MedBridge — improvised dosing reference",
+  "short_name": "MedBridge",
+  "description": "Hospital medicines without pumps: improvised methods, routes and drip-rate calculators. Offline.",
+  "start_url": "./index.html#/drugs",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7f8",
+  "theme_color": "#0b7285",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
