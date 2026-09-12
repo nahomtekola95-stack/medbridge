@@ -194,6 +194,25 @@ git add docs && git commit -m "Rebuild site" && git push
 GitHub Pages serves `main` branch `/docs`. The build sets `window.MB_NO_SERVER`, which hides the
 account and network tabs and skips every API call, so the page is fully static.
 
+### Full app with accounts (Vercel + Turso) — free, no payment card
+
+The database layer uses **libSQL**, so it is still SQLite: a local file in development
+(`server/data/medbridge.db`) and [Turso](https://turso.tech) over the network in production. Every
+SQL statement is identical between the two.
+
+```bash
+turso auth login              # once, in a browser — free, no card
+npm run deploy:vercel         # creates the database, sets the env vars, deploys
+```
+
+The script creates the Turso database, pipes the URL and auth token straight into
+`vercel env add` so neither ever appears on screen, generates a 24-character administrator
+password, deploys, waits for `/api/healthz`, and prints the administrator credentials once.
+
+Environment variables it sets: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `NODE_ENV`,
+`MB_ADMIN_EMAIL`, `MB_ADMIN_PASSWORD`. With none of them set the server falls back to a local
+SQLite file, which is what `npm start` uses.
+
 ### Full app with accounts (Fly.io)
 
 `flyctl` is installed and on the PATH, `Dockerfile` and `fly.toml` are ready, and
@@ -210,9 +229,8 @@ the closest region to Ethiopia) for the SQLite database, generates a 24-characte
 password, builds on Fly's remote builder so no local Docker is needed, waits for
 `/api/healthz`, and prints the administrator credentials once.
 
-A payment card on the Fly account is required for the volume, roughly $3–5 a month.
-
-The image must stay on **Node 24**: `node:sqlite` needs an experimental flag before Node 23.4.
+A payment card on the Fly account is required for the volume, even on the free allowance, so
+Vercel plus Turso above is the cheaper route.
 
 `render.yaml` covers Render as an alternative (a paid plan is needed for the persistent disk). In
 production the server refuses to start without a strong `MB_ADMIN_PASSWORD`, and sets Secure

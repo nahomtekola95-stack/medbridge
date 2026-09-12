@@ -4,13 +4,18 @@
   "private": true,
   "description": "Hospital medicines with no-pump alternatives, dosing calculators and country profiles. Offline-first.",
   "engines": {
-    "node": ">=24"
+    "node": ">=20"
   },
   "scripts": {
     "start": "node server/server.js",
     "dev": "node server/server.js",
     "build:static": "node scripts/build-static.js",
     "check": "node scripts/check-data.js",
-    "deploy:fly": "bash scripts/deploy-fly.sh"
+    "deploy:fly": "bash scripts/deploy-fly.sh",
+    "build:vercel": "node scripts/build-vercel.js",
+    "deploy:vercel": "bash scripts/deploy-vercel.sh"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0"
   }
 }
