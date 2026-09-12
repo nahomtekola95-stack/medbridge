@@ -9,6 +9,14 @@ calculators for drip rate, dose → drops, mg/kg, dilution, WHO Plan C fluids an
 > **Status: DRAFT.** All 50 drug entries are `review.status: "draft"` and have **not** been
 > verified by a pharmacist or physician. Do not use for patient care until reviewed.
 
+## Live site
+
+**https://nahomtekola95-stack.github.io/medbridge/** — the reference app (drugs, cases, wards,
+calculators, country profiles, offline). Published from `docs/` on the `main` branch.
+
+Accounts, practice notes and the admin console need the Node server and are hidden on the static
+build. To deploy that version, see **Deploying the full app** below.
+
 ## Run it
 
 No build step, no backend.
@@ -172,6 +180,34 @@ own name, defaults, procedures and drug notes — stored locally and exportable/
 Drug pages show a "Local practice" card; the Plan C calculator has a SAM mode; the child-weight
 calculator follows the profile's formula; a Units tab converts glucose mg/dL ↔ mmol/L.
 All profile content is draft and must be verified against the national STG/EML.
+
+## Deploying
+
+### Static reference app (what is live now)
+
+```bash
+npm run check        # data integrity
+npm run build:static # writes docs/
+git add docs && git commit -m "Rebuild site" && git push
+```
+
+GitHub Pages serves `main` branch `/docs`. The build sets `window.MB_NO_SERVER`, which hides the
+account and network tabs and skips every API call, so the page is fully static.
+
+### Full app with accounts (Fly.io)
+
+`Dockerfile` and `fly.toml` are ready. The volume holds the SQLite database.
+
+```bash
+fly launch --no-deploy --name medbridge-et
+fly volumes create medbridge_data --size 1 --region jnb
+fly secrets set MB_ADMIN_EMAIL=you@example.com MB_ADMIN_PASSWORD='<20+ random characters>'
+fly deploy
+```
+
+`render.yaml` covers Render (a paid plan is needed for the persistent disk). In production the
+server refuses to start without a strong `MB_ADMIN_PASSWORD`, sets Secure cookies, HSTS and a
+content security policy, and answers `/api/healthz`.
 
 ## Accounts, practice notes and the admin console
 
