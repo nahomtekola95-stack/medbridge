@@ -196,18 +196,27 @@ account and network tabs and skips every API call, so the page is fully static.
 
 ### Full app with accounts (Fly.io)
 
-`Dockerfile` and `fly.toml` are ready. The volume holds the SQLite database.
+`flyctl` is installed and on the PATH, `Dockerfile` and `fly.toml` are ready, and
+`scripts/deploy-fly.sh` does the whole deployment. Two steps:
 
 ```bash
-fly launch --no-deploy --name medbridge-et
-fly volumes create medbridge_data --size 1 --region jnb
-fly secrets set MB_ADMIN_EMAIL=you@example.com MB_ADMIN_PASSWORD='<20+ random characters>'
-fly deploy
+flyctl auth login          # once, in a browser — or `flyctl auth signup` for a new account
+npm run deploy:fly         # creates the app, the volume and the secret, then deploys
 ```
 
-`render.yaml` covers Render (a paid plan is needed for the persistent disk). In production the
-server refuses to start without a strong `MB_ADMIN_PASSWORD`, sets Secure cookies, HSTS and a
-content security policy, and answers `/api/healthz`.
+The script is safe to re-run: it skips whatever already exists and just redeploys the code. It
+creates the app (renaming it if `medbridge-et` is taken), a 1 GB volume in `jnb` (Johannesburg,
+the closest region to Ethiopia) for the SQLite database, generates a 24-character administrator
+password, builds on Fly's remote builder so no local Docker is needed, waits for
+`/api/healthz`, and prints the administrator credentials once.
+
+A payment card on the Fly account is required for the volume, roughly $3–5 a month.
+
+The image must stay on **Node 24**: `node:sqlite` needs an experimental flag before Node 23.4.
+
+`render.yaml` covers Render as an alternative (a paid plan is needed for the persistent disk). In
+production the server refuses to start without a strong `MB_ADMIN_PASSWORD`, and sets Secure
+cookies, HSTS and a content security policy.
 
 ## Accounts, practice notes and the admin console
 
