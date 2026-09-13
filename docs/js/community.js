@@ -81,13 +81,13 @@ window.Community = function (ctx) {
       const act = b.dataset.act;
       try {
         if (act === "agree") { const r = await API.agree(id); b.classList.toggle("on", r.mine); b.querySelector("b").textContent = r.agrees; }
-        if (act === "del") { if (confirm("Delete your note?")) { await API.deleteComment(id); await drugSection(host, drug); } }
+        if (act === "del") { if (confirm((window.I18N ? I18N.t : (s => s))("Delete your note?"))) { await API.deleteComment(id); await drugSection(host, drug); } }
         if (act === "edit") {
           const cur = art.querySelector(".note-body").innerText;
-          const next = prompt("Edit your note:", cur);
+          const next = prompt((window.I18N ? I18N.t : (s => s))("Edit your note:"), cur);
           if (next && next.trim().length >= 10) { await API.editComment(id, next.trim()); await drugSection(host, drug); }
         }
-        if (act === "report") { const why = prompt("What is wrong with this note? (unsafe dose, wrong route, spam)"); if (why) { await API.report(id, why); toast("Reported to the administrators."); await drugSection(host, drug); } }
+        if (act === "report") { const why = prompt((window.I18N ? I18N.t : (s => s))("What is wrong with this note? (unsafe dose, wrong route, spam)")); if (why) { await API.report(id, why); toast("Reported to the administrators."); await drugSection(host, drug); } }
         if (act === "hide") { await API.adminModerate(id, "hidden", "hidden by admin"); await drugSection(host, drug); toast("Note hidden."); }
         if (act === "promote") { location.hash = `#/admin?tab=methods&drug=${drug.id}&from=${id}`; }
       } catch (err) { toast(err.message, true); }
@@ -272,7 +272,7 @@ window.Community = function (ctx) {
         pane.addEventListener("click", async (e) => {
           const ed = e.target.closest("[data-edit]"), dl = e.target.closest("[data-del]");
           if (ed) { const m = d.methods.find(x => x.id === ed.dataset.edit); $("#mform", pane).outerHTML = methodForm(m); bind(m); window.scrollTo(0, 0); }
-          if (dl && confirm("Delete this approved method?")) { await API.adminDeleteMethod(dl.dataset.del); toast("Deleted."); render(); }
+          if (dl && confirm((window.I18N ? I18N.t : (s => s))("Delete this approved method?"))) { await API.adminDeleteMethod(dl.dataset.del); toast("Deleted."); render(); }
         });
       }
       if (t === "flagged") {
@@ -298,7 +298,7 @@ window.Community = function (ctx) {
           const b = e.target.closest("[data-u]"); if (!b) return;
           const id = b.closest("[data-id]").dataset.id, u = d.users.find(x => x.id === id);
           const patch = b.dataset.u === "verify" ? { verified: !u.verified } : b.dataset.u === "role" ? { role: u.role === "admin" ? "user" : "admin" } : { status: "suspended" };
-          if (b.dataset.u === "susp" && !confirm("Suspend this member and end their sessions?")) return;
+          if (b.dataset.u === "susp" && !confirm((window.I18N ? I18N.t : (s => s))("Suspend this member and end their sessions?"))) return;
           try { await API.adminUser(id, patch); toast("Member updated."); render(); } catch (err) { toast(err.message, true); }
         });
       }

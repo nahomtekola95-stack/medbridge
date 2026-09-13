@@ -425,6 +425,7 @@ window.Features = function (ctx) {
       clearInterval(t15); let left = 15; $("#dg-15in").hidden = true; $("#dg-15out").textContent = "Count now… 15";
       click();
       t15 = setInterval(() => {
+        if (!$("#dg-15out")) { clearInterval(t15); return; }
         left--; $("#dg-15out").textContent = left > 0 ? `Count now… ${left}` : "Stop. How many drops?";
         if (left <= 0) { clearInterval(t15); click(); $("#dg-15in").hidden = false; $("#dg-15n").focus(); }
       }, 1000);
@@ -460,7 +461,8 @@ window.Features = function (ctx) {
       return { idx: i, at: d.at, label: d.label, amount, note: d.note || "" };
     });
   }
-  const timeStr = (ms) => new Date(ms).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  const L = (s) => window.I18N ? I18N.t(s) : s;
+  const timeStr = (ms) => new Date(ms).toLocaleTimeString([], window.I18N ? I18N.timeOpts() : { hour: "2-digit", minute: "2-digit" });
   const dayStr = (ms) => { const d = new Date(ms), t = new Date(); const diff = Math.round((new Date(d.toDateString()) - new Date(t.toDateString())) / 864e5); return diff === 0 ? "Today" : diff === 1 ? "Tomorrow" : diff === -1 ? "Yesterday" : d.toLocaleDateString([], { weekday: "short", day: "numeric", month: "short" }); };
   const untilStr = (ms) => { const m = Math.round((ms - Date.now()) / 60000); if (Math.abs(m) < 1) return "now"; const a = Math.abs(m), s = a >= 60 ? `${Math.floor(a / 60)} h ${a % 60} min` : `${a} min`; return m > 0 ? `in ${s}` : `${s} overdue`; };
   function schedState(s) {
@@ -580,17 +582,17 @@ window.Features = function (ctx) {
         if (give) {
           const st = schedState(s);
           const unticked = [...card.querySelectorAll("[data-check]")].filter(c => !c.checked).length;
-          if (unticked && !confirm(`${unticked} pre-dose check${unticked === 1 ? " is" : "s are"} not ticked. Record the dose as given anyway?`)) return;
+          if (unticked && !confirm(L(`${unticked} pre-dose check${unticked === 1 ? " is" : "s are"} not ticked. Record the dose as given anyway?`))) return;
           s.log[give.dataset.give] = { status: "given", at: Date.now() };
           scheds.save(l); toast(`Recorded: ${st.next.label} given.`); draw();
         }
         if (wh) {
-          const reason = prompt("Why was this dose withheld? (e.g. reflexes absent, RR 12)"); if (reason === null) return;
+          const reason = prompt(L("Why was this dose withheld? (e.g. reflexes absent, RR 12)")); if (reason === null) return;
           s.log[wh.dataset.withhold] = { status: "withheld", at: Date.now(), reason: reason.slice(0, 120) };
           scheds.save(l); toast("Recorded as withheld."); draw();
         }
         if (e.target.closest("[data-extend]")) { const reg = regById(s.regimen); s.extraHours = (s.extraHours || 0) + (reg.every >= 4 ? 24 : 6); scheds.save(l); draw(); }
-        if (e.target.closest("[data-end]") && confirm("End this schedule and remove it from this device?")) { scheds.save(l.filter(x => x.id !== s.id)); draw(); }
+        if (e.target.closest("[data-end]") && confirm(L("End this schedule and remove it from this device?"))) { scheds.save(l.filter(x => x.id !== s.id)); draw(); }
         if (e.target.closest("[data-print-sched]")) { document.body.classList.add("print-sched"); card.classList.add("print-me"); window.print(); card.classList.remove("print-me"); document.body.classList.remove("print-sched"); }
       });
     };

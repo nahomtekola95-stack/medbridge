@@ -493,3 +493,21 @@ article.card.note { border: 1px solid var(--border); padding: 1rem 1.15rem; }
 /* two-column form rows: let long selects shrink instead of squeezing their neighbour */
 .inline { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 .field select, .field input { width: 100%; min-width: 0; }
+
+/* ---------- Amharic interface ---------- */
+html[lang="am"] { --sans: -apple-system, BlinkMacSystemFont, "Noto Sans Ethiopic", "Abyssinica SIL", Kefa, Nyala, Ebrima, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, sans-serif;
+  --serif: "Noto Serif Ethiopic", "Noto Sans Ethiopic", "Abyssinica SIL", Kefa, Nyala, Ebrima, "Iowan Old Style", Georgia, serif; }
+html[lang="am"] h4 { text-transform: none; letter-spacing: .02em; font-size: .8rem; }
+html[lang="am"] body { line-height: 1.65; }
+[lang="am"] { font-family: var(--sans); }
+[data-no-i18n][lang="en"] { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, sans-serif; }
+.hero-chips { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .8rem; }
+.hero-chips .setting-chip { margin: 0; }
+.lang-seg button[lang="am"] { font-family: "Noto Sans Ethiopic", "Abyssinica SIL", Kefa, Nyala, Ebrima, var(--sans); }
+.hero-lang { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.26); }
+.hero-lang button { color: var(--hero-text); font-size: .78rem; padding: .3rem .7rem; min-height: 32px; }
+.hero-lang button.active { background: rgba(255,255,255,.92); color: #123; }
+.lang-note { font-size: .82rem; color: var(--muted); background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: .45rem .75rem; margin: 0 0 .9rem; }
+@media print { .lang-note, .hero-lang { display: none !important; } }
+.card .seg { flex-wrap: wrap; max-width: 100%; }
+html[lang="am"] .seg button { white-space: normal; }

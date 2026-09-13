@@ -71,6 +71,42 @@ sw.js, manifest.json, icons/   PWA / offline
 The **Setup** page lets a user tick the equipment their facility has; methods whose `requires`
 are not all available are dimmed and sorted last (never hidden).
 
+## Bedside tools
+
+| Feature | Where | Data |
+|---|---|---|
+| **Patient mode** — set a weight once; drug pages show the dose and volume, cases show inline doses, infusions show drops/min (with warnings below 4 or above 150/min) | header chip | each drug's `calc` (now supports `minDose` and weight `bands`) |
+| **Emergency drug card** — every resuscitation dose and volume for one weight, tube size from age, printable | `#/resus` | `js/resus.js` (31 rows, each with a source) |
+| **Drip guide** — metronome with sound and vibration at the target drop rate, tap-to-measure the real rate, 15-second count | `#/drip` | — |
+| **Dose schedules** — clock times, per-dose checks, given/withheld log, due badge and reminders, printable chart; a late dose moves the rest of its series later so intervals are never shortened | `#/schedules` | `js/regimens.js` (8 regimens) |
+| **Out of stock?** — explicit substitutes per use, including where no substitute exists | drug pages | `js/substitutes.js` |
+| **Never mix** — line, syringe and fluid incompatibilities with a two-drug checker | `#/compat` | `js/compat.js` (16 rules) |
+| **Favourites, recently viewed, typo-tolerant search** across drugs and cases | home | localStorage |
+
+All of it works offline and stores nothing off the device. Tests: `node tests/features.test.js`
+(220 checks: emergency card doses at five weights including minima and maxima, schedule timing and
+late-dose shifting, substitute integrity, fuzzy search true and false matches).
+
+## Language (English / አማርኛ)
+
+The interface can be switched to Amharic from the home screen or **Setup → Language** (stored as
+`mb:lang`). `js/i18n.js` holds an exact-string dictionary plus patterns for text with numbers, and
+translates the rendered page as it changes. What is translated and what is not:
+
+- **Translated:** navigation, buttons, forms, headings, warnings, calculators, bedside tools, the
+  Local and Setup pages, accounts, network and admin screens, server messages, wards, drug classes,
+  equipment, Ethiopian cities and regions.
+- **Kept in English on purpose:** drug names, doses, monographs, case steps, regimens, substitutes,
+  never-mix rules, textbook references, the Techniques list and members' notes. Clinicians are
+  trained in English and machine-translated dosing without clinical review is unsafe. Pages with
+  clinical content show a short Amharic notice saying so.
+- Clock times are 24-hour in Amharic mode, and the schedule and emergency pages state they are not
+  Ethiopian local time.
+- Anything without a translation falls back to English. Mark a subtree `data-no-i18n` to exclude
+  it. Tests: `node tests/i18n.test.js` (every entry has Ethiopic script, numbers survive patterns,
+  clinical text passes through unchanged). **The Amharic wording is a draft and should be reviewed by
+  a native-speaking clinician.**
+
 ## Clinical cases
 
 `js/conditions.js` holds `window.CONDITIONS`: 35 presenting problems grouped by
@@ -182,7 +218,7 @@ Plan C 15 kg phase 2 = 140 drops/min (20 gtt/mL).
 
 ## Roadmap ideas
 
-- Amharic / French translation layer (strings are all in `drugs-data.js` and `app.js`).
+- French interface (add a second dictionary to `js/i18n.js`).
 - Printable one-page cards per drug.
 - Further drugs: ipratropium, adenosine, mannitol/hypertonic saline, antiretrovirals for
   prophylaxis, anti-tuberculosis regimens, snakebite antivenom, oxygen delivery.

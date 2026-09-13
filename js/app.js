@@ -72,10 +72,12 @@
     const main = $("#app");
     main.innerHTML = "";
     (routes[r.view] || viewDrugs)(main, r);
+    window.I18N?.afterRender(r.view);
     document.querySelectorAll("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === (NAV_OF[r.view] || r.view)));
     window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", render);
+  document.addEventListener("click", e => { const b = e.target.closest(".lang-seg [data-lang]"); if (b && window.I18N && b.dataset.lang !== I18N.lang) I18N.setLang(b.dataset.lang); });
 
   /* ---------- shared pieces ---------- */
   const reviewChip = (d) => d.review.status === "reviewed"
@@ -111,7 +113,7 @@
         <h1>Give it safely, with what you have.</h1>
         <p>Hospital medicines with no-pump alternatives, doses by weight and drip-rate maths — offline.</p>
         <div class="searchbar">${ic("search")}<input id="q" type="search" placeholder="Search a drug, a brand or a case…" value="${esc(listState.q)}" autocomplete="off" aria-label="Search drugs"><kbd>/</kbd></div>
-        <a class="setting-chip" href="#/local">${ic("globe")}<span>Setting: ${esc(profLabel())}</span>${ic("right")}</a>
+        <div class="hero-chips"><a class="setting-chip" href="#/local">${ic("globe")}<span>Setting: ${esc(profLabel())}</span>${ic("right")}</a><div class="seg lang-seg hero-lang" id="hero-lang" role="group" aria-label="Language" data-no-i18n><button type="button" data-lang="en" class="${window.I18N?.lang === "am" ? "" : "active"}" lang="en">English</button><button type="button" data-lang="am" class="${window.I18N?.lang === "am" ? "active" : ""}" lang="am">አማርኛ</button></div></div>
         <div class="quick-label">Emergencies</div>
         <div class="quick" id="quick">${QUICK.map(([l, q]) => `<button type="button" data-q="${esc(q)}">${ic("zap")}${esc(l)}</button>`).join("")}</div>
       </section>
@@ -514,7 +516,7 @@
       ["Weigh, or estimate", `Use a scale. If none: (age + 4) × 2 kg for 1–5 y, or the <a href="#/calc?tab=pedwt">APLS formulae</a>. Record the weight used on the chart.`]
     ];
     main.innerHTML = `<h1>Running drugs without a pump</h1><p class="text-2" style="max-width:60ch">Ten habits that make gravity infusions and alternative routes safe. Each drug page applies them to a specific medicine.</p>
-      <div class="tech">${T.map(([h, b]) => `<div class="card"><div><h3>${h}</h3><p style="margin:0">${b}</p></div></div>`).join("")}</div>`;
+      <div class="tech" data-no-i18n lang="en">${T.map(([h, b]) => `<div class="card"><div><h3>${h}</h3><p style="margin:0">${b}</p></div></div>`).join("")}</div>`;
   }
 
   /* ---------- Local setting (country / facility profile) ---------- */
@@ -602,6 +604,9 @@
           <button type="button" data-theme="light" class="${theme.get() === "light" ? "active" : ""}">${ic("sun")}Light</button>
           <button type="button" data-theme="dark" class="${theme.get() === "dark" ? "active" : ""}">${ic("moon")}Dark</button>
         </div></div>
+      <div class="card"><h4 style="margin-top:0">Language</h4>
+        <p class="small muted" style="margin-top:-.2rem">Interface language. Doses and clinical content always stay in English.</p>
+        <div class="seg lang-seg" id="seg-lang" role="group" aria-label="Language" data-no-i18n><button type="button" data-lang="en" class="${window.I18N?.lang === "am" ? "" : "active"}" lang="en">English</button><button type="button" data-lang="am" class="${window.I18N?.lang === "am" ? "active" : ""}" lang="am">አማርኛ</button></div></div>
       <div class="card"><h4 style="margin-top:0">Defaults</h4>
         <div class="field"><label for="df">Default drop factor of your usual giving set</label><select id="df">${DROP_FACTORS.map(f => `<option value="${f}" ${f == settings.dropFactor ? "selected" : ""}>${f} drops/mL</option>`).join("")}</select></div>
         <button type="button" class="btn ghost sm" id="reset">Reset setup (show everything)</button></div>
