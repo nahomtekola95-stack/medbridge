@@ -1,5 +1,7 @@
 # MedBridge — improvised dosing reference (working name)
 
+Developed and put together by **Dr Bruktayt Engida**.
+
 An offline-first reference for trained health workers on how hospital-level medicines can be
 given safely when infusion pumps, syringe drivers, monitors or specific formulations are not
 available. Every drug has a **standard** method and one or more **"no pump / improvised"**

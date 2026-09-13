@@ -271,7 +271,7 @@
     "Interface language. Doses and clinical content always stay in English.": "የመተግበሪያው ቋንቋ። መጠኖችና የሕክምና ይዘቶች ሁልጊዜ በእንግሊዝኛ ይቆያሉ።",
 
     /* about */
-    "About": "ስለ", "Draft content.": "ረቂቅ ይዘት።",
+    "About": "ስለ", "Author": "አዘጋጅ", "Developed and put together by": "ያበለጸጉትና ያዘጋጁት፦", "Draft content.": "ረቂቅ ይዘት።",
     "Every drug entry in this build is marked “draft” and has not yet been verified by a pharmacist or physician. It must not be used for patient care until the review workflow in the README is completed.":
       "በዚህ ስሪት ያለ እያንዳንዱ የመድኃኒት መረጃ “ረቂቅ” ተብሎ ምልክት ተደርጎበታል፣ ገና በፋርማሲስት ወይም በሐኪም አልተረጋገጠም። የማረጋገጫ ሂደቱ እስኪጠናቀቅ ድረስ ለታካሚ እንክብካቤ መዋል የለበትም።",
     "Purpose": "ዓላማ",

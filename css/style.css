@@ -596,3 +596,9 @@ button.card.tool { text-align: left; font: inherit; color: inherit; cursor: poin
   body.print-sheet .chart-table td b { font-size: 13pt; }
   .dose-actions, .dcheck, .stock, #rv-history { display: none !important; }
 }
+
+/* author credit */
+.credit { text-align: center; font-size: .8rem; color: var(--muted); padding: 1.5rem 1rem .5rem; }
+.credit a { color: var(--muted); }
+.credit-name { font-weight: 700; color: var(--text-2); }
+@media print { .credit { display: none !important; } }

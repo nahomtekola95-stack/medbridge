@@ -627,6 +627,7 @@
         <button type="button" class="btn ghost sm" id="reset">Reset setup (show everything)</button></div>
       <div class="card"><h4 style="margin-top:0">About this build</h4>
         <p class="small">${DRUG_DB.length} drugs · ${DRUG_DB.reduce((n, d) => n + d.improvised.length, 0)} improvised methods · ${DRUG_DB.filter(d => d.review.status === "reviewed").length} reviewed, ${DRUG_DB.filter(d => d.review.status !== "reviewed").length} draft.</p>
+        <p class="small">Developed and put together by <strong><span class="credit-name" data-no-i18n lang="en">Dr Bruktayt Engida</span></strong>.</p>
         <p class="small muted">Works offline once loaded. On Android/Chrome use “Add to Home screen” to install. <a href="#/about">About & disclaimer</a></p></div>`;
     main.addEventListener("change", e => {
       const t = e.target;
@@ -642,6 +643,7 @@
   /* ---------- About ---------- */
   function viewAbout(main) {
     main.innerHTML = `<h1>About</h1>
+      <div class="card credit-card"><h4 style="margin-top:0">Author</h4><p style="margin:0">Developed and put together by <strong><span class="" data-no-i18n lang="en">Dr Bruktayt Engida</span></strong>.</p></div>
       <div class="callout warn">${ic("alert")}<div><strong>Draft content.</strong> Every drug entry in this build is marked “draft” and has not yet been verified by a pharmacist or physician. It must not be used for patient care until the review workflow in the README is completed.</div></div>
       <div class="card"><h3>Purpose</h3><p>A reference for trained health workers on how hospital-level medicines can be given safely when infusion pumps, syringe drivers, monitors or specific formulations are not available — using validated intermittent regimens, alternative routes, dilutions and gravity drip technique.</p>
         <h3>What it is not</h3><p>It does not replace national treatment guidelines, the prescriber's judgement, or a pharmacist. Doses are for adults unless stated; paediatric doses must be checked against the WHO Pocket Book, Nelson Textbook of Pediatrics or the national formulary.</p>

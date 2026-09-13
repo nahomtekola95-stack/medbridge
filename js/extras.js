@@ -449,7 +449,7 @@ window.Extras = function (ctx) {
       $("#ch-kind").addEventListener("click", e => { const b = e.target.closest("[data-kind]"); if (b) { kind = b.dataset.kind; draw(); } });
       $("#ch-print").addEventListener("click", () => { document.body.classList.add("print-sheet"); window.print(); document.body.classList.remove("print-sheet"); });
       const sheet = $("#sheet");
-      const foot = `<p class="sheet-foot">MedBridge · ${dateLabel(new Date())} · Draft reference, not clinically verified. Check against the national protocol.</p>`;
+      const foot = `<p class="sheet-foot">MedBridge · developed and put together by Dr Bruktayt Engida · ${dateLabel(new Date())} · Draft reference, not clinically verified. Check against the national protocol.</p>`;
       if (kind === "drip") {
         const paint = () => {
           const df = +$("#ch-df").value; store.set("chartDf", df);
