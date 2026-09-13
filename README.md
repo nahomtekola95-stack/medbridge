@@ -9,7 +9,10 @@ calculators for drip rate, dose → drops, mg/kg, dilution, WHO Plan C fluids an
 > **Status: DRAFT.** All 50 drug entries are `review.status: "draft"` and have **not** been
 > verified by a pharmacist or physician. Do not use for patient care until reviewed.
 
-## Live site
+## Live sites
+
+**https://med-guide-nine.vercel.app/** — the full app with doctor accounts, practice notes and the
+admin console (Vercel + Turso). Pushing to `main` redeploys it automatically.
 
 **https://nahomtekola95-stack.github.io/medbridge/** — the reference app (drugs, cases, wards,
 calculators, country profiles, offline). Published from `docs/` on the `main` branch.

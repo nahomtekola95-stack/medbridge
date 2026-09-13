@@ -41,7 +41,7 @@ if flyctl apps list 2>/dev/null | awk '{print $1}' | grep -qx "$APP"; then
   echo "  app '$APP' already exists"
 else
   if ! flyctl apps create "$APP" 2>/dev/null; then
-    APP="${APP}-$(head -c3 /dev/urandom | od -An -tx1 | tr -d ' \n')"
+    APP="${APP}-$(node -e "process.stdout.write(require('crypto').randomBytes(3).toString('hex'))")"
     echo "  name was taken, using '$APP' instead"
     flyctl apps create "$APP" || fail "Could not create the app."
     sed -i '' "s/^app = .*/app = \"$APP\"/" fly.toml
@@ -63,7 +63,7 @@ if flyctl secrets list -a "$APP" 2>/dev/null | grep -q MB_ADMIN_PASSWORD; then
   echo "  MB_ADMIN_PASSWORD already set — leaving it alone"
   ADMIN_PW=""
 else
-  ADMIN_PW="$(LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c 24)"
+  ADMIN_PW="$(node -e "process.stdout.write(require('crypto').randomBytes(18).toString('base64url'))")"
   ADMIN_EMAIL="${MB_ADMIN_EMAIL:-nahomtekola95@gmail.com}"
   flyctl secrets set -a "$APP" MB_ADMIN_EMAIL="$ADMIN_EMAIL" MB_ADMIN_PASSWORD="$ADMIN_PW" --stage
   echo "  staged for this deploy"

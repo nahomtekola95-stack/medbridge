@@ -10,7 +10,9 @@ const fs = require("node:fs");
 function makeClient() {
   const url = process.env.TURSO_DATABASE_URL;
   if (url) return createClient({ url, authToken: process.env.TURSO_AUTH_TOKEN });
-  const dir = process.env.MB_DATA || path.join(__dirname, "data");
+  // serverless filesystems are read-only apart from /tmp, and ephemeral either way
+  const dir = process.env.MB_DATA || (process.env.VERCEL ? "/tmp/medbridge" : path.join(__dirname, "data"));
+  if (process.env.VERCEL) console.warn("TURSO_DATABASE_URL is not set — using a temporary database that will not persist.");
   fs.mkdirSync(dir, { recursive: true });
   return createClient({ url: "file:" + path.join(dir, "medbridge.db") });
 }
