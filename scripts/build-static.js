@@ -24,7 +24,7 @@ fs.writeFileSync(path.join(OUT, "index.html"), html);
 
 // the service worker must cache the flag too, and never look for /api
 let sw = fs.readFileSync(path.join(OUT, "sw.js"), "utf8");
-sw = sw.replace('"./js/drugs-data.js",', '"./js/config.js", "./js/drugs-data.js",');
+sw = sw.replace('"./js/books.js",', '"./js/config.js", "./js/books.js",');
 fs.writeFileSync(path.join(OUT, "sw.js"), sw);
 
 // GitHub Pages: don't run the output through Jekyll

@@ -641,7 +641,13 @@
     };
     API.onChange(syncAccount);
     API.init().then(() => { syncAccount(); if (["account", "community", "admin"].includes(parseHash().view)) render(); });
-    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      const hadController = !!navigator.serviceWorker.controller;
+      let reloaded = false;
+      // a new version took over: reload once so nobody reads an outdated dose
+      navigator.serviceWorker.addEventListener("controllerchange", () => { if (hadController && !reloaded) { reloaded = true; location.reload(); } });
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
     render();
   }
   document.addEventListener("DOMContentLoaded", boot);
