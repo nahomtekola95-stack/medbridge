@@ -932,7 +932,7 @@ window.DRUG_DB = [
   ],
   paediatric: ["< 20 kg: 3 mg/kg per dose.", "Check glucose; treat convulsions; transfuse if Hb < 5 g/dL (WHO)."],
   cautions: ["Post-artesunate delayed haemolysis (day 7–21) in high-parasitaemia patients."],
-  calc: { type: "weight", dosePerKg: 2.4, doseUnit: "mg", conc: 10, concUnit: "mg/mL", label: "IV dose (2.4 mg/kg; use 3 mg/kg if < 20 kg) at 10 mg/mL" },
+  calc: { type: "weight", dosePerKg: 2.4, bands: [{ under: 20, dosePerKg: 3 }], doseUnit: "mg", conc: 10, concUnit: "mg/mL", label: "IV dose (2.4 mg/kg; use 3 mg/kg if < 20 kg) at 10 mg/mL" },
   sources: [{ name: "WHO Guidelines for malaria, 2023 (severe malaria)", url: "https://www.who.int/publications/i/item/guidelines-for-malaria" }],
   textbook: [
     { book: "harrison", text: "Severe falciparum malaria: artesunate 2.4 mg/kg IV stat, then at 12 and 24 h, then daily if needed; children under 20 kg 3 mg/kg per dose.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
@@ -2289,7 +2289,7 @@ window.DRUG_DB = [
   ],
   paediatric: ["Minimum single dose 0.1 mg regardless of weight.", "Higher doses are used in organophosphate poisoning than for any other indication."],
   cautions: ["Hyperthermia in hot climates (blocks sweating) — sponge and cool the patient.", "Urinary retention, confusion and agitation with excess.", "Tachycardia is not a reason to withhold atropine in organophosphate poisoning."],
-  calc: { type: "weight", dosePerKg: 0.02, doseUnit: "mg", conc: 0.6, concUnit: "mg/mL", maxDose: 0.5, label: "Bradycardia dose (0.02 mg/kg, min 0.1 mg, max 0.5 mg)" },
+  calc: { type: "weight", dosePerKg: 0.02, doseUnit: "mg", conc: 0.6, concUnit: "mg/mL", maxDose: 0.5, minDose: 0.1, label: "Bradycardia dose (0.02 mg/kg, min 0.1 mg, max 0.5 mg)" },
   textbook: [
     { book: "harrison", text: "Bradycardic arrest rhythms/peri-arrest bradycardia: atropine 1 mg IV together with external or transvenous pacing; atropine is not part of the VF/PEA drug sequence.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2337" },
     { book: "harrison", text: "Cholinesterase-inhibitor (organophosphate, carbamate, nerve agent) poisoning: atropine for muscarinic features; pralidoxime (2-PAM) for nicotinic features from organophosphates.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3712" },

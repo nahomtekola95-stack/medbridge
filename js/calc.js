@@ -62,12 +62,19 @@
   }
 
   /** Weight-based dose. conc in doseUnit per mL. */
-  function weightDose({ dosePerKg, weightKg, maxDose, conc }) {
-    if (!(dosePerKg > 0) || !(weightKg > 0)) return null;
-    let dose = dosePerKg * weightKg;
+  function weightDose({ dosePerKg, weightKg, maxDose, minDose, conc, bands }) {
+    if (!(weightKg > 0)) return null;
+    // weight bands override the per-kg dose, e.g. artesunate 3 mg/kg under 20 kg
+    let perKg = dosePerKg, band = null;
+    if (Array.isArray(bands)) band = bands.find(b => weightKg < b.under) || null;
+    if (band) perKg = band.dosePerKg;
+    if (!(perKg > 0)) return null;
+    let dose = perKg * weightKg;
     const capped = maxDose > 0 && dose > maxDose;
     if (capped) dose = maxDose;
-    return { dose, capped, volumeMl: conc > 0 ? dose / conc : null };
+    const raised = !capped && minDose > 0 && dose < minDose;
+    if (raised) dose = minDose;
+    return { dose, perKg, band, capped, raised, volumeMl: conc > 0 ? dose / conc : null };
   }
 
   /** C1V1 = C2V2. Concentrations in the same unit (%, mg/mL, ...). */

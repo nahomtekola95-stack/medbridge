@@ -61,15 +61,18 @@
     const parts = path.split("/").filter(Boolean);
     return { view: parts[0] || "drugs", id: parts[1], q: Object.fromEntries(new URLSearchParams(qs || "")) };
   }
-  let CV = null;
+  let CV = null, FX = null;
   const routes = { drugs: viewDrugs, drug: viewDrug, calc: viewCalc, techniques: viewTechniques, local: viewLocal, setup: viewSetup, about: viewAbout,
-    case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r) };
+    case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r),
+    resus: (m, r) => FX.views.resus(m, r), drip: (m, r) => FX.views.drip(m, r), schedules: (m, r) => FX.views.schedules(m, r),
+    compat: (m, r) => FX.views.compat(m, r), tools: (m, r) => FX.views.tools(m, r) };
+  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools" };
   function render() {
     const r = parseHash();
     const main = $("#app");
     main.innerHTML = "";
     (routes[r.view] || viewDrugs)(main, r);
-    document.querySelectorAll("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === (r.view === "drug" ? "drugs" : r.view)));
+    document.querySelectorAll("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === (NAV_OF[r.view] || r.view)));
     window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", render);
@@ -112,6 +115,7 @@
         <div class="quick-label">Emergencies</div>
         <div class="quick" id="quick">${QUICK.map(([l, q]) => `<button type="button" data-q="${esc(q)}">${ic("zap")}${esc(l)}</button>`).join("")}</div>
       </section>
+      ${FX.shortcutsHtml()}
       <div class="filterbar">
         <div class="seg" id="mode" role="group" aria-label="Group drugs by">
           <button type="button" data-mode="ward" class="${listState.mode === "ward" ? "active" : ""}">${ic("ward")}By ward</button>
@@ -121,6 +125,7 @@
       </div>
       <div class="cats" id="cats"></div>
       <div class="section-label"><span id="count"></span><span id="wardnote" class="note"></span></div>
+      <div id="also-cases"></div>
       <ul class="drug-list" id="list"></ul>`;
     const list = $("#list"), q = $("#q");
     const drawChips = () => {
@@ -140,7 +145,7 @@
       const byWard = listState.mode === "ward";
       const items = sortedDrugs().filter(d =>
         (byWard ? (!listState.ward || d.wards.includes(listState.ward)) : (!listState.cat || d.cat === listState.cat)) &&
-        (!needle || searchText(d).includes(needle)));
+        (!needle || FX.fuzzyMatch(searchText(d), needle)));
       const sel = byWard ? listState.ward : listState.cat;
       const selLabel = sel ? (byWard ? WARDS[sel].label : CATEGORIES[sel]) : "";
       $("#count").textContent = sel ? `${selLabel} · ${items.length} drug${items.length === 1 ? "" : "s"}` : `${items.length} of ${DRUG_DB.length} drugs`;
@@ -150,15 +155,18 @@
           <div class="top"><span class="name">${esc(d.name)}</span>${ic("right")}</div>
           <div class="meta"><span>${esc(d.cls)}</span><span class="count">${d.improvised.length} no-pump method${d.improvised.length === 1 ? "" : "s"}</span></div>
         </a></li>`).join("") : `<li class="empty">No match. Try a condition (e.g. “seizure”) or a brand name.</li>`;
+      const cs = needle ? CONDITIONS.filter(c => FX.fuzzyMatch(c.name + " " + (c.aka || []).join(" "), needle)).slice(0, 6) : [];
+      $("#also-cases").innerHTML = cs.length ? `<div class="also"><span class="small muted">${ic("clipboard")} Matching cases</span>${cs.map(c => `<a class="sc-chip" href="#/case/${c.id}">${esc(c.name)}</a>`).join("")}</div>` : "";
     };
     q.addEventListener("input", () => { listState.q = q.value; draw(); });
     const drawCases = (needle) => {
       const items = CONDITIONS
         .filter(c => (!listState.group || c.group === listState.group) &&
-          (!needle || [c.name, ...(c.aka || []), c.summary, ...c.drugs.map(d => DRUG_DB.find(x => x.id === d.id)?.name || "")].join(" ").toLowerCase().includes(needle)))
+          (!needle || FX.fuzzyMatch(FX.caseText(c), needle)))
         .sort((a, b) => a.name.localeCompare(b.name));
       $("#count").textContent = listState.group ? `${CASE_GROUPS[listState.group]} · ${items.length} case${items.length === 1 ? "" : "s"}` : `${items.length} of ${CONDITIONS.length} clinical cases`;
       $("#wardnote").textContent = "Each case lists the drugs actually reached for, and what each one is for.";
+      $("#also-cases").innerHTML = "";
       list.innerHTML = items.length ? items.map(c => {
         const first = c.drugs.filter(d => d.role === "first").slice(0, 4);
         return `<li><a class="drug-item case-item" href="#/case/${c.id}">
@@ -195,6 +203,8 @@
     const tabs = [["improvised", "No pump / improvised"], ["standard", "Standard"], ["safety", "Safety & paediatrics"], ["textbook", "Textbooks"], ["sources", "Sources"]];
     const active = r.q.tab || "improvised";
     const glanceDoses = d.standard.items.slice(0, 3);
+    FX.recent.push("drug:" + d.id);
+    const regs = FX.regimensForDrug(d.id);
     main.innerHTML = `
       <div class="detail">
         <aside class="index" aria-label="Drug index">
@@ -207,8 +217,10 @@
           <div class="head">
             <h1>${esc(d.name)}</h1>
             <div class="cls">${esc(d.cls)}${d.aka?.length ? " · " + esc(d.aka.join(", ")) : ""}</div>
-            <div class="row tags">${reviewChip(d)}<span class="chip cat" ${catStyle(d.cat)}>${esc(CATEGORIES[d.cat])}</span>${(d.wards || []).map(w => `<a class="chip ward" href="#/drugs" data-goward="${w}">${ic("ward")}${esc(WARDS[w].label)}</a>`).join("")}<button type="button" class="btn ghost sm" id="print" style="margin-left:auto">${ic("print")}Print</button></div>
+            <div class="row tags">${reviewChip(d)}<span class="chip cat" ${catStyle(d.cat)}>${esc(CATEGORIES[d.cat])}</span>${(d.wards || []).map(w => `<a class="chip ward" href="#/drugs" data-goward="${w}">${ic("ward")}${esc(WARDS[w].label)}</a>`).join("")}<span style="margin-left:auto" class="row">${FX.starButton("drug:" + d.id)}<button type="button" class="btn ghost sm" id="print">${ic("print")}Print</button></span></div>
           </div>
+          ${FX.patientDoseCard(d)}
+          ${regs.length ? `<div class="row sched-links">${regs.map(g => `<a class="btn ghost sm" href="#/schedules?regimen=${g.id}">${ic("clock")}Start schedule: ${esc(g.name.split(" — ")[0])}</a>`).join("")}</div>` : ""}
           <div class="glance">
             <div class="card"><h4>Key doses</h4><ul>${glanceDoses.map(i => `<li><strong>${esc(i.label)}:</strong> ${esc(i.text)}</li>`).join("")}</ul></div>
             ${d.antidote ? `<div class="card antidote"><h4>${ic("shield")} Antidote / reversal</h4><p style="margin:0">${esc(d.antidote)}</p></div>` : `<div class="card"><h4>Presentation</h4><ul>${d.presentation.map(p => `<li>${esc(p)}</li>`).join("")}</ul></div>`}
@@ -239,6 +251,7 @@
             ${m.cautions?.length ? `<h4>Cautions</h4>${listHtml(m.cautions)}` : ""}
           </div>`).join("")}
           ${(() => { const cs = CONDITIONS.filter(c => c.drugs.some(x => x.id === d.id)); return cs.length ? `<div class="card"><h4 style="margin-top:0">${ic("clipboard")} Used in these cases</h4><div class="row">${cs.map(c => { const role = c.drugs.find(x => x.id === d.id).role; return `<a class="chip case ${ROLES[role].cls}" href="#/case/${c.id}">${esc(c.name)} <b>${esc(ROLES[role].label)}</b></a>`; }).join("")}</div></div>` : ""; })()}
+          ${FX.alternativesHtml(d)}
           ${d.calc ? `<a class="btn" href="#/calc?drug=${d.id}">${ic("calc")}Open calculator for ${esc(d.name)}</a>` : ""}
           <div id="community-host" style="margin-top:1.25rem"></div>`;
         CV.drugSection($("#community-host"), d);
@@ -261,6 +274,7 @@
     };
     main.querySelector(".tabs").addEventListener("click", e => { const t = e.target.closest("[data-tab]"); if (t) draw(t.dataset.tab); });
     $("#print").addEventListener("click", () => window.print());
+    FX.bindStars(main);
     main.addEventListener("click", e => { const w = e.target.closest("[data-goward]"); if (!w) return; initListState(); listState.mode = "ward"; listState.ward = w.dataset.goward; listState.q = ""; settings.ward = w.dataset.goward; settings.filterMode = "ward"; });
     $("#idx-q").addEventListener("input", e => { const n = e.target.value.toLowerCase(); document.querySelectorAll("#idx-list a").forEach(a => a.hidden = !a.textContent.toLowerCase().includes(n)); });
     draw(active);
@@ -279,13 +293,19 @@
     if (!c) { main.innerHTML = `<p class="empty">Case not found.</p>`; return; }
     const order = ["first", "adjunct", "alternative", "supportive", "avoid"];
     const grouped = order.map(role => [role, c.drugs.filter(d => d.role === role)]).filter(([, arr]) => arr.length);
-    const wardsOf = (id) => (DRUG_DB.find(x => x.id === id)?.wards || []);
+    FX.recent.push("case:" + c.id);
+    const regs = FX.regimensForCase(c.id);
     main.innerHTML = `
       <a class="back" href="#/drugs">${ic("left")}All cases</a>
       <div class="head">
         <h1>${esc(c.name)}</h1>
         <div class="cls">${(c.aka || []).map(esc).join(" · ")}</div>
-        <div class="row tags"><span class="chip primary">${esc(CASE_GROUPS[c.group])}</span><span class="chip warn">${ic("alert")}Draft — not clinically verified</span><button type="button" class="btn ghost sm" id="print" style="margin-left:auto">${ic("print")}Print</button></div>
+        <div class="row tags"><span class="chip primary">${esc(CASE_GROUPS[c.group])}</span><span class="chip warn">${ic("alert")}Draft — not clinically verified</span><span style="margin-left:auto" class="row">${FX.starButton("case:" + c.id)}<button type="button" class="btn ghost sm" id="print">${ic("print")}Print</button></span></div>
+      </div>
+      <div class="row case-tools">
+        <button type="button" class="btn ghost sm" data-open-patient>${ic("user")}${FX.patient.weight ? `Doses for ${Calc.round(FX.patient.weight, 1)} kg` : "Set weight for doses"}</button>
+        <a class="btn ghost sm" href="#/resus${FX.patient.weight ? "?w=" + FX.patient.weight : ""}">${ic("zap")}Emergency card</a>
+        ${regs.map(g => `<a class="btn ghost sm" href="#/schedules?regimen=${g.id}">${ic("clock")}Schedule: ${esc(g.name.split(" — ")[0])}</a>`).join("")}
       </div>
       <p class="text-2" style="max-width:70ch;font-size:1.02rem">${esc(c.summary)}</p>
       <div class="glance">
@@ -301,6 +321,7 @@
             return `<li><a href="#/drug/${d.id}" class="cd">
               <span class="cd-name">${esc(drug ? drug.name : d.id)}${ic("right")}</span>
               <span class="cd-note">${esc(d.note || "")}</span>
+              ${role !== "avoid" ? FX.caseDoseInline(d.id) : ""}
               ${drug ? `<span class="cd-meta">${esc(drug.cls)} · ${drug.improvised.length} no-pump method${drug.improvised.length === 1 ? "" : "s"}</span>` : ""}
             </a></li>`;
           }).join("")}</ul>
@@ -309,6 +330,7 @@
       <div class="card"><h4 style="margin-top:0">Sources</h4><ul class="small">${(c.sources || []).map(x => `<li>${esc(x.name)}</li>`).join("")}</ul>
       <p class="small muted">Draft. This bundle lists which drugs are used and why; each drug page carries the doses, the no-pump methods and its own sources. Verify against your national protocol before use.</p></div>`;
     $("#print").addEventListener("click", () => window.print());
+    FX.bindStars(main);
   }
 
   /* ---------- Calculators ---------- */
@@ -327,7 +349,7 @@
     let pane = $("#calcpane");
     const dfSelect = (id, val) => `<div class="field"><label for="${id}">Drop factor (drops/mL)</label><select id="${id}">${DROP_FACTORS.map(f => `<option value="${f}" ${f == val ? "selected" : ""}>${f}${f === 60 ? " (microdrip)" : ""}</option>`).join("")}</select></div>`;
     const wField = (id) => `<div class="field"><label for="${id}">Weight (kg)</label><input id="${id}" type="number" inputmode="decimal" min="0" step="0.1" value="${esc(settings.weight)}"></div>`;
-    const bindWeight = (el) => el.addEventListener("input", () => settings.weight = el.value);
+    const bindWeight = (el) => el.addEventListener("input", () => { settings.weight = el.value; FX.syncPatientChip(); });
     const warn = (t) => `<div class="warn">${ic("alert")}<span>${t}</span></div>`;
 
     const views = {
@@ -630,6 +652,9 @@
     window.addEventListener("online", upd); window.addEventListener("offline", upd); upd();
     document.addEventListener("keydown", e => { if (e.key === "/" && !/input|select|textarea/i.test(document.activeElement?.tagName || "")) { const q = $("#q"); if (q) { e.preventDefault(); q.focus(); } else location.hash = "#/drugs"; } });
     CV = window.Community({ $, esc, ic, listHtml, sortedDrugs, catStyle, render, toast });
+    FX = window.Features({ $, esc, ic, toast, render, ROLES });
+    FX.syncPatientChip(); FX.updateDueBadge(); FX.checkDue();
+    $("#patient-chip")?.addEventListener("click", () => FX.openPatientDialog());
     const syncAccount = () => {
       const u = API.user, lbl = $("#acct-label"), nav = $("#nav-admin");
       if (API.state.serverless) {

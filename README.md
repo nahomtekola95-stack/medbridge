@@ -71,6 +71,22 @@ sw.js, manifest.json, icons/   PWA / offline
 The **Setup** page lets a user tick the equipment their facility has; methods whose `requires`
 are not all available are dimmed and sorted last (never hidden).
 
+## Bedside tools
+
+| Feature | Where | Data |
+|---|---|---|
+| **Patient mode** — set a weight once; drug pages show the dose and volume, cases show inline doses, infusions show drops/min (with warnings below 4 or above 150/min) | header chip | each drug's `calc` (now supports `minDose` and weight `bands`) |
+| **Emergency drug card** — every resuscitation dose and volume for one weight, tube size from age, printable | `#/resus` | `js/resus.js` (31 rows, each with a source) |
+| **Drip guide** — metronome with sound and vibration at the target drop rate, tap-to-measure the real rate, 15-second count | `#/drip` | — |
+| **Dose schedules** — clock times, per-dose checks, given/withheld log, due badge and reminders, printable chart; a late dose moves the rest of its series later so intervals are never shortened | `#/schedules` | `js/regimens.js` (8 regimens) |
+| **Out of stock?** — explicit substitutes per use, including where no substitute exists | drug pages | `js/substitutes.js` |
+| **Never mix** — line, syringe and fluid incompatibilities with a two-drug checker | `#/compat` | `js/compat.js` (16 rules) |
+| **Favourites, recently viewed, typo-tolerant search** across drugs and cases | home | localStorage |
+
+All of it works offline and stores nothing off the device. Tests: `node tests/features.test.js`
+(220 checks: emergency card doses at five weights including minima and maxima, schedule timing and
+late-dose shifting, substitute integrity, fuzzy search true and false matches).
+
 ## Clinical cases
 
 `js/conditions.js` holds `window.CONDITIONS`: 35 presenting problems grouped by
