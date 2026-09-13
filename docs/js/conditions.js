@@ -34,6 +34,11 @@ window.CONDITIONS = [
     { id: "noradrenaline", role: "alternative", note: "Infusion for shock that persists after repeated adrenaline and fluids." }
   ],
   sources: [{ name: "Resuscitation Council UK. Emergency treatment of anaphylaxis, 2021" }, { name: "WHO Pocket Book 2013" }],
+  textbook: [
+    { book: "harrison", text: "First-choice treatment is IM epinephrine 0.3-0.5 mg (1 mg/mL), repeated every 5-20 min for severe reactions; failure to give it within 20 min is linked to poor outcomes.", ref: "Harrison 22nd ed. 2025, ch. 364 Anaphylaxis, p. 2813" },
+    { book: "harrison", text: "IV fluids and vasopressors are added in the acute setting for intractable hypotension; beta blockers may blunt the epinephrine response.", ref: "Harrison 22nd ed. 2025, ch. 364 Anaphylaxis, p. 2813" },
+    { book: "harrison", text: "Antihistamines, glucocorticoids and bronchodilators are ancillary, used once haemodynamically stable; progressive hypoxia mandates intubation or tracheostomy.", ref: "Harrison 22nd ed. 2025, ch. 364 Anaphylaxis, p. 2813" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -59,6 +64,12 @@ window.CONDITIONS = [
     { id: "atropine", role: "supportive", note: "Not for arrest; for peri-arrest bradycardia after oxygenation." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 79 PALS algorithms, pp. 561–566" }, { name: "AHA PALS/ACLS 2020" }],
+  textbook: [
+    { book: "harrison", text: "Epinephrine 1 mg IV/IO every 3-5 min once access is established; IO if IV access fails.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2336" },
+    { book: "harrison", text: "Recurrent VF/VT after shocks: amiodarone 300 mg IV/IO bolus, then 150 mg if it recurs; lidocaine if amiodarone fails.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2336" },
+    { book: "harrison", text: "Persistent metabolic acidosis after successful defibrillation with adequate ventilation: NaHCO3 1 mEq/kg may be given.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2336" },
+    { book: "harrison", text: "PEA/asystole: CPR, ventilation and epinephrine while treating reversible causes (hypoxia, hypovolaemia, acidosis, hyperkalaemia, hypothermia, toxins, tamponade, tension pneumothorax, PE, MI); give naloxone if opiate overdose suspected.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2336" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -81,12 +92,18 @@ window.CONDITIONS = [
     { id: "ringers-lactate", role: "first", note: "Resuscitation fluid. Reassess after every bolus." },
     { id: "noradrenaline", role: "first", note: "First-choice vasopressor. Microdrip plus burette gives a countable rate without a pump." },
     { id: "adrenaline", role: "alternative", note: "Where noradrenaline is unavailable; also the push-dose bridge." },
-    { id: "dopamine", role: "alternative", note: "Often the only vasoactive drug stocked at primary hospitals." },
+    { id: "dopamine", role: "alternative", note: "Fallback only, when noradrenaline and adrenaline are unavailable: it causes more arrhythmias and gives no survival benefit in septic shock (Harrison). Often the only vasoactive drug at primary hospitals." },
     { id: "hydrocortisone", role: "adjunct", note: "For shock that persists despite fluids and vasopressors." },
     { id: "dextrose", role: "supportive", note: "Hypoglycaemia is common and easily missed." },
     { id: "blood-transfusion", role: "supportive", note: "For severe anaemia contributing to shock." }
   ],
   sources: [{ name: "Surviving Sepsis Campaign 2021" }, { name: "Maitland K et al. FEAST. NEJM 2011" }, { name: "Nelson 22nd ed. 2024, ch. 85, p. 611" }],
+  textbook: [
+    { book: "harrison", text: "Septic shock: give empiric antimicrobials within 1 h of shock recognition; each hour of delay adds an estimated 7-8% mortality.", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2320" },
+    { book: "harrison", text: "Resuscitate with about 30 mL/kg balanced crystalloid (lactated Ringer's preferred over saline), then guide further fluid by dynamic reassessment (capillary refill, passive leg raise, ultrasound).", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2322" },
+    { book: "harrison", text: "Persistent hypotension after fluids: norepinephrine first-line to MAP of at least 65 mmHg, vasopressin second, epinephrine third.", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2323" },
+    { book: "harrison", text: "Ongoing vasopressor requirement: IV hydrocortisone 200 mg/day, often 50 mg every 6 h.", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2323" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -99,7 +116,7 @@ window.CONDITIONS = [
     "Check glucose in every convulsing patient and treat if low or unmeasurable.",
     "Benzodiazepine now: IM or intranasal midazolam, or rectal diazepam if no IV.",
     "Repeat once after 5–10 minutes if still fitting.",
-    "Second-line: phenobarbital IM/IV, or phenytoin by slow infusion.",
+    "Second-line: phenytoin by slow infusion, or valproate or levetiracetam where stocked (Harrison). Phenobarbital IM/IV works where nothing else exists, but only with a bag-valve-mask ready — a full load can stop breathing.",
     "In pregnancy the drug is magnesium sulfate, not a benzodiazepine."
   ],
   drugs: [
@@ -114,6 +131,11 @@ window.CONDITIONS = [
     { id: "paracetamol", role: "supportive", note: "For fever, which lowers the seizure threshold in children." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 633.8, p. 3628" }, { name: "Silbergleit R et al. RAMPART. NEJM 2012" }, { name: "WHO Pocket Book 2013" }],
+  textbook: [
+    { book: "harrison", text: "Generalized convulsive status epilepticus warrants acute anticonvulsant treatment once seizures last beyond 5 minutes.", ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, p. 3425" },
+    { book: "harrison", text: "Adult algorithm: IV lorazepam 0.1 mg/kg or midazolam 0.2 mg/kg, then IV phenytoin 20 mg/kg, valproate 20–30 mg/kg or levetiracetam 20–30 mg/kg.", ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, p. 3426" },
+    { book: "harrison", text: "Lorazepam is the benzodiazepine of choice; follow with fosphenytoin, valproate or levetiracetam loading.", ref: "Harrison 22nd ed. 2025, ch. 311 Approach to the Patient with Critical Illness, p. 2298" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -137,6 +159,10 @@ window.CONDITIONS = [
     { id: "adrenaline", role: "supportive", note: "If shock persists despite atropine and fluids." }
   ],
   sources: [{ name: "Eddleston M et al. Lancet 2008" }, { name: "WHO. Clinical management of acute pesticide intoxication, 2008" }],
+  textbook: [
+    { book: "harrison", text: "Cholinesterase-inhibitor poisoning: atropine treats muscarinic features; pralidoxime (2-PAM) treats nicotinic features from organophosphates or nerve agents.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3712" },
+    { book: "harrison", text: "Features: seizures, bronchorrhoea, wheeze, sweating, GI and bladder hyperactivity, fasciculations, weakness and paralysis; death is usually from respiratory failure; cholinesterase activity below 50% of normal.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3712" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -151,11 +177,16 @@ window.CONDITIONS = [
     "In a newborn, ventilate; do not give naloxone if the mother is opioid dependent."
   ],
   drugs: [
-    { id: "naloxone", role: "first", note: "Dilute 0.4 mg to 10 mL and give 1 mL (40 mcg) every 1–2 min. Full dose 0.1 mg/kg only in overdose." },
+    { id: "naloxone", role: "first", note: "Overdose with apnoea or severe respiratory depression: adult 0.4–2 mg IV, IM or intranasal, repeated every 2–3 min; synthetic opioids such as fentanyl may need twice that (Harrison). Child 0.1 mg/kg, max 2 mg. For over-sedation from therapeutic opioids instead, titrate 40 mcg increments so analgesia is kept." },
     { id: "ringers-lactate", role: "supportive", note: "For hypotension." },
     { id: "dextrose", role: "supportive", note: "Check glucose in every unconscious patient." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, Table 79.5, p. 563" }, { name: "WHO. Community management of opioid overdose, 2014" }],
+  textbook: [
+    { book: "harrison", text: "Establish the airway (intubation/ventilation if needed); naloxone 0.4-2.0 mg IV, IM or endotracheal; repeat or infuse as needed.", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3690" },
+    { book: "harrison", text: "After reversal, give one-half to two-thirds of the reversing naloxone dose hourly, because respiratory depression can recur.", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3690" },
+    { book: "harrison", text: "Fentanyl overdoses may need about twice the usual naloxone dose; newer rescue products contain double the traditional dose.", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3690" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -173,13 +204,19 @@ window.CONDITIONS = [
   drugs: [
     { id: "calcium-gluconate", role: "first", note: "10–30 mL of 10 % slowly. Protects the myocardium for 30–60 min. Never in the same line as bicarbonate." },
     { id: "insulin-soluble", role: "first", note: "10 units with 25 g glucose over 15–30 min. Check glucose every 30 min for 6 h." },
-    { id: "dextrose", role: "first", note: "Always with the insulin. Use 10 % if no 50 % is available." },
-    { id: "salbutamol", role: "adjunct", note: "Nebulised 10–20 mg adult; shifts potassium and needs no IV." },
-    { id: "sodium-bicarbonate", role: "adjunct", note: "1–2 mmol/kg, mainly useful when there is an acidosis. Flush the line between calcium and bicarbonate." },
+    { id: "dextrose", role: "first", note: "25 g with the insulin (10 % if no 50 %), then 10 % dextrose at 50–75 mL/h to prevent late hypoglycaemia. If glucose is already 11–14 mmol/L (200–250 mg/dL) or higher, give the insulin without the bolus (Harrison)." },
+    { id: "salbutamol", role: "adjunct", note: "Nebulised 10–20 mg adult; shifts potassium and needs no IV. Use with insulin, not instead of it — about 20 % of dialysis patients do not respond (Harrison)." },
+    { id: "sodium-bicarbonate", role: "adjunct", note: "Only with significant metabolic acidosis; Harrison gives it no role in hyperkalaemia otherwise. Never in the same line as calcium." },
     { id: "furosemide", role: "adjunct", note: "Only if the patient still passes urine." },
     { id: "ringers-lactate", role: "avoid", note: "Contains potassium. Use 0.9 % saline instead." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 573, p. 3245" }, { name: "UK Kidney Association, 2023" }],
+  textbook: [
+    { book: "harrison", text: "ECG changes are an emergency; K of 6.5 mM or more without ECG changes should also be treated aggressively with admission and continuous cardiac monitoring.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 360" },
+    { book: "harrison", text: "Membrane stabilisation: 10 mL of 10% calcium gluconate IV over 2-3 min, onset 1-3 min, lasting 30-60 min; repeat if ECG unchanged.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "harrison", text: "Shift: 10 units IV regular insulin plus 25 g glucose (D50), then 10% dextrose 50-75 mL/h with glucose monitoring; if glucose is 200-250 mg/dL or more give insulin without glucose.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "harrison", text: "Nebulised albuterol 10-20 mg is additive to insulin-glucose but should not be used alone, as about 20% of ESRD patients are resistant.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" }
+  ],
   review: { status: "draft" }
 },
 /* ---------------- OBSTETRIC ---------------- */
@@ -190,7 +227,7 @@ window.CONDITIONS = [
   redflags: ["Systolic 160 or diastolic 110 or above", "Headache, visual disturbance, epigastric pain", "Brisk reflexes and clonus", "Falling platelets, rising creatinine, or reduced urine output", "Fetal growth restriction or reduced movements"],
   steps: [
     "Magnesium sulfate loading dose now — do not wait for the fit.",
-    "Lower the blood pressure to a diastolic of 90–100, not to normal.",
+    "Lower the blood pressure to below 160 systolic and 90–100 diastolic, not to normal. Systolic above 160 is the main predictor of stroke (Williams, Gabbe).",
     "Antenatal corticosteroids if under 34 weeks.",
     "Catheterise and chart urine output; check reflexes and respiratory rate before every magnesium dose.",
     "Plan delivery. Stabilise first, then deliver; magnesium continues for 24 hours afterwards."
@@ -206,6 +243,16 @@ window.CONDITIONS = [
     { id: "ergometrine", role: "avoid", note: "Contraindicated — causes stroke and seizures in hypertensive women." }
   ],
   sources: [{ name: "WHO. Managing Complications in Pregnancy and Childbirth, 2017" }, { name: "WHO recommendations: drug treatment for severe hypertension in pregnancy, 2018" }],
+  textbook: [
+    { book: "williams", text: "Treat severe hypertension to bring systolic to 160 or below and diastolic to 110 or below; strokes in severe preeclampsia occurred with systolic pressures above 160 even when diastolic was under 110.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1630" },
+    { book: "williams", text: "Hydralazine, labetalol and oral nifedipine are all first-line agents for acute severe hypertension in pregnancy.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1630" },
+    { book: "williams", text: "Women with preeclampsia-eclampsia usually receive magnesium sulfate during labor and for 24 hours postpartum; doses are the same as for eclampsia.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1624" },
+    { book: "williams", text: "Restrict IV fluids: lactated Ringer 60 to 125 mL/h; large volumes worsen pulmonary and cerebral oedema; for oliguria use small incremental boluses to keep urine above 30 mL/h.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1633" },
+    { book: "gabbe", text: "Severe features: admit, start IV magnesium sulfate, treat SBP ≥160 or DBP ≥110; steroids at 24-34 weeks.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 708" },
+    { book: "gabbe", text: "Treat sustained SBP ≥160 and/or DBP ≥110 lasting 15-30 min; deliver if resistant despite max labetalol 300 mg plus hydralazine 20 mg or nifedipine 50 mg.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 711" },
+    { book: "gabbe", text: "Once delivery is decided, give magnesium in labour and for at least 24 h postpartum.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 710" },
+    { book: "gabbe", text: "Neuraxial anaesthesia preferred but contraindicated with coagulopathy or severe thrombocytopenia; general anaesthesia risks failed intubation from airway oedema.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 711" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -231,6 +278,16 @@ window.CONDITIONS = [
     { id: "ergometrine", role: "avoid", note: "Contraindicated in hypertension." }
   ],
   sources: [{ name: "WHO. Managing Complications in Pregnancy and Childbirth, 2017" }, { name: "Pritchard JA et al. AJOG 1984" }],
+  textbook: [
+    { book: "williams", text: "Recurrent convulsion (10 to 15 percent) after magnesium: an additional 2 g as 20 percent solution slowly IV. Refractory cases get IV barbiturate; benzodiazepines only as a small single dose because prolonged use raises aspiration-pneumonia mortality.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1625" },
+    { book: "williams", text: "Eclampsia management: IV magnesium loading then maintenance, intermittent antihypertensive for dangerous BP, avoid diuretics and excess fluids, and deliver.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1624" },
+    { book: "williams", text: "Maintenance magnesium continues 24 hours after delivery; for postpartum-onset eclampsia, 24 hours after the onset of convulsions.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1626" },
+    { book: "williams", text: "IM magnesium is as effective as IV where infusion technology is lacking; typically convulsions stop after the 4 g loading dose.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1625" },
+    { book: "gabbe", text: "During a fit: protect from injury, lateral decubitus, suction, oxygen 8-10 L/min by mask; do not restrain.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 732" },
+    { book: "gabbe", text: "Stabilise BP and give magnesium loading dose before transfer; eclampsia is an indication for delivery but not for caesarean.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 732" },
+    { book: "gabbe", text: "Magnesium continued 24 h after delivery and at least 24 h after last convulsion; recurrent fit 2 g IV over 3-5 min.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 733" },
+    { book: "gabbe", text: "Delivery indicated once stable; caesarean recommended before 30 weeks when not in labour with unfavourable cervix.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 733" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -258,6 +315,16 @@ window.CONDITIONS = [
     { id: "ketamine", role: "supportive", note: "For examination under anaesthesia or laparotomy where there is no anaesthetist." }
   ],
   sources: [{ name: "WHO recommendations for the prevention and treatment of PPH, 2012/2018" }, { name: "WOMAN trial. Lancet 2017" }],
+  textbook: [
+    { book: "williams", text: "On immediate PPH, inspect for lacerations and retained placental fragments, massage the uterus and give uterotonics; ergot derivatives are second-line if atony persists after oxytocin.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1677" },
+    { book: "williams", text: "If bleeding persists despite uterotonics, immediately and simultaneously begin bimanual uterine compression, which controls most cases.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1679" },
+    { book: "williams", text: "Establish large-bore IV access, rapid crystalloid while blood is made available, and ready the operating room and surgical/anaesthesia team immediately.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1744" },
+    { book: "williams", text: "After manual removal of the placenta evidence of antibiotic benefit is lacking, but WHO recommends prophylaxis and Parkland gives a single dose to women not already on antibiotics.", ref: "Williams Obstetrics 25th ed. 2018, ch. 27 Vaginal Delivery, pdf p. 1157" },
+    { book: "gabbe", text: "Uterotonics are mainstay for atony; oxytocin first-line, then second agent chosen by side-effect profile and contraindications, with bimanual massage.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 405" },
+    { book: "gabbe", text: "Tranexamic acid within 3 h of bleeding onset reduced maternal death by nearly 20%.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
+    { book: "gabbe", text: "Resuscitation: two large-bore lines, crystalloid, pRBC if Hb <7 or active bleeding with coagulopathy; massive transfusion 4:4:1.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 417" },
+    { book: "gabbe", text: "If drugs fail, inspect for lacerations, then intrauterine vacuum, tamponade, embolisation or surgery.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -266,7 +333,7 @@ window.CONDITIONS = [
   summary: "Between 24 and 34 weeks, one drug changes newborn survival more than any equipment in the hospital: a corticosteroid given to the mother. Tocolysis exists only to buy time for it and for transfer.",
   redflags: ["Regular contractions before 34 weeks", "Ruptured membranes", "Fever or offensive discharge — do not give steroids or tocolysis", "Bleeding or fetal distress"],
   steps: [
-    "Give the first dose of dexamethasone immediately. Do not wait for certainty about the gestation.",
+    "Give dexamethasone only if gestation is reliably 24–34 weeks, birth is likely within 7 days, there is no maternal infection, and newborn care is available. Given broadly in low-resource settings with uncertain dating, antenatal steroids increased newborn deaths (Althabe 2015, cited in Williams).",
     "Exclude infection. Chorioamnionitis is a contraindication to steroids and to tocolysis.",
     "Tocolysis with nifedipine for up to 48 hours while the steroid course is given and transfer is arranged.",
     "Transfer the mother with the baby inside her if a newborn unit is reachable; that is safer than transferring a preterm newborn.",
@@ -283,6 +350,16 @@ window.CONDITIONS = [
     { id: "vitamin-k", role: "supportive", note: "1 mg IM to the newborn, 0.5 mg if under 1500 g." }
   ],
   sources: [{ name: "WHO recommendations on interventions to improve preterm birth outcomes, 2015/2022" }],
+  textbook: [
+    { book: "williams", text: "Single corticosteroid course at 24 to 34 weeks with delivery risk within 7 days; first dose given even if the course may not be completed.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1823" },
+    { book: "williams", text: "Magnesium for neuroprotection lowered cerebral palsy risk (number needed to treat 63); Parkland uses it for threatened delivery from 24 0/7 to 27 6/7 weeks.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1826" },
+    { book: "williams", text: "Group B streptococcal infection is common and dangerous in preterm neonates; give intrapartum antimicrobial prophylaxis.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1832" },
+    { book: "williams", text: "Antibiotics for preterm labor with intact membranes do not help and ORACLE II linked fetal exposure to higher cerebral palsy at 7 years; this is distinct from GBS prophylaxis.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1827" },
+    { book: "gabbe", text: "Four proven interventions: maternal transfer, antenatal corticosteroids, intrapartum GBS antibiotics, magnesium for neuroprotection at ≤32 weeks.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 673" },
+    { book: "gabbe", text: "Tocolysis contraindicated in preeclampsia with severe features, haemorrhage, clinical chorioamnionitis, severe cardiac disease, fetal compromise.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 673" },
+    { book: "gabbe", text: "Dexamethasone 6 mg IM every 12 h x4 or betamethasone 12 mg IM every 24 h x2 at 24-34 weeks.", ref: "Gabbe's Obstetrics 9th ed., ch. 37 Premature Rupture of the Membranes, p. 696" },
+    { book: "gabbe", text: "Magnesium sulfate for neuroprotection below 32 weeks: 4-6 g IV over 30 min, then 1-2 g/h.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 681" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -295,7 +372,7 @@ window.CONDITIONS = [
     "Evacuate retained products; drain any pelvic collection.",
     "Fluids and transfusion as needed; tetanus prophylaxis after unsafe abortion.",
     "Reassess at 48 hours; if no better, look for an abscess or a retained fragment.",
-    "Do not discharge until afebrile for 48 hours."
+    "Discharge once afebrile for 24–48 hours; further oral antibiotics are not needed after an uncomplicated recovery (Williams)."
   ],
   drugs: [
     { id: "ampicillin", role: "first", note: "2 g IV every 6 h, with gentamicin and metronidazole." },
@@ -303,12 +380,21 @@ window.CONDITIONS = [
     { id: "metronidazole", role: "first", note: "500 mg every 8 h; oral is as good as IV once she can swallow." },
     { id: "ceftriaxone", role: "alternative", note: "Where the triple regimen is unavailable, with metronidazole." },
     { id: "oxytocin", role: "adjunct", note: "To contract the uterus during and after evacuation." },
-    { id: "misoprostol", role: "adjunct", note: "For evacuation of an incomplete abortion where surgical evacuation is delayed." },
+    { id: "misoprostol", role: "avoid", note: "Do not use medical evacuation when the uterus is infected. Evacuate septic retained products by manual vacuum aspiration or suction curettage under antibiotic cover (Williams)." },
     { id: "ringers-lactate", role: "supportive", note: "Resuscitation." },
     { id: "paracetamol", role: "supportive", note: "Fever and pain." },
     { id: "blood-transfusion", role: "supportive", note: "For anaemia from bleeding or haemolysis." }
   ],
   sources: [{ name: "WHO. Managing Complications in Pregnancy and Childbirth, 2017" }, { name: "WHO recommendations for prevention and treatment of maternal peripartum infections, 2015" }],
+  textbook: [
+    { book: "williams", text: "Moderate to severe metritis needs IV broad-spectrum antibiotics; about 90 percent improve in 48 to 72 hours. Persistent fever prompts a search for phlegmon, abscess, infected haematoma or septic pelvic thrombophlebitis.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1474" },
+    { book: "williams", text: "Ampicillin plus an aminoglycoside plus metronidazole covers most organisms in serious pelvic infections; clindamycin-gentamicin remains the standard comparator.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1475" },
+    { book: "williams", text: "Septic abortion: prompt broad-spectrum antibiotics plus suction curettage of retained products; laparotomy if peritonitis or free air, hysterectomy if the uterus is necrotic.", ref: "Williams Obstetrics 25th ed. 2018, ch. 18 Abortion, pdf p. 767" },
+    { book: "gabbe", text: "Endometritis diagnosed by two of: fever ≥38 °C, uterine tenderness, purulent lochia; far commoner after caesarean.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1120" },
+    { book: "gabbe", text: "Stop IV antibiotics once clinically improved and afebrile 24-48 h; if no response in 48 h re-examine and add ampicillin.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1121" },
+    { book: "gabbe", text: "Sepsis: antibiotics ideally within 1 h; source control surgery (evacuation, abscess drainage) should not be delayed for instability.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1125" },
+    { book: "gabbe", text: "Septic shock: 1-2 L crystalloid, transfuse to Hb ≥7, norepinephrine if MAP <65; hydrocortisone if unresponsive.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1124" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -327,16 +413,27 @@ window.CONDITIONS = [
     { id: "bupivacaine", role: "first", note: "2–2.5 mL of 0.5 % heavy intrathecally at L3–L4." },
     { id: "adrenaline", role: "first", note: "Push-dose dilution for spinal hypotension where no ephedrine exists." },
     { id: "ringers-lactate", role: "first", note: "Co-load 500–1000 mL during the block." },
-    { id: "ceftriaxone", role: "first", note: "Single dose within 60 min before incision." },
+    { id: "ampicillin", role: "first", note: "Prophylaxis: 2 g IV as a single dose within 60 min before incision. Williams and Gabbe recommend ampicillin or a first-generation cephalosporin such as cefazolin 2 g." },
+    { id: "ceftriaxone", role: "alternative", note: "Single dose within 60 min before incision, only if neither cefazolin nor ampicillin is available; the obstetric texts prefer narrower agents." },
     { id: "oxytocin", role: "first", note: "After delivery of the baby, to contract the uterus." },
     { id: "ketamine", role: "alternative", note: "When spinal is contraindicated or has failed, and no anaesthetist is available." },
     { id: "lidocaine", role: "alternative", note: "Local infiltration in layers when nothing else is possible." },
-    { id: "tranexamic-acid", role: "adjunct", note: "For bleeding, and prophylactically in high-risk cases." },
+    { id: "tranexamic-acid", role: "adjunct", note: "1 g IV for bleeding. Routine prophylaxis at caesarean is not recommended: a large trial found no reduction in death or transfusion (Williams, Gabbe)." },
     { id: "misoprostol", role: "adjunct", note: "Second uterotonic for atony on the table." },
     { id: "paracetamol", role: "supportive", note: "Regular, by the clock, from the end of surgery." },
     { id: "morphine", role: "supportive", note: "For breakthrough pain in the first 24 h." }
   ],
   sources: [{ name: "WHO. Surgical Care at the District Hospital, 2003" }, { name: "MSF Clinical Guidelines — Anaesthesia" }],
+  textbook: [
+    { book: "williams", text: "Prophylaxis reduces post-cesarean pelvic infection by 70 to 80 percent; single-dose ampicillin 2 g or a first-generation cephalosporin (cefazolin 3 g if obese) is ideal, given before incision.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1476" },
+    { book: "williams", text: "Spinal for cesarean needs a T4 sensory level: 10 to 12 mg hyperbaric bupivacaine; intrathecal morphine 0.1 to 0.3 mg gives up to 24 hours of pain control.", ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1078" },
+    { book: "williams", text: "Spinal hypotension from sympathetic block and aortocaval compression: left lateral displacement, crystalloid, and ephedrine or phenylephrine boluses.", ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1079" },
+    { book: "williams", text: "Tranexamic acid added to oxytocin at cesarean has been proposed, but thromboembolic effects are unclear and larger trials are needed before widespread use.", ref: "Williams Obstetrics 25th ed. 2018, ch. 30 Cesarean Delivery and Peripartum Hysterectomy, pdf p. 1269" },
+    { book: "gabbe", text: "Prophylactic antibiotic (cefazolin 1-2 g or ampicillin) 30-60 min before skin incision; single dose; add azithromycin if in labour or ruptured membranes.", ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 427" },
+    { book: "gabbe", text: "Neuraxial anaesthesia is the gold standard for caesarean; firm contraindication with significant ongoing haemorrhage.", ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 364" },
+    { book: "gabbe", text: "After delivery start PPH prevention: oxytocin infusion of at least 20 IU preferred to bolus; pre-incision TXA 1 g reduces blood loss.", ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 431" },
+    { book: "gabbe", text: "Platelet count ≥70,000 is acceptable for neuraxial block when stable, no coagulopathy or anticoagulants.", ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 354" }
+  ],
   review: { status: "draft" }
 },
 /* ---------------- SURGICAL ---------------- */
@@ -356,9 +453,9 @@ window.CONDITIONS = [
   drugs: [
     { id: "ringers-lactate", role: "first", note: "Large volumes are needed. Reassess with pulse, BP and urine output." },
     { id: "potassium-chloride", role: "first", note: "Add 20–40 mmol per litre once urine is flowing. Never as a bolus." },
-    { id: "metronidazole", role: "first", note: "Anaerobic cover for strangulation, perforation or peritonitis." },
-    { id: "gentamicin", role: "first", note: "Gram-negative cover; watch renal function in a dehydrated patient." },
-    { id: "ampicillin", role: "first", note: "The third part of the classic triple regimen." },
+    { id: "metronidazole", role: "adjunct", note: "Only when strangulation, ischaemia or perforation is suspected, and before laparotomy. Simple adhesive obstruction does not need antibiotics (Schwartz)." },
+    { id: "gentamicin", role: "adjunct", note: "With metronidazole and ampicillin when strangulation or perforation is suspected. Watch renal function in a dehydrated patient." },
+    { id: "ampicillin", role: "adjunct", note: "Third part of the triple regimen, for suspected strangulation or perforation only." },
     { id: "ceftriaxone", role: "alternative", note: "With metronidazole where the triple regimen is unavailable." },
     { id: "morphine", role: "supportive", note: "Titrated. Pain relief does not mask the diagnosis; a tender abdomen stays tender." },
     { id: "paracetamol", role: "supportive", note: "Regular, to reduce the opioid requirement." },
@@ -368,6 +465,12 @@ window.CONDITIONS = [
     { id: "atropine", role: "adjunct", note: "With ketamine, to reduce secretions." }
   ],
   sources: [{ name: "WHO. Surgical Care at the District Hospital, 2003" }, { name: "MSF Clinical Guidelines — surgical emergencies" }],
+  textbook: [
+    { book: "schwartz", text: "SBO causes marked volume depletion: give IV isotonic fluid, consider a bladder catheter for urine output, and decompress the stomach continuously with an NG tube.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 28 Small Intestine, p. 1231" },
+    { book: "schwartz", text: "Broad-spectrum antibiotics are not indicated unless bowel ischaemia is suspected and surgery is planned.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 28 Small Intestine, p. 1231" },
+    { book: "schwartz", text: "Strangulation features: pain out of proportion to findings, tachycardia, localised tenderness, fever, marked leukocytosis, acidosis; any should prompt early surgery.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 28 Small Intestine, p. 1229" },
+    { book: "schwartz", text: "Non-operative NG decompression and fluids is now common for non-ischaemic obstruction if closed-loop obstruction and ischaemia are excluded.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 28 Small Intestine, p. 1231" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -380,7 +483,7 @@ window.CONDITIONS = [
     "Aggressive fluid resuscitation to restore urine output before anaesthesia.",
     "Triple antibiotics immediately, before the operation.",
     "Laparotomy: wash out, close or resect the perforation.",
-    "Continue antibiotics after surgery and watch for wound dehiscence and abscess."
+    "Continue antibiotics for about 4 days after adequate source control, longer only with heavy contamination (Schwartz); watch for wound dehiscence and abscess."
   ],
   drugs: [
     { id: "ringers-lactate", role: "first", note: "Resuscitation before induction; these patients are profoundly depleted." },
@@ -396,6 +499,11 @@ window.CONDITIONS = [
     { id: "blood-transfusion", role: "supportive", note: "As required." }
   ],
   sources: [{ name: "WHO. Surgical Care at the District Hospital, 2003" }, { name: "MSF Clinical Guidelines" }],
+  textbook: [
+    { book: "schwartz", text: "Secondary peritonitis needs source control (resect/repair, debride) plus antimicrobials covering aerobes and anaerobes.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 171" },
+    { book: "schwartz", text: "After adequate source control, perforated appendicitis/extensive intraperitoneal infection: limit antibiotics to about 4 days; re-evaluate for missed source if no improvement after 5-7 days.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 168" },
+    { book: "schwartz", text: "Most intra-abdominal abscesses can now be diagnosed by CT and drained percutaneously; operate for multiple abscesses, hazardous location or an ongoing leak.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 172" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -407,7 +515,8 @@ window.CONDITIONS = [
     "Direct pressure, tourniquet or packing for external bleeding.",
     "Airway with cervical spine control, breathing, circulation. Decompress a tension pneumothorax clinically, not radiologically.",
     "Tranexamic acid within 3 hours of injury.",
-    "Limited crystalloid to a palpable radial pulse; call for blood and donors immediately.",
+    "Penetrating injury without head injury: limited crystalloid to a palpable radial pulse (systolic about 80–90) until the bleeding is controlled; call for blood and donors immediately.",
+    "Head injury, and most blunt trauma: do NOT use permissive hypotension — the injured brain needs a systolic above 100 mmHg (Schwartz).",
     "Keep the patient warm. Hypothermia stops clotting.",
     "Theatre for ongoing bleeding. Do not wait for blood to arrive."
   ],
@@ -416,7 +525,7 @@ window.CONDITIONS = [
     { id: "blood-transfusion", role: "first", note: "The correct resuscitation fluid in haemorrhage. Start the donor call at once." },
     { id: "ringers-lactate", role: "first", note: "Bridge only. Over-infusion dilutes clotting factors." },
     { id: "morphine", role: "first", note: "Titrated intravenously in small increments for severe pain." },
-    { id: "ketamine", role: "adjunct", note: "Analgesia and anaesthesia that preserves blood pressure in the shocked patient." },
+    { id: "ketamine", role: "adjunct", note: "Usually supports blood pressure, but in prolonged, catecholamine-depleted shock it can cause profound hypotension (Schwartz). Use a reduced dose, slowly, with fluids and a vasopressor ready." },
     { id: "lidocaine", role: "adjunct", note: "Wound infiltration and nerve blocks, including femoral block for a fractured femur." },
     { id: "paracetamol", role: "supportive", note: "Regular background analgesia." },
     { id: "cloxacillin", role: "adjunct", note: "For open fractures and contaminated wounds." },
@@ -426,6 +535,12 @@ window.CONDITIONS = [
     { id: "naloxone", role: "supportive", note: "If opioid analgesia causes respiratory depression." }
   ],
   sources: [{ name: "CRASH-2 collaborators. Lancet 2010" }, { name: "WHO. Surgical Care at the District Hospital, 2003" }],
+  textbook: [
+    { book: "schwartz", text: "Hypotensive resuscitation is controversial and mainly for penetrating vascular injury (SBP around 90); TBI needs SBP >100, so it is not appropriate for most blunt trauma.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 195" },
+    { book: "schwartz", text: "Patients arriving in shock (SBP <90) should receive a massive transfusion protocol (RBC and plasma) rather than crystalloid.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 191" },
+    { book: "schwartz", text: "All operated trauma patients get preoperative antibiotics, redosed for blood loss; extended postoperative antibiotics only for contaminated open fractures; tetanus prophylaxis for all.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 208" },
+    { book: "schwartz", text: "Tranexamic acid within 3 h of injury reduces mortality; later administration worsened outcome.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 5 Shock, p. 145" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -434,9 +549,11 @@ window.CONDITIONS = [
   summary: "Fluid by formula and by urine output, pain relief that actually works, and clean dressings. Under-resuscitation and under-analgesia are the two commonest failures.",
   redflags: ["Burns to face, neck, hands, feet, perineum or circumferential", "Hoarseness, soot in the nostrils, singed nasal hair — airway burn", "Over 10 % body surface in a child or 15 % in an adult", "Electrical or chemical burns"],
   steps: [
-    "Cool with running water for 20 minutes; remove clothing and jewellery. Do not use ice.",
+    "Small burns: cool with running water for up to 20 minutes, ideally within 3 hours. Do not use ice. Remove clothing and jewellery in every burn.",
+    "Burns over about 20 % of the body: do NOT cool — hypothermia contributes to resuscitation failure. Cover with clean dry sheets and keep the patient warm (Schwartz).",
     "Estimate the percentage burned; the patient's palm with fingers is roughly 1 %.",
-    "Fluid by formula from the time of the burn, adjusted to urine output of 0.5–1 mL/kg/h.",
+    "Fluid by formula from the time of the burn, then titrate to urine output: about 30 mL/h (0.5 mL/kg/h) in adults and 1–1.5 mL/kg/h in children (Schwartz).",
+    "Children under 20 kg: give weight-based maintenance fluid containing glucose in addition to the Ringer's lactate — they have little glycogen and become hypoglycaemic (Schwartz).",
     "Strong analgesia before every dressing change, not after the patient starts crying.",
     "Clean, cover, elevate. Tetanus prophylaxis. No prophylactic systemic antibiotics.",
     "Feed early and generously; burns are catabolic."
@@ -453,6 +570,12 @@ window.CONDITIONS = [
     { id: "potassium-chloride", role: "adjunct", note: "Replace after the first 24 hours as losses continue." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 91 Burn injuries, p. 654" }, { name: "WHO. Surgical Care at the District Hospital, 2003" }],
+  textbook: [
+    { book: "schwartz", text: "Parkland 3-4 mL/kg/% burn LR (half in first 8 h); ABA now recommends 2 mL/kg/%; children <20 kg also need maintenance fluid with glucose.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 254" },
+    { book: "schwartz", text: "Resuscitation endpoints: MAP 60 mmHg, urine output 30 mL/h adults and 1-1.5 mL/kg/h children.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 254" },
+    { book: "schwartz", text: "Never give prophylactic systemic antibiotics for acute burns (fungal and resistant infections); give tetanus booster per immunisation status; avoid cooling in burns >20% TBSA.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 252" },
+    { book: "schwartz", text: "Palmar surface including digits is about 1% TBSA; refer partial-thickness burns >10% TBSA, face/hands/feet/genitalia/perineum/joint burns, electrical, chemical and inhalation injury.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 252" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -479,6 +602,12 @@ window.CONDITIONS = [
     { id: "ampicillin", role: "avoid", note: "Plain ampicillin and amoxicillin do not cover Staphylococcus aureus — a common and costly substitution error." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "Nelson 22nd ed. 2024, chs. 719–720" }],
+  textbook: [
+    { book: "schwartz", text: "Abscess (hand): S. aureus commonest; incision and drainage with debridement, cultures, packing (remove in 12-24 h), elevation, immobilisation and antibiotics; heal by secondary intention.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 44 Surgery of the Hand and Wrist, p. 1948" },
+    { book: "schwartz", text: "Furuncles may need incision and drainage; antibiotics if significant cellulitis or cellulitis not resolving after drainage; suspect MRSA if infection persists despite drainage and first-line antibiotics.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 173" },
+    { book: "schwartz", text: "Incisional surgical-site infection is treated by opening and draining alone; antibiotics only for significant cellulitis or systemic inflammatory response.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 170" },
+    { book: "schwartz", text: "Osteomyelitis: IV therapy covering S. aureus, adjusted to bone culture, 4-6 weeks after clinical improvement.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 44 Surgery of the Hand and Wrist, p. 1949" }
+  ],
   review: { status: "draft" }
 },
 /* ---------------- MEDICAL ---------------- */
@@ -490,7 +619,7 @@ window.CONDITIONS = [
   steps: [
     "Fluid resuscitation first; start insulin an hour later in children.",
     "Hourly insulin IM, or an infusion through a burette if staffing allows.",
-    "Add potassium to the fluids once the patient passes urine and potassium is under 5.5.",
+    "Add potassium 10–20 mmol/L to the fluids once the patient passes urine and potassium is 3.3–5.0; none above 5.0 (Harrison).",
     "Hourly glucose; switch to dextrose-containing fluid below 14 mmol/L (250 mg/dL) but keep the insulin going.",
     "Find and treat the precipitant: infection, missed insulin, new diagnosis.",
     "Stop insulin only when the acidosis has cleared and the patient is eating."
@@ -498,12 +627,18 @@ window.CONDITIONS = [
   drugs: [
     { id: "insulin-soluble", role: "first", note: "0.1 unit/kg IM every hour. No pump needed. Never stop it just because the glucose fell." },
     { id: "ringers-lactate", role: "first", note: "Or 0.9 % saline. Fluid is the first treatment, not insulin." },
-    { id: "potassium-chloride", role: "first", note: "20–40 mmol per litre once urine is flowing. Hold insulin if potassium is below 3.3." },
+    { id: "potassium-chloride", role: "first", note: "10–20 mmol per litre (up to 40 at the low end) once potassium is 3.3–5.0 and urine is flowing; none above 5.0. Hold insulin if potassium is below 3.3 (Harrison)." },
     { id: "dextrose", role: "first", note: "Add when glucose falls below 14 mmol/L so the insulin can continue clearing ketones." },
     { id: "ceftriaxone", role: "adjunct", note: "If infection is the precipitant." },
-    { id: "sodium-bicarbonate", role: "avoid", note: "Not recommended: it increases the risk of cerebral oedema in children." }
+    { id: "sodium-bicarbonate", role: "avoid", note: "Children: never — it increases the risk of cerebral oedema. Adults: only if arterial pH is below 7.0, and only until it rises above 7.0 (Harrison); without blood gases, do not give it." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 629, pp. 3525–3528" }, { name: "ISPAD Clinical Practice Consensus Guidelines 2022" }, { name: "Kitabchi AE et al. Diabetes Care 2009" }],
+  textbook: [
+    { book: "harrison", text: "Fluids: 2-3 L of 0.9% saline or lactated Ringer's over 1-3 h, then 0.45% saline 250-500 mL/h; add 5-10% glucose when glucose reaches 250 mg/dL (13.9 mmol/L).", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" },
+    { book: "harrison", text: "Insulin 0.1 units/kg IV bolus then 0.1 units/kg/h; do not start insulin if initial potassium is below 3.3 mmol/L until corrected.", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" },
+    { book: "harrison", text: "Potassium: if K below 3.5 give 10-20 mmol/h; if 3.5-5 add 10-20 mmol per litre; if above 5.0 hold potassium; recheck every 2 h.", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" },
+    { book: "harrison", text: "Continue until glucose 150-200 mg/dL, normal ketones and pH, and bicarbonate at least 18 mmol/L; overlap SC long-acting insulin 2-4 h before stopping the infusion.", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -523,7 +658,7 @@ window.CONDITIONS = [
     { id: "artesunate", role: "first", note: "2.4 mg/kg (3 mg/kg under 20 kg) IV or IM at 0, 12, 24 h then daily. IM is as effective as IV." },
     { id: "quinine", role: "alternative", note: "When artesunate is unavailable. Loading dose then 8-hourly by drip; never as a bolus." },
     { id: "dextrose", role: "first", note: "Treat hypoglycaemia and prevent it, especially on quinine." },
-    { id: "blood-transfusion", role: "first", note: "For haemoglobin under 5 g/dL, or under 6 with distress." },
+    { id: "blood-transfusion", role: "first", note: "Children: haemoglobin under 5 g/dL, or under 6 with distress. Adults: haematocrit below 20 % (haemoglobin about 7 g/dL), or below 15 % where blood is scarce (Harrison)." },
     { id: "diazepam", role: "adjunct", note: "Rectal or IV for convulsions." },
     { id: "ceftriaxone", role: "adjunct", note: "Add if meningitis cannot be excluded, or for concurrent bacteraemia." },
     { id: "ringers-lactate", role: "supportive", note: "Careful fluids; avoid large boluses in a febrile child without shock." },
@@ -531,6 +666,12 @@ window.CONDITIONS = [
     { id: "furosemide", role: "adjunct", note: "1 mg/kg at the start of transfusion if there is heart failure." }
   ],
   sources: [{ name: "WHO Guidelines for malaria, 2023" }, { name: "Nelson 22nd ed. 2024, ch. 336, p. 2136" }],
+  textbook: [
+    { book: "harrison", text: "Artesunate is the drug of choice (35% lower mortality in Asia, 22.5% in Africa vs quinine): 2.4 mg/kg at 0, 12, 24 h then daily.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
+    { book: "harrison", text: "If unconscious, check blood glucose every 6 h for at least 24 h; give all patients a continuous dextrose infusion; treat glucose below 2.2 mmol/L with a bolus.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
+    { book: "harrison", text: "Transfuse slowly if haematocrit falls below 20% (15% threshold used in high-transmission areas); children with Hb under 4 g/dL and acidotic breathing need immediate transfusion.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
+    { book: "harrison", text: "Fluid management differs from sepsis: fluid boluses are potentially dangerous in severe malaria.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -548,16 +689,22 @@ window.CONDITIONS = [
   drugs: [
     { id: "ceftriaxone", role: "first", note: "100 mg/kg/day; adult 2 g every 12 h. Single IM dose for pre-referral and in epidemics." },
     { id: "benzylpenicillin", role: "alternative", note: "Where meningococcus is confirmed and susceptible; 4-hourly dosing is demanding for a ward." },
-    { id: "ampicillin", role: "adjunct", note: "With gentamicin in neonates and young infants." },
+    { id: "ampicillin", role: "adjunct", note: "With gentamicin in neonates and young infants. In adults, add ampicillin 2 g every 4 h to ceftriaxone for anyone over 55, pregnant, alcohol-dependent, debilitated or with impaired cell-mediated immunity (including HIV), to cover Listeria, which ceftriaxone misses (Harrison)." },
     { id: "gentamicin", role: "adjunct", note: "Neonatal regimen partner." },
     { id: "chloramphenicol", role: "alternative", note: "Oily chloramphenicol as a single IM dose in epidemic settings." },
-    { id: "dexamethasone", role: "adjunct", note: "0.15 mg/kg every 6 h, first dose with or before the antibiotic. No benefit afterwards." },
+    { id: "dexamethasone", role: "adjunct", note: "0.15 mg/kg (adult 10 mg) every 6 h, first dose with or before the antibiotic; no benefit afterwards. In low-income settings Harrison advises against it unless pneumococcal meningitis is confirmed, as trials there showed no benefit." },
     { id: "diazepam", role: "adjunct", note: "For seizures." },
     { id: "phenobarbital", role: "adjunct", note: "Second line for ongoing seizures." },
     { id: "paracetamol", role: "supportive", note: "Fever and headache." },
     { id: "dextrose", role: "supportive", note: "Check glucose." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "WHO. Managing meningitis epidemics in Africa, 2015" }],
+  textbook: [
+    { book: "harrison", text: "Bacterial meningitis is an emergency: aim to start antibiotics within 60 min of arrival, before CSF results.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1122" },
+    { book: "harrison", text: "If lumbar puncture is delayed for neuroimaging, start empirical antibiotics as soon as blood cultures are taken.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1120" },
+    { book: "harrison", text: "Adults over 55 or debilitated (e.g. alcoholism): ampicillin plus ceftriaxone/cefotaxime/cefepime plus vancomycin; younger adults: cephalosporin plus vancomycin.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1121" },
+    { book: "harrison", text: "Dexamethasone 10 mg IV q6h for 4 days before/with first antibiotic, but not for Gram-stain/culture-negative patients in low-income countries.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1123" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -575,7 +722,7 @@ window.CONDITIONS = [
   ],
   drugs: [
     { id: "furosemide", role: "first", note: "40 mg IV adult, 1 mg/kg child. Double after 30 min if no urine." },
-    { id: "morphine", role: "adjunct", note: "Small titrated doses reduce distress and preload; watch the respiratory rate." },
+    { id: "morphine", role: "adjunct", note: "2–4 mg IV boluses can ease distress, but registry data link morphine to higher mortality in pulmonary oedema (Harrison) — use sparingly and never instead of sitting up, diuretic and oxygen." },
     { id: "digoxin", role: "adjunct", note: "For rate control in atrial fibrillation with heart failure, usually rheumatic in origin." },
     { id: "potassium-chloride", role: "adjunct", note: "Replace after diuresis, especially with digoxin." },
     { id: "blood-transfusion", role: "adjunct", note: "Packed cells slowly with furosemide when severe anaemia is the cause." },
@@ -583,6 +730,12 @@ window.CONDITIONS = [
     { id: "ringers-lactate", role: "avoid", note: "Stop the fluids. Over-infusion is a frequent and reversible cause." }
   ],
   sources: [{ name: "WHO Model Formulary" }, { name: "Nelson 22nd ed. 2024, ch. 491, Table 491.6, p. 2898" }],
+  textbook: [
+    { book: "harrison", text: "Furosemide is the diuretic of choice: initial dose 0.5 mg/kg or less, 1 mg/kg with renal insufficiency, chronic diuretic use, hypervolaemia or failure of a lower dose.", ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2331" },
+    { book: "harrison", text: "Sublingual nitroglycerin 0.4 mg every 5 min for 3 doses is first-line; if oedema persists without hypotension, IV nitroglycerin from 5-10 micrograms/min.", ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2331" },
+    { book: "harrison", text: "In patients who are not hypotensive, sitting upright with the legs dangling over the side of the bed reduces venous return and helps relieve pulmonary oedema.", ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2331" },
+    { book: "harrison", text: "Morphine 2-4 mg IV boluses reduce preload and dyspnoea, but registry trials showed increased mortality with morphine.", ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2331" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -608,6 +761,11 @@ window.CONDITIONS = [
     { id: "morphine", role: "avoid", note: "Sedation in asthma is dangerous." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 185, pp. 1405–1408" }, { name: "WHO Pocket Book 2013" }, { name: "GINA 2024" }],
+  textbook: [
+    { book: "harrison", text: "Urgent care: nebulised beta2-agonist up to every 20 min; add IV corticosteroids if no response in 1-2 h; oxygen for hypoxaemia; magnesium and nebulised anticholinergics may be added.", ref: "Harrison 22nd ed. 2025, ch. 298 Asthma, p. 2227" },
+    { book: "harrison", text: "Antibiotics only with signs of infection; failure to reach PEFR above 60% or persistent tachypnoea over 4-6 h should prompt admission.", ref: "Harrison 22nd ed. 2025, ch. 298 Asthma, p. 2227" },
+    { book: "harrison", text: "A normal or near-normal PCO2 in a distressed asthmatic signals impending respiratory failure and possible need for ventilation.", ref: "Harrison 22nd ed. 2025, ch. 298 Asthma, p. 2227" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -617,7 +775,7 @@ window.CONDITIONS = [
   redflags: ["Chest indrawing or very fast breathing", "Saturation under 90 % or central cyanosis", "Unable to drink or breastfeed", "Grunting, head nodding, or reduced consciousness"],
   steps: [
     "Oxygen for saturation under 90 % or any danger sign.",
-    "Antibiotics without delay; the first dose matters most.",
+    "Antibiotics without delay; the first dose matters most. Adults admitted with pneumonia: add a macrolide such as azithromycin 500 mg daily to the beta-lactam to cover atypical organisms (Harrison).",
     "Position for comfort, keep feeding or give fluids carefully.",
     "Reassess at 48 hours: no improvement means empyema, tuberculosis, HIV-related disease or the wrong organism.",
     "Look for and drain an empyema."
@@ -634,6 +792,10 @@ window.CONDITIONS = [
     { id: "dextrose", role: "supportive", note: "Check glucose in a child who cannot feed." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "Nelson 22nd ed. 2024" }],
+  textbook: [
+    { book: "harrison", text: "Adult inpatients with non-severe or severe CAP and no MRSA/Pseudomonas risk: a beta-lactam plus a macrolide, or a respiratory fluoroquinolone.", ref: "Harrison 22nd ed. 2025, ch. 131 Pneumonia, p. 1028" },
+    { book: "harrison", text: "Parenteral beta-lactams such as ampicillin, cefotaxime, ceftriaxone and cefuroxime are commonly first-line for community-acquired pneumococcal infection.", ref: "Harrison 22nd ed. 2025, ch. 151 Pneumococcal Infections, p. 1193" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -647,7 +809,7 @@ window.CONDITIONS = [
     "Start warfarin the same day for venous thrombosis and overlap for at least 5 days until the INR is above 2 on two days.",
     "In pregnancy, use low-molecular-weight heparin throughout and never warfarin.",
     "Compression, elevation and early mobilisation for the leg.",
-    "Treat for 3 months, longer if the cause persists."
+    "Treat for at least 3 months. After a provoked clot with a transient cause, 3 months is usually enough; after a first pulmonary embolism with no identifiable cause, or only a minor one, consider indefinite anticoagulation if bleeding risk is low (Harrison)."
   ],
   drugs: [
     { id: "heparin", role: "first", note: "Enoxaparin 1 mg/kg subcutaneously every 12 h. Where only unfractionated heparin exists, 333 units/kg then 250 units/kg subcutaneously every 12 h needs no pump." },
@@ -657,6 +819,12 @@ window.CONDITIONS = [
     { id: "tranexamic-acid", role: "avoid", note: "Antifibrinolytics are contraindicated in active thromboembolism." }
   ],
   sources: [{ name: "Kearon C et al. FIDO. JAMA 2006" }, { name: "CHEST Antithrombotic Therapy for VTE Disease, 2021" }],
+  textbook: [
+    { book: "harrison", text: "Parenteral options include enoxaparin 1 mg/kg twice daily with normal renal function, or UFH infusion titrated to aPTT 2-3 times upper normal.", ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, p. 2163" },
+    { book: "harrison", text: "When starting warfarin (usually 5 mg, INR 2.0-3.0), overlap parenteral anticoagulation for at least 5 days and until two INRs at least a day apart are therapeutic.", ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, p. 2163" },
+    { book: "harrison", text: "Warfarin is contraindicated in pregnancy, especially first and third trimesters; use heparin, LMWH or fondaparinux instead.", ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952" },
+    { book: "harrison", text: "ESC guidance: consider extended anticoagulation without an end date after a first PE with no identifiable risk factor, a persistent risk factor, or a minor transient risk factor.", ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, p. 2163" }
+  ],
   review: { status: "draft" }
 },
 {
@@ -677,12 +845,18 @@ window.CONDITIONS = [
     { id: "benzylpenicillin", role: "alternative", note: "100,000 units/kg/day; may worsen spasms by GABA antagonism." },
     { id: "diazepam", role: "first", note: "Escalating doses for spasms; the mainstay where no ventilator exists." },
     { id: "midazolam", role: "alternative", note: "Where diazepam is unavailable." },
-    { id: "magnesium-sulfate", role: "adjunct", note: "Reduces spasms and autonomic instability." },
+    { id: "magnesium-sulfate", role: "adjunct", note: "Controls autonomic instability (target serum magnesium 2–4 mmol/L). At doses high enough to relax muscle spasms it requires mechanical ventilation (Harrison), so without a ventilator use it for autonomic control, not as the main spasm treatment." },
     { id: "morphine", role: "adjunct", note: "For autonomic instability and pain." },
     { id: "ringers-lactate", role: "supportive", note: "Hydration; losses from spasm and sweating are large." },
     { id: "paracetamol", role: "supportive", note: "Fever and pain." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1823" }, { name: "WHO. Current recommendations for treatment of tetanus, 2010" }],
+  textbook: [
+    { book: "harrison", text: "Metronidazole 400 mg rectally or 500 mg IV every 6 h for 7 days is preferred; penicillin is a second choice.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" },
+    { book: "harrison", text: "Antitoxin: human tetanus immunoglobulin single IM dose 500–5000 IU; equine antitoxin 10,000–20,000 U IM after hypersensitivity testing.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" },
+    { book: "harrison", text: "Debride and clean the wound several hours after the antitoxin has been given.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" },
+    { book: "harrison", text: "Secure the airway early in severe tetanus; tracheostomy is preferred because intubation is difficult.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" }
+  ],
   review: { status: "draft" }
 },
 /* ---------------- PAEDIATRIC & NEONATAL ---------------- */
@@ -697,7 +871,7 @@ window.CONDITIONS = [
     "Reassess every 15–30 minutes; repeat the first bolus if the radial pulse is still weak.",
     "Start oral rehydration salts as soon as the child can drink.",
     "Zinc for 10–14 days. Keep feeding and breastfeeding throughout.",
-    "Antibiotics only for cholera, dysentery with blood, or a specific infection."
+    "Antibiotics only for cholera, dysentery with blood, or a specific infection. Moderate or severe cholera: a single oral dose after rehydration shortens the illness — azithromycin 1 g (child 20 mg/kg) or, where susceptible, doxycycline 300 mg (Harrison)."
   ],
   drugs: [
     { id: "ringers-lactate", role: "first", note: "Plan C volumes and drip rates. Use the Plan C calculator." },
@@ -708,6 +882,11 @@ window.CONDITIONS = [
     { id: "potassium-chloride", role: "adjunct", note: "Potassium losses are large; ORS contains potassium, IV fluids often do not." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "Nelson 22nd ed. 2024, ch. 387, p. 2372" }],
+  textbook: [
+    { book: "harrison", text: "Severe cholera dehydration: IV Ringer's lactate 100 mL/kg in first 3 h (6 h under 12 months), 200 mL/kg total in first 24 h, until awake and drinking.", ref: "Harrison 22nd ed. 2025, ch. 173 Cholera and Other Vibrioses, p. 1328" },
+    { book: "harrison", text: "The whole deficit (over 10% body weight) can be safely replaced within 3–4 h, half in the first hour.", ref: "Harrison 22nd ed. 2025, ch. 173 Cholera and Other Vibrioses, p. 1328" },
+    { book: "harrison", text: "Give adjunctive antibiotics for moderate/severe cholera dehydration: e.g. azithromycin 1 g single dose adult, or doxycycline 300 mg single dose where susceptible.", ref: "Harrison 22nd ed. 2025, ch. 173 Cholera and Other Vibrioses, p. 1329" }
+  ],
   review: { status: "draft" }
 },
 {

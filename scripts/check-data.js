@@ -1,5 +1,6 @@
 /* Data integrity check. Run before any deploy. */
 global.window = {};
+require("../js/books.js");
 require("../js/drugs-data.js");
 require("../js/conditions.js");
 require("../js/profiles.js");
@@ -16,7 +17,10 @@ for (const d of DRUG_DB) {
   (d.improvised || []).forEach(m => (m.requires || []).forEach(r => { if (!EQUIPMENT[r]) errs.push(`${d.id}: unknown equipment ${r}`); }));
   if (!d.sources || !d.sources.length) errs.push(`${d.id}: no sources`);
 }
+const { BOOKS } = window;
+for (const d of DRUG_DB) (d.textbook || []).forEach(t => { if (!BOOKS[t.book]) errs.push(`${d.id}: textbook ref with unknown book ${t.book}`); });
 for (const c of CONDITIONS) {
+  (c.textbook || []).forEach(t => { if (!BOOKS[t.book]) errs.push(`case ${c.id}: textbook ref with unknown book ${t.book}`); });
   if (!CASE_GROUPS[c.group]) errs.push(`case ${c.id}: unknown group ${c.group}`);
   c.drugs.forEach(d => { if (!ids.has(d.id)) errs.push(`case ${c.id}: unknown drug ${d.id}`); });
 }

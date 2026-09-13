@@ -9,6 +9,17 @@ calculators for drip rate, dose → drops, mg/kg, dilution, WHO Plan C fluids an
 > **Status: DRAFT.** All 50 drug entries are `review.status: "draft"` and have **not** been
 > verified by a pharmacist or physician. Do not use for patient care until reviewed.
 
+## Live sites
+
+**https://med-guide-nine.vercel.app/** — the full app with doctor accounts, practice notes and the
+admin console (Vercel + Turso). Pushing to `main` redeploys it automatically.
+
+**https://nahomtekola95-stack.github.io/medbridge/** — the reference app (drugs, cases, wards,
+calculators, country profiles, offline). Published from `docs/` on the `main` branch.
+
+Accounts, practice notes and the admin console need the Node server and are hidden on the static
+build. To deploy that version, see **Deploying the full app** below.
+
 ## Run it
 
 No build step, no backend.
@@ -98,7 +109,23 @@ list has a "By ward / By drug class" toggle; the drug page shows clickable ward 
 | Neonatal unit | 19 |
 | Outpatient & health post | 17 |
 
-## Textbook references
+## Textbook references (five books)
+
+Drugs and cases carry `textbook: [{ book, text, ref }]`, where `book` is a key of `window.BOOKS`
+(`js/books.js`): harrison, williams, gabbe, schwartz, nelson, or note. 493 references in total:
+Harrison 174, Gabbe 76, Williams 72, Schwartz 67, Nelson 97, editorial notes 7. All 50 drugs and
+27 of 35 cases are covered.
+
+Every Harrison, Williams, Gabbe and Schwartz reference was checked by script: its source excerpt
+had to be found on the cited PDF page, and numbers in the paraphrase that did not occur on that
+page were reviewed by hand. The review also surfaced 92 differences between the app and the
+books; the substantive ones were corrected (magnesium toxicity thresholds, antenatal steroid
+criteria, hydralazine interval, warfarin in pregnancy, burns cooling and fluids, permissive
+hypotension, ketamine in shock, potassium in DKA, bicarbonate in hyperkalaemia, Listeria cover,
+luminal amoebicide, quinine dose reduction and others). Deliberate WHO regimens that differ from
+US practice were kept and annotated where useful.
+
+### Nelson (original notes)
 
 `textbook` entries paraphrase paediatric reference doses from **Nelson Textbook of Pediatrics,
 22nd ed. (2024)** with chapter and page numbers (19 of 24 drugs; obstetric/adult drugs are marked
@@ -172,6 +199,61 @@ own name, defaults, procedures and drug notes — stored locally and exportable/
 Drug pages show a "Local practice" card; the Plan C calculator has a SAM mode; the child-weight
 calculator follows the profile's formula; a Units tab converts glucose mg/dL ↔ mmol/L.
 All profile content is draft and must be verified against the national STG/EML.
+
+## Deploying
+
+### Static reference app (what is live now)
+
+```bash
+npm run check        # data integrity
+npm run build:static # writes docs/
+git add docs && git commit -m "Rebuild site" && git push
+```
+
+GitHub Pages serves `main` branch `/docs`. The build sets `window.MB_NO_SERVER`, which hides the
+account and network tabs and skips every API call, so the page is fully static.
+
+### Full app with accounts (Vercel + Turso) — free, no payment card
+
+The database layer uses **libSQL**, so it is still SQLite: a local file in development
+(`server/data/medbridge.db`) and [Turso](https://turso.tech) over the network in production. Every
+SQL statement is identical between the two.
+
+```bash
+turso auth login              # once, in a browser — free, no card
+npm run deploy:vercel         # creates the database, sets the env vars, deploys
+```
+
+The script creates the Turso database, pipes the URL and auth token straight into
+`vercel env add` so neither ever appears on screen, generates a 24-character administrator
+password, deploys, waits for `/api/healthz`, and prints the administrator credentials once.
+
+Environment variables it sets: `TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`, `NODE_ENV`,
+`MB_ADMIN_EMAIL`, `MB_ADMIN_PASSWORD`. With none of them set the server falls back to a local
+SQLite file, which is what `npm start` uses.
+
+### Full app with accounts (Fly.io)
+
+`flyctl` is installed and on the PATH, `Dockerfile` and `fly.toml` are ready, and
+`scripts/deploy-fly.sh` does the whole deployment. Two steps:
+
+```bash
+flyctl auth login          # once, in a browser — or `flyctl auth signup` for a new account
+npm run deploy:fly         # creates the app, the volume and the secret, then deploys
+```
+
+The script is safe to re-run: it skips whatever already exists and just redeploys the code. It
+creates the app (renaming it if `medbridge-et` is taken), a 1 GB volume in `jnb` (Johannesburg,
+the closest region to Ethiopia) for the SQLite database, generates a 24-character administrator
+password, builds on Fly's remote builder so no local Docker is needed, waits for
+`/api/healthz`, and prints the administrator credentials once.
+
+A payment card on the Fly account is required for the volume, even on the free allowance, so
+Vercel plus Turso above is the cheaper route.
+
+`render.yaml` covers Render as an alternative (a paid plan is needed for the persistent disk). In
+production the server refuses to start without a strong `MB_ADMIN_PASSWORD`, and sets Secure
+cookies, HSTS and a content security policy.
 
 ## Accounts, practice notes and the admin console
 

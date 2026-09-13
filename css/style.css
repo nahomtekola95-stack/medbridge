@@ -344,3 +344,5 @@ article.card.note { border: 1px solid var(--border); padding: 1rem 1.15rem; }
 .chip.case b { font-weight: 700; opacity: .7; font-size: .72rem; }
 .chip.case:hover { background: var(--primary-soft); color: var(--primary-ink); }
 .chip.case.r-avoid { background: var(--red-soft); color: var(--red); }
+.book-refs h4 { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; color: var(--primary-ink); text-transform: none; letter-spacing: 0; font-size: .95rem; font-family: var(--serif); }
+.book-refs ul { font-size: .93rem; margin: 0; }

@@ -85,6 +85,19 @@
   const searchText = (d) => [d.name, ...(d.aka || []), ...(d.tags || []), d.cls, CATEGORIES[d.cat], ...(d.indications || [])].join(" ").toLowerCase();
   const sortedDrugs = () => [...DRUG_DB].sort((a, b) => a.name.localeCompare(b.name));
 
+  /* ---------- textbook references (drugs and cases) ---------- */
+  function textbookHtml(refs, kind) {
+    if (!refs || !refs.length) return `<div class="card"><p class="muted" style="margin:0">No textbook references recorded for this ${kind} yet.</p></div>`;
+    const order = Object.keys(BOOKS);
+    const groups = order.map(k => [k, refs.filter(r => (r.book || "note") === k)]).filter(([, a]) => a.length);
+    return `<div class="callout info">${ic("book")}<div><strong>What the textbooks say.</strong> Doses and statements are paraphrased with chapter and page. The no-pump methods come from WHO and MSF field guidance; where a textbook is silent on low-resource practice, or differs from it, an editorial note says so.</div></div>` +
+      groups.map(([k, arr]) => {
+        const b = BOOKS[k];
+        return `<div class="card book-refs"><h4 style="margin-top:0">${ic("book")} ${esc(b.title)}${b.edition ? ` <span class="muted">· ${esc(b.edition)}${b.year ? " " + b.year : ""}</span>` : ""}</h4>
+          <ul>${arr.map(t => `<li>${esc(t.text)}${t.ref && k !== "note" ? ` <span class="muted small">— ${esc(t.ref)}</span>` : ""}</li>`).join("")}</ul></div>`;
+      }).join("");
+  }
+
   /* ---------- Drugs list ---------- */
   let listState = null;
   const initListState = () => (listState ||= { q: "", cat: "", ward: settings.ward, group: "", mode: settings.filterMode });
@@ -179,7 +192,7 @@
   function viewDrug(main, r) {
     const d = DRUG_DB.find(x => x.id === r.id);
     if (!d) { main.innerHTML = `<p class="empty">Drug not found.</p>`; return; }
-    const tabs = [["improvised", "No pump / improvised"], ["standard", "Standard"], ["safety", "Safety & paediatrics"], ["textbook", "Textbook"], ["sources", "Sources"]];
+    const tabs = [["improvised", "No pump / improvised"], ["standard", "Standard"], ["safety", "Safety & paediatrics"], ["textbook", "Textbooks"], ["sources", "Sources"]];
     const active = r.q.tab || "improvised";
     const glanceDoses = d.standard.items.slice(0, 3);
     main.innerHTML = `
@@ -238,10 +251,7 @@
           <div class="card"><h3>Cautions</h3>${listHtml(d.cautions) || "<p class='muted'>—</p>"}</div>
           ${d.paediatric?.length ? `<div class="card"><h3>${ic("baby")} Paediatric notes</h3>${listHtml(d.paediatric)}</div>` : ""}`;
       } else if (tab === "textbook") {
-        pane.innerHTML = d.textbook?.length ? `
-          <div class="callout info">${ic("book")}<div><strong>Nelson Textbook of Pediatrics, 22nd ed. (2024).</strong> Paediatric reference doses as stated in the textbook, paraphrased with page numbers. The improvised methods in this app are drawn from WHO/MSF sources; where Nelson gives no low-resource alternative this is stated.</div></div>
-          <div class="card"><ul>${d.textbook.map(t => `<li>${esc(t.text)} <span class="muted small">— ${esc(t.ref)}</span></li>`).join("")}</ul></div>`
-          : `<div class="card"><p class="muted">Not covered in Nelson Textbook of Pediatrics (adult or obstetric drug). See Sources.</p></div>`;
+        pane.innerHTML = textbookHtml(d.textbook, "drug");
       } else {
         pane.innerHTML = `<div class="card"><h3>Sources</h3><ul>${d.sources.map(s => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name)}</li>`).join("")}</ul>
           <h3 style="margin-top:.8rem">Review status</h3><p>${reviewChip(d)}${d.review.by ? ` by ${esc(d.review.by)}` : ""}</p>
@@ -295,6 +305,7 @@
             </a></li>`;
           }).join("")}</ul>
         </div>`).join("")}
+      ${c.textbook?.length ? `<h2>What the textbooks say</h2>${textbookHtml(c.textbook, "case")}` : ""}
       <div class="card"><h4 style="margin-top:0">Sources</h4><ul class="small">${(c.sources || []).map(x => `<li>${esc(x.name)}</li>`).join("")}</ul>
       <p class="small muted">Draft. This bundle lists which drugs are used and why; each drug page carries the doses, the no-pump methods and its own sources. Verify against your national protocol before use.</p></div>`;
     $("#print").addEventListener("click", () => window.print());
@@ -591,7 +602,7 @@
       <div class="callout warn">${ic("alert")}<div><strong>Draft content.</strong> Every drug entry in this build is marked “draft” and has not yet been verified by a pharmacist or physician. It must not be used for patient care until the review workflow in the README is completed.</div></div>
       <div class="card"><h3>Purpose</h3><p>A reference for trained health workers on how hospital-level medicines can be given safely when infusion pumps, syringe drivers, monitors or specific formulations are not available — using validated intermittent regimens, alternative routes, dilutions and gravity drip technique.</p>
         <h3>What it is not</h3><p>It does not replace national treatment guidelines, the prescriber's judgement, or a pharmacist. Doses are for adults unless stated; paediatric doses must be checked against the WHO Pocket Book, Nelson Textbook of Pediatrics or the national formulary.</p>
-        <h3>Sources</h3><p>WHO (Pocket Book of Hospital Care for Children 2013; Managing Complications in Pregnancy and Childbirth 2017; Guidelines for malaria 2023), MSF Clinical Guidelines and Essential Drugs, Nelson Textbook of Pediatrics 22nd ed. (2024) for paediatric reference doses, and the primary trials cited on each drug page.</p>
+        <h3>Sources</h3><p>WHO (Pocket Book of Hospital Care for Children 2013; Managing Complications in Pregnancy and Childbirth 2017; Guidelines for malaria 2023), MSF Clinical Guidelines and Essential Drugs, and five textbooks: Harrison's Principles of Internal Medicine 22nd ed. (2025), Williams Obstetrics 25th ed. (2018), Gabbe's Obstetrics 9th ed. (2025), Schwartz's Principles of Surgery 11th ed. (2019) and Nelson Textbook of Pediatrics 22nd ed. (2024), plus the primary trials cited on each page.</p>
         <h3>Privacy</h3><p>No account, no network calls, no analytics. Settings and the last weight you entered are stored only in this browser.</p></div>`;
   }
 

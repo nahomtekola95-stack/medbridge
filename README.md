@@ -109,7 +109,23 @@ list has a "By ward / By drug class" toggle; the drug page shows clickable ward 
 | Neonatal unit | 19 |
 | Outpatient & health post | 17 |
 
-## Textbook references
+## Textbook references (five books)
+
+Drugs and cases carry `textbook: [{ book, text, ref }]`, where `book` is a key of `window.BOOKS`
+(`js/books.js`): harrison, williams, gabbe, schwartz, nelson, or note. 493 references in total:
+Harrison 174, Gabbe 76, Williams 72, Schwartz 67, Nelson 97, editorial notes 7. All 50 drugs and
+27 of 35 cases are covered.
+
+Every Harrison, Williams, Gabbe and Schwartz reference was checked by script: its source excerpt
+had to be found on the cited PDF page, and numbers in the paraphrase that did not occur on that
+page were reviewed by hand. The review also surfaced 92 differences between the app and the
+books; the substantive ones were corrected (magnesium toxicity thresholds, antenatal steroid
+criteria, hydralazine interval, warfarin in pregnancy, burns cooling and fluids, permissive
+hypotension, ketamine in shock, potassium in DKA, bicarbonate in hyperkalaemia, Listeria cover,
+luminal amoebicide, quinine dose reduction and others). Deliberate WHO regimens that differ from
+US practice were kept and annotated where useful.
+
+### Nelson (original notes)
 
 `textbook` entries paraphrase paediatric reference doses from **Nelson Textbook of Pediatrics,
 22nd ed. (2024)** with chapter and page numbers (19 of 24 drugs; obstetric/adult drugs are marked

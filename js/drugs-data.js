@@ -71,7 +71,7 @@ window.DRUG_DB = [
   standard: {
     summary: "Pump-controlled infusion for induction; gravity infusion tables for PPH are already the WHO standard.",
     items: [
-      { label: "PPH prevention", text: "10 IU IM (or slow IV) within 1 minute of birth. First-line uterotonic (WHO)." },
+      { label: "PPH prevention", text: "10 IU IM within 1 minute of birth. First-line uterotonic (WHO). If given IV, dilute it and infuse — a 10-unit IV bolus causes profound transient hypotension, dangerous in a bleeding or cardiac patient (Williams)." },
       { label: "PPH treatment", text: "20 IU in 1 L NS or RL IV at 60 drops/min (≈180 mL/h), then 20 IU in 1 L at 40 drops/min. Do not exceed 3 L of oxytocin-containing fluid." },
       { label: "Induction / augmentation (pump)", text: "Start 1–2 mIU/min, increase every 30 min until 3 contractions per 10 min lasting >40 s; usual max 20–32 mIU/min." }
     ]
@@ -122,6 +122,15 @@ window.DRUG_DB = [
     { name: "WHO. Managing Complications in Pregnancy and Childbirth, 2nd ed. 2017", url: "https://www.who.int/publications/i/item/9789241565493" },
     { name: "WHO recommendations for the prevention and treatment of postpartum haemorrhage (2012) and updates (2018, 2020)" }
   ],
+  textbook: [
+    { book: "williams", text: "A 10-unit IV bolus causes marked transient hypotension; give oxytocin as a dilute continuous infusion or IM. Parkland: 20 units per liter at 10 to 20 mL/min after placental delivery until firm, then 1 to 2 mL/min; 10 units IM if no IV access.", ref: "Williams Obstetrics 25th ed. 2018, ch. 27 Vaginal Delivery, pdf p. 1156" },
+    { book: "williams", text: "Antidiuretic effect: at 20 mU/min or more free-water clearance falls; with large aqueous volumes water intoxication can cause convulsions, coma and death. Raise concentration rather than flow rate and use saline or lactated Ringer.", ref: "Williams Obstetrics 25th ed. 2018, ch. 26 Induction and Augmentation of Labor, pdf p. 1120" },
+    { book: "williams", text: "Induction/augmentation regimens: low-dose (0.5 to 1.5 mU/min) or high-dose (4.5 to 6 mU/min) starts; Parkland 6 mU/min increased by 6 mU/min every 40 minutes, UAB 2 mU/min increased every 15 minutes to 30 mU/min.", ref: "Williams Obstetrics 25th ed. 2018, ch. 26 Induction and Augmentation of Labor, pdf p. 1119" },
+    { book: "gabbe", text: "Prophylactic uterotonic, preferably oxytocin, recommended after all births (ACOG, WHO) as part of active third-stage management.", ref: "Gabbe's Obstetrics 9th ed., ch. 13 Normal Labor and Delivery, p. 271" },
+    { book: "gabbe", text: "PPH from atony: oxytocin first-line, starting 10-80 U in 500-1000 mL crystalloid IV; IM or intrauterine possible. Hemorrhage algorithm lists 10-40 U IV or 10 U IM.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 405" },
+    { book: "gabbe", text: "At caesarean, IV bolus 5-10 IU and/or infusion 10-40 IU are common; authors prefer infusion of at least 20 IU because of bolus side effects.", ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 431" },
+    { book: "gabbe", text: "Induction: low-dose protocols start 0.5-2 mU/min, increasing by 1-2 mU/min every 15-40 min; most protocols do not exceed 42 mU/min.", ref: "Gabbe's Obstetrics 9th ed., ch. 14 Induction of Labor, p. 285" }
+  ],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -143,7 +152,7 @@ window.DRUG_DB = [
     summary: "Zuspan regimen: IV loading then continuous IV maintenance by pump.",
     items: [
       { label: "Loading", text: "4 g IV over 5–20 min (as 20 % solution)." },
-      { label: "Maintenance (pump)", text: "1 g/h IV infusion for 24 h after delivery or after the last seizure, whichever is later." },
+      { label: "Maintenance (pump)", text: "1 g/h IV infusion (WHO/Zuspan) for 24 h after delivery or after the last seizure, whichever is later. Williams and Gabbe maintain at 2 g/h after a 4–6 g load, because 1 g/h often gives subtherapeutic levels; they keep 1 g/h for renal impairment." },
       { label: "Recurrent seizure", text: "2 g IV over 5 min (4 mL of 50 % diluted to 20 %)." },
       { label: "Severe asthma (adjunct)", text: "Adult 2 g IV over 20 min; child 40–50 mg/kg (max 2 g) over 20 min." }
     ]
@@ -194,7 +203,7 @@ window.DRUG_DB = [
       cautions: ["Verify against the national protocol (some protocols give 4 g IV + 6 g IM, or 14 g IM as loading)."]
     }
   ],
-  cautions: ["Toxicity: loss of reflexes (≈ 10 mmol/L), respiratory depression, cardiac arrest. Risk rises with oliguria/renal impairment.", "Do not combine with nifedipine without BP monitoring (hypotension)."],
+  cautions: ["Toxicity thresholds (serum magnesium): patellar reflexes are lost at about 7–10 mEq/L (9–12 mg/dL, roughly 3.5–5 mmol/L); respiratory depression at about 10–12 mEq/L (12–15 mg/dL, 5–6 mmol/L); cardiac arrest at about 25 mEq/L (30 mg/dL, 12.5 mmol/L). Loss of the knee reflex is the early warning — stop the magnesium before breathing is affected.", "Risk rises sharply with oliguria or renal impairment (creatinine above 1.2 mg/dL or urine under 30 mL/h for more than 4 h): give maintenance at a reduced dose or withhold, and check reflexes and breathing before every dose.", "Do not combine with nifedipine without BP monitoring (hypotension)."],
   antidote: "Calcium gluconate 10 %: 1 g (10 mL) IV over 10 min.",
   sources: [
     { name: "WHO. Managing Complications in Pregnancy and Childbirth, 2nd ed. 2017 (magnesium sulfate schedules)" },
@@ -202,10 +211,22 @@ window.DRUG_DB = [
     { name: "Pritchard JA et al. Am J Obstet Gynecol 1984 (Parkland regimen)" }
   ],
   textbook: [
-    { text: "Asthma adjunct: magnesium sulfate 25–75 mg/kg IV over 20 min, maximum 2 g; flushing, headache, rare hypotension.", ref: "Nelson 22nd ed. 2024, ch. 185, p. 1406" },
-    { text: "Resuscitation/torsades: 25–50 mg/kg IV/IO, max 2 g, over 10–20 min (faster in torsades); can cause hypotension.", ref: "Nelson 22nd ed. 2024, Table 79.x Resuscitation drugs, p. 563" },
-    { text: "Hypomagnesaemia: 25–50 mg/kg (0.05–0.1 mL/kg of 50 %) as slow IV infusion; may be given IM in neonates.", ref: "Nelson 22nd ed. 2024, ch. 69 Electrolyte disorders, p. 505" },
-    { text: "Eclampsia regimens are obstetric and not covered in Nelson; see WHO sources.", ref: "Editorial note" }
+    { book: "harrison", text: "Torsades de pointes: IV magnesium sulphate 1–2 g usually suppresses recurrences; if not, raise heart rate with isoproterenol or pacing and correct potassium.", ref: "Harrison 22nd ed. 2025, ch. 262 Polymorphic Ventricular Tachycardia and Ventricular Fibrillation, p. 1969" },
+    { book: "harrison", text: "Severe hypomagnesaemia: parenteral magnesium (IV MgCl2 preferred) as continuous infusion 50 mmol/day with normal renal function; reduce rate 50–75% if GFR reduced.", ref: "Harrison 22nd ed. 2025, ch. 421 Bone and Mineral Metabolism in Health and Disease, p. 3267" },
+    { book: "harrison", text: "IM magnesium sulfate is discouraged for hypomagnesaemia: painful and delivers little magnesium (2 mL of 50% = 4 mmol); monitor serum Mg every 12–24 h.", ref: "Harrison 22nd ed. 2025, ch. 421 Bone and Mineral Metabolism in Health and Disease, p. 3267" },
+    { book: "harrison", text: "Tetanus: magnesium sulfate is used for autonomic dysfunction (hypertension, tachycardia), aiming for plasma magnesium 2–4 mmol/L; as a muscle relaxant it is grouped with agents needing ventilation.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" },
+    { book: "williams", text: "Magnesium sulfate may be given by continuous IV infusion or by intermittent IM injection; doses for severe preeclampsia equal those for eclampsia, continued through labor and for 24 hours postpartum.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1624" },
+    { book: "williams", text: "IM route is as effective as IV where infusion technology is lacking. A recurrent convulsion is treated with an additional 2 g as 20 percent solution given slowly IV (once in a small woman, up to twice in a larger one).", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1625" },
+    { book: "williams", text: "Patellar reflexes disappear near 10 mEq/L and respiratory paralysis follows at 12 mEq/L or more. Calcium gluconate 1 g IV plus stopping magnesium reverses mild-moderate respiratory depression. Give the full 4 g load regardless of renal function; reduce only maintenance.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1627" },
+    { book: "williams", text: "For fetal neuroprotection (BEAM trial, 24 to 31 weeks) a 6 g IV bolus over 20 to 30 minutes then 2 g/h was used; Parkland gives neuroprotection from 24 0/7 to 27 6/7 weeks.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1825" },
+    { book: "gabbe", text: "Eclampsia: IV loading 6 g over 15-20 min then 2 g/h infusion recommended; if no IV access, IM regimen of 10 g (5 g each buttock) then 5 g every 4 h.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 733" },
+    { book: "gabbe", text: "Recurrent convulsion on magnesium: further 2 g IV bolus over 3-5 min; lorazepam 4 mg IV if seizures recur despite therapeutic magnesium.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 733" },
+    { book: "gabbe", text: "Renal impairment (creatinine >1.2 mg/dL or urine <30 mL/h for >4 h): after 4-6 g load, maintenance only 1 g/h. Reflexes lost at 7 mEq/L, respiratory depression at 10 mEq/L; continue 24 h after delivery and last fit.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 733" },
+    { book: "gabbe", text: "Fetal neuroprotection before 32 weeks: IV load 4-6 g over 30 min then 1-2 g/h; hourly reflexes and respiratory rate, calcium gluconate at hand.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 681" },
+    { book: "nelson", text: "Asthma adjunct: magnesium sulfate 25–75 mg/kg IV over 20 min, maximum 2 g; flushing, headache, rare hypotension.", ref: "Nelson 22nd ed. 2024, ch. 185, p. 1406" },
+    { book: "nelson", text: "Resuscitation/torsades: 25–50 mg/kg IV/IO, max 2 g, over 10–20 min (faster in torsades); can cause hypotension.", ref: "Nelson 22nd ed. 2024, Table 79.x Resuscitation drugs, p. 563" },
+    { book: "nelson", text: "Hypomagnesaemia: 25–50 mg/kg (0.05–0.1 mL/kg of 50 %) as slow IV infusion; may be given IM in neonates.", ref: "Nelson 22nd ed. 2024, ch. 69 Electrolyte disorders, p. 505" },
+    { book: "note", text: "Eclampsia regimens are obstetric and not covered in Nelson; see WHO sources.", ref: "Editorial note" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -296,9 +317,12 @@ window.DRUG_DB = [
     { name: "Weingart S. Push-dose pressors for immediate blood pressure control. Clin Exp Emerg Med 2015" }
   ],
   textbook: [
-    { text: "Anaphylaxis: epinephrine 1:1000, 0.01 mg/kg IM to the lateral thigh, maximum 0.5 mg; children ≥ 25 kg receive 0.3 mg, older adolescents 0.5 mg; repeat every 5–15 min if symptoms persist. IV epinephrine only if no response to multiple IM doses.", ref: "Nelson 22nd ed. 2024, ch. 190 Anaphylaxis, p. 1437" },
-    { text: "Post-arrest / cardiac output support: epinephrine infusion 0.01–1 μg/kg/min IV/IO (vasodilator at low, vasoconstrictor at medium–high doses). Infusion rate (mL/h) = weight (kg) × dose (μg/kg/min) × 60 ÷ concentration (μg/mL) — the formula used by this app's calculator.", ref: "Nelson 22nd ed. 2024, Table 79.7, p. 568" },
-    { text: "Croup: 5 mL of 1:1000 L-epinephrine nebulised is as effective and safe as racemic epinephrine; duration under 2 h, observe for rebound.", ref: "Nelson 22nd ed. 2024, ch. 433 Acute inflammatory upper airway obstruction, p. 2571" }
+    { book: "harrison", text: "Anaphylaxis: first-choice treatment is IM epinephrine 0.3-0.5 mL of the 1 mg/mL (1:1000) solution, repeated every 5-20 min as needed for severe reactions; delay beyond 20 min predicts poor outcome.", ref: "Harrison 22nd ed. 2025, ch. 364 Anaphylaxis, p. 2813" },
+    { book: "harrison", text: "Cardiac arrest: epinephrine 1 mg IV or IO every 3-5 min once advanced life support access is established.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2336" },
+    { book: "harrison", text: "Septic shock: epinephrine is the third-line vasopressor after norepinephrine and vasopressin; it carries more tachyarrhythmia, ischaemia and acidosis than norepinephrine.", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2323" },
+    { book: "nelson", text: "Anaphylaxis: epinephrine 1:1000, 0.01 mg/kg IM to the lateral thigh, maximum 0.5 mg; children ≥ 25 kg receive 0.3 mg, older adolescents 0.5 mg; repeat every 5–15 min if symptoms persist. IV epinephrine only if no response to multiple IM doses.", ref: "Nelson 22nd ed. 2024, ch. 190 Anaphylaxis, p. 1437" },
+    { book: "nelson", text: "Post-arrest / cardiac output support: epinephrine infusion 0.01–1 μg/kg/min IV/IO (vasodilator at low, vasoconstrictor at medium–high doses). Infusion rate (mL/h) = weight (kg) × dose (μg/kg/min) × 60 ÷ concentration (μg/mL) — the formula used by this app's calculator.", ref: "Nelson 22nd ed. 2024, Table 79.7, p. 568" },
+    { book: "nelson", text: "Croup: 5 mL of 1:1000 L-epinephrine nebulised is as effective and safe as racemic epinephrine; duration under 2 h, observe for rebound.", ref: "Nelson 22nd ed. 2024, ch. 433 Acute inflammatory upper airway obstruction, p. 2571" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -371,9 +395,11 @@ window.DRUG_DB = [
     { name: "MSF Clinical Guidelines, Shock chapter" }
   ],
   textbook: [
-    { text: "Shock: norepinephrine 0.05–2.0 μg/kg/min — potent vasoconstriction, raises BP via systemic vascular resistance; contractility gain may be blunted by afterload.", ref: "Nelson 22nd ed. 2024, ch. 85 Shock, Table (vasoactive agents), p. 610" },
-    { text: "Post-arrest table lists norepinephrine 0.01–1 μg/kg/min IV/IO as vasopressor with weak inotropy.", ref: "Nelson 22nd ed. 2024, Table 79.7, p. 568" },
-    { text: "Nelson does not describe peripheral gravity administration; the peripheral-line method in this app follows Surviving Sepsis 2021 and MSF practice.", ref: "Editorial note" }
+    { book: "harrison", text: "Septic shock: after adequate fluids, start a continuous norepinephrine infusion as first-line vasopressor targeting MAP of at least 65 mmHg; add vasopressin second, epinephrine third.", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2323" },
+    { book: "harrison", text: "Norepinephrine is the first-choice vasopressor in septic (distributive) shock because of its alpha-1 and beta-1 effects.", ref: "Harrison 22nd ed. 2025, ch. 314 Approach to the Patient with Shock, p. 2315" },
+    { book: "nelson", text: "Shock: norepinephrine 0.05–2.0 μg/kg/min — potent vasoconstriction, raises BP via systemic vascular resistance; contractility gain may be blunted by afterload.", ref: "Nelson 22nd ed. 2024, ch. 85 Shock, Table (vasoactive agents), p. 610" },
+    { book: "nelson", text: "Post-arrest table lists norepinephrine 0.01–1 μg/kg/min IV/IO as vasopressor with weak inotropy.", ref: "Nelson 22nd ed. 2024, Table 79.7, p. 568" },
+    { book: "note", text: "Nelson does not describe peripheral gravity administration; the peripheral-line method in this app follows Surviving Sepsis 2021 and MSF practice.", ref: "Editorial note" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -423,8 +449,10 @@ window.DRUG_DB = [
   calc: { type: "infusion", amount: 200, amountUnit: "mg", volumeMl: 250, doseUnit: "mcg/kg/min", range: [2, 20], defaultDose: 5, dropFactor: 60 },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "De Backer D et al. Dopamine versus norepinephrine in shock. NEJM 2010" }],
   textbook: [
-    { text: "Dopamine 3–20 μg/kg/min raises contractility; risk of arrhythmias at high doses; significant peripheral vasoconstriction above 10 μg/kg/min.", ref: "Nelson 22nd ed. 2024, ch. 85 Shock, p. 610" },
-    { text: "Post-arrest: dopamine 2–20 μg/kg/min IV/IO — inotrope/chronotrope, vasodilator at low and vasoconstrictor at high doses.", ref: "Nelson 22nd ed. 2024, Table 79.7, p. 568" }
+    { book: "harrison", text: "Dopamine has no first-line role in distributive shock; a trial showed no survival benefit, more arrhythmias, and higher mortality in the cardiogenic shock subgroup.", ref: "Harrison 22nd ed. 2025, ch. 314 Approach to the Patient with Shock, p. 2315" },
+    { book: "harrison", text: "Cardiogenic shock guideline algorithm: when a vasopressor is needed for persistent hypotension, norepinephrine is preferable to dopamine.", ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2328" },
+    { book: "nelson", text: "Dopamine 3–20 μg/kg/min raises contractility; risk of arrhythmias at high doses; significant peripheral vasoconstriction above 10 μg/kg/min.", ref: "Nelson 22nd ed. 2024, ch. 85 Shock, p. 610" },
+    { book: "nelson", text: "Post-arrest: dopamine 2–20 μg/kg/min IV/IO — inotrope/chronotrope, vasodilator at low and vasoconstrictor at high doses.", ref: "Nelson 22nd ed. 2024, Table 79.7, p. 568" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -465,7 +493,7 @@ window.DRUG_DB = [
       ],
       monitor: ["Glucose hourly", "Potassium every 2–4 h if available; if not, ECG or watch for weakness/arrhythmia", "Fluid balance, level of consciousness (cerebral oedema in children)", "Ketones (urine) 2–4 hourly"],
       cautions: [
-        "POTASSIUM: hold insulin if K < 3.3 mmol/L (give K first). Add 20–40 mmol KCl per litre of fluid once K < 5.5 and patient passing urine.",
+        "POTASSIUM: hold insulin if K < 3.3 mmol/L (give K first). Once potassium is 3.3–5.0 mmol/L and the patient is passing urine, add potassium to every litre — Harrison uses 10–20 mmol/L, other protocols up to 40 mmol/L when potassium is at the low end. Above 5.0, give no potassium yet and recheck in 2 h.",
         "Where no potassium result is possible, most protocols still add 20 mmol/L after the first litre if urine output is good — verify local protocol."
       ]
     },
@@ -508,11 +536,19 @@ window.DRUG_DB = [
     { name: "MSF Clinical Guidelines; WHO Pocket Book 2013" }
   ],
   textbook: [
-    { text: "DKA: continuous IV insulin infusion at 0.05–0.1 unit/kg/h starting 1 hour after fluids are begun; this approximates maximal physiological insulin output. Hourly glucose, neurological status at least hourly, electrolytes every 2 h, ECG for T-wave changes.", ref: "Nelson 22nd ed. 2024, ch. 629 Diabetes mellitus, Fig. 629.5 and text, pp. 3525–3526" },
-    { text: "Hyperosmolar hyperglycaemic state: start insulin after the initial fluid bolus only when glucose no longer falls with fluid alone; 0.025–0.05 unit/kg/h titrated to a fall of 50–75 mg/dL/h (2.8–4.2 mmol/L/h).", ref: "Nelson 22nd ed. 2024, ch. 629, p. 3528" },
-    { text: "Transition to subcutaneous insulin when DKA has resolved (total CO2 > 15 mEq/L, pH > 7.30, sodium stable, anion gap closed, no vomiting): give long-acting insulin, stop the drip about 30 min later.", ref: "Nelson 22nd ed. 2024, ch. 629, p. 3527" },
-    { text: "Hyperkalaemia (K > 7 or ECG changes): regular insulin 0.1 unit/kg with 50 % glucose 1 mL/kg over 1 hour, together with calcium gluconate and bicarbonate.", ref: "Nelson 22nd ed. 2024, ch. 573 Renal failure, p. 3245" },
-    { text: "Nelson describes IV infusion only for DKA. The hourly IM regimen in this app is from ADA (Kitabchi 2009) and ISPAD 2022 low-resource guidance.", ref: "Editorial note" }
+    { book: "harrison", text: "DKA: regular insulin 0.1 units/kg IV bolus, then 0.1 units/kg/h continuous IV infusion; increase two- to threefold if no response by 2-4 h.", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" },
+    { book: "harrison", text: "DKA: if initial potassium is below 3.3 mmol/L, withhold insulin until potassium has been corrected.", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" },
+    { book: "harrison", text: "Mild to moderate DKA may be treated with SC rapid-acting analogue 0.1 unit/kg then 0.1 unit/kg hourly or 0.2 unit/kg every 2 h, with close monitoring; continue insulin with 5-10% dextrose.", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" },
+    { book: "harrison", text: "Hyperkalaemia: 10 units IV regular insulin followed immediately by 50 mL of 50% dextrose (25 g); onset 10-20 min, lasts 4-6 h; follow with 10% dextrose 50-75 mL/h.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "williams", text: "DKA in pregnancy (Table 57-7): low-dose IV insulin with 0.2 to 0.4 U/kg loading dose then 2 to 10 U/h; isotonic saline 1 L in first hour, 4 to 6 L over 12 hours; add 5 percent dextrose when glucose reaches 250 mg/dL.", ref: "Williams Obstetrics 25th ed. 2018, ch. 57 Diabetes Mellitus, pdf p. 2448" },
+    { book: "williams", text: "Pregnant women develop ketoacidosis at lower glucose levels than nonpregnant women; vigorous crystalloid rehydration is a cornerstone.", ref: "Williams Obstetrics 25th ed. 2018, ch. 57 Diabetes Mellitus, pdf p. 2448" },
+    { book: "gabbe", text: "DKA in pregnancy: regular insulin IV, consider 0.1-0.2 U/kg bolus, infusion 0.1 U/kg/h; at glucose 200 mg/dL reduce to 0.05-0.1 U/kg/h and switch to D5 0.45% saline.", ref: "Gabbe's Obstetrics 9th ed., ch. 45 Diabetes Mellitus Complicating Pregnancy, p. 878" },
+    { book: "gabbe", text: "Pregnant women can develop DKA at glucose below 200 mg/dL (euglycaemic DKA); pH ≤7.3 confirms.", ref: "Gabbe's Obstetrics 9th ed., ch. 45 Diabetes Mellitus Complicating Pregnancy, p. 878" },
+    { book: "nelson", text: "DKA: continuous IV insulin infusion at 0.05–0.1 unit/kg/h starting 1 hour after fluids are begun; this approximates maximal physiological insulin output. Hourly glucose, neurological status at least hourly, electrolytes every 2 h, ECG for T-wave changes.", ref: "Nelson 22nd ed. 2024, ch. 629 Diabetes mellitus, Fig. 629.5 and text, pp. 3525–3526" },
+    { book: "nelson", text: "Hyperosmolar hyperglycaemic state: start insulin after the initial fluid bolus only when glucose no longer falls with fluid alone; 0.025–0.05 unit/kg/h titrated to a fall of 50–75 mg/dL/h (2.8–4.2 mmol/L/h).", ref: "Nelson 22nd ed. 2024, ch. 629, p. 3528" },
+    { book: "nelson", text: "Transition to subcutaneous insulin when DKA has resolved (total CO2 > 15 mEq/L, pH > 7.30, sodium stable, anion gap closed, no vomiting): give long-acting insulin, stop the drip about 30 min later.", ref: "Nelson 22nd ed. 2024, ch. 629, p. 3527" },
+    { book: "nelson", text: "Hyperkalaemia (K > 7 or ECG changes): regular insulin 0.1 unit/kg with 50 % glucose 1 mL/kg over 1 hour, together with calcium gluconate and bicarbonate.", ref: "Nelson 22nd ed. 2024, ch. 573 Renal failure, p. 3245" },
+    { book: "note", text: "Nelson describes IV infusion only for DKA. The hourly IM regimen in this app is from ADA (Kitabchi 2009) and ISPAD 2022 low-resource guidance.", ref: "Editorial note" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -556,7 +592,7 @@ window.DRUG_DB = [
       best_for: "Moderate hypokalaemia, DKA, or when oral impossible.",
       requires: ["iv", "macro_set"],
       steps: [
-        "Take the bag DOWN from the stand. Inject 20 mmol (10 mL of 15 %) through the additive port of a 500 mL NS/D5 bag (= 40 mmol/L, the peripheral maximum). Invert the bag 10 times. Label boldly: “KCl 20 mmol added — DO NOT BOLUS”.",
+        "Take the bag DOWN from the stand. Inject 20 mmol (10 mL of 15 %) through the additive port of a 500 mL 0.9 % saline bag — NOT dextrose, whose insulin surge drives potassium into cells and can worsen hypokalaemia acutely (Harrison) — (= 40 mmol/L, the peripheral maximum). Invert the bag 10 times. Label boldly: “KCl 20 mmol added — DO NOT BOLUS”.",
         "Run over 2–4 h (5–10 mmol/h) = 125–250 mL/h = 42–83 drops/min with a 20 gtt/mL set.",
         "Use a burette if available and fill 1 h at a time.",
         "Recheck K after every 40 mmol given (or at least daily where labs are scarce)."
@@ -587,7 +623,13 @@ window.DRUG_DB = [
   cautions: ["Fatal arrhythmia with rapid IV. Renal failure: halve rates, monitor."],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "BNF: potassium chloride IV administration" }, { name: "MSF Essential Drugs" }],
   textbook: [
-    { text: "DKA/HHS protocol: when serum K+ is below 5 mEq/L, begin replacement with 40 mEq/L of potassium in the IV fluids; monitor electrolytes every 2–4 h.", ref: "Nelson 22nd ed. 2024, ch. 629, Fig. 629.5/Table, p. 3526" }
+    { book: "harrison", text: "Peripheral IV KCl is usually 20-40 mmol per litre; higher concentrations cause phlebitis. Severe (<2.5) or critical hypokalaemia: central vein with cardiac monitoring at 10-20 mmol/h, limited amounts such as 20 mmol in 100 mL saline.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 357" },
+    { book: "harrison", text: "IV KCl should always be given in saline, not dextrose, because dextrose-induced insulin release can acutely worsen hypokalaemia.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 357" },
+    { book: "harrison", text: "Reserve IV potassium for patients who cannot use the enteral route or have paralysis/arrhythmia; replace deficits gradually over 24-48 h with frequent potassium checks.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 357" },
+    { book: "schwartz", text: "Oral repletion suffices for mild asymptomatic hypokalaemia; IV usually no more than 10 mEq/h unmonitored, up to 40 mEq/h with continuous ECG; caution with oliguria or renal impairment.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 95" },
+    { book: "schwartz", text: "Protocol (K <4.0): enteral KCl 40 mEq once; not tolerating enteral, 20 mEq IV q2h x2; symptomatic, 20 mEq IV q1h x4; recheck 2 h after infusion.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 96" },
+    { book: "schwartz", text: "Correct hypomagnesaemia, otherwise potassium repletion is difficult.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 90" },
+    { book: "nelson", text: "DKA/HHS protocol: when serum K+ is below 5 mEq/L, begin replacement with 40 mEq/L of potassium in the IV fluids; monitor electrolytes every 2–4 h.", ref: "Nelson 22nd ed. 2024, ch. 629, Fig. 629.5/Table, p. 3526" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -648,9 +690,11 @@ window.DRUG_DB = [
   cautions: ["Look for pneumothorax if sudden deterioration.", "Sedation contraindicated."],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013, ch. 4 (spacer instructions)" }, { name: "GINA 2024; BTS/SIGN asthma guideline" }],
   textbook: [
-    { text: "Acute asthma: albuterol MDI (90 μg/puff) 2–8 puffs with spacer/holding chamber, as often as every 20 min for 3 doses, then every 1–4 h as needed. Nebulised: 0.15 mg/kg (minimum 2.5 mg) every 20 min × 3, then 0.15–0.3 mg/kg (max 10 mg) every 1–4 h, or continuous 0.5 mg/kg/h.", ref: "Nelson 22nd ed. 2024, ch. 185 Childhood asthma, Table 185.x (ED/hospital management), p. 1405" },
-    { text: "Adjuncts: magnesium sulfate 25–75 mg/kg IV over 20 min (max 2 g); terbutaline IV 2–10 μg/kg loading then 0.1–0.4 μg/kg/min where available.", ref: "Nelson 22nd ed. 2024, ch. 185, p. 1406" },
-    { text: "Home action plan: 2–4 puffs (or nebuliser) every 20 min up to 3 times in 1 hour, then reassess.", ref: "Nelson 22nd ed. 2024, ch. 185, Fig. (asthma action plan), p. 1407" }
+    { book: "harrison", text: "Hyperkalaemia: nebulised albuterol 10-20 mg in 4 mL saline over 10 min; onset ~30 min, peak ~90 min; about 20% of ESRD patients do not respond, so use with insulin-glucose.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "harrison", text: "Asthma attack in urgent care: nebulised beta2-agonist up to every 20 min; IV corticosteroids if no response in 1-2 h; oxygen for hypoxaemia; nebulised anticholinergic may add bronchodilation.", ref: "Harrison 22nd ed. 2025, ch. 298 Asthma, p. 2227" },
+    { book: "nelson", text: "Acute asthma: albuterol MDI (90 μg/puff) 2–8 puffs with spacer/holding chamber, as often as every 20 min for 3 doses, then every 1–4 h as needed. Nebulised: 0.15 mg/kg (minimum 2.5 mg) every 20 min × 3, then 0.15–0.3 mg/kg (max 10 mg) every 1–4 h, or continuous 0.5 mg/kg/h.", ref: "Nelson 22nd ed. 2024, ch. 185 Childhood asthma, Table 185.x (ED/hospital management), p. 1405" },
+    { book: "nelson", text: "Adjuncts: magnesium sulfate 25–75 mg/kg IV over 20 min (max 2 g); terbutaline IV 2–10 μg/kg loading then 0.1–0.4 μg/kg/min where available.", ref: "Nelson 22nd ed. 2024, ch. 185, p. 1406" },
+    { book: "nelson", text: "Home action plan: 2–4 puffs (or nebuliser) every 20 min up to 3 times in 1 hour, then reassess.", ref: "Nelson 22nd ed. 2024, ch. 185, Fig. (asthma action plan), p. 1407" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -691,7 +735,9 @@ window.DRUG_DB = [
   calc: { type: "weight", dosePerKg: 5, doseUnit: "mg", conc: 25, concUnit: "mg/mL", maxDose: 500, label: "Loading / 6-hourly dose (5 mg/kg)" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013, p. 98–99" }, { name: "BNF: aminophylline" }],
   textbook: [
-    { text: "Nelson's acute asthma table lists IV terbutaline, not aminophylline, as the parenteral bronchodilator; theophylline is not part of the recommended emergency regimen in the US. Aminophylline remains on the WHO EML for settings without IV β2-agonists.", ref: "Editorial note" }
+    { book: "harrison", text: "Theophylline is now rarely used for asthma because of its narrow therapeutic window, drug interactions and weaker bronchodilation than other agents.", ref: "Harrison 22nd ed. 2025, ch. 298 Asthma, p. 2224" },
+    { book: "harrison", text: "Severe theophylline poisoning: multiple-dose activated charcoal and haemodialysis should be considered.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3709" },
+    { book: "note", text: "Nelson's acute asthma table lists IV terbutaline, not aminophylline, as the parenteral bronchodilator; theophylline is not part of the recommended emergency regimen in the US. Aminophylline remains on the WHO EML for settings without IV β2-agonists.", ref: "Editorial note" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -758,8 +804,16 @@ window.DRUG_DB = [
   calc: { type: "weight", dosePerKg: 7.5, doseUnit: "mg", conc: 40, concUnit: "mg/mL", label: "Child once-daily dose (7.5 mg/kg)" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "WHO. Managing possible serious bacterial infection in young infants when referral is not feasible, 2015" }],
   textbook: [
-    { text: "Children: gentamicin 7.5 mg/kg IM or IV every 24 h; adults 5 mg/kg IM or IV every 24 h (cited for plague; same once-daily principle).", ref: "Nelson 22nd ed. 2024, ch. 246 Plague, p. 1795" },
-    { text: "Once-daily gentamicin 5–7.5 mg/kg/day IM/IV.", ref: "Nelson 22nd ed. 2024, ch. 247 Brucellosis, Table, p. 1809" }
+    { book: "harrison", text: "Adult hospital-acquired or ventilator pneumonia with resistant gram-negative risk: gentamicin 5–7 mg/kg IV once every 24 h as the aminoglycoside option.", ref: "Harrison 22nd ed. 2025, ch. 131 Pneumonia, p. 1032" },
+    { book: "harrison", text: "Concentration-dependent killing and a post-antibiotic effect justify extended-interval dosing: one larger daily dose rather than several smaller doses.", ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1176" },
+    { book: "harrison", text: "In CNS infection (e.g. Listeria, with ampicillin) gentamicin 7.5 mg/kg/day IV divided 8-hourly, adjusted to levels: peak 5–8 µg/mL, trough below 2 µg/mL.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1121" },
+    { book: "williams", text: "For pelvic infection, once-daily and multiple-daily gentamicin dosing give adequate levels and similar cure rates; Parkland does not routinely monitor levels with normal renal function. With reduced GFR consider non-aminoglycoside combinations.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1475" },
+    { book: "gabbe", text: "Chorioamnionitis: gentamicin 2 mg/kg load then 1.5 mg/kg every 8 h, or 5 mg/kg every 24 h, with ampicillin.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1118" },
+    { book: "gabbe", text: "Postpartum endometritis: clindamycin 900 mg every 8 h plus gentamicin 5 mg/kg every 24 h or 1.5 mg/kg every 8 h; add ampicillin 2 g every 6 h if GBS colonised.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1120" },
+    { book: "schwartz", text: "Aminoglycosides, vancomycin and furosemide contribute directly to nephrotoxicity (acute tubular necrosis).", ref: "Schwartz's Principles of Surgery 11th ed., ch. 12 Quality, Patient Safety, Assessments of Care, and Complications, p. 423" },
+    { book: "schwartz", text: "For penicillin- and cephalosporin-allergic patients, clindamycin or vancomycin with gentamicin (or ciprofloxacin/aztreonam) is a reasonable prophylaxis alternative; aminoglycoside may be added where Gram-negatives are likely.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 9 Wound Healing, p. 288" },
+    { book: "nelson", text: "Children: gentamicin 7.5 mg/kg IM or IV every 24 h; adults 5 mg/kg IM or IV every 24 h (cited for plague; same once-daily principle).", ref: "Nelson 22nd ed. 2024, ch. 246 Plague, p. 1795" },
+    { book: "nelson", text: "Once-daily gentamicin 5–7.5 mg/kg/day IM/IV.", ref: "Nelson 22nd ed. 2024, ch. 247 Brucellosis, Table, p. 1809" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -810,7 +864,13 @@ window.DRUG_DB = [
   calc: { type: "weight", dosePerKg: 80, doseUnit: "mg", conc: 250, concUnit: "mg/mL", maxDose: 2000, label: "Child once-daily dose (80 mg/kg, 250 mg/mL IM)" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "MSF Essential Drugs — ceftriaxone" }],
   textbook: [
-    { text: "Neonatal gonococcal infection: ceftriaxone 25–50 mg/kg IV or IM once daily (ophthalmia: single dose; disseminated/meningitis: 7–14 days).", ref: "Nelson 22nd ed. 2024, ch. 238 Gonococcal infections, Table 238.1, p. 1751" }
+    { book: "harrison", text: "Bacterial meningitis empirical dosing: adult ceftriaxone 4 g/day IV given 12-hourly (2 g q12h); child over 1 month 100 mg/kg/day 12-hourly.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1121" },
+    { book: "harrison", text: "Hospitalised community-acquired pneumonia: ceftriaxone 1–2 g/day as the beta-lactam, combined with a macrolide (or a respiratory fluoroquinolone).", ref: "Harrison 22nd ed. 2025, ch. 131 Pneumonia, p. 1028" },
+    { book: "harrison", text: "Meningococcal meningitis/septicaemia is usually treated for 7 days (3–5 days may suffice); a single ceftriaxone dose has been used successfully in resource-poor settings.", ref: "Harrison 22nd ed. 2025, ch. 160 Meningococcal Infections, p. 1249" },
+    { book: "schwartz", text: "Prophylaxis principles: agent active against site flora, first dose within 30 min before incision, redose in long operations, no more than 24 h after surgery.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 158" },
+    { book: "schwartz", text: "Ceftriaxone listed for open/high-risk biliary and orthopaedic prophylaxis, and with metronidazole for colorectal or obstructed small bowel surgery.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 168" },
+    { book: "schwartz", text: "SIS 2016 intra-abdominal infection: at most 24 h for bowel injury operated within 12 h, gastroduodenal perforation within 24 h, gangrenous non-perforated appendix/gallbladder; perforated appendicitis limited to 4 days.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 168" },
+    { book: "nelson", text: "Neonatal gonococcal infection: ceftriaxone 25–50 mg/kg IV or IM once daily (ophthalmia: single dose; disseminated/meningitis: 7–14 days).", ref: "Nelson 22nd ed. 2024, ch. 238 Gonococcal infections, Table 238.1, p. 1751" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -875,8 +935,12 @@ window.DRUG_DB = [
   calc: { type: "weight", dosePerKg: 2.4, doseUnit: "mg", conc: 10, concUnit: "mg/mL", label: "IV dose (2.4 mg/kg; use 3 mg/kg if < 20 kg) at 10 mg/mL" },
   sources: [{ name: "WHO Guidelines for malaria, 2023 (severe malaria)", url: "https://www.who.int/publications/i/item/guidelines-for-malaria" }],
   textbook: [
-    { text: "Severe malaria (all species): artesunate 2.4 mg/kg/dose IV at 0, 12 and 24 h, then daily (3 days), followed by artemether–lumefantrine (preferred), atovaquone–proguanil, or quinine plus doxycycline/clindamycin.", ref: "Nelson 22nd ed. 2024, ch. 336 Malaria, Table (treatment), p. 2136" },
-    { text: "Interim treatment while awaiting IV artesunate: oral artemether–lumefantrine, atovaquone–proguanil or quinine.", ref: "Nelson 22nd ed. 2024, ch. 336, Fig. (management algorithm)" }
+    { book: "harrison", text: "Severe falciparum malaria: artesunate 2.4 mg/kg IV stat, then at 12 and 24 h, then daily if needed; children under 20 kg 3 mg/kg per dose.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
+    { book: "harrison", text: "Artesunate is given IV but is also rapidly absorbed IM; oily IM artemether is erratically absorbed and less effective.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
+    { book: "harrison", text: "Switch to oral therapy as soon as fluids are tolerated and give a full 3-day ACT course; avoid mefloquine as follow-on.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
+    { book: "harrison", text: "In non-immune patients with hyperparasitaemia, sudden haemolysis can occur many days after artesunate treatment.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1765" },
+    { book: "nelson", text: "Severe malaria (all species): artesunate 2.4 mg/kg/dose IV at 0, 12 and 24 h, then daily (3 days), followed by artemether–lumefantrine (preferred), atovaquone–proguanil, or quinine plus doxycycline/clindamycin.", ref: "Nelson 22nd ed. 2024, ch. 336 Malaria, Table (treatment), p. 2136" },
+    { book: "nelson", text: "Interim treatment while awaiting IV artesunate: oral artemether–lumefantrine, atovaquone–proguanil or quinine.", ref: "Nelson 22nd ed. 2024, ch. 336, Fig. (management algorithm)" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -895,7 +959,7 @@ window.DRUG_DB = [
     summary: "Loading dose then 8-hourly infusions, each over 4 h, by pump.",
     items: [
       { label: "Loading", text: "20 mg salt/kg (max 1.2 g) in 10 mL/kg D5W or NS over 4 h. Omit if quinine/quinidine/mefloquine in the last 24 h." },
-      { label: "Maintenance", text: "10 mg/kg over 4 h every 8 h (start 8 h after the start of the loading dose). Switch to oral 10 mg/kg 8-hourly when able, to complete 7 days, plus doxycycline or clindamycin — or a full ACT course." }
+      { label: "Maintenance", text: "10 mg/kg over 4 h every 8 h (start 8 h after the start of the loading dose). Switch to oral 10 mg/kg 8-hourly when able, to complete 7 days, plus doxycycline or clindamycin — or a full ACT course. If the patient still needs IV quinine after 48 h, or has acute kidney injury, reduce each maintenance dose by one-third to one-half to avoid accumulation (Harrison)." }
     ]
   },
   improvised: [
@@ -931,7 +995,11 @@ window.DRUG_DB = [
   calc: { type: "weight", dosePerKg: 10, doseUnit: "mg", conc: 300, concUnit: "mg/mL", maxDose: 600, label: "Maintenance dose (10 mg/kg); loading = double" },
   sources: [{ name: "WHO Guidelines for malaria 2023" }, { name: "WHO Pocket Book of Hospital Care for Children 2013" }],
   textbook: [
-    { text: "Nelson (US practice) uses IV artesunate for severe malaria and oral quinine only as follow-on; IV quinine dosing is not given. The IV/IM quinine regimens in this app follow WHO 2023.", ref: "Editorial note" }
+    { book: "harrison", text: "Severe malaria if artesunate/artemether unavailable: quinine dihydrochloride 20 mg salt/kg infused over 4 h, then 10 mg salt/kg over 2–8 h every 8 h.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
+    { book: "harrison", text: "Omit the loading dose only if therapeutic quinine doses were definitely given in the previous 24 h.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
+    { book: "harrison", text: "Rapid injection causes dangerous hypotension: give by rate-controlled infusion only; if impossible, deep IM injection into the anterior thigh.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
+    { book: "harrison", text: "Hypoglycaemia is a common major toxicity; cinchonism and modest QT prolongation are common minor effects.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1771" },
+    { book: "note", text: "Nelson (US practice) uses IV artesunate for severe malaria and oral quinine only as follow-on; IV quinine dosing is not given. The IV/IM quinine regimens in this app follow WHO 2023.", ref: "Editorial note" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -998,9 +1066,13 @@ window.DRUG_DB = [
   calc: { type: "weight", dosePerKg: 5, doseUnit: "mL", conc: 1, concUnit: "mL/mL", label: "Child bolus: 5 mL/kg of 10 % glucose" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013 (hypoglycaemia; sublingual sugar)" }, { name: "WHO. Updates on the management of severe acute malnutrition, 2013" }, { name: "JBDS. Hospital management of hypoglycaemia in adults with diabetes, 2023" }],
   textbook: [
-    { text: "Hypoglycaemia: if symptomatic or unable to take oral intake, 2 mL/kg of 10 % dextrose (D10W) IV bolus, then a dextrose infusion at 5–6 mg/kg/min (infants) or 2–3 mg/kg/min (older children) to prevent recurrence. Conscious child: 15 g rapid-acting carbohydrate (e.g. 4 oz juice).", ref: "Nelson 22nd ed. 2024, ch. 113 Hypoglycemia, p. 983" },
-    { text: "Resuscitation dosing: dextrose 0.5–1 g/kg IV/IO = D10W 5–10 mL/kg, D25W 2–4 mL/kg, D50W 1–2 mL/kg; recheck serial glucose as hypoglycaemia can recur.", ref: "Nelson 22nd ed. 2024, Table 79.x, p. 563" },
-    { text: "Glucagon IM: 0.5 mg if < 20 kg, 1.0 mg if > 20 kg; intranasal 3 mg. Often causes vomiting.", ref: "Nelson 22nd ed. 2024, ch. 629, p. 3534" }
+    { book: "harrison", text: "Hypoglycaemia unable to take oral carbohydrate: IV glucose 25 g, followed by a glucose infusion guided by serial plasma glucose; oral 15-20 g if able to swallow.", ref: "Harrison 22nd ed. 2025, ch. 418 Hypoglycemia, p. 3236" },
+    { book: "harrison", text: "If IV access is impractical, glucagon 1 mg SC or IM in adults; ineffective in glycogen-depleted patients such as alcohol-induced hypoglycaemia. Patients should eat as soon as practical.", ref: "Harrison 22nd ed. 2025, ch. 418 Hypoglycemia, p. 3236" },
+    { book: "harrison", text: "Poisoned patients with altered mental status: consider IV glucose (unless glucose documented normal), naloxone and thiamine.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3707" },
+    { book: "harrison", text: "Hyperkalaemia: never give a D50 bolus without insulin, because hypertonic glucose can acutely worsen hyperkalaemia.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "nelson", text: "Hypoglycaemia: if symptomatic or unable to take oral intake, 2 mL/kg of 10 % dextrose (D10W) IV bolus, then a dextrose infusion at 5–6 mg/kg/min (infants) or 2–3 mg/kg/min (older children) to prevent recurrence. Conscious child: 15 g rapid-acting carbohydrate (e.g. 4 oz juice).", ref: "Nelson 22nd ed. 2024, ch. 113 Hypoglycemia, p. 983" },
+    { book: "nelson", text: "Resuscitation dosing: dextrose 0.5–1 g/kg IV/IO = D10W 5–10 mL/kg, D25W 2–4 mL/kg, D50W 1–2 mL/kg; recheck serial glucose as hypoglycaemia can recur.", ref: "Nelson 22nd ed. 2024, Table 79.x, p. 563" },
+    { book: "nelson", text: "Glucagon IM: 0.5 mg if < 20 kg, 1.0 mg if > 20 kg; intranasal 3 mg. Often causes vomiting.", ref: "Nelson 22nd ed. 2024, ch. 629, p. 3534" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1067,9 +1139,12 @@ window.DRUG_DB = [
   calc: { type: "weight", dosePerKg: 0.5, doseUnit: "mg", conc: 5, concUnit: "mg/mL", maxDose: 10, label: "Rectal dose (0.5 mg/kg, max 10 mg)" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013, ch. 1 (convulsions)" }, { name: "Silbergleit R et al. RAMPART. NEJM 2012" }, { name: "WHO mhGAP Intervention Guide 2.0, 2016" }],
   textbook: [
-    { text: "Status epilepticus: a benzodiazepine is emergency therapy; if seizures persist 5 min after the second benzodiazepine dose, urgent therapy with fosphenytoin (20 mg/kg), valproate (40 mg/kg) or levetiracetam is recommended; IV phenobarbital is an alternative if these are unavailable.", ref: "Nelson 22nd ed. 2024, ch. 633.8 Status epilepticus, p. 3628" },
-    { text: "Rescue at home: rectal diazepam for a seizure lasting > 5 min; buccal or intranasal midazolam or diazepam are alternatives.", ref: "Nelson 22nd ed. 2024, ch. 633.1 Febrile seizures, p. 3597" },
-    { text: "Lorazepam 0.1 mg/kg IV/PO/SL/PR, repeat every 10 min × 2; rectal diazepam gel 0.2 mg/kg/dose.", ref: "Nelson 22nd ed. 2024, ch. 8 Pediatric palliative care, symptom table" }
+    { book: "harrison", text: "Convulsions in severe malaria should be treated promptly with IV or rectal benzodiazepines.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
+    { book: "harrison", text: "Tetanus: benzodiazepines control spasms and are tolerated in high doses; intermittent vs continuous sedation depends on ventilator availability; high-dose diazepam can cause hyperosmolarity and lactic acidosis.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" },
+    { book: "harrison", text: "Benzodiazepine overdose: flumazenil 0.2 mg/min reverses rapidly but may precipitate seizures and raise intracranial pressure; its effect is shorter than most benzodiazepines.", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3691" },
+    { book: "nelson", text: "Status epilepticus: a benzodiazepine is emergency therapy; if seizures persist 5 min after the second benzodiazepine dose, urgent therapy with fosphenytoin (20 mg/kg), valproate (40 mg/kg) or levetiracetam is recommended; IV phenobarbital is an alternative if these are unavailable.", ref: "Nelson 22nd ed. 2024, ch. 633.8 Status epilepticus, p. 3628" },
+    { book: "nelson", text: "Rescue at home: rectal diazepam for a seizure lasting > 5 min; buccal or intranasal midazolam or diazepam are alternatives.", ref: "Nelson 22nd ed. 2024, ch. 633.1 Febrile seizures, p. 3597" },
+    { book: "nelson", text: "Lorazepam 0.1 mg/kg IV/PO/SL/PR, repeat every 10 min × 2; rectal diazepam gel 0.2 mg/kg/dose.", ref: "Nelson 22nd ed. 2024, ch. 8 Pediatric palliative care, symptom table" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1126,13 +1201,15 @@ window.DRUG_DB = [
     }
   ],
   paediatric: ["Neonates: first-line for seizures; check glucose and calcium, treat infection."],
-  cautions: ["Respiratory depression, hypotension; enzyme inducer (reduces efficacy of contraceptives, antiretrovirals, warfarin)."],
+  cautions: ["Respiratory depression, hypotension; enzyme inducer (reduces efficacy of contraceptives, antiretrovirals, warfarin).", "Never give phenobarbital as seizure PROPHYLAXIS in cerebral malaria: a 20 mg/kg dose without respiratory support increased deaths from respiratory arrest (Harrison). Use it only to treat seizures that continue after benzodiazepines, with a bag-valve-mask at the bedside."],
   calc: { type: "weight", dosePerKg: 20, doseUnit: "mg", conc: 200, concUnit: "mg/mL", maxDose: 1000, label: "Loading dose (20 mg/kg) using 200 mg/mL" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013 (neonatal seizures)" }, { name: "WHO. Guidelines on neonatal seizures, 2011" }, { name: "WHO mhGAP-IG 2.0" }],
   textbook: [
-    { text: "Loading doses: phenytoin 20 mg/kg, phenobarbital 10–20 mg/kg; in older children a lower load of 5 mg/kg (repeatable) avoids excessive sedation.", ref: "Nelson 22nd ed. 2024, ch. 633.10 Treatment of seizures, p. 3612" },
-    { text: "Neonatal loading dose is usually 20 mg/kg; infants and children often receive lower doses to avoid respiratory depression, repeated if response is inadequate. Not a first-line urgent therapy because of side-effects.", ref: "Nelson 22nd ed. 2024, ch. 633.8, p. 3628" },
-    { text: "Neonatal seizures: phenobarbital remains first-line; levetiracetam is increasingly preferred as second-line over phenytoin 20 mg/kg or lorazepam 0.1 mg/kg.", ref: "Nelson 22nd ed. 2024, ch. 122 Nervous system disorders of the newborn, p. 1067" }
+    { book: "harrison", text: "Oral maintenance for tonic-clonic or focal epilepsy: phenobarbital 60–180 mg/day, once to three times daily; half-life about 90 h; target level 10–40 µg/mL.", ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, p. 3422" },
+    { book: "harrison", text: "Severe malaria: without respiratory support, do not give a full 20 mg/kg phenobarbital load to prevent convulsions, as it may cause respiratory arrest; levetiracetam is preferred.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
+    { book: "nelson", text: "Loading doses: phenytoin 20 mg/kg, phenobarbital 10–20 mg/kg; in older children a lower load of 5 mg/kg (repeatable) avoids excessive sedation.", ref: "Nelson 22nd ed. 2024, ch. 633.10 Treatment of seizures, p. 3612" },
+    { book: "nelson", text: "Neonatal loading dose is usually 20 mg/kg; infants and children often receive lower doses to avoid respiratory depression, repeated if response is inadequate. Not a first-line urgent therapy because of side-effects.", ref: "Nelson 22nd ed. 2024, ch. 633.8, p. 3628" },
+    { book: "nelson", text: "Neonatal seizures: phenobarbital remains first-line; levetiracetam is increasingly preferred as second-line over phenytoin 20 mg/kg or lorazepam 0.1 mg/kg.", ref: "Nelson 22nd ed. 2024, ch. 122 Nervous system disorders of the newborn, p. 1067" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1194,13 +1271,16 @@ window.DRUG_DB = [
     }
   ],
   paediatric: ["Widely used and safe in children > 3 months; hypersalivation more common.", "Infants < 3 months: increased airway risk — expert only."],
-  cautions: ["Relative contraindications: severe hypertension, ischaemic heart disease, psychosis, raised intracranial pressure with poor ventilation (head injury is no longer an absolute contraindication).", "Always have suction, oxygen and bag-valve-mask ready."],
+  cautions: ["Relative contraindications: severe hypertension, ischaemic heart disease, psychosis, raised intracranial pressure with poor ventilation (head injury is no longer an absolute contraindication).", "Shock: ketamine usually supports blood pressure through catecholamine release, but it is a direct myocardial depressant. In a patient who is catecholamine-depleted — prolonged or exhausted shock, late sepsis — it can cause profound hypotension and low cardiac output (Schwartz). Reduce the dose (0.5–1 mg/kg IV), give it slowly, and have fluids and a vasopressor ready.", "Always have suction, oxygen and bag-valve-mask ready."],
   calc: { type: "weight", dosePerKg: 5, doseUnit: "mg", conc: 50, concUnit: "mg/mL", label: "IM sedation dose (5 mg/kg) at 50 mg/mL" },
   sources: [{ name: "WHO. Surgical Care at the District Hospital, 2003 (ketamine anaesthesia)" }, { name: "MSF Clinical Guidelines — Anaesthesia; WHO Model Formulary" }, { name: "Green SM et al. Clinical practice guideline for ED ketamine dissociative sedation. Ann Emerg Med 2011" }],
   textbook: [
-    { text: "Intubation/sedation: ketamine 1–2 mg/kg IV or 4–6 mg/kg IM; onset 2–3 min, duration 10–15 min; raises HR, BP, ICP; bronchodilation, sialorrhoea.", ref: "Nelson 22nd ed. 2024, ch. 86 Table 86.11 Medications for intubation, p. 620" },
-    { text: "Low-dose (1–2 mg/kg) ketamine preserves airway reflexes and spontaneous ventilation; at 3–5 mg/kg loss of airway reflexes, apnoea and respiratory depression can occur; aspiration remains a risk.", ref: "Nelson 22nd ed. 2024, ch. 92 Procedural sedation, p. 670" },
-    { text: "Burn dressing changes: ketamine 1–4 mg/kg IV for children with high opioid requirements, with continuous cardiovascular monitoring and an advanced-airway-trained provider.", ref: "Nelson 22nd ed. 2024, ch. 91 Burn injuries, p. 654" }
+    { book: "schwartz", text: "Ketamine is often used in acutely hypovolaemic patients because sympathetic stimulation maintains BP, but it directly depresses the myocardium when catecholamines are depleted and can cause profound hypotension.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "schwartz", text: "Dissociative NMDA-receptor anaesthetic; emergence delirium and hallucinations are reduced by adding a benzodiazepine; can be given IM to induce anaesthesia when IV access is not possible.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "schwartz", text: "Ketamine raises intracranial and intraocular pressure, so its use in head and neck trauma is described as controversial; it may cause myocardial ischaemia in coronary disease.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "nelson", text: "Intubation/sedation: ketamine 1–2 mg/kg IV or 4–6 mg/kg IM; onset 2–3 min, duration 10–15 min; raises HR, BP, ICP; bronchodilation, sialorrhoea.", ref: "Nelson 22nd ed. 2024, ch. 86 Table 86.11 Medications for intubation, p. 620" },
+    { book: "nelson", text: "Low-dose (1–2 mg/kg) ketamine preserves airway reflexes and spontaneous ventilation; at 3–5 mg/kg loss of airway reflexes, apnoea and respiratory depression can occur; aspiration remains a risk.", ref: "Nelson 22nd ed. 2024, ch. 92 Procedural sedation, p. 670" },
+    { book: "nelson", text: "Burn dressing changes: ketamine 1–4 mg/kg IV for children with high opioid requirements, with continuous cardiovascular monitoring and an advanced-airway-trained provider.", ref: "Nelson 22nd ed. 2024, ch. 91 Burn injuries, p. 654" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1265,13 +1345,19 @@ window.DRUG_DB = [
     }
   ],
   paediatric: ["Neonates and infants < 6 months: reduce dose (0.025–0.05 mg/kg) — greater respiratory depression."],
-  cautions: ["Respiratory depression, hypotension in hypovolaemia; caution with benzodiazepines."],
+  cautions: ["Respiratory depression, hypotension in hypovolaemia; caution with benzodiazepines.", "Renal impairment: morphine's active metabolites accumulate and cause prolonged sedation and respiratory depression — use smaller doses at longer intervals, or avoid (Schwartz)."],
   antidote: "Naloxone 0.4 mg IV/IM (adult; 0.01 mg/kg child), repeat every 2–3 min; dilute 0.4 mg in 10 mL and give 1–2 mL increments to reverse respiratory depression without abolishing analgesia.",
   calc: { type: "weight", dosePerKg: 0.1, doseUnit: "mg", conc: 10, concUnit: "mg/mL", maxDose: 10, label: "Child IM/SC dose (0.1 mg/kg)" },
   sources: [{ name: "WHO. Guidelines on the management of chronic pain in children, 2020; WHO Pocket Book 2013" }, { name: "MSF Essential Drugs — morphine" }],
   textbook: [
-    { text: "Morphine 0.1 mg/kg IV; onset 5–15 min, duration 120–240 min; hypotension and respiratory depression.", ref: "Nelson 22nd ed. 2024, Table 86.11, p. 620" },
-    { text: "Naloxone: 0.1 mg/kg IV/IO/IM/SC for full reversal (max 2 mg); intranasal 4 mg spray, repeat every 2–3 min; use lower doses for opioid-induced respiratory depression in patients on chronic opioids.", ref: "Nelson 22nd ed. 2024, Table 79.x, p. 563" }
+    { book: "harrison", text: "Acute pulmonary oedema: morphine 2-4 mg IV boluses reduce preload, dyspnoea and anxiety, but registry data linked morphine use with higher mortality.", ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2331" },
+    { book: "harrison", text: "Pain table: morphine parenteral 5 mg every 4 h; oral 30 mg every 4 h.", ref: "Harrison 22nd ed. 2025, ch. 14 Pain: Pathophysiology and Management, p. 97" },
+    { book: "harrison", text: "Opioid respiratory depression: keep naloxone available with high doses or lung disease; avoid co-administering benzodiazepines, which markedly increase respiratory depression.", ref: "Harrison 22nd ed. 2025, ch. 14 Pain: Pathophysiology and Management, p. 98" },
+    { book: "schwartz", text: "Equianalgesic doses of all opioids cause equal respiratory depression; no opioid is safer than another.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "schwartz", text: "Morphine has renally excreted active metabolites, so use cautiously or avoid in renal insufficiency.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "schwartz", text: "In burns, use opioids responsibly within multimodal analgesia and plan weaning from the start.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 252" },
+    { book: "nelson", text: "Morphine 0.1 mg/kg IV; onset 5–15 min, duration 120–240 min; hypotension and respiratory depression.", ref: "Nelson 22nd ed. 2024, Table 86.11, p. 620" },
+    { book: "nelson", text: "Naloxone: 0.1 mg/kg IV/IO/IM/SC for full reversal (max 2 mg); intranasal 4 mg spray, repeat every 2–3 min; use lower doses for opioid-induced respiratory depression in patients on chronic opioids.", ref: "Nelson 22nd ed. 2024, Table 79.x, p. 563" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1302,7 +1388,8 @@ window.DRUG_DB = [
       steps: [
         "1 mg/kg SC every 12 h (deep SC abdominal wall, do not rub). Creatinine clearance < 30 mL/min: 1 mg/kg once daily.",
         "Multi-dose from a 100 mg/mL syringe: expel the excess to the mark; or draw from a vial with a 1 mL syringe.",
-        "Start warfarin the same day (VTE); overlap ≥ 5 days and until INR ≥ 2 on two days."
+        "Not pregnant: start warfarin the same day (VTE); overlap ≥ 5 days and until INR ≥ 2 on two days.",
+        "PREGNANT: never start warfarin — it crosses the placenta and causes fetal haemorrhage, death and malformations. Continue enoxaparin by weight for the rest of the pregnancy and at least 6 weeks postpartum; warfarin may be started after delivery and is compatible with breastfeeding."
       ],
       monitor: ["Bleeding, platelets at day 5–7 if possible"],
       cautions: ["Pregnancy: enoxaparin is the preferred anticoagulant."]
@@ -1337,6 +1424,21 @@ window.DRUG_DB = [
   antidote: "Protamine sulfate 1 mg per 100 IU of UFH given in the last 2–3 h (max 50 mg) slow IV; partial reversal only for enoxaparin (1 mg per 1 mg).",
   calc: { type: "infusion", amount: 25000, amountUnit: "units", volumeMl: 500, doseUnit: "units/kg/h", range: [12, 18], defaultDose: 18, dropFactor: 60 },
   sources: [{ name: "Kearon C et al. Comparison of fixed-dose weight-adjusted UFH and LMWH for acute VTE (FIDO). JAMA 2006" }, { name: "CHEST Antithrombotic Therapy for VTE Disease, 2016/2021" }],
+  textbook: [
+    { book: "harrison", text: "VTE weight-adjusted UFH nomogram: bolus 5000 units or 80 units/kg, then 18 units/kg/h; ACS uses 70 units/kg then 12-15 units/kg/h.", ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 947" },
+    { book: "harrison", text: "VTE: enoxaparin 1 mg/kg twice daily with normal renal function; UFH titrated to aPTT 2-3 times the upper limit of normal.", ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, p. 2163" },
+    { book: "harrison", text: "Warfarin bridging: continue full-dose parenteral anticoagulant for at least 5 days and until two INRs at least 1 day apart are in range (2.0-3.0); usual start 5 mg.", ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, p. 2163" },
+    { book: "harrison", text: "Heparin reversal: 1 mg protamine neutralizes about 100 units heparin, maximum 50 mg per dose by slow IV infusion; protamine only partially reverses LMWH anti-Xa activity.", ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 948" },
+    { book: "williams", text: "IV unfractionated heparin in pregnancy: bolus 70 to 100 U/kg (5000 to 10,000 U), then 15 to 20 U/kg/h (about 1000 U/h) titrated to aPTT 1.5 to 2.5 times control, for at least 5 to 7 days before subcutaneous conversion.", ref: "Williams Obstetrics 25th ed. 2018, ch. 52 Thromboembolic Disorders, pdf p. 2244" },
+    { book: "williams", text: "Enoxaparin about 1 mg/kg twice daily provided satisfactory anticoagulation for pregnancy VTE; LMWHs do not cross the placenta and are cleared renally.", ref: "Williams Obstetrics 25th ed. 2018, ch. 52 Thromboembolic Disorders, pdf p. 2245" },
+    { book: "williams", text: "Withhold neuraxial blockade 10 to 12 hours after prophylactic LMWH and 24 hours after a therapeutic dose; convert LMWH to UFH in the last month or when delivery is imminent.", ref: "Williams Obstetrics 25th ed. 2018, ch. 52 Thromboembolic Disorders, pdf p. 2247" },
+    { book: "gabbe", text: "VTE in pregnancy: LMWH preferred; enoxaparin 1 mg/kg SC twice daily or 1.5 mg/kg daily; IV UFH titrated to aPTT 1.5-2.5 times control. Continue at least 6 weeks postpartum.", ref: "Gabbe's Obstetrics 9th ed., ch. 50 Thromboembolic Disorders in Pregnancy, p. 960" },
+    { book: "gabbe", text: "Neuraxial anaesthesia contraindicated within 24 h of therapeutic and 12 h of prophylactic LMWH; convert to UFH at 36 weeks; restart 4-6 h after vaginal, 6-12 h after caesarean birth.", ref: "Gabbe's Obstetrics 9th ed., ch. 50 Thromboembolic Disorders in Pregnancy, p. 962" },
+    { book: "schwartz", text: "VTE treatment with UFH: 80 units/kg IV bolus then 18 units/kg/h; check aPTT every 6 h, target 1.5-2.5 x control (anti-Xa 0.3-0.7 IU/mL).", ref: "Schwartz's Principles of Surgery 11th ed., ch. 24 Venous and Lymphatic Disease, p. 988" },
+    { book: "schwartz", text: "SC UFH options: adjusted-dose 17,500 units then 250 units/kg twice daily to aPTT; fixed unmonitored 333 units/kg then 250 units/kg twice daily.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 24 Venous and Lymphatic Disease, p. 988" },
+    { book: "schwartz", text: "Protamine: 1 mg neutralises 90-115 units heparin, not more than 50 mg IV in any 10 min; reverses LMWH only about 60%.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 24 Venous and Lymphatic Disease, p. 988" },
+    { book: "schwartz", text: "Overlap heparin with warfarin until INR at least 2 for 24 h, with a minimum of 5 days of heparin.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 24 Venous and Lymphatic Disease, p. 987" }
+  ],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -1353,7 +1455,7 @@ window.DRUG_DB = [
   standard: {
     summary: "Repeated small IV boluses (no pump required); infusion rarely used.",
     items: [
-      { label: "IV (WHO)", text: "5 mg IV slowly over 5 min; repeat 5 mg every 5–20 min until diastolic BP 90–100 mmHg; max 20 mg per episode. Repeat hourly as needed." }
+      { label: "IV (WHO)", text: "5 mg IV slowly over 1–2 min; recheck BP after 20 min and repeat 5–10 mg only if still severe, until diastolic BP 90–100 mmHg; max 20 mg per episode. Do NOT repeat at shorter intervals — the effect peaks at about 20 min, and 5-minute dosing has caused precipitous BP falls with fetal bradycardia (Williams)." }
     ]
   },
   improvised: [
@@ -1392,6 +1494,13 @@ window.DRUG_DB = [
   ],
   cautions: ["Target diastolic 90–100 mmHg, not normal BP.", "Lupus-like syndrome with chronic use."],
   sources: [{ name: "WHO. Managing Complications in Pregnancy and Childbirth, 2017" }, { name: "WHO recommendations: drug treatment for severe hypertension in pregnancy, 2018" }],
+  textbook: [
+    { book: "williams", text: "Hydralazine IV 5 to 10 mg initially, then 10 mg every 15 to 20 minutes until response. Target systolic below 160 and diastolic 90 to 110 mm Hg; lower diastolic pressures risk placental hypoperfusion.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1630" },
+    { book: "williams", text: "Always start with 5 mg regardless of BP severity; dosing more often than recommended (5-minute intervals) caused a precipitous fall in pressure with fetal bradycardia.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1631" },
+    { book: "gabbe", text: "Severe hypertension in pregnancy (systolic 160 or diastolic 110 and above): IV hydralazine 5–10 mg bolus every 20 minutes, to a maximum of 20 mg in 60 minutes.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" },
+    { book: "gabbe", text: "Antihypertensive therapy aims for systolic 140-155 and diastolic 90-105 mm Hg, not normal BP.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 708" },
+    { book: "gabbe", text: "Hydralazine and nifedipine cause tachycardia and headache, so labetalol is preferred when maternal heart rate exceeds 100/min.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" }
+  ],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -1448,6 +1557,12 @@ window.DRUG_DB = [
   ],
   cautions: ["Neonatal bradycardia/hypoglycaemia after maternal use.", "Postural hypotension."],
   sources: [{ name: "WHO. Managing Complications in Pregnancy and Childbirth, 2017" }, { name: "NICE NG133 Hypertension in pregnancy, 2019" }],
+  textbook: [
+    { book: "williams", text: "ACOG: labetalol 20 mg IV bolus; if not effective in 10 minutes, 40 mg, then 80 mg every 10 minutes, then hydralazine. Sibai caps 220 mg per treatment cycle. Not given to asthmatic women.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1632" },
+    { book: "williams", text: "Labetalol causes maternal hypotension and bradycardia more often than hydralazine, and is contraindicated in asthma.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1632" },
+    { book: "gabbe", text: "IV labetalol 20, 40, 80, 80, 80 mg every 10 min, maximum 300 mg; authors use it first-line and switch to hydralazine if 20, 40 and 80 mg fail.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" },
+    { book: "gabbe", text: "Avoid labetalol in moderate-severe asthma, bradycardia below 60/min and congestive heart failure.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" }
+  ],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -1500,8 +1615,16 @@ window.DRUG_DB = [
       cautions: []
     }
   ],
-  cautions: ["Avoid in active thromboembolism; reduce dose in renal failure.", "Never intrathecal (fatal)."],
+  cautions: ["Avoid in active thromboembolism; reduce dose in renal failure.", "Williams advises against antifibrinolytics once consumptive coagulopathy is established (for example placental abruption or amniotic fluid embolism) and reports renal cortical necrosis with tranexamic acid. This does not change the WHO recommendation to give it early in postpartum haemorrhage.", "Never intrathecal (fatal)."],
   sources: [{ name: "WHO recommendation on tranexamic acid for the treatment of PPH, 2017" }, { name: "WOMAN trial collaborators. Lancet 2017; CRASH-2 collaborators. Lancet 2010" }],
+  textbook: [
+    { book: "williams", text: "Tranexamic acid inhibits clot lysis; Williams calls the evidence for adjunctive use in obstetrical haemorrhage limited, notes an association with renal cortical necrosis, and does not recommend routine prophylaxis.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1748" },
+    { book: "williams", text: "In consumptive coagulopathy (DIC), antifibrinolytics such as tranexamic acid are not recommended because fibrinolysis is needed to clear widespread fibrin thromboses.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1736" },
+    { book: "gabbe", text: "TXA for PPH reduced maternal death by nearly 20%; must be given within 3 h of bleeding onset to be effective.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
+    { book: "gabbe", text: "Caesarean: pre-incision TXA 10 mg/kg IV (usually 1 g) reduces blood loss; prophylaxis after cord clamping did not reduce death or transfusion composite in large RCT.", ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 432" },
+    { book: "schwartz", text: "CRASH-2: early TXA in bleeding trauma limits rebleeding and reduces mortality; benefit is within 3 h, later treatment worsened outcome.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 5 Shock, p. 145" },
+    { book: "schwartz", text: "EAST conditionally recommends early TXA in severe injury; do not give with active intravascular clotting or with activated PCC or factor IX complex concentrates.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 117" }
+  ],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -1578,8 +1701,18 @@ window.DRUG_DB = [
   calc: { type: "planC" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013 (Plan C; shock)" }, { name: "WHO. Updated guideline: paediatric emergency triage, assessment and treatment, 2016" }, { name: "Maitland K et al. FEAST. NEJM 2011" }, { name: "WHO/GTFCC Cholera outbreak response field manual, 2019" }],
   textbook: [
-    { text: "Dehydration: fluid bolus 20 mL/kg isotonic fluid (NS, Ringer lactate or Plasma-Lyte) over about 20 min; severe dehydration may need multiple boluses as fast as possible.", ref: "Nelson 22nd ed. 2024, ch. 70 Deficit therapy, p. 530" },
-    { text: "Septic shock: Surviving Sepsis suggests up to 40–60 mL/kg in 10–20 mL/kg boluses in the first hour, titrated to markers of cardiac output and stopped if overload develops — for settings with intensive care access, or any setting when hypotension is present. Where no intensive care is available, boluses are restricted (consistent with FEAST and WHO guidance).", ref: "Nelson 22nd ed. 2024, ch. 85 Shock, p. 611" }
+    { book: "harrison", text: "Septic shock: balanced crystalloid such as lactated Ringer's may be preferable to 0.9% saline (less hyperchloraemic acidosis and kidney injury); avoid starches.", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2322" },
+    { book: "harrison", text: "Septic shock: give crystalloid boluses of about 30 mL/kg, not appropriate for everyone (ESRD, systolic heart failure); guide further volume by dynamic reassessment such as capillary refill and passive leg raise.", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2322" },
+    { book: "harrison", text: "DKA: 2-3 L of 0.9% saline or lactated Ringer's over the first 1-3 h (10-20 mL/kg/h); Ringer's lactate is associated with faster DKA resolution and less hyperchloraemia.", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" },
+    { book: "williams", text: "In obstetrical haemorrhage establish one or more large-bore IV lines and infuse crystalloid rapidly while blood is obtained; initial crystalloid volume is two to three times estimated blood loss, as only 20 percent stays intravascular at 1 hour.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1744" },
+    { book: "williams", text: "In severe preeclampsia lactated Ringer is given routinely at 60 to 125 mL/h; vigorous fluids raise pulmonary and cerebral oedema risk, so oliguria is managed with small incremental boluses.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1633" },
+    { book: "gabbe", text: "Haemorrhage: two large-bore IV lines, warmed crystalloid 3:1 to measured blood loss; aim systolic >90 and urine ≥30 mL/h; >3-4 L risks dilutional coagulopathy.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 418" },
+    { book: "gabbe", text: "Obstetric septic shock: initial 1-2 L isotonic crystalloid (Ringer's lactate or saline), then assess fluid responsiveness; norepinephrine if MAP <65.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1124" },
+    { book: "schwartz", text: "Parkland/Baxter burns formula: 3-4 mL/kg per % burn of lactated Ringer's, half in first 8 h from burn, half over next 16 h; ABA consensus now starts at 2 mL/kg/%.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 254" },
+    { book: "schwartz", text: "Titrate burn resuscitation to MAP 60 mmHg and urine output 30 mL/h in adults, 1-1.5 mL/kg/h in children; formulas are only guidelines.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 254" },
+    { book: "schwartz", text: "Trauma: resuscitation usually begins with isotonic crystalloid, typically Ringer's lactate, but patients arriving in shock (SBP <90) should get a massive transfusion protocol instead of crystalloid.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 191" },
+    { book: "nelson", text: "Dehydration: fluid bolus 20 mL/kg isotonic fluid (NS, Ringer lactate or Plasma-Lyte) over about 20 min; severe dehydration may need multiple boluses as fast as possible.", ref: "Nelson 22nd ed. 2024, ch. 70 Deficit therapy, p. 530" },
+    { book: "nelson", text: "Septic shock: Surviving Sepsis suggests up to 40–60 mL/kg in 10–20 mL/kg boluses in the first hour, titrated to markers of cardiac output and stopped if overload develops — for settings with intensive care access, or any setting when hypotension is present. Where no intensive care is available, boluses are restricted (consistent with FEAST and WHO guidance).", ref: "Nelson 22nd ed. 2024, ch. 85 Shock, p. 611" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1598,7 +1731,7 @@ window.DRUG_DB = [
     summary: "Slow IV push or short infusion with ECG monitoring.",
     items: [
       { label: "MgSO4 toxicity", text: "1 g (10 mL of 10 %) IV over 5–10 min; repeat if needed." },
-      { label: "Hyperkalaemia", text: "10–30 mL of 10 % calcium gluconate IV over 5–10 min; repeat after 5 min if ECG unchanged. Works within minutes, lasts 30–60 min — follow with insulin/glucose and salbutamol." },
+      { label: "Hyperkalaemia", text: "10 mL of 10 % calcium gluconate IV over 5–10 min (Schwartz gives 5–10 mL); repeat 10 mL after 5–10 min if ECG changes persist, to a total of about 30 mL. Works within minutes, lasts 30–60 min — follow with insulin/glucose and salbutamol." },
       { label: "Child", text: "0.5 mL/kg of 10 % calcium gluconate (max 20 mL) diluted 1:1 with NS, over 5–10 min; neonates max 1 mL/min." }
     ]
   },
@@ -1627,8 +1760,16 @@ window.DRUG_DB = [
   cautions: ["Digoxin toxicity: give calcium slowly over 20–30 min or avoid (arrhythmia).", "Does not lower potassium — it only protects the heart temporarily."],
   sources: [{ name: "UK Kidney Association. Treatment of acute hyperkalaemia in adults, 2023" }, { name: "WHO Managing Complications in Pregnancy and Childbirth 2017 (MgSO4 antidote)" }, { name: "WHO Pocket Book 2013" }],
   textbook: [
-    { text: "Resuscitation: calcium gluconate 50–100 mg/kg IV/IO (calcium chloride 10 %: 20 mg/kg), max 2 g; administer slowly — fast push can cause heart block/asystole; use only with documented hypocalcaemia (or hyperkalaemia).", ref: "Nelson 22nd ed. 2024, Table 79.x, p. 563" },
-    { text: "Hyperkalaemia > 7 mEq/L or ECG changes: calcium gluconate 10 % 100 mg/kg/dose (max 3 g), sodium bicarbonate 1–2 mEq/kg IV over 5–10 min, regular insulin 0.1 unit/kg with 50 % glucose 1 mL/kg over 1 h. Calcium does not lower potassium.", ref: "Nelson 22nd ed. 2024, ch. 573, p. 3245" }
+    { book: "harrison", text: "Hyperkalaemia with ECG changes: 10 mL of 10% calcium gluconate IV over 2-3 min with cardiac monitoring; acts in 1-3 min, lasts 30-60 min; repeat if ECG unchanged or changes recur.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "harrison", text: "Patients on digoxin: use IV calcium with extreme caution; if needed add 10 mL of 10% calcium gluconate to 100 mL D5W and infuse over 20-30 min.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "williams", text: "For magnesium-induced respiratory depression give calcium gluconate or chloride 1 g IV and stop magnesium; keep one available whenever magnesium is infused. Effect may be short-lived; severe depression needs intubation and ventilation.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1627" },
+    { book: "gabbe", text: "Magnesium-induced respiratory depression: calcium gluconate 10% 10 mL IV over 3 min, with intubation if needed.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 733" },
+    { book: "gabbe", text: "Neuromuscular blockade in women on magnesium plus nifedipine is readily reversed with 1 g IV calcium gluconate.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" },
+    { book: "gabbe", text: "Atony due to magnesium or nifedipine: one ampule (1 g in 10 mL) calcium gluconate or chloride IV may improve uterine tone as an adjunct.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
+    { book: "schwartz", text: "Hyperkalaemia with ECG changes: give calcium chloride or gluconate 5-10 mL of 10% immediately; caution with digitalis; effect temporary.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 95" },
+    { book: "schwartz", text: "Acute symptomatic hypocalcaemia: IV 10% calcium gluconate; protocol gives 2 g IV over 1 h; correct magnesium first or it is refractory.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 96" },
+    { book: "nelson", text: "Resuscitation: calcium gluconate 50–100 mg/kg IV/IO (calcium chloride 10 %: 20 mg/kg), max 2 g; administer slowly — fast push can cause heart block/asystole; use only with documented hypocalcaemia (or hyperkalaemia).", ref: "Nelson 22nd ed. 2024, Table 79.x, p. 563" },
+    { book: "nelson", text: "Hyperkalaemia > 7 mEq/L or ECG changes: calcium gluconate 10 % 100 mg/kg/dose (max 3 g), sodium bicarbonate 1–2 mEq/kg IV over 5–10 min, regular insulin 0.1 unit/kg with 50 % glucose 1 mL/kg over 1 h. Calcium does not lower potassium.", ref: "Nelson 22nd ed. 2024, ch. 573, p. 3245" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1698,7 +1839,14 @@ window.DRUG_DB = [
   ],
   cautions: ["Fever, shivering and diarrhoea are dose-related and common.", "Uterine hyperstimulation and rupture if given with a viable fetus in utero, or combined with oxytocin during labour.", "Legal restrictions on abortion indications vary — follow national law and policy."],
   textbook: [
-    { text: "Nelson covers misoprostol chiefly as a cause of neonatal exposure and in obstetric context; PPH regimens are obstetric and are taken from WHO.", ref: "Editorial note" }
+    { book: "williams", text: "Misoprostol is inferior to oxytocin for PPH prevention but suitable where oxytocin is lacking, as a single 600 microgram oral dose.", ref: "Williams Obstetrics 25th ed. 2018, ch. 27 Vaginal Delivery, pdf p. 1157" },
+    { book: "williams", text: "For treatment of uterine atony ACOG recommends misoprostol 600 to 1000 micrograms rectally, orally or sublingually.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1679" },
+    { book: "williams", text: "Incomplete abortion: oral misoprostol 600 micrograms, or 800 micrograms vaginally, or 400 micrograms oral/sublingual. Medical and expectant options are deferred in unstable women or those with uterine infection.", ref: "Williams Obstetrics 25th ed. 2018, ch. 18 Abortion, pdf p. 762" },
+    { book: "williams", text: "For cervical ripening or induction ACOG recommends a 25 microgram vaginal dose (a quarter of a 100 microgram tablet); higher doses cause more tachysystole.", ref: "Williams Obstetrics 25th ed. 2018, ch. 26 Induction and Augmentation of Labor, pdf p. 1113" },
+    { book: "gabbe", text: "Misoprostol is a safe, cheap uterotonic needing no refrigeration; sublingual gives fastest onset at lowest dose, rectal highest bioavailability. Algorithm caps total at 1000 mcg.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
+    { book: "gabbe", text: "Postpartum haemorrhage table: misoprostol 600–1000 mcg rectally and/or 400 mcg sublingually, total not above 1000 mcg; side-effects include fever, chills and diarrhoea.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 420" },
+    { book: "gabbe", text: "Induction: ACOG recommends 25 mcg vaginally every 3-6 h; oral regimens use 20-25 mcg every 2 h; oxytocin may start 4 h after last dose.", ref: "Gabbe's Obstetrics 9th ed., ch. 14 Induction of Labor, p. 283" },
+    { book: "note", text: "Nelson covers misoprostol chiefly as a cause of neonatal exposure and in obstetric context; PPH regimens are obstetric and are taken from WHO.", ref: "Editorial note" }
   ],
   sources: [
     { name: "WHO recommendations for the prevention and treatment of postpartum haemorrhage, 2012 (and 2018 updates)" },
@@ -1762,7 +1910,12 @@ window.DRUG_DB = [
   ],
   cautions: ["Hypertension, stroke, seizure, myocardial ischaemia.", "Nausea and vomiting in about a quarter of women.", "Do not give before delivery of the baby."],
   textbook: [
-    { text: "Not covered as a paediatric drug in Nelson. Obstetric regimens are from WHO.", ref: "Editorial note" }
+    { book: "williams", text: "Second-line for atony: methylergonovine or ergonovine 0.2 mg IM, repeatable every 2 to 4 hours. Ergots, especially IV, may cause dangerous hypertension, particularly in preeclampsia or with HIV protease inhibitors.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1678" },
+    { book: "williams", text: "If given IV, methylergonovine 0.2 mg is injected slowly over not less than 60 seconds to avoid sudden hypertension; relatively contraindicated in hypertensive women.", ref: "Williams Obstetrics 25th ed. 2018, ch. 27 Vaginal Delivery, pdf p. 1157" },
+    { book: "gabbe", text: "Methylergonovine 0.2 mg IM, repeatable every 2-4 h, for atony.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 420" },
+    { book: "gabbe", text: "Contraindicated in hypertension (also scleroderma, migraine, Raynaud); unstable at room temperature.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
+    { book: "gabbe", text: "Methergine should not be used in women with hypertensive disorders.", ref: "Gabbe's Obstetrics 9th ed., ch. 13 Normal Labor and Delivery, p. 271" },
+    { book: "note", text: "Not covered as a paediatric drug in Nelson. Obstetric regimens are from WHO.", ref: "Editorial note" }
   ],
   sources: [
     { name: "WHO. Managing Complications in Pregnancy and Childbirth, 2nd ed. 2017" },
@@ -1784,10 +1937,10 @@ window.DRUG_DB = [
   standard: {
     summary: "Given by simple IM or oral dosing — one of the highest-impact drugs in a low-resource hospital and it needs no equipment at all.",
     items: [
-      { label: "Antenatal (preterm labour)", text: "6 mg IM every 12 h for 4 doses (24 mg total), between 24 and 34 weeks when preterm birth is expected within 7 days and there is no maternal infection." },
+      { label: "Antenatal (preterm labour)", text: "6 mg IM every 12 h for 4 doses (24 mg total), between 24 and 34 weeks, only when gestation is reliably dated, preterm birth is expected within 7 days, there is no maternal infection, and adequate newborn care is available (WHO)." },
       { label: "Croup", text: "0.6 mg/kg once (maximum 16 mg) orally, IM or IV. A single dose is enough." },
       { label: "Asthma", text: "0.6 mg/kg once (maximum 16 mg) oral, IV or IM — as effective as prednisolone for 5 days, with less vomiting. A second dose may be given the next day." },
-      { label: "Meningitis", text: "0.15 mg/kg every 6 h for 2–4 days, first dose with or just before the first antibiotic dose (not after)." }
+      { label: "Meningitis", text: "0.15 mg/kg (adult 10 mg) every 6 h for 2–4 days, first dose with or just before the first antibiotic dose (not after). Harrison does not support it for patients in sub-Saharan Africa and other low-income settings unless pneumococcal meningitis is confirmed by Gram stain or culture — trials there showed no benefit." }
     ]
   },
   improvised: [
@@ -1796,8 +1949,10 @@ window.DRUG_DB = [
       best_for: "Threatened preterm birth anywhere a woman may deliver or be referred. This single intervention reduces newborn deaths more than most hospital equipment.",
       requires: ["im"],
       steps: [
-        "Confirm gestation 24–34 weeks as best you can (last menstrual period, fundal height, any scan).",
-        "Give 6 mg (1.5 mL of 4 mg/mL) IM immediately. Do not wait for referral or for the diagnosis to be certain.",
+        "Give only when ALL of these hold (WHO): gestational age is reliably 24–34 weeks; preterm birth is judged likely within 7 days; there is no clinical sign of maternal infection; and the baby can receive adequate newborn care, including resuscitation, warmth, feeding support and treatment of infection, here or at the referral facility.",
+        "Why this matters: in a large trial in low- and middle-income countries, giving antenatal steroids broadly — with uncertain dating and many women who delivered at term — increased newborn deaths (Althabe 2015, cited in Williams). Steroids help when the conditions are met and can harm when they are not.",
+        "Date the pregnancy as well as you can: an early scan is best; last menstrual period and fundal height are much less reliable. If you cannot place her in 24–34 weeks with reasonable confidence, refer rather than treat.",
+        "When the conditions are met, give 6 mg (1.5 mL of 4 mg/mL) IM without waiting for transfer, and write the time on the referral note.",
         "Repeat 6 mg IM every 12 hours for 4 doses in total.",
         "Write each dose and time on the referral note so the receiving hospital continues the course rather than restarting it.",
         "Betamethasone 12 mg IM every 24 h for 2 doses is an equally acceptable alternative where stocked."
@@ -1839,9 +1994,18 @@ window.DRUG_DB = [
   cautions: ["Masks infection; raises blood glucose; avoid prolonged courses.", "Never give antenatal steroids when maternal infection is present."],
   calc: { type: "weight", dosePerKg: 0.6, doseUnit: "mg", conc: 4, concUnit: "mg/mL", maxDose: 16, label: "Croup / asthma single dose (0.6 mg/kg, 4 mg/mL)" },
   textbook: [
-    { text: "Acute asthma: a single oral, IV or IM dose of dexamethasone 0.6 mg/kg (maximum 16 mg) is an effective alternative to prednisone with less vomiting; a second dose may be given the next day.", ref: "Nelson 22nd ed. 2024, ch. 185 Childhood asthma, p. 1408" },
-    { text: "High-altitude cerebral oedema: dexamethasone 0.15 mg/kg per dose orally, IM or IV every 6 hours, maximum 4 mg per dose.", ref: "Nelson 22nd ed. 2024, ch. 87, Table 87.2 and text, pp. 633–634" },
-    { text: "Croup: nebulised L-epinephrine 5 mL of 1:1000 is as effective as racemic epinephrine; indications are stridor at rest, respiratory distress or hypoxaemia, with duration of effect under 2 hours.", ref: "Nelson 22nd ed. 2024, ch. 433, p. 2571" }
+    { book: "harrison", text: "Adult bacterial meningitis: dexamethasone 10 mg IV given 15–20 min before the first antibiotic dose, repeated every 6 h for 4 days.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1123" },
+    { book: "harrison", text: "Benefit is unlikely if dexamethasone is started more than 6 h after antibiotics have begun.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1123" },
+    { book: "harrison", text: "Trials in low-income settings showed no benefit; in sub-Saharan Africa and low-income countries, patients with negative CSF Gram stain and culture should not receive dexamethasone.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1123" },
+    { book: "williams", text: "Single course for women 24 to 34 weeks at risk of delivery within 7 days: dexamethasone 6 mg IM every 12 hours for four doses, or betamethasone 12 mg IM twice 24 hours apart. Give the first dose even if the course cannot be completed.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1823" },
+    { book: "williams", text: "A single corticosteroid course is also recommended with ruptured membranes between 24 0/7 and 34 0/7 weeks.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1821" },
+    { book: "williams", text: "Late-preterm betamethasone (34 to 36 weeks) raised neonatal hypoglycemia; Parkland does not give steroids beyond 34 weeks and gives no repeat courses.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1824" },
+    { book: "gabbe", text: "Antenatal steroid course: betamethasone 12 mg IM twice 24 h apart, or dexamethasone 6 mg IM every 12 h for 4 doses; oral dexamethasone not a suitable alternative.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 680" },
+    { book: "gabbe", text: "Single course for women at 24-34 weeks at risk of delivery within 7 days; regular repeat courses not recommended.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 680" },
+    { book: "gabbe", text: "Severe preeclampsia at 24-34 weeks: give corticosteroids during initial observation.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 708" },
+    { book: "nelson", text: "Acute asthma: a single oral, IV or IM dose of dexamethasone 0.6 mg/kg (maximum 16 mg) is an effective alternative to prednisone with less vomiting; a second dose may be given the next day.", ref: "Nelson 22nd ed. 2024, ch. 185 Childhood asthma, p. 1408" },
+    { book: "nelson", text: "High-altitude cerebral oedema: dexamethasone 0.15 mg/kg per dose orally, IM or IV every 6 hours, maximum 4 mg per dose.", ref: "Nelson 22nd ed. 2024, ch. 87, Table 87.2 and text, pp. 633–634" },
+    { book: "nelson", text: "Croup: nebulised L-epinephrine 5 mL of 1:1000 is as effective as racemic epinephrine; indications are stridor at rest, respiratory distress or hypoxaemia, with duration of effect under 2 hours.", ref: "Nelson 22nd ed. 2024, ch. 433, p. 2571" }
   ],
   sources: [
     { name: "WHO recommendations on interventions to improve preterm birth outcomes, 2015 (updated 2022)" },
@@ -1904,7 +2068,13 @@ window.DRUG_DB = [
   ],
   cautions: ["Hypotension, flushing, headache, tachycardia.", "Do not combine immediate-release nifedipine with intravenous magnesium without close BP monitoring.", "Slow-release tablets act too slowly for an emergency."],
   textbook: [
-    { text: "Nifedipine is listed for high-altitude pulmonary oedema prevention and treatment; for patients over 50 kg the adult dose of 30 mg extended-release every 12 hours is used. Side-effects include flushing, gastrointestinal distress and hypotension.", ref: "Nelson 22nd ed. 2024, ch. 87, Table 87.2, p. 633" }
+    { book: "williams", text: "For acute severe hypertension: 10 mg immediate-release oral nifedipine, then 10 to 20 mg after 20 to 30 minutes if needed, then labetalol. Sublingual use is no longer recommended because of dangerously rapid effects.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1632" },
+    { book: "williams", text: "As tocolytic, calcium-channel blockers (especially nifedipine) are safer and more effective than beta-agonists; efficacy similar to magnesium sulfate.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1831" },
+    { book: "williams", text: "Combining nifedipine with magnesium for tocolysis is potentially dangerous because nifedipine may enhance magnesium's neuromuscular blockade.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1832" },
+    { book: "gabbe", text: "Severe hypertension: oral nifedipine 10-20 mg every 20 min, maximum 50 mg in 60 min; reasonable first choice when IV access unavailable and useful postpartum.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" },
+    { book: "gabbe", text: "Combined magnesium plus nifedipine did not increase hypotension or neuromuscular blockade in a retrospective study.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" },
+    { book: "gabbe", text: "Tocolysis: 20 mg oral load then 20 mg at 90 min (or 10 mg every 20 min up to 4 doses); then 20 mg every 3-8 h up to 72 h, max 180 mg/day. Contraindicated with severe preeclampsia, haemorrhage, chorioamnionitis.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 674" },
+    { book: "nelson", text: "Nifedipine is listed for high-altitude pulmonary oedema prevention and treatment; for patients over 50 kg the adult dose of 30 mg extended-release every 12 hours is used. Side-effects include flushing, gastrointestinal distress and hypotension.", ref: "Nelson 22nd ed. 2024, ch. 87, Table 87.2, p. 633" }
   ],
   sources: [
     { name: "WHO recommendations: drug treatment for severe hypertension in pregnancy, 2018" },
@@ -1928,7 +2098,7 @@ window.DRUG_DB = [
     summary: "Bolus IV or IM dosing — no pump needed at any point.",
     items: [
       { label: "Adrenal crisis (child)", text: "100 mg/m² IV or IM once, then 25 mg/m² every 6 h (maximum 100 mg/day). Practical weight-based equivalent: 2–4 mg/kg per dose." },
-      { label: "Adrenal crisis (adult)", text: "100 mg IV or IM, then 50–100 mg every 6–8 h until stable." },
+      { label: "Adrenal crisis (adult)", text: "100 mg IV or IM bolus, then 200 mg over 24 h (50 mg every 6 h, or a continuous infusion) until stable, then taper (Harrison)." },
       { label: "Asthma", text: "Child 4 mg/kg (maximum 100 mg) IV/IM every 6 h; adult 100–200 mg." },
       { label: "Septic shock", text: "Adult 200 mg/day in divided doses or by infusion; child 1–2 mg/kg every 6 h, for catecholamine-resistant shock." }
     ]
@@ -1947,15 +2117,17 @@ window.DRUG_DB = [
         "Hydrocortisone at these doses covers both glucocorticoid and mineralocorticoid needs, so fludrocortisone is not required acutely."
       ],
       monitor: ["BP, pulse, level of consciousness", "Glucose hourly initially", "Sodium and potassium where available"],
-      cautions: ["A patient on long-term steroids who stops abruptly, or who is ill or having surgery, needs stress dosing — triple the usual dose or give parenteral hydrocortisone."]
+      cautions: ["A patient on long-term steroids who stops abruptly, or who is ill or having surgery, needs stress dosing — double the usual oral dose during a febrile illness (Harrison's sick-day rule), and give hydrocortisone 100 mg IV or IM if vomiting, severely ill or collapsing."]
     },
     {
       title: "Steroid cover for surgery without an endocrinologist",
       best_for: "Any patient on daily steroids for more than 3 weeks who needs an operation.",
       requires: ["im"],
       steps: [
-        "Minor procedure: hydrocortisone 25–50 mg (child 1–2 mg/kg) IV/IM at induction, then resume the usual oral dose.",
-        "Major surgery: 50–100 mg (child 2–4 mg/kg) at induction, then every 6–8 h for 24–48 h, halving daily back to the usual dose.",
+        "Always continue the patient's usual daily steroid dose on the day of surgery — a missed dose is the commonest cause of perioperative adrenal crisis.",
+        "Low maintenance doses (prednisolone 5–15 mg a day): the usual dose is generally enough. Schwartz notes recent studies discourage routine supraphysiologic stress doses for these patients.",
+        "Prednisolone 20 mg a day or more, or a major operation in a patient with suspected adrenal suppression: hydrocortisone 50–100 mg (child 2 mg/kg) IV at induction, then every 8 h for no more than 48 h, then back to the usual dose.",
+        "Whatever the dose history, treat unexplained intraoperative hypotension that does not respond to fluids with hydrocortisone 100 mg IV.",
         "Record it clearly on the anaesthetic chart — a missed dose causes intraoperative collapse that looks like haemorrhage."
       ],
       monitor: ["BP intra- and post-operatively", "Glucose"],
@@ -1966,9 +2138,16 @@ window.DRUG_DB = [
   cautions: ["Hyperglycaemia, hypertension, fluid retention, immunosuppression with repeated dosing."],
   calc: { type: "weight", dosePerKg: 4, doseUnit: "mg", conc: 50, concUnit: "mg/mL", maxDose: 100, label: "Child dose (4 mg/kg) at 50 mg/mL" },
   textbook: [
-    { text: "Adrenal crisis: hydrocortisone 100 mg/m² IV or IM once, followed by 25 mg/m² per dose IV/IM every 6 hours, maximum 100 mg/day, tapered as clinically indicated; reported regimens vary.", ref: "Nelson 22nd ed. 2024, ch. 352, Table 352.8, p. 2231" },
-    { text: "Neonatal hypotension: a test dose of hydrocortisone 1 mg/kg is given; if blood pressure rises, dosing continues at 0.5 mg/kg every 6–8 hours (under 34 weeks) or every 12 hours (34 weeks and above), with no further dosing if there is no response at 2–4 hours.", ref: "Nelson 22nd ed. 2024, ch. 120, p. 1055" },
-    { text: "Maintenance replacement in adrenal insufficiency is 8–12 mg/m²/day orally.", ref: "Nelson 22nd ed. 2024, ch. 113, p. 987" }
+    { book: "harrison", text: "Acute adrenal insufficiency: hydrocortisone 100 mg bolus, then 200 mg over 24 h by continuous infusion or IV/IM boluses, with saline initially at 1 L/h.", ref: "Harrison 22nd ed. 2025, ch. 398 Disorders of the Adrenal Cortex, p. 3069" },
+    { book: "harrison", text: "Septic shock with ongoing vasopressor requirement: IV hydrocortisone 200 mg/day, often as 50 mg every 6 h.", ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2323" },
+    { book: "harrison", text: "Stress dosing in known adrenal insufficiency: double the routine oral glucocorticoid dose during febrile intercurrent illness; give 100 mg IV/IM hydrocortisone when severe.", ref: "Harrison 22nd ed. 2025, ch. 398 Disorders of the Adrenal Cortex, p. 3069" },
+    { book: "harrison", text: "Anaphylaxis: glucocorticoids, antihistamines and bronchodilators are ancillary agents used once the patient is haemodynamically stable, not substitutes for epinephrine.", ref: "Harrison 22nd ed. 2025, ch. 364 Anaphylaxis, p. 2813" },
+    { book: "schwartz", text: "Perioperative steroids: supraphysiologic stress dosing is discouraged for low/maintenance prednisone 5-15 mg; at 20 mg/day or more, extra glucocorticoid for no more than 2 perioperative days.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 12 Quality, Patient Safety, Assessments of Care, and Complications, p. 427" },
+    { book: "schwartz", text: "Adrenal crisis: treat on suspicion; 2-3 L saline, dexamethasone 4 mg IV or hydrocortisone 100 mg IV every 8 h, then taper to maintenance.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 38 Thyroid, Parathyroid, and Adrenal, p. 1698" },
+    { book: "schwartz", text: "Septic shock with hypotension responding poorly to fluids and vasopressors: consider IV hydrocortisone below 300 mg/day (about 200 mg/day elsewhere in the chapter).", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 176" },
+    { book: "nelson", text: "Adrenal crisis: hydrocortisone 100 mg/m² IV or IM once, followed by 25 mg/m² per dose IV/IM every 6 hours, maximum 100 mg/day, tapered as clinically indicated; reported regimens vary.", ref: "Nelson 22nd ed. 2024, ch. 352, Table 352.8, p. 2231" },
+    { book: "nelson", text: "Neonatal hypotension: a test dose of hydrocortisone 1 mg/kg is given; if blood pressure rises, dosing continues at 0.5 mg/kg every 6–8 hours (under 34 weeks) or every 12 hours (34 weeks and above), with no further dosing if there is no response at 2–4 hours.", ref: "Nelson 22nd ed. 2024, ch. 120, p. 1055" },
+    { book: "nelson", text: "Maintenance replacement in adrenal insufficiency is 8–12 mg/m²/day orally.", ref: "Nelson 22nd ed. 2024, ch. 113, p. 987" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2040,8 +2219,12 @@ window.DRUG_DB = [
   cautions: ["Short duration — recurrence of respiratory depression is the main danger.", "Acute withdrawal in dependent patients.", "Ineffective in non-opioid causes of coma."],
   calc: { type: "weight", dosePerKg: 0.1, doseUnit: "mg", conc: 0.4, concUnit: "mg/mL", maxDose: 2, label: "Full reversal (0.1 mg/kg, max 2 mg) at 0.4 mg/mL" },
   textbook: [
-    { text: "Naloxone IV/IO/IM/SC 0.1 mg/kg for full reversal, maximum 2 mg; intranasal 4 mg spray, may repeat every 2–3 minutes; endotracheal 2–3 times the IV dose if no IV/IO access. Use lower doses (0.001–0.005 mg/kg) for respiratory depression from therapeutic opioid dosing. May need redosing every 2–3 minutes as the half-life is shorter than most narcotics.", ref: "Nelson 22nd ed. 2024, Table 79.5 Medications for pediatric resuscitation, p. 563" },
-    { text: "Opiate toxicity is confirmed by IV naloxone 0.1 mg/kg, not exceeding 2 mg, which dilates pupils constricted by the opiate; treatment consists of maintaining oxygenation and continued naloxone.", ref: "Nelson 22nd ed. 2024, ch. 156 Substance use, p. 1208" }
+    { book: "harrison", text: "Opioid overdose: secure airway; naloxone 0.4-2.0 mg IV, IM or via endotracheal tube, onset about 1-2 min IV; repeat doses or infusion as needed.", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3690" },
+    { book: "harrison", text: "Maintenance after reversal: give one-half to two-thirds of the initial reversing naloxone dose hourly (not needed if intubated).", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3690" },
+    { book: "harrison", text: "Fentanyl overdose may need about twice the usual naloxone dose; buprenorphine or fentanyl overdose may require total doses of 10 mg or more.", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3690" },
+    { book: "schwartz", text: "Naloxone rapidly reverses opioid effects and is used to rescue opioid-associated respiratory depression; poorly absorbed orally.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "nelson", text: "Naloxone IV/IO/IM/SC 0.1 mg/kg for full reversal, maximum 2 mg; intranasal 4 mg spray, may repeat every 2–3 minutes; endotracheal 2–3 times the IV dose if no IV/IO access. Use lower doses (0.001–0.005 mg/kg) for respiratory depression from therapeutic opioid dosing. May need redosing every 2–3 minutes as the half-life is shorter than most narcotics.", ref: "Nelson 22nd ed. 2024, Table 79.5 Medications for pediatric resuscitation, p. 563" },
+    { book: "nelson", text: "Opiate toxicity is confirmed by IV naloxone 0.1 mg/kg, not exceeding 2 mg, which dilates pupils constricted by the opiate; treatment consists of maintaining oxygenation and continued naloxone.", ref: "Nelson 22nd ed. 2024, ch. 156 Substance use, p. 1208" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2108,9 +2291,12 @@ window.DRUG_DB = [
   cautions: ["Hyperthermia in hot climates (blocks sweating) — sponge and cool the patient.", "Urinary retention, confusion and agitation with excess.", "Tachycardia is not a reason to withhold atropine in organophosphate poisoning."],
   calc: { type: "weight", dosePerKg: 0.02, doseUnit: "mg", conc: 0.6, concUnit: "mg/mL", maxDose: 0.5, label: "Bradycardia dose (0.02 mg/kg, min 0.1 mg, max 0.5 mg)" },
   textbook: [
-    { text: "Atropine IV/IO 0.02 mg/kg; minimum dose 0.1 mg for bradycardia treatment; maximum single dose 0.5 mg in a child and 1 mg in an adolescent; repeat once if needed. Endotracheal dose 0.04–0.06 mg/kg, maximum 2 mg. Higher doses may be used with organophosphate poisoning.", ref: "Nelson 22nd ed. 2024, Table 79.5, p. 563" },
-    { text: "In the bradycardia algorithm, atropine IV/IO 0.02 mg/kg may be repeated once, with epinephrine 0.01 mg/kg repeated every 3–5 minutes as the primary drug.", ref: "Nelson 22nd ed. 2024, Fig. 79 bradycardia algorithm, p. 561" },
-    { text: "Severe acute malnutrition with corneal ulceration: instil 1 drop of atropine 1 % into the affected eye to relax the eye and prevent the lens from pushing out.", ref: "Nelson 22nd ed. 2024, ch. 62, Table, p. 428" }
+    { book: "harrison", text: "Bradycardic arrest rhythms/peri-arrest bradycardia: atropine 1 mg IV together with external or transvenous pacing; atropine is not part of the VF/PEA drug sequence.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2337" },
+    { book: "harrison", text: "Cholinesterase-inhibitor (organophosphate, carbamate, nerve agent) poisoning: atropine for muscarinic features; pralidoxime (2-PAM) for nicotinic features from organophosphates.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3712" },
+    { book: "harrison", text: "Cardiac glycoside toxicity: atropine, dopamine, epinephrine and external pacing are temporizing measures for bradydysrhythmias pending digoxin Fab.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3712" },
+    { book: "nelson", text: "Atropine IV/IO 0.02 mg/kg; minimum dose 0.1 mg for bradycardia treatment; maximum single dose 0.5 mg in a child and 1 mg in an adolescent; repeat once if needed. Endotracheal dose 0.04–0.06 mg/kg, maximum 2 mg. Higher doses may be used with organophosphate poisoning.", ref: "Nelson 22nd ed. 2024, Table 79.5, p. 563" },
+    { book: "nelson", text: "In the bradycardia algorithm, atropine IV/IO 0.02 mg/kg may be repeated once, with epinephrine 0.01 mg/kg repeated every 3–5 minutes as the primary drug.", ref: "Nelson 22nd ed. 2024, Fig. 79 bradycardia algorithm, p. 561" },
+    { book: "nelson", text: "Severe acute malnutrition with corneal ulceration: instil 1 drop of atropine 1 % into the affected eye to relax the eye and prevent the lens from pushing out.", ref: "Nelson 22nd ed. 2024, ch. 62, Table, p. 428" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2175,9 +2361,12 @@ window.DRUG_DB = [
   cautions: ["Hypotension and bradycardia with rapid administration.", "Severe phlebitis peripherally.", "Thyroid, pulmonary, hepatic and corneal toxicity with long-term oral use.", "Contains iodine — caution in iodine allergy and thyroid disease."],
   calc: { type: "weight", dosePerKg: 5, doseUnit: "mg", conc: 50, concUnit: "mg/mL", maxDose: 300, label: "Loading dose (5 mg/kg, max 300 mg) at 50 mg/mL" },
   textbook: [
-    { text: "Amiodarone 5 mg/kg IV/IO; repeat 5 mg/kg doses up to 15 mg/kg, maximum 300 mg. Monitor ECG and blood pressure as it can cause hypotension. Give over 20–60 minutes, though it can be given by IV push in cardiac arrest. Use caution with other drugs that prolong the QT interval.", ref: "Nelson 22nd ed. 2024, Table 79.5, p. 563" },
-    { text: "In the cardiac arrest algorithm, amiodarone 5 mg/kg IV/IO bolus may be repeated up to 3 total doses for refractory VF or pulseless VT; lidocaine 1 mg/kg loading dose is the alternative.", ref: "Nelson 22nd ed. 2024, Fig. 79.16 PALS cardiac arrest algorithm, p. 566" },
-    { text: "Adenosine, the first drug for SVT, is 0.1 mg/kg rapid IV/IO bolus (maximum 6 mg), then 0.2 mg/kg (maximum 12 mg), given with a flush.", ref: "Nelson 22nd ed. 2024, Table 79.5 and Fig. 79.12, pp. 562–563" }
+    { book: "harrison", text: "VF/pulseless VT recurring after shocks: amiodarone 300 mg IV or IO bolus, then a 150 mg bolus if the arrhythmia recurs; lidocaine if amiodarone fails.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2336" },
+    { book: "harrison", text: "Haemodynamically tolerated sustained VT after MI: amiodarone 150 mg IV over 10 min, then 1 mg/min for 6 h, then 0.5 mg/min.", ref: "Harrison 22nd ed. 2025, ch. 286 ST-Segment Elevation Myocardial Infarction, p. 2123" },
+    { book: "harrison", text: "IV amiodarone given through a peripheral vein for more than 24 h can cause severe thrombophlebitis; long-term therapy needs thyroid, liver and lung monitoring.", ref: "Harrison 22nd ed. 2025, ch. 259 Approach to Ventricular Arrhythmias, p. 1958" },
+    { book: "nelson", text: "Amiodarone 5 mg/kg IV/IO; repeat 5 mg/kg doses up to 15 mg/kg, maximum 300 mg. Monitor ECG and blood pressure as it can cause hypotension. Give over 20–60 minutes, though it can be given by IV push in cardiac arrest. Use caution with other drugs that prolong the QT interval.", ref: "Nelson 22nd ed. 2024, Table 79.5, p. 563" },
+    { book: "nelson", text: "In the cardiac arrest algorithm, amiodarone 5 mg/kg IV/IO bolus may be repeated up to 3 total doses for refractory VF or pulseless VT; lidocaine 1 mg/kg loading dose is the alternative.", ref: "Nelson 22nd ed. 2024, Fig. 79.16 PALS cardiac arrest algorithm, p. 566" },
+    { book: "nelson", text: "Adenosine, the first drug for SVT, is 0.1 mg/kg rapid IV/IO bolus (maximum 6 mg), then 0.2 mg/kg (maximum 12 mg), given with a flush.", ref: "Nelson 22nd ed. 2024, Table 79.5 and Fig. 79.12, pp. 562–563" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2253,9 +2442,11 @@ window.DRUG_DB = [
   cautions: ["Hypokalaemia, hyponatraemia, hypovolaemia and acute kidney injury with over-diuresis.", "Ototoxicity with rapid large IV doses, and with concurrent gentamicin.", "Check and replace potassium — the combination of furosemide and digoxin without potassium monitoring causes digoxin toxicity."],
   calc: { type: "weight", dosePerKg: 1, doseUnit: "mg", conc: 10, concUnit: "mg/mL", maxDose: 40, label: "Child dose (1 mg/kg) at 10 mg/mL" },
   textbook: [
-    { text: "Severe acute malnutrition with very severe anaemia (Hb under 4 g/dL, or 4–6 g/dL with respiratory distress): give whole blood 10 mL/kg slowly over 3 hours, or 5–7 mL/kg packed cells if there are signs of heart failure, and give furosemide 1 mg/kg IV at the start of the transfusion.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, Table, p. 428" },
-    { text: "Bronchopulmonary dysplasia: furosemide 1 mg/kg/dose IV or 2 mg/kg/dose orally every 12–24 hours decreases pulmonary interstitial oedema and pulmonary vascular resistance and facilitates weaning from respiratory support; adverse effects of long-term therapy are common.", ref: "Nelson 22nd ed. 2024, ch. 127, p. 1086" },
-    { text: "Heart failure dosing table: furosemide 1–4 mg/kg/day orally in divided doses; other agents listed include bumetanide, chlorothiazide and spironolactone.", ref: "Nelson 22nd ed. 2024, ch. 491, Table 491.6, p. 2898" }
+    { book: "harrison", text: "Acute pulmonary oedema: furosemide is the diuretic of choice and also an early venodilator; initial dose 0.5 mg/kg or less, 1 mg/kg in renal insufficiency, chronic diuretic use, hypervolaemia or after a lower dose fails.", ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2331" },
+    { book: "harrison", text: "Acute decompensated heart failure: IV loop diuretic at 1x home dose or 2.5x home dose is equally effective; higher dose carries more renal worsening. Oral furosemide range 20-240 mg daily.", ref: "Harrison 22nd ed. 2025, ch. 265 Heart Failure: Management, p. 1993" },
+    { book: "nelson", text: "Severe acute malnutrition with very severe anaemia (Hb under 4 g/dL, or 4–6 g/dL with respiratory distress): give whole blood 10 mL/kg slowly over 3 hours, or 5–7 mL/kg packed cells if there are signs of heart failure, and give furosemide 1 mg/kg IV at the start of the transfusion.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, Table, p. 428" },
+    { book: "nelson", text: "Bronchopulmonary dysplasia: furosemide 1 mg/kg/dose IV or 2 mg/kg/dose orally every 12–24 hours decreases pulmonary interstitial oedema and pulmonary vascular resistance and facilitates weaning from respiratory support; adverse effects of long-term therapy are common.", ref: "Nelson 22nd ed. 2024, ch. 127, p. 1086" },
+    { book: "nelson", text: "Heart failure dosing table: furosemide 1–4 mg/kg/day orally in divided doses; other agents listed include bumetanide, chlorothiazide and spironolactone.", ref: "Nelson 22nd ed. 2024, ch. 491, Table 491.6, p. 2898" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2323,8 +2514,12 @@ window.DRUG_DB = [
   cautions: ["Narrow therapeutic index; toxicity is common and often missed.", "Contraindicated in ventricular tachycardia, hypertrophic obstructive cardiomyopathy and Wolff-Parkinson-White with atrial fibrillation."],
   calc: { type: "weight", dosePerKg: 0.01, doseUnit: "mg", conc: 0.25, concUnit: "mg/mL", label: "Child maintenance (10 mcg/kg/day = 0.01 mg/kg) at 0.25 mg/mL" },
   textbook: [
-    { text: "Digitalisation: premature 20 mcg/kg; full-term neonate up to 1 month 20–30 mcg/kg; infant or child 25–40 mcg/kg; adolescent or adult 0.5–1 mg in divided doses — half initially, then a quarter every 12 hours for two doses. Maintenance 5–10 mcg/kg/day divided every 12 hours. These are oral doses; the IV dose is 75 % of the oral dose.", ref: "Nelson 22nd ed. 2024, ch. 491, Table 491.6 Drugs for congestive heart failure, p. 2898" },
-    { text: "Verapamil for SVT (not in Wolff-Parkinson-White) is 0.1–0.3 mg/kg per dose IV, maximum 5–10 mg; use with a beta blocker exacerbates heart failure and increases digoxin level and toxicity.", ref: "Nelson 22nd ed. 2024, ch. 484, Table, p. 2846" }
+    { book: "harrison", text: "Digoxin toxicity: Fab fragments for compromising dysrhythmias, Mobitz II/complete block, or K above 5.5 in acute poisoning; atropine, pacing for bradycardia, magnesium or lidocaine for ventricular arrhythmia; cardioversion only if refractory.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3712" },
+    { book: "harrison", text: "Hypercalcaemia potentiates digoxin cardiotoxicity: if IV calcium is essential, dilute 10 mL of 10% calcium gluconate in 100 mL D5W and infuse over 20-30 min.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "harrison", text: "In pulmonary oedema, digitalis is rarely used but can control ventricular rate in rapid AF/flutter with LV dysfunction because it is not negatively inotropic.", ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2331" },
+    { book: "harrison", text: "Heart failure: low digoxin doses suffice and higher doses breach the safety index; reduce the dose for high levels. DIG trial showed fewer admissions but no mortality benefit.", ref: "Harrison 22nd ed. 2025, ch. 265 Heart Failure: Management, p. 1996" },
+    { book: "nelson", text: "Digitalisation: premature 20 mcg/kg; full-term neonate up to 1 month 20–30 mcg/kg; infant or child 25–40 mcg/kg; adolescent or adult 0.5–1 mg in divided doses — half initially, then a quarter every 12 hours for two doses. Maintenance 5–10 mcg/kg/day divided every 12 hours. These are oral doses; the IV dose is 75 % of the oral dose.", ref: "Nelson 22nd ed. 2024, ch. 491, Table 491.6 Drugs for congestive heart failure, p. 2898" },
+    { book: "nelson", text: "Verapamil for SVT (not in Wolff-Parkinson-White) is 0.1–0.3 mg/kg per dose IV, maximum 5–10 mg; use with a beta blocker exacerbates heart failure and increases digoxin level and toxicity.", ref: "Nelson 22nd ed. 2024, ch. 484, Table, p. 2846" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2396,9 +2591,19 @@ window.DRUG_DB = [
   cautions: ["Penicillin allergy; rash with Epstein-Barr infection.", "High doses in renal impairment cause seizures."],
   calc: { type: "weight", dosePerKg: 50, doseUnit: "mg", conc: 50, concUnit: "mg/mL", label: "Dose 50 mg/kg using the 50 mg/mL neonatal dilution (1 mL per kg)" },
   textbook: [
-    { text: "Severe acute malnutrition: gentamicin 7.5 mg/kg IV or IM once daily for 7 days plus ampicillin 50 mg/kg IV or IM every 6 hours for 2 days, then oral amoxicillin 25–40 mg/kg every 8 hours for 5 days. For persistent diarrhoea or small bowel overgrowth add metronidazole 7.5 mg/kg orally every 8 hours for 7 days.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, Table, p. 430" },
-    { text: "Invasive meningococcal disease: ampicillin IM or IV 200–400 mg/kg/day divided every 4–6 hours (4-hourly for meningitis), maximum 8 g/day; penicillin G 300,000–400,000 units/kg/day on the same interval, maximum 12–24 million units.", ref: "Nelson 22nd ed. 2024, ch. 237, Table 237.2, p. 1743" },
-    { text: "Severe infection requiring hospitalisation: ampicillin/sulbactam 200–400 mg ampicillin/kg/day IV divided every 6 hours, maximum 8 g ampicillin/day.", ref: "Nelson 22nd ed. 2024, ch. 430 Sinusitis, p. 2556" }
+    { book: "harrison", text: "Meningitis: adult ampicillin 12 g/day IV divided 4-hourly (2 g q4h); child over 1 month 300 mg/kg/day 6-hourly.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1121" },
+    { book: "harrison", text: "Add ampicillin to empirical meningitis therapy for Listeria cover in infants under 3 months, adults over 55, and those with impaired cell-mediated immunity (including pregnancy).", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1122" },
+    { book: "williams", text: "Cesarean prophylaxis: a single 2 g dose of ampicillin or a first-generation cephalosporin is ideal, as effective as broad-spectrum or multidose regimens; predelivery (before incision) administration is favoured.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1476" },
+    { book: "williams", text: "Metritis after vaginal delivery: up to 90 percent respond to ampicillin plus gentamicin; anaerobic coverage is added after cesarean delivery. Improvement expected within 48 to 72 hours.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1474" },
+    { book: "williams", text: "Intrapartum GBS prophylaxis: penicillin is first-line and ampicillin an acceptable alternative, ideally given 4 or more hours before delivery.", ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2708" },
+    { book: "williams", text: "PPROM 24 to 32 weeks: IV ampicillin plus erythromycin every 6 hours for 48 hours, then oral amoxicillin plus erythromycin for 5 days prolonged latency and reduced neonatal morbidity; avoid amoxicillin-clavulanate (necrotizing enterocolitis).", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1821" },
+    { book: "gabbe", text: "GBS prophylaxis alternative: ampicillin 2 g IV load then 1 g every 4 h until delivery.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 679" },
+    { book: "gabbe", text: "Chorioamnionitis: ampicillin 2 g every 6 h plus gentamicin; add anaerobic cover (metronidazole 500 mg or clindamycin) if caesarean.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1118" },
+    { book: "gabbe", text: "Preterm PROM latency: 48 h IV ampicillin 2 g every 6 h plus erythromycin, then 5 days oral amoxicillin and erythromycin.", ref: "Gabbe's Obstetrics 9th ed., ch. 37 Premature Rupture of the Membranes, p. 696" },
+    { book: "gabbe", text: "Caesarean prophylaxis: first-generation cephalosporin (cefazolin 1-2 g) or ampicillin 30-60 min before incision; add azithromycin if in labour or membranes ruptured.", ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 427" },
+    { book: "nelson", text: "Severe acute malnutrition: gentamicin 7.5 mg/kg IV or IM once daily for 7 days plus ampicillin 50 mg/kg IV or IM every 6 hours for 2 days, then oral amoxicillin 25–40 mg/kg every 8 hours for 5 days. For persistent diarrhoea or small bowel overgrowth add metronidazole 7.5 mg/kg orally every 8 hours for 7 days.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, Table, p. 430" },
+    { book: "nelson", text: "Invasive meningococcal disease: ampicillin IM or IV 200–400 mg/kg/day divided every 4–6 hours (4-hourly for meningitis), maximum 8 g/day; penicillin G 300,000–400,000 units/kg/day on the same interval, maximum 12–24 million units.", ref: "Nelson 22nd ed. 2024, ch. 237, Table 237.2, p. 1743" },
+    { book: "nelson", text: "Severe infection requiring hospitalisation: ampicillin/sulbactam 200–400 mg ampicillin/kg/day IV divided every 6 hours, maximum 8 g ampicillin/day.", ref: "Nelson 22nd ed. 2024, ch. 430 Sinusitis, p. 2556" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2479,9 +2684,17 @@ window.DRUG_DB = [
   ],
   cautions: ["Penicillin allergy — take a proper history and keep adrenaline at hand.", "Large sodium and potassium load at high doses."],
   textbook: [
-    { text: "Tetanus: oral or IV metronidazole 30 mg/kg/day at 6-hourly intervals, maximum 4 g/day, is the antibiotic of choice; parenteral penicillin G 100,000 units/kg/day at 4- to 6-hourly intervals with a daily maximum of 12 million units is an alternative. Total duration 7–10 days.", ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1823" },
-    { text: "Meningococcal disease: penicillin G IM or IV 300,000–400,000 units/kg/day at 4- to 6-hourly intervals (4-hourly for meningitis), maximum 12–24 million units daily. It does not clear carriage, so prophylaxis is required at the end of treatment.", ref: "Nelson 22nd ed. 2024, ch. 237, Table 237.2, p. 1743" },
-    { text: "Diphtheria: aqueous crystalline penicillin G 150,000–250,000 units/kg/day divided every 6 hours IV or IM (up to 2–3 million units/day), or procaine penicillin 300,000 units every 12 hours IM for those 10 kg or less and 600,000 units every 12 hours for those over 10 kg, for 14 days.", ref: "Nelson 22nd ed. 2024, ch. 231 Diphtheria, p. 1728" }
+    { book: "harrison", text: "Meningitis: adult penicillin G 20–24 million units/day IV divided 4-hourly; child 400,000 U/kg/day 4-hourly.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1121" },
+    { book: "harrison", text: "Penicillin G remains the drug of choice for meningococcal meningitis once the isolate is shown to be penicillin-susceptible; otherwise use ceftriaxone or cefotaxime.", ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1122" },
+    { book: "harrison", text: "Non-meningeal pneumococcal infection: IV penicillin G 12 million units/day in 6 divided doses (18–24 MU/day for intermediate strains).", ref: "Harrison 22nd ed. 2025, ch. 151 Pneumococcal Infections, p. 1193" },
+    { book: "harrison", text: "Tetanus: penicillin 100,000–200,000 IU/kg/day is only an alternative; it may worsen spasms via GABA-receptor binding and was linked to higher mortality.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" },
+    { book: "williams", text: "Risk-based GBS prophylaxis when culture status is unknown: give intrapartum antibiotics for delivery before 37 weeks, membranes ruptured 18 hours or more, or intrapartum temperature 38.0 C or higher.", ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2708" },
+    { book: "williams", text: "Penicillin is first-line for intrapartum GBS prophylaxis; antibiotics given 4 or more hours before delivery are highly effective. Cefazolin if non-anaphylactic penicillin allergy.", ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2708" },
+    { book: "williams", text: "Parenteral penicillin G is preferred for all stages of syphilis in pregnancy; many authorities give a second benzathine penicillin G dose 1 week after the first. There are no proven alternatives to penicillin in pregnancy.", ref: "Williams Obstetrics 25th ed. 2018, ch. 65 Sexually Transmitted Infections, pdf p. 2745" },
+    { book: "gabbe", text: "Intrapartum GBS prophylaxis: penicillin G 5 million units IV load then 2.5-3 million units every 4 h until delivery; treat preterm labour with unknown GBS status.", ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 679" },
+    { book: "nelson", text: "Tetanus: oral or IV metronidazole 30 mg/kg/day at 6-hourly intervals, maximum 4 g/day, is the antibiotic of choice; parenteral penicillin G 100,000 units/kg/day at 4- to 6-hourly intervals with a daily maximum of 12 million units is an alternative. Total duration 7–10 days.", ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1823" },
+    { book: "nelson", text: "Meningococcal disease: penicillin G IM or IV 300,000–400,000 units/kg/day at 4- to 6-hourly intervals (4-hourly for meningitis), maximum 12–24 million units daily. It does not clear carriage, so prophylaxis is required at the end of treatment.", ref: "Nelson 22nd ed. 2024, ch. 237, Table 237.2, p. 1743" },
+    { book: "nelson", text: "Diphtheria: aqueous crystalline penicillin G 150,000–250,000 units/kg/day divided every 6 hours IV or IM (up to 2–3 million units/day), or procaine penicillin 300,000 units every 12 hours IM for those 10 kg or less and 600,000 units every 12 hours for those over 10 kg, for 14 days.", ref: "Nelson 22nd ed. 2024, ch. 231 Diphtheria, p. 1728" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2546,7 +2759,11 @@ window.DRUG_DB = [
   cautions: ["Cholestatic hepatitis with flucloxacillin, especially in older adults and with courses over 2 weeks.", "Painful IM injection; thrombophlebitis IV.", "Poor oral absorption with food."],
   calc: { type: "weight", dosePerKg: 50, doseUnit: "mg", conc: 250, concUnit: "mg/mL", maxDose: 2000, label: "Severe infection (50 mg/kg per dose) at 250 mg/mL" },
   textbook: [
-    { text: "Nelson covers staphylococcal osteomyelitis, septic arthritis and pyomyositis with antistaphylococcal penicillins (oxacillin, nafcillin) or cefazolin, with clindamycin or vancomycin where MRSA is prevalent, alongside surgical drainage.", ref: "Nelson 22nd ed. 2024, chs. 208 Staphylococcus aureus, 719 Osteomyelitis, 720 Septic arthritis" }
+    { book: "harrison", text: "Adult MSSA osteomyelitis: nafcillin or oxacillin 2 g IV 6-hourly, then oral step-down; total antibiotic duration generally 6 weeks.", ref: "Harrison 22nd ed. 2025, ch. 136 Osteomyelitis, p. 1064" },
+    { book: "harrison", text: "Serious MSSA infections (parenteral): nafcillin or oxacillin 2 g every 4 h, or cefazolin 2 g every 8 h.", ref: "Harrison 22nd ed. 2025, ch. 152 Staphylococcal Infections, p. 1203" },
+    { book: "schwartz", text: "Hand osteomyelitis: debride necrotic bone; initial IV therapy should cover S. aureus, adjust to bone cultures, continue 4-6 weeks once improving.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 44 Surgery of the Hand and Wrist, p. 1949" },
+    { book: "schwartz", text: "Abscess: S. aureus is the commonest pathogen; treat with incision and drainage, debridement, cultures, packing, elevation, immobilisation and antibiotics.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 44 Surgery of the Hand and Wrist, p. 1948" },
+    { book: "nelson", text: "Nelson covers staphylococcal osteomyelitis, septic arthritis and pyomyositis with antistaphylococcal penicillins (oxacillin, nafcillin) or cefazolin, with clindamycin or vancomycin where MRSA is prevalent, alongside surgical drainage.", ref: "Nelson 22nd ed. 2024, chs. 208 Staphylococcus aureus, 719 Osteomyelitis, 720 Septic arthritis" }
   ],
   sources: [
     { name: "WHO Pocket Book of Hospital Care for Children 2013" },
@@ -2572,7 +2789,7 @@ window.DRUG_DB = [
       { label: "Adult IV", text: "500 mg every 8 h by infusion over 20–30 min." },
       { label: "Child", text: "7.5 mg/kg every 8 h IV or orally (maximum 500 mg per dose)." },
       { label: "Tetanus", text: "30 mg/kg/day divided every 6 h, maximum 4 g/day, for 7–10 days — the antibiotic of choice." },
-      { label: "Amoebic liver abscess / dysentery", text: "Adult 750 mg three times daily for 5–10 days; child 10 mg/kg three times daily." },
+      { label: "Amoebic liver abscess / dysentery", text: "Adult 750 mg three times daily for 5–10 days; child 10 mg/kg three times daily. ALWAYS follow with a luminal agent to clear the cysts, which metronidazole does not eradicate — paromomycin 25–35 mg/kg/day in 3 doses for 7 days, or diloxanide furoate 500 mg three times daily for 10 days (Harrison)." },
       { label: "Giardiasis", text: "Child 5 mg/kg three times daily for 5–7 days." }
     ]
   },
@@ -2624,9 +2841,18 @@ window.DRUG_DB = [
   cautions: ["Metallic taste, nausea; peripheral neuropathy with long courses.", "Disulfiram reaction with alcohol.", "Avoid high doses in the first trimester where alternatives exist."],
   calc: { type: "weight", dosePerKg: 7.5, doseUnit: "mg", conc: 5, concUnit: "mg/mL", maxDose: 500, label: "Child dose (7.5 mg/kg) from the 5 mg/mL infusion bag" },
   textbook: [
-    { text: "Tetanus: oral or intravenous metronidazole 30 mg/kg per day at 6-hourly intervals, maximum 4 g/day, decreases the number of vegetative forms of Clostridium tetani and is currently considered the antibiotic of choice. Total antimicrobial duration 7–10 days.", ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1823" },
-    { text: "Severe acute malnutrition: for persistent diarrhoea or small bowel overgrowth add metronidazole 7.5 mg/kg orally every 8 hours for 7 days.", ref: "Nelson 22nd ed. 2024, ch. 62, Table, p. 430" },
-    { text: "Clostridioides difficile infection, first episode or first recurrence, non-severe: metronidazole 7.5 mg/kg/dose (maximum 500 mg) orally three times daily for 10 days, or vancomycin 10 mg/kg/dose orally four times daily.", ref: "Nelson 22nd ed. 2024, ch. 258, Table 258.2, p. 1826" }
+    { book: "harrison", text: "Tetanus: metronidazole is the preferred antibiotic, 400 mg rectally or 500 mg IV every 6 h for 7 days.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" },
+    { book: "harrison", text: "Amoebic colitis: metronidazole 750 mg orally or IV three times daily for 5–10 days (or tinidazole 2 g/day for 3 days), followed by a luminal agent.", ref: "Harrison 22nd ed. 2025, ch. 230 Amebiasis and Infection with Free-Living Amebae, p. 1757" },
+    { book: "harrison", text: "Mild–moderate complicated intra-abdominal infection: metronidazole 500 mg every 8–12 h combined with a cephalosporin or fluoroquinolone.", ref: "Harrison 22nd ed. 2025, ch. 124 Approach to the Patient with an Infectious Disease, p. 963" },
+    { book: "williams", text: "Metronidazole has superior in vitro anaerobic activity; combined with ampicillin and an aminoglycoside it covers most organisms in serious pelvic infections.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1475" },
+    { book: "gabbe", text: "Chorioamnionitis requiring caesarean: add anaerobic cover, metronidazole 500 mg (at least one dose) preferred to clindamycin by many experts.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1118" },
+    { book: "gabbe", text: "Genital tract sepsis (SMFM): ampicillin plus clindamycin or metronidazole plus gentamicin, or cefotaxime/ceftriaxone plus metronidazole; antibiotics within 1 h.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1125" },
+    { book: "schwartz", text: "Prophylaxis for colorectal surgery and non-perforated appendicectomy: cefazolin 1–2 g IV plus metronidazole IV, as a single dose within 60 minutes before incision.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 9 Wound Healing, p. 288" },
+    { book: "schwartz", text: "Colorectal surgery or obstructed small intestine: cefazolin or ceftriaxone plus metronidazole (or ertapenem, cefoxitin, ampicillin-sulbactam).", ref: "Schwartz's Principles of Surgery 11th ed., ch. 6 Surgical Infections, p. 168" },
+    { book: "schwartz", text: "Perforated appendicitis: preoperative cover for Gram-negatives and anaerobes, e.g. cephalosporin plus metronidazole; postoperative course generally under 4 days after source control.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 30 The Appendix, p. 1336" },
+    { book: "nelson", text: "Tetanus: oral or intravenous metronidazole 30 mg/kg per day at 6-hourly intervals, maximum 4 g/day, decreases the number of vegetative forms of Clostridium tetani and is currently considered the antibiotic of choice. Total antimicrobial duration 7–10 days.", ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1823" },
+    { book: "nelson", text: "Severe acute malnutrition: for persistent diarrhoea or small bowel overgrowth add metronidazole 7.5 mg/kg orally every 8 hours for 7 days.", ref: "Nelson 22nd ed. 2024, ch. 62, Table, p. 430" },
+    { book: "nelson", text: "Clostridioides difficile infection, first episode or first recurrence, non-severe: metronidazole 7.5 mg/kg/dose (maximum 500 mg) orally three times daily for 10 days, or vancomycin 10 mg/kg/dose orally four times daily.", ref: "Nelson 22nd ed. 2024, ch. 258, Table 258.2, p. 1826" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2698,8 +2924,11 @@ window.DRUG_DB = [
   cautions: ["Dose-related reversible marrow suppression; rare irreversible aplastic anaemia.", "Grey baby syndrome."],
   calc: { type: "weight", dosePerKg: 25, doseUnit: "mg", conc: 200, concUnit: "mg/mL", maxDose: 1000, label: "Dose 25 mg/kg every 6 h at 200 mg/mL" },
   textbook: [
-    { text: "Chloramphenicol 50–100 mg/kg/day divided every 6 hours IV, maximum 4 g/day, is reserved for patients with doxycycline allergy and for pregnant women in Rocky Mountain spotted fever, because chloramphenicol is an independent risk factor for increased mortality compared with tetracyclines. Serum concentrations should be monitored if used.", ref: "Nelson 22nd ed. 2024, ch. 273 Rickettsial diseases, p. 1905" },
-    { text: "Bartonellosis: chloramphenicol 50–75 mg/kg/day is considered the drug of choice because it is also useful against concomitant Salmonella infection.", ref: "Nelson 22nd ed. 2024, ch. 250, p. 1815" }
+    { book: "harrison", text: "Reserved for when other agents are contraindicated or ineffective, e.g. meningitis due to susceptible meningococcus, H. influenzae or pneumococcus; also typhoid and rickettsial infection.", ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1179" },
+    { book: "harrison", text: "Adverse effects: aplastic anaemia, myelosuppression and grey baby syndrome; inhibits CYP2C19 and CYP3A4, raising levels of many co-administered drugs.", ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1179" },
+    { book: "harrison", text: "Meningococcal disease in resource-poor settings: a single dose of oily chloramphenicol suspension (or ceftriaxone) has been used successfully.", ref: "Harrison 22nd ed. 2025, ch. 160 Meningococcal Infections, p. 1249" },
+    { book: "nelson", text: "Chloramphenicol 50–100 mg/kg/day divided every 6 hours IV, maximum 4 g/day, is reserved for patients with doxycycline allergy and for pregnant women in Rocky Mountain spotted fever, because chloramphenicol is an independent risk factor for increased mortality compared with tetracyclines. Serum concentrations should be monitored if used.", ref: "Nelson 22nd ed. 2024, ch. 273 Rickettsial diseases, p. 1905" },
+    { book: "nelson", text: "Bartonellosis: chloramphenicol 50–75 mg/kg/day is considered the drug of choice because it is also useful against concomitant Salmonella infection.", ref: "Nelson 22nd ed. 2024, ch. 250, p. 1815" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2728,7 +2957,7 @@ window.DRUG_DB = [
     items: [
       { label: "Child oral", text: "10–15 mg/kg every 4–6 h. Maximum 75 mg/kg/24 h (60 mg/kg under 2 years, 30–45 mg/kg in neonates)." },
       { label: "Child rectal", text: "20–30 mg/kg every 4 h, or 40 mg/kg every 6–8 h — rectal doses are higher because absorption is lower and slower." },
-      { label: "Adult", text: "1 g every 6 h orally or rectally; maximum 4 g in 24 h, or 3 g if underweight, malnourished, alcohol-dependent or with liver disease." },
+      { label: "Adult", text: "1 g every 6 h orally or rectally; maximum 4 g in 24 h; 3 g if underweight or malnourished; 2 g in cirrhosis or chronic heavy alcohol use, where toxicity has occurred at doses as low as 2 g (Harrison)." },
       { label: "IV", text: "Adult and child over 50 kg 1 g every 6 h; child 15 mg/kg every 6 h (10 mg/kg every 6 h under 2 years)." }
     ]
   },
@@ -2783,8 +3012,13 @@ window.DRUG_DB = [
   antidote: "N-acetylcysteine 150 mg/kg IV over 1 h, then 50 mg/kg over 4 h, then 100 mg/kg over 16 h. Where no IV form exists, oral N-acetylcysteine or oral methionine 2.5 g every 4 h for 4 doses may be used. Start within 8 hours of ingestion for full protection, but give it even if presentation is late.",
   calc: { type: "weight", dosePerKg: 15, doseUnit: "mg", conc: 24, concUnit: "mg/mL", maxDose: 1000, label: "Child oral dose (15 mg/kg) using 120 mg/5 mL syrup (24 mg/mL)" },
   textbook: [
-    { text: "Acetaminophen 10–15 mg/kg orally every 4 hours; 10 mg/kg IV every 4 hours or 15 mg/kg IV every 6 hours (10 mg/kg every 6 hours under 2 years); 20–30 mg/kg rectally every 4 hours or 40 mg/kg rectally every 6–8 hours. Maximum daily dosing 75 mg/kg/24 h in children, 60 mg/kg/24 h under 2 years, and 30–45 mg/kg/24 h in neonates. It has minimal antiinflammatory action and no antiplatelet or adverse gastric effects, but overdosing can produce fulminant hepatic failure.", ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric pain management, Table 93.6, p. 681" },
-    { text: "Migraine: ibuprofen 7.5–10 mg/kg is well documented and often preferred; acetaminophen 15 mg/kg can be effective in those with a contraindication to NSAIDs.", ref: "Nelson 22nd ed. 2024, ch. 638 Headaches, p. 3645" }
+    { book: "harrison", text: "Acetaminophen can be used up to 4 g/day; reduce doses with liver dysfunction or heavy alcohol use, and limit to 2 g/day in cirrhosis.", ref: "Harrison 22nd ed. 2025, ch. 13 Palliative and End-of-Life Care, p. 81" },
+    { book: "harrison", text: "In chronic alcohol use the toxic acetaminophen dose may be as low as 2 g; patients should be warned about standard doses.", ref: "Harrison 22nd ed. 2025, ch. 351 Toxic and Drug-Induced Hepatitis, p. 2670" },
+    { book: "harrison", text: "Overdose: start N-acetylcysteine within 8 h (partly effective up to 24-36 h); Harrison cites a 140 mg/kg load over 1 h then 70 mg/kg every 4 h for 15-20 doses.", ref: "Harrison 22nd ed. 2025, ch. 351 Toxic and Drug-Induced Hepatitis, p. 2670" },
+    { book: "schwartz", text: "Acetaminophen reduces postoperative opioid requirements; available orally, rectally and IV.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "schwartz", text: "Enhanced-recovery multimodal analgesia: pre- and postoperative acetaminophen plus NSAID (and gabapentin) to limit opioid use.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 50 Optimizing Perioperative Care: Enhanced Recovery and Chinese Medicine, p. 2120" },
+    { book: "nelson", text: "Acetaminophen 10–15 mg/kg orally every 4 hours; 10 mg/kg IV every 4 hours or 15 mg/kg IV every 6 hours (10 mg/kg every 6 hours under 2 years); 20–30 mg/kg rectally every 4 hours or 40 mg/kg rectally every 6–8 hours. Maximum daily dosing 75 mg/kg/24 h in children, 60 mg/kg/24 h under 2 years, and 30–45 mg/kg/24 h in neonates. It has minimal antiinflammatory action and no antiplatelet or adverse gastric effects, but overdosing can produce fulminant hepatic failure.", ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric pain management, Table 93.6, p. 681" },
+    { book: "nelson", text: "Migraine: ibuprofen 7.5–10 mg/kg is well documented and often preferred; acetaminophen 15 mg/kg can be effective in those with a contraindication to NSAIDs.", ref: "Nelson 22nd ed. 2024, ch. 638 Headaches, p. 3645" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2869,8 +3103,14 @@ window.DRUG_DB = [
   cautions: ["Toxicity: circumoral numbness, tinnitus, agitation, seizures, then arrhythmia and arrest.", "Reduce the dose in liver failure, heart failure and the elderly."],
   calc: { type: "weight", dosePerKg: 5, doseUnit: "mg", conc: 10, concUnit: "mg/mL", label: "Maximum plain dose (5 mg/kg); 1 % = 10 mg/mL" },
   textbook: [
-    { text: "Lidocaine is the most commonly used local anaesthetic for cutaneous infiltration. Maximum safe doses are 5 mg/kg without epinephrine and 7 mg/kg with epinephrine. Although 2 % solutions are commonly available, more dilute solutions of 0.25 % and 0.5 % are equally effective, cause less burning on injection, and permit the use of larger volumes.", ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric pain management, p. 686" },
-    { text: "Resuscitation: lidocaine IV/IO 1 mg/kg bolus, maximum 100 mg, with an infusion of 20–50 mcg/kg/min; endotracheal 2–3 mg/kg. Repeat the bolus dose if the infusion is started more than 15 minutes after the initial bolus.", ref: "Nelson 22nd ed. 2024, Table 79.5, p. 563" }
+    { book: "harrison", text: "Refractory VF/pulseless VT in cardiac arrest: amiodarone 300 mg then 150 mg; if amiodarone fails, lidocaine can be given.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2336" },
+    { book: "harrison", text: "Arrest algorithm: lidocaine is a specific therapy for monomorphic VT and for polymorphic VT/VF due to acute coronary syndrome.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2337" },
+    { book: "harrison", text: "After STEMI, prophylactic IV lidocaine for ventricular premature beats without significant ventricular tachyarrhythmia is contraindicated (may increase mortality).", ref: "Harrison 22nd ed. 2025, ch. 286 ST-Segment Elevation Myocardial Infarction, p. 2123" },
+    { book: "schwartz", text: "The standard lidocaine dosing limit is 7 mg/kg; only slowly absorbed dilute tumescent infiltration allows up to 35 mg/kg.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 45 Plastic and Reconstructive Surgery, p. 2022" },
+    { book: "schwartz", text: "Systemic toxicity: CNS signs (restlessness, tinnitus, slurred speech, seizures, coma) and cardiovascular toxicity to arrest; risk rises with cumulative dose and renal, hepatic or cardiac disease; IV lipid emulsion treats toxicity.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "schwartz", text: "Buffering: 8.4% sodium bicarbonate mixed 1:9 with 1% lidocaine (with 1:100,000 adrenaline) reduces injection pain; local anaesthetics work less well in inflamed tissue.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 44 Surgery of the Hand and Wrist, p. 1936" },
+    { book: "nelson", text: "Lidocaine is the most commonly used local anaesthetic for cutaneous infiltration. Maximum safe doses are 5 mg/kg without epinephrine and 7 mg/kg with epinephrine. Although 2 % solutions are commonly available, more dilute solutions of 0.25 % and 0.5 % are equally effective, cause less burning on injection, and permit the use of larger volumes.", ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric pain management, p. 686" },
+    { book: "nelson", text: "Resuscitation: lidocaine IV/IO 1 mg/kg bolus, maximum 100 mg, with an infusion of 20–50 mcg/kg/min; endotracheal 2–3 mg/kg. Repeat the bolus dose if the infusion is started more than 15 minutes after the initial bolus.", ref: "Nelson 22nd ed. 2024, Table 79.5, p. 563" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2941,11 +3181,21 @@ window.DRUG_DB = [
   cautions: [
     "Bupivacaine cardiotoxicity is severe and hard to reverse — an accidental intravascular injection of 0.5 % can cause refractory cardiac arrest. Aspirate frequently, inject slowly and never exceed the maximum dose.",
     "Do not use 0.75 % bupivacaine for obstetric procedures.",
-    "Post-dural-puncture headache: treat with fluids, caffeine, analgesia and time; a blood patch if trained."
+    "Post-dural-puncture headache: fluids, caffeine and analgesia give temporary relief, but conservative treatment is largely ineffective; an epidural blood patch with 10–20 mL of the patient's own blood is the definitive treatment, and untreated headache can become chronic (Williams). Refer if no one can perform it."
   ],
   antidote: "Local anaesthetic systemic toxicity: stop injecting, ventilate with 100 % oxygen, treat seizures with a benzodiazepine, and give 20 % lipid emulsion 1.5 mL/kg over 1 min then 0.25 mL/kg/min where available. Prolonged CPR may be needed and is often successful.",
   textbook: [
-    { text: "Nelson covers regional and local anaesthesia in children, with maximum safe local anaesthetic dosing and the use of dilute solutions; obstetric spinal technique is drawn from WHO surgical guidance.", ref: "Nelson 22nd ed. 2024, ch. 93; Editorial note" }
+    { book: "williams", text: "Spinal for cesarean: aim for T4 sensory level; 10 to 12 mg hyperbaric bupivacaine depending on maternal size. Intrathecal preservative-free morphine 0.1 to 0.3 mg gives up to 24 hours of analgesia.", ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1078" },
+    { book: "williams", text: "Spinal hypotension: treat with left lateral uterine displacement, IV crystalloid, and IV boluses of ephedrine or phenylephrine; both vasopressors have comparable safety.", ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1079" },
+    { book: "williams", text: "Bupivacaine is neurotoxic and cardiotoxic at nearly identical levels; 0.75 percent solution is proscribed for epidural use. Treat systemic toxicity with 20 percent lipid emulsion bolus then infusion, airway control, and benzodiazepines for seizures.", ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1075" },
+    { book: "gabbe", text: "0.75% bupivacaine should not be used in obstetric patients; inject all local anaesthetics slowly and incrementally.", ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 351" },
+    { book: "gabbe", text: "LAST: 20% lipid emulsion, ~1.5 mL/kg bolus over 2-3 min then ~0.25 mL/kg/min (under 70 kg); benzodiazepine for seizures; max 12 mL/kg.", ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 351" },
+    { book: "gabbe", text: "Contraindications to neuraxial anaesthesia: significant haemorrhage or sepsis, site infection, coagulopathy, raised ICP from mass, patient refusal, some cardiac lesions.", ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 364" },
+    { book: "gabbe", text: "Spinal hypotension: increase IV fluid and left uterine displacement, then ephedrine or phenylephrine; dextrose-free crystalloid.", ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 350" },
+    { book: "schwartz", text: "Bupivacaine is the local anaesthetic most associated with cardiovascular toxicity (heart block, ventricular arrhythmia, arrest); lipid emulsion is a treatment.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
+    { book: "schwartz", text: "For hand blocks bupivacaine lasts on average 6-8 h; tolerated paediatric dose 2.5 mg/kg, i.e. 1 mL/kg of 0.25%.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 44 Surgery of the Hand and Wrist, p. 1936" },
+    { book: "schwartz", text: "Spinal anaesthesia complications include hypotension, bradycardia, post-dural puncture headache, nerve injury and haematoma; follow guidelines on intervals after anticoagulants.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2039" },
+    { book: "nelson", text: "Nelson covers regional and local anaesthesia in children, with maximum safe local anaesthetic dosing and the use of dilute solutions; obstetric spinal technique is drawn from WHO surgical guidance.", ref: "Nelson 22nd ed. 2024, ch. 93; Editorial note" }
   ],
   sources: [
     { name: "WHO. Surgical Care at the District Hospital, 2003" },
@@ -3022,9 +3272,12 @@ window.DRUG_DB = [
   antidote: "Flumazenil 0.01 mg/kg IV (adult 0.2 mg), repeated to a maximum of 1 mg — rarely appropriate, and dangerous in a patient with epilepsy or a mixed overdose. Support ventilation instead.",
   calc: { type: "weight", dosePerKg: 0.2, doseUnit: "mg", conc: 5, concUnit: "mg/mL", maxDose: 10, label: "IM or intranasal dose (0.2 mg/kg, max 10 mg) at 5 mg/mL" },
   textbook: [
-    { text: "Guidelines recommend intravenous lorazepam as a first-line agent and, if the patient does not have intravenous access, intramuscular midazolam. Other options besides IM midazolam include buccal or intranasal midazolam, intranasal lorazepam, or rectal diazepam. With all options respiratory depression is a potential side-effect that must be monitored and managed. If seizures persist 5 minutes after the initial benzodiazepine dose, a second dose should be given.", ref: "Nelson 22nd ed. 2024, ch. 633.8 Status epilepticus, p. 3628" },
-    { text: "Oral preoperative midazolam 0.5 mg/kg produces rapid-onset anxiolysis and amnesia and may decrease negative postoperative behavioural changes.", ref: "Nelson 22nd ed. 2024, ch. 92 Anaesthesia, p. 665" },
-    { text: "For intubation, midazolam 0.1 mg/kg IV has onset in 3–5 minutes and duration 60–120 minutes, giving amnesia with respiratory depression.", ref: "Nelson 22nd ed. 2024, Table 86.11, p. 620" }
+    { book: "harrison", text: "Early generalized convulsive status epilepticus in adults: IV lorazepam 0.1 mg/kg or midazolam 0.2 mg/kg (or clonazepam 0.015 mg/kg).", ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, p. 3426" },
+    { book: "harrison", text: "Refractory status epilepticus: IV midazolam 0.2 mg/kg bolus then infusion 0.2–0.6 mg/kg/h (ICU setting).", ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, p. 3426" },
+    { book: "harrison", text: "Tetanus: midazolam is an alternative for spasm control with fewer side effects and suitability for continuous use.", ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231" },
+    { book: "nelson", text: "Guidelines recommend intravenous lorazepam as a first-line agent and, if the patient does not have intravenous access, intramuscular midazolam. Other options besides IM midazolam include buccal or intranasal midazolam, intranasal lorazepam, or rectal diazepam. With all options respiratory depression is a potential side-effect that must be monitored and managed. If seizures persist 5 minutes after the initial benzodiazepine dose, a second dose should be given.", ref: "Nelson 22nd ed. 2024, ch. 633.8 Status epilepticus, p. 3628" },
+    { book: "nelson", text: "Oral preoperative midazolam 0.5 mg/kg produces rapid-onset anxiolysis and amnesia and may decrease negative postoperative behavioural changes.", ref: "Nelson 22nd ed. 2024, ch. 92 Anaesthesia, p. 665" },
+    { book: "nelson", text: "For intubation, midazolam 0.1 mg/kg IV has onset in 3–5 minutes and duration 60–120 minutes, giving amnesia with respiratory depression.", ref: "Nelson 22nd ed. 2024, Table 86.11, p. 620" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -3100,9 +3353,12 @@ window.DRUG_DB = [
   cautions: ["Severe tissue necrosis with extravasation.", "Stevens-Johnson syndrome, especially in people carrying HLA-B*1502 and in HIV.", "Multiple drug interactions."],
   calc: { type: "weight", dosePerKg: 18, doseUnit: "mg", conc: 50, concUnit: "mg/mL", maxDose: 1000, label: "Loading dose (18 mg/kg) at 50 mg/mL — dilute in saline" },
   textbook: [
-    { text: "If emergency therapy with a benzodiazepine is unsuccessful, with persistent seizures 5 minutes after the second benzodiazepine dose, fosphenytoin, valproate or levetiracetam is the recommended urgent therapy. Fosphenytoin is given at a loading dose of 20 mg/kg and a level is usually taken 2 hours later. Valproate is given at a loading dose of 40 mg/kg.", ref: "Nelson 22nd ed. 2024, ch. 633.8 Status epilepticus, p. 3628" },
-    { text: "For refractory neonatal seizures, phenytoin 20 mg/kg loading dose or lorazepam 0.1 mg/kg have historically been preferred, but levetiracetam is now often preferred as a second-line agent.", ref: "Nelson 22nd ed. 2024, ch. 122, p. 1067" },
-    { text: "Loading doses to achieve a therapeutic level quickly are 20 mg/kg for valproate, 20 mg/kg for phenytoin, and 10–20 mg/kg for phenobarbital; a lower phenobarbital load of 5 mg/kg is sometimes used in older children to avoid excessive sedation.", ref: "Nelson 22nd ed. 2024, ch. 633.10, p. 3612" }
+    { book: "harrison", text: "Established status epilepticus after benzodiazepine: IV phenytoin/fosphenytoin 20 mg/kg, or valproate 20–30 mg/kg, or levetiracetam 20–30 mg/kg.", ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, p. 3426" },
+    { book: "harrison", text: "Maintenance: phenytoin 300–400 mg/day in adults (3–6 mg/kg; child 4–8 mg/kg), once to three times daily; target level 10–20 µg/mL; dose-dependent half-life.", ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, p. 3422" },
+    { book: "harrison", text: "Lorazepam is the benzodiazepine of choice; seizure control is then maintained with a loading dose of fosphenytoin, valproate or levetiracetam, which have similar efficacy.", ref: "Harrison 22nd ed. 2025, ch. 311 Approach to the Patient with Critical Illness, p. 2298" },
+    { book: "nelson", text: "If emergency therapy with a benzodiazepine is unsuccessful, with persistent seizures 5 minutes after the second benzodiazepine dose, fosphenytoin, valproate or levetiracetam is the recommended urgent therapy. Fosphenytoin is given at a loading dose of 20 mg/kg and a level is usually taken 2 hours later. Valproate is given at a loading dose of 40 mg/kg.", ref: "Nelson 22nd ed. 2024, ch. 633.8 Status epilepticus, p. 3628" },
+    { book: "nelson", text: "For refractory neonatal seizures, phenytoin 20 mg/kg loading dose or lorazepam 0.1 mg/kg have historically been preferred, but levetiracetam is now often preferred as a second-line agent.", ref: "Nelson 22nd ed. 2024, ch. 122, p. 1067" },
+    { book: "nelson", text: "Loading doses to achieve a therapeutic level quickly are 20 mg/kg for valproate, 20 mg/kg for phenytoin, and 10–20 mg/kg for phenobarbital; a lower phenobarbital load of 5 mg/kg is sometimes used in older children to avoid excessive sedation.", ref: "Nelson 22nd ed. 2024, ch. 633.10, p. 3612" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -3130,7 +3386,7 @@ window.DRUG_DB = [
     summary: "Rarely the answer, and often harmful. Treating the cause of the acidosis matters far more than treating the number.",
     items: [
       { label: "Resuscitation", text: "1 mmol/kg IV/IO slowly, only with adequate ventilation." },
-      { label: "Hyperkalaemia", text: "1–2 mmol/kg IV over 5–10 min, after calcium, and alongside insulin with glucose and salbutamol." },
+      { label: "Hyperkalaemia", text: "Little or no role in acute hyperkalaemia unless there is significant metabolic acidosis (Harrison). Do not give undiluted hypertonic boluses for potassium alone. With acidosis: adult 50 mmol (Schwartz: one ampoule), preferably diluted and given slowly; child 1–2 mmol/kg. Always after calcium, with insulin–glucose and salbutamol doing the real work." },
       { label: "Deficit formula", text: "mmol needed = base deficit × weight (kg) × 0.3. Give half, then reassess." },
       { label: "Tricyclic poisoning", text: "1–2 mmol/kg IV boluses to narrow the QRS and raise the pH to 7.45–7.55." }
     ]
@@ -3184,8 +3440,14 @@ window.DRUG_DB = [
   cautions: ["Hypernatraemia, hyperosmolarity, hypokalaemia, and a fall in ionised calcium.", "Worsens intracellular acidosis if ventilation is inadequate.", "Severe tissue necrosis on extravasation."],
   calc: { type: "weight", dosePerKg: 1, doseUnit: "mmol", conc: 1, concUnit: "mmol/mL", label: "Dose 1 mmol/kg using 8.4 % (1 mmol/mL); halve the concentration for neonates" },
   textbook: [
-    { text: "Sodium bicarbonate 1 mEq/kg IV/IO; administer slowly and ensure adequate ventilation.", ref: "Nelson 22nd ed. 2024, Table 79.5 Medications for pediatric resuscitation, p. 563" },
-    { text: "Severe hyperkalaemia above 7 mEq/L, especially with electrocardiographic changes, requires calcium gluconate 10 % 100 mg/kg/dose (maximum 3,000 mg), sodium bicarbonate 1–2 mEq/kg IV over 5–10 minutes, and regular insulin 0.1 units/kg with 50 % glucose 1 mL/kg over 1 hour.", ref: "Nelson 22nd ed. 2024, ch. 573, p. 3245" }
+    { book: "harrison", text: "Cardiac arrest: if metabolic acidosis persists after successful defibrillation and with adequate ventilation, NaHCO3 1 mEq/kg may be given.", ref: "Harrison 22nd ed. 2025, ch. 317 Cardiovascular Collapse, Cardiac Arrest, and Sudden Cardiac Death, p. 2336" },
+    { book: "harrison", text: "Hyperkalaemia: IV bicarbonate has no acute role; never repeated hypertonic ampoule boluses; if used, give isotonic infusion (150 mEq in 1 L D5W) over hours.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
+    { book: "harrison", text: "DKA: bicarbonate has not improved outcomes; if arterial pH is below 7.0, 50 mmol in 200 mL sterile water with KCl may be given over the first 2 h until pH exceeds 7.0.", ref: "Harrison 22nd ed. 2025, ch. 416 Diabetes Mellitus: Management and Therapies, p. 3218" },
+    { book: "harrison", text: "Ventricular arrhythmias from tricyclics or other membrane-active poisons: sodium bicarbonate is indicated and should be considered first; class IA, IC and III antiarrhythmics are contraindicated.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3708" },
+    { book: "schwartz", text: "Lactic acidosis of shock: restore perfusion with volume, not bicarbonate; bicarbonate has not reduced morbidity or mortality and can raise PCO2 and worsen intracellular acidosis.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 92" },
+    { book: "schwartz", text: "Hyperkalaemia shift: bicarbonate 1 ampule IV with glucose/insulin; watch for circulatory overload and hypernatraemia in fragile cardiac patients.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 95" },
+    { book: "nelson", text: "Sodium bicarbonate 1 mEq/kg IV/IO; administer slowly and ensure adequate ventilation.", ref: "Nelson 22nd ed. 2024, Table 79.5 Medications for pediatric resuscitation, p. 563" },
+    { book: "nelson", text: "Severe hyperkalaemia above 7 mEq/L, especially with electrocardiographic changes, requires calcium gluconate 10 % 100 mg/kg/dose (maximum 3,000 mg), sodium bicarbonate 1–2 mEq/kg IV over 5–10 minutes, and regular insulin 0.1 units/kg with 50 % glucose 1 mL/kg over 1 hour.", ref: "Nelson 22nd ed. 2024, ch. 573, p. 3245" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -3239,7 +3501,7 @@ window.DRUG_DB = [
       requires: ["oral"],
       steps: [
         "Oral vitamin K 2 mg at birth, repeated at 4–7 days and again at 4–6 weeks. All three doses are needed.",
-        "A single oral dose does NOT prevent late vitamin K deficiency bleeding, which is the form that causes brain haemorrhage. The intramuscular dose is clearly better.",
+        "A single oral dose does NOT prevent late vitamin K deficiency bleeding, which is the form that causes brain haemorrhage. The intramuscular dose is clearly better, and Williams regards oral vitamin K as ineffective — use this oral schedule only when no injectable exists at all.",
         "Oral dosing is unreliable in a baby who vomits, who is not exclusively breastfed, or who has cholestasis or diarrhoea. These babies need the injection.",
         "Use the injectable solution by mouth if no oral preparation exists, at the doses above.",
         "Give the parents a written card with the dates the next two doses are due."
@@ -3266,7 +3528,12 @@ window.DRUG_DB = [
   cautions: ["Anaphylactoid reactions with rapid IV injection.", "Vitamin K3 (menadione) is unsafe in newborns."],
   calc: { type: "weight", dosePerKg: 0.3, doseUnit: "mg", conc: 10, concUnit: "mg/mL", maxDose: 10, label: "Treatment dose (0.3 mg/kg) at 10 mg/mL — newborn prophylaxis is a flat 1 mg" },
   textbook: [
-    { text: "Administration of either oral or parenteral vitamin K soon after birth prevents early vitamin K deficiency bleeding. A single dose of oral vitamin K does not prevent a substantial number of cases of late vitamin K deficiency bleeding. However, a single intramuscular injection of vitamin K 1 mg, the current practice in the United States, is almost universally effective, except in children with severe malabsorption; the increased efficacy of the intramuscular form is thought to result from a depot effect.", ref: "Nelson 22nd ed. 2024, ch. 65 Vitamin K deficiency, p. 482" }
+    { book: "harrison", text: "Warfarin with INR 3.5–10 and no bleeding: withhold warfarin; if INR above 10, oral vitamin K 2.5–5 mg may be given.", ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952" },
+    { book: "harrison", text: "Serious bleeding with raised INR: vitamin K 5–10 mg by slow IV infusion, repeated until INR normal, plus four-factor prothrombin complex concentrate.", ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952" },
+    { book: "harrison", text: "Vitamin K deficiency: 10 mg parenterally restores clotting factor levels within 8–10 h; FFP or PCC for faster correction.", ref: "Harrison 22nd ed. 2025, ch. 121 Coagulation Disorders, p. 935" },
+    { book: "williams", text: "Newborn prophylaxis: a single IM dose of vitamin K 0.5 to 1 mg within 1 hour of birth prevents vitamin K-dependent haemorrhagic disease.", ref: "Williams Obstetrics 25th ed. 2018, ch. 32 The Newborn, pdf p. 1349" },
+    { book: "gabbe", text: "All newborns should receive vitamin K1 0.5-1 mg IM; IM preferred because oral is less effective against late haemorrhagic disease.", ref: "Gabbe's Obstetrics 9th ed., ch. 25 The Neonate, p. 496" },
+    { book: "nelson", text: "Administration of either oral or parenteral vitamin K soon after birth prevents early vitamin K deficiency bleeding. A single dose of oral vitamin K does not prevent a substantial number of cases of late vitamin K deficiency bleeding. However, a single intramuscular injection of vitamin K 1 mg, the current practice in the United States, is almost universally effective, except in children with severe malabsorption; the increased efficacy of the intramuscular form is thought to result from a depot effect.", ref: "Nelson 22nd ed. 2024, ch. 65 Vitamin K deficiency, p. 482" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -3331,7 +3598,7 @@ window.DRUG_DB = [
   cautions: ["Tachycardia, jitteriness, feeding intolerance and, rarely, seizures at high levels.", "Caffeine does not treat the cause of new apnoea — look for sepsis."],
   calc: { type: "weight", dosePerKg: 20, doseUnit: "mg", conc: 20, concUnit: "mg/mL", label: "Loading dose (20 mg/kg citrate) at 20 mg/mL = 1 mL per kg" },
   textbook: [
-    { text: "Caffeine facilitates extubation from mechanical ventilation, reduces the rate of bronchopulmonary dysplasia and improves neurodevelopmental outcomes. It can safely be given orally or intravenously. Infants are generally given an initial loading dose of 20 mg/kg of caffeine citrate followed 24 hours later by once-daily maintenance doses of 5–10 mg/kg. Because the therapeutic window is wide and serious side-effects are rare, monitoring of serum drug concentrations is usually unnecessary; monitoring is primarily through observation of vital signs such as tachycardia and clinical response.", ref: "Nelson 22nd ed. 2024, ch. 124 Apnoea of prematurity, p. 1076" }
+    { book: "nelson", text: "Caffeine facilitates extubation from mechanical ventilation, reduces the rate of bronchopulmonary dysplasia and improves neurodevelopmental outcomes. It can safely be given orally or intravenously. Infants are generally given an initial loading dose of 20 mg/kg of caffeine citrate followed 24 hours later by once-daily maintenance doses of 5–10 mg/kg. Because the therapeutic window is wide and serious side-effects are rare, monitoring of serum drug concentrations is usually unnecessary; monitoring is primarily through observation of vital signs such as tachycardia and clinical response.", ref: "Nelson 22nd ed. 2024, ch. 124 Apnoea of prematurity, p. 1076" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -3361,7 +3628,7 @@ window.DRUG_DB = [
       { label: "Plan A (no dehydration, at home)", text: "After each loose stool: under 2 years 50–100 mL; 2–10 years 100–200 mL; older children and adults as much as they want. Continue feeding and breastfeeding." },
       { label: "Plan B (some dehydration)", text: "75 mL/kg of ORS over 4 hours at the facility, given by cup and spoon. Reassess at 4 hours." },
       { label: "Plan C (severe dehydration)", text: "Intravenous Ringer's lactate — see the Ringer's lactate entry and the Plan C calculator." },
-      { label: "Zinc", text: "20 mg daily for 10–14 days (10 mg daily if under 6 months), starting on day 1 of the diarrhoea, whatever the plan." }
+      { label: "Zinc", text: "Children under 5: 20 mg daily for 10–14 days (10 mg daily if under 6 months), starting on day 1 of the diarrhoea, whatever the plan. There is no established benefit in adults (Harrison)." }
     ]
   },
   improvised: [
@@ -3416,10 +3683,14 @@ window.DRUG_DB = [
   paediatric: ["Zinc for 10–14 days shortens the episode and reduces the risk of another one over the next 2–3 months.", "Dispersible zinc tablets dissolve in a spoon of breast milk or clean water."],
   cautions: ["Hypernatraemia from incorrectly mixed solutions.", "ORS does not reduce stool volume — it replaces losses. Parents need to be told this or they will believe it failed."],
   textbook: [
-    { text: "All children older than 6 months with acute diarrhoea in at-risk areas should receive oral zinc, 20 mg/day recommended by most guidelines, for 10–14 days during and after the diarrhoea; administration of zinc in community settings also increases the use of ORS and reduces inappropriate use of antimicrobials.", ref: "Nelson 22nd ed. 2024, ch. 387 Acute gastroenteritis in children, p. 2372" },
-    { text: "Shigella treatment includes zinc 20 mg (10 mg for infants under 6 months) for 10–14 days by mouth alongside ciprofloxacin or ceftriaxone.", ref: "Nelson 22nd ed. 2024, ch. 243 Shigella, p. 1780" },
-    { text: "Zinc supplements are recommended for children during and after diarrhoea at 10–20 mg/day for 2 weeks as part of essential nutrition actions.", ref: "Nelson 22nd ed. 2024, ch. 61 Nutrition and global health, p. 425" },
-    { text: "ReSuMal recipe for malnutrition and the severe acute malnutrition rehydration schedule are given in the malnutrition chapter, with ReSoMal 5–10 mL/kg in alternate hours and IV fluids reserved for shock.", ref: "Nelson 22nd ed. 2024, ch. 62, Tables 62.8 and 62.11, pp. 428–430" }
+    { book: "harrison", text: "Cholera with severe dehydration (all ages): Ringer's lactate (or saline) 100 mL/kg in the first 3 h (6 h if under 12 months), total 200 mL/kg in 24 h.", ref: "Harrison 22nd ed. 2025, ch. 173 Cholera and Other Vibrioses, p. 1328" },
+    { book: "harrison", text: "Moderate dehydration, age 15 years or more (30 kg+): 2200–4000 mL ORS within the first 4 h, reassessing regularly.", ref: "Harrison 22nd ed. 2025, ch. 173 Cholera and Other Vibrioses, p. 1328" },
+    { book: "harrison", text: "Homemade ORS: about half a teaspoon (3.5 g) salt with 6 teaspoons sugar or 50 g rice cereal per litre; potassium must be given separately.", ref: "Harrison 22nd ed. 2025, ch. 173 Cholera and Other Vibrioses, p. 1328" },
+    { book: "harrison", text: "Zinc reduces diarrhoea volume and severity in young children with cholera: 10 mg daily for 10 days under 6 months, 20 mg daily for 10 days at 6–59 months.", ref: "Harrison 22nd ed. 2025, ch. 173 Cholera and Other Vibrioses, p. 1329" },
+    { book: "nelson", text: "All children older than 6 months with acute diarrhoea in at-risk areas should receive oral zinc, 20 mg/day recommended by most guidelines, for 10–14 days during and after the diarrhoea; administration of zinc in community settings also increases the use of ORS and reduces inappropriate use of antimicrobials.", ref: "Nelson 22nd ed. 2024, ch. 387 Acute gastroenteritis in children, p. 2372" },
+    { book: "nelson", text: "Shigella treatment includes zinc 20 mg (10 mg for infants under 6 months) for 10–14 days by mouth alongside ciprofloxacin or ceftriaxone.", ref: "Nelson 22nd ed. 2024, ch. 243 Shigella, p. 1780" },
+    { book: "nelson", text: "Zinc supplements are recommended for children during and after diarrhoea at 10–20 mg/day for 2 weeks as part of essential nutrition actions.", ref: "Nelson 22nd ed. 2024, ch. 61 Nutrition and global health, p. 425" },
+    { book: "nelson", text: "ReSuMal recipe for malnutrition and the severe acute malnutrition rehydration schedule are given in the malnutrition chapter, with ReSoMal 5–10 mL/kg in alternate hours and IV fluids reserved for shock.", ref: "Nelson 22nd ed. 2024, ch. 62, Tables 62.8 and 62.11, pp. 428–430" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -3483,9 +3754,9 @@ window.DRUG_DB = [
   paediatric: ["Dose by age, not weight.", "Give to every child with measles in a region with vitamin A deficiency, whether or not there are eye signs."],
   cautions: ["Acute overdose causes vomiting, headache and a bulging fontanelle, which resolve.", "Teratogenic in pregnancy at high doses."],
   textbook: [
-    { text: "Severe acute malnutrition with corneal ulceration: give vitamin A immediately, at 50,000 IU if under 6 months, 100,000 IU at 6–12 months and 200,000 IU over 12 months, and instil 1 drop of atropine 1 % into the affected eye to relax the eye and prevent the lens from pushing out.", ref: "Nelson 22nd ed. 2024, ch. 62, Table, p. 428" },
-    { text: "Give vitamin A on day 1 (under 6 months 50,000 units; 6–12 months 100,000 units; over 12 months 200,000 units) if the child has any eye signs of vitamin A deficiency or has had recent measles, and repeat this dose on days 2 and 14. Folic acid 1 mg (5 mg on day 1), zinc 2 mg/kg/day and copper 0.3 mg/kg/day are also given; iron is not given in the stabilisation phase.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, p. 429" },
-    { text: "Micronutrient supplements for young children, including vitamin A, iron and zinc, are among the essential nutrition actions in deficient areas.", ref: "Nelson 22nd ed. 2024, ch. 61, p. 425" }
+    { book: "nelson", text: "Severe acute malnutrition with corneal ulceration: give vitamin A immediately, at 50,000 IU if under 6 months, 100,000 IU at 6–12 months and 200,000 IU over 12 months, and instil 1 drop of atropine 1 % into the affected eye to relax the eye and prevent the lens from pushing out.", ref: "Nelson 22nd ed. 2024, ch. 62, Table, p. 428" },
+    { book: "nelson", text: "Give vitamin A on day 1 (under 6 months 50,000 units; 6–12 months 100,000 units; over 12 months 200,000 units) if the child has any eye signs of vitamin A deficiency or has had recent measles, and repeat this dose on days 2 and 14. Folic acid 1 mg (5 mg on day 1), zinc 2 mg/kg/day and copper 0.3 mg/kg/day are also given; iron is not given in the stabilisation phase.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, p. 429" },
+    { book: "nelson", text: "Micronutrient supplements for young children, including vitamin A, iron and zinc, are among the essential nutrition actions in deficient areas.", ref: "Nelson 22nd ed. 2024, ch. 61, p. 425" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -3577,8 +3848,20 @@ window.DRUG_DB = [
   cautions: ["Acute haemolytic reaction, febrile and allergic reactions, transfusion-associated circulatory overload, and transmission of HIV, hepatitis B and C, syphilis and malaria.", "Blood must be screened; where it is not, the indication must be strong."],
   calc: { type: "weight", dosePerKg: 20, doseUnit: "mL", conc: 1, concUnit: "mL/mL", label: "Whole blood 20 mL/kg (packed cells 10 mL/kg)" },
   textbook: [
-    { text: "Severe acute malnutrition with very severe anaemia, haemoglobin under 4 g/dL, or 4–6 g/dL with respiratory distress: give whole blood 10 mL/kg slowly over 3 hours, or packed cells 5–7 mL/kg if there are signs of heart failure, with furosemide 1 mg/kg IV at the start of the transfusion. In shock not improving, assume septic shock, give maintenance fluid 4 mL/kg/hr while waiting for blood, and order 10 mL/kg fresh whole blood transfused slowly over 3 hours.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, Table, p. 428" },
-    { text: "After receiving 100 mL/kg of red-cell transfusions, regular assessment for iron overload should begin, usually including serum ferritin and MRI assessment of hepatic iron every 1–2 years; children on chronic transfusion should also have annual screening for transfusion-transmitted infections including hepatitis B, hepatitis C and HIV.", ref: "Nelson 22nd ed. 2024, ch. 511 Sickle cell disease, p. 2976" }
+    { book: "harrison", text: "Red cell transfusion thresholds (with symptoms): Hb below 7 g/dL if haemodynamically stable, below 8 g/dL with cardiovascular disease or orthopaedic/cardiac surgery, 9-10 g/dL in acute coronary disease; not for nutritional anaemia.", ref: "Harrison 22nd ed. 2025, ch. 118 Transfusion Therapy and Biology, p. 906" },
+    { book: "harrison", text: "Give one red cell unit at a time (250-350 mL); each unit raises Hb by about 1 g/dL and haematocrit by 3%.", ref: "Harrison 22nd ed. 2025, ch. 118 Transfusion Therapy and Biology, p. 906" },
+    { book: "harrison", text: "Preventing circulatory overload (TACO): identify at-risk patients, transfuse slowly (1 unit over 3-4 h), use diuretics in stable patients with prior TACO; treat by stopping transfusion, oxygen and diuretics.", ref: "Harrison 22nd ed. 2025, ch. 118 Transfusion Therapy and Biology, p. 912" },
+    { book: "williams", text: "With ongoing obstetrical haemorrhage Parkland transfuses rapidly when hematocrit is below 25 percent; compatible whole blood is ideal and one unit raises hematocrit 3 to 4 volume percent.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1745" },
+    { book: "williams", text: "After about five red cell units check platelets, clotting studies and fibrinogen; keep platelets above 50,000/microL, replace if fibrinogen below 150 mg/dL, fresh-frozen plasma 10 to 15 mL/kg.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1746" },
+    { book: "williams", text: "Urine output measured hourly is a key vital sign in haemorrhage; maintain at least 30 and preferably 50 mL or more per hour.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1743" },
+    { book: "gabbe", text: "Consider packed red cells for Hb below 7 g/dL or active haemorrhage with coagulopathy; one unit raises Hb about 1 g/dL in a 70 kg patient.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 418" },
+    { book: "gabbe", text: "Obstetric massive transfusion commonly 4 units pRBC : 4 FFP : 1 apheresis platelets; platelets if count <20,000 after vaginal or <50,000 after caesarean delivery.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 418" },
+    { book: "schwartz", text: "Massive transfusion: deliver plasma, platelets and RBCs 1:1:1, started early (ideally with the first 2 RBC units), minimise crystalloid, stop once active bleeding ends.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 120" },
+    { book: "schwartz", text: "Non-bleeding patients: restrictive trigger; AABB minimum threshold 7 g/dL if stable, 8 g/dL for cardiac/orthopaedic surgery or cardiovascular disease; transfuse symptomatic anaemia one unit at a time.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 117" },
+    { book: "schwartz", text: "Whole blood is advantageous in remote/austere settings where platelets are unavailable and was associated with improved survival versus component therapy in military casualties.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 121" },
+    { book: "schwartz", text: "Damage control resuscitation: permissive hypotension, minimal crystalloid, early balanced blood products in whole-blood-like ratios, and haemostatic adjuncts.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 119" },
+    { book: "nelson", text: "Severe acute malnutrition with very severe anaemia, haemoglobin under 4 g/dL, or 4–6 g/dL with respiratory distress: give whole blood 10 mL/kg slowly over 3 hours, or packed cells 5–7 mL/kg if there are signs of heart failure, with furosemide 1 mg/kg IV at the start of the transfusion. In shock not improving, assume septic shock, give maintenance fluid 4 mL/kg/hr while waiting for blood, and order 10 mL/kg fresh whole blood transfused slowly over 3 hours.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, Table, p. 428" },
+    { book: "nelson", text: "After receiving 100 mL/kg of red-cell transfusions, regular assessment for iron overload should begin, usually including serum ferritin and MRI assessment of hepatic iron every 1–2 years; children on chronic transfusion should also have annual screening for transfusion-transmitted infections including hepatitis B, hepatitis C and HIV.", ref: "Nelson 22nd ed. 2024, ch. 511 Sickle cell disease, p. 2976" }
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
