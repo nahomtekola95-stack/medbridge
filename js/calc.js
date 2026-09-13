@@ -117,5 +117,72 @@
   }
   const glucose = { toMgdl: (mmol) => mmol * 18.016, toMmol: (mgdl) => mgdl / 18.016 };
 
-  window.Calc = { samPlan, glucose, round, dripRate, rateFromDrops, infusionRate, weightDose, dilution, estimateWeight, planC, convertMass };
+  /** Holliday–Segar maintenance (Nelson 22nd ed., Tables 74.2–74.3). Rate capped at 100 mL/h. */
+  function maintenance(weightKg, feverC) {
+    if (!(weightKg > 0)) return null;
+    const w = weightKg;
+    const perDay = w <= 10 ? 100 * w : w <= 20 ? 1000 + 50 * (w - 10) : 1500 + 20 * (w - 20);
+    let perHour = w <= 10 ? 4 * w : w <= 20 ? 40 + 2 * (w - 10) : 60 + (w - 20);
+    const capped = perHour > 100;
+    if (capped) perHour = 100;
+    // 10–15 % more water for each °C of persistent fever above 38 °C
+    const feverExtra = feverC > 38 ? Math.min(feverC - 38, 4) : 0;
+    const f = 1 + 0.12 * feverExtra;
+    return { perHour: perHour * f, perDay: Math.min(perDay, 2400) * f, capped, feverFactor: f };
+  }
+
+  /** Newborn daily fluid (WHO Pocket Book 2013 scheme): day 1 60, day 2 90, day 3 120, then 150 mL/kg/day. */
+  function neonatalFluid(weightKg, dayOfLife) {
+    if (!(weightKg > 0) || !(dayOfLife >= 1)) return null;
+    const perKgDay = dayOfLife <= 1 ? 60 : dayOfLife === 2 ? 90 : dayOfLife === 3 ? 120 : 150;
+    const perDay = perKgDay * weightKg;
+    return { perKgDay, perDay, perHour: perDay / 24, per3h: perDay / 8 };
+  }
+
+  /** Burns resuscitation: mL/kg/%TBSA of Ringer's lactate over 24 h from the time of burn, half in the first 8 h. */
+  function burns({ weightKg, tbsa, mlPerKgPct, hoursSinceBurn = 0 }) {
+    if (!(weightKg > 0) || !(tbsa > 0) || !(mlPerKgPct > 0)) return null;
+    const pct = Math.min(tbsa, 100);
+    const total = mlPerKgPct * weightKg * pct;
+    const h = Math.max(0, Math.min(hoursSinceBurn, 24));
+    const first8 = total / 2, next16 = total / 2;
+    const firstHoursLeft = Math.max(0, 8 - h);
+    // if first-8-h period has passed partly, the first half still has to be given in the time remaining
+    const rateFirst = firstHoursLeft > 0 ? first8 / firstHoursLeft : null;
+    const rateNext = next16 / (h > 8 ? Math.max(24 - h, 1) : 16);
+    return { total, first8, next16, firstHoursLeft, rateFirst, rateNext, late: h > 0 };
+  }
+
+  /** Red cell transfusion volume: weight × Hb rise (g/dL) × factor. About 5 mL/kg packed cells (Nelson) or 10 mL/kg whole blood per 1 g/dL. */
+  function transfusion({ weightKg, currentHb, targetHb, product }) {
+    if (!(weightKg > 0) || !(targetHb > currentHb) || !(currentHb >= 0)) return null;
+    const factor = product === "whole" ? 10 : 5;
+    let volume = weightKg * (targetHb - currentHb) * factor;
+    const cap = (product === "whole" ? 20 : 10) * weightKg; // WHO single-transfusion volumes
+    const capped = volume > cap;
+    if (capped) volume = cap;
+    return { volume, factor, capped, cap, rateMlHr: Math.min(5 * weightKg, volume / 3), hours: 3 };
+  }
+
+  /** Creatinine clearance. Adults: Cockcroft–Gault. Children: bedside Schwartz eGFR. Creatinine in µmol/L. */
+  function crcl({ ageYears, weightKg, sex, creatUmol, heightCm }) {
+    if (!(creatUmol > 0)) return null;
+    const scrMgdl = creatUmol / 88.4;
+    if (ageYears != null && ageYears < 18) {
+      if (!(heightCm > 0)) return { error: "Height is needed for children (bedside Schwartz)." };
+      return { value: 0.413 * heightCm / scrMgdl, method: "Bedside Schwartz eGFR (mL/min/1.73 m²)" };
+    }
+    if (!(ageYears > 0) || !(weightKg > 0)) return { error: "Age and weight are needed." };
+    const v = (140 - ageYears) * weightKg * (sex === "female" ? 0.85 : 1) / (72 * scrMgdl);
+    return { value: v, method: "Cockcroft–Gault (mL/min)" };
+  }
+
+  /** Oxygen cylinder duration. Litres left = full content × gauge ÷ full pressure; keep 20 % in reserve. */
+  function cylinderMinutes({ fullLitres, pressure, fullPressure, flow }) {
+    if (!(fullLitres > 0) || !(pressure > 0) || !(fullPressure > 0) || !(flow > 0)) return null;
+    const left = fullLitres * Math.min(pressure / fullPressure, 1);
+    return { litresLeft: left, minutes: left / flow, safeMinutes: left * 0.8 / flow };
+  }
+
+  window.Calc = { maintenance, neonatalFluid, burns, transfusion, crcl, cylinderMinutes, samPlan, glucose, round, dripRate, rateFromDrops, infusionRate, weightDose, dilution, estimateWeight, planC, convertMass };
 })();

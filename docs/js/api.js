@@ -61,6 +61,23 @@
     report(id, reason) { return call("/comments/" + id + "/report", { method: "POST", body: { reason } }); },
     feed() { return call("/feed"); },
 
+    /** Latest clinical sign-off per drug. Cached so the status shows offline. */
+    async reviews() {
+      if (state.serverless) return cacheGet("reviews")?.reviews || [];
+      try { const r = await call("/reviews"); cacheSet("reviews", r); return r.reviews; }
+      catch { return cacheGet("reviews")?.reviews || []; }
+    },
+    cachedReviews() { return cacheGet("reviews")?.reviews || []; },
+    reviewHistory(drug) { return call("/reviews?drug=" + encodeURIComponent(drug)).then(r => r.reviews); },
+    signOff(f) { return call("/reviews", { method: "POST", body: f }); },
+    async stock(drug) {
+      const key = "stock:" + (drug || "all");
+      try { const r = await call("/stock" + (drug ? "?drug=" + encodeURIComponent(drug) : "")); cacheSet(key, r); return { ...r, cached: false }; }
+      catch { const c = cacheGet(key); return c ? { ...c, cached: true } : { reports: [], offline: true }; }
+    },
+    reportStock(drug, status, note) { return call("/stock", { method: "POST", body: { drug, status, note } }); },
+    removeStock(id) { return call("/stock/" + id, { method: "DELETE" }); },
+
     adminOverview() { return call("/admin/overview"); },
     adminSaveMethod(f, id) { return call("/admin/methods" + (id ? "/" + id : ""), { method: id ? "PATCH" : "POST", body: f }); },
     adminDeleteMethod(id) { return call("/admin/methods/" + id, { method: "DELETE" }); },

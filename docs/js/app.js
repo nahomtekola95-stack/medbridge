@@ -61,12 +61,14 @@
     const parts = path.split("/").filter(Boolean);
     return { view: parts[0] || "drugs", id: parts[1], q: Object.fromEntries(new URLSearchParams(qs || "")) };
   }
-  let CV = null, FX = null;
+  let CV = null, FX = null, EX = null, RV = null;
   const routes = { drugs: viewDrugs, drug: viewDrug, calc: viewCalc, techniques: viewTechniques, local: viewLocal, setup: viewSetup, about: viewAbout,
     case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r),
     resus: (m, r) => FX.views.resus(m, r), drip: (m, r) => FX.views.drip(m, r), schedules: (m, r) => FX.views.schedules(m, r),
-    compat: (m, r) => FX.views.compat(m, r), tools: (m, r) => FX.views.tools(m, r) };
-  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools" };
+    compat: (m, r) => FX.views.compat(m, r), tools: (m, r) => FX.views.tools(m, r),
+    newborn: (m, r) => EX.views.newborn(m, r), interactions: (m, r) => EX.views.interactions(m, r), charts: (m, r) => EX.views.charts(m, r),
+    quiz: (m, r) => EX.views.quiz(m, r), review: (m, r) => RV.views.review(m, r) };
+  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools" };
   function render() {
     const r = parseHash();
     const main = $("#app");
@@ -219,9 +221,11 @@
           <div class="head">
             <h1>${esc(d.name)}</h1>
             <div class="cls">${esc(d.cls)}${d.aka?.length ? " · " + esc(d.aka.join(", ")) : ""}</div>
-            <div class="row tags">${reviewChip(d)}<span class="chip cat" ${catStyle(d.cat)}>${esc(CATEGORIES[d.cat])}</span>${(d.wards || []).map(w => `<a class="chip ward" href="#/drugs" data-goward="${w}">${ic("ward")}${esc(WARDS[w].label)}</a>`).join("")}<span style="margin-left:auto" class="row">${FX.starButton("drug:" + d.id)}<button type="button" class="btn ghost sm" id="print">${ic("print")}Print</button></span></div>
+            <div class="row tags">${RV.statusChip(d)}${EX.safetyChips(d)}<span class="chip cat" ${catStyle(d.cat)}>${esc(CATEGORIES[d.cat])}</span>${(d.wards || []).map(w => `<a class="chip ward" href="#/drugs" data-goward="${w}">${ic("ward")}${esc(WARDS[w].label)}</a>`).join("")}<span style="margin-left:auto" class="row">${FX.starButton("drug:" + d.id)}<button type="button" class="btn ghost sm" id="print">${ic("print")}Print</button></span></div>
           </div>
+          ${EX.neonatalCard(d)}
           ${FX.patientDoseCard(d)}
+          ${EX.doseActions(d)}
           ${regs.length ? `<div class="row sched-links">${regs.map(g => `<a class="btn ghost sm" href="#/schedules?regimen=${g.id}">${ic("clock")}Start schedule: ${esc(g.name.split(" — ")[0])}</a>`).join("")}</div>` : ""}
           <div class="glance">
             <div class="card"><h4>Key doses</h4><ul>${glanceDoses.map(i => `<li><strong>${esc(i.label)}:</strong> ${esc(i.text)}</li>`).join("")}</ul></div>
@@ -254,9 +258,11 @@
           </div>`).join("")}
           ${(() => { const cs = CONDITIONS.filter(c => c.drugs.some(x => x.id === d.id)); return cs.length ? `<div class="card"><h4 style="margin-top:0">${ic("clipboard")} Used in these cases</h4><div class="row">${cs.map(c => { const role = c.drugs.find(x => x.id === d.id).role; return `<a class="chip case ${ROLES[role].cls}" href="#/case/${c.id}">${esc(c.name)} <b>${esc(ROLES[role].label)}</b></a>`; }).join("")}</div></div>` : ""; })()}
           ${FX.alternativesHtml(d)}
+          <div id="stock-host"></div>
           ${d.calc ? `<a class="btn" href="#/calc?drug=${d.id}">${ic("calc")}Open calculator for ${esc(d.name)}</a>` : ""}
           <div id="community-host" style="margin-top:1.25rem"></div>`;
         CV.drugSection($("#community-host"), d);
+        RV.stockSection($("#stock-host"), d);
       } else if (tab === "standard") {
         pane.innerHTML = `<div class="card"><p class="text-2">${esc(d.standard.summary)}</p><dl class="kv">${d.standard.items.map(i => `<dt>${esc(i.label)}</dt><dd>${esc(i.text)}</dd>`).join("")}</dl></div>
           <div class="card"><h3>Presentation</h3>${listHtml(d.presentation)}<h3 style="margin-top:.8rem">Indications</h3>${listHtml(d.indications)}</div>`;
@@ -264,13 +270,17 @@
         pane.innerHTML = `
           ${d.antidote ? `<div class="callout danger">${ic("shield")}<div><strong>Antidote / reversal.</strong> ${esc(d.antidote)}</div></div>` : ""}
           <div class="card"><h3>Cautions</h3>${listHtml(d.cautions) || "<p class='muted'>—</p>"}</div>
-          ${d.paediatric?.length ? `<div class="card"><h3>${ic("baby")} Paediatric notes</h3>${listHtml(d.paediatric)}</div>` : ""}`;
+          ${d.paediatric?.length ? `<div class="card"><h3>${ic("baby")} Paediatric notes</h3>${listHtml(d.paediatric)}</div>` : ""}
+          ${EX.safetyCards(d)}
+          ${EX.interactionsHtml(d)}`;
       } else if (tab === "textbook") {
         pane.innerHTML = textbookHtml(d.textbook, "drug");
       } else {
         pane.innerHTML = `<div class="card"><h3>Sources</h3><ul>${d.sources.map(s => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a>` : esc(s.name)}</li>`).join("")}</ul>
-          <h3 style="margin-top:.8rem">Review status</h3><p>${reviewChip(d)}${d.review.by ? ` by ${esc(d.review.by)}` : ""}</p>
-          <p class="small muted">Each entry must be checked by a pharmacist or physician against these sources and the national formulary before clinical use. See README for the review workflow.</p></div>`;
+          <h3 style="margin-top:.8rem">Review status</h3><p>${RV.statusChip(d)}</p>
+          <p class="small muted">Each entry must be checked by a pharmacist or physician against these sources and the national formulary before clinical use.</p>
+          <div id="rv-history"></div></div>`;
+        RV.historyInto($("#rv-history"), d);
       }
       document.querySelectorAll(".tab").forEach(t => { const on = t.dataset.tab === tab; t.classList.toggle("active", on); t.setAttribute("aria-selected", on); });
     };
@@ -308,6 +318,7 @@
         <button type="button" class="btn ghost sm" data-open-patient>${ic("user")}${FX.patient.weight ? `Doses for ${Calc.round(FX.patient.weight, 1)} kg` : "Set weight for doses"}</button>
         <a class="btn ghost sm" href="#/resus${FX.patient.weight ? "?w=" + FX.patient.weight : ""}">${ic("zap")}Emergency card</a>
         ${regs.map(g => `<a class="btn ghost sm" href="#/schedules?regimen=${g.id}">${ic("clock")}Schedule: ${esc(g.name.split(" — ")[0])}</a>`).join("")}
+        ${EX.shareButton(`MedBridge: ${c.name}\n${c.steps?.length ? "Steps: " + c.steps.slice(0, 4).map((x, i) => `${i + 1}. ${x}`).join(" ") + "\n" : ""}First line: ${c.drugs.filter(x => x.role === "first").map(x => `${(DRUG_DB.find(y => y.id === x.id)?.name || x.id).split(" (")[0]}${x.note ? " (" + x.note + ")" : ""}`).join("; ")}${FX.patient.weight ? `\nWeight ${Calc.round(FX.patient.weight, 1)} kg` : ""}\nDraft reference. Confirm against the national protocol.`)}
       </div>
       <p class="text-2" style="max-width:70ch;font-size:1.02rem">${esc(c.summary)}</p>
       <div class="glance">
@@ -337,7 +348,7 @@
 
   /* ---------- Calculators ---------- */
   function viewCalc(main, r) {
-    const tabs = [["drip", "Drip rate"], ["infusion", "Dose → drops"], ["weight", "mg/kg"], ["dilution", "Dilution"], ["planc", "Plan C fluids"], ["pedwt", "Child weight"], ["units", "Units"]];
+    const tabs = [["drip", "Drip rate"], ["infusion", "Dose → drops"], ["weight", "mg/kg"], ["dilution", "Dilution"], ["planc", "Plan C fluids"], ["pedwt", "Child weight"], ["fluids", "Fluids & blood"], ["kidney", "Kidney"], ["units", "Units"]];
     const presetDrug = DRUG_DB.find(d => d.id === r.q.drug);
     let active = r.q.tab || (presetDrug ? ({ infusion: "infusion", weight: "weight", planC: "planc" }[presetDrug.calc?.type] || "drip") : "drip");
     main.innerHTML = `
@@ -355,6 +366,8 @@
     const warn = (t) => `<div class="warn">${ic("alert")}<span>${t}</span></div>`;
 
     const views = {
+      fluids() { EX.calcFluids(pane, settings.dropFactor); },
+      kidney() { EX.calcKidney(pane); },
       drip() {
         pane.innerHTML = `<div class="card">
           <div class="inline"><div class="field"><label for="v">Volume (mL)</label><input id="v" type="number" inputmode="decimal" min="0" value="500"></div>
@@ -606,6 +619,8 @@
         </div></div>
       <div class="card"><h4 style="margin-top:0">Language</h4>
         <p class="small muted" style="margin-top:-.2rem">Interface language. Doses and clinical content always stay in English.</p>
+        <label class="toggle" style="margin-top:.6rem"><span>${ic("calendar")} Show Ethiopian calendar dates<br><span class="small muted">On schedules, charts, sign-offs and printouts, next to the international date.</span></span><span class="switch"><input type="checkbox" id="ethcal" ${window.EthCal && EthCal.enabled() ? "checked" : ""}><span></span></span></label>
+        <p class="small muted" style="margin:.2rem 0 0">Today: ${window.EthCal ? EthCal.format(new Date(), window.I18N?.lang) : ""}</p>
         <div class="seg lang-seg" id="seg-lang" role="group" aria-label="Language" data-no-i18n><button type="button" data-lang="en" class="${window.I18N?.lang === "am" ? "" : "active"}" lang="en">English</button><button type="button" data-lang="am" class="${window.I18N?.lang === "am" ? "active" : ""}" lang="am">አማርኛ</button></div></div>
       <div class="card"><h4 style="margin-top:0">Defaults</h4>
         <div class="field"><label for="df">Default drop factor of your usual giving set</label><select id="df">${DROP_FACTORS.map(f => `<option value="${f}" ${f == settings.dropFactor ? "selected" : ""}>${f} drops/mL</option>`).join("")}</select></div>
@@ -617,6 +632,7 @@
       const t = e.target;
       if (t.dataset.eq) { const cur = settings.equipment || { ...eq }; cur[t.dataset.eq] = t.checked; settings.equipment = cur; }
       if (t.id === "df") settings.dropFactor = +t.value;
+      if (t.id === "ethcal") store.set("ethCal", t.checked);
       if (t.id === "myward") { settings.ward = t.value; settings.filterMode = "ward"; if (listState) { listState.ward = t.value; listState.mode = "ward"; } render(); }
     });
     $("#reset").addEventListener("click", () => { store.del("equipment"); render(); });
@@ -656,8 +672,10 @@
     const upd = () => { stt.textContent = navigator.onLine ? "Online" : "Offline · cached"; st.classList.toggle("off", !navigator.onLine); };
     window.addEventListener("online", upd); window.addEventListener("offline", upd); upd();
     document.addEventListener("keydown", e => { if (e.key === "/" && !/input|select|textarea/i.test(document.activeElement?.tagName || "")) { const q = $("#q"); if (q) { e.preventDefault(); q.focus(); } else location.hash = "#/drugs"; } });
-    CV = window.Community({ $, esc, ic, listHtml, sortedDrugs, catStyle, render, toast });
+    CV = window.Community({ $, esc, ic, listHtml, sortedDrugs, catStyle, render, toast, stockPanel: (h) => RV && RV.stockPanel(h) });
     FX = window.Features({ $, esc, ic, toast, render, ROLES });
+    EX = window.Extras({ $, esc, ic, toast, render, ROLES, FX, textbookHtml });
+    RV = window.Review({ $, esc, ic, toast, render });
     FX.syncPatientChip(); FX.updateDueBadge(); FX.checkDue();
     $("#patient-chip")?.addEventListener("click", () => FX.openPatientDialog());
     const syncAccount = () => {
@@ -670,7 +688,7 @@
       if (nav) nav.hidden = !(u && u.role === "admin");
     };
     API.onChange(syncAccount);
-    API.init().then(() => { syncAccount(); if (["account", "community", "admin"].includes(parseHash().view)) render(); });
+    API.init().then(() => { syncAccount(); if (["account", "community", "admin", "review"].includes(parseHash().view)) render(); RV.load(); });
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
       const hadController = !!navigator.serviceWorker.controller;
       let reloaded = false;

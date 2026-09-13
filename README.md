@@ -6,7 +6,7 @@ available. Every drug has a **standard** method and one or more **"no pump / imp
 methods (intermittent regimens, alternative routes, dilutions, gravity-drip technique), plus
 calculators for drip rate, dose → drops, mg/kg, dilution, WHO Plan C fluids and child weight.
 
-> **Status: DRAFT.** All 50 drug entries are `review.status: "draft"` and have **not** been
+> **Status: DRAFT.** All 58 drug entries are `review.status: "draft"` and have **not** been
 > verified by a pharmacist or physician. Do not use for patient care until reviewed.
 
 ## Live sites
@@ -86,6 +86,27 @@ are not all available are dimmed and sorted last (never hidden).
 All of it works offline and stores nothing off the device. Tests: `node tests/features.test.js`
 (220 checks: emergency card doses at five weights including minima and maxima, schedule timing and
 late-dose shifting, substitute integrity, fuzzy search true and false matches).
+
+## Safety, newborn dosing, kidney and interactions
+
+| Feature | Where | Data |
+|---|---|---|
+| **Pregnancy, breastfeeding, kidney and liver** levels and advice for every drug; chips on the drug header; kidney bands highlighted for the patient's creatinine clearance | drug page, Safety tab | `js/safety.js` (58 drugs, 86 verified textbook refs) |
+| **Kidney function** calculator (Cockcroft–Gault; bedside Schwartz for children) saved to the patient, plus a list of every drug needing a change | `#/calc?tab=kidney` | `js/safety.js` renal bands |
+| **Newborn dosing** by weight, gestation at birth and age in days, with interval and volume; a full table for one baby | drug page card, `#/newborn` | `js/neonatal.js` (18 drugs, WHO Pocket Book scheme, Nelson refs) |
+| **Drug interactions** checker for a patient's full medicine list, also listed per drug | `#/interactions`, Safety tab | `js/interactions.js` (41 rules) |
+| **Fluids and blood**: maintenance (Nelson 4-2-1, fever), newborn daily fluid, burns (2/3/4 mL/kg/%), transfusion volume, oxygen cylinder time | `#/calc?tab=fluids` | `js/calc.js` |
+| **Independent double check** for high-alert medicines: a second person's result is compared with the app's; schedules record the second checker's initials | drug page, schedules | `HIGH_ALERT` in `js/features.js` |
+| **Share** a dose, case summary or schedule as plain text (phone share sheet, Telegram, copy) | drug, case and schedule pages | — |
+| **Wall charts**: drip-rate table, one-page case protocol, ward drug cards, all printable | `#/charts` | existing data |
+| **Practice quiz** generated from the app's own data with worked explanations | `#/quiz` | existing data |
+| **Stock-out reports** per facility with the latest status, shown on drug pages and the Network page | drug pages, `#/community` | server (`stock_reports`) |
+| **Ethiopian calendar** dates next to international dates (on by default in Amharic) | Setup → Language | `js/ethcal.js` |
+
+Tests: `node tests/extras.test.js` (fluids, kidney, burns, transfusion, oxygen, Ethiopian
+calendar, newborn rule coverage, kidney bands, quiz question validity, sign-off fingerprint).
+`node scripts/check-data.js` also validates safety, newborn, interaction, substitute and
+mixing data, including that a newborn dosing rule matches every age and weight.
 
 ## Language (English / አማርኛ)
 
@@ -171,13 +192,23 @@ methods themselves come from WHO/MSF sources; where Nelson gives no low-resource
 
 ## Clinical review workflow (required before any deployment)
 
-1. Reviewer (pharmacist or physician) checks each entry against the cited sources **and** the
-   national standard treatment guideline / formulary.
-2. Corrections are made in `js/drugs-data.js`; anything that differs from national guidance is
-   changed to match it or removed.
-3. Set `review: { status: "reviewed", by: "Name, role", date: "YYYY-MM-DD" }`.
-4. When every entry is reviewed, replace the "Draft build" banner text in `index.html` and bump
-   `CACHE` in `sw.js` so installed copies update.
+Sign-off happens **in the app** at `#/review` (Tools → Clinical sign-off):
+
+1. An administrator verifies a pharmacist or physician and gives them the **reviewer** role
+   (Admin → Members → Make reviewer). Administrators can also sign off.
+2. The reviewer opens each drug, checks it against the cited sources **and** the national
+   standard treatment guideline / EFDA formulary, ticks all five checklist items
+   (doses, no-pump methods, paediatric and newborn doses, safety and interactions, national
+   guidelines) and signs off, or requests changes with a note.
+3. The sign-off stores a fingerprint of the entry's content, including its safety and newborn
+   data. The drug page then shows "Signed off by <name> · <date>". If the content changes later,
+   it shows "Changed since sign-off" until someone signs the new version. Full history is on the
+   drug's Sources tab and in the audit log.
+4. Corrections are made in the data files and deployed; then the reviewer signs the new version.
+5. When every entry is signed off, replace the "Draft build" banner text in `index.html` and bump
+   `CACHE` in `sw.js`.
+
+The static GitHub Pages copy has no server, so it shows only the built-in `review` field.
 
 Items that most need a reviewer's eye are marked "verify local protocol" in the text
 (e.g. IM-only magnesium loading, oral phenobarbital loading, 2 g TXA bolus, oral ketamine).
@@ -199,8 +230,10 @@ Plan C 15 kg phase 2 = 140 drops/min (20 gtt/mL).
 
 ## Drug coverage
 
-50 drugs, 135 improvised methods, 11 categories. 45 entries carry Nelson page citations
-(104 references in total).
+58 drugs, 40 clinical cases, 11 categories. The eight latest additions are ipratropium,
+adenosine, mannitol, 3 % hypertonic saline, HIV prophylaxis (PEP and infant), first-line TB
+treatment (RHZE), snake antivenom and oxygen, with new cases for snakebite, SVT, raised
+intracranial pressure, HIV exposure and tuberculosis.
 
 | Category | Drugs |
 |---|---|
@@ -219,9 +252,7 @@ Plan C 15 kg phase 2 = 140 drops/min (20 gtt/mL).
 ## Roadmap ideas
 
 - French interface (add a second dictionary to `js/i18n.js`).
-- Printable one-page cards per drug.
-- Further drugs: ipratropium, adenosine, mannitol/hypertonic saline, antiretrovirals for
-  prophylaxis, anti-tuberculosis regimens, snakebite antivenom, oxygen delivery.
+- Morphine and other analgesics in the newborn dosing table (left out: no verifiable source).
 - Export/import of reviewed datasets as JSON.
 
 ## Setting profiles (country / facility adaptation)
@@ -325,8 +356,10 @@ notes, and read an activity log.
 ### API
 
 `/api/auth/{register,login,logout}`, `/api/me`, `/api/methods?drug=`, `/api/comments` (GET/POST),
-`/api/comments/:id` (PATCH/DELETE) plus `/agree` and `/report`, `/api/feed`, and `/api/admin/*`
-(overview, methods, users, comment moderation).
+`/api/comments/:id` (PATCH/DELETE) plus `/agree` and `/report`, `/api/feed`, `/api/reviews`
+(GET latest per drug or `?drug=` history; POST sign-off, verified reviewers and admins only),
+`/api/stock` (GET last 30 days, latest per facility; POST report; DELETE own or admin), and
+`/api/admin/*` (overview, methods, users including the reviewer role, comment moderation).
 
 Security: scrypt password hashing, opaque session tokens in an HttpOnly SameSite=Strict cookie,
 a required `X-MB-App` header on every mutating request, per-IP and per-account rate limiting,

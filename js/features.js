@@ -28,12 +28,23 @@ window.Features = function (ctx) {
     set estimated(v) { store.set("weightEstimated", !!v); },
     get ageYears() { const a = store.get("ageYears", null); return a == null || a === "" ? null : +a; },
     set ageYears(v) { store.set("ageYears", v); },
-    clear() { this.weight = null; this.estimated = false; this.ageYears = null; }
+    /* newborns: completed weeks of gestation at birth and postnatal age in days */
+    get gaWeeks() { const v = store.get("gaWeeks", null); return v == null || v === "" ? null : +v; },
+    set gaWeeks(v) { store.set("gaWeeks", v); },
+    get pnaDays() { const v = store.get("pnaDays", null); return v == null || v === "" ? null : +v; },
+    set pnaDays(v) { store.set("pnaDays", v); },
+    get isNewborn() { return this.pnaDays != null && this.pnaDays <= 28; },
+    get sex() { return store.get("sex", ""); },
+    set sex(v) { store.set("sex", v || ""); },
+    /* kidney function saved from the calculator: { value, method, at } */
+    get crcl() { const c = store.get("crcl", null); return c && c.value > 0 ? c : null; },
+    set crcl(v) { store.set("crcl", v); },
+    clear() { this.weight = null; this.estimated = false; this.ageYears = null; this.gaWeeks = null; this.pnaDays = null; this.sex = ""; this.crcl = null; }
   };
 
   function patientChipHtml() {
     const w = patient.weight;
-    return w ? `${ic("user")}<span><b>${fmt(w, 1)} kg</b>${patient.estimated ? " est." : ""}</span>` : `${ic("user")}<span>Set weight</span>`;
+    return w ? `${ic(patient.isNewborn ? "baby" : "user")}<span><b>${fmt(w, 1)} kg</b>${patient.estimated ? " est." : ""}${patient.isNewborn ? ` · ${patient.pnaDays} d` : ""}</span>` : `${ic("user")}<span>Set weight</span>`;
   }
   function syncPatientChip() {
     const el = $("#patient-chip"); if (!el) return;
@@ -53,6 +64,17 @@ window.Features = function (ctx) {
           <div class="field"><label for="pd-a">Age (years, optional)</label><input id="pd-a" type="number" inputmode="decimal" min="0" max="120" step="0.1" value="${a ?? ""}" placeholder="for estimates"></div>
         </div>
         <button type="button" class="btn ghost sm" id="pd-est">${ic("calc")}Estimate weight from age</button>
+        <details class="pd-more" ${patient.isNewborn || patient.sex || patient.crcl ? "open" : ""}><summary class="small">Newborn age, sex and kidney function</summary>
+          <div class="inline">
+            <div class="field"><label for="pd-ga">Gestation at birth (weeks)</label><input id="pd-ga" type="number" inputmode="numeric" min="22" max="44" step="1" value="${patient.gaWeeks ?? ""}" placeholder="newborns only"></div>
+            <div class="field"><label for="pd-pna">Age in days (0–28)</label><input id="pd-pna" type="number" inputmode="numeric" min="0" max="28" step="1" value="${patient.pnaDays ?? ""}" placeholder="newborns only"></div>
+          </div>
+          <div class="inline">
+            <div class="field"><label for="pd-sex">Sex</label><select id="pd-sex"><option value="">Not set</option><option value="female" ${patient.sex === "female" ? "selected" : ""}>Female</option><option value="male" ${patient.sex === "male" ? "selected" : ""}>Male</option></select></div>
+            <div class="field"><label>Kidney function</label><div class="small" style="padding-top:.55rem">${patient.crcl ? `${fmt(patient.crcl.value, 0)} mL/min <a href="#/calc?tab=kidney">Change</a>` : `<a href="#/calc?tab=kidney">Calculate creatinine clearance</a>`}</div></div>
+          </div>
+          <p class="small muted" style="margin:.2rem 0 0">For a newborn, doses and dosing intervals follow gestation and age in days.</p>
+        </details>
         <p id="pd-note" class="small muted" style="margin:.5rem 0 0"></p>
         <div class="row" style="margin-top:1rem;justify-content:flex-end">
           <button type="button" class="btn ghost sm" id="pd-clear">Clear patient</button>
@@ -73,7 +95,12 @@ window.Features = function (ctx) {
     $("#pd-save", dlg).addEventListener("click", () => {
       const nw = parseFloat($("#pd-w", dlg).value), na = $("#pd-a", dlg).value;
       if (!(nw > 0 && nw < 250)) { $("#pd-note", dlg).textContent = "Enter a weight between 0.3 and 250 kg."; return; }
-      patient.weight = nw; patient.estimated = estimated; patient.ageYears = na === "" ? null : +na;
+      const ga = $("#pd-ga", dlg).value, pna = $("#pd-pna", dlg).value;
+      if (pna !== "" && !(+pna >= 0 && +pna <= 28)) { $("#pd-note", dlg).textContent = "Age in days must be 0 to 28 for newborn dosing."; return; }
+      if (ga !== "" && !(+ga >= 22 && +ga <= 44)) { $("#pd-note", dlg).textContent = "Gestation must be 22 to 44 weeks."; return; }
+      if (pna !== "" && ga === "") { $("#pd-note", dlg).textContent = "Enter the gestation at birth as well."; return; }
+      patient.weight = nw; patient.estimated = estimated; patient.ageYears = pna !== "" ? 0 : (na === "" ? null : +na);
+      patient.gaWeeks = ga === "" ? null : +ga; patient.pnaDays = pna === "" ? null : +pna; patient.sex = $("#pd-sex", dlg).value;
       dlg.close(); syncPatientChip(); render(); toast(`Doses now shown for ${fmt(nw, 1)} kg.`);
     });
     $("#pd-clear", dlg).addEventListener("click", () => { patient.clear(); dlg.close(); syncPatientChip(); render(); toast("Patient cleared."); });
@@ -81,6 +108,9 @@ window.Features = function (ctx) {
     dlg.showModal();
     setTimeout(() => $("#pd-w", dlg).focus(), 30);
   }
+
+  /* High-alert medicines (ISMP / WHO Medication Without Harm): an independent second check before giving. */
+  const HIGH_ALERT = ["insulin-soluble", "potassium-chloride", "magnesium-sulfate", "heparin", "adrenaline", "noradrenaline", "dopamine", "amiodarone", "digoxin", "morphine", "midazolam", "ketamine", "oxytocin", "hypertonic-saline", "quinine", "phenytoin", "aminophylline"];
 
   /* ---------- generic dose computation ---------- */
   function computeDose(spec, weight) {
@@ -91,7 +121,7 @@ window.Features = function (ctx) {
   const doseLine = (r, spec) => {
     const u = unitOf(spec);
     let s = `${fmt(r.dose, r.dose < 1 ? 3 : 2)} ${u}`;
-    if (r.volumeMl != null && u !== "mL") s += ` = ${fmt(r.volumeMl, r.volumeMl < 1 ? 2 : 1)} mL`;
+    if (r.volumeMl != null && u !== "mL") s += r.volumeMl < 0.05 ? ` = ${fmt(r.volumeMl, 4)} mL, too small to draw up accurately: dilute first` : ` = ${fmt(r.volumeMl, r.volumeMl < 1 ? 2 : 1)} mL`;
     return s;
   };
   const flags = (r, spec) => [
@@ -292,7 +322,7 @@ window.Features = function (ctx) {
         return `<div class="card rs-group"><h3>${esc(gl)}</h3><div class="tablewrap"><table class="rs-table"><thead><tr><th>Drug</th><th>Dose · volume</th><th>Route · strength</th><th>Repeat · notes</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
       }).join("");
       out.innerHTML = `
-        <div class="rs-banner"><span class="rs-w">${fmt(w, 1)} kg</span>${age >= 0 ? `<span>${fmt(age, 1)} years</span>` : ""}<span class="small">Generated ${new Date().toLocaleString()}</span></div>
+        <div class="rs-banner"><span class="rs-w">${fmt(w, 1)} kg</span>${age >= 0 ? `<span>${fmt(age, 1)} years</span>` : ""}<span class="small">Generated ${new Date().toLocaleString()}${window.EthCal && EthCal.enabled() ? " · " + EthCal.format(new Date(), window.I18N?.lang) : ""}</span></div>
         ${adult ? `<div class="callout warn">${ic("alert")}<div><strong>Adult-sized patient.</strong> Doses shown are capped at the listed maxima; check adult doses on each drug page, which can differ from per-kg calculation.</div></div>` : ""}
         ${extras.join("")}${groups}
         <p class="small muted">Draft emergency card. Every dose must be checked against the drug page and the national protocol before use. Weigh the patient whenever possible.</p>`;
@@ -463,7 +493,7 @@ window.Features = function (ctx) {
   }
   const L = (s) => window.I18N ? I18N.t(s) : s;
   const timeStr = (ms) => new Date(ms).toLocaleTimeString([], window.I18N ? I18N.timeOpts() : { hour: "2-digit", minute: "2-digit" });
-  const dayStr = (ms) => { const d = new Date(ms), t = new Date(); const diff = Math.round((new Date(d.toDateString()) - new Date(t.toDateString())) / 864e5); return diff === 0 ? "Today" : diff === 1 ? "Tomorrow" : diff === -1 ? "Yesterday" : d.toLocaleDateString([], { weekday: "short", day: "numeric", month: "short" }); };
+  const dayStr = (ms) => { const d = new Date(ms), t = new Date(); const diff = Math.round((new Date(d.toDateString()) - new Date(t.toDateString())) / 864e5); return diff === 0 ? "Today" : diff === 1 ? "Tomorrow" : diff === -1 ? "Yesterday" : (window.EthCal && EthCal.enabled() ? EthCal.format(d, window.I18N?.lang) : d.toLocaleDateString([], { weekday: "short", day: "numeric", month: "short" })); };
   const untilStr = (ms) => { const m = Math.round((ms - Date.now()) / 60000); if (Math.abs(m) < 1) return "now"; const a = Math.abs(m), s = a >= 60 ? `${Math.floor(a / 60)} h ${a % 60} min` : `${a} min`; return m > 0 ? `in ${s}` : `${s} overdue`; };
   function schedState(s) {
     const reg = regById(s.regimen); if (!reg) return null;
@@ -558,16 +588,18 @@ window.Features = function (ctx) {
         </div>
         ${n ? `<div class="sched-now"><b>${esc(n.label)}${n.amount ? ": " + esc(n.amount) : ""}</b>${n.note ? ` <span class="muted">${esc(n.note)}</span>` : ""}
           <div class="checks">${st.reg.checks.map((c, i) => `<label><input type="checkbox" data-check="${i}"> ${esc(c)}</label>`).join("")}</div>
+          ${HIGH_ALERT.includes(st.reg.drug) ? `<div class="field dc-field"><label for="dc-${s.id}">${ic("users")} High-alert medicine: second checker's initials</label><input id="dc-${s.id}" data-checker maxlength="12" placeholder="e.g. M.T." autocomplete="off"></div>` : ""}
           <div class="row"><button type="button" class="btn sm" data-give="${n.idx}@${n.at}">${ic("check")}Given now</button><button type="button" class="btn ghost sm" data-withhold="${n.idx}@${n.at}">Withheld</button></div>
           <p class="small muted" style="margin:.4rem 0 0">${esc(st.reg.ifFail)}</p></div>` : ""}
         <details><summary class="small">All doses (${st.doses.length})</summary>
           <table class="plain small sched-table"><tr><th>Due</th><th>Dose</th><th>Record</th></tr>
-          ${st.doses.map(d => `<tr class="${d.rec ? (d.rec.status === "withheld" ? "withheld" : "given") : d.due < Date.now() - 5 * 60e3 ? "late" : ""}"><td>${dayStr(d.due)} ${timeStr(d.due)}${d.shifted && !d.rec ? ` <span class="muted" title="Moved later because an earlier dose was given late">(moved)</span>` : ""}</td><td>${esc(d.label)}${d.amount ? ": " + esc(d.amount) : ""}</td><td>${d.rec ? `${d.rec.status === "withheld" ? "Withheld" : "Given"} ${timeStr(d.rec.at)}${d.rec.reason ? " — " + esc(d.rec.reason) : ""}` : "—"}</td></tr>`).join("")}</table>
+          ${st.doses.map(d => `<tr class="${d.rec ? (d.rec.status === "withheld" ? "withheld" : "given") : d.due < Date.now() - 5 * 60e3 ? "late" : ""}"><td>${dayStr(d.due)} ${timeStr(d.due)}${d.shifted && !d.rec ? ` <span class="muted" title="Moved later because an earlier dose was given late">(moved)</span>` : ""}</td><td>${esc(d.label)}${d.amount ? ": " + esc(d.amount) : ""}</td><td>${d.rec ? `${d.rec.status === "withheld" ? "Withheld" : "Given"} ${timeStr(d.rec.at)}${d.rec.checkedBy ? ` · checked ${esc(d.rec.checkedBy)}` : ""}${d.rec.reason ? " — " + esc(d.rec.reason) : ""}` : "—"}</td></tr>`).join("")}</table>
         </details>
         <div class="row" style="margin-top:.6rem">
           ${st.reg.every ? `<button type="button" class="btn ghost sm" data-extend>+ ${st.reg.every >= 4 ? 24 : 6} h</button>` : ""}
           <a class="btn ghost sm" href="#/drug/${st.reg.drug}">Drug page</a>
           <button type="button" class="btn ghost sm" data-print-sched>${ic("print")}Print chart</button>
+          ${n ? `<button type="button" class="btn ghost sm" data-share-text="${esc(`MedBridge schedule: ${st.reg.name}${s.label ? " (" + s.label + ")" : ""}\nNext: ${n.label}${n.amount ? " " + n.amount : ""} at ${timeStr(n.due)}\nChecks: ${st.reg.checks.join("; ")}\nDraft reference, verify against protocol.`)}">${ic("share")}Share</button>` : ""}
           <button type="button" class="btn ghost sm" data-end>End schedule</button>
         </div>
         <p class="small muted" style="margin:.4rem 0 0">${esc(st.reg.ref)}</p>
@@ -583,7 +615,9 @@ window.Features = function (ctx) {
           const st = schedState(s);
           const unticked = [...card.querySelectorAll("[data-check]")].filter(c => !c.checked).length;
           if (unticked && !confirm(L(`${unticked} pre-dose check${unticked === 1 ? " is" : "s are"} not ticked. Record the dose as given anyway?`))) return;
-          s.log[give.dataset.give] = { status: "given", at: Date.now() };
+          const checkerEl = card.querySelector("[data-checker]"), checker = checkerEl ? checkerEl.value.trim() : "";
+          if (checkerEl && !checker && !confirm(L("This is a high-alert medicine and no second checker is recorded. Record the dose as given anyway?"))) { checkerEl.focus(); return; }
+          s.log[give.dataset.give] = { status: "given", at: Date.now(), ...(checker ? { checkedBy: checker.slice(0, 12) } : {}) };
           scheds.save(l); toast(`Recorded: ${st.next.label} given.`); draw();
         }
         if (wh) {
@@ -645,7 +679,14 @@ window.Features = function (ctx) {
       ["#/schedules", "clock", "Dose schedules", `Clock times, pre-dose checks and reminders for repeat regimens.${due ? ` <b class="bad-text">${due} due</b>` : ""}`, ""],
       ["#/compat", "swap", "Never mix", "Drugs and fluids that must not share a line or syringe.", ""],
       ["#/calc", "calc", "Calculators", "Drip rate, dose to drops, mg/kg, dilution, Plan C, child weight, units.", ""],
-      ["#/techniques", "tool", "No-pump techniques", "Burettes, time-taping, countable concentrations, peripheral pressors.", ""]
+      ["#/techniques", "tool", "No-pump techniques", "Burettes, time-taping, countable concentrations, peripheral pressors.", ""],
+      ["#/interactions", "shield", "Drug interactions", "Check a patient's medicines against each other for harmful combinations.", ""],
+      ["#/newborn", "baby", "Newborn doses", "Doses and intervals for one baby by weight, gestation and age in days.", ""],
+      ["#/calc?tab=fluids", "drop", "Fluids and blood", "Maintenance, newborn fluids, burns, transfusion volume and oxygen cylinder time.", ""],
+      ["#/calc?tab=kidney", "calc", "Kidney function", "Creatinine clearance, then dose changes for each drug.", ""],
+      ["#/charts", "print", "Wall charts", "Printable drip-rate tables, case protocols and ward drug cards.", ""],
+      ["#/quiz", "help", "Practice quiz", "Dose maths, first-line drugs, never-mix and substitutes, with explanations.", ""],
+      ["#/review", "check", "Clinical sign-off", "For verified reviewers: check each drug entry and sign it off.", ""]
     ];
     main.innerHTML = `<h1>Tools</h1>
       <div class="tools-grid">${T.map(([h, i, t, d, cls]) => `<a class="card tool ${cls}" href="${h}"><span class="tool-ic">${ic(i)}</span><div><h3 style="margin:0 0 .2rem">${t}</h3><p class="small text-2" style="margin:0">${d}</p></div></a>`).join("")}</div>
@@ -662,6 +703,7 @@ window.Features = function (ctx) {
 
   return {
     patient, syncPatientChip, openPatientDialog, patientDoseCard, caseDoseInline,
+    HIGH_ALERT, computeDose, doseLine, unitOf,
     favs, recent, starButton, bindStars, shortcutsHtml, fuzzyMatch, caseText,
     alternativesHtml, updateDueBadge, checkDue,
     views: { resus: viewResus, drip: viewDrip, schedules: viewSchedules, compat: viewCompat, tools: viewTools },

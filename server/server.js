@@ -196,6 +196,70 @@ async function api(req, res, pathname, query) {
     }
   }
 
+  /* --- clinical sign-off (reviewers and admins) --- */
+  if (pathname === "/api/reviews" && method === "GET") {
+    const drug = clean(query.drug, 60);
+    if (drug) {
+      const rows = await D.all("SELECT * FROM reviews WHERE drug_id = ? ORDER BY created_at DESC LIMIT 50", drug);
+      return json(res, 200, { reviews: rows.map(shapeReview) });
+    }
+    const rows = await D.all(`SELECT r.* FROM reviews r JOIN (SELECT drug_id, MAX(created_at) AS m FROM reviews GROUP BY drug_id) x
+      ON x.drug_id = r.drug_id AND x.m = r.created_at`);
+    return json(res, 200, { reviews: rows.map(shapeReview) });
+  }
+  if (pathname === "/api/reviews" && method === "POST") {
+    if (!me) return bad(res, 401, "Sign in first.");
+    if (!["admin", "reviewer"].includes(me.role) || !Number(me.verified)) return bad(res, 403, "Only verified clinical reviewers can sign off drug entries.");
+    const drug = clean(body.drug, 60), hash = clean(body.hash, 64);
+    const decision = body.decision === "approved" ? "approved" : body.decision === "changes" ? "changes" : null;
+    const checklist = Array.isArray(body.checklist) ? body.checklist.map(x => clean(x, 40)).filter(Boolean) : [];
+    const note = cleanMultiline(body.note, MAX.text);
+    if (!drug || !/^[a-z0-9]{4,64}$/.test(hash) || !decision) return bad(res, 400, "Drug, content version and decision are required.");
+    if (decision === "approved" && REVIEW_CHECKS.some(k => !checklist.includes(k))) return bad(res, 400, "Tick every checklist item before approving.");
+    if (decision === "changes" && note.length < 10) return bad(res, 400, "Describe the changes needed.");
+    const id = D.uid(10);
+    await D.run(`INSERT INTO reviews (id, drug_id, decision, content_hash, checklist, note, reviewer_id, reviewer_name, reviewer_profession, reviewer_facility, created_at)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?)`, id, drug, decision, hash, checklist.join(","), note, me.id, me.full_name, me.profession, me.facility, D.now());
+    await D.audit(me.id, "review_" + decision, id, drug);
+    return json(res, 201, { review: shapeReview(await D.get("SELECT * FROM reviews WHERE id = ?", id)) });
+  }
+
+  /* --- stock-out reports --- */
+  if (pathname === "/api/stock" && method === "GET") {
+    const since = new Date(Date.now() - STOCK_DAYS * 864e5).toISOString();
+    const drug = clean(query.drug, 60);
+    const rows = drug
+      ? await D.all(`SELECT s.*, u.full_name, u.profession, u.verified, u.role FROM stock_reports s JOIN users u ON u.id = s.user_id
+          WHERE s.drug_id = ? AND s.hidden = 0 AND s.created_at > ? ORDER BY s.created_at DESC LIMIT 60`, drug, since)
+      : await D.all(`SELECT s.*, u.full_name, u.profession, u.verified, u.role FROM stock_reports s JOIN users u ON u.id = s.user_id
+          WHERE s.hidden = 0 AND s.created_at > ? ORDER BY s.created_at DESC LIMIT 200`, since);
+    // keep only the latest report per facility and drug, so a later "back in stock" replaces an earlier "out"
+    const seen = new Set(), latest = [];
+    for (const r of rows) { const k = r.drug_id + "|" + r.facility.toLowerCase() + "|" + r.city; if (!seen.has(k)) { seen.add(k); latest.push(r); } }
+    return json(res, 200, { days: STOCK_DAYS, reports: latest.map(r => shapeStock(r, me)) });
+  }
+  if (pathname === "/api/stock" && method === "POST") {
+    if (!me) return bad(res, 401, "Sign in to report stock.");
+    const drug = clean(body.drug, 60), status = ["out", "low", "available"].includes(body.status) ? body.status : null;
+    if (!drug || !status) return bad(res, 400, "Drug and stock status are required.");
+    if (await D.tooManyAttempts("stock:" + me.id, 30, 60)) return bad(res, 429, "You have posted a lot recently. Try again later.");
+    const id = D.uid(10);
+    await D.run("INSERT INTO stock_reports (id, drug_id, user_id, status, city, facility, note, created_at) VALUES (?,?,?,?,?,?,?,?)",
+      id, drug, me.id, status, me.city, me.facility, clean(body.note, MAX.short), D.now());
+    await D.audit(me.id, "stock_" + status, id, drug);
+    return json(res, 201, { ok: true, id });
+  }
+  const sm = pathname.match(/^\/api\/stock\/([A-Za-z0-9_-]{4,24})$/);
+  if (sm && method === "DELETE") {
+    if (!me) return bad(res, 401, "Sign in first.");
+    const r = await D.get("SELECT * FROM stock_reports WHERE id = ?", sm[1]);
+    if (!r) return bad(res, 404, "Not found.");
+    if (r.user_id !== me.id && me.role !== "admin") return bad(res, 403, "Not allowed.");
+    await D.run("UPDATE stock_reports SET hidden = 1 WHERE id = ?", sm[1]);
+    await D.audit(me.id, "stock_remove", sm[1], r.drug_id);
+    return json(res, 200, { ok: true });
+  }
+
   /* --- feed: recent notes across all drugs --- */
   if (pathname === "/api/feed" && method === "GET") {
     const rows = await D.all(`SELECT c.*, u.full_name, u.profession, u.city, u.facility, u.verified, u.role,
@@ -233,9 +297,9 @@ async function api(req, res, pathname, query) {
       const id = um[1];
       const t = await D.get("SELECT * FROM users WHERE id = ?", id);
       if (!t) return bad(res, 404, "No such user.");
-      if (id === me.id && (body.role === "user" || body.status === "suspended")) return bad(res, 400, "You cannot remove your own administrator access.");
+      if (id === me.id && ((body.role && body.role !== "admin") || body.status === "suspended")) return bad(res, 400, "You cannot remove your own administrator access.");
       const verified = body.verified == null ? t.verified : (body.verified ? 1 : 0);
-      const role = body.role === "admin" || body.role === "user" ? body.role : t.role;
+      const role = ["admin", "reviewer", "user"].includes(body.role) ? body.role : t.role;
       const status = body.status === "suspended" || body.status === "active" ? body.status : t.status;
       await D.run("UPDATE users SET verified = ?, role = ?, status = ? WHERE id = ?", verified, role, status, id);
       if (status === "suspended") await D.run("DELETE FROM sessions WHERE user_id = ?", id);
@@ -289,6 +353,12 @@ async function api(req, res, pathname, query) {
   return bad(res, 404, "No such endpoint.");
 }
 
+const REVIEW_CHECKS = ["doses", "methods", "paediatric", "safety", "national"];
+const STOCK_DAYS = 30;
+const shapeReview = (r) => ({ id: r.id, drug: r.drug_id, decision: r.decision, hash: r.content_hash, checklist: r.checklist ? r.checklist.split(",") : [], note: r.note,
+  reviewer: { name: r.reviewer_name, profession: r.reviewer_profession, facility: r.reviewer_facility }, createdAt: r.created_at });
+const shapeStock = (r, me) => ({ id: r.id, drug: r.drug_id, status: r.status, city: r.city, facility: r.facility, note: r.note, createdAt: r.created_at,
+  own: !!(me && me.id === r.user_id), author: { name: r.full_name, profession: r.profession, verified: !!Number(r.verified) } });
 const shapeMethod = (m) => ({ id: m.id, drug: m.drug_id, kind: m.kind, title: m.title, bestFor: m.best_for, steps: m.body.split("\n").filter(Boolean), monitor: m.monitor.split("\n").filter(Boolean), cautions: m.cautions.split("\n").filter(Boolean), source: m.source, published: !!m.published, updatedAt: m.updated_at, fromComment: m.from_comment });
 const shapeComment = (r, me) => ({
   id: r.id, drug: r.drug_id, body: r.body, createdAt: r.created_at, updatedAt: r.updated_at,

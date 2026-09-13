@@ -144,5 +144,32 @@ window.SUBSTITUTES = {
   ],
   "calcium-gluconate": [
     { use: "Hyperkalaemia, magnesium toxicity", none: true, note: "Calcium chloride 10 % works at one-third of the volume, through a large vein." }
+  ],
+  "ipratropium": [
+    {use: "Severe asthma add-on",with: "magnesium-sulfate",note: "Give magnesium sulfate 25–75 mg/kg (max 2 g) IV over 20 min for a severe attack; keep salbutamol every 20 min and the steroid."},
+    {use: "COPD exacerbation",none: true,note: "No substitute bronchodilator in this app apart from salbutamol: give salbutamol more often, steroid, and oxygen to 88–92 %."}
+  ],
+  "adenosine": [
+    {use: "Stable SVT",none: true,note: "No substitute in this app. Vagal manoeuvres; if unstable, synchronised cardioversion. Adults only: verapamil 5 mg IV over 2 min if in your formulary (never in infants, WPW, broad-complex tachycardia or with a β-blocker). Refer."}
+  ],
+  "mannitol": [
+    {use: "Raised intracranial pressure",with: "hypertonic-saline",note: "3 % saline 2–5 mL/kg over 10–20 min; can be made from 0.9 % saline and 20 % or 10 % NaCl ampoules. Preferred if hypotensive."}
+  ],
+  "hypertonic-saline": [
+    {use: "Raised intracranial pressure",with: "mannitol",note: "0.25–1 g/kg over 20–30 min; avoid in hypovolaemia."},
+    {use: "Symptomatic severe hyponatraemia",none: true,note: "Make 3 % from 0.9 % saline plus 20 % or 10 % NaCl ampoules (see method). Mannitol is NOT a substitute for hyponatraemia."}
+  ],
+  "arv-prophylaxis": [
+    {use: "HIV post-exposure prophylaxis",none: true,note: "No non-antiretroviral substitute. If TLD is out, start whatever national-guideline components are available (e.g. TDF/3TC) now and complete the regimen within 24 h; borrow from the ART clinic."},
+    {use: "HIV-exposed newborn",none: true,note: "If nevirapine syrup is out, use nevirapine 50 mg dispersible tablets (50 mg in 5 mL water = 10 mg/mL) after pharmacist confirmation; contact the PMTCT focal person."}
+  ],
+  "tb-rhze": [
+    {use: "Drug-susceptible TB",none: true,note: "No substitute regimen. If FDCs are out, use loose rifampicin, isoniazid, pyrazinamide and ethambutol at the same per-kg doses; never give one or two drugs alone."}
+  ],
+  "snake-antivenom": [
+    {use: "Systemic envenoming",none: true,note: "No substitute. Refer to the nearest facility with antivenom while giving supportive care: splint, fluids, bag-valve-mask ventilation for paralysis, atropine + neostigmine trial for cobra bites, no fresh plasma or blood before antivenom unless bleeding is life-threatening."}
+  ],
+  "oxygen": [
+    {use: "Hypoxaemia",none: true,note: "No drug substitute. Share a concentrator with a flow splitter, prioritise children with SpO2 under 90 %, keep a cylinder for power cuts, and refer."}
   ]
 };

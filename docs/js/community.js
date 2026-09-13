@@ -165,7 +165,7 @@ window.Community = function (ctx) {
         <div class="card">
           <div class="row" style="margin-bottom:.8rem"><div class="avatar">${esc((u.name || "?").slice(0, 1).toUpperCase())}</div>
             <div><div style="font-weight:700">${esc(u.name)}</div><div class="small muted">${esc(u.profession)} · ${esc(u.facility)}, ${esc(u.city)}</div></div></div>
-          <div class="row">${u.verified ? `<span class="chip ok">${ic("check")}Verified by an administrator</span>` : `<span class="chip warn">${ic("info")}Awaiting verification</span>`}${u.role === "admin" ? `<span class="chip primary">${ic("shield")}Administrator</span>` : ""}</div>
+          <div class="row">${u.verified ? `<span class="chip ok">${ic("check")}Verified by an administrator</span>` : `<span class="chip warn">${ic("info")}Awaiting verification</span>`}${u.role === "admin" ? `<span class="chip primary">${ic("shield")}Administrator</span>` : u.role === "reviewer" ? `<span class="chip primary">${ic("check")}Clinical reviewer</span>` : ""}</div>
           <h4>Details</h4>
           <div class="field"><label for="pn">Full name</label><input id="pn" value="${esc(u.name)}"></div>
           <div class="inline"><div class="field"><label for="ppf">Profession</label><select id="ppf">${professions.map(p => `<option ${p === u.profession ? "selected" : ""}>${esc(p)}</option>`).join("")}</select></div>
@@ -181,6 +181,7 @@ window.Community = function (ctx) {
         <div class="card"><h4 style="margin-top:0">Session</h4>
           <p class="small muted">Member since ${fmtDate(u.createdAt)}.</p>
           ${u.role === "admin" ? `<a class="btn sm" href="#/admin">${ic("shield")}Open admin console</a>` : ""}
+          ${["admin", "reviewer"].includes(u.role) ? `<a class="btn ghost sm" href="#/review" style="margin-top:.5rem">${ic("check")}Clinical sign-off</a>` : ""}
           <a class="btn ghost sm" href="#/community" style="margin-top:.5rem">${ic("globe")}Network activity</a>
           <button type="button" class="btn ghost sm" id="out" style="margin-top:.5rem">Sign out</button></div>
       </div>`;
@@ -212,6 +213,7 @@ window.Community = function (ctx) {
       </div>
       <h2>Cities</h2>
       <div class="citywrap">${d.cities.filter(c => c.city).map(c => `<span class="citychip"><strong>${esc(c.city)}</strong> ${c.users} member${c.users === 1 ? "" : "s"}${c.notes ? ` · ${c.notes} note${c.notes === 1 ? "" : "s"}` : ""}</span>`).join("") || `<p class="muted small">No members yet.</p>`}</div>
+      <div id="stock-panel"></div>
       <h2 style="margin-top:1.2rem">Recent notes</h2>
       ${d.feed.length ? d.feed.map(c => { const dr = byDrug(c.drug); return `<article class="card note">
         <div class="note-top">${authorLine(c.author)}<time class="small muted">${fmtDate(c.createdAt)}</time></div>
@@ -219,6 +221,7 @@ window.Community = function (ctx) {
         <div class="note-body">${nl2(c.body)}</div>
         <div class="note-actions"><span class="small muted">${c.agrees} colleague${c.agrees === 1 ? "" : "s"} do this too</span></div>
       </article>`; }).join("") : `<p class="muted">No notes yet. Sign in and describe how your hospital administers a drug.</p>`}`;
+    if (ctx.stockPanel) ctx.stockPanel($("#stock-panel", main));
   }
 
   /* ============ admin console ============ */
@@ -292,12 +295,12 @@ window.Community = function (ctx) {
         pane.innerHTML = `<div class="tablewrap"><table class="plain"><tr><th>Member</th><th>Facility</th><th>Role</th><th></th></tr>
           ${d.users.map(u => `<tr data-id="${u.id}"><td><strong>${esc(u.name)}</strong><div class="small muted">${esc(u.email)} · ${esc(u.profession)}</div></td>
           <td>${esc(u.facility)}<div class="small muted">${esc(u.city)}</div></td>
-          <td>${u.role === "admin" ? `<span class="chip primary">Admin</span>` : ""}${u.verified ? `<span class="chip ok">Verified</span>` : `<span class="chip">Unverified</span>`}</td>
-          <td class="row"><button type="button" class="btn ghost sm" data-u="verify">${u.verified ? "Unverify" : "Verify"}</button><button type="button" class="btn ghost sm" data-u="role">${u.role === "admin" ? "Make member" : "Make admin"}</button><button type="button" class="btn ghost sm" data-u="susp">Suspend</button></td></tr>`).join("")}</table></div>`;
+          <td>${u.role === "admin" ? `<span class="chip primary">Admin</span>` : u.role === "reviewer" ? `<span class="chip primary">Reviewer</span>` : ""}${u.verified ? `<span class="chip ok">Verified</span>` : `<span class="chip">Unverified</span>`}</td>
+          <td class="row"><button type="button" class="btn ghost sm" data-u="verify">${u.verified ? "Unverify" : "Verify"}</button><button type="button" class="btn ghost sm" data-u="rev">${u.role === "reviewer" ? "Remove reviewer" : "Make reviewer"}</button><button type="button" class="btn ghost sm" data-u="role">${u.role === "admin" ? "Make member" : "Make admin"}</button><button type="button" class="btn ghost sm" data-u="susp">Suspend</button></td></tr>`).join("")}</table></div>`;
         pane.addEventListener("click", async (e) => {
           const b = e.target.closest("[data-u]"); if (!b) return;
           const id = b.closest("[data-id]").dataset.id, u = d.users.find(x => x.id === id);
-          const patch = b.dataset.u === "verify" ? { verified: !u.verified } : b.dataset.u === "role" ? { role: u.role === "admin" ? "user" : "admin" } : { status: "suspended" };
+          const patch = b.dataset.u === "verify" ? { verified: !u.verified } : b.dataset.u === "role" ? { role: u.role === "admin" ? "user" : "admin" } : b.dataset.u === "rev" ? { role: u.role === "reviewer" ? "user" : "reviewer" } : { status: "suspended" };
           if (b.dataset.u === "susp" && !confirm((window.I18N ? I18N.t : (s => s))("Suspend this member and end their sessions?"))) return;
           try { await API.adminUser(id, patch); toast("Member updated."); render(); } catch (err) { toast(err.message, true); }
         });

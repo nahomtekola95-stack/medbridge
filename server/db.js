@@ -97,6 +97,33 @@ CREATE TABLE IF NOT EXISTS audit (
   detail TEXT NOT NULL DEFAULT '',
   created_at TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS reviews (
+  id TEXT PRIMARY KEY,
+  drug_id TEXT NOT NULL,
+  decision TEXT NOT NULL,
+  content_hash TEXT NOT NULL,
+  checklist TEXT NOT NULL DEFAULT '',
+  note TEXT NOT NULL DEFAULT '',
+  reviewer_id TEXT REFERENCES users(id) ON DELETE SET NULL,
+  reviewer_name TEXT NOT NULL,
+  reviewer_profession TEXT NOT NULL DEFAULT '',
+  reviewer_facility TEXT NOT NULL DEFAULT '',
+  created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_reviews_drug ON reviews(drug_id, created_at);
+CREATE TABLE IF NOT EXISTS stock_reports (
+  id TEXT PRIMARY KEY,
+  drug_id TEXT NOT NULL,
+  user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  status TEXT NOT NULL,
+  city TEXT NOT NULL,
+  facility TEXT NOT NULL,
+  note TEXT NOT NULL DEFAULT '',
+  hidden INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_stock_drug ON stock_reports(drug_id, created_at);
+CREATE INDEX IF NOT EXISTS idx_stock_time ON stock_reports(created_at);
 CREATE TABLE IF NOT EXISTS login_attempts (
   key TEXT PRIMARY KEY,
   count INTEGER NOT NULL DEFAULT 0,

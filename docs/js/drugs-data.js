@@ -203,7 +203,7 @@ window.DRUG_DB = [
       cautions: ["Verify against the national protocol (some protocols give 4 g IV + 6 g IM, or 14 g IM as loading)."]
     }
   ],
-  cautions: ["Toxicity thresholds (serum magnesium): patellar reflexes are lost at about 7–10 mEq/L (9–12 mg/dL, roughly 3.5–5 mmol/L); respiratory depression at about 10–12 mEq/L (12–15 mg/dL, 5–6 mmol/L); cardiac arrest at about 25 mEq/L (30 mg/dL, 12.5 mmol/L). Loss of the knee reflex is the early warning — stop the magnesium before breathing is affected.", "Risk rises sharply with oliguria or renal impairment (creatinine above 1.2 mg/dL or urine under 30 mL/h for more than 4 h): give maintenance at a reduced dose or withhold, and check reflexes and breathing before every dose.", "Do not combine with nifedipine without BP monitoring (hypotension)."],
+  cautions: ["Toxicity thresholds (serum magnesium): patellar reflexes are lost at about 7–10 mEq/L (9–12 mg/dL, roughly 3.5–5 mmol/L); respiratory depression at about 10–12 mEq/L (12–15 mg/dL, 5–6 mmol/L); cardiac arrest at about 25 mEq/L (30 mg/dL, 12.5 mmol/L). Loss of the knee reflex is the early warning — stop the magnesium before breathing is affected.", "Risk rises sharply with oliguria or renal impairment (creatinine above 1.2 mg/dL or urine under 30 mL/h for more than 4 h): give maintenance at a reduced dose or withhold, and check reflexes and breathing before every dose.", "With nifedipine in severe pre-eclampsia: the combination is acceptable, as nifedipine does not potentiate magnesium (Williams), but check BP every 15 min and reflexes hourly. Avoid the combination for tocolysis (Williams)."],
   antidote: "Calcium gluconate 10 %: 1 g (10 mL) IV over 10 min.",
   sources: [
     { name: "WHO. Managing Complications in Pregnancy and Childbirth, 2nd ed. 2017 (magnesium sulfate schedules)" },
@@ -309,6 +309,7 @@ window.DRUG_DB = [
       cautions: ["If no 1 mL syringe, a 2 mL syringe can still measure 0.5 mL; check the markings."]
     }
   ],
+  paediatric: ["Child cardiac arrest: 0.01 mg/kg IV/IO (0.1 mL/kg of 1:10 000), maximum 1 mg, every 3–5 min.", "Newborn resuscitation (heart rate under 60 despite effective ventilation and compressions): 0.02 mg/kg IV/IO via the umbilical vein (0.2 mL/kg of 1:10 000) with a 3 mL saline flush, every 3–5 min; endotracheal 0.1 mg/kg only if there is no access (Nelson).", "Anaphylaxis: 0.01 mg/kg IM of 1:1000 (maximum 0.5 mg)."],
   cautions: ["IV adrenaline in a patient with a pulse causes hypertensive crisis/arrhythmia if given undiluted or too fast.", "Interacts with tricyclics, beta-blockers (unopposed alpha)."],
   calc: { type: "infusion", amount: 4, amountUnit: "mg", volumeMl: 250, doseUnit: "mcg/kg/min", range: [0.05, 0.5], defaultDose: 0.1, dropFactor: 60 },
   sources: [
@@ -526,7 +527,7 @@ window.DRUG_DB = [
   ],
   paediatric: [
     "Start insulin 1 h after starting fluids; never bolus. 0.05–0.1 unit/kg/h (0.1 unit/kg IM hourly).",
-    "Cerebral oedema: headache, falling HR, rising BP, drowsiness → raise head, reduce fluids by one third, mannitol 0.5–1 g/kg IV over 15 min or 3 % saline 2.5–5 mL/kg."
+    "Cerebral oedema: headache, falling HR, rising BP, drowsiness → raise head, reduce fluids by one third, mannitol 0.5–1 g/kg IV over 10–20 min or 3 % saline 2.5–5 mL/kg."
   ],
   cautions: ["Hypokalaemia, hypoglycaemia, cerebral oedema (children)."],
   calc: { type: "weight", dosePerKg: 0.1, doseUnit: "units", conc: 100, concUnit: "units/mL", label: "IM hourly dose (0.1 unit/kg)" },
@@ -730,7 +731,7 @@ window.DRUG_DB = [
       cautions: ["Narrow therapeutic index; seizures may be the first sign of toxicity. Never IV push fast."]
     }
   ],
-  paediatric: ["Apnoea of prematurity: 6 mg/kg loading then 2.5 mg/kg every 12 h (WHO) — oral or IV."],
+  paediatric: ["Apnoea of prematurity: 6 mg/kg loading, then 2.5 mg/kg every 12 h in the first week of life and 4 mg/kg every 12 h from week 2 to 4 (WHO) — oral or IV."],
   cautions: ["Interactions: macrolides, ciprofloxacin, cimetidine raise levels; rifampicin, smoking lower them."],
   calc: { type: "weight", dosePerKg: 5, doseUnit: "mg", conc: 25, concUnit: "mg/mL", maxDose: 500, label: "Loading / 6-hourly dose (5 mg/kg)" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013, p. 98–99" }, { name: "BNF: aminophylline" }],
@@ -833,7 +834,7 @@ window.DRUG_DB = [
     items: [
       { label: "Adult", text: "1–2 g IV once daily; meningitis 2 g every 12 h." },
       { label: "Child", text: "50–80 mg/kg once daily; meningitis 100 mg/kg/day (max 4 g/day) in 1–2 doses." },
-      { label: "Neonate", text: "50 mg/kg once daily (meningitis 100 mg/kg). Avoid if jaundiced or < 41 weeks corrected age and never with calcium-containing IV fluids (e.g. Ringer's lactate)." }
+      { label: "Neonate", text: "Ampicillin plus gentamicin is preferred in newborns: ceftriaxone is typically not used in the neonatal period because it precipitates with calcium and displaces bilirubin (Nelson). If it is the only option: 50 mg/kg once daily (meningitis 100 mg/kg). Avoid if jaundiced or < 41 weeks corrected age and never with calcium-containing IV fluids (e.g. Ringer's lactate)." }
     ]
   },
   improvised: [
@@ -1420,7 +1421,7 @@ window.DRUG_DB = [
     }
   ],
   paediatric: ["Enoxaparin 1 mg/kg SC 12-hourly (< 2 months: 1.5 mg/kg); anti-Xa monitoring where possible."],
-  cautions: ["Heparin-induced thrombocytopenia; renal impairment with LMWH; spinal/epidural haematoma."],
+  cautions: ["Heparin-induced thrombocytopenia; spinal/epidural haematoma.", "Enoxaparin accumulates in kidney impairment: with creatinine clearance 30 mL/min or less use the reduced once-daily dose and watch for bleeding (see Safety tab, kidney)."],
   antidote: "Protamine sulfate 1 mg per 100 IU of UFH given in the last 2–3 h (max 50 mg) slow IV; partial reversal only for enoxaparin (1 mg per 1 mg).",
   calc: { type: "infusion", amount: 25000, amountUnit: "units", volumeMl: 500, doseUnit: "units/kg/h", range: [12, 18], defaultDose: 18, dropFactor: 60 },
   sources: [{ name: "Kearon C et al. Comparison of fixed-dose weight-adjusted UFH and LMWH for acute VTE (FIDO). JAMA 2006" }, { name: "CHEST Antithrombotic Therapy for VTE Disease, 2016/2021" }],
@@ -2066,7 +2067,7 @@ window.DRUG_DB = [
       cautions: ["Do not use tocolysis beyond 48 h; it does not improve outcomes and can delay necessary delivery."]
     }
   ],
-  cautions: ["Hypotension, flushing, headache, tachycardia.", "Do not combine immediate-release nifedipine with intravenous magnesium without close BP monitoring.", "Slow-release tablets act too slowly for an emergency."],
+  cautions: ["Hypotension, flushing, headache, tachycardia.", "With magnesium sulfate in pre-eclampsia: acceptable with BP checks every 15 min (nifedipine does not potentiate magnesium, Williams). Do not combine the two as tocolytics.", "Slow-release tablets act too slowly for an emergency."],
   textbook: [
     { book: "williams", text: "For acute severe hypertension: 10 mg immediate-release oral nifedipine, then 10 to 20 mg after 20 to 30 minutes if needed, then labetalol. Sublingual use is no longer recommended because of dangerously rapid effects.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1632" },
     { book: "williams", text: "As tocolytic, calcium-channel blockers (especially nifedipine) are safer and more effective than beta-agonists; efficacy similar to magnesium sulfate.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1831" },
@@ -2541,7 +2542,7 @@ window.DRUG_DB = [
   standard: {
     summary: "Intermittent IV or IM dosing — never an infusion, so no pump is needed anywhere.",
     items: [
-      { label: "Neonate", text: "50 mg/kg IV or IM every 12 h in the first week of life, every 8 h from 7–21 days, every 6 h thereafter. Meningitis: 100 mg/kg per dose." },
+      { label: "Neonate", text: "50 mg/kg IV or IM every 12 h in the first week of life, every 8 h in weeks 2–4 (WHO). Meningitis: 100 mg/kg per dose." },
       { label: "Child", text: "50 mg/kg IV or IM every 6 h (WHO). Meningitis 100 mg/kg every 6 h." },
       { label: "Adult", text: "1–2 g IV every 6 h; 2 g every 4 h in meningitis." },
       { label: "Severe malnutrition", text: "50 mg/kg IV or IM every 6 h for 2 days, then oral amoxicillin 25–40 mg/kg every 8 h for 5 days, with gentamicin once daily for 7 days." }
@@ -2976,7 +2977,7 @@ window.DRUG_DB = [
       monitor: ["Pain score at rest and on movement", "Total 24-hour paracetamol dose across all routes and all preparations"],
       cautions: [
         "Count every source. A patient given tablets, syrup and a combination cold remedy can easily exceed the maximum.",
-        "Reduce to 3 g/day in malnutrition, chronic alcohol use, low body weight and liver disease."
+        "Reduce to 3 g/day in malnutrition and low body weight, and to 2 g/day in cirrhosis or chronic heavy alcohol use (Harrison)."
       ]
     },
     {
@@ -3869,5 +3870,1669 @@ window.DRUG_DB = [
     { name: "WHO. The clinical use of blood, handbook" }
   ],
   review: { status: "draft", by: null, date: null }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "ipratropium",
+  name: "Ipratropium bromide",
+  aka: [
+    "Atrovent",
+    "ipratropium",
+    "Combivent (with salbutamol)"
+  ],
+  cls: "Short-acting muscarinic antagonist (inhaled anticholinergic bronchodilator)",
+  cat: "respiratory",
+  wards: [
+    "emergency",
+    "paediatric",
+    "medical",
+    "icu",
+    "outpatient"
+  ],
+  tags: [
+    "asthma",
+    "severe asthma",
+    "COPD",
+    "wheeze",
+    "bronchospasm",
+    "nebuliser"
+  ],
+  presentation: [
+    "Nebuliser solution 250 mcg/mL: 1 mL (250 mcg) and 2 mL (500 mcg) unit-dose vials. Preservative-free — discard the opened vial after use.",
+    "Metered-dose inhaler 20 mcg per puff (US products are labelled 18 mcg per actuation).",
+    "Combination nebules: salbutamol 2.5 mg + ipratropium 500 mcg in 2.5 mL.",
+    "Room temperature; protect nebules from light."
+  ],
+  indications: [
+    "Add-on to salbutamol in a severe or life-threatening asthma attack (first hours in the emergency department)",
+    "Acute exacerbation of COPD (with salbutamol)",
+    "Wheeze in a patient on a β-blocker, or with heavy secretions, where β-agonists alone are not enough"
+  ],
+  standard: {
+    summary: "Nebulised or MDI doses given alongside salbutamol. Never used alone as the reliever — it is weaker and slower than salbutamol. No infusion, no pump.",
+    items: [
+      {
+        label: "Severe asthma — nebulised",
+        text: "Add to every salbutamol nebulisation in the first hour (every 20 min, 3 doses), then every 4–6 h or stop once improving. Adult and child 12 y or over: 500 mcg. Child under 12 y: 250 mcg (NAEPP allows 250–500 mcg). The two solutions can be mixed in the same nebuliser chamber."
+      },
+      {
+        label: "Severe asthma — MDI with spacer",
+        text: "Adult: 8 puffs every 20 min as needed for up to 3 h. Child under 12 y: 4–8 puffs every 20 min for up to 3 h (NAEPP EPR-3). Give the salbutamol puffs first, then the ipratropium puffs, one puff at a time into the spacer."
+      },
+      {
+        label: "COPD exacerbation (adult)",
+        text: "500 mcg nebulised every 4–6 h with salbutamol 2.5–5 mg. In a patient known to retain CO2, drive the nebuliser with compressed air, not oxygen, and give oxygen separately by nasal prongs to a target saturation of 88–92 %."
+      },
+      {
+        label: "After admission",
+        text: "Little added benefit in children once they are on frequent salbutamol and a systemic steroid (Nelson). Stop it rather than continue 6-hourly by habit, unless the patient has COPD, heavy secretions, or is on a β-blocker."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "MDI and a home-made bottle spacer (no nebuliser, no oxygen)",
+      best_for: "Health centre or ward with inhalers only. Works as well as nebulisation for most attacks.",
+      requires: [
+        "mdi"
+      ],
+      steps: [
+        "Make the spacer as on the salbutamol page: a clean 500 mL plastic bottle with the inhaler mouthpiece sealed into a hole in the base; the patient breathes from the bottle neck (small child: a cup or mask fitted over the neck).",
+        "Salbutamol first: 1 puff at a time, 4–6 normal breaths after each puff, up to the salbutamol dose.",
+        "Then ipratropium the same way: adult 8 puffs, child under 12 y 4–8 puffs.",
+        "Repeat both every 20 min for the first hour (3 rounds). Reassess after each round.",
+        "After the first 1–3 hours, stop the ipratropium if the patient is improving; continue salbutamol as needed."
+      ],
+      monitor: [
+        "Respiratory rate, ability to talk or feed, chest indrawing, wheeze (a silent chest is worse, not better)",
+        "SpO2 if available — give oxygen for SpO2 under 90 %"
+      ],
+      cautions: [
+        "Shake the inhaler and prime a new bottle spacer with a few puffs; static in plastic bottles reduces the dose.",
+        "A dry mouth and a bitter taste are expected."
+      ]
+    },
+    {
+      title: "Giving 250 mcg from a 500 mcg vial",
+      best_for: "Only 500 mcg/2 mL vials in stock and a child under 12 needs 250 mcg.",
+      requires: [
+        "neb"
+      ],
+      steps: [
+        "Snap open the 2 mL vial (250 mcg/mL). Draw exactly 1 mL (250 mcg) with a clean syringe and put it in the nebuliser chamber.",
+        "Add the salbutamol dose and make the volume up to about 3–4 mL with 0.9 % saline if the chamber needs it.",
+        "The vial has no preservative: discard the remaining 1 mL unless your unit's policy allows it to be kept, in a sterile capped labelled syringe, for the same child's next dose within the hour."
+      ],
+      monitor: [
+        "Response after each nebulisation"
+      ],
+      cautions: [
+        "Label the capped syringe with the name, drug and time. Never share a part-used vial between patients."
+      ]
+    },
+    {
+      title: "Nebulising without oxygen (compressor or foot pump)",
+      best_for: "Oxygen shortage, or COPD with CO2 retention where oxygen-driven nebulisation is unsafe.",
+      requires: [
+        "neb"
+      ],
+      steps: [
+        "Drive the nebuliser with an electric compressor or foot pump at the usual doses (ipratropium plus salbutamol in the same chamber).",
+        "Give oxygen at the same time by nasal prongs (adult 1–2 L/min to start) — the nebuliser mask fits over the prongs.",
+        "If there is no oxygen at all, still give the nebuliser: bronchodilation helps more than the brief fall in saturation hurts, but watch closely."
+      ],
+      monitor: [
+        "SpO2 before, during and after; drowsiness (CO2 retention) in COPD"
+      ],
+      cautions: [
+        "Use a mouthpiece rather than a face mask if the patient has glaucoma — mist in the eyes can precipitate angle-closure glaucoma."
+      ]
+    }
+  ],
+  paediatric: [
+    "Under 12 y: 250 mcg nebulised (4–8 puffs by MDI and spacer) every 20 min for the first hour, with salbutamol.",
+    "Its benefit is in the first hours in the emergency department (fewer admissions); routine continuation on the ward adds little (Nelson).",
+    "Bronchiolitis in infants: not recommended."
+  ],
+  cautions: [
+    "Never a substitute for salbutamol or for steroids — it is an add-on.",
+    "Angle-closure glaucoma: nebuliser mist in the eyes can precipitate an attack; use a mouthpiece or protect the eyes.",
+    "Urinary retention in older men with prostatic enlargement; dry mouth; rarely paradoxical bronchospasm — stop it if wheeze worsens straight after a dose.",
+    "Patients with COPD who retain CO2: oxygen-driven nebulisers can cause drowsiness and respiratory acidosis — use air and separate oxygen to 88–92 %."
+  ],
+  sources: [
+    {
+      name: "GINA. Global Strategy for Asthma Management and Prevention, 2024"
+    },
+    {
+      name: "NAEPP Expert Panel Report 3 (EPR-3): Guidelines for the Diagnosis and Management of Asthma, 2007 — emergency department dosing table"
+    },
+    {
+      name: "BTS/SIGN British guideline on the management of asthma; BNF and BNF for Children (ipratropium bromide)"
+    },
+    {
+      name: "GOLD. Global Strategy for the Diagnosis, Management and Prevention of COPD, 2024"
+    },
+    {
+      name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013 (spacer technique)"
+    }
+  ],
+  textbook: [
+    {
+      book: "nelson",
+      text: "Anticholinergics are weaker bronchodilators than β-agonists; inhaled ipratropium is used mainly in acute severe asthma, and added to salbutamol in the emergency department it improves lung function and reduces hospital admission in children.",
+      ref: "Nelson 22nd ed. 2024, ch. 185 Childhood asthma, p. 1404"
+    },
+    {
+      book: "nelson",
+      text: "Exacerbation table: ipratropium is not first-line and is added to β2-agonist therapy; nebuliser solution 0.5 mg/2.5 mL, MDI 18 mcg per puff; nebulised ipratropium may be mixed with salbutamol.",
+      ref: "Nelson 22nd ed. 2024, ch. 185, Table 185.17, p. 1405"
+    },
+    {
+      book: "nelson",
+      text: "In hospital, ipratropium is often added to salbutamol every 6 hours if the child is not clearly improving, although there is little evidence of extra benefit once aggressive β-agonist and systemic steroid therapy are under way; it may help with mucus hypersecretion or in patients on β-blockers.",
+      ref: "Nelson 22nd ed. 2024, ch. 185, p. 1409"
+    },
+    {
+      book: "harrison",
+      text: "Acute asthma in urgent care: nebulised β2-agonist up to every 20 min, IV corticosteroids if no response in 1–2 h, oxygen for hypoxaemia; nebulised anticholinergics can add bronchodilation.",
+      ref: "Harrison 22nd ed. 2025, ch. 298 Asthma, p. 2227"
+    },
+    {
+      book: "harrison",
+      text: "COPD exacerbation: inhaled β-agonists and muscarinic antagonists, separately or together, usually nebulised at first; changing to MDIs with training of patients and staff is effective. Oxygen to a saturation target of 88–92 %.",
+      ref: "Harrison 22nd ed. 2025, ch. 303 COPD, p. 2259"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "adenosine",
+  name: "Adenosine",
+  aka: [
+    "Adenocor",
+    "Adenocard"
+  ],
+  cls: "Antiarrhythmic (AV nodal blocker, ultra-short-acting)",
+  cat: "cardio",
+  wards: [
+    "emergency",
+    "paediatric",
+    "medical",
+    "icu",
+    "maternity"
+  ],
+  tags: [
+    "SVT",
+    "supraventricular tachycardia",
+    "palpitations",
+    "narrow complex tachycardia",
+    "arrhythmia"
+  ],
+  presentation: [
+    "3 mg/mL, 2 mL vial (6 mg). Also 30 mg/10 mL vials sold for cardiac stress testing — do not confuse them.",
+    "Store at room temperature; do NOT refrigerate (crystallises)."
+  ],
+  indications: [
+    "Regular narrow-complex tachycardia (SVT) in a stable patient after vagal manoeuvres fail",
+    "Diagnostic: to slow the ventricular rate and reveal flutter waves in a regular narrow-complex tachycardia"
+  ],
+  standard: {
+    summary: "Rapid IV push into a large vein followed instantly by a saline flush, with continuous ECG recording and a defibrillator at hand. Half-life is under 10 seconds — a slow push does nothing.",
+    items: [
+      {
+        label: "First: vagal manoeuvres",
+        text: "Adult or older child: modified Valsalva — blow into a 10 mL syringe hard enough to move the plunger for 15 s, then immediately lie flat and have the legs lifted to 45° for 15 s. Infant: a bag of ice-cold water or a cold wet cloth over the whole face for 15–30 s (Nelson). Never press on the eyeballs. Carotid sinus massage only in young adults without bruits or stroke history."
+      },
+      {
+        label: "Child (and neonate)",
+        text: "0.1 mg/kg (maximum 6 mg) rapid IV push with a flush. If no effect after 2 min: 0.2 mg/kg (maximum 12 mg) (Nelson, PALS). BNF for Children starts neonates at 150 mcg/kg — follow your national protocol."
+      },
+      {
+        label: "Adult",
+        text: "6 mg rapid IV push with a 20 mL saline flush. If no effect after 1–2 min: 12 mg. A further 12 mg may be given (Resuscitation Council UK uses 18 mg for the third dose). Use 3 mg as the first dose if the patient takes dipyridamole or carbamazepine, has had a heart transplant, or the drug goes into a central line."
+      },
+      {
+        label: "Unstable (shock, syncope, heart failure, chest pain)",
+        text: "Synchronised cardioversion (child 0.5–1 J/kg, then 2 J/kg; adult: use the energy recommended for your defibrillator, commonly 70–150 J biphasic for narrow-complex SVT) under sedation. Adenosine may be tried while the defibrillator is being prepared only if it does not delay the shock."
+      },
+      {
+        label: "Pregnancy",
+        text: "Vagal manoeuvres, then adenosine at the adult doses — safe and effective in stable pregnant women; transient fetal bradycardia has been reported (Williams)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Single-person rapid push with a 3-way tap",
+      best_for: "The standard method when you have one nurse or doctor at the bedside and no pump — which is all adenosine ever needs.",
+      requires: [
+        "iv"
+      ],
+      steps: [
+        "Cannula in a large proximal vein — antecubital fossa, not the hand or foot. Check it flushes freely.",
+        "Attach a 3-way tap directly to the cannula (no extension line if possible — dead space delays the drug).",
+        "Syringe 1 (on the side port in line with the vein): the adenosine dose. Child: draw 1 mL (3 mg) and dilute to 10 mL with 0.9 % saline = 0.3 mg/mL, then draw the dose. Adult: 6 mg = 2 mL undiluted.",
+        "Syringe 2 (on the other port): the flush — adult 20 mL 0.9 % saline, child 5–10 mL.",
+        "Raise the arm. Start recording the ECG. Turn the tap towards the adenosine, push it as fast as you can (under 1–2 seconds), turn the tap and slam in the whole flush immediately.",
+        "Warn the patient first: a few seconds of chest tightness, flushing and a sense of doom are expected.",
+        "If no change after 1–2 min, repeat with the next dose. Maximum three doses, then think again about the rhythm."
+      ],
+      monitor: [
+        "ECG running before, during and for 1 minute after each push — the response is the diagnosis",
+        "Pulse and blood pressure after conversion"
+      ],
+      cautions: [
+        "A pause of several seconds (asystole) before sinus rhythm returns is normal; if it lasts, give chest compressions briefly — it wears off within 10–20 s.",
+        "If the rate slows and flutter waves or atrial activity appear without conversion, the rhythm is atrial flutter or atrial tachycardia — adenosine will not cure it; treat rate control instead."
+      ]
+    },
+    {
+      title: "No 3-way tap: two syringes, two ports",
+      best_for: "Cannula with an injection port, or a running drip, but no 3-way tap.",
+      requires: [
+        "iv"
+      ],
+      steps: [
+        "Option A — cannula with a top injection port: put the flush syringe on the cannula hub (Luer end) and inject the adenosine through the top port; push adenosine and follow with the flush with no gap.",
+        "Option B — running 0.9 % saline drip: inject the adenosine into the injection port closest to the cannula, then open the roller clamp fully and squeeze the drip chamber/bag while a second person pushes the saline flush through the same port.",
+        "Option C — two people: one pushes the adenosine, the other has the flush syringe ready and pushes the moment the first syringe is empty, through the same port."
+      ],
+      monitor: [
+        "ECG recording during the push"
+      ],
+      cautions: [
+        "Drawing adenosine and the saline flush into one large syringe has been studied and may work similarly, but most protocols still use separate syringes — use it only if your unit accepts it.",
+        "Any delay between drug and flush is the usual reason adenosine 'fails'."
+      ]
+    },
+    {
+      title: "No cardiac monitor — using a 12-lead ECG machine or a defibrillator screen",
+      best_for: "Ward or casualty with an ECG machine or a manual defibrillator but no bedside monitor.",
+      requires: [
+        "iv",
+        "ecg"
+      ],
+      steps: [
+        "Record a 12-lead ECG first. Give adenosine only if the tachycardia is REGULAR and NARROW (QRS under 3 small squares). A regular broad-complex tachycardia is treated as ventricular tachycardia; an irregular one must never get adenosine.",
+        "During the push, run a continuous rhythm strip (lead II) on the ECG machine, or connect the defibrillator pads/leads and watch its screen.",
+        "Have a second person feel the pulse or listen to the apex throughout.",
+        "Bag-valve-mask, oxygen and the defibrillator must be at the bed before the first dose."
+      ],
+      monitor: [
+        "Printed strip kept in the notes — it shows whether it was SVT, flutter or something else"
+      ],
+      cautions: [
+        "If there is NO way to see the rhythm at all, do not give adenosine blind: use vagal manoeuvres and refer. Signs that suggest SVT rather than sinus tachycardia (fixed rate that does not vary with crying, fever or movement; infant rate usually over 220/min, child over 180/min, sudden onset and offset) are not enough on their own.",
+        "Do not give adenosine in an irregular tachycardia with broad complexes (pre-excited atrial fibrillation) — it can cause ventricular fibrillation."
+      ]
+    }
+  ],
+  paediatric: [
+    "0.1 mg/kg (max 6 mg) rapid IV/IO push, then 0.2 mg/kg (max 12 mg). Dilute 3 mg in 10 mL saline (0.3 mg/mL) so that small doses can be measured.",
+    "Infants: ice-water bag to the face first. Never eyeball pressure.",
+    "Verapamil is contraindicated under 1 year — it causes hypotension and cardiac arrest in infants (Nelson).",
+    "Heart failure in an infant with SVT: synchronised cardioversion 0.5–2 J/kg is first-line."
+  ],
+  cautions: [
+    "Always have a defibrillator nearby: adenosine triggers atrial fibrillation (usually brief) in up to 15 % — dangerous in Wolff-Parkinson-White.",
+    "Asthma and severe COPD: can cause bronchospasm; avoid if another option exists, and have salbutamol ready.",
+    "Contraindicated in second- or third-degree AV block and sick sinus syndrome (unless paced), long QT, and after heart transplantation (Harrison).",
+    "Aminophylline, theophylline and caffeine block adenosine — larger doses may be needed. Dipyridamole and carbamazepine increase its effect — start at 3 mg (adult).",
+    "Verapamil is NOT in this app. Adults only, if in your formulary and adenosine is unavailable or has failed: verapamil 5 mg IV over 2 min (not in infants, broad-complex tachycardia, WPW, heart failure, hypotension, or with a β-blocker) — check your formulary."
+  ],
+  calc: {
+    type: "weight",
+    dosePerKg: 0.1,
+    doseUnit: "mg",
+    conc: 3,
+    concUnit: "mg/mL",
+    maxDose: 6,
+    label: "First dose 0.1 mg/kg (max 6 mg) at 3 mg/mL — for small children dilute 3 mg in 10 mL (0.3 mg/mL); second dose 0.2 mg/kg (max 12 mg)"
+  },
+  sources: [
+    {
+      name: "Resuscitation Council UK. Adult and Paediatric Advanced Life Support guidelines, 2021 (tachycardia algorithms)"
+    },
+    {
+      name: "American Heart Association. PALS and ACLS guidelines 2020, focused updates 2023"
+    },
+    {
+      name: "Appelboam A et al. Postural modification to the standard Valsalva manoeuvre (REVERT). Lancet 2015;386:1747–53"
+    },
+    {
+      name: "BNF and BNF for Children — adenosine"
+    },
+    {
+      name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 484"
+    }
+  ],
+  textbook: [
+    {
+      book: "nelson",
+      text: "SVT: in infants an ice bag over the whole face for 15–30 s; older children Valsalva or straining; never ocular pressure. Stable patients: adenosine by rapid IV push 0.1 mg/kg (up to 6 mg), increased to 0.2 mg/kg (up to 12 mg) if no effect.",
+      ref: "Nelson 22nd ed. 2024, ch. 484 Disturbances of rate and rhythm, p. 2850"
+    },
+    {
+      book: "nelson",
+      text: "Adenosine can trigger atrial fibrillation, so a means of DC cardioversion should be at hand; verapamil can cause hypotension and cardiac arrest under 1 year and is contraindicated in that age group; synchronised cardioversion 0.5–2 J/kg if in heart failure.",
+      ref: "Nelson 22nd ed. 2024, ch. 484, p. 2850"
+    },
+    {
+      book: "harrison",
+      text: "Urgent SVT treatment: vagal manoeuvres or carotid sinus massage (cautiously if carotid disease), then adenosine 6 or 12 mg, which terminates AV node-dependent SVT or unmasks atrial tachycardia or flutter.",
+      ref: "Harrison 22nd ed. 2025, ch. 253 Approach to Supraventricular Arrhythmias, p. 1933"
+    },
+    {
+      book: "harrison",
+      text: "Adenosine causes transient chest pain, dyspnoea and anxiety; it is contraindicated after cardiac transplantation, may aggravate bronchospasm, and triggers (usually brief) AF in up to 15 %, so use cautiously in WPW. Verapamil and β-blockers work but can cause hypotension.",
+      ref: "Harrison 22nd ed. 2025, ch. 256 Paroxysmal Supraventricular Tachycardias, p. 1943"
+    },
+    {
+      book: "harrison",
+      text: "Adenosine must be given as a rapid bolus because it is taken up by red cells and endothelium within seconds, before it can reach the AV node.",
+      ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, p. 486"
+    },
+    {
+      book: "williams",
+      text: "Pregnancy: vagal manoeuvres first, then IV adenosine, which is safe and effective in haemodynamically stable pregnant women; transient fetal bradycardia has been described. Synchronised cardioversion if unstable.",
+      ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2142"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "mannitol",
+  name: "Mannitol",
+  aka: [
+    "Osmitrol",
+    "mannitol 20 %",
+    "osmotic diuretic"
+  ],
+  cls: "Osmotic diuretic (osmotherapy)",
+  cat: "neuro",
+  wards: [
+    "emergency",
+    "surgical",
+    "icu",
+    "paediatric",
+    "medical"
+  ],
+  tags: [
+    "raised intracranial pressure",
+    "ICP",
+    "head injury",
+    "cerebral oedema",
+    "herniation",
+    "brain swelling"
+  ],
+  presentation: [
+    "20 % (200 mg/mL = 20 g per 100 mL) in 250 mL and 500 mL bottles or bags; 10 % (100 mg/mL) in 500 mL.",
+    "20 % crystallises when cold (store 20–30 °C). Crystals must be fully redissolved before use."
+  ],
+  indications: [
+    "Raised intracranial pressure with signs of herniation (falling consciousness, unequal or dilated pupil, posturing, Cushing response) — as a bridge to CT, surgery or burr holes",
+    "Cerebral oedema in diabetic ketoacidosis (hypertonic saline is the alternative)",
+    "Acute angle-closure glaucoma (specialist)"
+  ],
+  standard: {
+    summary: "An intermittent dose run over 20–30 minutes — no pump needed. Effect starts in about 20 min and lasts a few hours; it buys time, it does not fix the cause.",
+    items: [
+      {
+        label: "Dose",
+        text: "0.25–1 g/kg IV over 20–30 min. A usual starting dose is 0.5 g/kg = 2.5 mL/kg of 20 % (70 kg adult: 35 g = 175 mL). Harrison: 25–100 g every 4 h as needed in adults."
+      },
+      {
+        label: "Repeat",
+        text: "Every 4–6 h only while signs of raised ICP persist and the patient is not dehydrated. Stop if serum osmolality exceeds 320 mOsm/kg. If osmolality cannot be measured, stop when the patient becomes hypovolaemic or hypotensive, urine output falls, or sodium rises steeply."
+      },
+      {
+        label: "Before you start",
+        text: "Head of bed up 30°, head midline, airway protected, oxygen to SpO2 ≥ 94 %, systolic BP kept above 100 mmHg in head injury, treat seizures, fever and hypoglycaemia. Catheterise the bladder — mannitol produces a large diuresis."
+      },
+      {
+        label: "Replace the urine",
+        text: "Match urine output with 0.9 % saline if the patient is not overloaded. Hypovolaemia and low blood pressure after mannitol reduce brain perfusion and undo the benefit."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Gravity infusion over 20–30 min with a macro set",
+      best_for: "Adults and larger children when no pump is available.",
+      requires: [
+        "iv",
+        "macro_set"
+      ],
+      steps: [
+        "Inspect the bottle against the light. If you see crystals, warm it (below) until completely clear.",
+        "Calculate the volume: dose (g) ÷ 0.2 = mL of 20 %. Example 70 kg at 0.5 g/kg: 35 g ÷ 0.2 = 175 mL.",
+        "Remove the excess from a 250 mL bottle (or mark the target level with a pen) so that only the dose can run.",
+        "Use a set with an in-line filter if you have one. A blood giving set works as an improvised filter — its 170–200 micron screen catches crystals.",
+        "Drops per minute = mL × drop factor ÷ minutes. 175 mL over 30 min: 20 drops/mL set → 117 drops/min (29 per 15 s); 15 drops/mL set → 88 drops/min (22 per 15 s).",
+        "Over 20 min the rate is too fast to count (175 drops/min with a 20-drop set): open the clamp and check the level instead — about 45 mL should run every 5 min.",
+        "Flush the line with 0.9 % saline afterwards; do not leave the remainder hanging."
+      ],
+      monitor: [
+        "Pupils, GCS, pulse and BP every 15 min during and for 1 h after",
+        "Urine output hourly",
+        "Sodium and osmolality before each repeat dose where available"
+      ],
+      cautions: [
+        "Run it through its own line — never with blood in the same set.",
+        "Extravasation causes tissue damage; use a good vein and check the site."
+      ]
+    },
+    {
+      title: "Burette dose for small children",
+      best_for: "Children under about 20 kg, where 2.5 mL/kg is too small to control from a bottle.",
+      requires: [
+        "iv",
+        "burette"
+      ],
+      steps: [
+        "Run exactly the calculated volume into the burette (10 kg at 0.5 g/kg: 5 g = 25 mL of 20 %). Close the upper clamp so no more can enter.",
+        "With a 60 drops/mL burette: drops/min = mL × 60 ÷ minutes = mL × 3 over 20 min. 25 mL → 75 drops/min; 3 kg (7.5 mL) → about 22 drops/min.",
+        "When the burette is empty, add 10 mL 0.9 % saline to flush the dose through the chamber and tubing."
+      ],
+      monitor: [
+        "Pupils, conscious level, heart rate and BP every 15 min",
+        "Urine output (weigh nappies: 1 g = 1 mL)"
+      ],
+      cautions: [
+        "No burette: give by slow push with a 50 mL syringe over 20 min by the clock (for 25 mL, about 6 mL every 5 min)."
+      ]
+    },
+    {
+      title: "Redissolving crystals",
+      best_for: "Cold stores and cold nights — 20 % mannitol crystallises below room temperature.",
+      requires: [],
+      steps: [
+        "Stand the closed bottle or bag in a bowl of warm water (hot to the hand but not boiling) and shake it gently every few minutes until no crystals remain.",
+        "Let it cool to about body temperature before giving. Check again against the light.",
+        "If crystals do not dissolve completely, do not use that bottle."
+      ],
+      monitor: [
+        "Visual check against light before connecting and again halfway through"
+      ],
+      cautions: [
+        "Never heat in a microwave or directly on a stove.",
+        "Keep stock in a warm (not hot) place so it is ready in an emergency."
+      ]
+    }
+  ],
+  paediatric: [
+    "0.25–1 g/kg IV over 20 min (Nelson); 0.5 g/kg (2.5 mL/kg of 20 %) is a common starting dose.",
+    "DKA cerebral oedema: raise the head, reduce the IV fluid rate, mannitol 0.5–1 g/kg over 10–15 min, or 3 % saline 2.5–5 mL/kg over 10–15 min if mannitol is not available (ISPAD).",
+    "Cerebral malaria: mannitol (and steroids) have not improved outcomes in children and are not recommended (Nelson, WHO)."
+  ],
+  cautions: [
+    "Hypovolaemia and hypotension: mannitol is a diuretic — resuscitate first; in a shocked or bleeding head-injured patient hypertonic saline is the better osmotic agent.",
+    "Contraindicated in anuria, pulmonary oedema or severe heart failure (the first effect is to expand plasma volume), and active intracranial bleeding outside a surgical plan.",
+    "Repeated doses cause hypernatraemia or hyponatraemia, hyperkalaemia, dehydration and acute kidney injury, especially above osmolality 320.",
+    "Not for cerebral malaria or routine meningitis care; do not give it to patients who are not herniating 'just in case'.",
+    "Rebound brain swelling can occur when repeated doses are stopped abruptly after days of use."
+  ],
+  calc: {
+    type: "weight",
+    dosePerKg: 0.5,
+    doseUnit: "g",
+    conc: 0.2,
+    concUnit: "g/mL",
+    maxDose: 100,
+    label: "Mannitol 0.5 g/kg as 20 % (0.2 g/mL) = 2.5 mL/kg over 20–30 min"
+  },
+  sources: [
+    {
+      name: "Brain Trauma Foundation. Guidelines for the Management of Severe Traumatic Brain Injury, 4th ed. 2016"
+    },
+    {
+      name: "WHO. Surgical Care at the District Hospital, 2003 (head injury)"
+    },
+    {
+      name: "ISPAD Clinical Practice Consensus Guidelines 2022 — diabetic ketoacidosis (cerebral oedema)"
+    },
+    {
+      name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013 (cerebral malaria: mannitol not recommended)"
+    },
+    {
+      name: "Mannitol 20 % product information (crystallisation, filter, incompatibility with blood)"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "Raised ICP: head up, midline position; osmotherapy with mannitol 25–100 g every 4 h as needed, keeping serum osmolality under 320; glucocorticoids only for tumour or abscess oedema, not head injury or stroke.",
+      ref: "Harrison 22nd ed. 2025, ch. 318 Nervous System Disorders in Critical Care, p. 2345"
+    },
+    {
+      book: "schwartz",
+      text: "A bolus of mannitol up to 1 g/kg draws water out of the brain; the effect starts after about 20 minutes and is transient. Driving osmolality above 300 is of uncertain benefit and can cause hypovolaemia, hypotension and reduced brain perfusion.",
+      ref: "Schwartz's Principles of Surgery 11th ed., ch. 42 Neurosurgery, p. 1832"
+    },
+    {
+      book: "nelson",
+      text: "Children with raised ICP: 3 % saline 2–5 mL/kg over 10–20 min or mannitol 0.25–1 g/kg IV over 20 min; avoid serum osmolality above 320; insert a urinary catheter.",
+      ref: "Nelson 22nd ed. 2024, ch. 82 Neurologic emergencies and stabilization, p. 586"
+    },
+    {
+      book: "nelson",
+      text: "Head trauma: mannitol and hypertonic saline lower ICP; mannitol's diuresis can worsen hypovolaemia, so hypertonic saline may be more useful in severe head injury.",
+      ref: "Nelson 22nd ed. 2024, ch. 80 Acute care of multiple trauma, p. 575"
+    },
+    {
+      book: "nelson",
+      text: "Cerebral oedema in DKA: raise the head of the bed, reduce IV fluids and give mannitol, typically 1 g/kg over 20 minutes.",
+      ref: "Nelson 22nd ed. 2024, ch. 629 Diabetes mellitus, p. 3527"
+    },
+    {
+      book: "nelson",
+      text: "Cerebral malaria: brain swelling with raised ICP is the leading cause of death, but mannitol and corticosteroids have not improved outcomes.",
+      ref: "Nelson 22nd ed. 2024, ch. 334 Malaria, p. 2179"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "hypertonic-saline",
+  name: "Hypertonic saline 3 %",
+  aka: [
+    "3 % sodium chloride",
+    "3 % NaCl",
+    "hypertonic sodium chloride",
+    "HTS"
+  ],
+  cls: "Hypertonic electrolyte solution (osmotherapy)",
+  cat: "electrolyte",
+  wards: [
+    "emergency",
+    "icu",
+    "medical",
+    "paediatric",
+    "surgical"
+  ],
+  tags: [
+    "hyponatraemia",
+    "raised intracranial pressure",
+    "cerebral oedema",
+    "head injury",
+    "seizure",
+    "sodium"
+  ],
+  presentation: [
+    "3 % sodium chloride (30 g/L = 513 mmol/L, about 1027 mOsm/L) in 500 mL bags where stocked.",
+    "Often NOT stocked — made on the ward from 0.9 % saline plus concentrated NaCl ampoules (20 % = 3.4 mmol/mL, 10 % = 1.7 mmol/mL; 23.4 % = 4 mmol/mL in some countries).",
+    "HIGH-ALERT: concentrated NaCl ampoules have killed patients given undiluted. Store them separately from 0.9 % saline and water for injection."
+  ],
+  indications: [
+    "Severe symptomatic hyponatraemia: seizures, coma, severe confusion or vomiting with a low sodium",
+    "Raised intracranial pressure with signs of herniation, especially in a hypotensive or hypovolaemic patient (preferred to mannitol there)",
+    "DKA cerebral oedema when mannitol is unavailable"
+  ],
+  standard: {
+    summary: "Small boluses over 10–20 minutes, repeated against the response and the sodium. Bolus volumes are small enough to give by syringe or burette.",
+    items: [
+      {
+        label: "Symptomatic hyponatraemia — adult",
+        text: "100 mL of 3 % over 10–15 min (Harrison). Recheck the patient; repeat up to 2 more times, 10 min apart, until symptoms stop or sodium has risen by 4–6 mmol/L. Then stop the hypertonic saline."
+      },
+      {
+        label: "Symptomatic hyponatraemia — child",
+        text: "2 mL/kg (maximum 100 mL) over 10–15 min, repeated if symptoms persist. Each 1 mL/kg raises sodium by about 1 mmol/L; symptoms usually settle after a total of 4–6 mL/kg (Nelson)."
+      },
+      {
+        label: "Correction limits (osmotic demyelination)",
+        text: "Aim for a rise of 4–6 mmol/L in the first hours, then no more. Never more than 10 mmol/L in 24 h or 18 mmol/L in 48 h (Nelson); in chronic hyponatraemia or high-risk patients (alcohol use, malnutrition, hypokalaemia, liver disease) keep to under 8 mmol/L in 24 h (Harrison: under 6–8). Check sodium every 2–4 h."
+      },
+      {
+        label: "Raised ICP",
+        text: "2–5 mL/kg of 3 % over 10–20 min (Nelson), repeated as needed for signs of herniation, avoiding sustained sodium above 160 mmol/L (paediatric TBI guideline) and osmolality above 320. Adults: use the same weight-based dose."
+      },
+      {
+        label: "Overcorrection",
+        text: "If sodium rises too fast, stop all sodium-containing fluid and seek specialist advice — re-lowering with 5 % glucose and desmopressin is a specialist treatment."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Making 3 % saline when it is not stocked (show your arithmetic)",
+      best_for: "Every hospital that has 0.9 % saline and 20 % or 10 % NaCl ampoules but no commercial 3 %.",
+      requires: [
+        "iv"
+      ],
+      steps: [
+        "Principle: grams of salt in = grams of salt wanted. 3 % = 3 g per 100 mL. 0.9 % = 0.9 g/100 mL, 10 % = 10 g/100 mL, 20 % = 20 g/100 mL.",
+        "500 mL of 3 % from 20 % NaCl: you need 15 g. If x mL of 20 % replaces x mL of the 0.9 % bag: 0.20x + 0.009(500 − x) = 15 → 0.191x = 10.5 → x = 55 mL. Remove 55 mL from a 500 mL bag of 0.9 % saline (leaving 445 mL) and add 55 mL of 20 % NaCl. Check: 11 g + 4.0 g = 15 g in 500 mL = 3.0 %.",
+        "500 mL of 3 % from 10 % NaCl: 0.10x + 0.009(500 − x) = 15 → 0.091x = 10.5 → x = 115 mL. Remove 115 mL from the 500 mL bag (leaving 385 mL) and add 115 mL of 10 % NaCl. Check: 11.5 g + 3.5 g = 15 g = 3.0 %.",
+        "100 mL of 3 % (paediatric): 20 % → remove 11 mL from a 100 mL 0.9 % bag, add 11 mL of 20 % (2.2 g + 0.8 g = 3.0 g). 10 % → remove 23 mL, add 23 mL of 10 % (2.3 g + 0.7 g = 3.0 g).",
+        "50 mL syringe of 3 %: 5.5 mL of 20 % + 44.5 mL of 0.9 % saline (1.1 g + 0.4 g = 1.5 g in 50 mL). Or 11.5 mL of 10 % + 38.5 mL of 0.9 %.",
+        "23.4 % ampoules: 47 mL of 23.4 % replacing 47 mL of a 500 mL 0.9 % bag.",
+        "If you add the concentrate without removing saline first, the bag is weaker (55 mL of 20 % into a full 500 mL bag = about 2.8 %). Bags are also overfilled by a few percent, so home-made 3 % is usually slightly under strength — that errs on the safe side.",
+        "Mix by inverting 10 times, off the drip stand. Two people check the calculation and the ampoule strength. Label in red: '3 % SALINE — HYPERTONIC', date, time, initials. Discard after 24 h."
+      ],
+      monitor: [
+        "Second-person check of ampoule strength, volumes and label before hanging"
+      ],
+      cautions: [
+        "Concentrated NaCl is 7–26 times stronger than 0.9 % — never give it undiluted, never mistake it for water for injection when reconstituting antibiotics.",
+        "Make only what you need; do not leave home-made 3 % hanging unlabelled."
+      ]
+    },
+    {
+      title: "Giving a bolus without a pump",
+      best_for: "Seizing hyponatraemic patient or herniating head injury.",
+      requires: [
+        "iv",
+        "burette"
+      ],
+      steps: [
+        "Child: draw the bolus (2 mL/kg; 10 kg = 20 mL) into a 20 or 50 mL syringe and push it over 10–15 min by the clock — split it into equal parts, e.g. 20 mL over 10 min = 2 mL every minute. Or run it from a burette: with a 60-drop set, drops/min = mL × 60 ÷ minutes (20 mL over 10 min = 120 drops/min; over 15 min = 80 drops/min).",
+        "Adult: 100 mL in a burette or 100 mL bag. Over 15 min with a 20 drops/mL set = 133 drops/min (too fast to count — check the level: about 33 mL every 5 min); with a 60-drop burette over 20 min = 300 drops/min, so use the level method.",
+        "Flush with a few mL of 0.9 % saline. Reassess 10 min after each bolus before deciding on the next."
+      ],
+      monitor: [
+        "Seizure activity, GCS, pupils after each bolus",
+        "Sodium 2–4-hourly (at least before any repeat after the first hour)",
+        "Urine output — a sudden large dilute diuresis means sodium may overshoot"
+      ],
+      cautions: [
+        "Do not run 3 % as a continuous infusion without a pump and 2–4-hourly sodium results; if you cannot measure sodium, give boluses only for life-threatening symptoms and refer."
+      ]
+    },
+    {
+      title: "Peripheral vein use",
+      best_for: "No central line — which is almost everywhere this app is used.",
+      requires: [
+        "iv"
+      ],
+      steps: [
+        "3 % saline (about 1000 mOsm/L) may be given through a peripheral cannula for bolus doses: choose the largest vein you can find (antecubital or forearm), not the back of the hand, foot or scalp if avoidable.",
+        "Check that the cannula flushes freely and that there is no swelling before you start.",
+        "Watch the site throughout; stop at once if there is pain, swelling or blanching, and resite in another limb."
+      ],
+      monitor: [
+        "Cannula site before, during and after each bolus"
+      ],
+      cautions: [
+        "Extravasation causes skin necrosis, particularly in infants.",
+        "Never use 10 %, 20 % or 23.4 % NaCl in a peripheral vein."
+      ]
+    }
+  ],
+  paediatric: [
+    "Symptomatic hyponatraemia: 2 mL/kg (max 100 mL) of 3 % over 10–15 min, repeat until symptoms stop; usually 4–6 mL/kg in total. 1 mL/kg raises sodium by about 1 mmol/L.",
+    "Raised ICP: 2–5 mL/kg over 10–20 min (Nelson).",
+    "The commonest cause of acute hyponatraemia in hospitalised children is hypotonic IV fluid (e.g. 0.18 % or 0.45 % saline with glucose): stop it and use isotonic fluid."
+  ],
+  cautions: [
+    "Osmotic demyelination syndrome from over-rapid correction presents days later with dysarthria, swallowing difficulty, quadriparesis and death — respect the 24 h limits even when the patient looks better.",
+    "Fluid overload and pulmonary oedema in heart failure or renal failure.",
+    "Hypernatraemia and hyperchloraemic acidosis with repeated doses; hyperkalaemia shift.",
+    "Asymptomatic or mildly symptomatic chronic hyponatraemia does not need hypertonic saline — treat the cause (stop thiazides and hypotonic fluids, fluid restriction for SIADH, isotonic saline for hypovolaemia)."
+  ],
+  calc: {
+    type: "weight",
+    dosePerKg: 2,
+    doseUnit: "mL",
+    conc: 1,
+    concUnit: "mL/mL",
+    maxDose: 100,
+    label: "3 % saline bolus 2 mL/kg (max 100 mL) over 10–20 min; ICP 2–5 mL/kg"
+  },
+  sources: [
+    {
+      name: "Spasovski G et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia (ESE/ESICM/ERBP). Eur J Endocrinol 2014;170:G1–G47"
+    },
+    {
+      name: "Verbalis JG et al. Diagnosis, evaluation, and treatment of hyponatremia: expert panel recommendations. Am J Med 2013;126:S1–S42"
+    },
+    {
+      name: "Kochanek PM et al. Guidelines for the Management of Pediatric Severe Traumatic Brain Injury, 3rd ed. Pediatr Crit Care Med 2019"
+    },
+    {
+      name: "Brain Trauma Foundation. Guidelines for the Management of Severe TBI, 4th ed. 2016"
+    },
+    {
+      name: "ISMP high-alert medications list (concentrated sodium chloride)"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "Acute symptomatic hyponatraemia: 3 % saline (513 mmol/L) to raise sodium by 1–2 mmol/L per hour to a total of 4–6 mmol/L; a 100 mL bolus works better than an infusion. Check sodium every 2–4 h — the rise is unpredictable.",
+      ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 351"
+    },
+    {
+      book: "harrison",
+      text: "Chronic hyponatraemia: correct by less than 6–8 mmol/L in the first 24 h and less than 6 mmol/L in each following 24 h to avoid osmotic demyelination; lower targets in alcoholism or hypokalaemia.",
+      ref: "Harrison 22nd ed. 2025, ch. 56, p. 351"
+    },
+    {
+      book: "harrison",
+      text: "SIAD with severe neurological symptoms: 100 mL of 3 % NaCl over about 15 minutes, aiming for a 4–6 mmol/L rise; reassess and repeat if no clinical response.",
+      ref: "Harrison 22nd ed. 2025, ch. 393 Disorders of the Neurohypophysis, p. 3020"
+    },
+    {
+      book: "nelson",
+      text: "Each 1 mL/kg of 3 % NaCl raises serum sodium by about 1 mmol/L; a symptomatic child often improves after 4–6 mL/kg. Monitor pulse oximetry and correct hypoxia, which worsens cerebral oedema.",
+      ref: "Nelson 22nd ed. 2024, ch. 73 Electrolyte and acid-base disorders, p. 494"
+    },
+    {
+      book: "nelson",
+      text: "Osmotic demyelination is commoner when chronic hyponatraemia is corrected; avoid raising sodium by more than 10 mmol/L in 24 h or 18 mmol/L in 48 h.",
+      ref: "Nelson 22nd ed. 2024, ch. 73, p. 494"
+    },
+    {
+      book: "nelson",
+      text: "Raised ICP: 3 % saline 2–5 mL/kg over 10–20 minutes for ICP spikes or at fixed 4–6-hourly intervals, or 0.1–1 mL/kg/h continuously; avoid osmolality above 320.",
+      ref: "Nelson 22nd ed. 2024, ch. 82, p. 586"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "arv-prophylaxis",
+  name: "HIV prophylaxis: post-exposure (PEP) and infant prophylaxis",
+  aka: [
+    "PEP",
+    "post-exposure prophylaxis",
+    "TLD",
+    "TDF/3TC/DTG",
+    "nevirapine",
+    "NVP",
+    "zidovudine",
+    "AZT",
+    "ZDV",
+    "PMTCT",
+    "HIV-exposed infant"
+  ],
+  cls: "Antiretrovirals (NRTI backbone + integrase inhibitor; NNRTI/NRTI for infants)",
+  cat: "infection",
+  wards: [
+    "emergency",
+    "maternity",
+    "neonatal",
+    "paediatric",
+    "medical",
+    "outpatient"
+  ],
+  tags: [
+    "HIV",
+    "needlestick",
+    "sexual assault",
+    "occupational exposure",
+    "PMTCT",
+    "HIV-exposed newborn",
+    "mother-to-child transmission"
+  ],
+  presentation: [
+    "TLD fixed-dose tablet: tenofovir disoproxil fumarate 300 mg + lamivudine 300 mg + dolutegravir 50 mg (one tablet once daily).",
+    "TDF/3TC 300/300 mg tablets; dolutegravir 50 mg tablets; paediatric dolutegravir 10 mg dispersible tablets; abacavir/lamivudine 120/60 mg dispersible tablets.",
+    "Nevirapine oral suspension 10 mg/mL (also 50 mg dispersible tablets). Zidovudine oral solution 10 mg/mL (also 60 mg dispersible tablets).",
+    "Store below 30 °C. PEP starter packs should be kept in the emergency department, labour ward and theatre so that PEP can start at any hour."
+  ],
+  indications: [
+    "PEP: percutaneous injury, mucous-membrane or broken-skin exposure to blood, visibly bloody fluid, semen, vaginal secretions or CSF/pleural/peritoneal/amniotic fluid from a person who has HIV or whose status is unknown — within 72 h",
+    "PEP after sexual assault or other high-risk sexual exposure — within 72 h",
+    "Infant prophylaxis for every HIV-exposed newborn, starting as soon as possible after birth"
+  ],
+  standard: {
+    summary: "Oral tablets or syrup — no infusion needed. The only thing that makes PEP fail is delay or stopping early. Doses and durations must be confirmed against the current Ethiopian national HIV guideline.",
+    items: [
+      {
+        label: "PEP — adults and adolescents (WHO)",
+        text: "TDF + 3TC (or FTC) + DTG: one TLD tablet once daily for 28 days. Start as soon as possible — ideally within hours, and no later than 72 h after exposure. Give the first dose before test results come back. Alternatives if DTG cannot be used: TDF/3TC with atazanavir/ritonavir, darunavir/ritonavir, lopinavir/ritonavir or raltegravir, per national guideline."
+      },
+      {
+        label: "PEP — children",
+        text: "Weight 30 kg or more: adult regimen. Under 30 kg: use the preferred paediatric first-line regimen of the national guideline for 28 days, dosed by weight band — usually ABC/3TC (120/60 mg dispersible) + DTG 10 mg dispersible (WHO bands; DTG from 4 weeks of age: 3–5.9 kg 1 ABC/3TC + DTG 5 mg; 6–9.9 kg 1.5 + 15 mg; 10–13.9 kg 2 + 20 mg; 14–19.9 kg 2.5 + 25 mg; 20–24.9 kg 3 + DTG 50 mg film-coated). Confirm with the paediatric HIV dosing chart; AZT/3TC is an acceptable backbone."
+      },
+      {
+        label: "At the first visit",
+        text: "First aid (wash with soap and water; irrigate eyes/mouth with water or saline; do not squeeze or scrub). Assess the exposure and the source (rapid HIV test with consent, HBsAg). Baseline HIV test of the exposed person, pregnancy test, HBsAg or vaccination history, creatinine if available. After sexual assault also: emergency contraception, presumptive STI treatment per national protocol, tetanus, and psychological support."
+      },
+      {
+        label: "Follow-up",
+        text: "Adherence check and side effects at 3–7 days; complete 28 days; repeat HIV test at 4–6 weeks and 3 months (national protocol). If the baseline test is positive, do not stop — refer the same day for lifelong ART (TLD is also first-line treatment). Start hepatitis B vaccination if not immune."
+      },
+      {
+        label: "HIV-exposed newborn — low risk (WHO)",
+        text: "Mother on ART for more than 4 weeks before delivery with a suppressed viral load: nevirapine once daily for 6 weeks (breastfeeding or not; some programmes use 4–6 weeks for formula-fed infants)."
+      },
+      {
+        label: "HIV-exposed newborn — high risk (WHO)",
+        text: "Mother diagnosed in labour or after birth, on ART for less than 4 weeks before delivery, or viral load over 1000 copies/mL in the last 4 weeks before delivery (or unknown): zidovudine twice daily + nevirapine once daily for the first 6 weeks, then continue for a further 6 weeks (nevirapine alone, or both) if breastfeeding — 12 weeks in total. Confirm the exact regimen with the Ethiopian national PMTCT guideline."
+      },
+      {
+        label: "Infant doses (WHO weight bands)",
+        text: "Nevirapine 10 mg/mL, once daily — birth to 6 weeks: birth weight 2.0–2.49 kg 10 mg (1 mL); 2.5 kg or more 15 mg (1.5 mL). 6–12 weeks: 20 mg (2 mL). Zidovudine 10 mg/mL, twice daily — birth to 6 weeks: 2.0–2.49 kg 10 mg (1 mL); 2.5 kg or more 15 mg (1.5 mL). 6–12 weeks: 60 mg (6 mL). Under 2 kg: nevirapine 2 mg/kg once daily and zidovudine 2 mg/kg twice daily — seek specialist advice for preterm infants."
+      },
+      {
+        label: "Every HIV-exposed infant also needs",
+        text: "Cotrimoxazole prophylaxis from 6 weeks, early infant diagnosis (DNA PCR at 6 weeks or earlier per national algorithm, and after breastfeeding ends), exclusive breastfeeding for 6 months with the mother on ART, and routine immunisation including BCG."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Starting PEP at night or at a health centre without a starter pack",
+      best_for: "Needlestick in theatre or labour ward at 2 a.m., or a survivor of sexual assault arriving at a health centre.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Do first aid immediately: wash the wound with soap and running water; irrigate splashed eyes or mouth with clean water or saline.",
+        "Take a TLD tablet from the ART clinic stock or any patient-dispensing stock that the facility's rules allow for emergency use. The first dose should not wait for the pharmacy to open or for test results.",
+        "If TLD is not available but TDF/3TC is, start TDF/3TC now and add DTG (or the national alternative third drug) as soon as it can be obtained — two drugs today are better than three drugs after 72 h.",
+        "Write the time of exposure and the time of the first dose on the card. Arrange collection of the remaining 27 days the next working day.",
+        "Do not refuse PEP because the source cannot be tested; test the source later with consent and stop PEP only if the source is confirmed HIV-negative and not in the window period."
+      ],
+      monitor: [
+        "Adherence and side effects (nausea, headache, insomnia) at 3–7 days",
+        "Creatinine where available if kidney disease is suspected"
+      ],
+      cautions: [
+        "Dolutegravir must be taken 2 h before or 6 h after antacids, iron, calcium or zinc supplements (or with food if taken together with iron/calcium).",
+        "If the person is taking rifampicin, DTG must be given twice daily (50 mg twice daily).",
+        "Beyond 72 h, PEP is not recommended; offer testing, follow-up and prevention counselling instead."
+      ]
+    },
+    {
+      title: "Measuring infant doses without oral syringes",
+      best_for: "HIV-exposed newborn where only syrup bottles or dispersible tablets are available.",
+      requires: [
+        "oral",
+        "syringe_1ml"
+      ],
+      steps: [
+        "Use a 1 mL or 2 mL syringe without the needle to measure syrup exactly (1 mL = 10 mg for both nevirapine and zidovudine 10 mg/mL). Never use a household spoon.",
+        "No nevirapine syrup: disperse one nevirapine 50 mg dispersible tablet in 5 mL of clean water = 10 mg/mL; stir, draw the dose immediately and discard the rest. Confirm this use with the pharmacist and national guideline.",
+        "Zidovudine 60 mg dispersible tablet for the 6–12 week dose (60 mg twice daily): disperse one tablet in a little clean water and give it all.",
+        "Teach the mother with her own syringe, mark the dose level on the syringe barrel with tape or a pen, and ask her to show you before discharge."
+      ],
+      monitor: [
+        "Mother demonstrates the dose correctly",
+        "Rash or jaundice in the infant on nevirapine"
+      ],
+      cautions: [
+        "Give the first dose before the mother and baby leave the delivery room or postnatal ward.",
+        "Weight bands change at 6 weeks — review the dose at the immunisation visit."
+      ]
+    },
+    {
+      title: "Mother first tested positive in labour or after delivery",
+      best_for: "Labour ward where the maternal status was unknown and a rapid test is positive.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Treat the infant as HIV-exposed at high risk: start zidovudine + nevirapine as soon as possible after birth (ideally within 6 h; do not wait for confirmatory tests).",
+        "Do not stop breastfeeding; start the mother on ART (TLD) the same day or as soon as the national algorithm confirms the diagnosis.",
+        "Continue dual prophylaxis for 6 weeks, then per national guideline for a further 6 weeks while breastfeeding.",
+        "Link mother and baby to the ART/PMTCT clinic before discharge, with a written appointment."
+      ],
+      monitor: [
+        "Maternal viral load after starting ART; infant DNA PCR per algorithm"
+      ],
+      cautions: [
+        "If the mother's confirmatory test is negative, stop infant prophylaxis per national algorithm."
+      ]
+    }
+  ],
+  paediatric: [
+    "Infant nevirapine (10 mg/mL) once daily: birth–6 weeks 1 mL (2.0–2.49 kg) or 1.5 mL (≥ 2.5 kg); 6–12 weeks 2 mL.",
+    "Infant zidovudine (10 mg/mL) twice daily: birth–6 weeks 1 mL (2.0–2.49 kg) or 1.5 mL (≥ 2.5 kg); 6–12 weeks 6 mL.",
+    "Children needing PEP after sexual abuse: 28 days of a weight-banded paediatric regimen; involve child-protection services."
+  ],
+  cautions: [
+    "Local protocol confirmation is essential: WHO and Ethiopian national regimens are periodically updated; check the current national consolidated HIV guideline.",
+    "TDF: avoid or adjust in significant kidney impairment (creatinine clearance under 50 mL/min) — seek advice.",
+    "Nevirapine in infants: rash or jaundice — review the same day.",
+    "Zidovudine: anaemia in infants, especially preterm or already anaemic; check haemoglobin if pale.",
+    "Hepatitis B: TDF and 3TC also treat hepatitis B — stopping them after 28 days in an HBsAg-positive person can cause a hepatitis flare; refer."
+  ],
+  sources: [
+    {
+      name: "WHO. Guidelines for HIV post-exposure prophylaxis. Geneva, 2024",
+      url: "https://www.who.int/publications/i/item/9789240095137"
+    },
+    {
+      name: "WHO. Consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring. Geneva, 2021 (infant prophylaxis, paediatric dosing annex)"
+    },
+    {
+      name: "Federal Ministry of Health Ethiopia. National Consolidated Guidelines for Comprehensive HIV Prevention, Care and Treatment (current edition) — confirm regimens and weight bands"
+    },
+    {
+      name: "MSF Clinical Guidelines — post-exposure prophylaxis and sexual violence"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "Occupational HIV exposure is a medical emergency; clean the wound at once. PEP should contain three antiretroviral drugs for 4 weeks, with counselling, baseline and follow-up HIV tests and toxicity monitoring.",
+      ref: "Harrison 22nd ed. 2025, ch. 208 HIV Disease, p. 1625"
+    },
+    {
+      book: "harrison",
+      text: "Higher-risk occupational exposures: deep injury, visible blood on the device, a needle that was in the source patient's vein or artery, and advanced HIV disease in the source.",
+      ref: "Harrison 22nd ed. 2025, ch. 208, p. 1625"
+    },
+    {
+      book: "nelson",
+      text: "Non-occupational post-exposure prophylaxis in adolescents and children: three-drug regimens for 28 days.",
+      ref: "Nelson 22nd ed. 2024, ch. 322 HIV and AIDS, p. 2116"
+    },
+    {
+      book: "nelson",
+      text: "All HIV-exposed infants receive antiretroviral prophylaxis; more drugs are added when the risk is high — mother on no antenatal ART, only intrapartum ART, or not virally suppressed near delivery.",
+      ref: "Nelson 22nd ed. 2024, ch. 322, p. 2113"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "tb-rhze",
+  name: "First-line TB treatment (RHZE / RH fixed-dose combinations)",
+  aka: [
+    "RHZE",
+    "HRZE",
+    "2RHZE/4RH",
+    "rifampicin",
+    "isoniazid",
+    "pyrazinamide",
+    "ethambutol",
+    "FDC",
+    "anti-TB drugs"
+  ],
+  cls: "Antimycobacterial combination",
+  cat: "infection",
+  wards: [
+    "medical",
+    "paediatric",
+    "outpatient",
+    "emergency",
+    "maternity"
+  ],
+  tags: [
+    "tuberculosis",
+    "TB",
+    "TB meningitis",
+    "pulmonary TB",
+    "extrapulmonary TB",
+    "DOT"
+  ],
+  presentation: [
+    "Adult intensive phase: RHZE 150/75/400/275 mg tablet (rifampicin/isoniazid/pyrazinamide/ethambutol).",
+    "Adult continuation phase: RH 150/75 mg tablet.",
+    "Child dispersible: RHZ 75/50/150 mg and RH 75/50 mg; ethambutol 100 mg dispersible.",
+    "Pyridoxine (vitamin B6) 25 mg or 50 mg tablets.",
+    "Store in the original blister below 30 °C, away from humidity."
+  ],
+  indications: [
+    "Drug-susceptible pulmonary and extrapulmonary TB in adults and children (confirmed or clinically diagnosed)",
+    "TB with HIV (start ART within 2 weeks of TB treatment, later in TB meningitis per guideline)"
+  ],
+  standard: {
+    summary: "Daily oral fixed-dose tablets dosed by weight band, taken under supervision for 6 months (2RHZE/4RH). Re-weigh monthly and move up a band as the patient gains weight.",
+    items: [
+      {
+        label: "Regimen",
+        text: "2 months RHZE daily (intensive phase), then 4 months RH daily (continuation phase). TB meningitis and bone/joint TB: 2 months RHZE then 10 months RH (12 months total). Children 3 months–16 years with non-severe TB: WHO allows 4 months (2HRZ(E)/2HR) — follow the national guideline."
+      },
+      {
+        label: "Adult weight bands (WHO, RHZE 150/75/400/275 then RH 150/75)",
+        text: "30–39 kg: 2 tablets daily; 40–54 kg: 3 tablets; 55–70 kg: 4 tablets; over 70 kg: 5 tablets. Same number of RH tablets in the continuation phase. Some WHO and national charts use 30–37 / 38–54 kg — use the band chart printed in your national TB guideline."
+      },
+      {
+        label: "Per-kg doses (for checking or loose drugs)",
+        text: "Adults: isoniazid 5 mg/kg (4–6, max 300 mg), rifampicin 10 mg/kg (8–12, max 600 mg), pyrazinamide 25 mg/kg (20–30), ethambutol 15 mg/kg (15–20). Children: isoniazid 10 mg/kg (7–15, max 300 mg), rifampicin 15 mg/kg (10–20, max 600 mg), pyrazinamide 35 mg/kg (30–40), ethambutol 20 mg/kg (15–25)."
+      },
+      {
+        label: "Child dispersible FDC weight bands (WHO 2014)",
+        text: "Intensive phase RHZ 75/50/150 plus ethambutol 100 mg: 4–7 kg 1 + 1; 8–11 kg 2 + 2; 12–15 kg 3 + 3; 16–24 kg 4 + 4; 25 kg or more: adult tablets and bands. Continuation RH 75/50: same number of tablets. Under 4 kg or newborns: specialist dosing. WHO updated its paediatric bands in 2022 — check the current national chart."
+      },
+      {
+        label: "Pyridoxine",
+        text: "Adults at risk of neuropathy (HIV, pregnancy or breastfeeding, alcohol use, malnutrition, diabetes, kidney failure): 10–25 mg daily (Harrison; many programmes give 25 mg to all people with HIV). Children with HIV or malnutrition, and breastfed infants of mothers on isoniazid: 5–10 mg daily."
+      },
+      {
+        label: "Taking the tablets",
+        text: "Once daily, all tablets together, ideally on an empty stomach (1 h before food). If nausea stops adherence, take with a light meal — taking the drugs matters more than perfect absorption. Rifampicin turns urine, sweat and tears orange-red; warn the patient."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Patient who cannot swallow: crushing and nasogastric route",
+      best_for: "TB meningitis with reduced consciousness, very sick adults, or children who cannot take tablets.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Adult FDC tablets can be crushed. Crush the day's tablets finely between two spoons or in a mortar, mix with 20–30 mL of clean water, and give by mouth or down the NG tube.",
+        "Child dispersible tablets: drop them into a little clean water in a cup, swirl until dispersed, give it all by cup or spoon, then rinse the cup with a little more water and give that too.",
+        "NG tube: flush with 20–30 mL water before and after (5–10 mL in small children). Stop feeds for 1 h before and after if possible; if feeds cannot be stopped, give the drugs anyway at the same time each day.",
+        "Give the suspension immediately after preparing it — do not store it.",
+        "Record each dose on the DOT card; missed doses in a sick inpatient are common."
+      ],
+      monitor: [
+        "Conscious level and neurological signs in TB meningitis",
+        "Tube position before each dose"
+      ],
+      cautions: [
+        "There is no reliable injectable form of rifampicin, isoniazid, pyrazinamide and ethambutol in most Ethiopian hospitals. If the gut cannot be used at all (e.g. ileus), a temporary regimen of injectable streptomycin or amikacin plus an IV fluoroquinolone may be used on specialist advice only.",
+        "Ethambutol eye toxicity cannot be tested in an unconscious patient — reassess vision as soon as possible."
+      ]
+    },
+    {
+      title: "Hepatotoxicity: stopping and reintroducing without a full lab",
+      best_for: "Patient on RHZE who develops nausea, vomiting, abdominal pain or jaundice.",
+      requires: [],
+      steps: [
+        "Ask about nausea, vomiting, right-upper-abdominal pain, dark urine and yellow eyes at EVERY visit and every ward round in the first 2 months.",
+        "Stop ALL TB drugs if there is jaundice, or ALT over 3 × upper limit with symptoms, or over 5 × without symptoms (Harrison). If ALT cannot be measured, clinical jaundice with symptoms is enough to stop.",
+        "Exclude other causes: viral hepatitis, alcohol, other hepatotoxic drugs (cotrimoxazole, fluconazole, nevirapine, traditional medicines), severe malaria.",
+        "If the patient is very sick (TB meningitis, miliary or smear-positive disease), start a non-hepatotoxic holding regimen on specialist advice: ethambutol + streptomycin (or amikacin) + a fluoroquinolone.",
+        "When symptoms resolve and ALT is under 2 × upper limit (or jaundice has cleared), restart one drug at a time: rifampicin (with ethambutol) first; after 3–7 days, isoniazid. If there is no recurrence, pyrazinamide is often not restarted and the total treatment is extended (e.g. 2RHE/7RH) per national guideline.",
+        "If symptoms recur with a drug, stop that drug permanently and seek specialist advice for an alternative regimen."
+      ],
+      monitor: [
+        "Symptoms daily while restarting",
+        "ALT and bilirubin weekly during reintroduction where available"
+      ],
+      cautions: [
+        "Baseline ALT and bilirubin for everyone where possible; monthly if there are hepatic risk factors (Harrison) — for example HIV, alcohol use, prior liver disease, hepatitis B or C, pregnancy and the postpartum period, and other hepatotoxic drugs.",
+        "Avoid pyrazinamide in liver failure (Harrison)."
+      ]
+    },
+    {
+      title: "Out of the child FDC: using adult tablets or loose drugs",
+      best_for: "Child dispersible FDCs are out of stock.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Calculate each drug by the per-kg doses above. Example 12 kg child: rifampicin 15 mg/kg = 180 mg; isoniazid 10 mg/kg = 120 mg; pyrazinamide 35 mg/kg = 420 mg; ethambutol 20 mg/kg = 240 mg.",
+        "Adult RHZE 150/75/400/275: one tablet gives rifampicin 150 mg, isoniazid 75 mg, pyrazinamide 400 mg, ethambutol 275 mg — for this 12 kg child, 1 tablet slightly under-doses isoniazid; add loose isoniazid (e.g. 50 mg, half of a 100 mg tablet) if available.",
+        "Halves of scored tablets are acceptable; quarters of adult FDC tablets are inaccurate — prefer loose single drugs for children under about 8 kg.",
+        "Write the plan clearly on the treatment card and re-check at each monthly weight."
+      ],
+      monitor: [
+        "Monthly weight and dose adjustment"
+      ],
+      cautions: [
+        "Get the child back onto dispersible FDCs as soon as stock returns — accuracy and adherence are better."
+      ]
+    }
+  ],
+  paediatric: [
+    "Dispersible RHZ 75/50/150 (+ ethambutol 100 mg) by weight band: 4–7 kg 1; 8–11 kg 2; 12–15 kg 3; 16–24 kg 4; 25 kg or more adult bands.",
+    "Child doses per kg are higher than adult doses (isoniazid 10, rifampicin 15, pyrazinamide 35, ethambutol 20 mg/kg).",
+    "Pyridoxine 5–10 mg daily for children with HIV or malnutrition and for breastfed infants of mothers on isoniazid.",
+    "Children with TB and HIV: daily treatment only, never intermittent; watch for interactions with antiretrovirals (Nelson)."
+  ],
+  cautions: [
+    "Rifampicin interactions: reduces levels of dolutegravir (give DTG 50 mg twice daily), nevirapine, protease inhibitors, hormonal contraceptive pills and implants (use an IUD or DMPA injections), warfarin, fluconazole, methadone and many others.",
+    "Isoniazid: peripheral neuropathy (prevent with pyridoxine); hepatitis.",
+    "Pyrazinamide: hepatitis, joint pain, gout.",
+    "Ethambutol: optic neuritis — ask about blurred vision and red–green colour vision; stop it if vision changes.",
+    "Pregnancy: RHZE is safe; give pyridoxine. Newborns of mothers on rifampicin need vitamin K at birth.",
+    "Treatment interruption and poor adherence cause relapse and drug resistance — trace patients who miss doses within days."
+  ],
+  sources: [
+    {
+      name: "WHO consolidated guidelines on tuberculosis. Module 4: Treatment — drug-susceptible tuberculosis treatment. Geneva, 2022"
+    },
+    {
+      name: "WHO operational handbook on tuberculosis. Module 5: Management of tuberculosis in children and adolescents. Geneva, 2022"
+    },
+    {
+      name: "WHO. Treatment of tuberculosis guidelines, 4th ed. 2010 (weight-band tables)"
+    },
+    {
+      name: "WHO. Guidance for national tuberculosis programmes on the management of tuberculosis in children, 2nd ed. 2014"
+    },
+    {
+      name: "Federal Ministry of Health Ethiopia. Guidelines for clinical and programmatic management of TB, TB/HIV, DR-TB and leprosy (current edition) — confirm weight bands"
+    },
+    {
+      name: "ATS/CDC/IDSA. Treatment of drug-susceptible tuberculosis. Clin Infect Dis 2016;63:e147 (hepatotoxicity rechallenge)"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "Regimen of choice for almost all drug-susceptible TB in adults: 2 months of isoniazid, rifampicin, pyrazinamide and ethambutol, then 4 months of isoniazid and rifampicin (2HRZE/4HR).",
+      ref: "Harrison 22nd ed. 2025, ch. 183 Tuberculosis, p. 1395"
+    },
+    {
+      book: "harrison",
+      text: "Pyridoxine 10–25 mg daily for those at risk of isoniazid neuropathy: alcohol use, malnutrition, pregnancy and breastfeeding, renal failure, diabetes and HIV.",
+      ref: "Harrison 22nd ed. 2025, ch. 183, p. 1396"
+    },
+    {
+      book: "harrison",
+      text: "Severe liver disease: treat with ethambutol, streptomycin and possibly a fluoroquinolone; isoniazid and rifampicin only under close supervision; avoid pyrazinamide in liver failure.",
+      ref: "Harrison 22nd ed. 2025, ch. 183, p. 1400"
+    },
+    {
+      book: "harrison",
+      text: "Hepatotoxicity: stop isoniazid, pyrazinamide and rifampicin if ALT is over 5 × ULN, or over 3 × ULN with symptoms; once enzymes normalise, reintroduce rifampicin and isoniazid one at a time; pyrazinamide often not restarted. Baseline ALT and bilirubin for all; monthly if risk factors.",
+      ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, Table, p. 1420"
+    },
+    {
+      book: "nelson",
+      text: "Children: isoniazid hepatotoxicity in about 1 %; pyridoxine indicated for breastfed infants and their mothers, children on milk- or meat-poor diets, pregnant adolescents and children with symptomatic HIV.",
+      ref: "Nelson 22nd ed. 2024, ch. 260 Principles of antimycobacterial therapy, p. 1830"
+    },
+    {
+      book: "nelson",
+      text: "Children with HIV and drug-susceptible TB: four drugs for 2 months then isoniazid and rifampicin; treatment should be daily, not intermittent, with close monitoring for adverse reactions and rifampicin–antiretroviral interactions.",
+      ref: "Nelson 22nd ed. 2024, ch. 261 Tuberculosis, p. 1851"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "snake-antivenom",
+  name: "Snake antivenom (polyvalent, African)",
+  aka: [
+    "antivenin",
+    "antivenene",
+    "snake venom antiserum",
+    "polyvalent antivenom",
+    "ASV"
+  ],
+  cls: "Equine or ovine immunoglobulin (F(ab')2 or IgG) against snake venoms",
+  cat: "emergency",
+  wards: [
+    "emergency",
+    "paediatric",
+    "medical",
+    "icu",
+    "outpatient"
+  ],
+  tags: [
+    "snakebite",
+    "envenoming",
+    "viper",
+    "cobra",
+    "mamba",
+    "puff adder",
+    "saw-scaled viper",
+    "Echis",
+    "Bitis",
+    "Naja",
+    "coagulopathy",
+    "20WBCT"
+  ],
+  presentation: [
+    "Vials of liquid or freeze-dried (lyophilised) antivenom, usually 10 mL per vial. Polyvalent products sold in Ethiopia and East Africa cover some or all of: saw-scaled/carpet vipers (Echis), puff adder (Bitis), cobras and spitting cobras (Naja) and mambas (Dendroaspis).",
+    "Read the leaflet of the product you actually have: which snakes it covers, the starting dose in vials or mL, and storage. Doses differ several-fold between products.",
+    "Liquid products usually need 2–8 °C; freeze-dried products are more heat-stable. Reconstitute freeze-dried vials with the diluent supplied by gentle swirling, not shaking."
+  ],
+  indications: [
+    "Systemic envenoming: blood that fails the 20-minute whole blood clotting test (20WBCT), spontaneous bleeding (gums, old wounds, vomit, urine)",
+    "Neurotoxic signs: ptosis, difficulty opening the eyes, swallowing or breathing, drooling, weak neck flexion",
+    "Shock or hypotension, dark urine, falling urine output (acute kidney injury)",
+    "Severe local envenoming: swelling spreading beyond more than half the bitten limb, rapid extension, extensive blistering or bruising, or swelling after a bite on a finger or toe"
+  ],
+  standard: {
+    summary: "IV antivenom for systemic or severe local envenoming, given by slow push or diluted infusion over about 1 hour with adrenaline drawn up at the bedside. The dose is the same for children and adults — snakes inject the same amount of venom into a child.",
+    items: [
+      {
+        label: "Dose",
+        text: "The starting dose in the leaflet of your product — the SAME dose for a child as for an adult. Never reduce it by weight. Only the volume of diluent is reduced for small children."
+      },
+      {
+        label: "Route",
+        text: "IV only. Either slow IV push of reconstituted antivenom at no more than 2 mL/min, or diluted in 5–10 mL/kg of 0.9 % saline (or 5 % glucose) run over about 1 hour. Never IM, never into the bite site."
+      },
+      {
+        label: "Premedication",
+        text: "Skin or conjunctival test doses do not predict reactions and delay treatment — do not use them. Antihistamines and steroids as premedication have not been shown to prevent reactions. Some WHO guidance allows low-dose subcutaneous adrenaline (adult 0.25 mg of 1 mg/mL) before antivenom where reactions to the product are common — follow your national protocol."
+      },
+      {
+        label: "Reaction",
+        text: "Stop the infusion. Adrenaline 0.5 mg IM (0.5 mL of 1 mg/mL; child 0.01 mg/kg, max 0.5 mg) into the thigh at the first sign of urticaria, wheeze, hypotension or angio-oedema; repeat every 5–10 min if needed. Then chlorphenamine and hydrocortisone. When settled, restart the antivenom more slowly — the patient still needs it."
+      },
+      {
+        label: "Repeat — haemotoxic (viper) bites",
+        text: "Repeat the 20WBCT 6 hours after the dose. If the blood still does not clot, give the same starting dose again. Continue 6-hourly tests and doses until the blood clots. Give a repeat dose earlier if bleeding continues or worsens 1–2 h after the first dose."
+      },
+      {
+        label: "Repeat — neurotoxic (cobra, mamba) bites",
+        text: "If paralysis is not improving or is worsening 1–2 h after the dose, repeat the starting dose. Ventilate (bag-valve-mask or intubation) whenever breathing fails — antivenom does not reverse established paralysis quickly."
+      },
+      {
+        label: "Supportive care",
+        text: "Splint the limb, no tourniquet, no incision or suction. Tetanus toxoid. Paracetamol or morphine for pain (no NSAIDs or aspirin; no IM injections while blood is not clotting). Antibiotics only for signs of infection or after incision. Fluids for shock; blood products only after antivenom."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "20-minute whole blood clotting test (20WBCT) — the improvised coagulation test",
+      best_for: "Any facility without a laboratory. Decides whether to give antivenom for a viper bite and whether to repeat it.",
+      requires: [],
+      steps: [
+        "Use a NEW, clean, DRY GLASS tube or bottle (not plastic, not washed with detergent — both can stop normal blood clotting and give a false result).",
+        "Take 2 mL of venous blood with a fresh needle and put it in the tube.",
+        "Leave it undisturbed at room temperature for exactly 20 minutes by the clock.",
+        "Tip the tube once, gently, through 90°. If the blood is still liquid and runs, the test is abnormal = the blood is incoagulable = give antivenom.",
+        "Validate a new batch of tubes by testing the blood of a healthy staff member — it must clot within 20 min.",
+        "Repeat 6 hours after each antivenom dose, and every 6 h until the blood clots twice."
+      ],
+      monitor: [
+        "Record test time and result on the chart each time"
+      ],
+      cautions: [
+        "Do not shake, tip early or re-check repeatedly — this breaks up a forming clot.",
+        "A clotting test can be normal early after a bite — venom effects can appear hours later. If a viper is possible, repeat the test during observation as your national protocol specifies."
+      ]
+    },
+    {
+      title: "Gravity infusion over 1 hour",
+      best_for: "The usual method without a pump; allows a slow start while watching for reactions.",
+      requires: [
+        "iv",
+        "macro_set"
+      ],
+      steps: [
+        "Draw up adrenaline 1 mg/mL: 0.5 mL (adult) or 0.01 mL/kg (child, max 0.5 mL) in a labelled 1 mL syringe with an IM needle, and tape it to the drip stand.",
+        "Reconstitute and add the full starting dose to 0.9 % saline, about 5–10 mL/kg (WHO): for an adult, a 500 mL bag is convenient; a 250 mL bag is acceptable. Label the bag.",
+        "Drops/min = mL × drop factor ÷ 60. 250 mL over 60 min with a 20 drops/mL set = 83 drops/min (21 per 15 s). 500 mL with a 20-drop set = 167 drops/min — too fast to count, so check the level instead: 125 mL should run every 15 min.",
+        "First 10–15 minutes: run at about a quarter of the final rate (about 20 drops/min for 250 mL with a 20-drop set) with a clinician at the bedside.",
+        "No reaction after 15 min: increase to the full rate so that the whole dose is in by about 1 hour.",
+        "Flush the line with saline at the end so the antivenom in the tubing is not wasted."
+      ],
+      monitor: [
+        "Pulse, BP, respiratory rate, skin (urticaria) every 5–10 min for the first 30 min, then every 15 min",
+        "Ptosis, swallowing, breathing (single breath count) hourly in neurotoxic bites",
+        "Limb swelling (mark the edge with pen and time) and urine colour and volume"
+      ],
+      cautions: [
+        "Antivenom runs through its own line — do not add other drugs to the bag."
+      ]
+    },
+    {
+      title: "Small child: burette or syringe push",
+      best_for: "Children, in whom 5–10 mL/kg keeps the volume safe while the antivenom dose stays full.",
+      requires: [
+        "iv",
+        "burette"
+      ],
+      steps: [
+        "Full adult dose of antivenom — do not reduce it.",
+        "Burette: add the antivenom and make up to 5–10 mL/kg with 0.9 % saline (10 kg child: 50–100 mL). With a 60 drops/mL burette, drops/min = mL per hour (100 mL over 1 h = 100 drops/min; 50 mL = 50 drops/min). Start at a quarter of that rate for 10–15 min.",
+        "No burette: give the reconstituted antivenom by slow IV push at no more than 2 mL/min, e.g. 10 mL every 5 minutes by the clock, stopping at any sign of reaction."
+      ],
+      monitor: [
+        "Same as above; also watch for fluid overload in small or malnourished children"
+      ],
+      cautions: [
+        "Adrenaline 0.01 mg/kg IM (0.01 mL/kg of 1 mg/mL) drawn up before the first mL goes in."
+      ]
+    },
+    {
+      title: "Neurotoxic bite with no ventilator: neostigmine and hand ventilation",
+      best_for: "Cobra bite with ptosis or weakness, while antivenom is given or when it is not available.",
+      requires: [
+        "iv",
+        "im"
+      ],
+      steps: [
+        "Give atropine 0.6 mg IV (child 0.02 mg/kg, minimum 0.1 mg), then neostigmine 0.02 mg/kg IV or IM (child 0.04 mg/kg) as a test (Harrison).",
+        "If ptosis or breathing clearly improves within 30 min, continue neostigmine 0.5 mg (child 0.01 mg/kg) hourly with atropine as needed.",
+        "If breathing fails, ventilate with a bag-valve-mask, taking turns with relatives or staff if necessary, for as long as it takes — paralysis from cobra venom is reversible and patients survive days of hand ventilation.",
+        "Keep the airway clear: recovery position, suction of saliva."
+      ],
+      monitor: [
+        "Single breath count, neck flexion, ability to swallow, SpO2 if available, every 30–60 min"
+      ],
+      cautions: [
+        "Neostigmine is less useful after mamba bites (presynaptic toxins). It does not replace antivenom or ventilation."
+      ]
+    }
+  ],
+  paediatric: [
+    "Same antivenom dose as adults — children often need more because a small body receives the same venom.",
+    "Reduce only the diluent: 5–10 mL/kg.",
+    "Adrenaline 0.01 mg/kg IM (max 0.5 mg) drawn up before starting.",
+    "Children develop shock and bleeding faster; monitor every 15 min in the first hours."
+  ],
+  cautions: [
+    "Reactions are common with many African antivenoms: early anaphylactic (usually within the first 1–3 hours), pyrogenic (fever, rigors — cool and give paracetamol), and late serum sickness about 1–2 weeks later (fever, rash, joint pain — prednisolone 1–2 mg/kg daily, Harrison).",
+    "Previous antivenom or equine serum, and asthma or allergy, increase the risk of reaction — not a reason to withhold antivenom in real envenoming.",
+    "A 'dry bite' needs no antivenom: observe at least 24 h with repeated 20WBCT before discharge.",
+    "Spitting cobra venom in the eyes: irrigate immediately with large volumes of water; antivenom is not needed for the eye alone.",
+    "Blood products and fresh plasma before antivenom feed the consumptive coagulopathy — give antivenom first (Harrison).",
+    "Coagulopathy can return up to 2–3 weeks after the bite: warn the patient, avoid elective surgery.",
+    "Fasciotomy for a swollen limb is almost never needed and must not be done while the blood is incoagulable."
+  ],
+  antidote: "Adrenaline 0.5 mg IM (child 0.01 mg/kg, max 0.5 mg) for antivenom anaphylaxis — draw it up before starting.",
+  sources: [
+    {
+      name: "WHO Regional Office for Africa. Guidelines for the Prevention and Clinical Management of Snakebite in Africa. Brazzaville, 2010"
+    },
+    {
+      name: "WHO Regional Office for South-East Asia. Guidelines for the Management of Snakebites, 2nd ed. 2016 (antivenom administration, 20WBCT, adrenaline)"
+    },
+    {
+      name: "WHO. Snakebite envenoming: a strategy for prevention and control. Geneva, 2019"
+    },
+    {
+      name: "MSF. Clinical Guidelines — snake bites and envenomations"
+    },
+    {
+      name: "Product leaflet of the antivenom in stock (species covered, starting dose, storage)"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "20-minute whole blood clotting test: 1–2 mL venous blood in a clean, dry glass tube, left undisturbed 20 min then tipped; blood still liquid = coagulopathy.",
+      ref: "Harrison 22nd ed. 2025, ch. 471 Venomous Snakebites, p. 3719"
+    },
+    {
+      book: "harrison",
+      text: "Give antivenom IV only, starting slowly with the clinician at the bedside; if there is no reaction, speed up to finish the starting dose over about 1 h. Repeat if the patient worsens, fails to stabilise or venom effects recur; for viper bites continue until coagulation is restored.",
+      ref: "Harrison 22nd ed. 2025, ch. 471, p. 3719"
+    },
+    {
+      book: "harrison",
+      text: "Indications: progressive local swelling (more than half the limb, extensive blistering or bruising) or any systemic envenoming; for neurotoxic elapids, the first sign of neurotoxicity. Antivenom does not reverse established renal failure or paralysis.",
+      ref: "Harrison 22nd ed. 2025, ch. 471, p. 3719"
+    },
+    {
+      book: "harrison",
+      text: "Blood products are rarely needed; clotting factors usually recover within hours of adequate antivenom, and blood products given before antivenom fuel the consumptive coagulopathy. Serum sickness 1–2 weeks later: prednisone 1–2 mg/kg daily.",
+      ref: "Harrison 22nd ed. 2025, ch. 471, p. 3721"
+    },
+    {
+      book: "harrison",
+      text: "Neurotoxic bites with ptosis: test dose of neostigmine 0.02 mg/kg (children 0.04 mg/kg) after atropine 0.6 mg (children 0.02 mg/kg, minimum 0.1 mg); if improved after 30 min continue neostigmine 0.5 mg (children 0.01 mg/kg) hourly. Not a substitute for antivenom or ventilation.",
+      ref: "Harrison 22nd ed. 2025, ch. 471, Table 471-2, p. 3721"
+    },
+    {
+      book: "harrison",
+      text: "Coagulopathy can recur 2–3 weeks after the bite because venom outlasts antivenom; warn against surgery and trauma, and consider repeat antivenom for delayed bleeding.",
+      ref: "Harrison 22nd ed. 2025, ch. 471, p. 3722"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "oxygen",
+  name: "Oxygen",
+  aka: [
+    "O2",
+    "medical oxygen",
+    "oxygen concentrator",
+    "bubble CPAP",
+    "bCPAP"
+  ],
+  cls: "Medical gas",
+  cat: "respiratory",
+  wards: [
+    "emergency",
+    "neonatal",
+    "paediatric",
+    "medical",
+    "surgical",
+    "maternity",
+    "icu"
+  ],
+  tags: [
+    "hypoxaemia",
+    "pneumonia",
+    "SpO2",
+    "pulse oximetry",
+    "nasal prongs",
+    "concentrator",
+    "cylinder",
+    "CPAP",
+    "bronchiolitis",
+    "respiratory distress"
+  ],
+  presentation: [
+    "Oxygen concentrators: 5 L/min or 10 L/min, typically about 90 % oxygen or more up to the rated flow; need continuous mains power.",
+    "Cylinders: stamped with water capacity in litres; content = water capacity × pressure (bar). A full 'J' size holds about 6800 L, an 'E' size about 680 L.",
+    "Piped oxygen or PSA plant in some referral hospitals.",
+    "Delivery devices: nasal prongs (neonatal, infant, paediatric, adult), 8 Fr nasal catheters, simple face masks, non-rebreather masks, flowmeters (including 0–2 L/min low-flow), bubble humidifiers, flow-splitter stands, pulse oximeters with neonatal and child probes."
+  ],
+  indications: [
+    "SpO2 under 90 % (at altitudes up to about 2500 m)",
+    "Emergency signs: obstructed or absent breathing, severe respiratory distress, central cyanosis, shock, coma or convulsions — target SpO2 94 % or more during resuscitation",
+    "Clinical signs of hypoxaemia when no oximeter is available",
+    "Neonatal resuscitation and preterm infants with respiratory distress (titrated — too much is harmful)",
+    "Carbon monoxide poisoning (100 % by non-rebreather mask regardless of SpO2)"
+  ],
+  standard: {
+    summary: "Oxygen is a drug: prescribe a target, a device and a flow; measure SpO2; wean when no longer needed. It is the one respiratory treatment most often missing, and the most often wasted.",
+    items: [
+      {
+        label: "Targets (WHO)",
+        text: "Give oxygen if SpO2 is under 90 %. Aim for 94 % or more in a child or adult with emergency signs during resuscitation, then 90 % or more once stable. Preterm infants: 88/90–95 % — avoid higher (retinopathy of prematurity). COPD with CO2 retention: 88–92 % (Harrison). Myocardial infarction or stroke: only if SpO2 is under 90 %."
+      },
+      {
+        label: "Nasal prongs — flows (WHO, children)",
+        text: "Neonate 0.5–1 L/min; infant 1–2 L/min; older child 1–4 L/min (WHO Pocket Book; the 2016 WHO manual allows higher flows in school-age children — check its table). Adults 1–6 L/min (FiO2 about 24–40 %). Prongs just inside the nostrils, tube taped to the cheeks. Nelson: flows under 5 L/min are usual in children; FiO2 (%) ≈ 21 + 3 × L/min in older children and adults, higher in small infants."
+      },
+      {
+        label: "Nasal catheter (WHO)",
+        text: "8 Fr catheter inserted the distance from the side of the nostril to the inner margin of the eyebrow. Flows are the same as or lower than for prongs (neonate 0.5 L/min, infant 1 L/min) — confirm older-child flows against the WHO manual. Check placement and clear mucus every 4–6 h."
+      },
+      {
+        label: "Face masks (adults)",
+        text: "Simple mask 5–10 L/min (never under 5 L/min — CO2 rebuilds in the mask). Non-rebreather mask with reservoir 10–15 L/min for shock, severe hypoxaemia, CO poisoning."
+      },
+      {
+        label: "Without an oximeter — signs that mean oxygen (WHO)",
+        text: "Central cyanosis; grunting with every breath; inability to drink or breastfeed because of breathlessness; severe lower chest wall indrawing; respiratory rate 70/min or more; head nodding; depressed consciousness. If in doubt and oxygen is available, give it."
+      },
+      {
+        label: "Humidification",
+        text: "Not needed for nasal prongs or nasal catheters at standard low flows. Needed for nasopharyngeal catheters, high flows and CPAP. Bubble humidifiers: fill with clean (ideally distilled or boiled-cooled) water to the line, change the water daily and clean the bottle — dirty humidifiers spread Pseudomonas."
+      },
+      {
+        label: "Weaning",
+        text: "Trial off oxygen at least once a day in a stable patient: stop it and recheck SpO2 after 10–15 min and again later; stop oxygen when SpO2 stays at 90 % or more in room air (WHO)."
+      },
+      {
+        label: "Altitude",
+        text: "At altitudes above about 2500 m, normal SpO2 is lower and WHO allows a lower threshold (about 87 %). Addis Ababa (about 2350 m) generally uses the standard 90 % — follow the national guideline for high-altitude facilities."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "One concentrator for several children: flow splitter",
+      best_for: "Paediatric ward with more hypoxaemic children than oxygen sources.",
+      requires: [
+        "oxygen"
+      ],
+      steps: [
+        "Use a flowmeter stand (flow splitter) that divides the concentrator output into separate outlets, each with its OWN adjustable flowmeter (low-flow 0–2 L/min for infants).",
+        "Add up the flows: the total must not exceed the concentrator's rated output (e.g. a 5 L/min concentrator: four infants at 1 L/min plus one at 0.5 L/min = 4.5 L/min).",
+        "Prioritise by SpO2: children below 90 % first; recheck all children after any change in flows.",
+        "A plain Y-connector without individual flowmeters gives unequal, unknown flows — gas takes the path of least resistance. Use it only as a last resort, and check SpO2 on every child it supplies.",
+        "Keep a charged cylinder with a regulator next to the concentrator for power cuts."
+      ],
+      monitor: [
+        "SpO2 of each child at least every 3–6 h and after any change",
+        "Concentrator output with an oxygen analyser monthly where available; the alarm light"
+      ],
+      cautions: [
+        "Concentrators give less than 90 % oxygen when run above their rated flow — splitting beyond the rated output lowers the concentration for everyone.",
+        "Place the concentrator 30 cm from walls and curtains; clean the filter weekly."
+      ]
+    },
+    {
+      title: "Improvised bubble CPAP from nasal prongs and a water bottle",
+      best_for: "Infants and young children with severe pneumonia, bronchiolitis or neonatal respiratory distress who remain distressed or hypoxaemic on standard oxygen, where there is no ventilator.",
+      requires: [
+        "oxygen"
+      ],
+      steps: [
+        "Materials: short binasal prongs that fill the nostrils (or snug nasal prongs), oxygen tubing, a length of corrugated or wide tubing for the expiratory limb, a clean 1 L plastic bottle with centimetre marks, water, tape.",
+        "Inspiratory limb: oxygen (ideally blended with air) from the flowmeter to the prongs. Expiratory limb: from the prong circuit to the bottle, with its end held under water.",
+        "Depth of the tube end below the water surface = the CPAP pressure in cm H2O. Start at 5 cm H2O. Fix the tube with tape so the depth cannot change.",
+        "Set the flow so that there is continuous bubbling through the whole breathing cycle — published low-cost designs typically use about 5 L/min for young children. If bubbling stops, there is a leak (usually an open mouth or loose prongs): close the mouth gently with a chin strap or dummy, reseat the prongs.",
+        "Pass an NG tube and leave it open to air to vent swallowed gas.",
+        "Nurse the child semi-upright; suction the nose gently when bubbling falls or distress increases."
+      ],
+      monitor: [
+        "One-to-one observation for the first hours: bubbling, respiratory rate, indrawing, SpO2, heart rate every 15–30 min",
+        "Nasal skin and septum for pressure injury every 2–4 h",
+        "Abdominal distension"
+      ],
+      cautions: [
+        "Do not use in apnoea or very weak respiratory effort, shock, pneumothorax, facial trauma, repeated vomiting or depressed consciousness — these children need referral for ventilation.",
+        "Deteriorating on CPAP (rising respiratory rate, SpO2 falling, exhaustion, apnoea): stop and hand-ventilate; look for pneumothorax.",
+        "Running bubble CPAP on 100 % oxygen from a concentrator in preterm infants risks retinopathy — blend with air where possible and keep SpO2 no higher than 95 %.",
+        "A trial in Malawian district hospitals without doctors found HIGHER mortality with bubble CPAP than with standard oxygen in children with pneumonia (McCollum 2019), while a Bangladeshi trial with doctors found lower mortality (Chisti 2015) — use it only where staff can watch the child closely and escalate."
+      ]
+    },
+    {
+      title: "How long will this cylinder last?",
+      best_for: "Transfers, power cuts, and planning overnight supply.",
+      requires: [
+        "oxygen"
+      ],
+      steps: [
+        "Find the water capacity (in litres) stamped on the cylinder shoulder and read the pressure gauge in bar (psi ÷ 14.5 = bar; kPa ÷ 100 = bar).",
+        "Litres available = water capacity × pressure. Keep a reserve: use (pressure − 20 bar) so that the cylinder is changed before it runs dry.",
+        "Minutes = litres available ÷ total flow (L/min). Hours = minutes ÷ 60.",
+        "Example: 47 L cylinder at 150 bar = 7050 L; minus reserve (47 × 20 = 940 L) = 6110 L. At 2 L/min for one child: 3055 min ≈ 51 h. At 15 L/min on a non-rebreather: 407 min ≈ 6.8 h.",
+        "Example small cylinder: 10 L water capacity at 100 bar = 1000 L; minus reserve 200 L = 800 L. At 4 L/min: 200 min ≈ 3.3 h.",
+        "If only the nominal content is known (e.g. 'J' ≈ 6800 L full), estimate litres = nominal content × (gauge pressure ÷ full pressure)."
+      ],
+      monitor: [
+        "Gauge pressure every 2–4 h on a patient's cylinder; write the expected empty time on the chart"
+      ],
+      cautions: [
+        "Chain cylinders upright. No oil, grease or hand cream on valves or regulators. No smoking, candles or open flames within 3 m.",
+        "Open the valve slowly; a cylinder falling over can shear its valve."
+      ]
+    },
+    {
+      title: "No pulse oximeter: giving oxygen by clinical signs",
+      best_for: "Health centre or ward with oxygen but no working oximeter.",
+      requires: [
+        "oxygen"
+      ],
+      steps: [
+        "Give oxygen to any child with central cyanosis, grunting, inability to drink or breastfeed due to breathlessness, severe chest indrawing, respiratory rate 70/min or more, head nodding, or depressed consciousness (WHO signs).",
+        "Use nasal prongs at the standard flow for age (infant 1–2 L/min) — within these flows oxygen is safe for all children except preterm newborns.",
+        "Reassess every 3 h: continue oxygen until the signs have gone.",
+        "Try the child off oxygen once the signs have settled; restart if cyanosis, grunting or fast breathing return within 15–30 min.",
+        "Borrow or request an oximeter as a priority — clinical signs miss many hypoxaemic children."
+      ],
+      monitor: [
+        "Colour of lips and tongue in daylight, respiratory rate, indrawing, feeding, consciousness every 3 h"
+      ],
+      cautions: [
+        "Preterm babies: use the lowest flow that removes cyanosis (0.5 L/min) and seek an oximeter — unmonitored high oxygen causes blindness."
+      ]
+    }
+  ],
+  paediatric: [
+    "Nasal prongs: neonate 0.5–1 L/min, infant 1–2 L/min, older child 1–4 L/min (WHO).",
+    "Target SpO2 ≥ 94 % with emergency signs, ≥ 90 % once stable; preterm infants no higher than 95 %.",
+    "Term newborn resuscitation: start ventilation with room air; add oxygen only if heart rate or SpO2 do not improve.",
+    "Bubble CPAP only with close nursing observation (see method)."
+  ],
+  cautions: [
+    "Oxygen supports combustion: fires and burns happen from smoking, candles and grease near oxygen.",
+    "Hyperoxia harms preterm infants (retinopathy of prematurity, lung injury) and patients with CO2 retention (drowsiness, acidosis) — titrate to target, do not simply turn it up.",
+    "Oxygen treats hypoxaemia, not breathlessness: a patient with normal SpO2 does not need it (Harrison, MI).",
+    "Nasal catheters and prongs block with mucus — check and clear them every few hours.",
+    "Never leave a patient on a cylinder without knowing when it will run out."
+  ],
+  sources: [
+    {
+      name: "WHO. Oxygen therapy for children: a manual for health workers. Geneva, 2016",
+      url: "https://www.who.int/publications/i/item/9789241549554"
+    },
+    {
+      name: "WHO. Pocket Book of Hospital Care for Children, 2nd ed. 2013 — section 10.7 Oxygen therapy"
+    },
+    {
+      name: "WHO/UNICEF. Technical specifications for oxygen concentrators, 2015"
+    },
+    {
+      name: "Chisti MJ et al. Bubble CPAP versus low-flow oxygen for severe pneumonia in children in Bangladesh. Lancet 2015;386:1057–65"
+    },
+    {
+      name: "McCollum ED et al. Bubble CPAP versus oxygen for childhood pneumonia in Malawi. Lancet Glob Health 2019;7:e964–75"
+    },
+    {
+      name: "BTS guideline for oxygen use in healthcare and emergency settings, 2017"
+    }
+  ],
+  textbook: [
+    {
+      book: "nelson",
+      text: "Nasal prongs deliver low-level oxygen, humidified by a bubble humidifier; in children flows under 5 L/min are usual. FiO2 (%) ≈ 21 + 3 × flow (L/min) in older children and adults; small children get a higher FiO2 at the same flow. Simple mask 5–10 L/min gives about 30–65 %.",
+      ref: "Nelson 22nd ed. 2024, ch. 86 Acute care of respiratory distress and failure, p. 618"
+    },
+    {
+      book: "nelson",
+      text: "Bubble CPAP reduces mortality in hypoxaemic pneumonia compared with standard oxygen where ventilator CPAP and mechanical ventilation are not available.",
+      ref: "Nelson 22nd ed. 2024, ch. 449 Community-acquired pneumonia, p. 2647"
+    },
+    {
+      book: "harrison",
+      text: "COPD exacerbation: oxygen to a target saturation of 88–92 %.",
+      ref: "Harrison 22nd ed. 2025, ch. 303 COPD, p. 2259"
+    },
+    {
+      book: "harrison",
+      text: "Myocardial infarction: supplemental oxygen is not recommended when saturation is normal; give it when saturation is under 90 % and reassess the need.",
+      ref: "Harrison 22nd ed. 2025, ch. 286 ST-Segment Elevation Myocardial Infarction, p. 2118"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
 }
 ];

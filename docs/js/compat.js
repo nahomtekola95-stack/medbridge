@@ -67,5 +67,9 @@ window.COMPAT = [
   { a: ["metronidazole"], b: ["*"], severity: "caution",
     what: "The ready-made metronidazole bag should not have other drugs added to it.",
     do: "Run it alone over 20–30 minutes.",
-    ref: "Drug entry" }
+    ref: "Drug entry" },
+  {a: ["mannitol"],b: ["blood-transfusion"],severity: "never",what: "Mannitol causes red-cell crenation and clumping (pseudo-agglutination) in the giving set.",do: "Never run mannitol through a line with blood or blood products. Use a separate line, or flush thoroughly with 0.9 % saline.",ref: "Mannitol product information; WHO The Clinical Use of Blood"},
+  {a: ["mannitol"],b: ["potassium-chloride","hypertonic-saline"],severity: "caution",what: "Adding potassium chloride or sodium chloride to 20 % mannitol can make the mannitol crystallise out of solution.",do: "Give mannitol on its own; do not add electrolytes to the mannitol bottle. Inspect for crystals and use a filter.",ref: "Mannitol 20 % product information"},
+  {a: ["adenosine"],b: ["aminophylline","caffeine-citrate"],severity: "caution",what: "Methylxanthines block adenosine receptors, so adenosine may fail in a patient on aminophylline or a baby on caffeine.",do: "Expect to need the higher dose; move to synchronised cardioversion rather than repeated doses if it fails.",ref: "Adenosine product information; BNF"},
+  {a: ["snake-antivenom"],b: ["*"],severity: "caution",what: "Antivenom is a foreign protein infusion; mixing drugs into it makes reactions impossible to attribute and may denature it.",do: "Run antivenom through its own line; give adrenaline, antihistamine and steroid separately.",ref: "Antivenom product information; WHO snakebite guidelines"}
 ];

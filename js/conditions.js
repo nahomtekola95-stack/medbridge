@@ -31,7 +31,8 @@ window.CONDITIONS = [
     { id: "ringers-lactate", role: "first", note: "20 mL/kg child, 500–1000 mL adult, fast, for hypotension." },
     { id: "salbutamol", role: "adjunct", note: "For persistent wheeze after adrenaline." },
     { id: "hydrocortisone", role: "adjunct", note: "200 mg adult IM/IV. Does not treat the acute event; may reduce biphasic reactions." },
-    { id: "noradrenaline", role: "alternative", note: "Infusion for shock that persists after repeated adrenaline and fluids." }
+    { id: "noradrenaline", role: "alternative", note: "Infusion for shock that persists after repeated adrenaline and fluids." },
+    { id: "oxygen", role: "supportive", note: "High-flow oxygen by non-rebreather mask while adrenaline takes effect." }
   ],
   sources: [{ name: "Resuscitation Council UK. Emergency treatment of anaphylaxis, 2021" }, { name: "WHO Pocket Book 2013" }],
   textbook: [
@@ -61,7 +62,8 @@ window.CONDITIONS = [
     { id: "dextrose", role: "adjunct", note: "Check and treat glucose in every arrest, especially in children." },
     { id: "sodium-bicarbonate", role: "adjunct", note: "1 mmol/kg only for hyperkalaemia, tricyclic overdose or prolonged arrest with adequate ventilation." },
     { id: "ringers-lactate", role: "supportive", note: "Volume for hypovolaemic arrest." },
-    { id: "atropine", role: "supportive", note: "Not for arrest; for peri-arrest bradycardia after oxygenation." }
+    { id: "atropine", role: "supportive", note: "Not for arrest; for peri-arrest bradycardia after oxygenation." },
+    { id: "oxygen", role: "first", note: "Ventilate with bag-valve-mask attached to oxygen at 10–15 L/min; hypoxia is the usual cause in children." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 79 PALS algorithms, pp. 561–566" }, { name: "AHA PALS/ACLS 2020" }],
   textbook: [
@@ -95,7 +97,8 @@ window.CONDITIONS = [
     { id: "dopamine", role: "alternative", note: "Fallback only, when noradrenaline and adrenaline are unavailable: it causes more arrhythmias and gives no survival benefit in septic shock (Harrison). Often the only vasoactive drug at primary hospitals." },
     { id: "hydrocortisone", role: "adjunct", note: "For shock that persists despite fluids and vasopressors." },
     { id: "dextrose", role: "supportive", note: "Hypoglycaemia is common and easily missed." },
-    { id: "blood-transfusion", role: "supportive", note: "For severe anaemia contributing to shock." }
+    { id: "blood-transfusion", role: "supportive", note: "For severe anaemia contributing to shock." },
+    { id: "oxygen", role: "supportive", note: "Target SpO2 94 % or more during resuscitation of shock." }
   ],
   sources: [{ name: "Surviving Sepsis Campaign 2021" }, { name: "Maitland K et al. FEAST. NEJM 2011" }, { name: "Nelson 22nd ed. 2024, ch. 85, p. 611" }],
   textbook: [
@@ -128,7 +131,8 @@ window.CONDITIONS = [
     { id: "magnesium-sulfate", role: "first", note: "The correct drug in eclampsia. Pritchard IM regimen needs no pump." },
     { id: "ceftriaxone", role: "adjunct", note: "If meningitis is possible, give it early." },
     { id: "artesunate", role: "adjunct", note: "Cerebral malaria in an endemic area." },
-    { id: "paracetamol", role: "supportive", note: "For fever, which lowers the seizure threshold in children." }
+    { id: "paracetamol", role: "supportive", note: "For fever, which lowers the seizure threshold in children." },
+    { id: "oxygen", role: "supportive", note: "Open the airway, give oxygen and check glucose while giving the anticonvulsant." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 633.8, p. 3628" }, { name: "Silbergleit R et al. RAMPART. NEJM 2012" }, { name: "WHO Pocket Book 2013" }],
   textbook: [
@@ -156,7 +160,8 @@ window.CONDITIONS = [
     { id: "diazepam", role: "adjunct", note: "For seizures and agitation; also reduces mortality in severe poisoning." },
     { id: "midazolam", role: "alternative", note: "If diazepam is unavailable." },
     { id: "ringers-lactate", role: "supportive", note: "For hypotension after atropinisation." },
-    { id: "adrenaline", role: "supportive", note: "If shock persists despite atropine and fluids." }
+    { id: "adrenaline", role: "supportive", note: "If shock persists despite atropine and fluids." },
+    { id: "oxygen", role: "supportive", note: "Oxygen and suction of secretions while atropine is titrated; ventilate if breathing fails." }
   ],
   sources: [{ name: "Eddleston M et al. Lancet 2008" }, { name: "WHO. Clinical management of acute pesticide intoxication, 2008" }],
   textbook: [
@@ -179,7 +184,8 @@ window.CONDITIONS = [
   drugs: [
     { id: "naloxone", role: "first", note: "Overdose with apnoea or severe respiratory depression: adult 0.4–2 mg IV, IM or intranasal, repeated every 2–3 min; synthetic opioids such as fentanyl may need twice that (Harrison). Child 0.1 mg/kg, max 2 mg. For over-sedation from therapeutic opioids instead, titrate 40 mcg increments so analgesia is kept." },
     { id: "ringers-lactate", role: "supportive", note: "For hypotension." },
-    { id: "dextrose", role: "supportive", note: "Check glucose in every unconscious patient." }
+    { id: "dextrose", role: "supportive", note: "Check glucose in every unconscious patient." },
+    { id: "oxygen", role: "supportive", note: "Bag-valve-mask with oxygen before and between naloxone doses." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, Table 79.5, p. 563" }, { name: "WHO. Community management of opioid overdose, 2014" }],
   textbook: [
@@ -275,7 +281,8 @@ window.CONDITIONS = [
     { id: "nifedipine", role: "alternative", note: "Oral, when no injectable antihypertensive exists." },
     { id: "diazepam", role: "alternative", note: "Only if magnesium is genuinely unavailable. Less effective and sedates the newborn." },
     { id: "oxytocin", role: "supportive", note: "Third stage and prevention of PPH." },
-    { id: "ergometrine", role: "avoid", note: "Contraindicated in hypertension." }
+    { id: "ergometrine", role: "avoid", note: "Contraindicated in hypertension." },
+    { id: "oxygen", role: "supportive", note: "Recovery position and oxygen after a fit." }
   ],
   sources: [{ name: "WHO. Managing Complications in Pregnancy and Childbirth, 2017" }, { name: "Pritchard JA et al. AJOG 1984" }],
   textbook: [
@@ -312,7 +319,8 @@ window.CONDITIONS = [
     { id: "blood-transfusion", role: "first", note: "Call donors early; do not wait until she is moribund." },
     { id: "metronidazole", role: "adjunct", note: "With ampicillin for sepsis after manual removal or instrumentation." },
     { id: "ampicillin", role: "adjunct", note: "Prophylaxis after manual removal of the placenta." },
-    { id: "ketamine", role: "supportive", note: "For examination under anaesthesia or laparotomy where there is no anaesthetist." }
+    { id: "ketamine", role: "supportive", note: "For examination under anaesthesia or laparotomy where there is no anaesthetist." },
+    { id: "oxygen", role: "supportive", note: "Oxygen by mask at 6–8 L/min during resuscitation of haemorrhagic shock." }
   ],
   sources: [{ name: "WHO recommendations for the prevention and treatment of PPH, 2012/2018" }, { name: "WOMAN trial. Lancet 2017" }],
   textbook: [
@@ -532,7 +540,10 @@ window.CONDITIONS = [
     { id: "metronidazole", role: "adjunct", note: "For heavily contaminated or penetrating abdominal wounds." },
     { id: "ceftriaxone", role: "adjunct", note: "Open fracture prophylaxis where protocol specifies." },
     { id: "atropine", role: "supportive", note: "With ketamine for secretions." },
-    { id: "naloxone", role: "supportive", note: "If opioid analgesia causes respiratory depression." }
+    { id: "naloxone", role: "supportive", note: "If opioid analgesia causes respiratory depression." },
+    { id: "oxygen", role: "supportive", note: "High-flow oxygen for major trauma and head injury (SpO2 94 % or more)." },
+    { id: "mannitol", role: "adjunct", note: "Head injury with signs of herniation only, after blood pressure is restored: 0.5 g/kg over 20–30 min as a bridge to surgery. Worsens hypovolaemia." },
+    { id: "hypertonic-saline", role: "adjunct", note: "Preferred osmotic agent for a head-injured patient who is also hypotensive or bleeding: 3 % saline 2–5 mL/kg over 10–20 min." }
   ],
   sources: [{ name: "CRASH-2 collaborators. Lancet 2010" }, { name: "WHO. Surgical Care at the District Hospital, 2003" }],
   textbook: [
@@ -567,7 +578,8 @@ window.CONDITIONS = [
     { id: "metronidazole", role: "adjunct", note: "For invasive or foul-smelling wound infection." },
     { id: "blood-transfusion", role: "supportive", note: "For anaemia after excision or in extensive burns." },
     { id: "atropine", role: "adjunct", note: "Before ketamine, to reduce salivation." },
-    { id: "potassium-chloride", role: "adjunct", note: "Replace after the first 24 hours as losses continue." }
+    { id: "potassium-chloride", role: "adjunct", note: "Replace after the first 24 hours as losses continue." },
+    { id: "oxygen", role: "first", note: "High-flow oxygen by non-rebreather mask for smoke inhalation or suspected carbon monoxide, regardless of SpO2 (oximeters read falsely normal with CO)." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 91 Burn injuries, p. 654" }, { name: "WHO. Surgical Care at the District Hospital, 2003" }],
   textbook: [
@@ -630,7 +642,9 @@ window.CONDITIONS = [
     { id: "potassium-chloride", role: "first", note: "10–20 mmol per litre (up to 40 at the low end) once potassium is 3.3–5.0 and urine is flowing; none above 5.0. Hold insulin if potassium is below 3.3 (Harrison)." },
     { id: "dextrose", role: "first", note: "Add when glucose falls below 14 mmol/L so the insulin can continue clearing ketones." },
     { id: "ceftriaxone", role: "adjunct", note: "If infection is the precipitant." },
-    { id: "sodium-bicarbonate", role: "avoid", note: "Children: never — it increases the risk of cerebral oedema. Adults: only if arterial pH is below 7.0, and only until it rises above 7.0 (Harrison); without blood gases, do not give it." }
+    { id: "sodium-bicarbonate", role: "avoid", note: "Children: never — it increases the risk of cerebral oedema. Adults: only if arterial pH is below 7.0, and only until it rises above 7.0 (Harrison); without blood gases, do not give it." },
+    { id: "mannitol", role: "adjunct", note: "Cerebral oedema (headache, falling heart rate, rising BP, drowsiness): 0.5–1 g/kg over 10–15 min after raising the head and reducing fluids." },
+    { id: "hypertonic-saline", role: "alternative", note: "Cerebral oedema when mannitol is unavailable: 3 % saline 2.5–5 mL/kg over 10–15 min." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 629, pp. 3525–3528" }, { name: "ISPAD Clinical Practice Consensus Guidelines 2022" }, { name: "Kitabchi AE et al. Diabetes Care 2009" }],
   textbook: [
@@ -663,7 +677,9 @@ window.CONDITIONS = [
     { id: "ceftriaxone", role: "adjunct", note: "Add if meningitis cannot be excluded, or for concurrent bacteraemia." },
     { id: "ringers-lactate", role: "supportive", note: "Careful fluids; avoid large boluses in a febrile child without shock." },
     { id: "paracetamol", role: "supportive", note: "For fever." },
-    { id: "furosemide", role: "adjunct", note: "1 mg/kg at the start of transfusion if there is heart failure." }
+    { id: "furosemide", role: "adjunct", note: "1 mg/kg at the start of transfusion if there is heart failure." },
+    { id: "mannitol", role: "avoid", note: "Mannitol has not improved outcomes in cerebral malaria and is not recommended (Nelson, Harrison, WHO)." },
+    { id: "oxygen", role: "supportive", note: "For respiratory distress, severe anaemia or SpO2 under 90 %." }
   ],
   sources: [{ name: "WHO Guidelines for malaria, 2023" }, { name: "Nelson 22nd ed. 2024, ch. 336, p. 2136" }],
   textbook: [
@@ -696,7 +712,8 @@ window.CONDITIONS = [
     { id: "diazepam", role: "adjunct", note: "For seizures." },
     { id: "phenobarbital", role: "adjunct", note: "Second line for ongoing seizures." },
     { id: "paracetamol", role: "supportive", note: "Fever and headache." },
-    { id: "dextrose", role: "supportive", note: "Check glucose." }
+    { id: "dextrose", role: "supportive", note: "Check glucose." },
+    { id: "oxygen", role: "supportive", note: "Airway and oxygen in a child with depressed consciousness or seizures." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "WHO. Managing meningitis epidemics in Africa, 2015" }],
   textbook: [
@@ -727,7 +744,8 @@ window.CONDITIONS = [
     { id: "potassium-chloride", role: "adjunct", note: "Replace after diuresis, especially with digoxin." },
     { id: "blood-transfusion", role: "adjunct", note: "Packed cells slowly with furosemide when severe anaemia is the cause." },
     { id: "amiodarone", role: "alternative", note: "For arrhythmia driving the failure." },
-    { id: "ringers-lactate", role: "avoid", note: "Stop the fluids. Over-infusion is a frequent and reversible cause." }
+    { id: "ringers-lactate", role: "avoid", note: "Stop the fluids. Over-infusion is a frequent and reversible cause." },
+    { id: "oxygen", role: "first", note: "Sit upright; oxygen by mask or prongs to SpO2 94 % or more if hypoxaemic." }
   ],
   sources: [{ name: "WHO Model Formulary" }, { name: "Nelson 22nd ed. 2024, ch. 491, Table 491.6, p. 2898" }],
   textbook: [
@@ -758,7 +776,9 @@ window.CONDITIONS = [
     { id: "adrenaline", role: "alternative", note: "Subcutaneous 0.01 mL/kg of 1:1000 when there is no inhaled route at all." },
     { id: "aminophylline", role: "alternative", note: "For a life-threatening attack not responding to the above; 6-hourly dosing avoids an infusion." },
     { id: "ceftriaxone", role: "adjunct", note: "Only if there is genuine evidence of pneumonia." },
-    { id: "morphine", role: "avoid", note: "Sedation in asthma is dangerous." }
+    { id: "morphine", role: "avoid", note: "Sedation in asthma is dangerous." },
+    { id: "ipratropium", role: "adjunct", note: "Added to salbutamol every 20 min for the first hour in a severe attack (adult 500 mcg, child 250 mcg nebulised, or by MDI and spacer); little extra benefit once admitted on steroids." },
+    { id: "oxygen", role: "first", note: "For SpO2 under 90 % or any emergency sign (94 % or more during resuscitation); nasal prongs, or drive the nebuliser with oxygen." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 185, pp. 1405–1408" }, { name: "WHO Pocket Book 2013" }, { name: "GINA 2024" }],
   textbook: [
@@ -789,7 +809,8 @@ window.CONDITIONS = [
     { id: "chloramphenicol", role: "alternative", note: "Where the above are unavailable." },
     { id: "salbutamol", role: "adjunct", note: "Only if there is wheeze." },
     { id: "paracetamol", role: "supportive", note: "Fever and pleuritic pain." },
-    { id: "dextrose", role: "supportive", note: "Check glucose in a child who cannot feed." }
+    { id: "dextrose", role: "supportive", note: "Check glucose in a child who cannot feed." },
+    { id: "oxygen", role: "first", note: "SpO2 under 90 % or danger signs: nasal prongs 1–2 L/min in infants. Bubble CPAP only with close nursing observation." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "Nelson 22nd ed. 2024" }],
   textbook: [
@@ -816,7 +837,8 @@ window.CONDITIONS = [
     { id: "paracetamol", role: "supportive", note: "Analgesia; prefer it over NSAIDs while anticoagulated." },
     { id: "morphine", role: "supportive", note: "For severe pleuritic pain from pulmonary embolism." },
     { id: "furosemide", role: "avoid", note: "The raised venous pressure of pulmonary embolism is not fluid overload; diuresis worsens the low output state." },
-    { id: "tranexamic-acid", role: "avoid", note: "Antifibrinolytics are contraindicated in active thromboembolism." }
+    { id: "tranexamic-acid", role: "avoid", note: "Antifibrinolytics are contraindicated in active thromboembolism." },
+    { id: "oxygen", role: "supportive", note: "Pulmonary embolism with hypoxaemia." }
   ],
   sources: [{ name: "Kearon C et al. FIDO. JAMA 2006" }, { name: "CHEST Antithrombotic Therapy for VTE Disease, 2021" }],
   textbook: [
@@ -848,7 +870,8 @@ window.CONDITIONS = [
     { id: "magnesium-sulfate", role: "adjunct", note: "Controls autonomic instability (target serum magnesium 2–4 mmol/L). At doses high enough to relax muscle spasms it requires mechanical ventilation (Harrison), so without a ventilator use it for autonomic control, not as the main spasm treatment." },
     { id: "morphine", role: "adjunct", note: "For autonomic instability and pain." },
     { id: "ringers-lactate", role: "supportive", note: "Hydration; losses from spasm and sweating are large." },
-    { id: "paracetamol", role: "supportive", note: "Fever and pain." }
+    { id: "paracetamol", role: "supportive", note: "Fever and pain." },
+    { id: "oxygen", role: "supportive", note: "During spasms and after sedation; suction and bag-valve-mask at the bedside." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1823" }, { name: "WHO. Current recommendations for treatment of tetanus, 2010" }],
   textbook: [
@@ -911,7 +934,8 @@ window.CONDITIONS = [
     { id: "vitamin-a", role: "adjunct", note: "Only with eye signs or recent measles; days 1, 2 and 14." },
     { id: "blood-transfusion", role: "adjunct", note: "10 mL/kg whole blood over 3 h, with furosemide, for haemoglobin under 4 g/dL." },
     { id: "furosemide", role: "adjunct", note: "1 mg/kg at the start of transfusion only." },
-    { id: "ringers-lactate", role: "avoid", note: "Plan C rates cause heart failure here. Use 15 mL/kg over 1 h for shock only." }
+    { id: "ringers-lactate", role: "avoid", note: "Plan C rates cause heart failure here. Use 15 mL/kg over 1 h for shock only." },
+    { id: "oxygen", role: "supportive", note: "Pneumonia or heart failure with SpO2 under 90 %." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 62, pp. 428–430" }, { name: "WHO. Updates on the management of severe acute malnutrition, 2013" }],
   review: { status: "draft" }
@@ -938,7 +962,8 @@ window.CONDITIONS = [
     { id: "phenobarbital", role: "adjunct", note: "First-line for neonatal seizures." },
     { id: "ringers-lactate", role: "supportive", note: "10 mL/kg for shock, given slowly." },
     { id: "dopamine", role: "adjunct", note: "For shock unresponsive to fluid; rule-of-6 dilution with a microdrip." },
-    { id: "vitamin-k", role: "supportive", note: "1 mg IM if not already given at birth." }
+    { id: "vitamin-k", role: "supportive", note: "1 mg IM if not already given at birth." },
+    { id: "oxygen", role: "supportive", note: "Nasal prongs 0.5–1 L/min for SpO2 under 90 %; avoid SpO2 above 95 % in preterm babies." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "WHO. Managing PSBI when referral is not feasible, 2015" }],
   review: { status: "draft" }
@@ -965,7 +990,8 @@ window.CONDITIONS = [
     { id: "phenytoin", role: "alternative", note: "Second-line after phenobarbital; slow infusion in saline only." },
     { id: "midazolam", role: "alternative", note: "For refractory seizures where available." },
     { id: "naloxone", role: "avoid", note: "Not part of newborn resuscitation, and dangerous if the mother is opioid dependent." },
-    { id: "sodium-bicarbonate", role: "avoid", note: "Not recommended routinely; worsens intracellular acidosis without good ventilation." }
+    { id: "sodium-bicarbonate", role: "avoid", note: "Not recommended routinely; worsens intracellular acidosis without good ventilation." },
+    { id: "oxygen", role: "supportive", note: "Titrated to SpO2 90–95 % in newborns; term resuscitation starts with room air." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 122, p. 1067" }, { name: "WHO. Guidelines on neonatal seizures, 2011" }],
   review: { status: "draft" }
@@ -1011,7 +1037,8 @@ window.CONDITIONS = [
     { id: "vitamin-a", role: "adjunct", note: "Where deficiency or measles coexists." },
     { id: "zinc-ors", role: "supportive", note: "With concurrent diarrhoea." },
     { id: "paracetamol", role: "supportive", note: "For a febrile transfusion reaction." },
-    { id: "ringers-lactate", role: "avoid", note: "Never prime or run a blood line with Ringer's lactate; use saline only." }
+    { id: "ringers-lactate", role: "avoid", note: "Never prime or run a blood line with Ringer's lactate; use saline only." },
+    { id: "oxygen", role: "supportive", note: "While blood is being arranged in a child with respiratory distress." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "Nelson 22nd ed. 2024, ch. 62, p. 428" }],
   review: { status: "draft" }
@@ -1035,7 +1062,8 @@ window.CONDITIONS = [
     { id: "ampicillin", role: "adjunct", note: "With gentamicin for measles pneumonia." },
     { id: "benzylpenicillin", role: "alternative", note: "For secondary bacterial pneumonia." },
     { id: "zinc-ors", role: "adjunct", note: "For accompanying diarrhoea." },
-    { id: "paracetamol", role: "supportive", note: "Fever and mouth pain." }
+    { id: "paracetamol", role: "supportive", note: "Fever and mouth pain." },
+    { id: "oxygen", role: "supportive", note: "Measles pneumonia with SpO2 under 90 % or danger signs." }
   ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "Nelson 22nd ed. 2024, ch. 62, p. 428" }],
   review: { status: "draft" }
@@ -1058,7 +1086,8 @@ window.CONDITIONS = [
     { id: "hydrocortisone", role: "alternative", note: "If dexamethasone is unavailable." },
     { id: "paracetamol", role: "supportive", note: "For fever and discomfort." },
     { id: "ceftriaxone", role: "adjunct", note: "Only if bacterial tracheitis or epiglottitis is suspected." },
-    { id: "salbutamol", role: "avoid", note: "Croup is upper airway obstruction; salbutamol does not help." }
+    { id: "salbutamol", role: "avoid", note: "Croup is upper airway obstruction; salbutamol does not help." },
+    { id: "oxygen", role: "supportive", note: "Only for hypoxaemia or severe obstruction — keep the child calm on the parent's lap; hypoxaemia means impending airway failure." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 433, p. 2571" }, { name: "WHO Pocket Book of Hospital Care for Children 2013" }],
   review: { status: "draft" }
@@ -1077,13 +1106,511 @@ window.CONDITIONS = [
   ],
   drugs: [
     { id: "caffeine-citrate", role: "first", note: "20 mg/kg loading, then 5–10 mg/kg once daily. Oral works as well as IV." },
-    { id: "aminophylline", role: "alternative", note: "6 mg/kg then 2.5 mg/kg every 12 h where caffeine is unavailable; more side-effects." },
+    { id: "aminophylline", role: "alternative", note: "6 mg/kg, then 2.5 mg/kg every 12 h in week 1 and 4 mg/kg every 12 h in weeks 2–4 (WHO), where caffeine is unavailable; more side-effects." },
     { id: "ampicillin", role: "adjunct", note: "With gentamicin if sepsis is suspected." },
     { id: "gentamicin", role: "adjunct", note: "Neonatal regimen partner." },
     { id: "dextrose", role: "supportive", note: "Check glucose." },
-    { id: "blood-transfusion", role: "adjunct", note: "For anaemia of prematurity contributing to apnoea." }
+    { id: "blood-transfusion", role: "adjunct", note: "For anaemia of prematurity contributing to apnoea." },
+    { id: "oxygen", role: "supportive", note: "Low-flow oxygen titrated to SpO2 90–95 %; bag-and-mask for apnoea that does not respond to stimulation." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 124, p. 1076" }, { name: "Schmidt B et al. CAP trial. NEJM 2006" }],
   review: { status: "draft" }
+},
+{
+  id: "snakebite",
+  name: "Snakebite envenoming",
+  group: "emergency",
+  aka: [
+    "snake bite",
+    "viper bite",
+    "cobra bite",
+    "mamba bite",
+    "puff adder",
+    "envenomation"
+  ],
+  summary: "Most bites need observation, not antivenom — but blood that will not clot, paralysis or rapidly spreading swelling need antivenom at once, at the same dose for a child as for an adult, with adrenaline drawn up beside the drip.",
+  redflags: [
+    "Blood still liquid at 20 min in a glass tube (20WBCT)",
+    "Bleeding from gums, old wounds or cannula sites; blood in urine or vomit",
+    "Ptosis, double vision, difficulty swallowing, drooling, weak neck or breathing",
+    "Swelling spreading beyond half the limb, blistering, or shock",
+    "Dark urine or falling urine output"
+  ],
+  steps: [
+    "Reassure, remove rings and tight clothing, splint the limb. Remove a tourniquet only once IV access is in place and antivenom is ready. No incision, suction or traditional remedies.",
+    "IV access in an unbitten limb. 20WBCT on arrival. Mark the edge of the swelling with the time.",
+    "Antivenom IV for systemic or severe local envenoming — full dose, same for children — by slow push or diluted infusion over 1 h, adrenaline drawn up.",
+    "Repeat 20WBCT 6 h after each dose; repeat the dose while the blood does not clot. Neurotoxic signs worsening 1–2 h after a dose: repeat the dose.",
+    "Airway and breathing: bag-valve-mask for paralysis for as long as needed; atropine plus neostigmine trial for cobra bites.",
+    "Observe every bite for at least 24 h. Tetanus toxoid. Paracetamol or morphine; no NSAIDs and no IM injections while blood does not clot."
+  ],
+  drugs: [
+    {
+      id: "snake-antivenom",
+      role: "first",
+      note: "Starting dose from the leaflet of the product in stock, identical for children and adults; repeat by 20WBCT at 6 h or by neurological response at 1–2 h."
+    },
+    {
+      id: "adrenaline",
+      role: "first",
+      note: "Drawn up before antivenom starts: 0.5 mg IM (child 0.01 mg/kg, max 0.5 mg) at the first sign of a reaction."
+    },
+    {
+      id: "atropine",
+      role: "adjunct",
+      note: "0.6 mg IV (child 0.02 mg/kg, min 0.1 mg) before a neostigmine trial in neurotoxic bites (Harrison)."
+    },
+    {
+      id: "hydrocortisone",
+      role: "adjunct",
+      note: "After adrenaline for an antivenom reaction; not useful as premedication."
+    },
+    {
+      id: "oxygen",
+      role: "supportive",
+      note: "Neurotoxic envenoming, shock or respiratory failure."
+    },
+    {
+      id: "ringers-lactate",
+      role: "supportive",
+      note: "Fluid boluses for shock; watch urine output for acute kidney injury."
+    },
+    {
+      id: "blood-transfusion",
+      role: "adjunct",
+      note: "Only after antivenom, for severe bleeding or anaemia — before antivenom it fuels the coagulopathy."
+    },
+    {
+      id: "paracetamol",
+      role: "supportive",
+      note: "Pain and pyrogenic antivenom reactions."
+    },
+    {
+      id: "morphine",
+      role: "supportive",
+      note: "Severe pain; small IV increments, not IM while blood is incoagulable."
+    },
+    {
+      id: "cloxacillin",
+      role: "adjunct",
+      note: "Only for a clinically infected bite wound or after incision."
+    }
+  ],
+  sources: [
+    {
+      name: "WHO Regional Office for Africa. Guidelines for the Prevention and Clinical Management of Snakebite in Africa, 2010"
+    },
+    {
+      name: "WHO SEARO. Guidelines for the Management of Snakebites, 2nd ed. 2016"
+    },
+    {
+      name: "MSF Clinical Guidelines — snake bites"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "20-minute whole blood clotting test: 1–2 mL venous blood in a clean, dry glass tube, left undisturbed 20 min then tipped; blood still liquid = coagulopathy.",
+      ref: "Harrison 22nd ed. 2025, ch. 471 Venomous Snakebites, p. 3719"
+    },
+    {
+      book: "harrison",
+      text: "Give antivenom IV only, starting slowly with the clinician at the bedside; if there is no reaction, speed up to finish the starting dose over about 1 h. Repeat if the patient worsens, fails to stabilise or venom effects recur; for viper bites continue until coagulation is restored.",
+      ref: "Harrison 22nd ed. 2025, ch. 471, p. 3719"
+    },
+    {
+      book: "harrison",
+      text: "Blood products are rarely needed; clotting factors usually recover within hours of adequate antivenom, and blood products given before antivenom fuel the consumptive coagulopathy. Serum sickness 1–2 weeks later: prednisone 1–2 mg/kg daily.",
+      ref: "Harrison 22nd ed. 2025, ch. 471, p. 3721"
+    },
+    {
+      book: "harrison",
+      text: "Coagulopathy can recur 2–3 weeks after the bite because venom outlasts antivenom; warn against surgery and trauma, and consider repeat antivenom for delayed bleeding.",
+      ref: "Harrison 22nd ed. 2025, ch. 471, p. 3722"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "svt",
+  name: "Supraventricular tachycardia",
+  group: "emergency",
+  aka: [
+    "SVT",
+    "narrow complex tachycardia",
+    "palpitations",
+    "PSVT",
+    "fast heart rate in infants"
+  ],
+  summary: "A regular, fixed, very fast narrow-complex rhythm. Vagal manoeuvres first, adenosine by a truly rapid push with an instant flush second, and a synchronised shock for anyone in shock or heart failure.",
+  redflags: [
+    "Hypotension, poor perfusion, altered consciousness — cardioversion now",
+    "Infant with poor feeding, sweating, grey colour or enlarged liver (heart failure)",
+    "Broad QRS complexes — treat as ventricular tachycardia",
+    "Irregular rhythm — not SVT; never adenosine in irregular broad-complex tachycardia"
+  ],
+  steps: [
+    "Record a 12-lead ECG (or at least a rhythm strip). Confirm regular narrow-complex tachycardia.",
+    "Stable: modified Valsalva in adults and older children; ice-cold water bag to the face for 15–30 s in infants. Never press on the eyes.",
+    "Adenosine rapid IV push with a 3-way tap and flush while the ECG runs: child 0.1 mg/kg then 0.2 mg/kg; adult 6 mg then 12 mg.",
+    "Unstable, or adenosine fails: synchronised cardioversion (child 0.5–1 J/kg then 2 J/kg) with sedation; oxygen and bag-valve-mask ready.",
+    "After conversion, repeat the ECG (look for Wolff-Parkinson-White) and refer for long-term management. Verapamil is not in this app — never in infants."
+  ],
+  drugs: [
+    {
+      id: "adenosine",
+      role: "first",
+      note: "Rapid push into a large proximal vein with an immediate flush; child 0.1 mg/kg (max 6 mg) then 0.2 mg/kg (max 12 mg); adult 6 mg, 12 mg, 12 mg."
+    },
+    {
+      id: "midazolam",
+      role: "adjunct",
+      note: "Sedation before synchronised cardioversion in a conscious patient; bag-valve-mask ready."
+    },
+    {
+      id: "amiodarone",
+      role: "alternative",
+      note: "Specialist option for SVT resistant to adenosine and cardioversion; causes hypotension if given fast."
+    },
+    {
+      id: "digoxin",
+      role: "alternative",
+      note: "Specialist oral or IV option for recurrent SVT in infants without WPW; slow onset — not for acute conversion."
+    },
+    {
+      id: "oxygen",
+      role: "supportive",
+      note: "Shock or heart failure, and during cardioversion."
+    }
+  ],
+  sources: [
+    {
+      name: "Resuscitation Council UK. Adult and Paediatric tachycardia algorithms, 2021"
+    },
+    {
+      name: "AHA PALS/ACLS 2020"
+    },
+    {
+      name: "Nelson 22nd ed. 2024, ch. 484"
+    }
+  ],
+  textbook: [
+    {
+      book: "nelson",
+      text: "SVT: in infants an ice bag over the whole face for 15–30 s; older children Valsalva or straining; never ocular pressure. Stable patients: adenosine by rapid IV push 0.1 mg/kg (up to 6 mg), increased to 0.2 mg/kg (up to 12 mg) if no effect.",
+      ref: "Nelson 22nd ed. 2024, ch. 484 Disturbances of rate and rhythm, p. 2850"
+    },
+    {
+      book: "nelson",
+      text: "Adenosine can trigger atrial fibrillation, so a means of DC cardioversion should be at hand; verapamil can cause hypotension and cardiac arrest under 1 year and is contraindicated in that age group; synchronised cardioversion 0.5–2 J/kg if in heart failure.",
+      ref: "Nelson 22nd ed. 2024, ch. 484, p. 2850"
+    },
+    {
+      book: "harrison",
+      text: "Urgent SVT treatment: vagal manoeuvres or carotid sinus massage (cautiously if carotid disease), then adenosine 6 or 12 mg, which terminates AV node-dependent SVT or unmasks atrial tachycardia or flutter.",
+      ref: "Harrison 22nd ed. 2025, ch. 253 Approach to Supraventricular Arrhythmias, p. 1933"
+    },
+    {
+      book: "williams",
+      text: "Pregnancy: vagal manoeuvres first, then IV adenosine, which is safe and effective in haemodynamically stable pregnant women; transient fetal bradycardia has been described. Synchronised cardioversion if unstable.",
+      ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2142"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "raised-icp",
+  name: "Head injury & raised intracranial pressure",
+  group: "surgical",
+  aka: [
+    "head injury",
+    "traumatic brain injury",
+    "TBI",
+    "raised ICP",
+    "cerebral oedema",
+    "herniation",
+    "brain swelling"
+  ],
+  summary: "Prevent the second injury: oxygen, a systolic blood pressure above 100 mmHg, head up 30°, seizures and glucose controlled. Osmotic therapy with mannitol or 3 % saline buys an hour or two for burr holes or referral — it is not a treatment on its own.",
+  redflags: [
+    "GCS falling by 2 or more points, or GCS 8 or below",
+    "One pupil dilated or unreactive, or new limb weakness",
+    "Cushing response: rising blood pressure with a slowing pulse and irregular breathing",
+    "Lucid interval then deterioration (extradural haematoma)",
+    "Seizures after head injury; CSF leak; depressed skull fracture"
+  ],
+  steps: [
+    "Airway with cervical spine control. Oxygen to SpO2 94 % or more. Ventilate if GCS 8 or below and you can.",
+    "Resuscitate to euvolaemia and a systolic BP above 100 mmHg — no permissive hypotension in head injury. Use 0.9 % saline for large volumes; avoid glucose-only and hypotonic fluids.",
+    "Head of bed up 30°, head midline, collar not tight. Treat seizures, fever, hypoglycaemia and pain.",
+    "Signs of herniation: mannitol 0.5 g/kg over 20–30 min (only if not hypovolaemic) or 3 % saline 2–5 mL/kg over 10–20 min; catheterise; call the surgeon.",
+    "Tranexamic acid within 3 h of injury for mild-to-moderate head injury (CRASH-3). No steroids for head injury.",
+    "Urgent CT and neurosurgical referral; burr holes at the district hospital for a deteriorating patient with a lateralising extradural haematoma when referral is impossible."
+  ],
+  drugs: [
+    {
+      id: "oxygen",
+      role: "first",
+      note: "SpO2 94 % or more; hypoxia and hypotension each markedly worsen outcome after head injury."
+    },
+    {
+      id: "mannitol",
+      role: "first",
+      note: "Herniation signs, normovolaemic patient: 0.25–1 g/kg (usually 0.5 g/kg) over 20–30 min; catheterise and replace urine losses."
+    },
+    {
+      id: "hypertonic-saline",
+      role: "first",
+      note: "Herniation signs, especially if hypotensive or bleeding: 3 % saline 2–5 mL/kg over 10–20 min; can be made from 0.9 % saline and 20 % NaCl ampoules."
+    },
+    {
+      id: "tranexamic-acid",
+      role: "adjunct",
+      note: "1 g over 10 min then 1 g over 8 h within 3 h of injury (mild-to-moderate TBI)."
+    },
+    {
+      id: "phenytoin",
+      role: "adjunct",
+      note: "Seizures after head injury; loading dose diluted in saline."
+    },
+    {
+      id: "diazepam",
+      role: "adjunct",
+      note: "Stop an active seizure; watch breathing."
+    },
+    {
+      id: "morphine",
+      role: "supportive",
+      note: "Small IV increments for pain from other injuries; monitor breathing and pupils."
+    },
+    {
+      id: "paracetamol",
+      role: "supportive",
+      note: "Fever and pain; fever worsens brain injury."
+    },
+    {
+      id: "dexamethasone",
+      role: "avoid",
+      note: "Steroids increase mortality after head injury; they are for tumour or abscess oedema only."
+    }
+  ],
+  sources: [
+    {
+      name: "Brain Trauma Foundation. Guidelines for the Management of Severe TBI, 4th ed. 2016"
+    },
+    {
+      name: "CRASH-3 trial collaborators. Lancet 2019;394:1713–23"
+    },
+    {
+      name: "CRASH trial collaborators. Lancet 2004;364:1321–8 (corticosteroids)"
+    },
+    {
+      name: "WHO. Surgical Care at the District Hospital, 2003"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "Raised ICP: head up, midline position; osmotherapy with mannitol 25–100 g every 4 h as needed, keeping serum osmolality under 320; glucocorticoids only for tumour or abscess oedema, not head injury or stroke.",
+      ref: "Harrison 22nd ed. 2025, ch. 318 Nervous System Disorders in Critical Care, p. 2345"
+    },
+    {
+      book: "schwartz",
+      text: "A bolus of mannitol up to 1 g/kg draws water out of the brain; the effect starts after about 20 minutes and is transient. Driving osmolality above 300 is of uncertain benefit and can cause hypovolaemia, hypotension and reduced brain perfusion.",
+      ref: "Schwartz's Principles of Surgery 11th ed., ch. 42 Neurosurgery, p. 1832"
+    },
+    {
+      book: "nelson",
+      text: "Children with raised ICP: 3 % saline 2–5 mL/kg over 10–20 min or mannitol 0.25–1 g/kg IV over 20 min; avoid serum osmolality above 320; insert a urinary catheter.",
+      ref: "Nelson 22nd ed. 2024, ch. 82 Neurologic emergencies and stabilization, p. 586"
+    },
+    {
+      book: "schwartz",
+      text: "Head injury: resuscitate to euvolaemia and systolic BP above 100 mmHg; cerebral perfusion pressure (MAP minus ICP) above 60; sedation, osmotic diuresis, ventricular drainage and barbiturate coma are used in sequence.",
+      ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 218"
+    },
+    {
+      book: "harrison",
+      text: "Stuporous or comatose patients with signs of herniation from intracerebral haemorrhage: treat presumptively for raised ICP with intubation and sedation, mannitol or hypertonic saline and head elevation while surgical help is sought.",
+      ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, p. 3453"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "hiv-exposure",
+  name: "HIV exposure: post-exposure prophylaxis & HIV-exposed newborn",
+  group: "medical",
+  aka: [
+    "PEP",
+    "needlestick injury",
+    "sharps injury",
+    "sexual assault",
+    "rape",
+    "PMTCT",
+    "HIV-exposed infant"
+  ],
+  summary: "PEP works only if it starts early — within hours, never after 72 h — and continues for 28 days. Every baby born to a mother with HIV needs prophylaxis from the first hours of life. Confirm regimens against the Ethiopian national HIV guideline.",
+  redflags: [
+    "More than 72 h since exposure — PEP no longer recommended",
+    "Deep needlestick, visible blood on the device, needle from a vein or artery, source with advanced HIV",
+    "Sexual assault — also pregnancy, STI, hepatitis B, tetanus, safety and psychological needs",
+    "Mother tested HIV-positive in labour or after delivery — high-risk infant"
+  ],
+  steps: [
+    "First aid now: wash wounds with soap and water; irrigate eyes and mouth. Do not squeeze or apply bleach.",
+    "Assess the exposure and the source (rapid HIV test and HBsAg with consent). Baseline HIV test of the exposed person, but do not wait for results to give the first dose.",
+    "Start TLD (TDF/3TC/DTG) one tablet daily for 28 days; children under 30 kg a weight-banded paediatric regimen.",
+    "Sexual assault: emergency contraception, presumptive STI treatment, hepatitis B vaccine and tetanus per national protocol; document and link to protection services.",
+    "HIV-exposed newborn: nevirapine (low risk) or zidovudine + nevirapine (high risk) from birth, dosed by birth weight; cotrimoxazole from 6 weeks; DNA PCR per national algorithm.",
+    "Follow up at 3–7 days for adherence, complete 28 days, HIV test at 4–6 weeks and 3 months."
+  ],
+  drugs: [
+    {
+      id: "arv-prophylaxis",
+      role: "first",
+      note: "TLD once daily for 28 days (adults and children 30 kg or more); infant nevirapine ± zidovudine by risk and birth weight."
+    },
+    {
+      id: "ceftriaxone",
+      role: "adjunct",
+      note: "Presumptive gonorrhoea treatment after sexual assault, at the dose in the national STI guideline."
+    },
+    {
+      id: "metronidazole",
+      role: "adjunct",
+      note: "Presumptive trichomonas treatment after sexual assault per national protocol."
+    }
+  ],
+  sources: [
+    {
+      name: "WHO. Guidelines for HIV post-exposure prophylaxis, 2024"
+    },
+    {
+      name: "WHO. Consolidated HIV guidelines, 2021"
+    },
+    {
+      name: "FMOH Ethiopia. National Consolidated Guidelines for Comprehensive HIV Prevention, Care and Treatment (current edition)"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "Occupational HIV exposure is a medical emergency; clean the wound at once. PEP should contain three antiretroviral drugs for 4 weeks, with counselling, baseline and follow-up HIV tests and toxicity monitoring.",
+      ref: "Harrison 22nd ed. 2025, ch. 208 HIV Disease, p. 1625"
+    },
+    {
+      book: "harrison",
+      text: "Higher-risk occupational exposures: deep injury, visible blood on the device, a needle that was in the source patient's vein or artery, and advanced HIV disease in the source.",
+      ref: "Harrison 22nd ed. 2025, ch. 208, p. 1625"
+    },
+    {
+      book: "nelson",
+      text: "Non-occupational post-exposure prophylaxis in adolescents and children: three-drug regimens for 28 days.",
+      ref: "Nelson 22nd ed. 2024, ch. 322 HIV and AIDS, p. 2116"
+    },
+    {
+      book: "nelson",
+      text: "All HIV-exposed infants receive antiretroviral prophylaxis; more drugs are added when the risk is high — mother on no antenatal ART, only intrapartum ART, or not virally suppressed near delivery.",
+      ref: "Nelson 22nd ed. 2024, ch. 322, p. 2113"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "tuberculosis",
+  name: "Tuberculosis (drug-susceptible)",
+  group: "medical",
+  aka: [
+    "TB",
+    "pulmonary TB",
+    "TB meningitis",
+    "miliary TB",
+    "spinal TB",
+    "TB lymphadenitis"
+  ],
+  summary: "Six months of daily fixed-dose tablets cures drug-susceptible TB. The work is in finding it, dosing by weight band, getting tablets into patients who cannot swallow, catching hepatitis early, and not letting anyone stop.",
+  redflags: [
+    "Cough over 2 weeks with weight loss, fever or night sweats; haemoptysis",
+    "Headache, neck stiffness and falling consciousness over days (TB meningitis)",
+    "Jaundice, vomiting or abdominal pain on treatment (drug-induced hepatitis)",
+    "Blurred vision or colour-vision change on ethambutol",
+    "HIV co-infection, malnutrition, child contact of an adult with TB"
+  ],
+  steps: [
+    "Confirm where possible (Xpert MTB/RIF on sputum, gastric aspirate or stool in children; urine LAM in advanced HIV), but start treatment on clinical grounds when the patient is sick.",
+    "Weigh and dose RHZE by weight band for 2 months, then RH for 4 months (12 months total for meningitis and bone TB). Pyridoxine for those at risk.",
+    "Cannot swallow: crush adult FDCs or disperse child FDCs and give by NG tube.",
+    "TB meningitis and TB pericarditis: add corticosteroids per national protocol.",
+    "Test for HIV; start ART within 2 weeks (delayed in TB meningitis per guideline) — with rifampicin, dolutegravir must be given 50 mg twice daily; cotrimoxazole prophylaxis.",
+    "Ask about hepatitis symptoms at every contact; stop all drugs for jaundice or high ALT and reintroduce one at a time.",
+    "Screen household contacts, especially children under 5, and give TB preventive treatment."
+  ],
+  drugs: [
+    {
+      id: "tb-rhze",
+      role: "first",
+      note: "2RHZE/4RH daily by weight band; child dispersible FDCs; pyridoxine at-risk groups."
+    },
+    {
+      id: "dexamethasone",
+      role: "adjunct",
+      note: "TB meningitis (and pericarditis), tapering over several weeks per national protocol."
+    },
+    {
+      id: "oxygen",
+      role: "supportive",
+      note: "Extensive pulmonary or miliary TB with SpO2 under 90 %."
+    },
+    {
+      id: "paracetamol",
+      role: "supportive",
+      note: "Fever and pain."
+    }
+  ],
+  sources: [
+    {
+      name: "WHO consolidated guidelines on tuberculosis, Module 4: Treatment, 2022"
+    },
+    {
+      name: "WHO operational handbook on tuberculosis, Module 5: children and adolescents, 2022"
+    },
+    {
+      name: "FMOH Ethiopia. National TB, TB/HIV, DR-TB and leprosy guidelines (current edition)"
+    }
+  ],
+  textbook: [
+    {
+      book: "harrison",
+      text: "Regimen of choice for almost all drug-susceptible TB in adults: 2 months of isoniazid, rifampicin, pyrazinamide and ethambutol, then 4 months of isoniazid and rifampicin (2HRZE/4HR).",
+      ref: "Harrison 22nd ed. 2025, ch. 183 Tuberculosis, p. 1395"
+    },
+    {
+      book: "harrison",
+      text: "Pyridoxine 10–25 mg daily for those at risk of isoniazid neuropathy: alcohol use, malnutrition, pregnancy and breastfeeding, renal failure, diabetes and HIV.",
+      ref: "Harrison 22nd ed. 2025, ch. 183, p. 1396"
+    },
+    {
+      book: "harrison",
+      text: "Hepatotoxicity: stop isoniazid, pyrazinamide and rifampicin if ALT is over 5 × ULN, or over 3 × ULN with symptoms; once enzymes normalise, reintroduce rifampicin and isoniazid one at a time; pyrazinamide often not restarted. Baseline ALT and bilirubin for all; monthly if risk factors.",
+      ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, Table, p. 1420"
+    },
+    {
+      book: "nelson",
+      text: "Children with HIV and drug-susceptible TB: four drugs for 2 months then isoniazid and rifampicin; treatment should be daily, not intermittent, with close monitoring for adverse reactions and rifampicin–antiretroviral interactions.",
+      ref: "Nelson 22nd ed. 2024, ch. 261 Tuberculosis, p. 1851"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
 }
 ];
