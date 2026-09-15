@@ -10,7 +10,7 @@ const PORT = +(process.env.PORT || 3700);
 const HOST = process.env.HOST || (process.env.NODE_ENV === "production" ? "0.0.0.0" : "127.0.0.1");
 const PROD = process.env.NODE_ENV === "production";
 
-const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".ico": "image/x-icon", ".woff2": "font/woff2", ".webmanifest": "application/manifest+json", ".md": "text/plain; charset=utf-8" };
+const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".json": "application/json; charset=utf-8", ".svg": "image/svg+xml", ".png": "image/png", ".ico": "image/x-icon", ".woff2": "font/woff2", ".webp": "image/webp", ".webmanifest": "application/manifest+json", ".md": "text/plain; charset=utf-8" };
 
 const PROFESSIONS = ["physician", "general practitioner", "resident", "health officer", "nurse", "midwife", "pharmacist", "anaesthetist", "emergency surgical officer", "paramedic", "student", "other"];
 const LEVELS = ["health post", "health centre", "primary hospital", "general hospital", "specialised/referral hospital", "private clinic", "other"];

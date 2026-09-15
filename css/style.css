@@ -781,3 +781,36 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 @media (max-width: 480px) { .listbar .seg { width: 100%; } .listbar .seg button { flex: 1; } .azbar a { min-width: 30px; } }
 .filterbar .listbar { margin: 0 0 0 auto; }
 @media (max-width: 760px) { .filterbar .listbar { margin: 0; width: 100%; } .filterbar .listbar .seg { width: 100%; } .filterbar .listbar .seg button { flex: 1; } }
+
+/* ---------- hero photograph ---------- */
+@keyframes heroZoom { from { transform: scale(1.07); } to { transform: scale(1); } }
+.hero.has-media::before { display: none; }
+.hero.has-media::after { display: none; }
+.hero-media { z-index: -1; overflow: hidden; }
+.hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; animation: heroZoom 1.6s var(--ease) both; }
+.hero-media::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+@media (min-width: 760px) {
+  .hero.has-media { min-height: clamp(460px, 40vw, 600px); display: flex; flex-direction: column; justify-content: center; padding: 2.2rem 2.2rem 1.6rem; }
+  .hero-media { position: absolute; inset: 0; }
+  .hero-media img { object-position: 72% 28%; }
+  .hero-media::after { background:
+      linear-gradient(90deg, var(--hero-a) 0%, color-mix(in srgb, var(--hero-a) 94%, transparent) 26%, color-mix(in srgb, var(--hero-b) 62%, transparent) 46%, color-mix(in srgb, var(--hero-b) 10%, transparent) 66%, transparent 80%),
+      linear-gradient(0deg, color-mix(in srgb, var(--hero-a) 78%, transparent) 0%, transparent 38%),
+      linear-gradient(180deg, color-mix(in srgb, var(--hero-a) 35%, transparent) 0%, transparent 25%); }
+  .hero.has-media h1, .hero.has-media p, .hero.has-media .hero-stats, .hero.has-media .searchbar, .hero.has-media .hero-chips { max-width: min(640px, 58%); }
+  .hero.has-media h1 { text-shadow: 0 2px 24px rgba(0,0,0,.25); }
+}
+@media (min-width: 760px) and (max-width: 1100px) {
+  .hero.has-media h1, .hero.has-media p, .hero.has-media .hero-stats, .hero.has-media .searchbar, .hero.has-media .hero-chips { max-width: 66%; }
+  .hero-media::after { background: linear-gradient(90deg, var(--hero-a) 0%, color-mix(in srgb, var(--hero-a) 92%, transparent) 40%, color-mix(in srgb, var(--hero-b) 45%, transparent) 64%, transparent 88%), linear-gradient(0deg, color-mix(in srgb, var(--hero-a) 80%, transparent) 0%, transparent 40%); }
+}
+@media (max-width: 759px) {
+  .hero.has-media { padding-top: 0; }
+  .hero-media { position: relative; height: 250px; margin: 0 -1.35rem -3.2rem; }
+  .hero-media img { object-position: 62% 22%; -webkit-mask-image: linear-gradient(180deg, #000 45%, transparent 100%); mask-image: linear-gradient(180deg, #000 45%, transparent 100%); }
+  .hero-media::after { background: linear-gradient(180deg, color-mix(in srgb, var(--hero-a) 30%, transparent) 0%, transparent 35%); }
+  .hero.has-media .hero-eyebrow, .hero.has-media h1 { position: relative; }
+  .hero.has-media h1 { text-shadow: 0 2px 18px rgba(0,0,0,.35); }
+}
+@media (max-width: 420px) { .hero-media { margin: 0 -1.05rem -3rem; height: 230px; } }
+@media print { .hero-media { display: none; } }

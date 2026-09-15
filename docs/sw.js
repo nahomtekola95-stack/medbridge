@@ -1,8 +1,8 @@
 /* MedBridge service worker.
    Network-first for the app's own files, so a corrected dose reaches the user the moment they
    are online; the cache is only the offline fallback. Never touches /api. */
-const CACHE = "medbridge-v21";
-const ASSETS = ["./", "./index.html", "./css/style.css", "./fonts/figtree-latin.woff2", "./js/i18n.js", "./js/config.js", "./js/books.js", "./js/drugs-data.js", "./js/conditions.js", "./js/profiles.js", "./js/calc.js", "./js/resus.js", "./js/regimens.js", "./js/compat.js", "./js/substitutes.js", "./js/ethcal.js", "./js/safety.js", "./js/neonatal.js", "./js/interactions.js", "./js/features.js", "./js/extras.js", "./js/review.js", "./js/api.js", "./js/community.js", "./js/app.js", "./manifest.json", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png"];
+const CACHE = "medbridge-v22";
+const ASSETS = ["./", "./index.html", "./css/style.css", "./fonts/figtree-latin.woff2", "./img/hero-doctor-900.webp", "./img/hero-doctor-1600.webp", "./img/hero-doctor-mobile.webp", "./js/i18n.js", "./js/config.js", "./js/books.js", "./js/drugs-data.js", "./js/conditions.js", "./js/profiles.js", "./js/calc.js", "./js/resus.js", "./js/regimens.js", "./js/compat.js", "./js/substitutes.js", "./js/ethcal.js", "./js/safety.js", "./js/neonatal.js", "./js/interactions.js", "./js/features.js", "./js/extras.js", "./js/review.js", "./js/api.js", "./js/community.js", "./js/app.js", "./manifest.json", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE)

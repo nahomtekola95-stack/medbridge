@@ -133,7 +133,8 @@
   function viewDrugs(main) {
     initListState();
     main.innerHTML = `
-      <section class="hero">
+      <section class="hero has-media">
+        <div class="hero-media" aria-hidden="true"><picture><source media="(max-width: 759px)" srcset="img/hero-doctor-mobile.webp"><img src="img/hero-doctor-1600.webp" srcset="img/hero-doctor-900.webp 900w, img/hero-doctor-1600.webp 1600w" sizes="100vw" alt="" decoding="async" fetchpriority="high"></picture></div>
         <span class="hero-eyebrow"><span class="pulse"></span>Bedside drug reference · works offline</span>
         <h1>Give it safely, with what you have.</h1>
         <p>Hospital medicines with no-pump alternatives, doses by weight and drip-rate maths — offline.</p>
