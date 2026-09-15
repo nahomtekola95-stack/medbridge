@@ -19,6 +19,16 @@
   function ethiopianToJdn(y, m, d) {
     return EPOCH + 365 + 365 * (y - 1) + div(y, 4) + 30 * m + d - 31;
   }
+  /** Gregorian date (local JS Date at midnight) for a Julian Day Number. */
+  function jdnToDate(jdn) {
+    const a = jdn + 32044, b = div(4 * a + 3, 146097), c = a - div(146097 * b, 4);
+    const d = div(4 * c + 3, 1461), e = c - div(1461 * d, 4), m = div(5 * e + 2, 153);
+    return new Date(100 * b + d - 4800 + div(m, 10), m + 3 - 12 * div(m, 10) - 1, e - div(153 * m + 2, 5) + 1);
+  }
+  /** JS Date for an Ethiopian year, month (1–13) and day. */
+  const toDate = (y, m, d) => jdnToDate(ethiopianToJdn(y, m, d));
+  /** days in an Ethiopian month: 30, or 5/6 for Pagume (6 when year % 4 === 3) */
+  const monthDays = (y, m) => m < 13 ? 30 : (mod(y, 4) === 3 ? 6 : 5);
   /** Ethiopian date for a JS Date (uses the local calendar day). */
   function fromDate(date) {
     const dt = date instanceof Date ? date : new Date(date);
@@ -29,5 +39,5 @@
     return lang === "am" ? `${MONTHS_AM[e.month - 1]} ${e.day}፣ ${e.year} ዓ.ም.` : `${e.day} ${MONTHS_EN[e.month - 1]} ${e.year} E.C.`;
   }
   const enabled = () => { try { return JSON.parse(localStorage.getItem("mb:ethCal")) === true || (window.I18N && I18N.lang === "am" && JSON.parse(localStorage.getItem("mb:ethCal")) !== false); } catch { return false; } };
-  window.EthCal = { fromDate, format, gregorianToJdn, jdnToEthiopian, ethiopianToJdn, MONTHS_EN, MONTHS_AM, enabled };
+  window.EthCal = { fromDate, format, gregorianToJdn, jdnToEthiopian, ethiopianToJdn, jdnToDate, toDate, monthDays, MONTHS_EN, MONTHS_AM, enabled };
 })();

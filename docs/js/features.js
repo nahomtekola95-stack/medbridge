@@ -265,7 +265,7 @@ window.Features = function (ctx) {
   function viewResus(main, r) {
     const w0 = parseFloat(r.q.w) || patient.weight || "";
     main.innerHTML = `
-      <div class="resus-head">
+      <div class="resus-head emergency">
         <div><h1 style="margin:0">${ic("zap")} Emergency drug card</h1>
           <p class="text-2" style="margin:.2rem 0 0">Every resuscitation dose and volume for one weight. Draft — check against your protocol.</p></div>
         <button type="button" class="btn ghost sm" id="rs-print">${ic("print")}Print</button>
@@ -534,6 +534,7 @@ window.Features = function (ctx) {
 
   function viewSchedules(main, r) {
     const pre = r.q.regimen || "";
+    const bedId = r.q.bed || "", preLabel = r.q.label || "", preW = parseFloat(r.q.w) || null;
     const draw = () => {
       const list = scheds.list();
       main.innerHTML = `
@@ -544,9 +545,10 @@ window.Features = function (ctx) {
           <div class="field"><label for="sc-reg">Regimen</label><select id="sc-reg">${REGIMENS.map(g => `<option value="${g.id}" ${g.id === pre ? "selected" : ""}>${esc(g.name)}</option>`).join("")}</select></div>
           <p id="sc-use" class="small muted" style="margin:-.3rem 0 .6rem"></p>
           <div class="inline">
-            <div class="field"><label for="sc-label">Bed or initials (not full name)</label><input id="sc-label" maxlength="24" placeholder="e.g. Bed 4, A.K."></div>
-            <div class="field" id="sc-wf"><label for="sc-w">Weight (kg)</label><input id="sc-w" type="number" inputmode="decimal" min="0.3" max="250" step="0.1" value="${patient.weight ?? ""}"></div>
+            <div class="field"><label for="sc-label">Bed or initials (not full name)</label><input id="sc-label" maxlength="24" placeholder="e.g. Bed 4, A.K." value="${esc(preLabel)}"></div>
+            <div class="field" id="sc-wf"><label for="sc-w">Weight (kg)</label><input id="sc-w" type="number" inputmode="decimal" min="0.3" max="250" step="0.1" value="${preW ?? patient.weight ?? ""}"></div>
           </div>
+          ${bedId ? `<p class="small muted" style="margin:-.3rem 0 .6rem">${ic("ward")} Linked to the ward board: the schedule will show on this bed.</p>` : ""}
           <div class="field"><label for="sc-start">First dose given at</label><input id="sc-start" type="datetime-local"></div>
           <div class="row"><button type="button" class="btn" id="sc-go">${ic("play")}Start schedule</button>
             <label class="toggle-inline"><input type="checkbox" id="sc-notify" ${store.get("notify", false) ? "checked" : ""}> System notifications</label></div>
@@ -569,7 +571,7 @@ window.Features = function (ctx) {
         if (g.weightBased && !(w > 0 && w < 250)) { toast("Enter the patient's weight.", true); return; }
         const start = new Date($("#sc-start").value).getTime();
         if (!isFinite(start)) { toast("Choose the time of the first dose.", true); return; }
-        const s = { id: Math.random().toString(36).slice(2, 10), regimen: g.id, label: $("#sc-label").value.trim(), weight: g.weightBased ? w : null, start, log: {}, extraHours: 0, created: Date.now() };
+        const s = { id: Math.random().toString(36).slice(2, 10), regimen: g.id, label: $("#sc-label").value.trim(), weight: g.weightBased ? w : null, start, log: {}, extraHours: 0, created: Date.now(), ...(bedId ? { bed: bedId } : {}) };
         // the form records when the FIRST dose was given, so every dose due at that moment counts as given
         for (const d of buildDoses(g, s.weight).filter(d => d.at === 0)) s.log[d.idx + "@" + d.at] = { status: "given", at: start };
         const l = scheds.list(); l.unshift(s); scheds.save(l); toast("Schedule started."); draw();
@@ -674,6 +676,8 @@ window.Features = function (ctx) {
   function viewTools(main) {
     const due = scheds.list().reduce((n, s) => n + (schedState(s)?.dueSoon || 0), 0);
     const T = [
+      ["#/ward", "ward", "Ward board", "Every bed on one screen with acuity, doses due and tasks, and an I-PASS shift handover.", ""],
+      ["#/pregnancy", "calendar", "Pregnancy dating wheel", "Due date and gestational age in Ethiopian and Gregorian dates, milestones, ANC contacts and fetal weight.", ""],
       ["#/resus", "zap", "Emergency drug card", "Every resuscitation dose and volume for one weight. Printable.", "emergency"],
       ["#/drip", "drop", "Drip guide", "Metronome at the target drop rate, plus tap-to-measure the real rate.", ""],
       ["#/schedules", "clock", "Dose schedules", `Clock times, pre-dose checks and reminders for repeat regimens.${due ? ` <b class="bad-text">${due} due</b>` : ""}`, ""],
@@ -681,6 +685,7 @@ window.Features = function (ctx) {
       ["#/calc", "calc", "Calculators", "Drip rate, dose to drops, mg/kg, dilution, Plan C, child weight, units.", ""],
       ["#/techniques", "tool", "No-pump techniques", "Burettes, time-taping, countable concentrations, peripheral pressors.", ""],
       ["#/calc?tab=ciwa", "clipboard", "Alcohol withdrawal score", "CIWA-Ar scoring with the action for each score and a record of scores over time.", ""],
+      ["#/community", "chat", "Network", "Practice notes and stock-outs reported by colleagues across Ethiopia.", ""],
       ["#/interactions", "shield", "Drug interactions", "Check a patient's medicines against each other for harmful combinations.", ""],
       ["#/newborn", "baby", "Newborn doses", "Doses and intervals for one baby by weight, gestation and age in days.", ""],
       ["#/calc?tab=fluids", "drop", "Fluids and blood", "Maintenance, newborn fluids, burns, transfusion volume and oxygen cylinder time.", ""],
@@ -704,7 +709,7 @@ window.Features = function (ctx) {
 
   return {
     patient, syncPatientChip, openPatientDialog, patientDoseCard, caseDoseInline,
-    HIGH_ALERT, computeDose, doseLine, unitOf,
+    HIGH_ALERT, computeDose, doseLine, unitOf, scheds, schedState, regById, timeStr, untilStr, dayStr,
     favs, recent, starButton, bindStars, shortcutsHtml, fuzzyMatch, caseText,
     alternativesHtml, updateDueBadge, checkDue,
     views: { resus: viewResus, drip: viewDrip, schedules: viewSchedules, compat: viewCompat, tools: viewTools },

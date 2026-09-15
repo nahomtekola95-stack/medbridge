@@ -61,18 +61,19 @@
     const parts = path.split("/").filter(Boolean);
     return { view: parts[0] || "drugs", id: parts[1], q: Object.fromEntries(new URLSearchParams(qs || "")) };
   }
-  let CV = null, FX = null, EX = null, RV = null;
+  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null;
   const routes = { drugs: viewDrugs, drug: viewDrug, calc: viewCalc, techniques: viewTechniques, local: viewLocal, setup: viewSetup, about: viewAbout,
     case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r),
     resus: (m, r) => FX.views.resus(m, r), drip: (m, r) => FX.views.drip(m, r), schedules: (m, r) => FX.views.schedules(m, r),
     compat: (m, r) => FX.views.compat(m, r), tools: (m, r) => FX.views.tools(m, r),
     newborn: (m, r) => EX.views.newborn(m, r), interactions: (m, r) => EX.views.interactions(m, r), charts: (m, r) => EX.views.charts(m, r),
-    quiz: (m, r) => EX.views.quiz(m, r), review: (m, r) => RV.views.review(m, r) };
-  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools" };
+    quiz: (m, r) => EX.views.quiz(m, r), review: (m, r) => RV.views.review(m, r),
+    pregnancy: (m, r) => OB.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
+  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", handover: "ward" };
   function render() {
     const r = parseHash();
     const main = $("#app");
-    main.innerHTML = "";
+    main.innerHTML = ""; main.onclick = null; main.oninput = null;
     (routes[r.view] || viewDrugs)(main, r);
     main.classList.remove("enter"); void main.offsetWidth; main.classList.add("enter");
     window.I18N?.afterRender(r.view);
@@ -388,6 +389,7 @@
       <div class="row case-tools">
         <button type="button" class="btn ghost sm" data-open-patient>${ic("user")}${FX.patient.weight ? `Doses for ${Calc.round(FX.patient.weight, 1)} kg` : "Set weight for doses"}</button>
         <a class="btn ghost sm" href="#/resus${FX.patient.weight ? "?w=" + FX.patient.weight : ""}">${ic("zap")}Emergency card</a>
+        ${c.group === "obstetric" ? `<a class="btn ghost sm" href="#/pregnancy">${ic("calendar")}Pregnancy dates</a>` : ""}
         ${regs.map(g => `<a class="btn ghost sm" href="#/schedules?regimen=${g.id}">${ic("clock")}Schedule: ${esc(g.name.split(" — ")[0])}</a>`).join("")}
         ${EX.shareButton(`MedBridge: ${c.name}\n${c.steps?.length ? "Steps: " + c.steps.slice(0, 4).map((x, i) => `${i + 1}. ${x}`).join(" ") + "\n" : ""}First line: ${c.drugs.filter(x => x.role === "first").map(x => `${(DRUG_DB.find(y => y.id === x.id)?.name || x.id).split(" (")[0]}${x.note ? " (" + x.note + ")" : ""}`).join("; ")}${FX.patient.weight ? `\nWeight ${Calc.round(FX.patient.weight, 1)} kg` : ""}\nDraft reference. Confirm against the national protocol.`)}
       </div>
@@ -750,6 +752,8 @@
     FX = window.Features({ $, esc, ic, toast, render, ROLES });
     EX = window.Extras({ $, esc, ic, toast, render, ROLES, FX, textbookHtml });
     RV = window.Review({ $, esc, ic, toast, render });
+    OB = window.Obstetric({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
+    WD = window.Ward({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     FX.syncPatientChip(); FX.updateDueBadge(); FX.checkDue();
     $("#patient-chip")?.addEventListener("click", () => FX.openPatientDialog());
     const syncAccount = () => {

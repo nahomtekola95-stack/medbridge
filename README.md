@@ -98,6 +98,28 @@ floating bottom navigation, category-tinted drug tiles, pill tabs, and Figtree t
 tokens at the top of `css/style.css`. Text contrast meets WCAG AA, tap targets are at least 44 px,
 transitions run 180–260 ms and are switched off for reduced-motion users.
 
+## Ward board, shift handover and pregnancy dating
+
+- **Ward board** (`#/ward`, Ward in the navigation): one card per bed with bed number, initials,
+  age, weight, gestational age, working case or diagnosis, allergies, illness severity
+  (stable / watch / unstable), last observations, tasks and the next dose from every schedule
+  started for that bed. Totals for unstable beds, overdue doses and open tasks. "Use weight"
+  sets the patient weight for dosing; "Discharge" removes the bed and ends its schedules.
+  Stored only on the device (`mb:wardBoard`); full names are rejected.
+- **Shift handover** (`#/handover`): I-PASS for every bed (illness severity, patient summary,
+  action list with doses due in the next 12 hours and open tasks, situation awareness with the
+  contingency plan, synthesis tick by the receiver). Print, share, and record who handed over to
+  whom.
+- **Pregnancy dating wheel** (`#/pregnancy`): EDD and gestational age from LNMP (with cycle
+  length), ultrasound, IVF embryo transfer (day 3 or 5) or conception, entered in Ethiopian or
+  Gregorian dates; a trimester wheel; milestone dates (dating scan, NT, first heart tone,
+  aspirin, cervical length, anatomy scan, OGTT, steroid window, anti-D, viability, magnesium
+  neuroprotection, surveillance, term, elective caesarean, induction at 41 weeks, post-term) and
+  the WHO 2016 eight-contact ANC schedule, all in both calendars; LNMP-versus-ultrasound
+  redating (ACOG Committee Opinion 700); estimated fetal weight (Hadlock 1985) with centile
+  (Hadlock 1991); amniotic fluid index. Tests: `node tests/obstetric.test.js` (includes the
+  sample case Tir 5, 2018 → EDD Tikimt 10, 2019).
+
 ## Psychiatry and mental health
 
 Referenced to **Kaplan & Sadock's Synopsis of Psychiatry 12th ed. (2022)** and **DSM-5-TR Clinical
