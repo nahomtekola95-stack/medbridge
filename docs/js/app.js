@@ -12,7 +12,7 @@
     clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 3600);
   }
   const catStyle = (cat) => `style="--cat: var(--c-${cat})"`;
-  const QUICK = [["Anaphylaxis", "anaphylaxis"], ["Cardiac arrest", "cardiac arrest"], ["Shock", "shock"], ["Status epilepticus", "status epilepticus"], ["Eclampsia", "eclampsia"], ["PPH", "PPH"], ["DKA", "DKA"], ["Hypoglycaemia", "hypoglycaemia"], ["Severe malaria", "severe malaria"], ["Dehydration", "dehydration"], ["Hyperkalaemia", "hyperkalaemia"], ["Asthma", "asthma"], ["Preterm labour", "preterm labour"], ["Tetanus", "tetanus"], ["Poisoning", "poisoning"], ["Meningitis", "meningitis"], ["Transfusion", "transfusion"], ["Local anaesthesia", "local anaesthesia"]];
+  const QUICK = [["Anaphylaxis", "anaphylaxis"], ["Cardiac arrest", "cardiac arrest"], ["Shock", "shock"], ["Status epilepticus", "status epilepticus"], ["Eclampsia", "eclampsia"], ["PPH", "PPH"], ["DKA", "DKA"], ["Hypoglycaemia", "hypoglycaemia"], ["Severe malaria", "severe malaria"], ["Dehydration", "dehydration"], ["Hyperkalaemia", "hyperkalaemia"], ["Asthma", "asthma"], ["Preterm labour", "preterm labour"], ["Tetanus", "tetanus"], ["Poisoning", "poisoning"], ["Meningitis", "meningitis"], ["Transfusion", "transfusion"], ["Local anaesthesia", "local anaesthesia"], ["Agitation", "agitation"], ["Alcohol withdrawal", "alcohol withdrawal"], ["Suicide risk", "suicide"], ["Psychosis", "psychosis"]];
 
   /* ---------- persistent settings ---------- */
   const store = {
@@ -348,7 +348,7 @@
 
   /* ---------- Calculators ---------- */
   function viewCalc(main, r) {
-    const tabs = [["drip", "Drip rate"], ["infusion", "Dose → drops"], ["weight", "mg/kg"], ["dilution", "Dilution"], ["planc", "Plan C fluids"], ["pedwt", "Child weight"], ["fluids", "Fluids & blood"], ["kidney", "Kidney"], ["units", "Units"]];
+    const tabs = [["drip", "Drip rate"], ["infusion", "Dose → drops"], ["weight", "mg/kg"], ["dilution", "Dilution"], ["planc", "Plan C fluids"], ["pedwt", "Child weight"], ["fluids", "Fluids & blood"], ["kidney", "Kidney"], ["ciwa", "Alcohol withdrawal"], ["units", "Units"]];
     const presetDrug = DRUG_DB.find(d => d.id === r.q.drug);
     let active = r.q.tab || (presetDrug ? ({ infusion: "infusion", weight: "weight", planC: "planc" }[presetDrug.calc?.type] || "drip") : "drip");
     main.innerHTML = `
@@ -367,6 +367,7 @@
 
     const views = {
       fluids() { EX.calcFluids(pane, settings.dropFactor); },
+      ciwa() { EX.calcCiwa(pane); },
       kidney() { EX.calcKidney(pane); },
       drip() {
         pane.innerHTML = `<div class="card">
@@ -647,7 +648,7 @@
       <div class="callout warn">${ic("alert")}<div><strong>Draft content.</strong> Every drug entry in this build is marked “draft” and has not yet been verified by a pharmacist or physician. It must not be used for patient care until the review workflow in the README is completed.</div></div>
       <div class="card"><h3>Purpose</h3><p>A reference for trained health workers on how hospital-level medicines can be given safely when infusion pumps, syringe drivers, monitors or specific formulations are not available — using validated intermittent regimens, alternative routes, dilutions and gravity drip technique.</p>
         <h3>What it is not</h3><p>It does not replace national treatment guidelines, the prescriber's judgement, or a pharmacist. Doses are for adults unless stated; paediatric doses must be checked against the WHO Pocket Book, Nelson Textbook of Pediatrics or the national formulary.</p>
-        <h3>Sources</h3><p>WHO (Pocket Book of Hospital Care for Children 2013; Managing Complications in Pregnancy and Childbirth 2017; Guidelines for malaria 2023), MSF Clinical Guidelines and Essential Drugs, and five textbooks: Harrison's Principles of Internal Medicine 22nd ed. (2025), Williams Obstetrics 25th ed. (2018), Gabbe's Obstetrics 9th ed. (2025), Schwartz's Principles of Surgery 11th ed. (2019) and Nelson Textbook of Pediatrics 22nd ed. (2024), plus the primary trials cited on each page.</p>
+        <h3>Sources</h3><p>WHO (Pocket Book of Hospital Care for Children 2013; Managing Complications in Pregnancy and Childbirth 2017; Guidelines for malaria 2023), MSF Clinical Guidelines and Essential Drugs, and seven textbooks: Harrison's Principles of Internal Medicine 22nd ed. (2025), Williams Obstetrics 25th ed. (2018), Gabbe's Obstetrics 9th ed. (2025), Schwartz's Principles of Surgery 11th ed. (2019) Nelson Textbook of Pediatrics 22nd ed. (2024), Kaplan & Sadock's Synopsis of Psychiatry 12th ed. (2022) and DSM-5-TR Clinical Cases (2023), plus WHO mhGAP Intervention Guide 2.0 for mental health and the primary trials cited on each page.</p>
         <h3>Privacy</h3><p>No account, no network calls, no analytics. Settings and the last weight you entered are stored only in this browser.</p></div>`;
   }
 

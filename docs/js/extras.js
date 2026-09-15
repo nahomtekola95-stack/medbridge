@@ -426,6 +426,58 @@ window.Extras = function (ctx) {
     show(views[sub] ? sub : "maint");
   }
 
+
+  /* =========================================================
+     Alcohol withdrawal: CIWA-Ar (Sullivan et al. 1989, public domain)
+     ========================================================= */
+  const CIWA = window.CIWA_AR || {
+    items: [
+      { key: "nausea", label: "Nausea and vomiting", max: 7, anchors: { 0: "None", 1: "Mild nausea, no vomiting", 4: "Intermittent nausea with dry heaves", 7: "Constant nausea, frequent dry heaves and vomiting" } },
+      { key: "tremor", label: "Tremor (arms out, fingers spread)", max: 7, anchors: { 0: "None", 1: "Not visible, felt fingertip to fingertip", 4: "Moderate, with arms extended", 7: "Severe, even with arms not extended" } },
+      { key: "sweats", label: "Paroxysmal sweats", max: 7, anchors: { 0: "None", 1: "Barely perceptible, palms moist", 4: "Beads of sweat on forehead", 7: "Drenching sweats" } },
+      { key: "anxiety", label: "Anxiety", max: 7, anchors: { 0: "At ease", 1: "Mildly anxious", 4: "Moderately anxious or guarded", 7: "As in acute panic or delirium" } },
+      { key: "agitation", label: "Agitation", max: 7, anchors: { 0: "Normal activity", 1: "Somewhat more active than normal", 4: "Moderately fidgety and restless", 7: "Paces or thrashes about constantly" } },
+      { key: "tactile", label: "Tactile disturbances (itching, pins and needles, bugs on skin)", max: 7, anchors: { 0: "None", 1: "Very mild", 4: "Moderately severe hallucinations", 7: "Continuous hallucinations" } },
+      { key: "auditory", label: "Auditory disturbances (sounds, voices)", max: 7, anchors: { 0: "None", 1: "Very mild harshness or sensitivity", 4: "Moderately severe hallucinations", 7: "Continuous hallucinations" } },
+      { key: "visual", label: "Visual disturbances (light sensitivity, seeing things)", max: 7, anchors: { 0: "None", 1: "Very mild sensitivity to light", 4: "Moderately severe hallucinations", 7: "Continuous hallucinations" } },
+      { key: "headache", label: "Headache, fullness in head", max: 7, anchors: { 0: "None", 1: "Very mild", 4: "Moderately severe", 7: "Extremely severe" } },
+      { key: "orientation", label: "Orientation and clouding of sensorium", max: 4, anchors: { 0: "Oriented, can do serial additions", 1: "Cannot do serial additions or unsure of date", 2: "Date wrong by 2 days or less", 3: "Date wrong by more than 2 days", 4: "Disoriented for place or person" } }
+    ],
+    bands: [
+      {"min": 0, "max": 9, "label": "Absent to mild withdrawal", "action": "Supportive care, fluids, thiamine. Usually no benzodiazepine needed in symptom-triggered care. Reassess every 4 h (every 1–2 h in the first 24–48 h after the last drink or if previous seizures or delirium tremens)."},
+      {"min": 10, "max": 15, "label": "Moderate withdrawal", "action": "Give a benzodiazepine dose (e.g. diazepam 10–20 mg orally) and reassess in 1 h. Thresholds vary between protocols (often 8 or 10); confirm local protocol."},
+      {"min": 16, "max": 20, "label": "Severe withdrawal", "action": "Give diazepam 20 mg orally (or per local protocol) and reassess hourly; senior review; look for infection, hypoglycaemia and Wernicke encephalopathy."},
+      {"min": 21, "max": 67, "label": "Very severe withdrawal — high risk of seizures and delirium tremens", "action": "Urgent medical review; closer monitoring; IV benzodiazepine titration with airway support if unable to take oral; consider transfer to a higher level of care."}
+    ],
+    ref: "CIWA-Ar: Sullivan JT et al. Br J Addict 1989;84:1353–7 (public domain); anchors paraphrased"
+  };
+  function calcCiwa(pane) {
+    const log = () => store.get("ciwaLog", []);
+    pane.innerHTML = `<div class="card"><h3>Alcohol withdrawal score (CIWA-Ar)</h3>
+      <p class="small muted">Score each item from what you see and what the patient tells you. Not valid if the patient cannot communicate, or when symptoms may be from another cause such as sepsis, head injury, hypoglycaemia or hepatic encephalopathy.</p>
+      <div class="ciwa" data-no-i18n lang="en">${CIWA.items.map(it => `<div class="field ciwa-item"><label for="cw-${it.key}">${esc(it.label)} <span class="muted">(0–${it.max})</span></label>
+        <select id="cw-${it.key}" data-ciwa>${Array.from({ length: it.max + 1 }, (_, v) => `<option value="${v}">${v}${it.anchors[v] ? " · " + esc(it.anchors[v]) : ""}</option>`).join("")}</select></div>`).join("")}</div>
+      <div id="cw-out"></div>
+      <div class="row" style="margin-top:.6rem"><button type="button" class="btn sm" id="cw-save">${ic("check")}Record this score</button><button type="button" class="btn ghost sm" id="cw-reset">Reset</button><a class="btn ghost sm" href="#/case/alcohol-withdrawal">${ic("clipboard")}Alcohol withdrawal case</a></div>
+      <p class="small muted" style="margin:.5rem 0 0"><span data-no-i18n lang="en">${esc(CIWA.ref)}.</span> Thresholds vary between protocols: follow your hospital's.</p></div>
+      <div class="card"><h3>Scores recorded on this device</h3><div id="cw-log"></div></div>`;
+    const total = () => [...pane.querySelectorAll("[data-ciwa]")].reduce((n, el) => n + +el.value, 0);
+    const band = (t) => CIWA.bands.find(b => t >= b.min && t <= b.max);
+    const draw = () => {
+      const t = total(), b = band(t);
+      $("#cw-out", pane).innerHTML = `<div class="result"><div class="big">${t} / 67</div><div class="sub"><b>${esc(b.label)}.</b> <span data-no-i18n lang="en">${esc(b.action)}</span></div></div>`;
+      const l = log();
+      $("#cw-log", pane).innerHTML = l.length ? `<table class="plain small"><tr><th>When</th><th>Score</th><th>Label</th></tr>${l.map(x => `<tr><td>${new Date(x.at).toLocaleString([], { weekday: "short", hour: "2-digit", minute: "2-digit" })}</td><td><b>${x.total}</b></td><td>${esc(x.label || "")}</td></tr>`).join("")}</table>
+        <div class="row" style="margin-top:.5rem">${shareButton(`MedBridge CIWA-Ar scores${patient.weight ? " (" + fmt(patient.weight, 1) + " kg)" : ""}:\n${l.map(x => `${new Date(x.at).toLocaleString([], { weekday: "short", hour: "2-digit", minute: "2-digit" })}: ${x.total}`).join("\n")}\n${DRAFT}`)}<button type="button" class="btn ghost sm" id="cw-clear">Clear scores</button></div>`
+        : `<p class="small muted">No scores recorded yet.</p>`;
+      const c = $("#cw-clear", pane); if (c) c.onclick = () => { store.set("ciwaLog", []); draw(); };
+    };
+    pane.addEventListener("change", draw);
+    $("#cw-save", pane).addEventListener("click", () => { const t = total(); const l = log(); l.unshift({ total: t, label: band(t).label, at: Date.now() }); store.set("ciwaLog", l.slice(0, 24)); toast(`Score ${t} recorded.`); draw(); });
+    $("#cw-reset", pane).addEventListener("click", () => { pane.querySelectorAll("[data-ciwa]").forEach(el => el.value = "0"); draw(); });
+    draw();
+  }
+
   /* =========================================================
      Wall charts
      ========================================================= */
@@ -622,7 +674,7 @@ window.Extras = function (ctx) {
 
   return {
     dateLabel, share, shareButton, neonatalCard, safetyChips, safetyCards, interactionsHtml, doseActions,
-    calcKidney, calcFluids, renalBand, neoRule, neoDose,
+    calcKidney, calcFluids, calcCiwa, CIWA, renalBand, neoRule, neoDose,
     views: { newborn: viewNewborn, interactions: viewInteractions, charts: viewCharts, quiz: viewQuiz },
     _test: { neoRule, neoDose, renalBand, GEN, expectedDose }
   };

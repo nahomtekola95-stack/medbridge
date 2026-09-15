@@ -110,7 +110,7 @@ window.Features = function (ctx) {
   }
 
   /* High-alert medicines (ISMP / WHO Medication Without Harm): an independent second check before giving. */
-  const HIGH_ALERT = ["insulin-soluble", "potassium-chloride", "magnesium-sulfate", "heparin", "adrenaline", "noradrenaline", "dopamine", "amiodarone", "digoxin", "morphine", "midazolam", "ketamine", "oxytocin", "hypertonic-saline", "quinine", "phenytoin", "aminophylline"];
+  const HIGH_ALERT = ["insulin-soluble", "potassium-chloride", "magnesium-sulfate", "heparin", "adrenaline", "noradrenaline", "dopamine", "amiodarone", "digoxin", "morphine", "midazolam", "lorazepam", "ketamine", "oxytocin", "hypertonic-saline", "quinine", "phenytoin", "aminophylline"];
 
   /* ---------- generic dose computation ---------- */
   function computeDose(spec, weight) {
@@ -680,6 +680,7 @@ window.Features = function (ctx) {
       ["#/compat", "swap", "Never mix", "Drugs and fluids that must not share a line or syringe.", ""],
       ["#/calc", "calc", "Calculators", "Drip rate, dose to drops, mg/kg, dilution, Plan C, child weight, units.", ""],
       ["#/techniques", "tool", "No-pump techniques", "Burettes, time-taping, countable concentrations, peripheral pressors.", ""],
+      ["#/calc?tab=ciwa", "clipboard", "Alcohol withdrawal score", "CIWA-Ar scoring with the action for each score and a record of scores over time.", ""],
       ["#/interactions", "shield", "Drug interactions", "Check a patient's medicines against each other for harmful combinations.", ""],
       ["#/newborn", "baby", "Newborn doses", "Doses and intervals for one baby by weight, gestation and age in days.", ""],
       ["#/calc?tab=fluids", "drop", "Fluids and blood", "Maintenance, newborn fluids, burns, transfusion volume and oxygen cylinder time.", ""],

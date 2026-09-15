@@ -13,7 +13,7 @@
   --green: #1c7c54; --green-soft: #dcf3e7;
   --amber: #8a5a00; --amber-soft: #fff3d6; --amber-line: #efc264;
   --red: #b3261e; --red-soft: #fde9e7; --red-line: #f0a9a3;
-  --c-emergency:#d9453c; --c-obstetric:#d6478f; --c-cardio:#e2711d; --c-endocrine:#7a4fd0; --c-electrolyte:#2b7bd6; --c-infection:#1f9d55; --c-respiratory:#1c9bc8; --c-neuro:#6d5bd0; --c-analgesia:#c98a12; --c-haem:#c93a63; --c-nutrition:#5c8a1f;
+  --c-emergency:#d9453c; --c-obstetric:#d6478f; --c-cardio:#e2711d; --c-endocrine:#7a4fd0; --c-electrolyte:#2b7bd6; --c-infection:#1f9d55; --c-respiratory:#1c9bc8; --c-neuro:#6d5bd0; --c-analgesia:#c98a12; --c-haem:#c93a63; --c-nutrition:#5c8a1f; --c-psychiatry:#3f7f8f;
   --shadow-1: 0 1px 2px rgba(19,35,43,.05), 0 2px 8px rgba(19,35,43,.05);
   --shadow-2: 0 6px 20px rgba(19,35,43,.10);
   --ring: rgba(15,124,140,.35);
@@ -33,7 +33,7 @@
   --green: #6fd3a3; --green-soft: #113627;
   --amber: #f3cf86; --amber-soft: #3a2a0c; --amber-line: #8b6a2a;
   --red: #ff9f97; --red-soft: #3f1a17; --red-line: #7c3b36;
-  --c-emergency:#ff7b72; --c-obstetric:#ff85c2; --c-cardio:#ffa25c; --c-endocrine:#b79cff; --c-electrolyte:#6fb2ff; --c-infection:#5fd68f; --c-respiratory:#63c9ee; --c-neuro:#a99bff; --c-analgesia:#f1c05a; --c-haem:#ff7f9f; --c-nutrition:#a3d16a;
+  --c-emergency:#ff7b72; --c-obstetric:#ff85c2; --c-cardio:#ffa25c; --c-endocrine:#b79cff; --c-electrolyte:#6fb2ff; --c-infection:#5fd68f; --c-respiratory:#63c9ee; --c-neuro:#a99bff; --c-analgesia:#f1c05a; --c-haem:#ff7f9f; --c-nutrition:#a3d16a; --c-psychiatry:#7fc4d4;
   --shadow-1: 0 1px 2px rgba(0,0,0,.35); --shadow-2: 0 8px 24px rgba(0,0,0,.45);
   --ring: rgba(63,193,210,.45);
 }
@@ -47,7 +47,7 @@
   --green: #6fd3a3; --green-soft: #113627;
   --amber: #f3cf86; --amber-soft: #3a2a0c; --amber-line: #8b6a2a;
   --red: #ff9f97; --red-soft: #3f1a17; --red-line: #7c3b36;
-  --c-emergency:#ff7b72; --c-obstetric:#ff85c2; --c-cardio:#ffa25c; --c-endocrine:#b79cff; --c-electrolyte:#6fb2ff; --c-infection:#5fd68f; --c-respiratory:#63c9ee; --c-neuro:#a99bff; --c-analgesia:#f1c05a; --c-haem:#ff7f9f; --c-nutrition:#a3d16a;
+  --c-emergency:#ff7b72; --c-obstetric:#ff85c2; --c-cardio:#ffa25c; --c-endocrine:#b79cff; --c-electrolyte:#6fb2ff; --c-infection:#5fd68f; --c-respiratory:#63c9ee; --c-neuro:#a99bff; --c-analgesia:#f1c05a; --c-haem:#ff7f9f; --c-nutrition:#a3d16a; --c-psychiatry:#7fc4d4;
   --shadow-1: 0 1px 2px rgba(0,0,0,.35); --shadow-2: 0 8px 24px rgba(0,0,0,.45);
   --ring: rgba(63,193,210,.45);
 } }
@@ -602,3 +602,7 @@ button.card.tool { text-align: left; font: inherit; color: inherit; cursor: poin
 .credit a { color: var(--muted); }
 .credit-name { font-weight: 700; color: var(--text-2); }
 @media print { .credit { display: none !important; } }
+
+.ciwa { display: grid; gap: 0 1rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .ciwa { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.ciwa-item label { font-size: .86rem; }

@@ -112,5 +112,57 @@ window.REGIMENS = [
     checks: ["No other paracetamol-containing medicine given", "Daily total within the maximum"],
     ifFail: "Max 75 mg/kg/day in children (60 under 2 years); adults 4 g, 2 g in cirrhosis or heavy alcohol use.",
     ref: "Nelson 22nd ed., Table 93.6, p. 681; Harrison 22nd ed."
+  },
+  {
+    id: "thiamine-wernicke",
+    drug: "thiamine",
+    name: "Thiamine — high-dose IV for suspected Wernicke encephalopathy",
+    use: "Suspected or established Wernicke encephalopathy (alcohol dependence, malnutrition, hyperemesis, prolonged vomiting)",
+    weightBased: false,
+    doses: [],
+    every: 8,
+    until: 64,
+    repeatLabel: "High-dose IV",
+    repeatText: "Thiamine 500 mg (Pabrinex 2 pairs, or 5 mL of 100 mg/mL) in 50–100 mL 0.9 % saline IV over 30 min",
+    extendable: "Three times daily for 2–3 days (this schedule covers 3 days). If eye signs, gait or confusion improve, continue 250 mg IV or IM once daily for 3–5 days, then oral thiamine 100 mg three times daily. Doses vary between guidelines — confirm with local protocol",
+    checks: [
+      "Thiamine started before or with any glucose infusion or feed",
+      "Eye movements, gait and orientation assessed and recorded",
+      "Infusion running over 30 minutes, adrenaline available (rare anaphylaxis)",
+      "Magnesium given or checked (low magnesium blocks the response)"
+    ],
+    ifFail: "If there is no improvement after 3 days of high-dose treatment, reconsider the diagnosis (hypoglycaemia, head injury, hepatic encephalopathy, meningitis, delirium tremens, pellagra) and seek senior review; do not stop thiamine while the patient is still drinking or malnourished. If IV access is lost, give the dose IM (split between sites, about 5 mL maximum per site in adults). Stop the infusion and treat as anaphylaxis if wheeze, rash, swelling or collapse occur.",
+    ref: "Royal College of Physicians / Thomson AD et al. 2002; BNF (Pabrinex); EFNS 2010; Kaplan & Sadock 12th ed. 2022, ch. 4.2, pdf p. 915"
+  },
+  {
+    id: "diazepam-alcohol-withdrawal",
+    drug: "diazepam",
+    case: "alcohol-withdrawal",
+    name: "Diazepam oral loading — alcohol withdrawal (symptom-triggered)",
+    use: "Inpatient alcohol withdrawal in an adult who can swallow and communicate (not delirium tremens needing IV treatment)",
+    weightBased: false,
+    doses: [
+      {
+        at: 0,
+        label: "Dose 1",
+        text: "Diazepam 10–20 mg orally",
+        note: "Give thiamine first or at the same time"
+      }
+    ],
+    every: 2,
+    from: 2,
+    until: 12,
+    repeatLabel: "Review, dose if still in withdrawal",
+    repeatText: "Diazepam 10–20 mg orally ONLY if withdrawal signs persist (CIWA-Ar 10 or more) and the patient is not drowsy; otherwise record as withheld",
+    extendable: "mhGAP allows repeating every 2 h until withdrawal signs are gone or the patient is lightly sedated. Once settled, add up the first 24 h total and give it in divided doses, reducing by about 20% a day over 4–7 days (Kaplan). Extend only with senior review",
+    checks: [
+      "CIWA-Ar score done now (dose only if 10 or more, or clear tremor, sweating and agitation if the patient cannot be scored)",
+      "Patient awake or easily roused by voice — not drowsy (omit the dose if sleepy)",
+      "Respiratory rate 12/min or more and oxygen saturation 92% or more if measurable",
+      "No new confusion, seizure, jaundice or head injury since the last review (these need medical review, not just another dose)",
+      "Thiamine has been given"
+    ],
+    ifFail: "Drowsy, respiratory rate under 12 or low saturation: withhold, lie on side, support the airway; flumazenil is not in this app. If withdrawal is still severe after about 60 mg in total, or confusion, hallucinations or seizures develop: urgent medical review for delirium tremens, infection, hypoglycaemia, head injury or Wernicke encephalopathy. In liver failure, older age or lung disease use lorazepam instead. Never give diazepam IM.",
+    ref: "WHO mhGAP Intervention Guide 2.0 (2016), Table 1 medication chart: diazepam 10–20 mg every 2 h for observable alcohol withdrawal until features resolve or the person is lightly sedated (lower doses, up to 10 mg four times daily, as outpatient); Kaplan & Sadock's Synopsis 12th ed. 2022, ch. 4.2, pdf pp. 908–909 (titrate from a high dose, omit doses if sleepy, taper ~20%/day, no IM diazepam)"
   }
 ];

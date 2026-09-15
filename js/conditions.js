@@ -9,7 +9,8 @@ window.CASE_GROUPS = {
   obstetric:  "Obstetric",
   surgical:   "Surgical",
   medical:    "Adult medical",
-  paediatric: "Paediatric & neonatal"
+  paediatric: "Paediatric & neonatal",
+  psychiatric: "Psychiatry & mental health"
 };
 
 window.CONDITIONS = [
@@ -1607,6 +1608,1836 @@ window.CONDITIONS = [
       book: "nelson",
       text: "Children with HIV and drug-susceptible TB: four drugs for 2 months then isoniazid and rifampicin; treatment should be daily, not intermittent, with close monitoring for adverse reactions and rifampicin–antiretroviral interactions.",
       ref: "Nelson 22nd ed. 2024, ch. 261 Tuberculosis, p. 1851"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "acute-agitation",
+  name: "Acute agitation and rapid tranquillisation",
+  group: "psychiatric",
+  aka: [
+    "violent patient",
+    "aggression",
+    "combative",
+    "rapid tranquilization",
+    "chemical restraint",
+    "sedation of agitated patient"
+  ],
+  summary: "A person who is agitated or violent is often frightened, ill or intoxicated. Talk first, offer oral medicine second, and inject only when there is serious and immediate danger. Every sedated or restrained person needs close observation, because over-sedation, airway loss and positional asphyxia kill.",
+  redflags: [
+    "Fever, confusion or fluctuating alertness: this may be delirium, meningitis, cerebral malaria or withdrawal, not a psychiatric illness",
+    "Low glucose, low oxygen saturation, head injury or recent seizure",
+    "Alcohol, khat, cannabis, stimulant or unknown drug use, or alcohol withdrawal",
+    "Weapon, threats or violence already happened",
+    "Older age, pregnancy, heart disease, or never had an antipsychotic before",
+    "Sedated person who is snoring, slow breathing (under 10/min) or cannot be woken"
+  ],
+  steps: [
+    "Keep yourself, staff and other patients safe: a quiet space, exits clear, enough staff present, no one alone with the patient.",
+    "De-escalate: one calm person speaks, uses the person's name, listens, offers food, water or a phone call to family, and explains what will happen.",
+    "Check quickly for a physical cause: glucose, temperature, oxygen saturation, pupils, signs of head injury, intoxication or withdrawal. Treat low glucose at once (give thiamine as well if alcohol use or malnutrition is likely).",
+    "Offer oral medicine first and let the person choose if possible: lorazepam or diazepam orally, or an oral antipsychotic (haloperidol or olanzapine) if they are psychotic and have taken one before.",
+    "Inject only if oral medicine is refused or fails and danger is immediate. With no ECG and no history of antipsychotic use, IM lorazepam is the safer choice (NICE NG10). IM haloperidol with IM promethazine is an option where lorazepam is unavailable and there is no known heart disease. Give one dose, wait 30–60 minutes, then reassess before repeating.",
+    "Do not give IM diazepam (erratic absorption) or IV doses without airway equipment and a bag-valve-mask at the bedside.",
+    "Physical restraint is a last resort to give treatment or prevent serious harm. Use trained staff, the minimum force for the shortest time, one person watching the airway and face. Avoid face-down holds and never press on the neck, chest, back or abdomen.",
+    "After any injection or restraint, observe pulse, BP, respiratory rate, temperature, oxygen saturation and level of consciousness at least every 15 minutes for the first hour, then hourly until fully alert (NICE NG10). Record in the chart.",
+    "Capacity and consent: a person can refuse treatment if they can understand, remember, weigh and communicate the decision. In an emergency without capacity, give the least restrictive treatment needed to prevent serious harm, following hospital policy and national law. Document the danger, who decided, what was given and why.",
+    "Afterwards: talk with the patient about what happened, review the cause (medical, psychiatric, substance) and plan to prevent a repeat."
+  ],
+  drugs: [
+    {
+      id: "lorazepam",
+      role: "first",
+      note: "Oral 1–2 mg, or 1–2 mg IM/IV if oral is refused; repeat after 30–60 min if needed, up to the maximum in the local protocol. Reliable IM absorption. Halve the dose in older, frail or lung disease patients. Flumazenil is not stocked in this app; support breathing instead."
+    },
+    {
+      id: "diazepam",
+      role: "alternative",
+      note: "Oral 5–10 mg, or 5–10 mg IV slowly over 2 minutes with a bag-valve-mask ready (Kaplan). Never IM. Long acting; repeated doses accumulate, especially in liver disease and older people."
+    },
+    {
+      id: "haloperidol",
+      role: "first",
+      note: "For agitation with psychosis or mania: 2–5 mg orally or IM; repeat after 30–60 min if needed; usual maximum 20 mg in 24 h (confirm local protocol). Avoid in suspected alcohol withdrawal seizures, Parkinson's disease or Lewy body dementia. Risk of acute dystonia (keep biperiden ready) and QT prolongation."
+    },
+    {
+      id: "promethazine",
+      role: "adjunct",
+      note: "25–50 mg IM combined with IM haloperidol (NICE NG10). Sedating; also lowers the chance of dystonia. Avoid in delirium (anticholinergic)."
+    },
+    {
+      id: "olanzapine",
+      role: "alternative",
+      note: "Oral 5–10 mg, or 10 mg IM where available. Do not give IM olanzapine within about 1 hour of an IM or IV benzodiazepine (Kaplan: combination not approved)."
+    },
+    {
+      id: "midazolam",
+      role: "alternative",
+      note: "Reliable IM absorption. Used for severe agitation in emergency settings where lorazepam is unavailable; strong respiratory depressant, so give only with continuous observation and airway equipment (confirm local protocol)."
+    },
+    {
+      id: "chlorpromazine",
+      role: "avoid",
+      note: "Avoid IM for rapid tranquillisation: marked postural hypotension, painful injection, lowers seizure threshold and is dangerous in delirium or intoxication."
+    },
+    {
+      id: "biperiden",
+      role: "supportive",
+      note: "Treatment of acute dystonia after haloperidol: 2 mg IM or slow IV (Kaplan). Not needed routinely."
+    },
+    {
+      id: "dextrose",
+      role: "supportive",
+      note: "Check glucose in every agitated patient and treat hypoglycaemia; give thiamine too if alcohol use or malnutrition is likely."
+    },
+    {
+      id: "oxygen",
+      role: "supportive",
+      note: "For low saturation after sedation; position on the side and support the airway."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Violent patient: say calmly that violence is not acceptable, approach in a non-threatening way, reassure and offer medication, and only then prepare a trained team for restraint.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2552"
+    },
+    {
+      book: "kaplan",
+      text: "Haloperidol can be repeated every 30–60 minutes until the patient is settled; a benzodiazepine can be used instead of or with it to lower the antipsychotic dose, and is preferred when the drug taken is strongly anticholinergic.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2560"
+    },
+    {
+      book: "kaplan",
+      text: "Small oral or IM doses every 30–60 minutes are better than one large dose, which can over-sedate; reduce doses as behaviour settles and monitor blood pressure and vital signs.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2561"
+    },
+    {
+      book: "kaplan",
+      text: "Restraint: only after non-physical approaches fail, least restrictive and dignified, by trained staff, with continuous observation and clear local rules on monitoring and ending it.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2562"
+    },
+    {
+      book: "kaplan",
+      text: "IM olanzapine 10 mg is used for acute agitation in schizophrenia and bipolar disorder; giving it together with a benzodiazepine is not approved.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1934"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: in a severely agitated man, safety came first (brief restraint, IM lorazepam plus haloperidol, an antihistamine ready for dystonia), while intoxication, withdrawal and delirium were being ruled out.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.1 Emotionally Disturbed, pdf p. 90"
+    }
+  ],
+  sources: [
+    {
+      name: "NICE NG10. Violence and aggression: short-term management in mental health, health and community settings, 2015"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "American College of Emergency Physicians. Use of patient restraints, policy statement 2014"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "delirium",
+  name: "Delirium (acute confusional state)",
+  group: "psychiatric",
+  aka: [
+    "acute confusion",
+    "acute brain failure",
+    "confused patient",
+    "sundowning",
+    "ICU psychosis",
+    "encephalopathy"
+  ],
+  summary: "Sudden, fluctuating confusion with poor attention, caused by a physical illness, drug or withdrawal. It is a medical emergency with high mortality. The treatment is to find and fix the cause; medicines only reduce danger or distress, and benzodiazepines usually make it worse.",
+  redflags: [
+    "Fever, neck stiffness or seizures: meningitis, encephalitis or cerebral malaria",
+    "Low glucose, low oxygen, low BP or signs of sepsis",
+    "Recent heavy drinking or sudden stopping of alcohol or sedatives",
+    "Head injury, focal weakness or unequal pupils",
+    "Dry hot skin, big pupils and urinary retention (anticholinergic poisoning)",
+    "Quiet, withdrawn confusion in an older or post-operative patient (hypoactive delirium is easily missed)"
+  ],
+  steps: [
+    "Recognise it: onset over hours to days, fluctuates, poor attention (cannot keep attention on months of the year backwards), disorientation, sometimes hallucinations. Ask family what the person is normally like.",
+    "Check airway, breathing, circulation, glucose, temperature and oxygen saturation. Treat hypoxia, hypoglycaemia and shock at once.",
+    "Search for the cause, often more than one: infection (malaria test, urine, chest, meningitis), dehydration, electrolytes, kidney or liver failure, HIV, syphilis, seizure, head injury, stroke, pain, urinary retention, constipation, and medicines (opioids, benzodiazepines, anticholinergics, steroids, antimalarials).",
+    "Ask about alcohol and sedative use. If withdrawal is likely, this is the one situation where a benzodiazepine is the treatment (see Alcohol withdrawal), and give thiamine.",
+    "Stop or reduce any drug that may be causing it.",
+    "Non-drug care for every patient: a calm, well-lit room by day and dark at night, a family member present, glasses and hearing aids, a clock or calendar, frequent reorientation, fluids and food, early mobilisation. Avoid physical restraint and urinary catheters where possible.",
+    "Medicine only if the person is very distressed or dangerous to self or others and talking has failed: low-dose haloperidol for the shortest time, usually no more than a week (NICE CG103). Start low in older people.",
+    "Avoid benzodiazepines, chlorpromazine and promethazine except in alcohol or benzodiazepine withdrawal: they deepen confusion and cause falls and aspiration.",
+    "Capacity is usually impaired: involve family, act in the person's best interests, and document decisions. Review daily; delirium can last days to weeks after the cause is treated."
+  ],
+  drugs: [
+    {
+      id: "haloperidol",
+      role: "first",
+      note: "Only for severe distress or danger: 0.5–1 mg orally or IM in older or frail adults, 1–2 mg in younger adults; may repeat after 1–2 h; keep the total low (older adults usually 5 mg/day or less). QT risk; avoid in Parkinson's disease or Lewy body dementia. Stop as soon as possible."
+    },
+    {
+      id: "olanzapine",
+      role: "alternative",
+      note: "2.5–5 mg orally at night where available; more sedating, fewer dystonic reactions."
+    },
+    {
+      id: "lorazepam",
+      role: "avoid",
+      note: "Worsens most delirium. Exception: alcohol or benzodiazepine withdrawal delirium, where a benzodiazepine is the treatment."
+    },
+    {
+      id: "diazepam",
+      role: "avoid",
+      note: "Worsens confusion except in alcohol or benzodiazepine withdrawal, where it is the treatment."
+    },
+    {
+      id: "chlorpromazine",
+      role: "avoid",
+      note: "Anticholinergic phenothiazine; worsens delirium, causes hypotension and lowers seizure threshold (Kaplan)."
+    },
+    {
+      id: "promethazine",
+      role: "avoid",
+      note: "Anticholinergic; worsens confusion."
+    },
+    {
+      id: "thiamine",
+      role: "adjunct",
+      note: "Give to anyone with alcohol use, malnutrition, prolonged vomiting or HIV wasting, before or with glucose."
+    },
+    {
+      id: "dextrose",
+      role: "supportive",
+      note: "Treat hypoglycaemia immediately; do not delay glucose for thiamine, give both."
+    },
+    {
+      id: "artesunate",
+      role: "adjunct",
+      note: "If severe malaria is the cause (positive test, or no test and endemic area with fever)."
+    },
+    {
+      id: "ceftriaxone",
+      role: "adjunct",
+      note: "If meningitis or sepsis is possible; give early."
+    },
+    {
+      id: "paracetamol",
+      role: "supportive",
+      note: "For pain and fever, which both drive delirium. Avoid opioids and sedatives where possible, but treat severe pain."
+    },
+    {
+      id: "oxygen",
+      role: "supportive",
+      note: "If saturation is low."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "The main goal is to find and treat the cause, and to give physical, sensory and environmental support: a familiar person, a clock or calendar, and regular reorientation.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.1 Delirium, pdf p. 741"
+    },
+    {
+      book: "kaplan",
+      text: "Haloperidol is the usual drug for psychosis or agitation in delirium (2–5 mg IM in adults, less in the frail), but it can prolong the QT interval; phenothiazines should be avoided because they are anticholinergic.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.1 Delirium, pdf p. 742"
+    },
+    {
+      book: "kaplan",
+      text: "There is no conclusive evidence for benzodiazepines in delirium not related to alcohol, and they can worsen confusion.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.1 Delirium, pdf p. 746"
+    },
+    {
+      book: "kaplan",
+      text: "Lorazepam is best reserved for delirium from alcohol or benzodiazepine withdrawal and can worsen other types; typical haloperidol dose in older patients is 0.5–1 mg twice daily.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.1 Delirium, Table 3-9, pdf p. 750"
+    },
+    {
+      book: "kaplan",
+      text: "Common causes include infection (sepsis, malaria, syphilis), low or high glucose, electrolyte and fluid disturbance, seizures, head injury, stroke, heat stroke and medicines.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.1 Delirium, Table 3-13, pdf p. 755"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: quiet (hypoactive) delirium is often missed or mistaken for depression; the diagnosis requires a physical cause, which is often multiple.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 17 Neurocognitive Disorders, case 17.1 Dysphoria, pdf p. 410"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: always consider alcohol withdrawal, because it is treated with benzodiazepines, which are otherwise generally avoided in delirium after surgery and in older people.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 17 Neurocognitive Disorders, case 17.1 Dysphoria, pdf p. 411"
+    }
+  ],
+  sources: [
+    {
+      name: "NICE CG103. Delirium: prevention, diagnosis and management, 2010 (updated 2023)"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "American Psychiatric Association. DSM-5-TR, 2022"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "alcohol-withdrawal",
+  name: "Alcohol withdrawal, withdrawal seizures and delirium tremens",
+  group: "psychiatric",
+  aka: [
+    "DTs",
+    "delirium tremens",
+    "rum fits",
+    "alcohol withdrawal syndrome",
+    "shakes",
+    "alcoholic hallucinosis",
+    "detoxification"
+  ],
+  summary: "After stopping or cutting down heavy drinking, tremor, sweating, anxiety and vomiting start within hours; seizures peak at 12–48 hours and delirium tremens at 2–4 days. Delirium tremens kills. Give a benzodiazepine early and in enough dose, thiamine before glucose, and treat dehydration and the illness that brought the patient in.",
+  redflags: [
+    "Confusion, disorientation or hallucinations with sweating, fast pulse and fever: delirium tremens",
+    "Seizure, especially more than one, or a seizure after confusion began (look for head injury)",
+    "Previous delirium tremens or withdrawal seizures",
+    "Ataxia, confusion or abnormal eye movements: Wernicke encephalopathy",
+    "Infection, GI bleeding, pancreatitis, liver failure or head injury",
+    "Over-sedation: respiratory rate under 10, cannot be woken"
+  ],
+  steps: [
+    "Ask when the last drink was, how much is usually drunk, and about previous withdrawal seizures or delirium tremens. Admitted patients may start withdrawal on day 2–3 of an unrelated stay.",
+    "Examine for the cause of admission and complications: infection, head injury, GI bleeding, liver disease, dehydration. Check glucose, and electrolytes and magnesium if possible.",
+    "Give thiamine to every patient: IM or IV if malnourished, vomiting, confused or unwell (see Wernicke encephalopathy). Give it before glucose where possible, but never delay treatment of hypoglycaemia; give both.",
+    "Score severity with CIWA-Ar every 1–2 hours while symptoms are active, if the patient can communicate. Without a score, use tremor, sweating, pulse, agitation and hallucinations.",
+    "Benzodiazepine: oral diazepam 10–20 mg every 1–2 hours while withdrawal signs persist (CIWA-Ar 10 or more), until settled or lightly sedated (mhGAP inpatient approach). Then give the total needed in the first 24 h divided into doses and reduce by about 20% a day over 4–7 days (Kaplan). Omit a dose if drowsy.",
+    "Mild withdrawal in an outpatient with family support: up to diazepam 10 mg four times daily, reducing over 3–7 days, with daily review and no alcohol (mhGAP). Supply small amounts.",
+    "In liver failure, older age or respiratory disease use lorazepam, which does not accumulate; do not miss lorazepam doses.",
+    "Delirium tremens: nurse in a quiet, lit room with a family member; slow IV diazepam 10 mg repeated every 10–15 minutes until calm but rousable, with a bag-valve-mask ready (confirm local protocol). Large totals may be needed. Treat fever and dehydration; look for infection. Avoid physical restraint where possible: patients fight to exhaustion.",
+    "Withdrawal seizures: benzodiazepine (diazepam IV or rectal, or midazolam IM). Phenytoin does not prevent alcohol withdrawal seizures. A first seizure, focal signs or a seizure after delirium needs a search for head injury, meningitis or hypoglycaemia.",
+    "Hallucinations or severe agitation despite adequate benzodiazepine: add low-dose haloperidol cautiously, because antipsychotics lower the seizure threshold.",
+    "Fluids: oral if possible; IV Ringer's lactate for dehydration. Replace potassium and magnesium if low.",
+    "Before discharge: brief intervention, family involvement, screen for depression and suicide risk, and link to follow-up."
+  ],
+  drugs: [
+    {
+      id: "diazepam",
+      role: "first",
+      note: "Oral 10–20 mg every 1–2 h until settled (inpatient), then taper about 20% a day; outpatient up to 10 mg four times daily, reducing over 3–7 days (mhGAP). Delirium tremens or unable to swallow: 10 mg IV slowly, repeat every 10–15 min with airway support. Never IM."
+    },
+    {
+      id: "lorazepam",
+      role: "alternative",
+      note: "Preferred in liver failure, older age or lung disease: 1–4 mg orally, IM or IV every 1–2 h while symptomatic (confirm local protocol). Short acting: do not miss doses."
+    },
+    {
+      id: "thiamine",
+      role: "first",
+      note: "Every patient. High risk (malnourished, vomiting, confused, liver disease, hospital admission) needs parenteral thiamine; suspected Wernicke needs treatment doses. Give before or with glucose."
+    },
+    {
+      id: "phenobarbital",
+      role: "alternative",
+      note: "For withdrawal not controlled by large benzodiazepine doses, only where breathing can be supported (bag-valve-mask, ideally ventilation). Adds to respiratory depression. Specialist or local protocol."
+    },
+    {
+      id: "carbamazepine",
+      role: "alternative",
+      note: "Mild–moderate withdrawal where benzodiazepines are unsuitable: about 800 mg/day, as effective as benzodiazepines (Kaplan), reduced over 5–7 days. Does not treat delirium tremens."
+    },
+    {
+      id: "haloperidol",
+      role: "adjunct",
+      note: "Only for hallucinations or agitation that persist despite adequate benzodiazepine: 2–5 mg orally or IM. Lowers the seizure threshold; never instead of the benzodiazepine."
+    },
+    {
+      id: "midazolam",
+      role: "alternative",
+      note: "For a withdrawal seizure with no IV access: 10 mg IM (adult)."
+    },
+    {
+      id: "chlorpromazine",
+      role: "avoid",
+      note: "Lowers the seizure threshold and causes hypotension; do not use for withdrawal agitation."
+    },
+    {
+      id: "dextrose",
+      role: "supportive",
+      note: "Treat hypoglycaemia at once and give thiamine with it."
+    },
+    {
+      id: "ringers-lactate",
+      role: "supportive",
+      note: "For dehydration from sweating, fever and vomiting."
+    },
+    {
+      id: "magnesium-sulfate",
+      role: "supportive",
+      note: "Magnesium is often low in heavy drinkers. Replace if low, or in refractory seizures or arrhythmia; where levels cannot be measured, confirm local protocol."
+    },
+    {
+      id: "potassium-chloride",
+      role: "supportive",
+      note: "Replace if low (vomiting, poor intake); check kidney function and urine output first."
+    },
+    {
+      id: "paracetamol",
+      role: "supportive",
+      note: "For fever and pain; maximum 2 g/day in chronic heavy drinking or liver disease."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Usual timeline: tremor at 6–8 h, perceptual disturbances at 8–12 h, seizures at 12–24 h and delirium tremens within 72 h, although stages can be skipped.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, Table 4-5, pdf p. 891"
+    },
+    {
+      book: "kaplan",
+      text: "Withdrawal seizures are generalized and may cluster; still look for head injury, CNS infection, hypoglycaemia, hyponatraemia and hypomagnesaemia. Untreated delirium tremens has about 20% mortality, usually from coexisting illness.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 892"
+    },
+    {
+      book: "kaplan",
+      text: "Benzodiazepines are the treatment of choice for withdrawal seizures and anticonvulsants add no clear benefit. Give enough on day 1, then taper over about 5 days; do not give diazepam IM because absorption is erratic.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 908"
+    },
+    {
+      book: "kaplan",
+      text: "With a long-acting benzodiazepine, omit the next dose if the patient is sleepy; with short-acting lorazepam, do not miss doses.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 909"
+    },
+    {
+      book: "kaplan",
+      text: "Delirium tremens: same approach with higher doses, fluids for dehydration and nutrition with vitamins. Restraint is risky because patients fight to exhaustion; antipsychotics are adjuncts only because they lower the seizure threshold.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 910"
+    },
+    {
+      book: "kaplan",
+      text: "Emergency table for withdrawal: maintain fluids and electrolytes, sedate with benzodiazepines, monitor vital signs, give thiamine 100 mg IM.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, Table 25-12, pdf p. 2567"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: symptoms start 4–12 h after the last drink and peak at 24–48 h; seizures affect about 3%, mostly 7–48 h; a seizure that comes after delirium should prompt a search for another cause such as subdural haematoma.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 16 Substance-Related and Addictive Disorders, case 16.2 Alcohol Withdrawal, pdf p. 385"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "NICE CG100. Alcohol-use disorders: diagnosis and management of physical complications, 2010 (updated 2017)"
+    },
+    {
+      name: "Sullivan JT et al. CIWA-Ar. Br J Addict 1989;84:1353–7"
+    },
+    {
+      name: "American Psychiatric Association. DSM-5-TR, 2022"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "wernicke-encephalopathy",
+  name: "Wernicke encephalopathy",
+  group: "psychiatric",
+  aka: [
+    "thiamine deficiency",
+    "Wernicke-Korsakoff syndrome",
+    "Korsakoff",
+    "vitamin B1 deficiency",
+    "alcoholic encephalopathy"
+  ],
+  summary: "Acute thiamine deficiency causing confusion, unsteady gait and abnormal eye movements; the full triad is often absent. It is reversible if treated early with high-dose parenteral thiamine and leads to permanent memory loss (Korsakoff syndrome) or death if missed. Treat on suspicion.",
+  redflags: [
+    "Any of: confusion, ataxia or unsteadiness, nystagmus or eye-movement palsy, in a drinker or malnourished person",
+    "Hypothermia, low BP or reduced consciousness in a heavy drinker",
+    "Prolonged vomiting, including hyperemesis gravidarum, or starvation, HIV wasting or refeeding",
+    "Confusion that started or worsened after IV glucose",
+    "Memory loss with confabulation (Korsakoff syndrome)"
+  ],
+  steps: [
+    "Suspect it in anyone with alcohol dependence, malnutrition or prolonged vomiting who has any one of confusion, ataxia or eye signs. Do not wait for all three.",
+    "Give parenteral thiamine immediately, before any glucose infusion where possible. If glucose is low, give glucose and thiamine together: never leave hypoglycaemia untreated.",
+    "Treatment dose: thiamine 100–500 mg IV or IM two to three times daily for 3–5 days (mhGAP). Many guidelines use 500 mg IV three times daily for 3 days, then 250 mg daily for 3–5 days; confirm local protocol and stock. Dilute IV doses in 50–100 mL saline over 30 minutes; keep adrenaline available for the rare allergic reaction.",
+    "Then oral thiamine 100 mg two to three times daily with a multivitamin while drinking or malnutrition continues.",
+    "Correct magnesium if low; thiamine may not work while magnesium is depleted.",
+    "Look for and treat alcohol withdrawal, infection, hypoglycaemia, head injury and liver failure.",
+    "Keep the patient safe from falls; assess swallowing before food.",
+    "If there is no response to thiamine, consider pellagra (niacin deficiency) or another cause of encephalopathy.",
+    "Prevention: give thiamine to every at-risk patient on admission, and add it to glucose-containing drips."
+  ],
+  drugs: [
+    {
+      id: "thiamine",
+      role: "first",
+      note: "Suspected Wernicke: 100–500 mg IV or IM two to three times daily for 3–5 days (mhGAP); confirm local protocol. Prevention: 100 mg orally daily, or parenterally if high risk. Always before or with glucose."
+    },
+    {
+      id: "magnesium-sulfate",
+      role: "adjunct",
+      note: "Replace magnesium if low; Kaplan's emergency table pairs thiamine with magnesium sulfate before glucose loading."
+    },
+    {
+      id: "dextrose",
+      role: "supportive",
+      note: "Treat hypoglycaemia immediately, with thiamine given at the same time. Add thiamine to glucose drips in at-risk patients."
+    },
+    {
+      id: "diazepam",
+      role: "adjunct",
+      note: "If alcohol withdrawal is also present (see Alcohol withdrawal)."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Wernicke encephalopathy (gait ataxia, confusion, nystagmus and gaze palsies) is reversible with treatment; only about 20% with Korsakoff syndrome recover. The cause is thiamine deficiency.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 895"
+    },
+    {
+      book: "kaplan",
+      text: "Early Wernicke encephalopathy responds rapidly to large parenteral thiamine doses; add 100 mg thiamine to each litre of glucose fluid in alcohol-dependent patients. The oral dose the book then gives (100 mg two to three times daily) is lower than current parenteral treatment guidance.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 915"
+    },
+    {
+      book: "kaplan",
+      text: "Glucose rapidly uses up remaining thiamine, so give thiamine to alcohol-dependent patients before a glucose infusion; untreated, it progresses to Korsakoff syndrome or death.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.1 Consultation-Liaison Psychiatry, pdf p. 2522"
+    },
+    {
+      book: "kaplan",
+      text: "Emergency table: thiamine 100 mg IV or IM, with magnesium sulfate, given before glucose loading.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, Table 25-12, pdf p. 2567"
+    },
+    {
+      book: "kaplan",
+      text: "Thiamine deficiency also follows starvation, gastric cancer, dialysis, hyperemesis gravidarum and prolonged IV feeding, not only alcohol.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.3 Neurocognitive Disorder Due to Another Medical Condition (Korsakoff syndrome), pdf p. 799"
+    },
+    {
+      book: "kaplan",
+      text: "If apparent Wernicke–Korsakoff syndrome does not respond to thiamine, consider alcoholic pellagra (niacin deficiency).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 919"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "NICE CG100. Alcohol-use disorders: diagnosis and management of physical complications, 2010 (updated 2017)"
+    },
+    {
+      name: "Galvin R et al. EFNS guidelines for Wernicke encephalopathy. Eur J Neurol 2010"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "acute-psychosis",
+  name: "Acute psychosis (first episode)",
+  group: "psychiatric",
+  aka: [
+    "first episode psychosis",
+    "schizophrenia",
+    "brief psychotic disorder",
+    "hearing voices",
+    "paranoia",
+    "madness",
+    "acute psychotic episode"
+  ],
+  summary: "New hallucinations, delusions or disorganised behaviour. First rule out delirium, drugs and physical illness, which in Ethiopia include malaria, HIV, syphilis, epilepsy and khat or alcohol use. Then start a low-dose antipsychotic, involve the family, and follow up closely.",
+  redflags: [
+    "Fluctuating alertness, disorientation or poor attention: this is delirium until proved otherwise",
+    "Fever, headache, neck stiffness, seizures or focal signs",
+    "Visual, tactile or smell hallucinations, or older age at first onset",
+    "Recent childbirth (see Postpartum psychosis)",
+    "Suicidal thoughts, command hallucinations to harm, or threats to others",
+    "Not eating or drinking, or rigidity and mutism (catatonia)"
+  ],
+  steps: [
+    "Make it safe and calm; manage agitation as in Acute agitation.",
+    "Check for delirium (attention, orientation, fluctuation) and do a physical examination with glucose, temperature, BP and a neurological check.",
+    "Test or look for medical causes where available: malaria test if fever, HIV test, syphilis serology, pregnancy test, and signs of head injury, epilepsy (including after seizures), thyroid disease, anaemia and infection.",
+    "Ask about substances and medicines: khat, alcohol (intoxication or withdrawal), cannabis, stimulants, steroids, efavirenz, isoniazid, mefloquine or chloroquine. Substance-induced psychosis usually settles within days of stopping.",
+    "Ask about mood: grandiosity and no sleep suggests mania; guilt and hopelessness suggests psychotic depression. Assess suicide risk and risk to others.",
+    "Respect cultural and religious explanations. Beliefs shared by the person's community are not delusions. Work with families and religious or traditional healers, but never accept chaining or confinement.",
+    "Start a single antipsychotic at a low dose and increase slowly over 1–2 weeks if needed (mhGAP). Expect some benefit within 1–2 weeks; full effect takes 4–6 weeks.",
+    "Do not give anticholinergics routinely; treat dystonia or parkinsonism if they occur.",
+    "Short-term benzodiazepine for severe agitation or insomnia in the first days only.",
+    "Explain the illness and the medicine to the patient and family: side effects, not stopping suddenly, avoiding alcohol and khat, and warning signs of relapse.",
+    "Admission is needed for serious risk to self or others, inability to care for self, or a medical cause. If the person lacks capacity and refuses, follow hospital policy and national law; use the least restrictive option and document.",
+    "Follow up within 1–2 weeks, then monthly. Continue treatment for many months after recovery; decide duration with a specialist (commonly at least 12 months after a first episode). Depot fluphenazine is for later maintenance when adherence is poor, not for the first days."
+  ],
+  drugs: [
+    {
+      id: "haloperidol",
+      role: "first",
+      note: "Start 1.5–3 mg daily orally, increase gradually; usual range 5–10 mg/day (mhGAP range up to 20 mg). Watch for dystonia and parkinsonism."
+    },
+    {
+      id: "olanzapine",
+      role: "alternative",
+      note: "5–10 mg at night where available; fewer movement effects but weight gain, diabetes and sedation."
+    },
+    {
+      id: "chlorpromazine",
+      role: "alternative",
+      note: "Start 25–50 mg at night, increase gradually (usual 75–300 mg/day, up to 1 g in hospital). Sedating; postural hypotension, sun sensitivity, lowers seizure threshold. Avoid in epilepsy and older people."
+    },
+    {
+      id: "lorazepam",
+      role: "adjunct",
+      note: "Short term for severe agitation or insomnia: 1–2 mg orally or IM as needed (Kaplan). Stop within days."
+    },
+    {
+      id: "diazepam",
+      role: "adjunct",
+      note: "Short-term oral alternative for agitation or insomnia: 5–10 mg. Never IM."
+    },
+    {
+      id: "biperiden",
+      role: "supportive",
+      note: "Only if dystonia or parkinsonism occurs; do not give routinely (mhGAP)."
+    },
+    {
+      id: "fluphenazine-decanoate",
+      role: "alternative",
+      note: "Later maintenance when oral adherence fails and the person has tolerated oral antipsychotics; give a small test dose first. Not for a first acute episode in someone never treated."
+    },
+    {
+      id: "artesunate",
+      role: "adjunct",
+      note: "If fever and positive malaria test: psychosis may be cerebral malaria (and some antimalarials such as mefloquine can cause psychosis)."
+    },
+    {
+      id: "ceftriaxone",
+      role: "adjunct",
+      note: "If meningitis or encephalitis is possible."
+    },
+    {
+      id: "thiamine",
+      role: "adjunct",
+      note: "If alcohol use or malnutrition."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Actively look for a medical cause when symptoms are unusual or consciousness varies, even in someone already diagnosed with a psychotic illness.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1125"
+    },
+    {
+      book: "kaplan",
+      text: "Medical causes of psychosis include HIV, syphilis, malaria, encephalitis, epilepsy, head injury, metabolic and endocrine disease, vitamin deficiencies, steroids and other medicines, alcohol, cannabis and stimulants.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, Table 5-8, pdf p. 1126"
+    },
+    {
+      book: "kaplan",
+      text: "Features pointing to a medical cause: acute onset, first episode, older age, physical illness or injury, substance use, non-auditory hallucinations, neurological signs, reduced alertness or disorientation.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, Table 25-8, pdf p. 2554"
+    },
+    {
+      book: "kaplan",
+      text: "Start second-generation antipsychotics at low doses and increase gradually; lorazepam 1–2 mg orally or IM can be used as needed for agitation in the first weeks.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1948"
+    },
+    {
+      book: "kaplan",
+      text: "Brief psychotic disorder after stress: admission is often needed and a low-dose antipsychotic may be necessary, but it often resolves on its own.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, Table 25-12, pdf p. 2569"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: the differential for new psychosis includes an independent psychotic disorder, mood disorder with psychosis, substance-induced psychosis, medical causes, trauma and beliefs shared by the person's religious or cultural group.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 2 Schizophrenia Spectrum and Other Psychotic Disorders, case 2.3 Hallucinations of a Spiritual Nature, pdf p. 64"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: substance-induced psychosis usually clears within days; psychosis lasting beyond a month after exposure suggests an independent disorder.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 2 Schizophrenia Spectrum and Other Psychotic Disorders, case 2.6 Psychosis and Cannabis, pdf p. 77"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "American Psychiatric Association. DSM-5-TR, 2022"
+    },
+    {
+      name: "WHO QualityRights guidance; WHO Mental Health Action Plan 2013–2030"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "acute-mania",
+  name: "Acute mania",
+  group: "psychiatric",
+  aka: [
+    "bipolar disorder",
+    "manic episode",
+    "manic depression",
+    "hypomania",
+    "elated mood"
+  ],
+  summary: "Days of elated or irritable mood, overactivity, little sleep, rapid speech, grandiosity and risky behaviour, sometimes with psychosis. Rule out substances and physical causes, stop antidepressants, protect sleep, hydration and dignity, and start an antipsychotic or mood stabiliser.",
+  redflags: [
+    "Violence, sexual or financial risk-taking, or exhaustion and dehydration",
+    "Confusion or fever: delirium, encephalitis or NMS rather than mania",
+    "Recent antidepressant, steroid, efavirenz, khat or stimulant use",
+    "Pregnancy or recent childbirth",
+    "Suicidal thoughts (mixed states carry high risk)"
+  ],
+  steps: [
+    "Keep safe and calm; manage agitation as in Acute agitation. Reduce stimulation.",
+    "Examine and check glucose, temperature, hydration and pregnancy status. Look for thyroid disease, head injury, HIV, neurosyphilis, epilepsy and drugs (khat, amphetamines, steroids, efavirenz).",
+    "Stop antidepressants (amitriptyline, fluoxetine) and do not start them during mania.",
+    "Start an antipsychotic (haloperidol or olanzapine) for rapid control. Add a short course of benzodiazepine for sleep and agitation.",
+    "Mood stabiliser: lithium only where blood levels, kidney and thyroid tests can be done reliably (mhGAP); otherwise valproate or carbamazepine. Avoid valproate in women and girls who could become pregnant unless no alternative and effective contraception is in place.",
+    "Assess capacity: many people with mania lack insight. If admission or treatment is needed against their wishes to prevent serious harm, follow hospital policy and national law and document.",
+    "Protect finances, relationships and reputation where possible with family help.",
+    "Once settled: psychoeducation, early warning signs, sleep routine, avoiding alcohol and khat, and a maintenance plan with follow-up. Watch for the depression that often follows."
+  ],
+  drugs: [
+    {
+      id: "haloperidol",
+      role: "first",
+      note: "2–5 mg orally or IM, increase as needed (usual 5–15 mg/day). Watch for dystonia and parkinsonism."
+    },
+    {
+      id: "olanzapine",
+      role: "first",
+      note: "10–15 mg daily where available; effective alone. Weight gain and sedation."
+    },
+    {
+      id: "lithium",
+      role: "alternative",
+      note: "Only with reliable level monitoring (target 0.6–1.0 mmol/L acute; levels 12 h after dose) plus kidney and thyroid tests. Slow onset. Avoid in first trimester, kidney disease, and with NSAIDs or dehydration."
+    },
+    {
+      id: "sodium-valproate",
+      role: "alternative",
+      note: "Start 500 mg/day, increase to 1–2 g/day; Kaplan describes loading 15–20 mg/kg. Avoid in women of childbearing potential (birth defects) and liver disease."
+    },
+    {
+      id: "carbamazepine",
+      role: "alternative",
+      note: "600–1,800 mg/day (Kaplan), increase slowly. Many interactions: reduces hormonal contraception, efavirenz, other antiretrovirals and antipsychotic levels. Rash; avoid in pregnancy where possible."
+    },
+    {
+      id: "lorazepam",
+      role: "adjunct",
+      note: "Short-term for agitation and sleep: 1–2 mg orally or IM."
+    },
+    {
+      id: "diazepam",
+      role: "adjunct",
+      note: "Short-term oral alternative for sleep and agitation."
+    },
+    {
+      id: "chlorpromazine",
+      role: "alternative",
+      note: "Sedating option where others are unavailable; watch BP."
+    },
+    {
+      id: "amitriptyline",
+      role: "avoid",
+      note: "Can trigger or worsen mania (highest risk among antidepressants); stop."
+    },
+    {
+      id: "fluoxetine",
+      role: "avoid",
+      note: "Do not use alone in bipolar disorder; stop during mania."
+    },
+    {
+      id: "biperiden",
+      role: "supportive",
+      note: "For dystonia or parkinsonism from haloperidol."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "People with mania often lack insight and refuse treatment; medication is needed when poor judgement, impulsivity and aggression put them or others at risk. Lithium acts slowly, so antipsychotics, anticonvulsants or benzodiazepines are often added early.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 6 Bipolar Disorders, pdf p. 1199"
+    },
+    {
+      book: "kaplan",
+      text: "Valproate is widely used for acute mania, and rapid oral loading of 15–20 mg/kg is well tolerated; carbamazepine 600–1,800 mg/day is a long-established alternative.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 6 Bipolar Disorders, pdf p. 1200"
+    },
+    {
+      book: "kaplan",
+      text: "Antidepressants can trigger mania, with the highest risk from tricyclics; they should not be used alone in bipolar disorder.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 6 Bipolar Disorders, pdf p. 1201"
+    },
+    {
+      book: "kaplan",
+      text: "Emergency approach to mania: admission, restraint only if necessary, rapid tranquillisation with antipsychotics.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, Table 25-12, pdf p. 2575"
+    },
+    {
+      book: "kaplan",
+      text: "Avoid lithium in the first trimester; monitor levels closely around delivery; it passes into breast milk.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2062"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: grandiosity, little need for sleep, pressured speech, racing thoughts, distractibility, agitation and disinhibition amounted to a manic episode with psychosis, not schizophrenia; misdiagnosis means missing a mood stabiliser.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.1 Emotionally Disturbed, pdf p. 91"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "American Psychiatric Association. DSM-5-TR, 2022"
+    },
+    {
+      name: "Yatham LN et al. CANMAT/ISBD guidelines for bipolar disorder, 2018"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "depression-suicide-risk",
+  name: "Severe depression with suicide risk",
+  group: "psychiatric",
+  aka: [
+    "suicidal ideation",
+    "suicide attempt",
+    "self-harm",
+    "major depression",
+    "wants to die",
+    "hopelessness"
+  ],
+  summary: "Depression with thoughts of death or self-harm. Ask directly; asking does not increase risk. Keep the person safe, remove the means (pesticides, rope, stored medicines), involve family, and treat the depression with a medicine that is safe in overdose.",
+  redflags: [
+    "A plan, preparations, or access to means (pesticides, weapons, stored tablets)",
+    "A previous attempt, especially a violent or medically serious one",
+    "Hopelessness, psychotic depression or command hallucinations",
+    "Alcohol or drug use, chronic painful illness, HIV, recent loss, shame or isolation",
+    "Sudden calm after a period of suicidal talk",
+    "Poisoning already taken: treat medically first (see Organophosphate poisoning, Tricyclic overdose)"
+  ],
+  steps: [
+    "Treat any self-harm or poisoning medically first.",
+    "Ask directly and privately: 'Do you feel life is not worth living?' 'Have you thought of ending your life?' 'Do you have a plan?' 'What stops you?' Asking does not put the idea in their head.",
+    "Imminent risk (plan, intent, means, or recent serious attempt): do not leave the person alone; remove means from them and the room; admit or observe in a safe place; involve family.",
+    "Means restriction: ask family to lock away or remove pesticides, rope, weapons and medicines. Prescribe small supplies (no more than 1 week) and ask a family member to hold medicines.",
+    "Make a written safety plan with the person: warning signs, own coping steps, people and places for distraction, who to call (family, health worker, facility phone), and how the home will be made safer.",
+    "Look for causes and complications: alcohol use, physical illness (thyroid, anaemia, HIV), medicines, psychotic features, bipolar history, recent childbirth.",
+    "Antidepressant: fluoxetine first, as it is much safer in overdose. Avoid amitriptyline in anyone at suicide risk. Warn that benefit takes 2–4 weeks and risk may rise as energy returns, so review weekly at first.",
+    "Psychological support: problem-solving, behavioural activation, and addressing social problems. Refer for psychotherapy where available.",
+    "Psychotic depression: add an antipsychotic; refer, as ECT may be needed. Bipolar depression: do not give an antidepressant alone.",
+    "Adolescents: psychological treatment first; if medicine is needed, fluoxetine only, with specialist involvement and close monitoring.",
+    "Confidentiality may be broken to protect life; tell the person what will be shared and why. If they lack capacity and are at serious risk, follow hospital policy and national law and document.",
+    "Follow up within days of discharge, when risk is highest, and keep regular contact."
+  ],
+  drugs: [
+    {
+      id: "fluoxetine",
+      role: "first",
+      note: "Start 10–20 mg daily; if there is no response after several weeks, increase to 40 mg (confirm mhGAP dosing and local protocol). Safer in overdose. Early restlessness or agitation needs review. Can trigger mania in bipolar disorder."
+    },
+    {
+      id: "amitriptyline",
+      role: "avoid",
+      note: "Dangerous in overdose (arrhythmias, seizures, coma; fatal with a few days' supply). Avoid in suicide risk. If truly the only option: no more than 1 week supply, held by family (Kaplan)."
+    },
+    {
+      id: "lorazepam",
+      role: "adjunct",
+      note: "Very short term for severe anxiety or insomnia while starting treatment; small supplies only. Disinhibition and overdose risk with alcohol."
+    },
+    {
+      id: "diazepam",
+      role: "adjunct",
+      note: "Short-term oral alternative; small supplies, not with alcohol."
+    },
+    {
+      id: "haloperidol",
+      role: "adjunct",
+      note: "For psychotic depression, combined with the antidepressant; low dose."
+    },
+    {
+      id: "olanzapine",
+      role: "adjunct",
+      note: "Alternative antipsychotic for psychotic depression."
+    },
+    {
+      id: "lithium",
+      role: "alternative",
+      note: "Specialist only; reduces suicide in mood disorders but is dangerous in overdose, so needs level monitoring and controlled supply."
+    },
+    {
+      id: "paracetamol",
+      role: "avoid",
+      note: "Not for treatment of depression; do not dispense large quantities to a person at risk (common overdose)."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Ask every depressed patient directly about suicide. A plan is a particularly dangerous sign, and sudden calm in a previously suicidal person can be ominous.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2555"
+    },
+    {
+      book: "kaplan",
+      text: "Asking about suicide does not make suicidal behaviour more likely.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.2 Geriatric Psychiatry, pdf p. 2541"
+    },
+    {
+      book: "kaplan",
+      text: "Tricyclic overdose is severe and often fatal: for patients at risk of suicide, prescribe no more than 1 week at a time without refills; newer antidepressants are safer in overdose.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 2033"
+    },
+    {
+      book: "kaplan",
+      text: "About two-thirds of depressed patients think about suicide; risk can rise as they begin to improve and regain energy.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 7 Depressive Disorders, pdf p. 1218"
+    },
+    {
+      book: "kaplan",
+      text: "WHO suicide-prevention principles begin with reducing access to means such as pesticides and firearms, and treating mental disorders.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 31 Global and Cultural Issues in Psychiatry, pdf p. 2770"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: everyone with depressive symptoms, including after childbirth, needs a suicide assessment, including thoughts that the family or children would be better off dead.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 4 Depressive Disorders, case 4.2 Postpartum Sadness, pdf p. 134"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "WHO. Preventing suicide: a global imperative, 2014; LIVE LIFE implementation guide, 2021"
+    },
+    {
+      name: "Stanley B, Brown GK. Safety planning intervention. Cogn Behav Pract 2012"
+    },
+    {
+      name: "American Psychiatric Association. DSM-5-TR, 2022"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "neuroleptic-malignant-syndrome",
+  name: "Neuroleptic malignant syndrome (NMS)",
+  group: "psychiatric",
+  aka: [
+    "NMS",
+    "antipsychotic reaction",
+    "malignant hyperthermia antipsychotic",
+    "rigid and febrile on haloperidol"
+  ],
+  summary: "A rare, life-threatening reaction to antipsychotics (and other dopamine blockers such as metoclopramide): muscle rigidity, high fever, confusion and unstable pulse and BP, developing over 1–3 days. Stop all antipsychotics, cool, give fluids, and treat infection if it cannot be excluded. Diagnose clinically when CK cannot be measured.",
+  redflags: [
+    "Rigidity ('lead pipe') with fever after starting or increasing an antipsychotic, a depot injection, or several IM doses",
+    "Confusion, mutism or reduced consciousness",
+    "Fast pulse, labile or high BP, heavy sweating",
+    "Dark urine or falling urine output (rhabdomyolysis, kidney failure)",
+    "Temperature 40 °C or more, seizures or breathing difficulty"
+  ],
+  steps: [
+    "Stop every antipsychotic, including depots, and metoclopramide. Do not give 'just one more dose' for agitation.",
+    "Airway, breathing, circulation; oxygen; position to prevent aspiration.",
+    "Cool: undress, tepid sponging and fanning, cool fluids. Paracetamol helps little.",
+    "IV fluids generously to protect the kidneys: aim for good urine output (adult at least 1 mL/kg/h, more if urine is dark) while the chest stays clear. Watch urine colour.",
+    "Because fever and confusion have many causes, treat meningitis, sepsis and malaria empirically if they cannot be excluded.",
+    "Differentiate: serotonin syndrome (clonus, brisk reflexes, diarrhoea), anticholinergic toxicity (dry skin, big pupils), heat stroke, catatonia, alcohol withdrawal and tetanus.",
+    "Lorazepam or diazepam for agitation and rigidity; it may also help overlapping catatonia.",
+    "Dantrolene or bromocriptine (not in this app) where available, with specialist advice. Refer for intensive care if possible; ECT is used when drugs fail.",
+    "Check CK, creatinine and potassium where available. Prevent pressure sores and blood clots.",
+    "Record the reaction clearly as an allergy-type alert. Wait at least 2 weeks after full recovery before any antipsychotic; then use a low dose of a lower-potency or second-generation drug, increase slowly, keep hydrated, avoid depots, and monitor temperature and rigidity."
+  ],
+  drugs: [
+    {
+      id: "haloperidol",
+      role: "avoid",
+      note: "Stop immediately. High-potency antipsychotics carry the highest risk (Kaplan)."
+    },
+    {
+      id: "fluphenazine-decanoate",
+      role: "avoid",
+      note: "Depot keeps acting for weeks; mortality is higher with depots. Never give again after NMS."
+    },
+    {
+      id: "chlorpromazine",
+      role: "avoid",
+      note: "All antipsychotics must be stopped."
+    },
+    {
+      id: "olanzapine",
+      role: "avoid",
+      note: "Second-generation drugs also cause NMS; stop. Only restart any antipsychotic with specialist advice after recovery."
+    },
+    {
+      id: "promethazine",
+      role: "avoid",
+      note: "Phenothiazine with anticholinergic effect; avoid for sedation."
+    },
+    {
+      id: "lorazepam",
+      role: "first",
+      note: "1–2 mg IM or IV, repeat as needed for agitation and rigidity (Kaplan lists a benzodiazepine test dose). Watch breathing."
+    },
+    {
+      id: "diazepam",
+      role: "alternative",
+      note: "5–10 mg IV slowly if lorazepam is unavailable. Never IM."
+    },
+    {
+      id: "ringers-lactate",
+      role: "first",
+      note: "Generous IV fluids to prevent kidney failure from muscle breakdown; reassess chest and urine output."
+    },
+    {
+      id: "paracetamol",
+      role: "supportive",
+      note: "Little effect on this fever; physical cooling is the main measure."
+    },
+    {
+      id: "ceftriaxone",
+      role: "adjunct",
+      note: "If meningitis or sepsis cannot be excluded."
+    },
+    {
+      id: "artesunate",
+      role: "adjunct",
+      note: "If malaria cannot be excluded in an endemic area."
+    },
+    {
+      id: "heparin",
+      role: "supportive",
+      note: "Prophylactic dose to prevent clots in an immobile patient if no bleeding risk."
+    },
+    {
+      id: "oxygen",
+      role: "supportive",
+      note: "For low saturation or reduced consciousness."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "NMS can occur at any time during antipsychotic treatment: rigidity, dystonia, akinesia, mutism, reduced consciousness or agitation, with high temperature, sweating, fast pulse and raised BP; white cells and CK rise and myoglobinuria can cause kidney failure.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1887"
+    },
+    {
+      book: "kaplan",
+      text: "It evolves over 24–72 hours, lasts 10–14 days untreated, and is often missed early as worsening psychosis; mortality can reach 10–20%, higher with depot drugs.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1888"
+    },
+    {
+      book: "kaplan",
+      text: "High-potency drugs such as haloperidol carry the greatest risk; use the lowest effective antipsychotic dose.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1889"
+    },
+    {
+      book: "kaplan",
+      text: "Stop the antipsychotic immediately; cool; monitor vital signs, electrolytes, fluid balance and urine output; dantrolene, bromocriptine or amantadine may help. When restarting, consider a low-potency or second-generation drug, which can still cause NMS.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1958"
+    },
+    {
+      book: "kaplan",
+      text: "Treatment table: supportive care (IV fluids, cooling, oxygen) is often effective early; a benzodiazepine test dose IM, then oral, is reported to help, and ECT when drugs fail.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, Table 21-4, pdf p. 1892"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: NMS means rigidity, fever, autonomic instability, confusion and raised CK; catatonia after IM haloperidol can look similar, and serotonin syndrome is separated by myoclonus and gut symptoms.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.7 Bizarrely Silent, pdf p. 115"
+    }
+  ],
+  sources: [
+    {
+      name: "Gurrera RJ et al. International expert consensus criteria for NMS. J Clin Psychiatry 2011"
+    },
+    {
+      name: "American Psychiatric Association. DSM-5-TR, 2022"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "serotonin-syndrome",
+  name: "Serotonin syndrome",
+  group: "psychiatric",
+  aka: [
+    "serotonin toxicity",
+    "SSRI toxicity",
+    "fluoxetine tramadol reaction"
+  ],
+  summary: "Too much serotonin from combining or overdosing serotonergic medicines (fluoxetine, amitriptyline, tramadol, pethidine, lithium, linezolid, MAOIs). Starts within hours: agitation, tremor, sweating, diarrhoea, and clonus or brisk reflexes worse in the legs, sometimes high fever. Stop the drugs, sedate with benzodiazepines, cool and give fluids.",
+  redflags: [
+    "Inducible or spontaneous clonus, eye clonus, or brisk reflexes worse in the legs",
+    "Temperature above 38.5 °C with rigidity: severe, can be fatal",
+    "Started within 24 hours of a new serotonergic drug, dose increase or overdose",
+    "Seizures, confusion or unstable BP",
+    "Rigidity with slow onset over days after an antipsychotic: think NMS instead"
+  ],
+  steps: [
+    "Stop all serotonergic drugs: SSRIs, amitriptyline, tramadol, pethidine, ondansetron, metoclopramide, lithium, linezolid. Fluoxetine lasts for weeks, so effects may persist.",
+    "Airway, breathing, circulation; continuous observation.",
+    "Benzodiazepine for agitation, tremor and muscle activity. Avoid physical restraint, which increases heat production.",
+    "Cool the patient and give IV fluids; paracetamol does not lower this temperature.",
+    "Differentiate from NMS (slow onset, antipsychotic, bradykinesia and lead-pipe rigidity), anticholinergic toxicity (dry skin, absent bowel sounds), malignant hyperthermia, sepsis, meningitis, malaria and alcohol withdrawal.",
+    "Cyproheptadine (not in this app) where available: 12 mg orally or by NG tube, then 2 mg every 2 hours while symptoms continue.",
+    "Temperature above 40 °C or rising rigidity: refer urgently for intensive care; sedation, paralysis and ventilation may be needed.",
+    "Most cases resolve within 24 hours of stopping the drugs. Review all prescriptions before restarting; avoid the combination in future."
+  ],
+  drugs: [
+    {
+      id: "lorazepam",
+      role: "first",
+      note: "1–2 mg IV or IM, repeat every 30 min as needed; watch breathing."
+    },
+    {
+      id: "diazepam",
+      role: "alternative",
+      note: "5–10 mg IV slowly or orally, repeat as needed. Never IM."
+    },
+    {
+      id: "midazolam",
+      role: "alternative",
+      note: "IM if no IV access and no lorazepam."
+    },
+    {
+      id: "ringers-lactate",
+      role: "supportive",
+      note: "IV fluids for sweating, fever and diarrhoea."
+    },
+    {
+      id: "fluoxetine",
+      role: "avoid",
+      note: "Stop; long half-life, so toxicity may last longer and a washout of about 5 weeks is needed before MAOIs."
+    },
+    {
+      id: "amitriptyline",
+      role: "avoid",
+      note: "Stop; serotonergic, and raised levels when combined with fluoxetine."
+    },
+    {
+      id: "lithium",
+      role: "avoid",
+      note: "Can precipitate serotonin syndrome with SSRIs; hold."
+    },
+    {
+      id: "chlorpromazine",
+      role: "avoid",
+      note: "Sometimes listed as a serotonin blocker (Kaplan), but causes hypotension, lowers the seizure threshold and is dangerous if NMS is the real diagnosis. Specialist use only."
+    },
+    {
+      id: "haloperidol",
+      role: "avoid",
+      note: "No benefit; may confuse the picture with NMS."
+    },
+    {
+      id: "paracetamol",
+      role: "avoid",
+      note: "Ineffective for this muscle-generated fever; do not rely on it. Cool physically."
+    },
+    {
+      id: "oxygen",
+      role: "supportive",
+      note: "For low saturation or seizures."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Combining serotonergic drugs (for example an SSRI with an MAOI, tryptophan or lithium) causes a syndrome that progresses from diarrhoea and restlessness to agitation, brisk reflexes, unstable vital signs, myoclonus, seizures, hyperthermia, rigidity, delirium, coma and death.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 1990"
+    },
+    {
+      book: "kaplan",
+      text: "Treatment is to stop the causative drugs and give full supportive care; options listed include cyproheptadine, cooling, benzodiazepines, anticonvulsants, and ventilation with paralysis in severe cases.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 1990"
+    },
+    {
+      book: "kaplan",
+      text: "Key signs: diarrhoea, myoclonus, sweating, hyperactive reflexes, tremor, disorientation, ataxia and labile mood.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, Table 21-17, pdf p. 1992"
+    },
+    {
+      book: "kaplan",
+      text: "SSRIs with MAOIs, tryptophan, lithium or other serotonin reuptake inhibitors can cause serotonin syndrome; fluoxetine, sertraline and paroxetine can also raise tricyclic levels to toxic range.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 1991"
+    },
+    {
+      book: "kaplan",
+      text: "Paroxetine given with tramadol may precipitate serotonin syndrome in older people.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 1993"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: serotonin syndrome is linked to SSRIs; its typical myoclonus and gut symptoms help separate it from NMS and catatonia.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.7 Bizarrely Silent, pdf p. 115"
+    }
+  ],
+  sources: [
+    {
+      name: "Boyer EW, Shannon M. The serotonin syndrome. NEJM 2005"
+    },
+    {
+      name: "Dunkley EJ et al. Hunter Serotonin Toxicity Criteria. QJM 2003"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "lithium-toxicity",
+  name: "Lithium toxicity",
+  group: "psychiatric",
+  aka: [
+    "lithium poisoning",
+    "lithium overdose",
+    "high lithium level"
+  ],
+  summary: "Lithium has a narrow safety margin. Toxicity usually comes from dehydration, vomiting or diarrhoea, kidney impairment or interacting drugs rather than overdose. Early signs are coarse tremor, vomiting and unsteadiness; late signs are confusion, myoclonus, seizures and coma. Stop lithium, restore fluids and kidney function, and refer for dialysis if severe.",
+  redflags: [
+    "Coarse tremor, slurred speech, unsteady gait, vomiting or diarrhoea in anyone on lithium",
+    "Confusion, twitching, myoclonus or seizures",
+    "Dehydration, fever, heat, reduced intake or new NSAID, ACE inhibitor or thiazide diuretic",
+    "Reduced urine output or kidney disease",
+    "Older person with toxicity signs even at a 'normal' level",
+    "Intentional overdose, especially of slow-release tablets"
+  ],
+  steps: [
+    "Stop lithium at once. Stop interacting drugs (NSAIDs, ACE inhibitors, thiazides).",
+    "Airway, breathing, circulation; recovery position if drowsy; treat seizures with a benzodiazepine.",
+    "Measure lithium level (12 h after the last dose for chronic use), creatinine, sodium and potassium if available. Repeat levels, as they can rise again after an overdose. Do not wait for the level to act.",
+    "Restore fluids: IV 0.9% sodium chloride is preferred for volume depletion (Ringer's lactate is acceptable for resuscitation). Aim for good urine output; watch for fluid overload in older and heart patients.",
+    "Activated charcoal does not bind lithium; give it only if other drugs were taken. Large slow-release overdose may need whole-bowel irrigation (specialist).",
+    "Refer urgently for haemodialysis if there is reduced consciousness, seizures, arrhythmia, kidney failure, or a very high level (for example above 4.0 mmol/L with poor kidney function, or above 5.0 mmol/L; confirm local protocol).",
+    "Neurological recovery lags behind the blood level by days; some damage (cerebellar) can be permanent.",
+    "Do not use haloperidol for agitation if possible (combined neurotoxicity); use a benzodiazepine.",
+    "Before any restart: find the cause, review kidney and thyroid function, teach the patient to stop lithium and seek help when vomiting, having diarrhoea or unable to drink, and ensure level monitoring is available."
+  ],
+  drugs: [
+    {
+      id: "lithium",
+      role: "avoid",
+      note: "Stop. Restart only with specialist advice, after recovery, with monitoring in place."
+    },
+    {
+      id: "ringers-lactate",
+      role: "supportive",
+      note: "For volume resuscitation if 0.9% saline is unavailable; saline is preferred to restore sodium and lithium excretion."
+    },
+    {
+      id: "diazepam",
+      role: "first",
+      note: "For seizures: 10 mg IV slowly or rectally (adult). Never IM."
+    },
+    {
+      id: "midazolam",
+      role: "alternative",
+      note: "10 mg IM (adult) for seizures without IV access."
+    },
+    {
+      id: "lorazepam",
+      role: "alternative",
+      note: "For seizures or agitation: 2–4 mg IV or IM."
+    },
+    {
+      id: "haloperidol",
+      role: "avoid",
+      note: "Antipsychotic plus lithium can increase neurotoxicity (Kaplan); prefer a benzodiazepine for agitation."
+    },
+    {
+      id: "potassium-chloride",
+      role: "supportive",
+      note: "Only if potassium is measured low and urine output is adequate."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Early toxicity: coarse tremor, slurred speech, ataxia, gut symptoms; later: reduced consciousness, fasciculation, myoclonus, seizures, coma. Risks: excess dose, kidney impairment, low-salt diet, interacting drugs, dehydration and older age.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2059"
+    },
+    {
+      book: "kaplan",
+      text: "Stop lithium and treat dehydration; activated charcoal does not bind lithium; bowel irrigation or lavage are options after large ingestions.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2060"
+    },
+    {
+      book: "kaplan",
+      text: "Haemodialysis removes lithium in severe cases (the book's table uses a level above 4.0 mEq/L); levels can rebound, and neurological recovery lags behind blood levels by days.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2061"
+    },
+    {
+      book: "kaplan",
+      text: "Toxicity is well documented at or just above the upper therapeutic level, especially in older people; treat the patient, not only the number.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2066"
+    },
+    {
+      book: "kaplan",
+      text: "High-dose antipsychotics with lithium can increase neurological side effects; rarely encephalopathy occurs.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2062"
+    }
+  ],
+  sources: [
+    {
+      name: "Decker BS et al. EXTRIP recommendations for lithium poisoning. Clin J Am Soc Nephrol 2015"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "acute-dystonia",
+  name: "Acute dystonia and other acute extrapyramidal reactions",
+  group: "psychiatric",
+  aka: [
+    "dystonic reaction",
+    "oculogyric crisis",
+    "torticollis",
+    "akathisia",
+    "drug-induced parkinsonism",
+    "extrapyramidal side effects",
+    "EPS"
+  ],
+  summary: "Painful, frightening muscle spasms (eyes rolled up, neck twisted, jaw locked, tongue out) within hours to days of starting or increasing haloperidol, fluphenazine or metoclopramide, especially in young men. It is not 'hysteria'. An IM anticholinergic such as biperiden works within minutes. Throat spasm is an airway emergency.",
+  redflags: [
+    "Stridor, difficulty breathing or swallowing: laryngeal dystonia",
+    "Fever, rigidity and confusion: think NMS, not simple dystonia",
+    "Recent depot injection: symptoms can return for days to weeks",
+    "Severe restlessness with suicidal thoughts (akathisia can drive self-harm)",
+    "Child who took metoclopramide or an adult's tablets"
+  ],
+  steps: [
+    "Recognise it: sudden sustained spasm of eyes (oculogyric crisis), neck, jaw, tongue, back or limbs, after a dopamine-blocking drug. It can wax and wane with reassurance; do not dismiss it.",
+    "Laryngeal dystonia: oxygen, call for help, give biperiden IV (or IM if no access) immediately, then a benzodiazepine if needed; be ready to support the airway.",
+    "Give biperiden 2 mg (adult) IM or slow IV; relief usually within 10–30 minutes. Repeat after 30 minutes if needed.",
+    "If biperiden is unavailable: promethazine IM, or diazepam IV slowly, or lorazepam IM or IV.",
+    "Continue oral biperiden 2 mg one to three times daily for several days (longer after a depot) to stop it returning.",
+    "Reduce the antipsychotic dose or change to a lower-risk drug; stop metoclopramide.",
+    "Akathisia (inner restlessness, pacing): reduce the antipsychotic dose; a short course of a benzodiazepine or propranolol helps; anticholinergics work less well.",
+    "Parkinsonism (stiffness, slow movement, tremor): reduce the dose; oral biperiden if needed, reviewed after 4–6 weeks.",
+    "Explain what happened to the patient and family so that they do not stop all treatment in fear, and record the reaction."
+  ],
+  drugs: [
+    {
+      id: "biperiden",
+      role: "first",
+      note: "2 mg IM or slow IV (Kaplan), repeat after 30 min if needed; maximum about 4 doses in 24 h (confirm product leaflet). Then 2 mg orally 1–3 times daily for several days. Avoid in glaucoma, urinary retention, delirium."
+    },
+    {
+      id: "promethazine",
+      role: "alternative",
+      note: "25–50 mg IM or slow IV (antihistamine with anticholinergic action, like diphenhydramine in Kaplan). Sedating."
+    },
+    {
+      id: "diazepam",
+      role: "alternative",
+      note: "5–10 mg IV slowly (Kaplan reports 10 mg IV effective). Never IM."
+    },
+    {
+      id: "lorazepam",
+      role: "alternative",
+      note: "1 mg IM or IV if anticholinergics fail after 20–30 min (Kaplan); also for akathisia."
+    },
+    {
+      id: "haloperidol",
+      role: "avoid",
+      note: "Cause; do not give further doses until settled, then lower the dose or change drug."
+    },
+    {
+      id: "fluphenazine-decanoate",
+      role: "avoid",
+      note: "Common cause; after a depot, dystonia can recur for weeks, so continue oral biperiden."
+    },
+    {
+      id: "chlorpromazine",
+      role: "avoid",
+      note: "Not a treatment; another dopamine blocker."
+    },
+    {
+      id: "oxygen",
+      role: "supportive",
+      note: "For laryngeal dystonia or breathing difficulty."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Acute dystonia: sustained contractions such as oculogyric crisis, tongue protrusion, trismus, torticollis and throat spasm that can impair breathing; commonest in young men on high doses of high-potency drugs, especially IM.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1889"
+    },
+    {
+      book: "kaplan",
+      text: "Dystonia can fluctuate and respond to reassurance, which falsely suggests it is under voluntary control.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1891"
+    },
+    {
+      book: "kaplan",
+      text: "IM anticholinergic, or IV/IM diphenhydramine 50 mg, almost always relieves acute dystonia; IV diazepam 10 mg has also been reported effective.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1892"
+    },
+    {
+      book: "kaplan",
+      text: "Biperiden: 2 mg IM or IV for acute extrapyramidal reactions.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, Table 21-3, pdf p. 1890"
+    },
+    {
+      book: "kaplan",
+      text: "Give an anticholinergic IM and repeat after 20–30 minutes if needed; if still no better, lorazepam 1 mg IM or IV. Laryngeal dystonia is an emergency. Prophylaxis for 4–8 weeks after an episode or in high-risk patients.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2214"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: when IM haloperidol was given for agitation, an anticholinergic antihistamine was kept ready for extrapyramidal reactions.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.1 Emotionally Disturbed, pdf p. 88"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "WHO Model Formulary 2008 (biperiden)"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "catatonia",
+  name: "Catatonia",
+  group: "psychiatric",
+  aka: [
+    "catatonic stupor",
+    "mutism",
+    "waxy flexibility",
+    "catatonic excitement",
+    "malignant catatonia",
+    "not eating or speaking"
+  ],
+  summary: "A movement syndrome: the person stops speaking, moving, eating or drinking, holds odd postures, resists being moved, or has purposeless excitement. It is most often caused by depression or bipolar disorder, but also by medical illness and drugs. It kills through dehydration, clots and malignant catatonia. Lorazepam usually works quickly; ECT is the definitive treatment.",
+  redflags: [
+    "Fever, fast pulse, unstable BP or rigidity: malignant catatonia or NMS, an emergency",
+    "Not drinking for more than a day, or not eating: dehydration, kidney failure, malnutrition",
+    "Recent antipsychotic dose: NMS",
+    "Immobile for days: pressure sores, pneumonia, DVT and pulmonary embolism",
+    "Confusion, seizures or fever: encephalitis, cerebral malaria, non-convulsive status epilepticus"
+  ],
+  steps: [
+    "Recognise it: three or more of stupor, mutism, negativism, posturing, catalepsy, waxy flexibility, staring, mannerisms, stereotypies, grimacing, echolalia, echopraxia, or purposeless agitation.",
+    "Check vital signs, glucose, hydration and temperature; examine for infection, neurological signs and injuries.",
+    "Look for medical causes: encephalitis (including HIV), cerebral malaria, meningitis, epilepsy, metabolic disturbance, hepatic or kidney failure, and drugs (antipsychotics, recent benzodiazepine withdrawal).",
+    "Stop antipsychotics while catatonic: they can precipitate NMS or malignant catatonia.",
+    "Lorazepam challenge: 1–2 mg IV or IM; reassess after 10–30 minutes. Improvement supports the diagnosis. If lorazepam is unavailable, diazepam 5–10 mg IV slowly can be used (confirm local protocol).",
+    "If it helps, continue lorazepam 1–2 mg every 4–8 hours and increase as needed; high total doses are often tolerated (Kaplan). Do not stop suddenly.",
+    "No response within a few days, malignant catatonia, or life-threatening refusal to eat or drink: refer urgently for ECT.",
+    "Supportive care: IV or NG fluids and feeding, turning and pressure care, thromboprophylaxis if no bleeding risk, oral care.",
+    "The patient cannot consent: act in their best interests to preserve life, involve family, follow hospital policy and national law, and document.",
+    "Once catatonia resolves, treat the underlying disorder (often mania or depression); reintroduce antipsychotics cautiously if needed."
+  ],
+  drugs: [
+    {
+      id: "lorazepam",
+      role: "first",
+      note: "Challenge 1–2 mg IV or IM, then 1–2 mg every 4–8 h, increased as needed (Kaplan: from under 5 up to 12 mg/day or more). Monitor breathing."
+    },
+    {
+      id: "diazepam",
+      role: "alternative",
+      note: "Where lorazepam is unavailable: 5–10 mg IV slowly or orally, repeated; less studied. Never IM."
+    },
+    {
+      id: "haloperidol",
+      role: "avoid",
+      note: "Can worsen catatonia and precipitate NMS; avoid while catatonic."
+    },
+    {
+      id: "chlorpromazine",
+      role: "avoid",
+      note: "Avoid while catatonic (NMS and hypotension risk)."
+    },
+    {
+      id: "fluphenazine-decanoate",
+      role: "avoid",
+      note: "Depot antipsychotic; avoid (NMS risk, cannot be withdrawn)."
+    },
+    {
+      id: "olanzapine",
+      role: "avoid",
+      note: "Avoid until catatonia has resolved; restart any antipsychotic only with specialist advice."
+    },
+    {
+      id: "ringers-lactate",
+      role: "supportive",
+      note: "IV fluids for dehydration."
+    },
+    {
+      id: "heparin",
+      role: "supportive",
+      note: "Prophylactic dose for the immobile patient if no bleeding risk."
+    },
+    {
+      id: "dextrose",
+      role: "supportive",
+      note: "If not eating; check glucose. Give thiamine if malnourished."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Lorazepam, from under 5 mg/day up to 12 mg/day or more, is regularly used for acute catatonia, although there are no controlled trials; chronic catatonia responds less well.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2117"
+    },
+    {
+      book: "kaplan",
+      text: "The definitive treatment for catatonia is ECT.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2118"
+    },
+    {
+      book: "kaplan",
+      text: "Catatonic patients need close supervision to prevent harm and often need medical care for malnutrition, exhaustion, high fever or self-injury.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1106"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: most catatonia is due to depression or bipolar disorder; medical causes, NMS and drugs must be sought urgently. Catatonia itself kills through dehydration, malnutrition, exhaustion and thromboembolism, and can become malignant with fever and autonomic instability.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.7 Bizarrely Silent, pdf p. 114"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: a low-dose IV lorazepam challenge is both diagnostic and therapeutic; in the case, 1 mg repeated after 5 minutes, then 1 mg every 4–6 hours, relieved rigidity within 24 hours.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.7 Bizarrely Silent, pdf p. 115"
+    }
+  ],
+  sources: [
+    {
+      name: "American Psychiatric Association. DSM-5-TR, 2022"
+    },
+    {
+      name: "Rogers JP et al. BAP consensus guidelines on catatonia. J Psychopharmacol 2023"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "postpartum-psychosis",
+  name: "Postpartum psychosis",
+  group: "psychiatric",
+  aka: [
+    "puerperal psychosis",
+    "psychosis after childbirth",
+    "postpartum mania",
+    "peripartum onset"
+  ],
+  summary: "A sudden psychosis, usually within the first two weeks after birth, with confusion, rapidly changing mood, strange beliefs and little sleep, often about the baby. It is a psychiatric emergency with risk of suicide and harm to the baby. Exclude eclampsia, infection, bleeding and other medical causes, admit, and start an antipsychotic.",
+  redflags: [
+    "Beliefs that the baby is harmed, evil, not hers, or must be saved by death",
+    "Suicidal thoughts or talk of harming the baby",
+    "High BP, headache, visual disturbance, seizures: eclampsia",
+    "Fever: puerperal sepsis, mastitis, malaria, meningitis",
+    "Severe headache, focal signs or seizures: cerebral venous thrombosis",
+    "Previous bipolar disorder or postpartum psychosis, or family history"
+  ],
+  steps: [
+    "Treat as an emergency. The mother should not be left alone with the baby while acutely unwell; keep them together under supervision where safe.",
+    "Check BP, urine protein, temperature, pulse, glucose, haemoglobin and blood loss. Treat eclampsia with magnesium sulfate.",
+    "Look for medical causes: sepsis, malaria, HIV, thyroid disease, anaemia or Sheehan syndrome after haemorrhage, hypoglycaemia, cerebral venous thrombosis, drugs (steroids, bromocriptine) and alcohol withdrawal.",
+    "Assess suicide risk and risk to the baby directly with the mother and family.",
+    "Admit, ideally to a setting where the baby can stay with supervision. Arrange feeding support for the baby.",
+    "Start an antipsychotic (olanzapine or haloperidol) at a low dose; add short-term lorazepam for sleep and agitation. Protect sleep: family help with night feeds.",
+    "Breastfeeding: olanzapine and haloperidol are generally considered compatible with monitoring of the baby for sedation and poor feeding (guidance varies; Kaplan advises against breastfeeding on older antipsychotics). Confirm local protocol and decide with the mother.",
+    "Avoid valproate. Lithium only with specialist advice and level monitoring (it passes into breast milk). Do not give an antidepressant alone if there are manic or mixed features.",
+    "Consent: if the mother lacks capacity and is at serious risk, follow hospital policy and national law, involve family, and document.",
+    "Severe or refusing food and drink: refer for ECT.",
+    "After recovery: plan for future pregnancies (recurrence risk over 1 in 2), assess for bipolar disorder, and provide contraception advice and close follow-up."
+  ],
+  drugs: [
+    {
+      id: "olanzapine",
+      role: "first",
+      note: "5–10 mg at night. Monitor the breastfed baby for drowsiness."
+    },
+    {
+      id: "haloperidol",
+      role: "first",
+      note: "1.5–5 mg daily orally, increase as needed; IM if refusing and at serious risk. Watch for dystonia."
+    },
+    {
+      id: "lorazepam",
+      role: "adjunct",
+      note: "0.5–1 mg for sleep and agitation for a few days; watch the breastfed baby for sedation."
+    },
+    {
+      id: "promethazine",
+      role: "adjunct",
+      note: "25 mg at night for sleep where benzodiazepines are unavailable; sedating."
+    },
+    {
+      id: "lithium",
+      role: "alternative",
+      note: "Specialist only, with level monitoring; high effect for postpartum mania and prevention in bipolar disorder (Kaplan), but passes into milk: usually avoid breastfeeding or monitor the infant closely."
+    },
+    {
+      id: "sodium-valproate",
+      role: "avoid",
+      note: "Avoid in women of childbearing potential (birth defects in future pregnancy) unless no alternative and effective contraception."
+    },
+    {
+      id: "carbamazepine",
+      role: "avoid",
+      note: "Reduces hormonal contraception; avoid unless specialist advice."
+    },
+    {
+      id: "fluoxetine",
+      role: "avoid",
+      note: "Not alone when psychotic, manic or mixed features are present; can worsen mania."
+    },
+    {
+      id: "amitriptyline",
+      role: "avoid",
+      note: "Can trigger mania; dangerous in overdose."
+    },
+    {
+      id: "magnesium-sulfate",
+      role: "adjunct",
+      note: "Only if eclampsia or severe pre-eclampsia is present (see Eclampsia)."
+    },
+    {
+      id: "ceftriaxone",
+      role: "adjunct",
+      note: "If puerperal sepsis or meningitis is possible."
+    },
+    {
+      id: "biperiden",
+      role: "supportive",
+      note: "For dystonia from haloperidol."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Postpartum psychosis: assess danger to self and to the infant and take precautions; look for medical illness presenting as behaviour change; suicide risk rises after birth.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, Table 25-12, pdf p. 2579"
+    },
+    {
+      book: "kaplan",
+      text: "Postpartum onset means onset within 4 weeks of delivery, and these episodes commonly include psychotic symptoms.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 7 Depressive Disorders, pdf p. 1226"
+    },
+    {
+      book: "kaplan",
+      text: "Lithium prophylaxis is recommended for women with bipolar disorder entering the postpartum period; kidney clearance changes after delivery need close level monitoring; lithium enters breast milk, so weigh risks.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2062"
+    },
+    {
+      book: "kaplan",
+      text: "The book advises against breastfeeding on older (dopamine-blocking) antipsychotics, although milk levels are low; many guidelines allow breastfeeding with infant monitoring.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1963"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: onset is usually in the first postpartum week, rapid, with changing delusions; it is a psychiatric emergency needing admission and risk assessment for suicide and harm to the baby.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.8 A Postpartum Change, pdf p. 118"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: risk is about 1 in 1,000 births overall, about 1 in 4 with bipolar disorder and over 1 in 2 after a previous postpartum psychosis; identify high-risk women in pregnancy.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.8 A Postpartum Change, pdf p. 118"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
+    },
+    {
+      name: "NICE CG192. Antenatal and postnatal mental health, 2014 (updated 2020)"
+    },
+    {
+      name: "American Psychiatric Association. DSM-5-TR, 2022"
+    }
+  ],
+  review: {
+    status: "draft"
+  }
+},
+{
+  id: "tricyclic-overdose",
+  name: "Tricyclic antidepressant overdose",
+  group: "psychiatric",
+  aka: [
+    "amitriptyline overdose",
+    "TCA poisoning",
+    "imipramine overdose",
+    "antidepressant overdose"
+  ],
+  summary: "Amitriptyline is cheap, widely prescribed and one of the most dangerous overdoses: seizures, coma, low BP and wide-complex arrhythmias can develop within 1–6 hours. Protect the airway, treat seizures with a benzodiazepine, and give sodium bicarbonate for arrhythmia, hypotension or a broad QRS. Then assess suicide risk.",
+  redflags: [
+    "Drowsiness or confusion with dry skin, dilated pupils, fast pulse and urinary retention",
+    "Seizure",
+    "Low BP or irregular, slow or very fast pulse",
+    "QRS wider than 100 ms (0.10 s) on ECG, or a broad-complex rhythm on a monitor",
+    "Child who swallowed any amount of an adult's tablets",
+    "Mixed overdose with alcohol, benzodiazepines or opioids"
+  ],
+  steps: [
+    "Ask what, how much and when; count missing tablets. More than about 5–10 mg/kg of amitriptyline can be serious; any ingestion in a small child needs observation.",
+    "Airway, breathing, circulation. Oxygen. Put in recovery position. Intubate if consciousness is falling and it is possible.",
+    "IV access. ECG if available; otherwise continuous pulse and BP checks every 15 minutes.",
+    "Activated charcoal (if stocked) 50 g adult or 1 g/kg child only if within about 1–2 hours and the airway is safe. No induced vomiting.",
+    "Seizures: diazepam IV or rectally, or midazolam IM. Do not use phenytoin (it worsens sodium-channel toxicity).",
+    "Sodium bicarbonate 8.4% 1–2 mmol/kg (1–2 mL/kg) IV over a few minutes for QRS over 100 ms, arrhythmia, hypotension or seizures; repeat until the QRS narrows and BP improves. Watch potassium and sodium. Confirm local protocol.",
+    "Hypotension: IV fluid bolus, then bicarbonate, then noradrenaline if still low.",
+    "Do not give flumazenil (not in app) or physostigmine: both can cause seizures or cardiac arrest in tricyclic poisoning. Avoid haloperidol and chlorpromazine for agitation; use a benzodiazepine.",
+    "Observe for at least 6 hours; anyone with symptoms or ECG changes needs admission and monitoring, as arrhythmias can occur for days (Kaplan).",
+    "Urinary retention: catheterise. Cool if hyperthermic.",
+    "Once medically fit: full suicide risk assessment (see Severe depression with suicide risk). Switch to fluoxetine; never restart amitriptyline in a person who overdosed; limit supplies for the household."
+  ],
+  drugs: [
+    {
+      id: "sodium-bicarbonate",
+      role: "first",
+      note: "8.4% 1–2 mmol/kg IV bolus for broad QRS, arrhythmia, hypotension or seizures; repeat to effect. Do not mix with calcium in the same line."
+    },
+    {
+      id: "oxygen",
+      role: "first",
+      note: "Hypoxia and acidosis worsen cardiotoxicity; ventilate if breathing is inadequate."
+    },
+    {
+      id: "diazepam",
+      role: "first",
+      note: "Seizures: 10 mg IV slowly or rectally (adult); 0.5 mg/kg rectally in a child. Never IM."
+    },
+    {
+      id: "midazolam",
+      role: "alternative",
+      note: "Seizures without IV access: 10 mg IM adult, 0.2 mg/kg child (max 10 mg)."
+    },
+    {
+      id: "lorazepam",
+      role: "alternative",
+      note: "Seizures or agitation: 2–4 mg IV or IM adult."
+    },
+    {
+      id: "ringers-lactate",
+      role: "first",
+      note: "Fluid bolus for hypotension, 10–20 mL/kg, reassess."
+    },
+    {
+      id: "noradrenaline",
+      role: "alternative",
+      note: "If hypotension persists after fluids and bicarbonate."
+    },
+    {
+      id: "phenytoin",
+      role: "avoid",
+      note: "Sodium-channel blocker: worsens cardiotoxicity; ineffective for these seizures."
+    },
+    {
+      id: "amiodarone",
+      role: "avoid",
+      note: "Prolongs QT and can worsen tricyclic arrhythmias; use bicarbonate first and seek expert advice."
+    },
+    {
+      id: "haloperidol",
+      role: "avoid",
+      note: "Lowers seizure threshold and prolongs QT; use benzodiazepines for agitation."
+    },
+    {
+      id: "chlorpromazine",
+      role: "avoid",
+      note: "Anticholinergic, hypotensive and pro-convulsant."
+    },
+    {
+      id: "amitriptyline",
+      role: "avoid",
+      note: "Do not restart after an overdose; switch to fluoxetine and limit supplies."
+    },
+    {
+      id: "potassium-chloride",
+      role: "supportive",
+      note: "Bicarbonate lowers potassium; replace if measured low."
+    },
+    {
+      id: "fluoxetine",
+      role: "supportive",
+      note: "Safer antidepressant once recovered and assessed. Note that fluoxetine raises tricyclic levels if both are taken."
+    }
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Tricyclic overdose: agitation, delirium, convulsions, brisk reflexes, bowel and bladder paralysis, unstable BP and temperature, dilated pupils, then coma and respiratory depression. Arrhythmias may resist treatment and the risk lasts 3–4 days, so monitor intensively.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 2033"
+    },
+    {
+      book: "kaplan",
+      text: "Tricyclics can prolong the PR, QRS and QT intervals and cause or worsen heart block.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 1 Examination and Diagnosis of the Psychiatric Patient, pdf p. 218"
+    },
+    {
+      book: "kaplan",
+      text: "Fluoxetine, paroxetine and fluvoxamine can raise tricyclic levels three- to fourfold.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 2030"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: dilated pupils, reduced bowel sounds, urinary retention, fever, fast pulse and fluctuating confusion pointed to anticholinergic delirium; the urine screen was positive for tricyclics.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 17 Neurocognitive Disorders, case 17.2 Agitated and Confused, pdf p. 414"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO. Guidelines for the management of self-harm/poisoning; Toxbase / national poison centre guidance"
+    },
+    {
+      name: "Body R et al. Sodium bicarbonate in tricyclic overdose. Emerg Med J 2011"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016"
     }
   ],
   review: {

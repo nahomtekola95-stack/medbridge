@@ -39,7 +39,8 @@ window.CATEGORIES = {
   neuro:      "Seizures & neurology",
   analgesia:  "Analgesia, sedation & anaesthesia",
   haem:       "Haematology & bleeding",
-  nutrition:  "Nutrition & micronutrients"
+  nutrition:  "Nutrition & micronutrients",
+  psychiatry: "Psychiatry & mental health"
 };
 
 window.WARDS = {
@@ -50,7 +51,8 @@ window.WARDS = {
   medical:    { label: "Adult medical ward",   note: "General internal medicine inpatients." },
   surgical:   { label: "Surgery & theatre",    note: "Operating theatre, anaesthesia and the surgical ward." },
   icu:        { label: "ICU / high dependency", note: "Sickest patients; where pumps are missed most." },
-  outpatient: { label: "Outpatient & health post", note: "OPD, health centre and community level." }
+  outpatient: { label: "Outpatient & health post", note: "OPD, health centre and community level." },
+  psychiatric: { label: "Psychiatric ward & mental health", note: "Inpatient psychiatry, emergency mental health and community follow-up." }
 };
 
 window.DRUG_DB = [
@@ -226,7 +228,9 @@ window.DRUG_DB = [
     { book: "nelson", text: "Asthma adjunct: magnesium sulfate 25–75 mg/kg IV over 20 min, maximum 2 g; flushing, headache, rare hypotension.", ref: "Nelson 22nd ed. 2024, ch. 185, p. 1406" },
     { book: "nelson", text: "Resuscitation/torsades: 25–50 mg/kg IV/IO, max 2 g, over 10–20 min (faster in torsades); can cause hypotension.", ref: "Nelson 22nd ed. 2024, Table 79.x Resuscitation drugs, p. 563" },
     { book: "nelson", text: "Hypomagnesaemia: 25–50 mg/kg (0.05–0.1 mL/kg of 50 %) as slow IV infusion; may be given IM in neonates.", ref: "Nelson 22nd ed. 2024, ch. 69 Electrolyte disorders, p. 505" },
-    { book: "note", text: "Eclampsia regimens are obstetric and not covered in Nelson; see WHO sources.", ref: "Editorial note" }
+    { book: "note", text: "Eclampsia regimens are obstetric and not covered in Nelson; see WHO sources.", ref: "Editorial note" },
+    {book: "kaplan",text: "Magnesium is often low in heavy drinkers; low magnesium causes agitation, confusion and delirium, and untreated can lead to convulsions and coma.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 1 Examination and Diagnosis of the Psychiatric Patient, pdf p. 211"},
+    {book: "kaplan",text: "Wernicke encephalopathy: thiamine 100 mg IV or IM given with magnesium sulfate before glucose loading.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, Table 25-12, pdf p. 2567"}
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1063,7 +1067,7 @@ window.DRUG_DB = [
     "Severe acute malnutrition: 50 mL of 10 % glucose or sucrose orally/NG, then F-75 every 2 h; IV 5 mL/kg of 10 % only if unconscious.",
     "Every convulsing, unconscious or shocked child: check/treat glucose."
   ],
-  cautions: ["Thiamine 100 mg IV/IM before or with glucose in alcohol-dependent/malnourished adults (Wernicke's)."],
+  cautions: ["In alcohol-dependent or malnourished adults give thiamine IV/IM before glucose where possible, to avoid precipitating Wernicke encephalopathy (Kaplan), but never delay treating hypoglycaemia while waiting for thiamine."],
   calc: { type: "weight", dosePerKg: 5, doseUnit: "mL", conc: 1, concUnit: "mL/mL", label: "Child bolus: 5 mL/kg of 10 % glucose" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013 (hypoglycaemia; sublingual sugar)" }, { name: "WHO. Updates on the management of severe acute malnutrition, 2013" }, { name: "JBDS. Hospital management of hypoglycaemia in adults with diabetes, 2023" }],
   textbook: [
@@ -1073,7 +1077,9 @@ window.DRUG_DB = [
     { book: "harrison", text: "Hyperkalaemia: never give a D50 bolus without insulin, because hypertonic glucose can acutely worsen hyperkalaemia.", ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 361" },
     { book: "nelson", text: "Hypoglycaemia: if symptomatic or unable to take oral intake, 2 mL/kg of 10 % dextrose (D10W) IV bolus, then a dextrose infusion at 5–6 mg/kg/min (infants) or 2–3 mg/kg/min (older children) to prevent recurrence. Conscious child: 15 g rapid-acting carbohydrate (e.g. 4 oz juice).", ref: "Nelson 22nd ed. 2024, ch. 113 Hypoglycemia, p. 983" },
     { book: "nelson", text: "Resuscitation dosing: dextrose 0.5–1 g/kg IV/IO = D10W 5–10 mL/kg, D25W 2–4 mL/kg, D50W 1–2 mL/kg; recheck serial glucose as hypoglycaemia can recur.", ref: "Nelson 22nd ed. 2024, Table 79.x, p. 563" },
-    { book: "nelson", text: "Glucagon IM: 0.5 mg if < 20 kg, 1.0 mg if > 20 kg; intranasal 3 mg. Often causes vomiting.", ref: "Nelson 22nd ed. 2024, ch. 629, p. 3534" }
+    { book: "nelson", text: "Glucagon IM: 0.5 mg if < 20 kg, 1.0 mg if > 20 kg; intranasal 3 mg. Often causes vomiting.", ref: "Nelson 22nd ed. 2024, ch. 629, p. 3534" },
+    {book: "kaplan",text: "In alcohol-dependent or malnourished patients glucose uses up remaining thiamine; give thiamine (IM) before a glucose infusion to avoid precipitating Wernicke encephalopathy.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.1 Consultation-Liaison Psychiatry, pdf p. 2522"},
+    {book: "kaplan",text: "For alcohol-dependent patients on IV glucose, add 100 mg thiamine to each litre.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 915"}
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1145,7 +1151,10 @@ window.DRUG_DB = [
     { book: "harrison", text: "Benzodiazepine overdose: flumazenil 0.2 mg/min reverses rapidly but may precipitate seizures and raise intracranial pressure; its effect is shorter than most benzodiazepines.", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3691" },
     { book: "nelson", text: "Status epilepticus: a benzodiazepine is emergency therapy; if seizures persist 5 min after the second benzodiazepine dose, urgent therapy with fosphenytoin (20 mg/kg), valproate (40 mg/kg) or levetiracetam is recommended; IV phenobarbital is an alternative if these are unavailable.", ref: "Nelson 22nd ed. 2024, ch. 633.8 Status epilepticus, p. 3628" },
     { book: "nelson", text: "Rescue at home: rectal diazepam for a seizure lasting > 5 min; buccal or intranasal midazolam or diazepam are alternatives.", ref: "Nelson 22nd ed. 2024, ch. 633.1 Febrile seizures, p. 3597" },
-    { book: "nelson", text: "Lorazepam 0.1 mg/kg IV/PO/SL/PR, repeat every 10 min × 2; rectal diazepam gel 0.2 mg/kg/dose.", ref: "Nelson 22nd ed. 2024, ch. 8 Pediatric palliative care, symptom table" }
+    { book: "nelson", text: "Lorazepam 0.1 mg/kg IV/PO/SL/PR, repeat every 10 min × 2; rectal diazepam gel 0.2 mg/kg/dose.", ref: "Nelson 22nd ed. 2024, ch. 8 Pediatric palliative care, symptom table" },
+    {book: "kaplan",text: "Do not give diazepam IM for alcohol withdrawal because absorption is erratic; benzodiazepines are the treatment of choice for withdrawal seizures.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 908"},
+    {book: "kaplan",text: "Violent, struggling patient: diazepam 5–10 mg IV slowly over 2 minutes, with great care to avoid respiratory arrest.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2560"},
+    {book: "kaplan",text: "Acute dystonia: diazepam 10 mg IV has been reported effective when anticholinergics are not used.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1892"}
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1210,7 +1219,10 @@ window.DRUG_DB = [
     { book: "harrison", text: "Severe malaria: without respiratory support, do not give a full 20 mg/kg phenobarbital load to prevent convulsions, as it may cause respiratory arrest; levetiracetam is preferred.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
     { book: "nelson", text: "Loading doses: phenytoin 20 mg/kg, phenobarbital 10–20 mg/kg; in older children a lower load of 5 mg/kg (repeatable) avoids excessive sedation.", ref: "Nelson 22nd ed. 2024, ch. 633.10 Treatment of seizures, p. 3612" },
     { book: "nelson", text: "Neonatal loading dose is usually 20 mg/kg; infants and children often receive lower doses to avoid respiratory depression, repeated if response is inadequate. Not a first-line urgent therapy because of side-effects.", ref: "Nelson 22nd ed. 2024, ch. 633.8, p. 3628" },
-    { book: "nelson", text: "Neonatal seizures: phenobarbital remains first-line; levetiracetam is increasingly preferred as second-line over phenytoin 20 mg/kg or lorazepam 0.1 mg/kg.", ref: "Nelson 22nd ed. 2024, ch. 122 Nervous system disorders of the newborn, p. 1067" }
+    { book: "nelson", text: "Neonatal seizures: phenobarbital remains first-line; levetiracetam is increasingly preferred as second-line over phenytoin 20 mg/kg or lorazepam 0.1 mg/kg.", ref: "Nelson 22nd ed. 2024, ch. 122 Nervous system disorders of the newborn, p. 1067" },
+    {book: "kaplan",text: "Any CNS depressant, including barbiturates, can treat alcohol withdrawal, but most clinicians choose a benzodiazepine for relative safety.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 908"},
+    {book: "kaplan",text: "In barbiturate withdrawal, phenobarbital substitutes for short-acting barbiturates (about 30 mg per 100 mg), held for 2 days before tapering.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.5 Sedative-, Hypnotic-, or Anxiolytic-Related Disorders, pdf p. 971"},
+    {book: "dsm",text: "The casebook's alcohol-withdrawal reading list includes a register study comparing phenobarbital with benzodiazepines.",ref: "DSM-5-TR Clinical Cases 2023, ch. 16 Substance-Related and Addictive Disorders, case 16.2 Alcohol Withdrawal, pdf p. 386"}
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1281,7 +1293,10 @@ window.DRUG_DB = [
     { book: "schwartz", text: "Ketamine raises intracranial and intraocular pressure, so its use in head and neck trauma is described as controversial; it may cause myocardial ischaemia in coronary disease.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
     { book: "nelson", text: "Intubation/sedation: ketamine 1–2 mg/kg IV or 4–6 mg/kg IM; onset 2–3 min, duration 10–15 min; raises HR, BP, ICP; bronchodilation, sialorrhoea.", ref: "Nelson 22nd ed. 2024, ch. 86 Table 86.11 Medications for intubation, p. 620" },
     { book: "nelson", text: "Low-dose (1–2 mg/kg) ketamine preserves airway reflexes and spontaneous ventilation; at 3–5 mg/kg loss of airway reflexes, apnoea and respiratory depression can occur; aspiration remains a risk.", ref: "Nelson 22nd ed. 2024, ch. 92 Procedural sedation, p. 670" },
-    { book: "nelson", text: "Burn dressing changes: ketamine 1–4 mg/kg IV for children with high opioid requirements, with continuous cardiovascular monitoring and an advanced-airway-trained provider.", ref: "Nelson 22nd ed. 2024, ch. 91 Burn injuries, p. 654" }
+    { book: "nelson", text: "Burn dressing changes: ketamine 1–4 mg/kg IV for children with high opioid requirements, with continuous cardiovascular monitoring and an advanced-airway-trained provider.", ref: "Nelson 22nd ed. 2024, ch. 91 Burn injuries, p. 654" },
+    {book: "kaplan",text: "Ketamine acts quickly in treatment-resistant depression but the effect fades within 2–7 days; dissociation and hallucinations occur, and it has abuse potential.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 7 Depressive Disorders, pdf p. 1254"},
+    {book: "kaplan",text: "Ketamine blocks NMDA glutamate receptors and can cause symptoms ranging from anxiety to psychosis.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.9 Hallucinogen-Related Disorders, pdf p. 1024"},
+    {book: "kaplan",text: "When low-dose ketamine is given for depression, staff must be ready to treat effects on breathing or significant bradycardia.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 2046"}
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -2225,7 +2240,9 @@ window.DRUG_DB = [
     { book: "harrison", text: "Fentanyl overdose may need about twice the usual naloxone dose; buprenorphine or fentanyl overdose may require total doses of 10 mg or more.", ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3690" },
     { book: "schwartz", text: "Naloxone rapidly reverses opioid effects and is used to rescue opioid-associated respiratory depression; poorly absorbed orally.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031" },
     { book: "nelson", text: "Naloxone IV/IO/IM/SC 0.1 mg/kg for full reversal, maximum 2 mg; intranasal 4 mg spray, may repeat every 2–3 minutes; endotracheal 2–3 times the IV dose if no IV/IO access. Use lower doses (0.001–0.005 mg/kg) for respiratory depression from therapeutic opioid dosing. May need redosing every 2–3 minutes as the half-life is shorter than most narcotics.", ref: "Nelson 22nd ed. 2024, Table 79.5 Medications for pediatric resuscitation, p. 563" },
-    { book: "nelson", text: "Opiate toxicity is confirmed by IV naloxone 0.1 mg/kg, not exceeding 2 mg, which dilates pupils constricted by the opiate; treatment consists of maintaining oxygenation and continued naloxone.", ref: "Nelson 22nd ed. 2024, ch. 156 Substance use, p. 1208" }
+    { book: "nelson", text: "Opiate toxicity is confirmed by IV naloxone 0.1 mg/kg, not exceeding 2 mg, which dilates pupils constricted by the opiate; treatment consists of maintaining oxygenation and continued naloxone.", ref: "Nelson 22nd ed. 2024, ch. 156 Substance use, p. 1208" },
+    {book: "kaplan",text: "Opioid overdose: secure the airway and ventilate first; naloxone about 0.8 mg per 70 kg IV slowly, repeated after a few minutes; too much precipitates withdrawal in dependent patients.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.4 Opioid-Related Disorders, pdf p. 948"},
+    {book: "kaplan",text: "No response after 4–5 mg suggests non-opioid causes; naloxone is shorter acting than many opioids, so repeat doses may be needed.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.4 Opioid-Related Disorders, pdf p. 948"}
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -2297,7 +2314,8 @@ window.DRUG_DB = [
     { book: "harrison", text: "Cardiac glycoside toxicity: atropine, dopamine, epinephrine and external pacing are temporizing measures for bradydysrhythmias pending digoxin Fab.", ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, p. 3712" },
     { book: "nelson", text: "Atropine IV/IO 0.02 mg/kg; minimum dose 0.1 mg for bradycardia treatment; maximum single dose 0.5 mg in a child and 1 mg in an adolescent; repeat once if needed. Endotracheal dose 0.04–0.06 mg/kg, maximum 2 mg. Higher doses may be used with organophosphate poisoning.", ref: "Nelson 22nd ed. 2024, Table 79.5, p. 563" },
     { book: "nelson", text: "In the bradycardia algorithm, atropine IV/IO 0.02 mg/kg may be repeated once, with epinephrine 0.01 mg/kg repeated every 3–5 minutes as the primary drug.", ref: "Nelson 22nd ed. 2024, Fig. 79 bradycardia algorithm, p. 561" },
-    { book: "nelson", text: "Severe acute malnutrition with corneal ulceration: instil 1 drop of atropine 1 % into the affected eye to relax the eye and prevent the lens from pushing out.", ref: "Nelson 22nd ed. 2024, ch. 62, Table, p. 428" }
+    { book: "nelson", text: "Severe acute malnutrition with corneal ulceration: instil 1 drop of atropine 1 % into the affected eye to relax the eye and prevent the lens from pushing out.", ref: "Nelson 22nd ed. 2024, ch. 62, Table, p. 428" },
+    {book: "kaplan",text: "Atropine 0.5 mg reverses physostigmine toxicity (salivation, sweating) when physostigmine is used for anticholinergic toxicity.",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1959"}
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -3448,7 +3466,9 @@ window.DRUG_DB = [
     { book: "schwartz", text: "Lactic acidosis of shock: restore perfusion with volume, not bicarbonate; bicarbonate has not reduced morbidity or mortality and can raise PCO2 and worsen intracellular acidosis.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 92" },
     { book: "schwartz", text: "Hyperkalaemia shift: bicarbonate 1 ampule IV with glucose/insulin; watch for circulatory overload and hypernatraemia in fragile cardiac patients.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 95" },
     { book: "nelson", text: "Sodium bicarbonate 1 mEq/kg IV/IO; administer slowly and ensure adequate ventilation.", ref: "Nelson 22nd ed. 2024, Table 79.5 Medications for pediatric resuscitation, p. 563" },
-    { book: "nelson", text: "Severe hyperkalaemia above 7 mEq/L, especially with electrocardiographic changes, requires calcium gluconate 10 % 100 mg/kg/dose (maximum 3,000 mg), sodium bicarbonate 1–2 mEq/kg IV over 5–10 minutes, and regular insulin 0.1 units/kg with 50 % glucose 1 mL/kg over 1 hour.", ref: "Nelson 22nd ed. 2024, ch. 573, p. 3245" }
+    { book: "nelson", text: "Severe hyperkalaemia above 7 mEq/L, especially with electrocardiographic changes, requires calcium gluconate 10 % 100 mg/kg/dose (maximum 3,000 mg), sodium bicarbonate 1–2 mEq/kg IV over 5–10 minutes, and regular insulin 0.1 units/kg with 50 % glucose 1 mL/kg over 1 hour.", ref: "Nelson 22nd ed. 2024, ch. 573, p. 3245" },
+    {book: "kaplan",text: "Kaplan describes tricyclic overdose arrhythmias that may resist treatment for 3–4 days but gives no bicarbonate dosing (use toxicology guidance).",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 2033"},
+    {book: "kaplan",text: "Sodium bicarbonate increases renal lithium clearance (interaction table; not a treatment recommendation).",ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, Table 21-30, pdf p. 2066"}
   ],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
@@ -5527,6 +5547,2877 @@ window.DRUG_DB = [
       book: "harrison",
       text: "Myocardial infarction: supplemental oxygen is not recommended when saturation is normal; give it when saturation is under 90 % and reassess the need.",
       ref: "Harrison 22nd ed. 2025, ch. 286 ST-Segment Elevation Myocardial Infarction, p. 2118"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "haloperidol",
+  name: "Haloperidol",
+  aka: [
+    "Haldol",
+    "Serenace"
+  ],
+  cls: "First-generation (high-potency) antipsychotic, butyrophenone",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "emergency",
+    "medical",
+    "surgical",
+    "icu",
+    "outpatient"
+  ],
+  tags: [
+    "psychosis",
+    "schizophrenia",
+    "mania",
+    "agitation",
+    "aggression",
+    "rapid tranquillisation",
+    "delirium",
+    "antipsychotic"
+  ],
+  presentation: [
+    "Tablets 1.5 mg and 5 mg (strengths vary by supplier).",
+    "Injection 5 mg/mL, 1 mL ampoule (haloperidol lactate) for IM use.",
+    "Do not confuse with haloperidol DECANOATE 50 mg/mL: an oily long-acting depot. It is never given IV and never used for acute agitation."
+  ],
+  indications: [
+    "Acute psychosis and schizophrenia (acute treatment and maintenance)",
+    "Mania with psychotic symptoms or severe agitation",
+    "Severe agitation or violence when calming by talking has failed (rapid tranquillisation, often with promethazine)",
+    "Delirium with distressing hallucinations or dangerous agitation, while the cause is treated",
+    "Nausea and vomiting in palliative care (low dose)"
+  ],
+  standard: {
+    summary: "Oral first. IM if the patient refuses and the risk is high. An ECG before regular or higher doses where possible. IV haloperidol is not recommended without cardiac monitoring.",
+    items: [
+      {
+        label: "Psychosis, adult (oral)",
+        text: "WHO mhGAP: start 1.5–3 mg daily and increase as needed; maximum 20 mg daily. About 5 mg a day is a usual effective dose (Kaplan). Higher doses add side effects, not benefit."
+      },
+      {
+        label: "Acute agitation, adult",
+        text: "Oral 5 mg first if the patient will take it. If refused and the risk is high: 5 mg deep IM, often with promethazine 25–50 mg IM in a separate syringe (NICE NG10). Watch for 1 hour after the first dose before giving more. Most references cap total haloperidol (oral plus IM) at 20 mg in 24 hours; many units use a lower cap. Confirm with local protocol."
+      },
+      {
+        label: "Older adults and dementia",
+        text: "Start 0.5–1 mg (Kaplan recommends 0.5–1 mg a day for agitation in dementia). Increase slowly. All antipsychotics raise the risk of death and stroke in older people with dementia: use only for severe distress or danger, for the shortest time."
+      },
+      {
+        label: "Delirium",
+        text: "Treat the cause first (infection, hypoxia, low glucose, drugs, alcohol withdrawal, urinary retention, pain). Older or frail: 0.5–1 mg orally twice daily, with extra doses every 4–6 hours if needed (Kaplan). Younger adults with severe agitation: 2–5 mg IM, repeated after an hour if needed (Kaplan). Stop once the delirium settles."
+      },
+      {
+        label: "Nausea and vomiting (palliative care)",
+        text: "Low doses, commonly 0.5–1.5 mg at night orally. Confirm with the palliative care protocol."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Rapid tranquillisation without a cardiac monitor: oral first, then IM",
+      best_for: "Emergency department, medical or psychiatric ward, health centre. An agitated patient who is a danger to self or others and calming by talking has failed.",
+      requires: [
+        "oral",
+        "im"
+      ],
+      steps: [
+        "Try to calm first: one calm speaker, space, a quiet area, offer food, water and a family member. Tell the patient clearly what will happen.",
+        "Look quickly for a medical cause: fever (malaria, meningitis), low glucose (check if you have a glucometer), low oxygen, head injury, alcohol withdrawal, drug intoxication, pain, full bladder.",
+        "Offer oral medicine: haloperidol 5 mg (older or frail: 0.5–1 mg), with or without promethazine 25 mg oral. If alcohol withdrawal or stimulant intoxication is likely, give a benzodiazepine instead (see Lorazepam or Diazepam).",
+        "Wait 30–60 minutes. If still dangerous and oral is refused: haloperidol 5 mg deep IM plus promethazine 25–50 mg deep IM, in separate syringes and separate sites (outer thigh or upper outer buttock).",
+        "Use a benzodiazepine instead of haloperidol if: this is the first ever antipsychotic, there is known heart disease, fainting or palpitations, a family history of sudden death, or no ECG can be done (NICE NG10 advises IM lorazepam in these cases). If lorazepam is not stocked: diazepam 10 mg orally, or 5–10 mg slowly IV. Never IM diazepam.",
+        "Reassess after 30–60 minutes (Kaplan: observe for 1 hour after the first dose). Small repeated doses are safer than one large dose. Do not exceed the daily maximum in your protocol.",
+        "Keep biperiden (or another anticholinergic) ready for acute dystonia, especially in young men."
+      ],
+      monitor: [
+        "After any sedating injection: pulse, blood pressure (if a cuff is available), breathing rate, temperature, hydration and level of consciousness at least every hour until there are no concerns. Every 15 minutes if the patient is asleep or heavily sedated, has taken alcohol or other drugs, has a physical illness, was restrained, or received more than the usual maximum dose (NICE NG10).",
+        "No pulse oximeter: count breaths for a full minute, look at lip and tongue colour, and check the patient rouses to voice. Put a sedated patient in the recovery position. Call for help and prepare a bag-valve-mask if breathing is slow or shallow, colour is poor, or the patient cannot be roused.",
+        "Watch for acute dystonia (twisted neck, eyes rolling up, jaw or tongue spasm) in the first hours to days."
+      ],
+      cautions: [
+        "Never use haloperidol decanoate for agitation.",
+        "Avoid in patients already heavily intoxicated with alcohol or other sedatives (Kaplan lists this as a contraindication): add-on breathing depression.",
+        "In alcohol withdrawal antipsychotics lower the seizure threshold; a benzodiazepine is the main treatment.",
+        "Parkinson's disease or Lewy body dementia: severe stiffness and falls. Avoid haloperidol."
+      ]
+    },
+    {
+      title: "Safe physical restraint and positioning to give an injection",
+      best_for: "When a patient must be held briefly to receive medicine or prevent serious harm.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Restraint is a last resort, only after talking and offering oral medicine have failed (Kaplan). Use the least restrictive hold for the shortest time.",
+        "Gather enough trained staff before starting: usually one to hold and protect the head, one for each limb. One person leads, speaks to the patient and watches the airway throughout.",
+        "Never press on the neck, chest, back or abdomen. Never kneel on the patient. Do not cover the face.",
+        "If the patient is held face down to inject the buttock, keep it as short as possible, then turn onto the side or back.",
+        "Give the injection into the outer thigh if possible: it can be done with the patient on their back or side.",
+        "Release holds as soon as it is safe. A sedated patient goes into the recovery position.",
+        "If mechanical restraint (straps) is used under local law and policy: padded straps, never tied face down, limb circulation and skin checked often, and a staff member watching continuously. Never leave a restrained patient alone.",
+        "Record why, when, who, how long, medicines given and observations. Keep the patient's dignity and privacy (Kaplan)."
+      ],
+      monitor: [
+        "Breathing, colour and responsiveness continuously during the hold",
+        "If the patient says they cannot breathe, goes quiet or goes limp: release at once and check airway and pulse",
+        "After restraint: skin injury, limb circulation, urine colour (dark urine suggests muscle breakdown), temperature"
+      ],
+      cautions: [
+        "Sudden death during restraint is more likely with obesity, alcohol or stimulant intoxication, exhaustion, long struggles and face-down holds.",
+        "Restraining a patient in alcohol withdrawal delirium is risky: they may fight to dangerous exhaustion (Kaplan). Prefer adequate benzodiazepine sedation in a safe room with staff present.",
+        "A hot room plus struggling plus antipsychotic increases the risk of heat stroke and neuroleptic malignant syndrome."
+      ]
+    },
+    {
+      title: "Lowering QT risk when no ECG is available",
+      best_for: "Any hospital or health centre without an ECG, before and during antipsychotic treatment.",
+      requires: [],
+      steps: [
+        "Ask about fainting, collapse during exercise or emotion, palpitations, known heart disease, and sudden unexplained death in young relatives. Any yes: avoid haloperidol if possible and get an ECG first.",
+        "Feel the pulse for a full minute. A slow pulse (below 50) or an irregular pulse raises the risk.",
+        "Look for low potassium or magnesium: vomiting, diarrhoea, heavy alcohol use, malnutrition, diuretics such as furosemide. Correct these first.",
+        "Check the medicine list for other QT-prolonging drugs: amiodarone, quinine, amitriptyline, chlorpromazine, other antipsychotics, some antibiotics (macrolides, fluoroquinolones), methadone. Avoid combining them.",
+        "Use the lowest effective dose. Give it orally or IM, never IV.",
+        "For agitation in a high-risk patient, prefer a benzodiazepine or olanzapine.",
+        "Arrange an ECG at the nearest facility before long-term treatment, doses above the usual range, or combinations of QT-prolonging drugs."
+      ],
+      monitor: [
+        "Pulse rate and rhythm before starting and after each dose increase",
+        "Any fainting, palpitations or a brief seizure-like collapse (torsades can look like a seizure)"
+      ],
+      cautions: [
+        "A normal pulse does not rule out a long QT.",
+        "Torsades de pointes: lie flat, check pulse, start CPR if absent. Magnesium sulfate IV is the treatment (see Magnesium sulfate)."
+      ]
+    },
+    {
+      title: "Recognising neuroleptic malignant syndrome without a CK test",
+      best_for: "Any patient on an antipsychotic (tablets, injection or depot) who becomes feverish, stiff or confused.",
+      requires: [],
+      steps: [
+        "Suspect it in anyone on an antipsychotic with fever plus muscle stiffness plus confusion. It develops over 24–72 hours and is often mistaken for worsening psychosis (Kaplan). Risk is highest with high-potency drugs, high or rapidly increased doses, IM dosing, depots and dehydration.",
+        "Check by hand: temperature; stiffness like a bending lead pipe when you flex the elbow; heavy sweating; fast pulse; high or swinging blood pressure; mutism; drowsiness; trouble swallowing; incontinence.",
+        "Look at the urine: dark or cola-coloured urine, or a dipstick positive for blood with no red cells seen, suggests muscle breakdown. Measure urine output.",
+        "Think of other causes that look similar and treat them if you cannot exclude them: malaria (do a rapid test), meningitis or encephalitis, sepsis, heat stroke, catatonia, alcohol withdrawal, lithium toxicity, serotonin syndrome (jerks and clonus, on fluoxetine or amitriptyline), anticholinergic poisoning (hot DRY skin, big pupils, no rigidity).",
+        "Act: stop ALL antipsychotics (and metoclopramide). Cool with tepid sponging, fans and ice packs to groin and armpits. Give generous IV fluids (0.9 % saline or Ringer's lactate) and aim for good urine output; insert a catheter if possible.",
+        "Give a benzodiazepine for agitation and stiffness: lorazepam 1–2 mg IM or IV, or diazepam slowly IV (never IM).",
+        "Refer urgently to a hospital with high-dependency care. Bromocriptine or dantrolene may be used there (Kaplan lists bromocriptine 2.5 mg orally two or three times a day).",
+        "After full recovery wait before restarting (often at least 2 weeks; ask a specialist), then use a low dose of a different, lower-potency or second-generation drug and increase slowly (Kaplan)."
+      ],
+      monitor: [
+        "Temperature, pulse, blood pressure, breathing and consciousness every 1–2 hours",
+        "Urine output and colour; fluid balance",
+        "Creatinine and potassium if any laboratory is available"
+      ],
+      cautions: [
+        "A depot keeps releasing drug for weeks; mortality is higher when depots are involved (Kaplan).",
+        "Do not restrain a feverish rigid patient face down or in a hot room."
+      ]
+    }
+  ],
+  paediatric: [
+    "Children and adolescents: specialist decision. For rapid tranquillisation in children and young people, NICE NG10 recommends IM lorazepam rather than haloperidol.",
+    "Tics, Tourette disorder and severe aggression in autism: specialist use only. Haloperidol causes more dystonia and sedation in young people than newer drugs (Kaplan).",
+    "Adolescents, especially boys, are at high risk of acute dystonia: keep an anticholinergic ready.",
+    "Any dose by weight or age must come from BNF for Children or the local paediatric protocol."
+  ],
+  cautions: [
+    "Movement side effects: acute dystonia (hours to days), parkinsonism (weeks), akathisia (inner restlessness, often mistaken for worse agitation), tardive dyskinesia (months to years). See Biperiden.",
+    "Neuroleptic malignant syndrome: fever, rigidity, confusion, unstable pulse and blood pressure. Stop the drug and treat urgently.",
+    "QT prolongation and torsades de pointes, especially IV, at high doses, with other QT drugs, low potassium or magnesium, or heart disease (Kaplan).",
+    "Older people with dementia: higher death and stroke risk. Parkinson's disease and Lewy body dementia: avoid.",
+    "Lowers the seizure threshold; impairs temperature control (heat stroke risk in hot weather, especially with alcohol).",
+    "Raises prolactin: missed periods, breast milk leakage, sexual problems.",
+    "Pregnancy and breastfeeding: see Safety tab. Liver disease: start low."
+  ],
+  antidote: "No specific antidote. Acute dystonia: biperiden (or benztropine, promethazine or diazepam). Hypotension: lie flat with legs raised and give IV fluids; noradrenaline if severe. Do not use adrenaline for antipsychotic-induced hypotension. Torsades: magnesium sulfate IV.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "For an acutely disturbed adult, the equivalent of haloperidol 5–20 mg is reasonable; an older adult may need as little as 1 mg. IM doses are about half oral doses. Observe for 1 hour after the first dose before giving more.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1968"
+    },
+    {
+      book: "kaplan",
+      text: "Small IM or oral doses (e.g. haloperidol 2–5 mg) repeated every 30–60 minutes until controlled are often better than a large first dose, which over-sedates; check blood pressure and vital signs meanwhile.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2561"
+    },
+    {
+      book: "kaplan",
+      text: "Haloperidol has been linked to ventricular arrhythmia, torsades de pointes and sudden death when given intravenously.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1959"
+    },
+    {
+      book: "kaplan",
+      text: "Delirium with psychosis: haloperidol 2–5 mg IM, repeated after an hour if still agitated, then oral twice daily once calm; it can prolong QT, so ECGs and cardiac status should be checked.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.1 Delirium, pdf p. 742"
+    },
+    {
+      book: "kaplan",
+      text: "Agitation in dementia: low doses of a high-potency drug (haloperidol 0.5–1 mg a day) are recommended; falls from postural hypotension, parkinsonism and worse confusion are the main problems.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1955"
+    },
+    {
+      book: "kaplan",
+      text: "Neuroleptic malignant syndrome evolves over 24–72 hours and is often missed early, when withdrawal or agitation is mistaken for worsening psychosis; high-potency drugs such as haloperidol carry the greatest risk.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1888"
+    },
+    {
+      book: "dsm",
+      text: "An older man after hip surgery became stiff within an hour of haloperidol 2 mg given for agitation; this is especially common with Lewy body or Parkinson-related cognitive decline.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 17 Neurocognitive Disorders, case 17.1 Dysphoria, pdf p. 409"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder; Substance use)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "NICE NG10 Violence and aggression: short-term management in mental health, health and community settings, 2015 (rapid tranquillisation)"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Haloperidol injection and tablets, product information (SmPC)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "chlorpromazine",
+  name: "Chlorpromazine",
+  aka: [
+    "Largactil",
+    "Thorazine"
+  ],
+  cls: "First-generation (low-potency) antipsychotic, phenothiazine",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "emergency",
+    "medical",
+    "outpatient"
+  ],
+  tags: [
+    "psychosis",
+    "schizophrenia",
+    "mania",
+    "agitation",
+    "sedation",
+    "hiccups",
+    "antipsychotic",
+    "phenothiazine"
+  ],
+  presentation: [
+    "Tablets 25 mg, 50 mg and 100 mg.",
+    "Injection 25 mg/mL, 2 mL ampoule (50 mg). Protect from light.",
+    "Oral syrup (for example 25 mg/5 mL) in some settings; check strength.",
+    "Staff: avoid skin contact with the solution or crushed tablets (contact dermatitis). Wear gloves."
+  ],
+  indications: [
+    "Schizophrenia and other psychoses (WHO essential medicine)",
+    "Mania",
+    "Agitation where sedation is wanted, preferably orally",
+    "Intractable hiccups",
+    "Nausea and vomiting in terminal illness (when other antiemetics are unsuitable)"
+  ],
+  standard: {
+    summary: "Oral is the safe route. IM only in small doses with the patient lying down and blood pressure checked: it can cause a profound fall in blood pressure.",
+    items: [
+      {
+        label: "Psychosis, adult (oral)",
+        text: "WHO mhGAP: start 25–50 mg daily; usual effective dose 75–300 mg daily; up to 1000 mg may be needed for severe symptoms (specialist). Kaplan gives about 300 mg a day as a usual effective dose. Give most or all at night to use the sedation."
+      },
+      {
+        label: "Acute agitation, adult",
+        text: "Oral 25–50 mg. IM only if essential: no more than 25 mg in one injection (Kaplan: more can cause profound hypotension), patient lying down, with blood pressure checked. For rapid tranquillisation, haloperidol with promethazine or a benzodiazepine is usually safer."
+      },
+      {
+        label: "Older adults",
+        text: "Start with a third to half of the adult dose and increase slowly. Postural hypotension, falls, confusion and constipation are common. Avoid IM."
+      },
+      {
+        label: "Intractable hiccups",
+        text: "25–50 mg orally three or four times daily (BNF). Confirm with local protocol."
+      },
+      {
+        label: "Nausea and vomiting",
+        text: "10–25 mg orally every 4–6 hours as needed (BNF). Confirm with local protocol."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Giving IM chlorpromazine safely without monitors (hypotension precautions)",
+      best_for: "When chlorpromazine injection is the only sedating antipsychotic stocked.",
+      requires: [
+        "im",
+        "bp"
+      ],
+      steps: [
+        "First choose another option if you can: oral chlorpromazine, or haloperidol with promethazine, or a benzodiazepine.",
+        "Do not give IM chlorpromazine to a patient who is dehydrated, bleeding, septic, elderly, or drunk.",
+        "Measure blood pressure and pulse lying and, if safe, sitting or standing before the dose (Kaplan).",
+        "Give no more than 25 mg (1 mL of 25 mg/mL) in one injection (Kaplan), slowly and deep into a large muscle. It is painful.",
+        "Keep the patient lying down. Peak effect after IM is about 30 minutes (Kaplan), so stay lying for at least that long.",
+        "Recheck lying and sitting blood pressure and pulse at 30 and 60 minutes and before the patient gets up. Sit up first with legs over the bed edge, then stand with help.",
+        "If blood pressure falls or the patient faints: lie flat with legs raised, give IV fluids (0.9 % saline or Ringer's lactate). If severe, noradrenaline. Do not give adrenaline (Kaplan: it worsens this hypotension)."
+      ],
+      monitor: [
+        "Lying and sitting blood pressure and pulse before, at 30 and 60 minutes, and during the first days (Kaplan)",
+        "Dizziness or fainting on standing",
+        "Urine output",
+        "After any sedating injection: pulse, blood pressure (if a cuff is available), breathing rate, temperature, hydration and level of consciousness at least every hour until there are no concerns. Every 15 minutes if the patient is asleep or heavily sedated, has taken alcohol or other drugs, has a physical illness, was restrained, or received more than the usual maximum dose (NICE NG10)."
+      ],
+      cautions: [
+        "No BP cuff: use pulse (rising pulse on sitting up), dizziness and pale sweaty skin as warning signs, and keep the patient lying for longer."
+      ]
+    },
+    {
+      title: "Starting oral chlorpromazine without falls or sunburn",
+      best_for: "Outpatient, health centre or ward starting long-term oral treatment.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Start low, usually 25–50 mg at night, and increase every few days. Tolerance to dizziness and sedation develops (Kaplan).",
+        "Teach the patient and family: get up slowly (sit, wait, then stand); drink enough fluid, about 2 litres a day unless fluid is restricted (Kaplan); avoid alcohol.",
+        "Older people: a large bedtime dose can cause falls at night when they get up to pass urine (Kaplan). Consider divided doses, a light or bedside container at night, and help to walk.",
+        "Sun: chlorpromazine can cause severe sunburn and later grey-blue skin (Kaplan). Advise a hat, long sleeves and shade, and limit time in strong sun. This matters in the highlands where the sun is strong.",
+        "Constipation: fluids, fruit, vegetables and a laxative if needed. Severe constipation can progress to bowel obstruction (Kaplan).",
+        "Hot lowland climates: chlorpromazine reduces sweating and heat control. Avoid heavy work in the heat; watch for heat stroke."
+      ],
+      monitor: [
+        "Dizziness, falls",
+        "Sedation",
+        "Bowel habit and passing urine",
+        "Weight"
+      ],
+      cautions: [
+        "Epilepsy: chlorpromazine lowers the seizure threshold more than high-potency drugs (Kaplan). Prefer haloperidol or olanzapine if seizures are a concern."
+      ]
+    },
+    {
+      title: "Recognising serious chlorpromazine harms without laboratory tests",
+      best_for: "Follow-up visits at health-centre level.",
+      requires: [],
+      steps: [
+        "Yellow eyes, dark urine, pale stools, upper abdominal pain, nausea or fever with rash, usually in the first month: think cholestatic jaundice. Stop chlorpromazine and refer (Kaplan).",
+        "Sore throat, mouth ulcers or fever: think agranulocytosis. Stop the drug and get a full blood count urgently (Kaplan).",
+        "Confusion, flushed hot dry skin, big pupils, fast pulse, urinary retention: anticholinergic toxicity, especially with amitriptyline, biperiden or promethazine. Stop the anticholinergic drugs and refer.",
+        "Fever with stiffness and confusion: neuroleptic malignant syndrome (see Haloperidol method).",
+        "Fainting or seizure-like collapse: think arrhythmia (QT) or low blood pressure."
+      ],
+      monitor: [
+        "Ask about these symptoms at every visit, especially in the first months"
+      ],
+      cautions: []
+    }
+  ],
+  paediatric: [
+    "Specialist use only. Not recommended under 1 year of age (product information).",
+    "Children are more sensitive to hypotension, sedation and dystonia. Avoid IM where possible.",
+    "Doses by weight or age must come from BNF for Children or the local paediatric protocol."
+  ],
+  cautions: [
+    "Postural hypotension, worst in the first days and with IM doses above 25 mg (Kaplan).",
+    "The most sedating typical antipsychotic; lowers the seizure threshold (Kaplan).",
+    "Anticholinergic effects: dry mouth, constipation (risk of ileus), urinary retention, blurred vision. Avoid in narrow-angle glaucoma and prostatic enlargement. Can worsen delirium caused by anticholinergic drugs (Kaplan).",
+    "QT prolongation; cholestatic jaundice; agranulocytosis; photosensitivity and skin pigmentation (Kaplan).",
+    "Neuroleptic malignant syndrome, dystonia, parkinsonism, tardive dyskinesia.",
+    "Older people with dementia: higher death and stroke risk.",
+    "Do not use adrenaline to treat hypotension caused by chlorpromazine; use fluids and noradrenaline."
+  ],
+  antidote: "No specific antidote. Hypotension: lie flat, legs raised, IV fluids; noradrenaline if severe, never adrenaline (Kaplan). Dystonia: biperiden. Anticholinergic delirium: stop the drug and give supportive care.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "More than 25 mg of chlorpromazine in a single injection may cause profound hypotension.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1968"
+    },
+    {
+      book: "kaplan",
+      text: "Postural hypotension is most frequent with low-potency drugs such as chlorpromazine; with IM use, check lying and standing BP before and after the first dose and over the first days.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1959"
+    },
+    {
+      book: "kaplan",
+      text: "Treat antipsychotic hypotension by lying the patient flat with legs raised; fluids or noradrenaline in severe cases. Adrenaline paradoxically worsens it and is contraindicated for this purpose.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1960"
+    },
+    {
+      book: "kaplan",
+      text: "Chlorpromazine can cause a sunburn-like photosensitivity reaction; limit sun exposure and use sunscreen. Long-term use can discolour sun-exposed skin.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1961"
+    },
+    {
+      book: "kaplan",
+      text: "Cholestatic jaundice was reported, usually in the first month, heralded by abdominal pain, nausea and vomiting then fever and rash; stop the drug if jaundice occurs.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1962"
+    },
+    {
+      book: "kaplan",
+      text: "Chlorpromazine is the most sedating typical antipsychotic, and low-potency drugs lower the seizure threshold more than high-potency drugs.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1958"
+    },
+    {
+      book: "kaplan",
+      text: "About 300 mg of chlorpromazine (or 5 mg haloperidol) a day is a usual effective dose; much higher doses add side effects without benefit.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1969"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder; Substance use)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Chlorpromazine tablets and injection, product information (SmPC)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "olanzapine",
+  name: "Olanzapine",
+  aka: [
+    "Zyprexa",
+    "Zyprexa Velotab"
+  ],
+  cls: "Second-generation antipsychotic",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "emergency",
+    "medical",
+    "outpatient"
+  ],
+  tags: [
+    "psychosis",
+    "schizophrenia",
+    "mania",
+    "bipolar",
+    "agitation",
+    "antipsychotic",
+    "orodispersible"
+  ],
+  presentation: [
+    "Tablets 2.5, 5, 7.5, 10, 15 and 20 mg.",
+    "Orally disintegrating tablets (ODT) 5, 10, 15 and 20 mg: dissolve on the tongue or in a drink.",
+    "IM powder 10 mg vial. Dissolve in 2.1 mL water for injection to give 5 mg/mL; use within 1 hour (product information).",
+    "A long-acting olanzapine pamoate injection exists but needs 3 hours of observation after each dose (Kaplan) and is rarely stocked."
+  ],
+  indications: [
+    "Schizophrenia and other psychoses",
+    "Acute mania and bipolar maintenance (alone or with lithium or valproate)",
+    "Agitation in psychosis or mania (ODT or IM)",
+    "Patients who had severe movement side effects with haloperidol or chlorpromazine"
+  ],
+  standard: {
+    summary: "Once-daily oral. ODT or IM for agitation. Fewer movement side effects than haloperidol, but more weight gain, sedation and diabetes risk.",
+    items: [
+      {
+        label: "Schizophrenia, adult",
+        text: "Start 5–10 mg once daily (Kaplan); usual range 5–20 mg daily. Wait about a week between dose changes because of the long half-life (Kaplan)."
+      },
+      {
+        label: "Mania, adult",
+        text: "Usually 10–15 mg once daily (Kaplan); maximum 20 mg daily."
+      },
+      {
+        label: "Agitation, adult IM",
+        text: "10 mg IM (Kaplan; 5–7.5 mg if frail). A second dose may be given after at least 2 hours; no more than 3 injections and 20 mg total olanzapine (oral plus IM) in 24 hours (product information)."
+      },
+      {
+        label: "Older adults",
+        text: "Oral start 2.5–5 mg daily. IM 2.5–5 mg. Higher risk of death and stroke in dementia (boxed warning, Kaplan)."
+      },
+      {
+        label: "Missed doses and stopping",
+        text: "If stopped for more than 36 hours, restart at the starting dose (Kaplan). Taper when stopping to avoid rebound sweating, nausea and diarrhoea."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Calming agitation with olanzapine: ODT first, IM second, never with an IM benzodiazepine",
+      best_for: "Agitated patient with psychosis or mania, especially when there is no ECG or haloperidol has caused dystonia before.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Offer an orally disintegrating tablet 10 mg (older or frail: 2.5–5 mg). Place it on the tongue; it dissolves in seconds.",
+        "If refused and the risk is high: dissolve the 10 mg vial in 2.1 mL water for injection (5 mg/mL). Draw up 2 mL for 10 mg (0.5–1 mL for 2.5–5 mg). Give deep IM. Use within 1 hour of mixing.",
+        "Do not give IM or IV lorazepam or diazepam within 1 hour of IM olanzapine. Deaths have followed the combination (Kaplan). If a benzodiazepine is needed, give it orally or wait at least 1 hour and watch breathing closely.",
+        "Do not mix olanzapine in a syringe with any other drug.",
+        "Reassess after 1–2 hours. A second IM dose only after at least 2 hours."
+      ],
+      monitor: [
+        "Blood pressure and pulse, especially on standing: hypotension and slow pulse can occur",
+        "Breathing rate and depth closely for the first 4 hours after IM (product information)",
+        "After any sedating injection: pulse, blood pressure (if a cuff is available), breathing rate, temperature, hydration and level of consciousness at least every hour until there are no concerns. Every 15 minutes if the patient is asleep or heavily sedated, has taken alcohol or other drugs, has a physical illness, was restrained, or received more than the usual maximum dose (NICE NG10).",
+        "No pulse oximeter: count breaths for a full minute, look at lip and tongue colour, and check the patient rouses to voice. Put a sedated patient in the recovery position. Call for help and prepare a bag-valve-mask if breathing is slow or shallow, colour is poor, or the patient cannot be roused."
+      ],
+      cautions: [
+        "Alcohol greatly increases sedation (Kaplan). Avoid IM olanzapine in patients who are drunk or have taken sedatives."
+      ]
+    },
+    {
+      title: "Patient refusing tablets or hiding them: ODT or liquid, never covert",
+      best_for: "Ward or home when a patient cheeks, spits out or refuses tablets.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Ask why. Common reasons: side effects (stiffness, restlessness, sleepiness, weight gain, sexual problems), fear of poisoning, feeling well, cost. Treat side effects and explain.",
+        "Offer a choice the patient can accept: ODT (dissolves on the tongue and is hard to hide, Kaplan), or ODT dispersed in a small glass of water or juice in front of the patient, or another drug in liquid form, or a depot injection for the long term (see Fluphenazine decanoate).",
+        "Supervise the dose respectfully: stay until it is swallowed and dissolved.",
+        "Involve family or a trusted person to encourage the patient.",
+        "If the patient lacks capacity and is at serious risk, a senior clinician decides with the family and records capacity, reasons and who agreed, following national law and hospital policy. An open IM dose is usually better than hiding medicine.",
+        "Never hide medicine in food or drink without a documented legal and ethical decision. Do not tell families to do it at home: doses become unreliable, and discovery destroys trust and can deepen paranoia."
+      ],
+      monitor: [
+        "Adherence at each visit (ask, count tablets)",
+        "Relapse signs: poor sleep, suspiciousness, withdrawal"
+      ],
+      cautions: []
+    },
+    {
+      title: "Weight, sugar and blood pressure checks without a laboratory",
+      best_for: "Follow-up of anyone on olanzapine at health-centre or outpatient level.",
+      requires: [],
+      steps: [
+        "Before starting, record: weight, height, waist circumference with a tape at the navel, blood pressure if a cuff is available, and family history of diabetes and heart disease (Kaplan lists these checks).",
+        "Check blood glucose with a glucometer, or urine glucose with a dipstick if that is all you have, before starting and at follow-up.",
+        "Weigh at every visit for the first months. Olanzapine causes the most weight gain after clozapine, and it can continue for many months (Kaplan).",
+        "Advise from the start: regular meals, fewer sugary drinks and snacks, daily walking.",
+        "Ask about thirst, passing a lot of urine and weight loss despite eating: possible diabetes. Check glucose the same day.",
+        "Rapid weight gain or new diabetes: discuss switching to haloperidol or another drug with lower metabolic risk."
+      ],
+      monitor: [
+        "Weight and waist",
+        "Glucose",
+        "Blood pressure"
+      ],
+      cautions: [
+        "Diabetic ketoacidosis is rare but has occurred with olanzapine: vomiting, deep breathing and drowsiness need urgent glucose and ketone checks."
+      ]
+    }
+  ],
+  paediatric: [
+    "Adolescents 13–17 years with schizophrenia or mania: specialist use; start 2.5–5 mg daily, target around 10 mg (US product information).",
+    "Adolescents gain more weight than adults. Monitor weight and glucose closely.",
+    "IM olanzapine is not established under 18 years. For rapid tranquillisation in young people NICE NG10 recommends IM lorazepam.",
+    "Under 13: specialist only."
+  ],
+  cautions: [
+    "Weight gain, diabetes and raised lipids (Kaplan).",
+    "Sedation and postural hypotension, especially after IM doses and in older people.",
+    "Never give with an IM or IV benzodiazepine within 1 hour.",
+    "Older people with dementia: higher death and stroke risk (Kaplan).",
+    "Anticholinergic effects: constipation, urinary retention, glaucoma risk.",
+    "Dose-related movement side effects and neuroleptic malignant syndrome still occur.",
+    "Raised liver enzymes (about 2 % stop because of this, Kaplan); caution in liver disease.",
+    "Smoking lowers olanzapine levels. A heavy smoker who stops suddenly (for example on admission) can become over-sedated (Maudsley)."
+  ],
+  antidote: "No specific antidote. Supportive care. Hypotension: lie flat, IV fluids; avoid adrenaline.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Olanzapine: start 5–10 mg once daily; 5–20 mg/day is usual. Orally disintegrating tablets help patients who cannot swallow or who cheek tablets. The IM dose for acute agitation is 10 mg.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1934"
+    },
+    {
+      book: "kaplan",
+      text: "Carbamazepine and phenytoin lower olanzapine levels; alcohol increases absorption and sedation. Olanzapine causes the most weight gain after clozapine; check glucose and liver enzymes periodically.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1935"
+    },
+    {
+      book: "kaplan",
+      text: "All second-generation antipsychotics carry a boxed warning: elderly people with dementia-related psychosis have about 1.6–1.7 times the risk of death compared with placebo.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1929"
+    },
+    {
+      book: "kaplan",
+      text: "Deaths have been reported when parenteral lorazepam was given with parenteral olanzapine.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2122"
+    },
+    {
+      book: "kaplan",
+      text: "IM olanzapine calms agitated psychotic patients with few extrapyramidal effects, unlike haloperidol or fluphenazine; a rapidly dissolving oral tablet can be an alternative to injection.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1137"
+    },
+    {
+      book: "kaplan",
+      text: "If an SGA has been stopped for more than 36 hours, restart at the initial titration dose; taper olanzapine when stopping to avoid cholinergic rebound (sweating, diarrhoea).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1948"
+    },
+    {
+      book: "dsm",
+      text: "In an obese man with high blood sugar, chronic olanzapine was flagged as a risk because it is known to cause large weight gain.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.1 Emotionally Disturbed, pdf p. 91"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder; Substance use)"
+    },
+    {
+      name: "NICE NG10 Violence and aggression: short-term management in mental health, health and community settings, 2015 (rapid tranquillisation)"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Olanzapine tablets, orodispersible tablets and powder for solution for injection, product information (SmPC)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "fluphenazine-decanoate",
+  name: "Fluphenazine decanoate (long-acting depot)",
+  aka: [
+    "Modecate",
+    "fluphenazine depot",
+    "long-acting injectable antipsychotic",
+    "LAI"
+  ],
+  cls: "First-generation antipsychotic, long-acting depot injection (phenothiazine)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient"
+  ],
+  tags: [
+    "schizophrenia",
+    "psychosis",
+    "depot",
+    "long-acting injection",
+    "adherence",
+    "relapse prevention",
+    "antipsychotic"
+  ],
+  presentation: [
+    "25 mg/mL oily solution (sesame oil), 1 mL ampoule. A 100 mg/mL concentrate exists in some countries: check the strength every time.",
+    "Store below 25 °C and protect from light (check the pack).",
+    "Deep IM only. Never IV. Not for acute agitation: it takes days to work."
+  ],
+  indications: [
+    "Maintenance treatment of schizophrenia and other chronic psychoses, especially when tablets are often missed or the patient prefers an injection",
+    "Relapse prevention after a patient has responded to an antipsychotic"
+  ],
+  standard: {
+    summary: "Test dose, then deep IM every 2–5 weeks. Oral cover during the first weeks. Lowest dose that keeps the patient well.",
+    items: [
+      {
+        label: "Test dose",
+        text: "12.5 mg (0.5 mL of 25 mg/mL) deep IM (Kaplan; BNF). Older people: 6.25 mg (BNF). Ideally give at least one oral dose of an antipsychotic first to check for severe movement side effects or allergy (Kaplan). Review after 4–7 days."
+      },
+      {
+        label: "Maintenance",
+        text: "WHO mhGAP: 12.5–50 mg every 2–4 weeks. BNF allows 12.5–100 mg every 14–35 days, adjusted to response. Increase only after 3–4 weeks, because early absorption can be faster than later (Kaplan)."
+      },
+      {
+        label: "Oral cover",
+        text: "Continue oral antipsychotic, reducing it, for about the first month (Kaplan). It can take months to reach a steady level."
+      },
+      {
+        label: "Switching to a depot",
+        text: "There is no exact oral-to-depot conversion. Start low, cover with oral doses, and increase slowly. When switching from a depot to an oral second-generation drug, start the oral drug on the day the next injection is due (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Running a depot clinic without a computer: card, register and defaulter tracing",
+      best_for: "Health centre or outpatient psychiatric clinic.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Give every patient a card showing: drug, strength, dose, interval, injection site used, and the next due date in both Ethiopian and Gregorian calendars.",
+        "Keep a clinic register with the same details, sorted by due date. Each morning, list who is due this week.",
+        "Record a phone number for the patient and a family member. Call or send a text the day before the due date.",
+        "If a patient does not come within a few days of the due date, ask the health extension worker or family to trace them that week. A missed depot is often the first sign of relapse (Kaplan: you know at once when a dose is missed).",
+        "At each visit check: mental state, stiffness, tremor, restlessness, abnormal mouth or tongue movements, weight, blood pressure, and side effects the patient worries about.",
+        "Where possible move the injection to the facility nearest the patient's home and send the card details with them.",
+        "Keep a stock register so the clinic does not run out; an interrupted depot supply causes relapses."
+      ],
+      monitor: [
+        "Attendance against due dates",
+        "Relapse signs",
+        "Movement side effects at every visit"
+      ],
+      cautions: []
+    },
+    {
+      title: "Giving the depot injection safely",
+      best_for: "Any nurse or health officer giving the injection.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Check the patient, drug, strength (25 or 100 mg/mL), dose and date. Make sure it is the decanoate and not an ordinary short-acting injection.",
+        "Warm the ampoule in your hand for a minute: the oil flows more easily.",
+        "Draw up with a wide needle, then change to a 21 G needle long enough to reach deep muscle.",
+        "Site: upper outer quadrant of the buttock or the ventrogluteal site. Alternate sides every visit and write the side on the card.",
+        "Use a Z-track technique. Aspirate before injecting: if blood appears, withdraw and use a new site. Oil must never enter a vein.",
+        "Inject slowly. Do not massage afterwards.",
+        "Large volumes: split between two sites as advised in the product leaflet.",
+        "Keep the patient in the clinic for a short time after the test dose to watch for fainting or allergy, as your protocol advises."
+      ],
+      monitor: [
+        "Injection site pain, swelling or lumps at the next visit",
+        "Acute dystonia in the first days after the first injections (Kaplan)"
+      ],
+      cautions: [
+        "Sesame allergy: do not use (sesame oil vehicle).",
+        "Never IV, never subcutaneous."
+      ]
+    },
+    {
+      title: "Missed or late depot dose",
+      best_for: "Patient arrives late for the injection.",
+      requires: [
+        "im",
+        "oral"
+      ],
+      steps: [
+        "Find out how late, why, and whether symptoms are returning. Examine for relapse and for movement side effects.",
+        "Late by less than one full dosing interval and well: give the usual dose now and set the next date from today.",
+        "Late by more than one full interval, or symptoms returning: give the usual dose if there were no problems with it before, and add a short course of oral antipsychotic if symptoms are returning. Increase follow-up.",
+        "Several months since the last injection: treat as a new start. Give a test dose (12.5 mg; older people 6.25 mg) and build up again with oral cover, because tolerance to side effects is lost and early doses can cause frightening dystonia (Kaplan).",
+        "Look for the reason: travel, cost, stock-out, side effects, stigma. Fix what you can.",
+        "Guidance varies. Confirm with local protocol or the Maudsley Prescribing Guidelines."
+      ],
+      monitor: [
+        "Mental state and movement side effects at the next visit, 1–2 weeks after a restart"
+      ],
+      cautions: [
+        "A late patient who is now febrile, stiff and confused may have neuroleptic malignant syndrome, not relapse (see Haloperidol method)."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not recommended for children (product information). Adolescents: specialist decision only."
+  ],
+  cautions: [
+    "Effects last weeks after the last injection and cannot be removed: side effects such as dystonia, parkinsonism or neuroleptic malignant syndrome can persist. Neuroleptic malignant syndrome is more often fatal when a depot is involved (Kaplan).",
+    "Movement side effects are common with this high-potency drug. Keep an anticholinergic available; tardive dyskinesia can appear up to 8 weeks after a depot is stopped (Kaplan).",
+    "Not for patients who have never taken an antipsychotic before without an oral test first.",
+    "Avoid in severe depression (can worsen it), in Parkinson's disease, and in older people with dementia (higher death and stroke risk).",
+    "QT prolongation, hypotension, seizures, raised prolactin, sedation: as for other phenothiazines."
+  ],
+  antidote: "No specific antidote. Dystonia or parkinsonism: biperiden, often needed for longer than with oral drugs. Neuroleptic malignant syndrome: stop further injections and treat urgently.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Depot injections go deep IM into a large muscle every 1–4 weeks. Give at least one oral dose first to check for severe EPS or allergy; start with fluphenazine 12.5 mg (0.5 mL) and cover breakthrough symptoms with oral doses before increasing after 3–4 weeks.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1971"
+    },
+    {
+      book: "kaplan",
+      text: "Start depot treatment low because absorption can be faster at first and cause frightening dystonia that puts patients off treatment.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1971"
+    },
+    {
+      book: "kaplan",
+      text: "Depot haloperidol and fluphenazine may take up to 6 months to reach steady state, so oral treatment should continue for about the first month.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1952"
+    },
+    {
+      book: "kaplan",
+      text: "Neuroleptic malignant syndrome mortality can reach 20–30 percent or more when depot medications are involved.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1958"
+    },
+    {
+      book: "kaplan",
+      text: "About 40–50 percent of patients stop oral antipsychotics within 1–2 years; long-acting injections help adherence and reduce relapse, with oral supplementation needed at the start.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1142"
+    },
+    {
+      book: "kaplan",
+      text: "With a depot, clinicians know at once when a dose is missed and have time to act before the effect wears off.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1143"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder; Substance use)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Fluphenazine decanoate injection (Modecate), product information (SmPC)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "biperiden",
+  name: "Biperiden",
+  aka: [
+    "Akineton"
+  ],
+  cls: "Anticholinergic (antimuscarinic) antiparkinsonian agent",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "emergency",
+    "medical",
+    "paediatric",
+    "outpatient"
+  ],
+  tags: [
+    "acute dystonia",
+    "extrapyramidal side effects",
+    "EPS",
+    "parkinsonism",
+    "oculogyric crisis",
+    "anticholinergic",
+    "benztropine",
+    "trihexyphenidyl",
+    "benzhexol"
+  ],
+  presentation: [
+    "Tablets 2 mg.",
+    "Injection 5 mg/mL, 1 mL ampoule (biperiden lactate) for IM or slow IV use.",
+    "Alternatives: benztropine injection 1 mg/mL and tablets; trihexyphenidyl (benzhexol) tablets 2 mg and 5 mg (oral only)."
+  ],
+  indications: [
+    "Acute dystonia caused by antipsychotics or antiemetics such as metoclopramide (IM or IV)",
+    "Drug-induced parkinsonism (oral)",
+    "Short-term prevention of dystonia in high-risk patients (young men on high-potency antipsychotics, or after a previous episode)"
+  ],
+  standard: {
+    summary: "IM or slow IV for acute dystonia; oral for parkinsonism. Review and stop after some weeks. Not for tardive dyskinesia.",
+    items: [
+      {
+        label: "Acute dystonia, adult",
+        text: "2–5 mg IM or slowly IV (Kaplan lists 2 mg; the product information gives 2.5–5 mg). Repeat after about 30 minutes if needed (Kaplan: repeat an anticholinergic after 20–30 minutes). If still no better, give a benzodiazepine (Kaplan). Do not exceed the daily maximum in the product leaflet."
+      },
+      {
+        label: "After the dystonia settles",
+        text: "Continue an oral anticholinergic for some days because the antipsychotic outlasts the injection. After one episode, prophylaxis for 4–8 weeks then a taper is reasonable (Kaplan). Reduce or change the antipsychotic."
+      },
+      {
+        label: "Drug-induced parkinsonism, adult (oral)",
+        text: "WHO mhGAP: biperiden 1 mg twice daily, increasing to 3–12 mg daily in divided doses. (Kaplan's table lists higher oral doses, 2–6 mg three times daily.) Review at 4–8 weeks and taper over 1–2 weeks to see if it is still needed (Kaplan)."
+      },
+      {
+        label: "Alternatives",
+        text: "Benztropine 1–2 mg IM or IV, repeated after 20–30 minutes (Kaplan). Trihexyphenidyl (benzhexol), oral only: start 1 mg daily and increase; usually 2 mg two or three times daily (Kaplan lists 2–5 mg three times daily). Diphenhydramine 25–50 mg IM or IV where stocked (Kaplan). Confirm with local protocol."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Acute dystonia when biperiden injection is out of stock",
+      best_for: "Emergency or ward: twisted neck, eyes rolled up, tongue or jaw spasm, arched back, hours to days after haloperidol, fluphenazine, chlorpromazine or metoclopramide.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Recognise it: the patient is awake and frightened, not having a seizure. It is not 'hysteria': dystonia can fluctuate and ease with reassurance, which misleads staff (Kaplan).",
+        "Check the airway first. Noisy breathing, inability to speak or swallow, or blue lips means laryngeal dystonia: see the next method.",
+        "Use what you have, in this order: benztropine 1–2 mg IM (Kaplan); OR promethazine 25–50 mg deep IM (a sedating antihistamine with anticholinergic action; Kaplan supports antihistamines such as diphenhydramine as an alternative); OR diazepam 5–10 mg slowly IV (Kaplan: 10 mg IV reported effective). Never give diazepam IM.",
+        "If only tablets are available and the airway is safe: biperiden 2 mg or trihexyphenidyl 2 mg by mouth. This takes longer to work (often 30–60 minutes).",
+        "If there is no improvement 20–30 minutes after the first injection, repeat once, then add a benzodiazepine such as lorazepam 1 mg IM (Kaplan).",
+        "Afterwards, continue an oral anticholinergic for several days and review the antipsychotic dose.",
+        "Explain to the patient what happened. Dystonia is frightening and often makes patients refuse future treatment (Kaplan)."
+      ],
+      monitor: [
+        "Improvement within 10–30 minutes after IM, a few minutes after IV",
+        "Breathing and sedation after promethazine or diazepam",
+        "Recurrence over the next 1–3 days"
+      ],
+      cautions: [
+        "Promethazine: not under 2 years of age.",
+        "Do not give more antipsychotic until the dystonia is controlled."
+      ]
+    },
+    {
+      title: "Laryngeal dystonia: noisy breathing, cannot speak or swallow",
+      best_for: "Emergency. Rare but life-threatening.",
+      requires: [
+        "iv"
+      ],
+      steps: [
+        "Call for help. Sit the patient up. Give oxygen if available.",
+        "Give an anticholinergic IV: biperiden slowly IV at the dose above, or benztropine; Kaplan describes benztropine up to 4 mg within 10 minutes.",
+        "Then give a benzodiazepine slowly IV: lorazepam 1–2 mg (Kaplan), or diazepam 5–10 mg if lorazepam is not stocked.",
+        "No IV access: give the anticholinergic IM and try again for IV or intraosseous access.",
+        "Have a bag-valve-mask and suction ready. Be prepared to support the airway (Kaplan)."
+      ],
+      monitor: [
+        "Breathing, colour and voice continuously until clearly improved",
+        "Respiratory rate after the benzodiazepine"
+      ],
+      cautions: [
+        "Stridor that does not improve quickly may be anaphylaxis or another cause: give adrenaline IM if anaphylaxis is possible."
+      ]
+    },
+    {
+      title: "Oral anticholinergic for drug-induced parkinsonism at health-centre level",
+      best_for: "Stiffness, slow movement, shuffling, tremor or drooling weeks after starting an antipsychotic.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Recognise it: stiff arms, reduced arm swing, shuffling steps, mask-like face, drooling, coarse tremor. It can look like depression or negative symptoms (Kaplan).",
+        "First try lowering the antipsychotic dose, or switching to a drug with fewer movement effects (olanzapine), if the illness allows.",
+        "If needed: biperiden 1 mg twice daily, increasing gradually (WHO mhGAP), or trihexyphenidyl if that is what is stocked.",
+        "Review after 4–8 weeks. Taper over 1–2 weeks and stop if symptoms do not return (Kaplan). About half of patients need to continue (Kaplan).",
+        "Do not use for tardive dyskinesia (slow writhing tongue, mouth or finger movements): anticholinergics can make it worse. Refer."
+      ],
+      monitor: [
+        "Stiffness and walking",
+        "Constipation, urinary retention, blurred vision, confusion",
+        "Signs of misuse (asking for more, euphoria)"
+      ],
+      cautions: [
+        "Trihexyphenidyl in particular is misused for its mood-lifting effect (Kaplan). Prescribe small quantities."
+      ]
+    }
+  ],
+  paediatric: [
+    "Children are very prone to dystonia from metoclopramide, haloperidol and chlorpromazine; opisthotonos (arched back) is common in children (Kaplan).",
+    "Biperiden IM or IV doses for children are age-based in the product information: use BNF for Children or the local paediatric protocol.",
+    "Alternatives: diphenhydramine where available, or diazepam slowly IV at a paediatric dose. Promethazine is not used under 2 years."
+  ],
+  cautions: [
+    "Anticholinergic effects: dry mouth, constipation, urinary retention, blurred vision, fast pulse. Use cautiously, if at all, in prostatic enlargement, urinary retention and narrow-angle glaucoma (Kaplan).",
+    "Confusion and delirium, especially in older people and in dementia. Avoid long-term use in them.",
+    "Additive toxicity with amitriptyline, chlorpromazine, promethazine, olanzapine and atropine: hot dry skin, big pupils, fever, delirium (Kaplan).",
+    "Worsens tardive dyskinesia. Misuse potential.",
+    "Give IV doses slowly with the patient lying down: transient hypotension can occur."
+  ],
+  antidote: "No routine antidote. Anticholinergic toxicity: stop all anticholinergic drugs, cool, IV fluids, benzodiazepine for agitation or seizures. Physostigmine only where cardiac monitoring and resuscitation are available (Kaplan).",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Biperiden is listed for acute dystonia, parkinsonism, akinesia and akathisia: IM or IV 2 mg, or oral dosing three times daily.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, Table 21-3, pdf p. 1890"
+    },
+    {
+      book: "kaplan",
+      text: "Acute dystonia: give benztropine 1–2 mg IM (or an equivalent anticholinergic), repeat after 20–30 minutes; if still no better, give a benzodiazepine such as lorazepam 1 mg IM/IV. Laryngeal dystonia is an emergency.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2214"
+    },
+    {
+      book: "kaplan",
+      text: "Prophylaxis against dystonia is indicated after one episode, or in high-risk patients such as young men on high-potency drugs, for 4–8 weeks and then tapered.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2214"
+    },
+    {
+      book: "kaplan",
+      text: "IM anticholinergics or IV/IM diphenhydramine almost always relieve dystonia; IV diazepam 10 mg has also been reported effective.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1892"
+    },
+    {
+      book: "kaplan",
+      text: "Use anticholinergics cautiously, if at all, in prostatic enlargement, urinary retention and narrow-angle glaucoma; trihexyphenidyl in particular is misused for its mood-elevating effect.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2212"
+    },
+    {
+      book: "kaplan",
+      text: "Combined with other anticholinergic drugs (low-potency antipsychotics, tricyclics), they can cause life-threatening anticholinergic delirium with fever, dry flushed skin and dilated pupils.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2213"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder; Substance use)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Biperiden (Akineton) tablets and injection, product information"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "promethazine",
+  name: "Promethazine",
+  aka: [
+    "Phenergan"
+  ],
+  cls: "Sedating antihistamine (H1 antagonist, phenothiazine)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "emergency",
+    "medical",
+    "maternity",
+    "outpatient"
+  ],
+  tags: [
+    "rapid tranquillisation",
+    "sedation",
+    "agitation",
+    "antihistamine",
+    "allergy",
+    "urticaria",
+    "nausea",
+    "vomiting",
+    "hyperemesis"
+  ],
+  presentation: [
+    "Injection 25 mg/mL, 2 mL ampoule (50 mg). Protect from light.",
+    "Tablets 10 mg and 25 mg.",
+    "Oral solution 5 mg/5 mL."
+  ],
+  indications: [
+    "Sedation in rapid tranquillisation, given IM with haloperidol (NICE NG10)",
+    "Short-term sedation or anxiety when a benzodiazepine is unsuitable",
+    "Allergic reactions: urticaria, itch, rhinitis; after adrenaline in anaphylaxis",
+    "Nausea and vomiting, including motion sickness and vomiting in pregnancy",
+    "Alternative treatment for acute dystonia (anticholinergic action)"
+  ],
+  standard: {
+    summary: "Oral or deep IM. Avoid IV unless essential (severe tissue injury). Do not use under 2 years of age.",
+    items: [
+      {
+        label: "Rapid tranquillisation, adult",
+        text: "25–50 mg deep IM, with haloperidol 5 mg IM in a separate syringe (NICE NG10). Maximum 100 mg promethazine in 24 hours (BNF). Sedation begins after 20–60 minutes and lasts 4–6 hours (Kaplan)."
+      },
+      {
+        label: "Oral sedation, adult",
+        text: "25–50 mg orally (BNF). Confirm with local protocol."
+      },
+      {
+        label: "Allergy, adult",
+        text: "Oral 10–20 mg two or three times daily, or 25 mg at night (BNF). IM 25–50 mg (maximum 100 mg) for severe reactions, only after adrenaline if anaphylaxis."
+      },
+      {
+        label: "Nausea and vomiting, adult",
+        text: "25 mg orally, repeated as needed within the daily maximum in BNF. In pregnancy it is one of the usual first-line antiemetics (RCOG). Confirm with local protocol."
+      },
+      {
+        label: "Older adults",
+        text: "Use lower doses and avoid regular use: sedation, confusion, hypotension and falls are more severe (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Haloperidol plus promethazine IM for rapid tranquillisation",
+      best_for: "Agitated adult who refuses oral medicine, with no cardiac risk factors, where lorazepam is not stocked.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Try talking and oral medicine first (see Haloperidol method).",
+        "Draw up promethazine 25–50 mg (1–2 mL of 25 mg/mL) in one syringe and haloperidol 5 mg (1 mL of 5 mg/mL) in a second syringe.",
+        "Inject each deep IM into a different site: outer thigh or upper outer buttock. Aspirate first. Never subcutaneous.",
+        "Wait 30–60 minutes. Sedation from promethazine starts after 20–60 minutes (Kaplan).",
+        "If still dangerous, a further dose may be given within your protocol's limits. Promethazine maximum 100 mg in 24 hours.",
+        "Keep biperiden ready for dystonia."
+      ],
+      monitor: [
+        "After any sedating injection: pulse, blood pressure (if a cuff is available), breathing rate, temperature, hydration and level of consciousness at least every hour until there are no concerns. Every 15 minutes if the patient is asleep or heavily sedated, has taken alcohol or other drugs, has a physical illness, was restrained, or received more than the usual maximum dose (NICE NG10).",
+        "No pulse oximeter: count breaths for a full minute, look at lip and tongue colour, and check the patient rouses to voice. Put a sedated patient in the recovery position. Call for help and prepare a bag-valve-mask if breathing is slow or shallow, colour is poor, or the patient cannot be roused.",
+        "Blood pressure on standing when the patient first gets up"
+      ],
+      cautions: [
+        "Avoid in patients who have taken alcohol, opioids or other sedatives: additive breathing depression (Kaplan).",
+        "Do not add promethazine when a benzodiazepine has already been given unless you can watch breathing closely."
+      ]
+    },
+    {
+      title: "Injecting promethazine without causing tissue damage",
+      best_for: "Every time promethazine is injected.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Deep IM into a large muscle is the preferred route. Superficial injection irritates tissue (Kaplan).",
+        "Aspirate before injecting to avoid a blood vessel.",
+        "Never give subcutaneously. Accidental injection into an artery or around a vein can cause gangrene.",
+        "IV only if there is no alternative: concentration no more than 25 mg/mL, rate no faster than 25 mg per minute, into the tubing of a freely running IV in a large vein (US boxed warning).",
+        "Stop at once if the patient complains of burning or pain, or the skin blanches or swells."
+      ],
+      monitor: [
+        "Injection site for pain, swelling, pale or dusky skin over the next hours"
+      ],
+      cautions: [
+        "Tissue injury from promethazine can need surgery. Report and refer early."
+      ]
+    },
+    {
+      title: "Allergic reaction at a health post",
+      best_for: "Urticaria, itch or swelling; or after adrenaline in anaphylaxis.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Decide if it is anaphylaxis: breathing difficulty, wheeze, stridor, low blood pressure, collapse, or rapid swelling of lips and tongue. If yes, adrenaline IM first (see Adrenaline). Promethazine does not treat anaphylaxis.",
+        "Skin symptoms only, or after adrenaline: promethazine 25–50 mg deep IM for an adult, or 10–25 mg orally if the patient can swallow.",
+        "Children 2 years and older: dose by age from BNF for Children or the local protocol.",
+        "Tell the patient not to drive or work with machinery; sedation can last hours."
+      ],
+      monitor: [
+        "Breathing and blood pressure for at least several hours after anaphylaxis",
+        "Sedation"
+      ],
+      cautions: [
+        "Never under 2 years of age."
+      ]
+    }
+  ],
+  paediatric: [
+    "Contraindicated under 2 years: fatal breathing depression has occurred (US boxed warning).",
+    "Children 2 years and older: lower doses by age from BNF for Children. Children are more sensitive and may become excited rather than sedated (Kaplan).",
+    "Not a routine sedative for children; do not use for a child with breathing problems or reduced consciousness."
+  ],
+  cautions: [
+    "Sedation and breathing depression, added to opioids, benzodiazepines, alcohol, antipsychotics and tricyclics (Kaplan).",
+    "Anticholinergic effects: urinary retention, constipation, glaucoma, confusion in older people (Kaplan).",
+    "Hypotension and dizziness, severe in older people (Kaplan).",
+    "Severe tissue injury if injected subcutaneously, into an artery or outside a vein.",
+    "A phenothiazine: can lower the seizure threshold; rare neuroleptic malignant syndrome; minor QT prolongation.",
+    "Can cause false pregnancy test results and raise blood glucose (Kaplan)."
+  ],
+  antidote: "No specific antidote. Supportive care: airway, breathing, IV fluids for hypotension. Physostigmine for severe anticholinergic delirium only with cardiac monitoring.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Promethazine is used in psychiatry for sedation and anxiety; its sedative effect starts after 20–60 minutes and lasts 4–6 hours. It is metabolised by the liver.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2215"
+    },
+    {
+      book: "kaplan",
+      text: "Sedating antihistamines cause sedation, dizziness and hypotension, worse in older people, plus anticholinergic effects and occasional paradoxical excitement; overdose can be fatal. The chapter advises avoiding them in pregnancy and breastfeeding.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2217"
+    },
+    {
+      book: "kaplan",
+      text: "Sedation adds to alcohol, other sedatives, tricyclics and antipsychotics; anticholinergic effects add up. IM injections must be deep because superficial injection irritates tissue.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2218"
+    },
+    {
+      book: "kaplan",
+      text: "Antihistamines are an alternative to anticholinergics for drug-induced parkinsonism, acute dystonia and akathisia.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2216"
+    },
+    {
+      book: "kaplan",
+      text: "Episodic violent outbursts may respond to antipsychotics, benzodiazepines or antihistamines.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2560"
+    }
+  ],
+  sources: [
+    {
+      name: "NICE NG10 Violence and aggression: short-term management in mental health, health and community settings, 2015 (rapid tranquillisation)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "US FDA boxed warning, promethazine injection (tissue injury, 2009) and promethazine under 2 years (respiratory depression)"
+    },
+    {
+      name: "Royal College of Obstetricians and Gynaecologists. Nausea and vomiting of pregnancy and hyperemesis gravidarum, Green-top Guideline 69, 2016"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "lorazepam",
+  name: "Lorazepam",
+  aka: [
+    "Ativan"
+  ],
+  cls: "Benzodiazepine (intermediate-acting)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "emergency",
+    "medical",
+    "icu",
+    "paediatric"
+  ],
+  tags: [
+    "agitation",
+    "rapid tranquillisation",
+    "catatonia",
+    "alcohol withdrawal",
+    "status epilepticus",
+    "benzodiazepine",
+    "anxiety"
+  ],
+  presentation: [
+    "Tablets 1 mg and 2 mg (other strengths exist).",
+    "Injection 4 mg/mL (UK) or 2 mg/mL and 4 mg/mL (US), 1 mL. CHECK the strength.",
+    "Injection must be kept in a fridge (2–8 °C) and protected from light: loses potency in heat.",
+    "Often NOT stocked in Ethiopian facilities. Diazepam and midazolam (separate entries in this app) are the usual substitutes."
+  ],
+  indications: [
+    "Acute agitation, especially when an antipsychotic is unsuitable (no ECG, heart disease, first episode, alcohol or stimulant cause)",
+    "Catatonia: diagnostic challenge and treatment",
+    "Alcohol withdrawal, particularly with liver disease or in older people",
+    "Status epilepticus (first-line benzodiazepine where stocked)",
+    "Acute dystonia not settling with an anticholinergic",
+    "Short-term severe anxiety"
+  ],
+  standard: {
+    summary: "Oral, IM or slow IV. One of only two benzodiazepines reliably absorbed IM (with midazolam). Short courses only. Watch breathing.",
+    items: [
+      {
+        label: "Agitation, adult",
+        text: "1–2 mg orally or IM (NICE NG10). Reassess after 30–60 minutes and repeat if needed. Many protocols (BNF) use a usual maximum of 4 mg in 24 hours for agitation; higher only with specialist advice. Older or frail: 0.5–1 mg."
+      },
+      {
+        label: "Preparing the injection",
+        text: "For IM: dilute with an equal volume of 0.9 % saline or water for injection just before use. For IV: dilute the same way and give slowly into a large vein, no faster than 2 mg per minute (product information)."
+      },
+      {
+        label: "Catatonia",
+        text: "Challenge: 1–2 mg IV, IM or orally, then re-examine (see method). If it helps, give regular doses, for example 1 mg every 4–6 hours as in the DSM case, increasing if the response is partial. Kaplan notes doses of 12 mg a day or more are sometimes needed: specialist advice. ECT is the definitive treatment (Kaplan)."
+      },
+      {
+        label: "Alcohol withdrawal",
+        text: "Give thiamine first (see Thiamine). Dose by symptoms, commonly 1–4 mg orally, IM or IV, with a daily reducing plan over about 5 days (Kaplan). Never miss doses of a short-acting benzodiazepine (Kaplan). Use a local symptom-scale protocol."
+      },
+      {
+        label: "Status epilepticus",
+        text: "0.1 mg/kg IV (maximum 4 mg), repeat once after 5–10 minutes if still seizing (Harrison and Nelson, see Diazepam and Midazolam entries)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Catatonia: lorazepam challenge, or diazepam if lorazepam is not stocked",
+      best_for: "Mute, staring, rigid or posturing patient who is not eating or drinking; in psychosis, mood disorder or medical illness.",
+      requires: [
+        "im",
+        "oral"
+      ],
+      steps: [
+        "Recognise catatonia: mutism, stupor, fixed staring, holding odd postures, rigidity, resisting being moved (negativism), limbs staying where you place them, copying words or movements, refusing food and fluids.",
+        "Check temperature, pulse and blood pressure. Fever with rigidity and unstable vital signs in someone on antipsychotics: treat as neuroleptic malignant syndrome or malignant catatonia (see Haloperidol method) and refer urgently.",
+        "Look for medical causes: glucose, malaria test, signs of meningitis or encephalitis, head injury, non-convulsive seizures, dehydration, drugs (DSM case: medical causes are often dangerous and must be sought).",
+        "Before the dose, write down which catatonic signs are present, so you can compare.",
+        "Give lorazepam 1–2 mg IV, IM (diluted) or as a tablet by mouth or under the tongue if swallowing is safe. The DSM case used 1 mg IV, repeated after 5 minutes.",
+        "Lorazepam not stocked: diazepam 5–10 mg slowly IV, or 5–10 mg orally. Never IM diazepam (erratic absorption). Diazepam 10 mg is roughly equivalent to lorazepam 2 mg (Kaplan equivalence table).",
+        "Re-examine the same signs once the dose has had time to work (minutes after IV, longer after IM or oral). Patients with catatonia often become more alert rather than sleepy (DSM case). Clear improvement supports the diagnosis.",
+        "If helpful, continue regular doses and increase gradually if improvement is partial. Hold antipsychotics during acute catatonia (Maudsley): they can worsen it or trigger neuroleptic malignant syndrome.",
+        "Meanwhile: fluids (oral, nasogastric or IV), food, turning and pressure care, moving the legs to prevent clots.",
+        "No response, or life-threatening: refer for ECT (Kaplan: definitive treatment)."
+      ],
+      monitor: [
+        "Breathing rate and sedation after each dose (catatonic patients often tolerate doses without sedation, DSM case)",
+        "Temperature, pulse and blood pressure at least 4-hourly",
+        "Fluid intake, urine output, weight",
+        "Pressure areas"
+      ],
+      cautions: [
+        "Catatonia itself kills through dehydration, starvation, clots and pressure sores (DSM case). Do not wait for a psychiatrist to start supportive care."
+      ]
+    },
+    {
+      title: "Benzodiazepine rapid tranquillisation when there is no ECG or the patient has heart disease",
+      best_for: "Agitated adult or young person, first episode, known heart disease, alcohol or stimulant cause, or no ECG.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Offer oral lorazepam 1–2 mg first (older or frail 0.5–1 mg).",
+        "If refused and the risk is high: lorazepam 1–2 mg IM, diluted 1:1 with saline or water (NICE NG10).",
+        "Lorazepam not stocked: diazepam 10 mg orally, or 5–10 mg slowly IV over 2 minutes (Kaplan warns to go slowly to avoid respiratory arrest). Midazolam IM is an option only where staff can manage the airway (see Midazolam).",
+        "Reassess after 30–60 minutes. Repeat within your protocol's limits.",
+        "Do not give IM or IV lorazepam within 1 hour of IM olanzapine."
+      ],
+      monitor: [
+        "After any sedating injection: pulse, blood pressure (if a cuff is available), breathing rate, temperature, hydration and level of consciousness at least every hour until there are no concerns. Every 15 minutes if the patient is asleep or heavily sedated, has taken alcohol or other drugs, has a physical illness, was restrained, or received more than the usual maximum dose (NICE NG10).",
+        "No pulse oximeter: count breaths for a full minute, look at lip and tongue colour, and check the patient rouses to voice. Put a sedated patient in the recovery position. Call for help and prepare a bag-valve-mask if breathing is slow or shallow, colour is poor, or the patient cannot be roused."
+      ],
+      cautions: [
+        "Paradoxical disinhibition and more aggression can occur, especially with brain injury or intellectual disability (Kaplan).",
+        "Alcohol, opioids and other sedatives multiply the breathing depression (Kaplan)."
+      ]
+    },
+    {
+      title: "Alcohol withdrawal in a patient with liver disease or old age",
+      best_for: "Medical ward or health centre; tremor, sweating, fast pulse, anxiety or hallucinations after stopping heavy drinking.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Give thiamine before any glucose (see Thiamine).",
+        "Lorazepam orally by symptoms, with no missed doses (Kaplan). Reduce the total daily dose step by step over about 5 days (Kaplan).",
+        "If lorazepam is not stocked: diazepam, but with smaller doses given only when symptoms are present, because it builds up in liver disease and older people. Hold a dose if the patient is sleepy.",
+        "Seizures: benzodiazepine is the treatment of choice (Kaplan).",
+        "Severe hallucinations despite enough benzodiazepine: a small dose of haloperidol may be added, but it lowers the seizure threshold (Kaplan).",
+        "Avoid restraint in delirium tremens: patients can fight to exhaustion (Kaplan). Give fluids, food, check glucose and look for infection, head injury and bleeding."
+      ],
+      monitor: [
+        "Pulse, blood pressure, temperature, tremor, sweating, orientation every 1–4 hours while symptomatic",
+        "Sedation and breathing before each dose",
+        "Glucose"
+      ],
+      cautions: [
+        "Delirium in someone who is not withdrawing from alcohol or benzodiazepines can be made worse by lorazepam (Kaplan)."
+      ]
+    }
+  ],
+  paediatric: [
+    "Status epilepticus: 0.1 mg/kg IV or IO (maximum 4 mg), repeat once after 5–10 minutes.",
+    "Rapid tranquillisation in children and young people: NICE NG10 recommends IM lorazepam; dose from BNF for Children or specialist advice.",
+    "Paradoxical excitement is more common in children.",
+    "Newborns: some injections contain benzyl alcohol and propylene glycol, which are toxic to neonates. Use only on specialist advice."
+  ],
+  cautions: [
+    "Breathing depression, especially with opioids, alcohol, other sedatives, antipsychotics and IM olanzapine (Kaplan).",
+    "Older people: falls, hip fractures and confusion (Kaplan). Use half doses.",
+    "Liver disease: can precipitate hepatic coma with repeated or high doses (Kaplan).",
+    "Myasthenia gravis, severe lung disease and sleep apnoea: breathing can fail.",
+    "Dependence after more than 1–2 weeks of regular use; stop by tapering (Kaplan).",
+    "Injection stored outside a fridge loses potency."
+  ],
+  antidote: "Support breathing first (bag-valve-mask). Flumazenil 0.2 mg IV over 30 seconds, then 0.3 mg, then 0.5 mg at 1-minute intervals up to 3 mg total (Kaplan). It can cause seizures in dependent patients and in mixed overdoses with tricyclics, and sedation can return.",
+  calc: {
+    type: "weight",
+    dosePerKg: 0.1,
+    doseUnit: "mg",
+    conc: 4,
+    concUnit: "mg/mL",
+    maxDose: 4,
+    label: "Status epilepticus dose (0.1 mg/kg, max 4 mg) at 4 mg/mL. CHECK the ampoule: 2 mg/mL also exists"
+  },
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Of the benzodiazepines, only lorazepam and midazolam are rapidly and reliably absorbed after IM injection.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2114"
+    },
+    {
+      book: "kaplan",
+      text: "Lorazepam, at low doses (under 5 mg/day) or sometimes very high doses (12 mg/day or more), is regularly used for acute catatonia, though controlled trials are lacking; ECT is the definitive treatment.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2117"
+    },
+    {
+      book: "dsm",
+      text: "A mute, rigid young man was given IV lorazepam 1 mg as a test dose, repeated after 5 minutes, then 1 mg every 4–6 hours; the rigidity resolved within 24 hours.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.7 Bizarrely Silent, pdf p. 113"
+    },
+    {
+      book: "dsm",
+      text: "Unlike most patients, people with catatonia often become more alert after a benzodiazepine, so low-dose lorazepam is both diagnostic and treatment.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.7 Bizarrely Silent, pdf p. 115"
+    },
+    {
+      book: "kaplan",
+      text: "Alcohol withdrawal: with a short-acting drug such as lorazepam no dose may be missed, because rapid falls in level can precipitate severe withdrawal.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 909"
+    },
+    {
+      book: "kaplan",
+      text: "Violent patients: diazepam 5–10 mg or lorazepam 2–4 mg can be given slowly IV over 2 minutes, with great care to avoid respiratory arrest.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, pdf p. 2560"
+    },
+    {
+      book: "kaplan",
+      text: "Flumazenil reverses benzodiazepine sedation: 0.2 mg IV over 30 seconds, then 0.3 mg, then 0.5 mg at 1-minute intervals to a total of 3 mg; it can precipitate seizures in dependent patients or mixed overdoses.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2118"
+    }
+  ],
+  sources: [
+    {
+      name: "NICE NG10 Violence and aggression: short-term management in mental health, health and community settings, 2015 (rapid tranquillisation)"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder; Substance use)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Lorazepam injection (Ativan), product information (SmPC and US label)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "thiamine",
+  name: "Thiamine (vitamin B1)",
+  aka: [
+    "Vitamin B1",
+    "Aneurin",
+    "Pabrinex (thiamine with other B vitamins and vitamin C)"
+  ],
+  cls: "Vitamin",
+  cat: "nutrition",
+  wards: [
+    "emergency",
+    "medical",
+    "icu",
+    "psychiatric",
+    "maternity",
+    "paediatric",
+    "outpatient"
+  ],
+  tags: [
+    "Wernicke encephalopathy",
+    "Korsakoff",
+    "alcohol withdrawal",
+    "alcohol use disorder",
+    "refeeding syndrome",
+    "malnutrition",
+    "hyperemesis gravidarum",
+    "beriberi",
+    "before glucose"
+  ],
+  presentation: [
+    "Injection 100 mg/mL (1 mL and 2 mL ampoules are common; 50 mg/mL also exists). Read the strength on the ampoule before drawing up.",
+    "Pabrinex IV High Potency (where stocked): a pair of ampoules No. 1 + No. 2 contains thiamine 250 mg with riboflavin, pyridoxine, nicotinamide and vitamin C. An IM version also exists.",
+    "Tablets 50 mg and 100 mg (also 25 mg).",
+    "Vitamin B complex tablets and injections contain only a few milligrams of thiamine per dose (check the label). They are NOT a treatment for Wernicke encephalopathy.",
+    "Protect ampoules from light; thiamine breaks down in alkaline solutions."
+  ],
+  indications: [
+    "Suspected or established Wernicke encephalopathy (treat on suspicion; do not wait for the classic triad)",
+    "Prevention of Wernicke encephalopathy in alcohol withdrawal, alcohol dependence with malnutrition, or any at-risk patient before glucose",
+    "Refeeding syndrome prevention in severe malnutrition, prolonged starvation, anorexia and prolonged vomiting",
+    "Hyperemesis gravidarum with prolonged vomiting (before IV dextrose)",
+    "Korsakoff syndrome (long-term oral treatment)",
+    "Beriberi (wet or dry) and infantile beriberi"
+  ],
+  standard: {
+    summary: "Parenteral thiamine at high dose for anyone who might have Wernicke encephalopathy, given before or with glucose. It is cheap and very safe; under-treatment causes permanent memory loss.",
+    items: [
+      {
+        label: "Suspected or established Wernicke encephalopathy",
+        text: "Royal College of Physicians / BNF practice: Pabrinex 2 pairs (thiamine 500 mg) IV in 50–100 mL 0.9 % saline or 5 % glucose over 30 minutes, three times daily for 3 days. With plain thiamine ampoules the commonly used equivalent is thiamine 500 mg IV over 30 minutes three times daily for 2–3 days (the EFNS 2010 guideline uses 200 mg three times daily). If there is a response, continue about 250 mg (1 pair) IV or IM once daily for 3–5 days or while improvement continues, then oral thiamine. Doses vary between guidelines: confirm with local protocol."
+      },
+      {
+        label: "Prevention in high-risk patients",
+        text: "NICE CG100: harmful or dependent drinkers who are malnourished (or at risk) or have decompensated liver disease AND attend the emergency department or are admitted with acute illness or injury should get parenteral thiamine followed by oral thiamine — for example Pabrinex 1 pair (thiamine 250 mg) IV or IM once daily for 3–5 days (RCP). Oral prophylaxis for others at risk, including during withdrawal: thiamine 200–300 mg daily in divided doses (BNF)."
+      },
+      {
+        label: "Before glucose",
+        text: "Give thiamine before or with any IV glucose in a malnourished or alcohol-dependent patient. Never delay glucose for proven hypoglycaemia — give both, thiamine first if it is in your hand."
+      },
+      {
+        label: "Refeeding syndrome (NICE CG32)",
+        text: "Oral thiamine 200–300 mg daily (or full-dose IV vitamin B preparation if oral route not possible) immediately before and during the first 10 days of feeding, with a vitamin B complex; replace potassium, phosphate and magnesium."
+      },
+      {
+        label: "Korsakoff syndrome / after Wernicke",
+        text: "Oral thiamine long term; Kaplan uses 100 mg two to three times daily for 3 to 12 months, with nutrition and abstinence support."
+      },
+      {
+        label: "Magnesium",
+        text: "Thiamine-dependent enzymes need magnesium. Low magnesium is common in alcohol dependence and can make Wernicke encephalopathy resistant to thiamine: replace it (see magnesium sulfate)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "High-dose IV thiamine from plain 100 mg/mL ampoules, by gravity",
+      best_for: "Suspected Wernicke encephalopathy where Pabrinex is not stocked and there is no pump.",
+      requires: [
+        "iv",
+        "macro_set"
+      ],
+      steps: [
+        "Treat on suspicion. Any one of confusion, unsteady gait, abnormal eye movements (nystagmus, gaze palsy) or unexplained drowsiness in a person with heavy alcohol use, malnutrition, prolonged vomiting or starvation is enough.",
+        "Draw 500 mg (5 mL of 100 mg/mL) into a 100 mL bag of 0.9 % saline. Label the bag. If only 50 mL bags exist, 50 mL is fine.",
+        "Run over 30 minutes: 100 mL in 30 min = 200 mL/h = about 67 drops/min with a 20 drops/mL set (17 drops per 15 s); with a 15 drops/mL set, 50 drops/min.",
+        "Give it three times a day (for example 06:00, 14:00, 22:00) for 2–3 days. Use the app's dose schedule to record doses.",
+        "Start any glucose-containing fluid after the thiamine has started. If the patient is hypoglycaemic, give glucose at once and the thiamine immediately afterwards.",
+        "Replace magnesium if the patient is malnourished or alcohol-dependent (magnesium sulfate IV or IM as per that entry) — resistant cases often have low magnesium.",
+        "If eye signs, gait or confusion improve, continue thiamine 250 mg IV or IM daily for 3–5 days, then oral thiamine 100 mg three times daily."
+      ],
+      monitor: [
+        "Eye movements, gait and orientation before each dose (eye signs often improve within hours to days)",
+        "Glucose",
+        "Pulse, BP and breathing during the first infusion",
+        "Magnesium, potassium and phosphate where available"
+      ],
+      cautions: [
+        "Anaphylaxis with IV thiamine is rare but reported: give over 30 minutes, not as a fast push, with adrenaline available.",
+        "Confusion in alcohol withdrawal may also be delirium tremens, hypoglycaemia, head injury, hepatic encephalopathy, meningitis or sepsis — thiamine does not replace looking for these."
+      ]
+    },
+    {
+      title: "No IV access or confused and pulling lines: IM thiamine",
+      best_for: "Agitated withdrawal, psychiatric ward, health centre, or any patient without a working cannula.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Use deep IM injection into the gluteal or lateral thigh muscle.",
+        "Prevention dose: 100–250 mg IM once daily for 3–5 days.",
+        "Suspected Wernicke encephalopathy with no IV: give the high dose IM, split into injections of no more than about 5 mL in an adult at each site (e.g. 500 mg = 5 mL of 100 mg/mL, or 2.5 mL in each buttock), three times daily, and try again to obtain IV access.",
+        "If the patient is being sedated for withdrawal (e.g. diazepam), give the thiamine while they are calm and record which side was used.",
+        "Kaplan's emergency table and consultation chapter both place IM or IV thiamine before glucose loading."
+      ],
+      monitor: [
+        "Injection site",
+        "Eye movements, gait and confusion daily",
+        "Signs of anaphylaxis for 30 minutes after the first dose"
+      ],
+      cautions: [
+        "IM injection is painful; large single-site volumes are poorly tolerated.",
+        "Avoid IM in a patient with severe thrombocytopenia or coagulopathy from liver disease; use IV where possible."
+      ]
+    },
+    {
+      title: "Only oral thiamine or vitamin B complex in stock",
+      best_for: "Health posts and pharmacies with no injectable thiamine; outpatient alcohol withdrawal.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Understand why oral thiamine fails in Wernicke encephalopathy: absorption in the gut is by an active carrier that saturates at small doses, and alcohol, malnutrition and vomiting all reduce it further. A tablet cannot reliably raise brain thiamine quickly.",
+        "Suspected Wernicke encephalopathy is therefore an emergency referral for injectable thiamine. While arranging transfer, give the largest oral dose available (e.g. 100 mg three times daily; higher oral doses rely on passive absorption) — it is better than nothing but not a substitute.",
+        "Count the thiamine in vitamin B complex: most tablets contain only a few mg. Ten tablets may still be far below one 100 mg tablet, and high doses of other ingredients (e.g. pyridoxine, nicotinamide) can harm. Do not treat Wernicke encephalopathy with B complex.",
+        "For prevention in a person who is still eating and has no neurological signs: oral thiamine 200–300 mg daily in divided doses during withdrawal and for several weeks, with food and a multivitamin (Kaplan: rest, nutrition and multivitamins containing thiamine).",
+        "Give the patient and family a written warning: return at once for confusion, unsteadiness, double vision or drowsiness."
+      ],
+      monitor: [
+        "Mental state, gait and eye movements at each contact",
+        "Food intake and vomiting"
+      ],
+      cautions: [
+        "Vomiting, diarrhoea or ongoing drinking make oral thiamine even less reliable — refer."
+      ]
+    },
+    {
+      title: "Starting feeds or dextrose in a starved patient (refeeding, hyperemesis, severe malnutrition)",
+      best_for: "Medical, maternity and paediatric wards starting nutrition or glucose fluids in someone who has not eaten for days.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Give thiamine BEFORE the first feed or glucose infusion: oral 200–300 mg daily in divided doses (adults), or IV/IM if vomiting, for the first 10 days of feeding (NICE CG32).",
+        "Hyperemesis gravidarum: give thiamine before IV dextrose to any woman vomiting for weeks; if she is confused, ataxic or has abnormal eye movements, use the high-dose Wernicke regimen — Kaplan lists hyperemesis among causes of thiamine deficiency.",
+        "Start feeds slowly and replace potassium, phosphate and magnesium where they can be measured or when there are clinical signs of deficiency.",
+        "Children with severe acute malnutrition: follow the WHO F-75 protocol, which includes a vitamin mix; seek paediatric advice on added thiamine doses."
+      ],
+      monitor: [
+        "Mental state and eye movements",
+        "Heart rate, oedema and breathing (refeeding heart failure)",
+        "Potassium, phosphate, magnesium and glucose where available"
+      ],
+      cautions: [
+        "Refeeding syndrome can kill in the first days of feeding; thiamine alone does not prevent the electrolyte shifts."
+      ]
+    }
+  ],
+  paediatric: [
+    "Infantile beriberi (breastfed infant of a thiamine-deficient mother: sudden heart failure, hoarse or absent cry, vomiting, seizures) is an emergency: give parenteral thiamine by paediatric protocol and treat the mother too. Confirm the dose with the local paediatric protocol or BNF for Children.",
+    "Severe acute malnutrition: WHO therapeutic feeds contain vitamins; seek senior advice before adding high-dose thiamine."
+  ],
+  cautions: [
+    "Very safe; excess is excreted in urine. Rare anaphylaxis with IV use: infuse over 30 minutes with adrenaline available.",
+    "Do not give Wernicke-suspected patients oral thiamine or B complex alone.",
+    "If there is no response to thiamine in apparent Wernicke–Korsakoff syndrome, consider niacin deficiency (alcoholic pellagra), low magnesium, or another diagnosis."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Wernicke encephalopathy (ataxia, eye movement abnormalities, confusion) is fully reversible with treatment, whereas only about one in five patients with Korsakoff syndrome recovers; thiamine deficiency links the two.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 895"
+    },
+    {
+      book: "kaplan",
+      text: "Intravenous glucose rapidly uses up the remaining thiamine, so a patient with alcohol dependence should receive thiamine by injection before a glucose infusion.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.1 Consultation-Liaison Psychiatry, pdf p. 2522"
+    },
+    {
+      book: "kaplan",
+      text: "Early Wernicke encephalopathy responds rapidly to large parenteral doses of thiamine, which probably prevent progression to Korsakoff syndrome.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 915"
+    },
+    {
+      book: "kaplan",
+      text: "For alcohol-related disorders receiving IV glucose, adding thiamine 100 mg to each litre of glucose solution is good practice; the book's oral course is 100 mg two to three times daily for 1 to 2 weeks.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 915"
+    },
+    {
+      book: "kaplan",
+      text: "Korsakoff syndrome is also treated with oral thiamine 100 mg two to three times daily, continued for 3 to 12 months; if there is no response to thiamine, consider alcoholic pellagra (niacin deficiency).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 919"
+    },
+    {
+      book: "kaplan",
+      text: "Emergency table: Wernicke encephalopathy is treated with thiamine 100 mg IV or IM, with magnesium sulfate, given before glucose loading.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, table of emergencies, pdf p. 2567"
+    },
+    {
+      book: "kaplan",
+      text: "Thiamine deficiency is not only alcohol-related: starvation, gastric cancer, haemodialysis, hyperemesis gravidarum and prolonged IV feeding also cause it.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.3 Major or Minor Neurocognitive Disorder due to Another Medical Condition (Amnestic Disorders), pdf p. 799"
+    },
+    {
+      book: "kaplan",
+      text: "Alcohol detoxification begins with a physical examination, then rest, adequate nutrition and multivitamins, particularly thiamine.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, detoxification, pdf p. 907"
+    }
+  ],
+  sources: [
+    {
+      name: "Thomson AD et al. The Royal College of Physicians report on alcohol: guidelines for managing Wernicke's encephalopathy in the accident and emergency department. Alcohol Alcohol 2002"
+    },
+    {
+      name: "NICE CG100 Alcohol-use disorders: diagnosis and management of physical complications (2010, updated 2017)"
+    },
+    {
+      name: "NICE CG32 Nutrition support for adults (2006, updated 2017) — refeeding syndrome"
+    },
+    {
+      name: "Galvin R et al. EFNS guidelines for diagnosis, therapy and prevention of Wernicke encephalopathy. Eur J Neurol 2010"
+    },
+    {
+      name: "BNF: thiamine; Pabrinex product information"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "lithium",
+  name: "Lithium carbonate",
+  aka: [
+    "Lithium",
+    "Priadel",
+    "Camcolit",
+    "Eskalith"
+  ],
+  cls: "Mood stabiliser",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical",
+    "emergency",
+    "icu"
+  ],
+  tags: [
+    "bipolar disorder",
+    "mania",
+    "mood stabiliser",
+    "lithium toxicity",
+    "narrow therapeutic index",
+    "suicide prevention"
+  ],
+  presentation: [
+    "Lithium carbonate 300 mg tablets or capsules (also 250 mg); modified-release 200 mg and 400 mg (e.g. Priadel).",
+    "Different brands and modified-release forms are NOT interchangeable dose for dose: prescribe and dispense the same brand, and recheck the level after any switch.",
+    "Lithium citrate liquid exists; its mg strength is not equivalent to lithium carbonate mg."
+  ],
+  indications: [
+    "Bipolar disorder: long-term prevention of manic and depressive relapse",
+    "Acute mania (slow onset; usually with an antipsychotic or benzodiazepine at first)",
+    "Augmentation in treatment-resistant depression (specialist)",
+    "Reduces suicide risk in mood disorders"
+  ],
+  standard: {
+    summary: "Effective but with a narrow margin between the effective and toxic level. It is safe only where the level, kidney function and sodium can be checked, and where patients understand dehydration and sick-day rules.",
+    items: [
+      {
+        label: "When to use (mhGAP)",
+        text: "WHO mhGAP 2.0: consider lithium for bipolar disorder only where clinical and laboratory monitoring are available. Where levels cannot be measured, choose another mood stabiliser or antipsychotic (valproate — not in women and girls who could become pregnant — carbamazepine, haloperidol or olanzapine)."
+      },
+      {
+        label: "Before starting",
+        text: "Creatinine (eGFR), sodium and potassium, TSH, weight, blood pressure, ECG if cardiac disease or risk factors, pregnancy test in women who could become pregnant (Kaplan; NICE CG185). Ask about fainting, known heart disease and family sudden death under 45."
+      },
+      {
+        label: "Starting dose",
+        text: "Doses differ between brands and between standard and modified-release forms: follow the BNF or product information for the brand you stock, and confirm with local protocol. Kaplan's standard-release start is 300 mg three times daily in most adults, but 300 mg once or twice daily in older people or kidney impairment. Where monitoring is limited, a low start (for example a single evening dose) with small increases guided by levels is safer."
+      },
+      {
+        label: "Levels (where available)",
+        text: "Take the sample 12 hours after the last dose, 5–7 days after starting or any dose change, and weekly until stable; then every 3 months for the first year and every 6 months after (every 3 months in older people, kidney impairment, interacting drugs, or poor adherence). Target 0.6–0.8 mmol/L for maintenance; up to 0.8–1.0 mmol/L if relapse on the lower range or in acute mania. Kidney function and TSH every 6 months (NICE CG185). Do not use a lithium–heparin blood tube (falsely high)."
+      },
+      {
+        label: "Toxicity",
+        text: "Usually above 1.5 mmol/L, but it can occur within the normal range, especially in older people and in chronic accumulation. Stop lithium, restore fluid with 0.9 % saline, stop interacting drugs, check creatinine, sodium, potassium, glucose, ECG. Haemodialysis for severe neurological features (reduced consciousness, seizures), arrhythmia, or level above 4.0 mmol/L with kidney impairment (EXTRIP 2015; Kaplan). Activated charcoal does NOT bind lithium."
+      },
+      {
+        label: "Stopping",
+        text: "Taper over at least 4 weeks (ideally longer) unless toxicity; abrupt stopping causes rebound mania."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "When serum lithium levels cannot be measured: decide, then monitor clinically",
+      best_for: "District hospitals and health centres with no lithium assay, or a referral laboratory that is slow or intermittent.",
+      requires: [
+        "oral",
+        "bp"
+      ],
+      steps: [
+        "Do not START lithium where no level can ever be measured (mhGAP). Use valproate (not in women and girls who could become pregnant), carbamazepine, or an antipsychotic instead.",
+        "A patient already stable on lithium who can no longer get levels: do not stop suddenly (relapse risk). Keep the same brand and dose that gave a known safe level, never increase the dose without a level, and plan transfer to an alternative or to a site with monitoring.",
+        "If you can measure creatinine and sodium but not lithium, do so at least every 3–6 months and whenever the patient is unwell; a rising creatinine or falling sodium means lithium is accumulating — reduce or withhold and seek advice.",
+        "At every visit ask and look for: coarse tremor (hands shake so a cup spills — a fine tremor is common and usually harmless), unsteady walking, slurred speech, new confusion or drowsiness, vomiting, diarrhoea, muscle twitching. Any of these = withhold lithium today and assess for toxicity.",
+        "Also check: blood pressure, pulse (slow or irregular pulse suggests sinus node effect), weight, thirst and urine volume, neck swelling (goitre), tiredness and weight gain (hypothyroidism).",
+        "Review every medicine the patient takes, including medicines bought in pharmacies: ibuprofen, diclofenac and other NSAIDs, diuretics, ACE inhibitors and metronidazole raise lithium (Kaplan). Paracetamol is the safe painkiller.",
+        "In women who could become pregnant, confirm reliable contraception and plan for pregnancy before it happens."
+      ],
+      monitor: [
+        "Toxicity symptoms and gait at every contact",
+        "BP, pulse and weight",
+        "Creatinine and sodium where available",
+        "Thyroid symptoms; TSH yearly if possible"
+      ],
+      cautions: [
+        "Older people, people with kidney disease, heart failure or low salt diets develop toxicity at 'normal' doses (Kaplan).",
+        "Clinical monitoring reduces but does not remove the risk; document the discussion of risks with the patient and family."
+      ]
+    },
+    {
+      title: "Suspected lithium toxicity with no lithium level and no dialysis on site",
+      best_for: "Emergency and medical wards where lithium assay and dialysis are not available.",
+      requires: [
+        "iv",
+        "macro_set",
+        "bp"
+      ],
+      steps: [
+        "Suspect toxicity in anyone on lithium with vomiting, diarrhoea, coarse tremor, unsteadiness, slurred speech, confusion, myoclonus, brisk reflexes, seizures or reduced consciousness — even if they took their usual dose (chronic toxicity).",
+        "STOP lithium. Stop NSAIDs, diuretics (including furosemide), ACE inhibitors and metronidazole.",
+        "Do NOT give activated charcoal for lithium (it does not bind). Do not use furosemide or mannitol to 'wash out' lithium: diuretics cause dehydration and forced diuresis is unproven.",
+        "Restore circulating volume and urine flow with 0.9 % saline: in an adult without heart failure, for example 1 litre over 1–2 hours by gravity (a 20 drops/mL set at about 160–330 drops/min is too fast to count — use the bag markings every 15 minutes), then adjust to keep urine output at least 1 mL/kg/h and the patient clinically well hydrated. Use smaller volumes and frequent chest checks in older people and heart or kidney disease.",
+        "Treat seizures with a benzodiazepine (see diazepam or midazolam). Check glucose.",
+        "Measure creatinine, sodium and potassium if any laboratory is available; lithium can cause nephrogenic diabetes insipidus with large urine volumes and high sodium — if urine output is very high and the patient is thirsty or sodium is rising, seek advice before giving more saline.",
+        "Refer urgently for haemodialysis (arrange transfer early, the journey takes time) if there is reduced consciousness, seizures, a slow or irregular pulse or low BP, worsening despite 6 hours of fluids, falling urine output or known kidney failure.",
+        "Neurological recovery lags behind the fall in lithium by days (Kaplan): improvement may be slow even with correct treatment. Do not restart lithium until fully recovered and specialist review."
+      ],
+      monitor: [
+        "Conscious level, tremor, gait and reflexes every 1–2 h",
+        "Urine output hourly (catheter if confused)",
+        "Pulse, BP, breathing; ECG if available (bradycardia, QT, T-wave changes)",
+        "Fluid balance and chest (overload)",
+        "Sodium and creatinine where available"
+      ],
+      cautions: [
+        "Chronic toxicity (accumulation over weeks from dehydration, kidney decline or a new drug) is more dangerous at a given level than an acute single overdose.",
+        "Modified-release overdose may keep absorbing for many hours: observe for at least 24 hours."
+      ]
+    },
+    {
+      title: "Sick-day rules and dehydration counselling for patients and families",
+      best_for: "Outpatient follow-up and discharge from the psychiatric ward, especially in hot climates, manual work, and during religious fasting.",
+      requires: [],
+      steps: [
+        "Drink regularly (about 2–3 litres a day in hot weather or heavy work) and keep a normal amount of salt in food; do not start a salt-free diet (Kaplan).",
+        "If you have vomiting, diarrhoea, fever or cannot eat and drink: STOP lithium and come to the clinic the same day. Restart only when eating and drinking normally for 24–48 hours, or after a check.",
+        "During fasting without fluids in the day (e.g. Ramadan), in heat waves or long travel on foot, discuss in advance: a dose reduction or avoiding lithium during that period may be needed.",
+        "Never buy painkillers for joint or back pain (ibuprofen, diclofenac, 'anti-inflammatories') without telling the pharmacist you take lithium. Use paracetamol.",
+        "Know the warning signs: shaking hands that spill drinks, unsteady walking, slurred speech, confusion, severe diarrhoea — come immediately.",
+        "Keep a lithium card or note with the brand, dose, last level and clinic phone number."
+      ],
+      monitor: [
+        "Understanding: ask the patient to repeat back the sick-day rule",
+        "Family member knows the warning signs"
+      ],
+      cautions: [
+        "Lithium is lethal in overdose. For a patient at risk of suicide, dispense small quantities and involve family in holding supplies."
+      ]
+    }
+  ],
+  paediatric: [
+    "Specialist use only in children and adolescents. Adolescents use similar serum levels to adults (Kaplan); weight gain and acne are common reasons for stopping.",
+    "Not usually used in children under 12 years."
+  ],
+  cautions: [
+    "Narrow therapeutic index; toxicity may occur within the reference range, especially in the elderly.",
+    "Kidney impairment, dehydration, low-sodium diet, heart failure, Addison disease: avoid or use with specialist monitoring.",
+    "Hypothyroidism, hyperparathyroidism (raised calcium), nephrogenic diabetes insipidus and long-term reduced kidney function.",
+    "Contraindicated in sick sinus syndrome (Kaplan); caution with other cardiac conduction disease and Brugada syndrome.",
+    "Pregnancy: avoid in the first trimester if possible (Ebstein anomaly); high risk of neonatal and maternal toxicity around delivery — see Safety tab.",
+    "Stop 24 hours before major surgery or ECT where possible (Kaplan: 2 days before ECT), restart when eating and drinking and kidney function normal."
+  ],
+  antidote: "No antidote. Stop lithium, restore fluids with 0.9 % saline, avoid diuretics and NSAIDs; haemodialysis for severe toxicity.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Risk factors for lithium toxicity are excessive dose, renal impairment, a low-sodium diet, interacting drugs and dehydration; elderly people are more vulnerable.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2059"
+    },
+    {
+      book: "kaplan",
+      text: "Early toxicity: coarse tremor, slurred speech, unsteadiness, gastrointestinal upset; later: impaired consciousness, twitching, myoclonus, seizures and coma.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2059"
+    },
+    {
+      book: "kaplan",
+      text: "Lithium toxicity is a medical emergency: stop lithium and treat dehydration; activated charcoal does not bind lithium.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2060"
+    },
+    {
+      book: "kaplan",
+      text: "Severe toxicity needs haemodialysis; levels rebound from tissue stores so dialysis may need repeating, and neurological recovery lags behind the fall in serum lithium by days.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, Table 21-29, pdf p. 2061"
+    },
+    {
+      book: "kaplan",
+      text: "Book starting dose is 300 mg three times daily for most adults, but 300 mg once or twice daily in elderly people or renal impairment.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2064"
+    },
+    {
+      book: "kaplan",
+      text: "Many NSAIDs (including ibuprofen, diclofenac, indomethacin, naproxen) reduce lithium clearance and raise levels; thiazide and potassium-sparing diuretics and ACE inhibitors also raise levels.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2063"
+    },
+    {
+      book: "kaplan",
+      text: "Clinical toxicity is well documented at or just above the upper therapeutic limit, especially in elderly people: combine levels with clinical judgement.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2066"
+    },
+    {
+      book: "kaplan",
+      text: "Maintenance range 0.4–0.8 mEq/L; higher levels (about 1.0–1.2) are used for acute mania; treat the patient, not the laboratory result.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2067"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses module: bipolar disorder)"
+    },
+    {
+      name: "NICE CG185 Bipolar disorder: assessment and management (2014, updated 2023)"
+    },
+    {
+      name: "BNF: lithium carbonate"
+    },
+    {
+      name: "Decker BS et al. Extracorporeal treatment for lithium poisoning: EXTRIP recommendations. Clin J Am Soc Nephrol 2015"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "sodium-valproate",
+  name: "Sodium valproate (valproic acid)",
+  aka: [
+    "Valproate",
+    "Valproic acid",
+    "Epilim",
+    "Depakine",
+    "Depakote (divalproex)",
+    "Epival"
+  ],
+  cls: "Anticonvulsant / mood stabiliser",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "emergency",
+    "medical",
+    "paediatric",
+    "icu",
+    "outpatient"
+  ],
+  tags: [
+    "epilepsy",
+    "status epilepticus",
+    "mania",
+    "bipolar disorder",
+    "generalised seizures",
+    "absence",
+    "myoclonic",
+    "migraine prophylaxis",
+    "teratogen"
+  ],
+  presentation: [
+    "Enteric-coated tablets 200 mg and 500 mg (swallow whole — do not crush); modified-release 200, 300, 500 mg.",
+    "Oral solution or syrup 200 mg/5 mL (sugar-free forms exist).",
+    "IV powder 400 mg vial, reconstituted to 100 mg/mL (or solution 100 mg/mL). Not stocked in many hospitals.",
+    "Divalproex sodium (Depakote) and valproic acid have similar mg-for-mg dosing in practice; check local product."
+  ],
+  indications: [
+    "Epilepsy: generalised tonic-clonic, absence, myoclonic and focal seizures",
+    "Established status epilepticus after benzodiazepines (IV loading)",
+    "Bipolar disorder: acute mania and maintenance",
+    "Migraine prophylaxis (not in women and girls who could become pregnant)"
+  ],
+  standard: {
+    summary: "Broad-spectrum and well tolerated, with less sedation and respiratory depression than phenobarbital or phenytoin — but the most harmful antiepileptic in pregnancy. Do not start it in a woman or girl who could become pregnant unless there is no alternative and a pregnancy prevention plan is in place.",
+    items: [
+      {
+        label: "Women and girls who could become pregnant",
+        text: "EMA/MHRA pregnancy prevention programme (2018, strengthened 2024): do not use unless other treatments are ineffective or not tolerated; effective contraception, a pregnancy test before starting, and a documented risk discussion. In bipolar disorder do not use in pregnancy. About 1 in 10 exposed babies have malformations and up to 4 in 10 have neurodevelopmental problems. MHRA 2024 also advises that new patients under 55 (male or female) start only when two specialists agree no alternative is suitable, and has flagged a possible risk from paternal use — confirm with local guidance."
+      },
+      {
+        label: "Epilepsy, adult",
+        text: "BNF: 600 mg daily in 1–2 divided doses, increasing by 150–300 mg every 3 days; usual maintenance 1–2 g daily (20–30 mg/kg/day); maximum 2.5 g daily."
+      },
+      {
+        label: "Epilepsy, child (1 month–11 years)",
+        text: "BNF for Children: 10–15 mg/kg/day in 1–2 divided doses (maximum 600 mg to start), increased to usual maintenance 25–30 mg/kg/day in 2 divided doses. Confirm with local protocol."
+      },
+      {
+        label: "Status epilepticus (IV)",
+        text: "After two benzodiazepine doses: 20–40 mg/kg IV (maximum 3,000 mg) over about 10 minutes. Harrison quotes 20–30 mg/kg; Nelson and the American Epilepsy Society 2016 guideline use 40 mg/kg. Confirm with local protocol. Avoid in known liver disease, suspected metabolic or mitochondrial disease, and children under 2 years with seizures of unknown cause."
+      },
+      {
+        label: "Mania",
+        text: "Kaplan: oral loading 20–30 mg/kg/day in divided doses for acute mania (well tolerated, faster control), or start 250 mg with a meal and build up over 3–6 days; usual 1,200–1,500 mg/day (range 750–2,500 mg/day). WHO mhGAP starts at 500 mg/day and increases to 1,000–2,000 mg/day. Once stable the daily dose can be taken at night."
+      },
+      {
+        label: "Monitoring",
+        text: "Baseline liver tests, full blood count with platelets, and pregnancy test (Kaplan). Repeat liver tests and platelets in the first 6 months and before surgery. Levels (50–100 mg/L) help with adherence or toxicity only. Symptoms matter more than routine tests (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "IV valproate loading in status epilepticus by timed syringe push",
+      best_for: "Seizures continuing after two benzodiazepine doses, no pump and no cardiac monitor; valproate causes little hypotension or respiratory depression.",
+      requires: [
+        "iv"
+      ],
+      steps: [
+        "Check contraindications quickly: known liver disease, suspected metabolic disease or child under 2 years with unexplained seizures (use phenobarbital instead), known or possible pregnancy (use phenytoin or phenobarbital if available).",
+        "Reconstitute each 400 mg vial with the supplied 4 mL water: 100 mg/mL.",
+        "Dose: 20–40 mg/kg (maximum 3,000 mg); the app calculator uses 20 mg/kg. Example: 50 kg × 20 mg/kg = 1,000 mg = 10 mL; 40 mg/kg = 2,000 mg = 20 mL.",
+        "Draw into a syringe and push over about 10 minutes, dividing the volume by the clock: for 10 mL give 1 mL every minute; for 20 mL give 2 mL every minute. It can also be diluted in 0.9 % saline or 5 % glucose to double the volume for easier timing.",
+        "Flush with 0.9 % saline before and after. Valproate is compatible with saline, glucose and Ringer's lactate.",
+        "If seizures continue 10 minutes after the dose, move to the next drug (phenobarbital or phenytoin) and call for airway support.",
+        "Continue maintenance orally or via NG tube (syrup; do not crush enteric-coated tablets) at the usual daily dose in 2 divided doses, starting 12 hours after the load."
+      ],
+      monitor: [
+        "Seizure activity and conscious level",
+        "Breathing and oxygen saturation where available",
+        "Pulse and BP every 15 min for 1 h",
+        "Glucose"
+      ],
+      cautions: [
+        "Hyperammonaemic encephalopathy (drowsiness, vomiting, confusion with normal liver tests) can follow, especially with carbamazepine or phenobarbital, or in urea-cycle disorders.",
+        "Carbapenem antibiotics (meropenem, imipenem) lower valproate levels so much that seizures return — avoid the combination."
+      ]
+    },
+    {
+      title: "Starting and continuing valproate where blood tests are rarely available",
+      best_for: "Outpatient epilepsy and bipolar clinics without routine liver tests, platelet counts or drug levels.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Before starting: ask about liver disease, jaundice, heavy alcohol use, pancreatitis, bleeding or bruising, and known metabolic disease; examine for jaundice and liver size. Do a urine pregnancy test in any woman or girl who could become pregnant.",
+        "Start low and increase every 3–7 days (e.g. 200–250 mg twice daily in adults) to reduce nausea and sedation.",
+        "Kaplan notes that even frequent blood tests do not reliably predict severe liver toxicity: teaching is the main safety test. Tell the patient and family to stop and come the same day for: vomiting, loss of appetite, abdominal pain, lethargy, jaundice, swelling of legs or face, unusual bruising or bleeding, or new confusion.",
+        "Pancreatitis usually appears in the first 6 months: severe upper abdominal pain with vomiting means stop valproate and admit.",
+        "If liver tests or platelets can be done once, do them 1–3 months after starting and before any surgery.",
+        "Check weight and menstrual pattern in young women (weight gain, polycystic ovary features) and tremor at each visit.",
+        "Titrate by clinical response (fewer seizures; mood stable) and by side effects. Tremor, unsteadiness or drowsiness after a dose increase usually means the level is high: go back to the previous dose."
+      ],
+      monitor: [
+        "Seizure diary or mood chart",
+        "Jaundice, abdominal pain, bruising at every visit",
+        "Weight, tremor, sedation",
+        "Pregnancy status and contraception"
+      ],
+      cautions: [
+        "Highest liver risk: children under 3 years, multiple antiepileptics (especially with phenobarbital), and metabolic disease (Kaplan)."
+      ]
+    },
+    {
+      title: "A woman or girl who could become pregnant, and valproate is the only stocked option",
+      best_for: "Health centres where valproate is available but lamotrigine, levetiracetam or antipsychotics are not.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "First look for an alternative that is stocked: epilepsy — carbamazepine (focal and tonic-clonic seizures) or phenobarbital; bipolar disorder — an antipsychotic such as haloperidol or olanzapine, or carbamazepine; migraine — do not use valproate.",
+        "If valproate is truly the only option: explain in plain words that valproate taken in pregnancy commonly harms the baby's development and can cause spina bifida and other malformations, and record the discussion.",
+        "Arrange effective contraception before the first dose. Valproate does not reduce the effect of hormonal methods, so implants, injections (DMPA), IUDs and pills can all be used; long-acting methods are most reliable.",
+        "Urine pregnancy test before starting and whenever a period is missed.",
+        "Give folic acid (5 mg daily is widely used with antiepileptics; confirm local practice) — it does not remove the valproate risk.",
+        "If she becomes pregnant while taking valproate for epilepsy: do NOT stop it suddenly (status epilepticus harms mother and baby). Refer urgently to plan a switch. For bipolar disorder, seek urgent specialist advice to change treatment.",
+        "Review every year whether an alternative has become available."
+      ],
+      monitor: [
+        "Contraception use at every visit",
+        "Pregnancy test when periods are late"
+      ],
+      cautions: [
+        "Girls reach childbearing age during treatment: plan from diagnosis, not from first period."
+      ]
+    }
+  ],
+  paediatric: [
+    "Epilepsy 1 month–11 years: 10–15 mg/kg/day in 1–2 doses, usual maintenance 25–30 mg/kg/day in 2 divided doses (BNF for Children).",
+    "Status epilepticus: 20–40 mg/kg IV (Nelson: 40 mg/kg). Avoid in children under 2 years with unexplained seizures or suspected metabolic/mitochondrial disease (e.g. POLG), where fatal liver failure occurs.",
+    "Fatal hepatotoxicity risk is highest under 3 years, with multiple antiepileptics and with developmental delay (Kaplan).",
+    "Avoid aspirin in children on valproate (bleeding and raised valproate levels)."
+  ],
+  cautions: [
+    "Pregnancy: major teratogen — see Safety tab.",
+    "Liver failure (rare, mostly young children), pancreatitis (first 6 months), thrombocytopenia and platelet dysfunction, hyperammonaemic encephalopathy.",
+    "Weight gain, hair loss, tremor, polycystic ovary features.",
+    "Hyponatraemia at doses above about 1 g/day (Kaplan).",
+    "Overdose can cause coma and death; enteric-coated and modified-release tablets absorb late."
+  ],
+  calc: {
+    type: "weight",
+    dosePerKg: 20,
+    doseUnit: "mg",
+    conc: 100,
+    concUnit: "mg/mL",
+    maxDose: 3000,
+    label: "Status epilepticus load 20 mg/kg (guidelines 20–40 mg/kg, max 3 g) at 100 mg/mL, over about 10 min"
+  },
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Risk factors for fatal hepatotoxicity: age under 3 years, concurrent phenobarbital, and neurological disorders, especially inborn errors of metabolism.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2072"
+    },
+    {
+      book: "kaplan",
+      text: "Lethargy, malaise, anorexia, nausea and vomiting, oedema or abdominal pain on valproate must raise the possibility of severe hepatotoxicity; a modest rise in liver enzymes does not predict it.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2074"
+    },
+    {
+      book: "kaplan",
+      text: "Pancreatitis is rare, usually within the first 6 months, and occasionally fatal.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2074"
+    },
+    {
+      book: "kaplan",
+      text: "First-trimester exposure carries neural tube defect and other malformation risks, and children exposed in utero have lower IQ at 6 years and possibly more autism.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2074"
+    },
+    {
+      book: "kaplan",
+      text: "Valproate raises levels of carbamazepine, diazepam, amitriptyline and phenobarbital and lowers phenytoin; carbamazepine lowers valproate; amitriptyline and fluoxetine may raise valproate.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2077"
+    },
+    {
+      book: "kaplan",
+      text: "Acute mania: oral loading 20–30 mg/kg/day; otherwise start 250 mg with a meal and increase to 250 mg three times daily over 3–6 days.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2079"
+    },
+    {
+      book: "kaplan",
+      text: "Even frequent blood monitoring may not predict severe organ toxicity; teaching patients to seek prompt review for any illness is more prudent.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2079"
+    },
+    {
+      book: "kaplan",
+      text: "About two-thirds of patients with acute mania respond; valproate is preferred to lithium for acute mania in children and elderly people.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2071"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Epilepsy and Psychoses modules)"
+    },
+    {
+      name: "BNF and BNF for Children: sodium valproate"
+    },
+    {
+      name: "MHRA Drug Safety Update: valproate pregnancy prevention programme (2018) and new safety measures (2024)"
+    },
+    {
+      name: "Glauser T et al. Evidence-based guideline: treatment of convulsive status epilepticus. American Epilepsy Society, Epilepsy Curr 2016"
+    },
+    {
+      name: "NICE CG185 Bipolar disorder (valproate in women of childbearing potential)"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "carbamazepine",
+  name: "Carbamazepine",
+  aka: [
+    "Tegretol",
+    "Carbatrol",
+    "Equetro"
+  ],
+  cls: "Anticonvulsant / mood stabiliser",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical",
+    "paediatric",
+    "emergency"
+  ],
+  tags: [
+    "epilepsy",
+    "focal seizures",
+    "tonic-clonic",
+    "bipolar disorder",
+    "mania",
+    "trigeminal neuralgia",
+    "neuropathic pain",
+    "enzyme inducer",
+    "Stevens-Johnson syndrome",
+    "hyponatraemia",
+    "agranulocytosis"
+  ],
+  presentation: [
+    "Tablets 200 mg (also 100 mg and 400 mg); chewable 100 mg.",
+    "Modified-release tablets 200 mg and 400 mg (swallow whole); not interchangeable dose for dose with standard tablets.",
+    "Oral suspension 100 mg/5 mL.",
+    "No injection. Suppositories exist but are rarely stocked."
+  ],
+  indications: [
+    "Epilepsy: focal seizures and generalised tonic-clonic seizures (NOT absence or myoclonic seizures, which it can worsen)",
+    "Trigeminal neuralgia (first-line)",
+    "Bipolar disorder: acute mania and prevention when lithium or valproate are unsuitable",
+    "Neuropathic pain (second-line) and adjunct in alcohol withdrawal (benzodiazepines are more effective)"
+  ],
+  standard: {
+    summary: "Start low and go slow. The main dangers are serious skin reactions in the first months, low sodium, rare blood disorders, and the many medicines it makes ineffective — including dolutegravir, TB-regimen partners, hormonal contraception and steroids.",
+    items: [
+      {
+        label: "Epilepsy, adult",
+        text: "BNF: 100–200 mg once or twice daily, increased by 100–200 mg every 2 weeks; usual maintenance 0.8–1.2 g daily in divided doses; maximum 2 g daily."
+      },
+      {
+        label: "Epilepsy, child",
+        text: "BNF for Children (1 month–11 years): 5 mg/kg at night or 2.5 mg/kg twice daily, increased by 2.5–5 mg/kg every 3–7 days; usual maintenance 5 mg/kg two to three times daily; maximum 20 mg/kg/day. Confirm with local protocol."
+      },
+      {
+        label: "Trigeminal neuralgia",
+        text: "100 mg once or twice daily, increased gradually; usual 200 mg three to four times daily; maximum 1.6 g daily. Reduce to the lowest effective dose in remission."
+      },
+      {
+        label: "Bipolar disorder",
+        text: "Kaplan: 200 mg at bedtime to start (600–800 mg/day in divided doses for manic inpatients), titrate slowly; typical antimanic dose 600–1,800 mg/day (anticonvulsant levels 4–12 mg/L). Enzyme autoinduction over 2–3 weeks may need a small dose rise."
+      },
+      {
+        label: "Before starting",
+        text: "Full blood count, sodium, liver tests where available; ECG if over 40 or cardiac disease (Kaplan). Screen for HLA-B*1502 in people of Han Chinese, Thai or other South-East Asian ancestry (very high Stevens–Johnson/TEN risk) — not needed routinely for people of Ethiopian ancestry. Check all co-medications and contraception."
+      },
+      {
+        label: "Stop rules",
+        text: "Any rash: stop and review (Kaplan). Fever, sore throat, mouth ulcers, bruising or bleeding: urgent full blood count; stop if neutrophils below 1.5 × 10⁹/L or platelets below 100 × 10⁹/L. Confusion, headache, vomiting or seizures increasing: check sodium."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Safe start without routine blood counts, sodium or levels",
+      best_for: "Outpatient epilepsy, bipolar and pain clinics where laboratory tests are occasional.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Start at the lowest dose (adult 100–200 mg at night) and increase no faster than every 1–2 weeks. Most side effects (dizziness, double vision, unsteadiness, nausea) come from increasing too quickly.",
+        "Teach the rash rule clearly: any new rash, blistering, mouth or eye soreness, or fever with rash in the first 3 months — stop the tablets and come the same day. Stevens–Johnson syndrome risk is highest in the first 8 weeks and is higher in people with HIV.",
+        "Teach the blood rule: fever, sore throat, mouth ulcers, bleeding gums, bruising or pinpoint spots — come for a blood count the same day (Kaplan: teaching is more useful than frequent routine counts).",
+        "Low sodium: older people and those on diuretics are at most risk. New headache, confusion, vomiting, drowsiness or more seizures — check sodium if possible; if not, withhold the next dose and refer.",
+        "Toxic level signs replace a blood level: double vision, nystagmus, unsteady walking and drowsiness 2–4 hours after doses mean the dose is too high — reduce to the previous step.",
+        "At 2–3 weeks the drug speeds its own breakdown (autoinduction); seizures may return briefly and need one small increase.",
+        "Review every other medicine at each visit — see the Interactions tab (dolutegravir, TB drugs, contraception, steroids, nifedipine, midazolam, valproate, phenytoin)."
+      ],
+      monitor: [
+        "Skin and mouth at each visit for the first 3 months",
+        "Gait, nystagmus and drowsiness",
+        "Seizure diary or mood chart",
+        "Sodium and full blood count when symptoms occur or when a laboratory is available (at least once in the first 3 months)"
+      ],
+      cautions: [
+        "Avoid in atrioventricular block, history of bone marrow depression, and acute porphyria.",
+        "It can worsen absence and myoclonic seizures — if these occur, change drug."
+      ]
+    },
+    {
+      title: "Carbamazepine with HIV, TB treatment or contraception: an interaction plan",
+      best_for: "Ethiopian clinics where many patients with epilepsy or bipolar disorder also take dolutegravir-based ART, TB treatment or hormonal contraception.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Before starting carbamazepine, list every medicine. Carbamazepine strongly induces liver enzymes and lowers many drugs.",
+        "On dolutegravir (TLD) or dolutegravir-containing PEP: avoid carbamazepine if possible (use valproate — not in women and girls who could become pregnant — or seek HIV specialist advice). If there is no alternative, the dolutegravir product information advises 50 mg twice daily in adults; confirm with the HIV programme.",
+        "On TB treatment: isoniazid raises carbamazepine (toxicity: drowsiness, unsteadiness, vomiting) while rifampicin lowers it (breakthrough seizures). Discuss with the TB clinician; watch closely during the first weeks and after stopping either drug.",
+        "Contraception: carbamazepine makes pills, patches and implants unreliable. Use a copper IUD, levonorgestrel IUD or DMPA injection (at the usual interval — confirm with national family planning guidance). Emergency levonorgestrel needs a double dose or copper IUD.",
+        "Steroids (dexamethasone, hydrocortisone) and nifedipine lose effect — higher doses or an alternative may be needed.",
+        "When carbamazepine is stopped, the enzyme effect wears off over about 2 weeks: other drug levels rise again."
+      ],
+      monitor: [
+        "Seizure control and toxicity signs whenever a TB or HIV drug is started or stopped",
+        "Viral load where available if carbamazepine and dolutegravir are combined",
+        "Contraception at each visit"
+      ],
+      cautions: [
+        "Folic acid for women of childbearing potential (Kaplan); carbamazepine carries a lower but real malformation risk in pregnancy."
+      ]
+    },
+    {
+      title: "Carbamazepine overdose with no levels or cardiac monitor",
+      best_for: "Emergency department after intentional or accidental overdose, including children who swallowed a family member's tablets.",
+      requires: [
+        "oral",
+        "bp"
+      ],
+      steps: [
+        "Features: drowsiness, nystagmus, unsteadiness, dilated pupils, tachycardia, urinary retention, myoclonus, seizures, coma, low BP and broad-complex rhythm. Absorption is slow and erratic: patients can deteriorate 12–24 hours or more after ingestion.",
+        "Airway, breathing, glucose. Put the unconscious patient in the recovery position if the airway cannot be secured.",
+        "Activated charcoal 50 g (child 1 g/kg, maximum 50 g) orally or by NG tube if within about 1–2 hours and the airway is safe. Repeated doses (every 4 hours) are recommended for life-threatening carbamazepine poisoning by the AACT/EAPCCT position statement — only with a protected airway and working bowel.",
+        "Seizures: benzodiazepine (diazepam or midazolam).",
+        "Low BP: 0.9 % saline boluses. If the pulse becomes irregular or wide, or BP falls despite fluids, sodium bicarbonate as for tricyclic poisoning may be considered (see the sodium bicarbonate entry) and refer to a unit with monitoring.",
+        "Observe for at least 24 hours after large or modified-release overdoses."
+      ],
+      monitor: [
+        "Conscious level and breathing hourly",
+        "Pulse rate and rhythm, BP",
+        "Bowel sounds before repeat charcoal",
+        "Sodium where available"
+      ],
+      cautions: [
+        "Do not give repeat charcoal to a drowsy patient with an unprotected airway (aspiration)."
+      ]
+    }
+  ],
+  paediatric: [
+    "1 month–11 years: 5 mg/kg at night (or 2.5 mg/kg twice daily), increase by 2.5–5 mg/kg every 3–7 days to usual 5 mg/kg two to three times daily, maximum 20 mg/kg/day (BNF for Children).",
+    "Can worsen absence and myoclonic seizures, which are common in children.",
+    "Rash and hyponatraemia (irritability, vomiting, drowsiness) as in adults."
+  ],
+  cautions: [
+    "Serious skin reactions (SJS/TEN), strongly linked to HLA-B*1502 in Han Chinese and South-East Asian ancestry and more common with HIV.",
+    "Hyponatraemia/SIADH, especially in the elderly or with diuretics.",
+    "Agranulocytosis and aplastic anaemia (rare, not dose-related); hepatitis; atrioventricular block.",
+    "Strong enzyme inducer: lowers dolutegravir, efavirenz, nevirapine, hormonal contraception, steroids, haloperidol, valproate, amitriptyline and many others.",
+    "Liver disease: one-third to one-half of the usual dose (Kaplan).",
+    "Anticholinergic: caution in glaucoma and urinary retention."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Severe blood dyscrasias (aplastic anaemia, agranulocytosis) are not dose-related (about 1 in 125,000); warn patients to seek review for fever, sore throat, rash, petechiae, bruising or bleeding.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2088"
+    },
+    {
+      book: "kaplan",
+      text: "10–15 % develop a rash in the first 3 weeks; because life-threatening reactions (Stevens–Johnson syndrome, toxic epidermal necrolysis) cannot be predicted, most clinicians stop carbamazepine for any rash.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2089"
+    },
+    {
+      book: "kaplan",
+      text: "Carbamazepine can cause an SIADH-like hyponatraemia, mainly in elderly people or at high doses; new confusion, severe weakness or headache should prompt a sodium check.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2089"
+    },
+    {
+      book: "kaplan",
+      text: "Strong CYP3A4 induction lowers many drugs, including oral contraceptives, making contraception unreliable.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2090"
+    },
+    {
+      book: "kaplan",
+      text: "Carbamazepine lowers haloperidol, fluphenazine, amitriptyline, phenytoin, valproate and hormonal contraceptives; isoniazid and valproate raise the active epoxide; phenobarbital, phenytoin and rifampicin lower carbamazepine.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, Table 21-39, pdf p. 2091"
+    },
+    {
+      book: "kaplan",
+      text: "Start 200 mg at bedtime (600–800 mg/day divided for manic inpatients), titrate slowly; enzyme autoinduction over 2–3 weeks may need slightly higher doses.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, Table 21-40, pdf p. 2093"
+    },
+    {
+      book: "kaplan",
+      text: "Teaching patients that fever, sore throat, rash, bruising or bleeding need urgent review is probably more useful than frequent routine blood counts in long-term treatment.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2093"
+    },
+    {
+      book: "kaplan",
+      text: "Stop carbamazepine and seek haematology advice if WBC falls below 3,000, neutrophils below 1,500 or platelets below 100,000 per cubic mm.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2094"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Epilepsy and Psychoses modules)"
+    },
+    {
+      name: "BNF and BNF for Children: carbamazepine"
+    },
+    {
+      name: "US FDA / MHRA safety communications: carbamazepine and HLA-B*1502 (2007–2008)"
+    },
+    {
+      name: "Dolutegravir (Tivicay) summary of product characteristics: interaction with carbamazepine"
+    },
+    {
+      name: "WHO Medical Eligibility Criteria for Contraceptive Use, 5th ed. 2015 (enzyme-inducing anticonvulsants)"
+    },
+    {
+      name: "AACT/EAPCCT position statement: multiple-dose activated charcoal. J Toxicol Clin Toxicol 1999"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "amitriptyline",
+  name: "Amitriptyline",
+  aka: [
+    "Elavil",
+    "Tryptizol",
+    "Laroxyl",
+    "tricyclic antidepressant",
+    "TCA"
+  ],
+  cls: "Tricyclic antidepressant",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical",
+    "emergency",
+    "icu"
+  ],
+  tags: [
+    "depression",
+    "neuropathic pain",
+    "migraine prophylaxis",
+    "tension headache",
+    "HIV neuropathy",
+    "diabetic neuropathy",
+    "tricyclic overdose",
+    "QRS widening",
+    "sodium bicarbonate",
+    "suicide risk"
+  ],
+  presentation: [
+    "Tablets 10 mg and 25 mg (also 50 mg).",
+    "Oral solution 10 mg/5 mL, 25 mg/5 mL and 50 mg/5 mL where available.",
+    "A week's supply at antidepressant doses can be a fatal overdose."
+  ],
+  indications: [
+    "Depression in adults (WHO mhGAP option; fluoxetine is safer in overdose)",
+    "Neuropathic pain (diabetic, HIV-related, post-herpetic) at low doses",
+    "Migraine and tension-type headache prophylaxis"
+  ],
+  standard: {
+    summary: "Effective and cheap, but it is the most dangerous common medicine in overdose: sodium-channel block widens the QRS, causing seizures, arrhythmias and hypotension. Prescribe small quantities, avoid in heart disease, and know how to use sodium bicarbonate.",
+    items: [
+      {
+        label: "Depression, adult (mhGAP)",
+        text: "Start 25 mg at bedtime; increase by 25–50 mg per week to 100–150 mg daily (maximum 300 mg). Older or medically ill adults: start 25 mg, increase by 25 mg per week to 50–75 mg daily (maximum 100 mg). Confirm with local protocol. Continue 9–12 months after recovery; taper slowly."
+      },
+      {
+        label: "Neuropathic pain",
+        text: "BNF: 10–25 mg in the evening, increased gradually if needed to 50–75 mg daily; higher doses only under specialist supervision. Kaplan: chronic pain may respond to 10–75 mg/day, started low."
+      },
+      {
+        label: "Migraine prophylaxis",
+        text: "BNF: 10 mg at night, increased gradually to a usual maintenance of 50–75 mg at night; maximum 150 mg."
+      },
+      {
+        label: "Before starting",
+        text: "Ask about heart disease, fainting, palpitations, recent heart attack, glaucoma, prostate or urinary retention, epilepsy, bipolar disorder and suicidal thoughts. ECG where available, especially over 50 or with heart disease; do not use with a QTc over 450 ms or conduction block (Kaplan). Check lying and standing BP in older people."
+      },
+      {
+        label: "Overdose",
+        text: "Airway and oxygen; activated charcoal 50 g within 1 hour if the airway is safe; ECG — QRS over 100 ms predicts seizures and over 160 ms ventricular arrhythmias. Sodium bicarbonate 1–2 mmol/kg IV bolus (8.4 % = 1 mmol/mL) for QRS widening, arrhythmia, hypotension or seizures, repeated to effect with a target blood pH 7.45–7.55 where gases are available. Seizures: benzodiazepines. Observe at least 6 hours; symptomatic patients need monitoring for at least 24 hours (Kaplan: arrhythmia risk for 3–4 days)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Tricyclic overdose with no ECG monitor: recognise and treat clinically",
+      best_for: "Emergency departments and medical wards without cardiac monitoring.",
+      requires: [
+        "iv",
+        "bp",
+        "oxygen"
+      ],
+      steps: [
+        "Treat every amitriptyline overdose as potentially lethal, whatever the patient says was taken. Ask the family to bring all packets.",
+        "Signs of serious toxicity (Kaplan): drowsiness or coma, agitation or delirium, seizures, dilated pupils, hot dry skin, urinary retention, absent bowel sounds, fast pulse, low BP, breathing slowing. Deterioration can be sudden in the first 6 hours.",
+        "Airway and oxygen. Hypoventilation and acidosis make cardiotoxicity worse — support ventilation with a bag-valve-mask if breathing is slow.",
+        "Activated charcoal 50 g (child 1 g/kg, maximum 50 g) orally or by NG tube if within 1 hour (consider up to 2 hours) and the patient is awake or the airway is protected.",
+        "Without an ECG, use the pulse and BP as your monitor: count the pulse for a full minute every 15 minutes; an irregular pulse, a fall in heart rate from fast to slow, systolic BP below 90 mmHg, a seizure, or a fall in consciousness means give sodium bicarbonate now (next method). If any single ECG can be done (even a 12-lead machine elsewhere in the hospital), a QRS over 100 ms (2.5 small squares) is also an indication.",
+        "Seizures: diazepam 10 mg IV (or 10–20 mg rectal) or midazolam 10 mg IM/buccal in adults. Do NOT use phenytoin (sodium-channel blocker, can worsen toxicity).",
+        "Low BP: 0.9 % saline 10–20 mL/kg bolus, plus sodium bicarbonate. If BP stays low after 2 boluses and bicarbonate, a vasopressor (noradrenaline, or adrenaline) with senior help.",
+        "Do NOT give physostigmine (asystole and seizures in tricyclic poisoning) or flumazenil (seizures if benzodiazepines were also taken). Avoid amiodarone and class Ia/Ic antiarrhythmics; bicarbonate is the first treatment for broad-complex arrhythmias.",
+        "Observe a patient with no symptoms for at least 6 hours after ingestion with pulse, BP and consciousness hourly. Anyone with signs of toxicity needs at least 24 hours of observation and referral to a monitored bed if possible."
+      ],
+      monitor: [
+        "Conscious level, breathing, pulse (rate and regularity) and BP every 15 min for the first 6 h",
+        "Seizures",
+        "Urine output (retention — catheterise if needed)",
+        "Temperature",
+        "Glucose and potassium where available (bicarbonate lowers potassium)"
+      ],
+      cautions: [
+        "Kaplan's emergency table recommends physostigmine for anticholinergic poisoning in general; in tricyclic overdose it is contraindicated.",
+        "Once medically fit, every overdose needs a suicide risk assessment before discharge."
+      ]
+    },
+    {
+      title: "Sodium bicarbonate bolus technique using 8.4 % ampoules",
+      best_for: "Tricyclic cardiotoxicity (broad QRS, arrhythmia, hypotension or seizures) where only 8.4 % sodium bicarbonate is available. See also the app's sodium bicarbonate entry.",
+      requires: [
+        "iv"
+      ],
+      steps: [
+        "8.4 % sodium bicarbonate contains 1 mmol/mL. Adult dose: 1–2 mmol/kg, usually 50–100 mL (50–100 mmol) as the first bolus.",
+        "Give by slow IV push over 2–5 minutes into a large, free-running vein with a 0.9 % saline flush before and after. It is hypertonic and irritant: extravasation causes tissue necrosis.",
+        "Child: 1–2 mmol/kg (1–2 mL/kg of 8.4 %), diluted with an equal volume of water for injection to make 4.2 % if given through a small vein; newborns only 4.2 %.",
+        "Repeat every 5–10 minutes while the QRS remains broad, the pulse is irregular, BP remains low or seizures recur — reassess after each bolus.",
+        "Stop when the pulse is regular, BP recovers and the QRS (if measured) narrows. Where blood gases are available keep pH 7.45–7.55; where sodium is available stop above about 150–155 mmol/L.",
+        "Never mix in the same line or syringe as calcium, adrenaline or noradrenaline (precipitates or inactivates). Flush between drugs.",
+        "After bolus control, some centres run an infusion to hold alkalinisation; without monitoring prefer repeated boluses guided by pulse and BP and transfer."
+      ],
+      monitor: [
+        "Pulse rate and rhythm, BP after each bolus",
+        "Breathing (bicarbonate produces CO2 that must be breathed off)",
+        "Potassium (falls), sodium (rises), and pH where available",
+        "Cannula site"
+      ],
+      cautions: [
+        "Large doses cause hypernatraemia, hypokalaemia, fluid overload and severe alkalosis.",
+        "Poor ventilation turns bicarbonate into CO2 and worsens intracellular acidosis — ventilate first."
+      ]
+    },
+    {
+      title: "Prescribing safely to a patient who may be at risk of suicide",
+      best_for: "Outpatient and health-centre prescribing for depression or chronic pain.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Ask directly about thoughts of suicide, plans and past attempts before prescribing amitriptyline for any reason (pain clinics included).",
+        "If there is any suicide risk, prefer fluoxetine for depression; for pain, use the lowest dose.",
+        "Dispense small quantities: no more than 1 week at a time for patients at risk (Kaplan). Ask a trusted family member to keep the supply and give daily doses.",
+        "For pain, 10 mg tablets limit the danger of the supply; avoid dispensing large packs of 25 mg or 50 mg tablets.",
+        "Remove old stocks of tablets from the home.",
+        "Screen for heart disease (fainting, palpitations, chest pain, known heart failure or heart attack) and check pulse regularity; if present, avoid amitriptyline.",
+        "Tell patients: sedation and dry mouth are common early; stand up slowly; do not drink alcohol; it takes 2–4 weeks for mood effect. Taper slowly when stopping (cholinergic rebound).",
+        "Review within 1–2 weeks after starting and after each dose increase."
+      ],
+      monitor: [
+        "Suicidal thoughts at every visit",
+        "Pulse and postural BP",
+        "Constipation and urinary retention in older people",
+        "Switch to mania in anyone with bipolar history"
+      ],
+      cautions: [
+        "Not for depression in children or adolescents (Kaplan: sudden deaths reported).",
+        "Avoid in bipolar depression without a mood stabiliser."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not for depression in children or adolescents (Kaplan: sudden deaths; poor evidence). Specialist use only for pain or enuresis.",
+    "Accidental ingestion of even a few adult tablets can be dangerous in a small child: observe for at least 6 hours and treat as in adults (bicarbonate 1–2 mmol/kg)."
+  ],
+  cautions: [
+    "Contraindicated in recent myocardial infarction, heart block or bundle-branch block, arrhythmia, and QTc over 450 ms (Kaplan).",
+    "Anticholinergic: avoid in narrow-angle glaucoma, urinary retention, prostatism; causes confusion and delirium in older people and dementia.",
+    "Orthostatic hypotension and falls; sedation; weight gain.",
+    "Lowers seizure threshold; can trigger mania in bipolar disorder.",
+    "Lethal in overdose — small quantities for anyone at risk."
+  ],
+  antidote: "No specific antidote. Sodium bicarbonate 1–2 mmol/kg IV bolus for QRS widening, arrhythmia or hypotension; benzodiazepines for seizures. Do NOT use physostigmine or flumazenil.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Tricyclic overdose is severe and often fatal; for patients at risk of suicide give non-refillable prescriptions for no more than 1 week at a time.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2033"
+    },
+    {
+      book: "kaplan",
+      text: "Overdose causes agitation, delirium, convulsions, brisk reflexes, bowel and bladder paralysis, temperature and BP instability, dilated pupils, then coma; arrhythmia risk lasts 3–4 days.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2033"
+    },
+    {
+      book: "kaplan",
+      text: "Amitriptyline is the tricyclic most used for neuropathic pain and migraine prophylaxis, at lower doses than for depression (for example 75 mg).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2025"
+    },
+    {
+      book: "kaplan",
+      text: "Tricyclics have caused sudden death in children and adolescents and should not be used in children.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2025"
+    },
+    {
+      book: "kaplan",
+      text: "Tricyclics prolong cardiac conduction and are contraindicated with pre-existing conduction defects; avoid in narrow-angle glaucoma.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2026"
+    },
+    {
+      book: "kaplan",
+      text: "Obtain an ECG before treatment; tricyclics are contraindicated if QTc is over 450 ms.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2030"
+    },
+    {
+      book: "dsm",
+      text: "In an older man with delirium, tricyclic-like drugs (and benzodiazepines, opioids) were the likely anticholinergic cause.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 17 Neurocognitive Disorders, case 17.2 Agitated and Confused, pdf p. 415"
+    },
+    {
+      book: "kaplan",
+      text: "The emergency table lists physostigmine 0.5–2 mg for anticholinergic intoxication with severe agitation or fever; this general advice does not apply to tricyclic overdose, where physostigmine is contraindicated (toxicology guidance).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, table of emergencies, pdf p. 2568"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Depression module)"
+    },
+    {
+      name: "BNF: amitriptyline hydrochloride"
+    },
+    {
+      name: "NICE CG173 Neuropathic pain in adults: pharmacological management (2013, updated 2020)"
+    },
+    {
+      name: "Boehnert MT, Lovejoy FH. Value of the QRS duration versus the serum drug level in predicting seizures and ventricular arrhythmias after an acute overdose of tricyclic antidepressants. N Engl J Med 1985"
+    },
+    {
+      name: "Kerr GW et al. Tricyclic antidepressant overdose: a review. Emerg Med J 2001"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022; DSM-5-TR Clinical Cases 2023"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "fluoxetine",
+  name: "Fluoxetine",
+  aka: [
+    "Prozac",
+    "SSRI"
+  ],
+  cls: "Selective serotonin reuptake inhibitor (SSRI) antidepressant",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical",
+    "maternity",
+    "paediatric"
+  ],
+  tags: [
+    "depression",
+    "anxiety",
+    "panic disorder",
+    "OCD",
+    "bulimia",
+    "PTSD",
+    "adolescent depression",
+    "serotonin syndrome",
+    "switch to mania",
+    "suicide safety planning",
+    "perinatal depression"
+  ],
+  presentation: [
+    "Capsules 20 mg (also 10 mg); dispersible or scored tablets 10 mg and 20 mg.",
+    "Oral liquid 20 mg/5 mL.",
+    "Very long half-life (active metabolite over a week): about 4 weeks to steady state and weeks to wash out."
+  ],
+  indications: [
+    "Moderate to severe depression in adults (WHO mhGAP first-line antidepressant, with psychosocial support)",
+    "Depression in adolescents when psychological treatment alone has not helped (the only antidepressant recommended by mhGAP and NICE for this age)",
+    "Panic disorder, generalised anxiety, obsessive-compulsive disorder, PTSD, bulimia nervosa"
+  ],
+  standard: {
+    summary: "The safest antidepressant to start in primary care and in overdose. Its risks are early agitation and suicidal thinking in young people, switching to mania in unrecognised bipolar disorder, bleeding, low sodium in older people and serotonin syndrome with other serotonergic drugs.",
+    items: [
+      {
+        label: "Adult depression (mhGAP)",
+        text: "Start 10 mg daily for 1 week, then 20 mg daily in the morning. If no response after 4–6 weeks, increase to 40 mg (maximum 80 mg). Older or medically ill adults: 10 mg then 20 mg daily (maximum 40 mg). Kaplan: 20 mg is often as effective as higher doses. Confirm with local protocol."
+      },
+      {
+        label: "Adolescents 12–18 years",
+        text: "Only after or with psychosocial treatment. Start 10 mg daily; increase to 20 mg after 1–2 weeks if needed (NICE NG134; mhGAP). See weekly for the first 4 weeks for suicidal thinking, agitation or hypomania. mhGAP: do not use antidepressants for depression in children under 12."
+      },
+      {
+        label: "Other uses (BNF)",
+        text: "OCD: 20 mg daily, up to 60 mg. Bulimia nervosa: 60 mg daily. Panic disorder: start low (Kaplan: 5–10 mg) and increase slowly because early anxiety is common."
+      },
+      {
+        label: "Duration and stopping",
+        text: "Continue for at least 9–12 months after symptoms resolve (mhGAP). Fluoxetine tapers itself because of its long half-life; other SSRIs need gradual withdrawal."
+      },
+      {
+        label: "Before starting",
+        text: "Ask about previous mania or hypomania and family history of bipolar disorder (antidepressant alone can trigger mania); suicidal thoughts; bleeding risk (NSAIDs, anticoagulants); other serotonergic drugs (tramadol, pethidine, amitriptyline, lithium, MAOIs — never within 5 weeks after stopping fluoxetine before an MAOI); pregnancy and breastfeeding."
+      },
+      {
+        label: "Serotonin syndrome",
+        text: "Agitation, tremor, sweating, diarrhoea, hyperreflexia and inducible or spontaneous clonus (legs first), fever, rigidity. Stop all serotonergic drugs; benzodiazepines for agitation and muscle activity; cooling; IV fluids; severe cases need intensive care (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Safe start and follow-up at a health centre or outpatient clinic (mhGAP)",
+      best_for: "Primary care, general OPD and psychiatric clinics with limited staff and no laboratory.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Confirm moderate to severe depression and ask about suicidal thoughts, previous mania (days of little sleep, overactivity, overspending, grandiosity) and substance use. If there has ever been mania, do not start fluoxetine alone — treat as bipolar disorder.",
+        "Offer psychoeducation and psychosocial support first or at the same time (problem-solving, behavioural activation, social support).",
+        "Start 10 mg daily (open a 20 mg capsule into water or juice and take half, or use 10 mg tablets or liquid) for 1 week, then 20 mg each morning with food. Early nausea, headache, restlessness and poor sleep usually settle within 2 weeks.",
+        "Explain: benefit starts after 2–4 weeks; do not stop when feeling better; continue 9–12 months after recovery.",
+        "Follow up in 1–2 weeks (a phone call or health extension worker visit is acceptable), then every month. At each contact: mood, suicidal thoughts, side effects, adherence, and signs of mania.",
+        "If no improvement after 4–6 weeks at 20 mg and the patient is taking it: increase to 40 mg, or refer.",
+        "Older adults: check for confusion, drowsiness, falls or vomiting in the first month — these may be low sodium; withhold and refer for a sodium check."
+      ],
+      monitor: [
+        "Suicidal thoughts at every visit",
+        "Agitation or restlessness in the first 2 weeks",
+        "Signs of mania",
+        "Weight, sleep, sexual side effects (a common reason for stopping)"
+      ],
+      cautions: [
+        "Bleeding risk with NSAIDs and anticoagulants: prefer paracetamol for pain.",
+        "Seizure threshold slightly lowered: use with care in epilepsy but do not withhold treatment."
+      ]
+    },
+    {
+      title: "Suicide safety plan when prescribing an antidepressant",
+      best_for: "Any patient with depression, especially adolescents, young adults and anyone with past self-harm.",
+      requires: [],
+      steps: [
+        "Ask directly: 'Have you had thoughts of ending your life? Have you made a plan? Do you have the means?' Asking does not increase risk.",
+        "Imminent risk (a plan and the means, recent attempt, severe agitation, psychosis): do not send home alone — admit or keep under supervision with a family member and refer urgently.",
+        "Remove or lock away the means: pesticides and rat poison, stored medicines (especially amitriptyline, paracetamol and antimalarials), ropes, firearms.",
+        "Write a simple plan with the patient: warning signs; things that help; people to call (names and phone numbers); the clinic or emergency number; a safe place to go.",
+        "Involve a trusted family member with the patient's consent and ask them to hold the medicines. Fluoxetine is relatively safe in overdose, but mixed overdoses are not.",
+        "Explain that in the first weeks — and particularly in people under 25 — energy can return before mood improves, and some people feel more agitated or have more suicidal thoughts. Tell them to come back at once if this happens.",
+        "See the person again within 1 week (adolescents weekly for the first month); keep contact by phone if travel is difficult."
+      ],
+      monitor: [
+        "Suicidal thoughts and plans at every contact",
+        "Agitation, akathisia (inner restlessness), impulsive behaviour",
+        "Family report"
+      ],
+      cautions: [
+        "Stop fluoxetine and review urgently if new severe agitation, hostility or hypomania appears (Kaplan)."
+      ]
+    },
+    {
+      title: "Recognising switch to mania or serotonin syndrome without laboratory tests",
+      best_for: "Wards and clinics where the diagnosis is clinical.",
+      requires: [
+        "bp"
+      ],
+      steps: [
+        "Switch to mania or hypomania: days of reduced need for sleep, overtalkativeness, grandiosity, spending, irritability, risky behaviour after starting fluoxetine. Stop fluoxetine; treat as bipolar disorder (mood stabiliser or antipsychotic, e.g. haloperidol or olanzapine) and do not restart an antidepressant alone.",
+        "Mixed states (agitation with low mood) on an SSRI are also a warning sign of bipolar disorder (DSM-5-TR Clinical Cases).",
+        "Serotonin syndrome usually starts within 24 hours of adding or increasing a serotonergic drug (e.g. tramadol, amitriptyline, lithium, pethidine). Look for tremor, sweating, diarrhoea, fast pulse, high BP, dilated pupils, brisk reflexes and clonus — tap the knee reflex and flex the ankle sharply: repeated beating = clonus.",
+        "Mild (tremor, brisk reflexes, normal temperature): stop serotonergic drugs, oral or IV diazepam for agitation, observe 24 hours.",
+        "Moderate or severe (temperature over 38.5 °C, rigidity, confusion, unstable BP): IV fluids, active cooling (undress, tepid sponging and fanning, cool IV fluids), benzodiazepines, oxygen, and urgent referral to intensive care. Chlorpromazine is used in some protocols once the patient is not hypotensive (Kaplan lists it); paracetamol does not treat this fever.",
+        "Differentiate from neuroleptic malignant syndrome (slow onset, lead-pipe rigidity, slow reflexes, on antipsychotic) and anticholinergic poisoning (dry hot skin, absent bowel sounds, no sweating)."
+      ],
+      monitor: [
+        "Temperature, pulse and BP every 30–60 min",
+        "Muscle tone, reflexes and clonus",
+        "Urine output (rhabdomyolysis: dark urine)"
+      ],
+      cautions: [
+        "After stopping, fluoxetine persists for weeks: wait at least 5 weeks before an MAOI, and add other serotonergic drugs cautiously for some weeks."
+      ]
+    }
+  ],
+  paediatric: [
+    "Children under 12: do not use antidepressants for depression (mhGAP); specialist use only (e.g. OCD from 7 years).",
+    "Adolescents 12–18: fluoxetine is the first choice when medication is needed — 10 mg daily, increase to 20 mg after 1–2 weeks; weekly review for the first month (suicidal thinking, agitation, hypomania). Kaplan: fluoxetine has the most consistent evidence and adding CBT reduces emergent suicidal ideation."
+  ],
+  cautions: [
+    "Suicidal thoughts and agitation may increase early in treatment, especially under 25 years.",
+    "Can precipitate mania in bipolar disorder; do not use as monotherapy for bipolar depression.",
+    "Bleeding with NSAIDs, aspirin and anticoagulants; hyponatraemia in older people and with diuretics.",
+    "Serotonin syndrome with other serotonergic drugs; never with or within 5 weeks before an MAOI.",
+    "Enzyme inhibitor (CYP2D6): raises amitriptyline, phenytoin, carbamazepine and diazepam levels.",
+    "Poorly controlled epilepsy; diabetes (glucose may fall early)."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Depression: start 10–20 mg each morning with food; 20 mg is often as effective as higher doses; about 4 weeks to steady state; manufacturer maximum 80 mg; start 5–10 mg or on alternate days if early anxiety is a problem.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1994"
+    },
+    {
+      book: "kaplan",
+      text: "Serotonin syndrome (diarrhoea, restlessness, agitation, hyperreflexia, autonomic instability, myoclonus, hyperthermia, rigidity) is treated by stopping the drugs and supportive care including benzodiazepines and cooling.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1990"
+    },
+    {
+      book: "kaplan",
+      text: "Fluoxetine has the most consistent evidence among SSRIs for depression in children and adolescents, within comprehensive management.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1981"
+    },
+    {
+      book: "kaplan",
+      text: "Antidepressants carry a warning of increased suicidal thoughts and behaviour in young people requiring close monitoring; behavioural activation or hypomania means stopping the drug.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 2.9 Depressive Disorders and Suicide in Children and Adolescents, pdf p. 568"
+    },
+    {
+      book: "kaplan",
+      text: "In adolescents (TADS), fluoxetine 10–40 mg/day was effective and adding CBT reduced emergent suicidal ideation.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 2.9 Depressive Disorders and Suicide in Children and Adolescents, pdf p. 564"
+    },
+    {
+      book: "kaplan",
+      text: "Antidepressants can induce mania or cycling and are not appropriate as monotherapy in bipolar disorder; fluoxetine has some evidence as an adjunct to a mood stabilizer.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 6 Bipolar Disorders, pdf p. 1201"
+    },
+    {
+      book: "dsm",
+      text: "An apparent quick response to fluoxetine in unrecognised bipolar disorder may reflect antidepressant-driven rapid cycling without a mood stabilizer.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.2 Cycles of Depression, pdf p. 95"
+    },
+    {
+      book: "dsm",
+      text: "A mixed state emerging on an SSRI is a red flag for bipolar disorder, especially with a family history.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.9 Depressed and Anxious, pdf p. 122"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Depression and Self-harm/suicide modules)"
+    },
+    {
+      name: "NICE NG134 Depression in children and young people (2019)"
+    },
+    {
+      name: "NICE NG222 Depression in adults (2022)"
+    },
+    {
+      name: "BNF and BNF for Children: fluoxetine"
+    },
+    {
+      name: "Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med 2005"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022; DSM-5-TR Clinical Cases 2023"
     }
   ],
   review: {

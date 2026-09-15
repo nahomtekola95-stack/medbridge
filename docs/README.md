@@ -8,7 +8,7 @@ available. Every drug has a **standard** method and one or more **"no pump / imp
 methods (intermittent regimens, alternative routes, dilutions, gravity-drip technique), plus
 calculators for drip rate, dose → drops, mg/kg, dilution, WHO Plan C fluids and child weight.
 
-> **Status: DRAFT.** All 58 drug entries are `review.status: "draft"` and have **not** been
+> **Status: DRAFT.** All 71 drug entries are `review.status: "draft"` and have **not** been
 > verified by a pharmacist or physician. Do not use for patient care until reviewed.
 
 ## Live sites
@@ -88,6 +88,31 @@ are not all available are dimmed and sorted last (never hidden).
 All of it works offline and stores nothing off the device. Tests: `node tests/features.test.js`
 (220 checks: emergency card doses at five weights including minima and maxima, schedule timing and
 late-dose shifting, substitute integrity, fuzzy search true and false matches).
+
+## Psychiatry and mental health
+
+Referenced to **Kaplan & Sadock's Synopsis of Psychiatry 12th ed. (2022)** and **DSM-5-TR Clinical
+Cases (APA, 2023)**, with WHO mhGAP Intervention Guide 2.0 for dosing used in Ethiopia. Every
+textbook reference was checked word-for-word against the cited PDF page.
+
+- **13 drugs:** haloperidol, chlorpromazine, olanzapine, fluphenazine decanoate, biperiden,
+  promethazine, lorazepam, thiamine, lithium, sodium valproate, carbamazepine, amitriptyline and
+  fluoxetine, each with bedside methods for settings without monitors or drug levels (oral then IM
+  rapid tranquillisation with hand observations, dystonia treatment, depot logistics, lithium
+  without levels, tricyclic overdose without an ECG monitor).
+- **14 cases** in the new "Psychiatry & mental health" group: acute agitation, delirium, alcohol
+  withdrawal and delirium tremens, Wernicke encephalopathy, acute psychosis, acute mania,
+  depression with suicide risk, neuroleptic malignant syndrome, serotonin syndrome, lithium
+  toxicity, acute dystonia, catatonia, postpartum psychosis and tricyclic overdose.
+- **Psychiatric ward** filter, safety (pregnancy, breastfeeding, kidney, liver) and 51 new
+  interaction rules, stock-out substitutes and never-mix rules.
+- **Alcohol withdrawal score (CIWA-Ar)** at `#/calc?tab=ciwa`, with the action for each band and a
+  record of scores (scale: Sullivan et al. 1989, public domain; not in either textbook).
+- **Dose schedules:** high-dose IV thiamine for Wernicke encephalopathy, and symptom-triggered oral
+  diazepam for alcohol withdrawal.
+
+Where Kaplan is out of date or contradicts itself (for example oral 100 mg thiamine for Wernicke,
+or physostigmine in tricyclic overdose), the entries follow current guidance and say so.
 
 ## Safety, newborn dosing, kidney and interactions
 
@@ -232,7 +257,7 @@ Plan C 15 kg phase 2 = 140 drops/min (20 gtt/mL).
 
 ## Drug coverage
 
-58 drugs, 40 clinical cases, 11 categories. The eight latest additions are ipratropium,
+71 drugs, 54 clinical cases, 12 categories. The eight latest additions are ipratropium,
 adenosine, mannitol, 3 % hypertonic saline, HIV prophylaxis (PEP and infant), first-line TB
 treatment (RHZE), snake antivenom and oxygen, with new cases for snakebite, SVT, raised
 intracranial pressure, HIV exposure and tuberculosis.
