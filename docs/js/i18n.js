@@ -331,7 +331,7 @@
     "Across Ethiopia": "በመላው ኢትዮጵያ", "Loading…": "በመጫን ላይ…",
     "What colleagues in other hospitals report about giving these drugs. Practice notes are personal reports and are not approved guidance.":
       "በሌሎች ሆስፒታሎች ያሉ ባልደረቦች እነዚህን መድኃኒቶች ስለመስጠት የሚሉት። የተግባር ማስታወሻዎች የግል ተሞክሮዎች ናቸው፣ የጸደቀ መመሪያ አይደሉም።",
-    "doctors and staff": "ሐኪሞችና ሠራተኞች", "practice notes": "የተግባር ማስታወሻዎች", "approved local methods": "የጸደቁ አካባቢያዊ ዘዴዎች",
+    "doctors and staff": "ሐኪሞችና ሠራተኞች", "Network growth": "የትስስሩ እድገት", "verified members": "የተረጋገጡ አባላት", "joined in the last 30 days": "ባለፉት 30 ቀናት የተቀላቀሉ", "drugs signed off": "የተፈረመባቸው መድኃኒቶች", "stock reports (30 days)": "የክምችት ሪፖርቶች (30 ቀናት)", "Visible to administrators only. Members see practice notes and stock reports, not these figures.": "ለአስተዳዳሪዎች ብቻ የሚታይ። አባላት የተግባር ማስታወሻዎችንና የክምችት ሪፖርቶችን ያያሉ፤ እነዚህን አሃዞች አያዩም።", "practice notes": "የተግባር ማስታወሻዎች", "approved local methods": "የጸደቁ አካባቢያዊ ዘዴዎች",
     "Cities": "ከተሞች", "Recent notes": "የቅርብ ጊዜ ማስታወሻዎች", "No members yet.": "ገና አባላት የሉም።",
     "No notes yet. Sign in and describe how your hospital administers a drug.": "ገና ማስታወሻ የለም። ይግቡና ሆስፒታልዎ መድኃኒት እንዴት እንደሚሰጥ ይግለጹ።",
     "Cannot reach the server. This page needs a connection; drug pages and calculators work offline.": "አገልጋዩን ማግኘት አልተቻለም። ይህ ገጽ ግንኙነት ይፈልጋል፤ የመድኃኒት ገጾችና ማስያዎች ያለ ኢንተርኔት ይሠራሉ።",

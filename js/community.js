@@ -206,13 +206,6 @@ window.Community = function (ctx) {
     main.innerHTML = `
       <h1>Across Ethiopia</h1>
       <p class="text-2" style="max-width:62ch">What colleagues in other hospitals report about giving these drugs. Practice notes are personal reports and are not approved guidance.</p>
-      <div class="stat-row">
-        <div class="card stat"><b>${d.totals.users}</b><span>doctors and staff</span></div>
-        <div class="card stat"><b>${d.totals.notes}</b><span>practice notes</span></div>
-        <div class="card stat"><b>${d.totals.methods}</b><span>approved local methods</span></div>
-      </div>
-      <h2>Cities</h2>
-      <div class="citywrap">${d.cities.filter(c => c.city).map(c => `<span class="citychip"><strong>${esc(c.city)}</strong> ${c.users} member${c.users === 1 ? "" : "s"}${c.notes ? ` · ${c.notes} note${c.notes === 1 ? "" : "s"}` : ""}</span>`).join("") || `<p class="muted small">No members yet.</p>`}</div>
       <div id="stock-panel"></div>
       <h2 style="margin-top:1.2rem">Recent notes</h2>
       ${d.feed.length ? d.feed.map(c => { const dr = byDrug(c.drug); return `<article class="card note">
@@ -230,8 +223,8 @@ window.Community = function (ctx) {
     main.innerHTML = `<h1>Admin console</h1><p class="muted">Loading…</p>`;
     let d;
     try { d = await API.adminOverview(); } catch (e) { main.innerHTML = `<h1>Admin console</h1><div class="callout danger">${ic("alert")}<div>${esc(e.message)}</div></div>`; return; }
-    const tab = route.q.tab || "methods";
-    const tabs = [["methods", "Approved methods"], ["flagged", `Moderation (${d.flagged.length})`], ["users", `Members (${d.users.length})`], ["audit", "Activity log"]];
+    const tab = route.q.tab || "network";
+    const tabs = [["network", "Network growth"], ["methods", "Approved methods"], ["flagged", `Moderation (${d.flagged.length})`], ["users", `Members (${d.users.length})`], ["audit", "Activity log"]];
     main.innerHTML = `<h1>Admin console</h1>
       <div class="callout info">${ic("shield")}<div>Only what you publish here appears as an <strong>approved method</strong>. Members' practice notes stay separate and are always labelled as personal reports.</div></div>
       <div class="tabs" role="tablist">${tabs.map(([k, v]) => `<button type="button" class="tab ${k === tab ? "active" : ""}" data-tab="${k}">${v}</button>`).join("")}</div>
@@ -256,6 +249,21 @@ window.Community = function (ctx) {
       </div>`;
 
     const draw = async (t) => {
+      if (t === "network") {
+        const T = d.totals || {};
+        pane.innerHTML = `<p class="small muted">Visible to administrators only. Members see practice notes and stock reports, not these figures.</p>
+          <div class="stat-row admin-stats">
+            <div class="card stat"><b>${T.users ?? "—"}</b><span>doctors and staff</span></div>
+            <div class="card stat"><b>${T.verified ?? "—"}</b><span>verified members</span></div>
+            <div class="card stat"><b>${T.newThisMonth ?? "—"}</b><span>joined in the last 30 days</span></div>
+            <div class="card stat"><b>${T.notes ?? "—"}</b><span>practice notes</span></div>
+            <div class="card stat"><b>${T.methods ?? "—"}</b><span>approved local methods</span></div>
+            <div class="card stat"><b>${T.signoffs ?? "—"}</b><span>drugs signed off</span></div>
+            <div class="card stat"><b>${T.stock ?? "—"}</b><span>stock reports (30 days)</span></div>
+          </div>
+          <h2>Cities</h2>
+          <div class="citywrap">${(d.cities || []).filter(c => c.city).map(c => `<span class="citychip"><strong>${esc(c.city)}</strong> ${c.users} member${c.users === 1 ? "" : "s"}${c.notes ? ` · ${c.notes} note${c.notes === 1 ? "" : "s"}` : ""}</span>`).join("") || `<p class="muted small">No members yet.</p>`}</div>`;
+      }
       if (t === "methods") {
         const preset = route.q.drug ? { drug: route.q.drug, from: route.q.from } : null;
         if (preset?.from) { try { const c = (await API.drugExtras(preset.drug)).comments.find(x => x.id === preset.from); if (c) preset.body = c.body; } catch {} }

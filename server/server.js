@@ -266,15 +266,8 @@ async function api(req, res, pathname, query) {
         (SELECT COUNT(*) FROM agrees a WHERE a.comment_id = c.id) AS agrees, 0 AS mine
       FROM comments c JOIN users u ON u.id = c.user_id
       WHERE c.status = 'published' ORDER BY c.created_at DESC LIMIT 40`);
-    const cities = await D.all(`SELECT u.city AS city, COUNT(DISTINCT u.id) AS users, COUNT(c.id) AS notes
-      FROM users u LEFT JOIN comments c ON c.user_id = u.id AND c.status='published'
-      GROUP BY u.city ORDER BY notes DESC, users DESC LIMIT 30`);
-    const totals = {
-      users: (await D.get("SELECT COUNT(*) AS c FROM users")).c,
-      notes: (await D.get("SELECT COUNT(*) AS c FROM comments WHERE status='published'")).c,
-      methods: (await D.get("SELECT COUNT(*) AS c FROM official_methods WHERE published=1")).c
-    };
-    return json(res, 200, { feed: rows.map(r => shapeComment(r, me)), cities, totals });
+    // membership and growth figures are for administrators only (see /api/admin/overview)
+    return json(res, 200, { feed: rows.map(r => shapeComment(r, me)) });
   }
 
   /* --- admin --- */
@@ -288,7 +281,19 @@ async function api(req, res, pathname, query) {
             (SELECT GROUP_CONCAT(reason, ' | ') FROM reports r WHERE r.comment_id = c.id) AS reasons
           FROM comments c JOIN users u ON u.id = c.user_id WHERE c.status IN ('flagged','hidden') ORDER BY c.updated_at DESC`)).map(r => ({ ...shapeComment(r, me), reasons: r.reasons || "", status: r.status })),
         methods: (await D.all("SELECT * FROM official_methods ORDER BY drug_id, kind = 'main' DESC")).map(shapeMethod),
-        audit: await D.all(`SELECT a.*, u.full_name FROM audit a LEFT JOIN users u ON u.id = a.actor_id ORDER BY a.created_at DESC LIMIT 60`)
+        audit: await D.all(`SELECT a.*, u.full_name FROM audit a LEFT JOIN users u ON u.id = a.actor_id ORDER BY a.created_at DESC LIMIT 60`),
+        totals: {
+          users: Number((await D.get("SELECT COUNT(*) AS c FROM users")).c),
+          verified: Number((await D.get("SELECT COUNT(*) AS c FROM users WHERE verified = 1")).c),
+          newThisMonth: Number((await D.get("SELECT COUNT(*) AS c FROM users WHERE created_at > ?", new Date(Date.now() - 30 * 864e5).toISOString())).c),
+          notes: Number((await D.get("SELECT COUNT(*) AS c FROM comments WHERE status='published'")).c),
+          methods: Number((await D.get("SELECT COUNT(*) AS c FROM official_methods WHERE published=1")).c),
+          signoffs: Number((await D.get("SELECT COUNT(DISTINCT drug_id) AS c FROM reviews WHERE decision = 'approved'")).c),
+          stock: Number((await D.get("SELECT COUNT(*) AS c FROM stock_reports WHERE hidden = 0 AND created_at > ?", new Date(Date.now() - 30 * 864e5).toISOString())).c)
+        },
+        cities: await D.all(`SELECT u.city AS city, COUNT(DISTINCT u.id) AS users, COUNT(c.id) AS notes
+          FROM users u LEFT JOIN comments c ON c.user_id = u.id AND c.status='published'
+          GROUP BY u.city ORDER BY users DESC, notes DESC LIMIT 40`)
       });
     }
 

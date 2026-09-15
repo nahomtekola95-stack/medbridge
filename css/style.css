@@ -814,3 +814,5 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 }
 @media (max-width: 420px) { .hero-media { margin: 0 -1.05rem -3rem; height: 230px; } }
 @media print { .hero-media { display: none; } }
+
+.admin-stats { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
