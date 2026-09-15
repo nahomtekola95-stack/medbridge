@@ -739,3 +739,27 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 /* touch devices: no hover lift */
 @media (hover: none) { .drug-item:hover, .tool:hover, .cd:hover, .btn:hover, .quiz-opt:hover { transform: none; } }
 @media (max-width: 420px) { .hero { padding: 1.3rem 1.05rem 1rem; border-radius: 22px; } .hero-eyebrow { font-size: .6rem; letter-spacing: .08em; padding: .24rem .6rem; } .hero-stats { gap: .3rem .8rem; } }
+
+/* ---------- fluid full-width layout ---------- */
+:root { --page-max: 1840px; --gutter: clamp(.75rem, 2.4vw, 2.5rem); }
+.topbar-inner, .layout { max-width: var(--page-max); padding-left: var(--gutter); padding-right: var(--gutter); }
+@media (min-width: 1440px) {
+  .drug-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .tools-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .case-drugs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .detail { grid-template-columns: 280px minmax(0, 1fr); gap: 2rem; }
+  .glance { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tech { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .safety-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero { padding: 2.4rem 2.4rem 1.8rem; }
+  .hero h1 { font-size: 3.2rem; max-width: 20ch; }
+  .hero p { font-size: 1.08rem; }
+  .hero .searchbar { max-width: 900px; }
+  .calc-grid { grid-template-columns: minmax(0, 1fr) 380px; }
+}
+@media (min-width: 1800px) {
+  .drug-list { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .tools-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+/* long clinical text stays readable on very wide screens */
+.method ol, .method ul, .kv, .card > p { max-width: 110ch; }
