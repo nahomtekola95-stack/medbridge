@@ -89,6 +89,15 @@ All of it works offline and stores nothing off the device. Tests: `node tests/fe
 (220 checks: emergency card doses at five weights including minima and maxima, schedule timing and
 late-dose shifting, substitute integrity, fuzzy search true and false matches).
 
+## Design
+
+Design system v2 (built with the UI/UX Pro Max guidance for accessible healthcare interfaces):
+calm deep-teal palette with a health-green accent, soft layered shadows, frosted header and
+floating bottom navigation, category-tinted drug tiles, pill tabs, and Figtree type served from
+`fonts/` so it works offline (SIL Open Font License). Light and dark themes share one set of
+tokens at the top of `css/style.css`. Text contrast meets WCAG AA, tap targets are at least 44 px,
+transitions run 180–260 ms and are switched off for reduced-motion users.
+
 ## Psychiatry and mental health
 
 Referenced to **Kaplan & Sadock's Synopsis of Psychiatry 12th ed. (2022)** and **DSM-5-TR Clinical

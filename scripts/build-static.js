@@ -7,7 +7,7 @@ const path = require("node:path");
 const ROOT = path.join(__dirname, "..");
 const OUT = path.join(ROOT, process.env.MB_OUT || "docs");  // GitHub Pages serves main branch /docs
 const FILES = ["index.html", "manifest.json", "sw.js", "README.md"];
-const DIRS = ["css", "js", "icons"];
+const DIRS = ["css", "js", "icons", "fonts"];
 
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });

@@ -36,6 +36,7 @@
     "Set a patient weight to see personalised doses": "ለታካሚው የተሰሉ መጠኖችን ለማየት ክብደት ያስገቡ",
 
     /* home */
+    "Bedside drug reference · works offline": "የአልጋ አጠገብ የመድኃኒት ማጣቀሻ · ያለ ኢንተርኔትም ይሠራል", "drugs": "መድኃኒቶች", "clinical cases": "የሕመም ሁኔታዎች", "no-pump methods": "ያለ ፓምፕ ዘዴዎች",
     "Give it safely, with what you have.": "ባለዎት ነገር፣ በደህንነት ይስጡ።",
     "Hospital medicines with no-pump alternatives, doses by weight and drip-rate maths — offline.":
       "የሆስፒታል መድኃኒቶች ያለ ፓምፕ አማራጮች፣ በክብደት የተሰሉ መጠኖች እና የጠብታ ፍጥነት ስሌት — ያለ ኢንተርኔትም።",

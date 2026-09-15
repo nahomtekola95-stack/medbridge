@@ -74,6 +74,7 @@
     const main = $("#app");
     main.innerHTML = "";
     (routes[r.view] || viewDrugs)(main, r);
+    main.classList.remove("enter"); void main.offsetWidth; main.classList.add("enter");
     window.I18N?.afterRender(r.view);
     document.querySelectorAll("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === (NAV_OF[r.view] || r.view)));
     window.scrollTo(0, 0);
@@ -112,8 +113,10 @@
     initListState();
     main.innerHTML = `
       <section class="hero">
+        <span class="hero-eyebrow"><span class="pulse"></span>Bedside drug reference · works offline</span>
         <h1>Give it safely, with what you have.</h1>
         <p>Hospital medicines with no-pump alternatives, doses by weight and drip-rate maths — offline.</p>
+        <div class="hero-stats"><span><b>${DRUG_DB.length}</b>drugs</span><span><b>${CONDITIONS.length}</b>clinical cases</span><span><b>${DRUG_DB.reduce((n, d) => n + d.improvised.length, 0)}</b>no-pump methods</span></div>
         <div class="searchbar">${ic("search")}<input id="q" type="search" placeholder="Search a drug, a brand or a case…" value="${esc(listState.q)}" autocomplete="off" aria-label="Search drugs"><kbd>/</kbd></div>
         <div class="hero-chips"><a class="setting-chip" href="#/local">${ic("globe")}<span>Setting: ${esc(profLabel())}</span>${ic("right")}</a><div class="seg lang-seg hero-lang" id="hero-lang" role="group" aria-label="Language" data-no-i18n><button type="button" data-lang="en" class="${window.I18N?.lang === "am" ? "" : "active"}" lang="en">English</button><button type="button" data-lang="am" class="${window.I18N?.lang === "am" ? "active" : ""}" lang="am">አማርኛ</button></div></div>
         <div class="quick-label">Emergencies</div>
@@ -156,6 +159,7 @@
       $("#wardnote").textContent = byWard && sel ? WARDS[sel].note : "";
       list.innerHTML = items.length ? items.map(d => `
         <li><a class="drug-item" href="#/drug/${d.id}" ${catStyle(d.cat)}>
+          <span class="mono" aria-hidden="true">${esc(d.name.replace(/[^A-Za-z]/g, "").slice(0, 2))}</span>
           <div class="top"><span class="name">${esc(d.name)}</span>${ic("right")}</div>
           <div class="meta"><span>${esc(d.cls)}</span><span class="count">${d.improvised.length} no-pump method${d.improvised.length === 1 ? "" : "s"}</span></div>
         </a></li>`).join("") : `<li class="empty">No match. Try a condition (e.g. “seizure”) or a brand name.</li>`;
@@ -658,7 +662,7 @@
     apply(v) {
       if (v === "light" || v === "dark") document.documentElement.setAttribute("data-theme", v); else document.documentElement.removeAttribute("data-theme");
       const l = $("#theme-label"); if (l) l.textContent = v === "light" ? "Light" : v === "dark" ? "Dark" : "Auto";
-      const m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = getComputedStyle(document.body).getPropertyValue("--surface").trim() || "#0f7c8c";
+      document.querySelectorAll('meta[name="theme-color"]').forEach((m, i) => { m.content = v === "dark" ? "#081117" : v === "light" ? "#f4f7f9" : (i === 0 ? "#f4f7f9" : "#081117"); });
     },
     set(v) { if (v) store.set("theme", v); else store.del("theme"); theme.apply(v); }
   };
