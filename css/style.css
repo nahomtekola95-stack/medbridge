@@ -763,3 +763,21 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 }
 /* long clinical text stays readable on very wide screens */
 .method ol, .method ul, .kv, .card > p { max-width: 110ch; }
+
+/* ---------- arranged drug list ---------- */
+.listbar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: -.2rem 0 .7rem; }
+.sortseg button .icon { width: 15px; height: 15px; }
+.drug-list .group-head { grid-column: 1 / -1; display: flex; align-items: center; gap: .55rem; margin: .9rem 0 .1rem; padding: 0 .15rem; list-style: none; scroll-margin-top: 90px; }
+.drug-list .group-head:first-child { margin-top: 0; }
+.gh-dot { width: 10px; height: 10px; border-radius: 4px; background: var(--cat, var(--primary)); box-shadow: 0 0 0 4px color-mix(in srgb, var(--cat, var(--primary)) 16%, transparent); }
+.gh-label { font-size: 1.02rem; font-weight: 750; letter-spacing: -.015em; color: var(--text); }
+.group-head b { font-size: .72rem; font-weight: 750; color: var(--muted); background: var(--surface-3); padding: .1rem .5rem; border-radius: 999px; }
+.group-head::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+.drug-item .usage { display: inline-flex; align-items: center; gap: .25rem; font-size: .7rem; font-weight: 700; color: var(--green); background: var(--green-soft); padding: .12rem .5rem; border-radius: 999px; }
+.drug-item .usage .icon { width: 12px; height: 12px; }
+.azbar { position: sticky; top: 72px; z-index: 9; display: flex; flex-wrap: wrap; gap: .25rem; padding: .4rem; margin: 0 0 .8rem; background: var(--glass); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-1); }
+.azbar a { min-width: 34px; min-height: 34px; display: grid; place-items: center; border-radius: 9px; font-weight: 750; font-size: .85rem; color: var(--primary-ink); text-decoration: none; transition: background .15s var(--ease); }
+.azbar a:hover { background: var(--primary-soft); }
+@media (max-width: 480px) { .listbar .seg { width: 100%; } .listbar .seg button { flex: 1; } .azbar a { min-width: 30px; } }
+.filterbar .listbar { margin: 0 0 0 auto; }
+@media (max-width: 760px) { .filterbar .listbar { margin: 0; width: 100%; } .filterbar .listbar .seg { width: 100%; } .filterbar .listbar .seg button { flex: 1; } }

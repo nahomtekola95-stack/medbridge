@@ -108,7 +108,28 @@
 
   /* ---------- Drugs list ---------- */
   let listState = null;
-  const initListState = () => (listState ||= { q: "", cat: "", ward: settings.ward, group: "", mode: settings.filterMode });
+  const initListState = () => (listState ||= { q: "", cat: "", ward: settings.ward, group: "", mode: settings.filterMode, sort: store.get("sort", "group") });
+  /* clinical order for grouped lists: emergencies first, nutrition last */
+  const CAT_ORDER = ["emergency", "obstetric", "cardio", "respiratory", "neuro", "infection", "endocrine", "electrolyte", "analgesia", "haem", "psychiatry", "nutrition"];
+  const ROLE_WEIGHT = { first: 3, adjunct: 2, alternative: 1, supportive: 1, avoid: 0 };
+  let usageCache = null;
+  /** how often a drug is reached for across the clinical cases (first-line counts most) */
+  const usage = (id) => {
+    if (!usageCache) {
+      usageCache = {};
+      for (const c of CONDITIONS) for (const x of c.drugs) { const u = (usageCache[x.id] ||= { score: 0, cases: 0, first: 0 }); u.score += ROLE_WEIGHT[x.role] || 0; if (x.role !== "avoid") u.cases++; if (x.role === "first") u.first++; }
+      for (const r of (window.RESUS || [])) if (r.drug && usageCache[r.drug]) usageCache[r.drug].score += 2;
+    }
+    return usageCache[id] || { score: 0, cases: 0, first: 0 };
+  };
+  /** search relevance: name starts with the query, then name contains it, then brand names, then everything else */
+  const relevance = (d, needle) => {
+    const n = d.name.toLowerCase();
+    if (n.startsWith(needle)) return 0;
+    if (n.includes(needle)) return 1;
+    if ((d.aka || []).some(a => a.toLowerCase().includes(needle))) return 2;
+    return 3;
+  };
   function viewDrugs(main) {
     initListState();
     main.innerHTML = `
@@ -129,8 +150,16 @@
           <button type="button" data-mode="case" class="${listState.mode === "case" ? "active" : ""}">${ic("clipboard")}By case</button>
           <button type="button" data-mode="cat" class="${listState.mode === "cat" ? "active" : ""}">${ic("pill")}By drug class</button>
         </div>
+        <div class="listbar" id="listbar">
+          <div class="seg sortseg" id="sort" role="group" aria-label="Arrange drugs">
+          <button type="button" data-sort="group" class="${listState.sort === "group" ? "active" : ""}">${ic("grid")}Grouped</button>
+          <button type="button" data-sort="used" class="${listState.sort === "used" ? "active" : ""}">${ic("star")}Most used</button>
+          <button type="button" data-sort="az" class="${listState.sort === "az" ? "active" : ""}">${ic("book")}A–Z</button>
+        </div>
+      </div>
       </div>
       <div class="cats" id="cats"></div>
+      <nav class="azbar" id="azbar" aria-label="Jump to letter" hidden></nav>
       <div class="section-label"><span id="count"></span><span id="wardnote" class="note"></span></div>
       <div id="also-cases"></div>
       <ul class="drug-list" id="list"></ul>`;
@@ -157,16 +186,49 @@
       const selLabel = sel ? (byWard ? WARDS[sel].label : CATEGORIES[sel]) : "";
       $("#count").textContent = sel ? `${selLabel} · ${items.length} drug${items.length === 1 ? "" : "s"}` : `${items.length} of ${DRUG_DB.length} drugs`;
       $("#wardnote").textContent = byWard && sel ? WARDS[sel].note : "";
-      list.innerHTML = items.length ? items.map(d => `
-        <li><a class="drug-item" href="#/drug/${d.id}" ${catStyle(d.cat)}>
+      $("#listbar").hidden = !!needle;
+      const card = (d) => {
+        const u = usage(d.id);
+        return `<li><a class="drug-item" href="#/drug/${d.id}" ${catStyle(d.cat)}>
           <span class="mono" aria-hidden="true">${esc(d.name.replace(/[^A-Za-z]/g, "").slice(0, 2))}</span>
           <div class="top"><span class="name">${esc(d.name)}</span>${ic("right")}</div>
-          <div class="meta"><span>${esc(d.cls)}</span><span class="count">${d.improvised.length} no-pump method${d.improvised.length === 1 ? "" : "s"}</span></div>
-        </a></li>`).join("") : `<li class="empty">No match. Try a condition (e.g. “seizure”) or a brand name.</li>`;
+          <div class="meta"><span>${esc(d.cls)}</span><span class="count">${d.improvised.length} no-pump method${d.improvised.length === 1 ? "" : "s"}</span>${listState.sort === "used" && u.cases ? `<span class="usage">${ic("clipboard")}In ${u.cases} case${u.cases === 1 ? "" : "s"}</span>` : ""}</div>
+        </a></li>`;
+      };
+      const head = (key, label, n, style = "") => `<li class="group-head" id="g-${key}" ${style}><span class="gh-dot"></span><span class="gh-label">${esc(label)}</span><b>${n}</b></li>`;
+      let html = "", az = [];
+      if (!items.length) html = `<li class="empty">No match. Try a condition (e.g. “seizure”) or a brand name.</li>`;
+      else if (needle) html = [...items].sort((x, y) => relevance(x, needle) - relevance(y, needle) || x.name.localeCompare(y.name)).map(card).join("");
+      else if (listState.sort === "used") html = [...items].sort((x, y) => usage(y.id).score - usage(x.id).score || x.name.localeCompare(y.name)).map(card).join("");
+      else if (listState.sort === "az") {
+        const byLetter = {};
+        items.forEach(d => (byLetter[d.name[0].toUpperCase()] ||= []).push(d));
+        az = Object.keys(byLetter).sort();
+        html = az.map(L => head("az-" + L, L, byLetter[L].length) + byLetter[L].map(card).join("")).join("");
+      } else if (!byWard && sel) html = items.map(card).join("");
+      else {
+        const groups = CAT_ORDER.filter(c => CATEGORIES[c]).concat(Object.keys(CATEGORIES).filter(c => !CAT_ORDER.includes(c)))
+          .map(c => [c, items.filter(d => d.cat === c)]).filter(([, arr]) => arr.length);
+        html = groups.map(([c, arr]) => head(c, CATEGORIES[c], arr.length, catStyle(c)) + arr.map(card).join("")).join("");
+      }
+      list.innerHTML = html;
+      const bar = $("#azbar");
+      bar.hidden = !(listState.sort === "az" && !needle && az.length > 1);
+      bar.innerHTML = bar.hidden ? "" : az.map(L => `<a href="#g-az-${L}" data-az="${L}">${L}</a>`).join("");
       const cs = needle ? CONDITIONS.filter(c => FX.fuzzyMatch(c.name + " " + (c.aka || []).join(" "), needle)).slice(0, 6) : [];
       $("#also-cases").innerHTML = cs.length ? `<div class="also"><span class="small muted">${ic("clipboard")} Matching cases</span>${cs.map(c => `<a class="sc-chip" href="#/case/${c.id}">${esc(c.name)}</a>`).join("")}</div>` : "";
     };
     q.addEventListener("input", () => { listState.q = q.value; draw(); });
+    $("#sort").addEventListener("click", e => {
+      const b = e.target.closest("[data-sort]"); if (!b) return;
+      listState.sort = b.dataset.sort; store.set("sort", listState.sort);
+      document.querySelectorAll("#sort button").forEach(x => x.classList.toggle("active", x === b));
+      draw();
+    });
+    $("#azbar").addEventListener("click", e => {
+      const a = e.target.closest("[data-az]"); if (!a) return;
+      e.preventDefault(); document.getElementById("g-az-" + a.dataset.az)?.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    });
     const drawCases = (needle) => {
       const items = CONDITIONS
         .filter(c => (!listState.group || c.group === listState.group) &&
@@ -175,14 +237,18 @@
       $("#count").textContent = listState.group ? `${CASE_GROUPS[listState.group]} · ${items.length} case${items.length === 1 ? "" : "s"}` : `${items.length} of ${CONDITIONS.length} clinical cases`;
       $("#wardnote").textContent = "Each case lists the drugs actually reached for, and what each one is for.";
       $("#also-cases").innerHTML = "";
-      list.innerHTML = items.length ? items.map(c => {
+      $("#listbar").hidden = true; $("#azbar").hidden = true;
+      const caseCard = (c) => {
         const first = c.drugs.filter(d => d.role === "first").slice(0, 4);
         return `<li><a class="drug-item case-item" href="#/case/${c.id}">
           <div class="top"><span class="name">${esc(c.name)}</span>${ic("right")}</div>
           <div class="case-sum">${esc(c.summary.split(". ")[0])}.</div>
           <div class="meta">${first.map(d => `<span class="chip">${esc(DRUG_DB.find(x => x.id === d.id)?.name.split(" (")[0] || d.id)}</span>`).join("")}${c.drugs.length > first.length ? `<span class="count">+${c.drugs.length - first.length} more</span>` : ""}</div>
         </a></li>`;
-      }).join("") : `<li class="empty">No case matches. Try a drug name, or a symptom such as “bleeding”.</li>`;
+      };
+      if (!items.length) list.innerHTML = `<li class="empty">No case matches. Try a drug name, or a symptom such as “bleeding”.</li>`;
+      else if (listState.group || needle) list.innerHTML = items.map(caseCard).join("");
+      else list.innerHTML = Object.entries(CASE_GROUPS).map(([g, label]) => { const arr = items.filter(c => c.group === g); return arr.length ? `<li class="group-head" id="g-case-${g}"><span class="gh-dot"></span><span class="gh-label">${esc(label)}</span><b>${arr.length}</b></li>${arr.map(caseCard).join("")}` : ""; }).join("");
     };
     $("#quick").addEventListener("click", e => { const b = e.target.closest("[data-q]"); if (!b) return; listState.q = b.dataset.q; listState.cat = ""; listState.ward = ""; listState.group = ""; q.value = b.dataset.q; drawChips(); draw(); });
     $("#cats").addEventListener("click", e => {
