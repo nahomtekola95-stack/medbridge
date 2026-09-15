@@ -101,24 +101,24 @@
     const MONTHS = () => (lang() === "am" ? EthCal.MONTHS_AM : EthCal.MONTHS_EN);
 
     function dateField(id, cal, value) {
-      const d = value ? new Date(value) : new Date();
+      const d = value ? new Date(value) : null;
       if (cal === "eth") {
-        const e = EthCal.fromDate(d);
+        const e = d ? EthCal.fromDate(d) : { day: 0, month: 0, year: "" };
         return `<div class="eth-date" id="${id}">
-          <select data-part="d" aria-label="Day">${Array.from({ length: 30 }, (_, i) => `<option ${i + 1 === e.day ? "selected" : ""}>${i + 1}</option>`).join("")}</select>
-          <select data-part="m" aria-label="Month">${MONTHS().map((m, i) => `<option value="${i + 1}" ${i + 1 === e.month ? "selected" : ""}>${esc(m)}</option>`).join("")}</select>
-          <input data-part="y" type="number" inputmode="numeric" min="1990" max="2100" value="${e.year}" aria-label="Year">
+          <select data-part="d" aria-label="Day"><option value="">Day</option>${Array.from({ length: 30 }, (_, i) => `<option value="${i + 1}" ${i + 1 === e.day ? "selected" : ""}>${i + 1}</option>`).join("")}</select>
+          <select data-part="m" aria-label="Month"><option value="">Month</option>${MONTHS().map((m, i) => `<option value="${i + 1}" ${i + 1 === e.month ? "selected" : ""}>${esc(m)}</option>`).join("")}</select>
+          <input data-part="y" type="number" inputmode="numeric" min="1990" max="2100" value="${e.year}" placeholder="Year" aria-label="Year">
         </div>`;
       }
-      const iso = new Date(d - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-      return `<input id="${id}" type="date" value="${iso}">`;
+      const iso = d ? new Date(d - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10) : "";
+      return `<input id="${id}" type="date" value="${iso}" max="2100-12-31">`;
     }
     function readDate(root, id, cal) {
       if (cal === "eth") {
         const el = $("#" + id, root); if (!el) return null;
         const y = +el.querySelector('[data-part="y"]').value, m = +el.querySelector('[data-part="m"]').value;
         let d = +el.querySelector('[data-part="d"]').value;
-        if (!(y > 1900)) return null;
+        if (!(y > 1900) || !(m >= 1) || !(d >= 1)) return null;
         d = Math.min(d, EthCal.monthDays(y, m));
         return EthCal.toDate(y, m, d);
       }
@@ -138,11 +138,11 @@
       return `<svg class="wheel" viewBox="0 0 260 260" role="img" aria-label="Pregnancy wheel at ${g.weeks} weeks ${g.rem} days">
         <circle class="track" cx="${C}" cy="${C}" r="${R}"/>
         ${arc(0, 14 * 7, R, "t1")}${arc(14 * 7, 28 * 7, R, "t2")}${arc(28 * 7, total, R, "t3")}
-        ${cur > 0 ? arc(0, Math.min(cur, total - .01), R - 18, "progress") : ""}
+        ${gaDays > 0 ? arc(0, Math.min(cur, total - .01), R - 18, "progress") : ""}
         ${ticks}${dots}
-        <circle class="marker-halo" cx="${mx.toFixed(1)}" cy="${my.toFixed(1)}" r="13"/>
-        <circle class="marker" cx="${mx.toFixed(1)}" cy="${my.toFixed(1)}" r="7"/>
-        <text class="w-big" x="${C}" y="${C - 2}">${g.days < 0 ? "—" : g.weeks + "+" + g.rem}</text>
+        ${gaDays >= 0 ? `<circle class="marker-halo" cx="${mx.toFixed(1)}" cy="${my.toFixed(1)}" r="13"/>
+        <circle class="marker" cx="${mx.toFixed(1)}" cy="${my.toFixed(1)}" r="7"/>` : ""}
+        <text class="w-big" x="${C}" y="${C - 2}">${gaDays < 0 || g.days < 0 ? "—" : g.weeks + "+" + g.rem}</text>
         <text class="w-small" x="${C}" y="${C + 20}">weeks + days</text>
       </svg>`;
     }
@@ -150,6 +150,7 @@
     function view(main, route) {
       const saved = store.get("preg", { method: "lnmp", cal: lang() === "am" ? "eth" : "greg", cycle: 28, gaW: 12, gaD: 0, embryo: 5 });
       let st = { ...saved };
+      if (!st.v2) { delete st.date; delete st.rdLmp; delete st.rdUs; st.v2 = true; }
       const draw = () => {
         store.set("preg", st);
         main.innerHTML = `
@@ -169,7 +170,7 @@
               ${st.method === "lnmp" ? `<div class="field"><label for="pg-cycle">Usual cycle length (days)</label><input id="pg-cycle" type="number" inputmode="numeric" min="21" max="49" value="${st.cycle || 28}"></div>` : ""}
               ${st.method === "us" ? `<div class="inline"><div class="field"><label for="pg-gw">Gestational age on scan: weeks</label><input id="pg-gw" type="number" inputmode="numeric" min="4" max="42" value="${st.gaW}"></div><div class="field"><label for="pg-gd">days</label><input id="pg-gd" type="number" inputmode="numeric" min="0" max="6" value="${st.gaD}"></div></div>` : ""}
               ${st.method === "ivf" ? `<div class="field"><label for="pg-emb">Embryo age at transfer</label><select id="pg-emb"><option value="5" ${st.embryo == 5 ? "selected" : ""}>Day 5 (blastocyst)</option><option value="3" ${st.embryo == 3 ? "selected" : ""}>Day 3</option></select></div>` : ""}
-              <div id="pg-greg-hint" class="small muted"></div>
+              <div class="row" style="justify-content:space-between;margin-top:.2rem"><div id="pg-greg-hint" class="small muted"></div><button type="button" class="btn sm" id="pg-go">${ic("calc")}Calculate</button></div>
             </div>
             <div class="card preg-wheel" id="pg-wheel"></div>
           </div>
@@ -192,7 +193,7 @@
                 <div class="field"><label for="fb-fl">FL (mm)</label><input id="fb-fl" type="number" inputmode="decimal" min="0"></div>
               </div>
               <div class="inline"><div class="field"><label for="fb-efw">or EFW from report (g)</label><input id="fb-efw" type="number" inputmode="decimal" min="0"></div>
-              <div class="field"><label for="fb-ga">Gestational age (weeks)</label><input id="fb-ga" type="number" inputmode="decimal" min="10" max="42" step="0.1"></div></div>
+              <div class="field"><label for="fb-ga">Gestational age (weeks, filled from the dates)</label><input id="fb-ga" type="number" inputmode="decimal" min="10" max="42" step="0.1"></div></div>
               <div id="fb-out"></div>
             </div>
             <div class="card"><h3>${ic("drop")} Amniotic fluid index</h3>
@@ -214,7 +215,11 @@
         store.set("preg", st);
         $("#pg-greg-hint").textContent = date ? (st.cal === "eth" ? `Gregorian: ${greg(date)}` : `Ethiopian: ${eth(date)}`) : "";
         const lmp = date && lmpEquivalent({ method: st.method, date, cycle: st.cycle, gaWeeks: st.gaW, gaDays: st.gaD, embryoDay: st.embryo });
-        if (!lmp) { $("#pg-out").innerHTML = ""; $("#pg-wheel").innerHTML = ""; return; }
+        if (!lmp) {
+          $("#pg-out").innerHTML = `<div class="card preg-empty">${ic("calendar")}<div><strong>${{ lnmp: "Enter the first day of the last normal menstrual period.", us: "Enter the ultrasound date and the gestational age measured on that scan.", ivf: "Enter the date of the embryo transfer.", conception: "Enter the date of conception." }[st.method]}</strong><p class="small muted" style="margin:.2rem 0 0">Gestational age, the due date, milestones and ANC contacts appear here as soon as the date is complete. On some phones, tap Calculate after choosing the date.</p></div></div>`;
+          $("#pg-wheel").innerHTML = wheelSvg(-1, new Date()) + `<div class="wheel-legend"><span class="t1">1st trimester</span><span class="t2">2nd</span><span class="t3">3rd</span></div>`;
+          fetal(null); return;
+        }
         const g = ga(lmp), due = edd(lmp), today = midnight(new Date());
         const warn = g.days < 0 ? `<div class="callout warn">${ic("alert")}<div>That date is in the future. Check the date and calendar.</div></div>` : g.days > 44 * 7 ? `<div class="callout warn">${ic("alert")}<div>More than 44 weeks: check the date and calendar.</div></div>` : "";
         $("#pg-wheel").innerHTML = wheelSvg(g.days, lmp) + `<div class="wheel-legend"><span class="t1">1st trimester</span><span class="t2">2nd</span><span class="t3">3rd</span></div>`;
@@ -234,13 +239,19 @@
             <div class="card ps-card ps-edd"><span class="ps-l">Estimated due date</span><span class="ps-v ps-date">${esc(eth(due))}</span><span class="ps-s">${esc(greg(due))} · ${daysBetween(today, due) >= 0 ? `in ${daysBetween(today, due)} days` : `${-daysBetween(today, due)} days past`}</span></div>
             <div class="card ps-card"><span class="ps-l">Dates counted from</span><span class="ps-v ps-date">${esc(eth(lmp))}</span><span class="ps-s">${esc(greg(lmp))} · LMP-equivalent</span></div>
           </div>
-          <div class="row" style="margin:-.3rem 0 1rem">${ctx.shareButton ? ctx.shareButton(shareText, "Share dates") : ""}<a class="btn ghost sm" href="#/ward">${ic("ward")}Ward board</a></div>
+          <div class="row" style="margin:-.3rem 0 1rem">${ctx.shareButton ? ctx.shareButton(shareText, "Share dates") : ""}${bedPicker()}</div>
           <div class="preg-grid">
             <div class="card"><h3>${ic("clipboard")} Milestone dates</h3><div class="tablewrap"><table class="plain ms-table" data-no-i18n lang="en"><tbody>${rows}</tbody></table></div></div>
             <div class="card"><h3>${ic("calendar")} Antenatal care contacts</h3><p class="small muted" style="margin-top:-.3rem">WHO 2016 eight-contact model for mothers classified for basic care.</p><div class="tablewrap"><table class="plain ms-table"><tbody>${anc}</tbody></table></div></div>
           </div>`;
         redateOut(); fetal(g);
+        const tb = $("#pg-tobed");
+        if (tb) tb.onclick = () => { const id = $("#pg-bed").value; if (!id) { toast("Choose a bed.", true); return; } if (window.WD_SETLMP && WD_SETLMP(id, lmp.getTime())) toast("Pregnancy dates saved to the bed. Gestational age now updates on the ward board."); };
       };
+      function bedPicker() {
+        const beds = window.WD_BOARD ? window.WD_BOARD().beds : [];
+        return beds.length ? `<span class="row" style="gap:.4rem"><select id="pg-bed" aria-label="Ward bed" style="min-height:40px;border-radius:11px;border:1px solid var(--border-strong);background:var(--surface);padding:.3rem .6rem"><option value="">Send to ward bed…</option>${beds.map(b => `<option value="${esc(b.id)}">Bed ${esc(b.bed)} ${esc(b.initials || "")}</option>`).join("")}</select><button type="button" class="btn ghost sm" id="pg-tobed">${ic("ward")}Save to bed</button></span>` : `<a class="btn ghost sm" href="#/ward">${ic("ward")}Ward board</a>`;
+      }
       const redateOut = () => {
         const l = readDate(main, "rd-lmp", st.cal), u = readDate(main, "rd-us", st.cal);
         const w = +$("#rd-gw").value, d = Math.min(6, +$("#rd-gd").value || 0);
@@ -249,13 +260,14 @@
         if (!l || !u || !(w > 3)) { out.innerHTML = ""; return; }
         const r = redate({ lmpDate: l, usDate: u, usWeeks: w, usDays: d });
         out.innerHTML = `<div class="callout ${r.useUltrasound ? "warn" : "ok-callout"}">${ic(r.useUltrasound ? "alert" : "check")}<div>
-          <strong>${r.useUltrasound ? "Use the ultrasound dates." : "Keep the LNMP dates."}</strong> The difference is ${r.diff} day${r.diff === 1 ? "" : "s"}; for an ultrasound at ${r.band} the limit is ${r.limit} days.
+          <strong>${r.useUltrasound ? "Use the ultrasound dates." : "Keep the LNMP dates."}</strong> On the scan date the LNMP gives ${Math.floor(daysBetween(l, u) / 7)}w ${((daysBetween(l, u) % 7) + 7) % 7}d and the ultrasound ${w}w ${d}d. The difference is ${r.diff} day${r.diff === 1 ? "" : "s"}; for an ultrasound at ${r.band} the limit is ${r.limit} days.
           ${r.late && r.useUltrasound ? " Redating after 22 weeks is less reliable: consider fetal growth restriction and arrange follow-up growth scans." : ""}</div></div>`;
       };
       const fetal = (g) => {
         const num = (id) => parseFloat($("#" + id)?.value);
-        const gaIn = $("#fb-ga"); if (gaIn && !gaIn.value && g && g.days > 0) gaIn.placeholder = (g.days / 7).toFixed(1);
-        const gaW = num("fb-ga") || (g && g.days > 0 ? g.days / 7 : NaN);
+        const gaIn = $("#fb-ga");
+        if (gaIn && (gaIn.value === "" || gaIn.dataset.auto === "1")) { if (g && g.days > 0) { gaIn.value = (g.days / 7).toFixed(1); gaIn.dataset.auto = "1"; } else if (gaIn.dataset.auto === "1") { gaIn.value = ""; } }
+        const gaW = num("fb-ga");
         const hc = num("fb-hc"), ac = num("fb-ac"), fl = num("fb-fl");
         const efw = num("fb-efw") || efwHadlock({ hc: hc / 10, ac: ac / 10, fl: fl / 10 });
         const out = $("#fb-out");
@@ -273,10 +285,10 @@
       const bind = () => {
         $("#pg-method").addEventListener("click", e => { const b = e.target.closest("[data-m]"); if (b) { compute(); st.method = b.dataset.m; draw(); } });
         $("#pg-cal").addEventListener("click", e => { const b = e.target.closest("[data-c]"); if (b && b.dataset.c !== st.cal) { compute(); st.cal = b.dataset.c; draw(); } });
-        main.querySelector(".preg-input").addEventListener("input", compute);
-        main.querySelector(".preg-input").addEventListener("change", compute);
-        $("#pg-redate").addEventListener("input", redateOut); $("#pg-redate").addEventListener("change", redateOut);
-        main.oninput = e => { if (e.target.closest("#fb-out, #af-out") || /^(fb|af)-/.test(e.target.id)) { const d = st.date && lmpEquivalent({ method: st.method, date: new Date(st.date), cycle: st.cycle, gaWeeks: st.gaW, gaDays: st.gaD, embryoDay: st.embryo }); fetal(d ? ga(d) : null); } };
+        for (const ev of ["input", "change", "blur", "keyup"]) main.querySelector(".preg-input").addEventListener(ev, compute, true);
+        $("#pg-go").addEventListener("click", () => { compute(); const out = $("#pg-out"); if (out && st.date) out.scrollIntoView({ behavior: "smooth", block: "start" }); });
+        for (const ev of ["input", "change", "blur"]) $("#pg-redate").addEventListener(ev, redateOut, true);
+        main.oninput = e => { if (e.target.id === "fb-ga") e.target.dataset.auto = "0"; if (e.target.closest("#fb-out, #af-out") || /^(fb|af)-/.test(e.target.id)) { const d = st.date && lmpEquivalent({ method: st.method, date: new Date(st.date), cycle: st.cycle, gaWeeks: st.gaW, gaDays: st.gaD, embryoDay: st.embryo }); fetal(d ? ga(d) : null); } };
         $("#pg-print").addEventListener("click", () => window.print());
       };
       draw();

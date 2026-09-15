@@ -471,6 +471,13 @@
     "Deepest vertical pocket in each of the four quadrants, in cm.": "በአራቱም ክፍሎች ያለው ጥልቁ ቀጥ ያለ ኪስ፣ በሴ.ሜ.።", "Within the normal range.": "በመደበኛ ክልል ውስጥ ነው።",
     "That date is in the future. Check the date and calendar.": "ያ ቀን ገና ያልደረሰ ነው። ቀኑንና የቀን አቆጣጠሩን ያረጋግጡ።", "More than 44 weeks: check the date and calendar.": "ከ44 ሳምንት በላይ፦ ቀኑንና የቀን አቆጣጠሩን ያረጋግጡ።",
     "Date from": "ቀን ከ", "Calendar": "የቀን አቆጣጠር", "Network": "ትስስር", "Practice notes and stock-outs reported by colleagues across Ethiopia.": "በመላው ኢትዮጵያ ባልደረቦች የተዘገቡ የተግባር ማስታወሻዎችና የመድኃኒት እጥረቶች።",
+    "Calculate": "አስላ", "Day": "ቀን", "Month": "ወር", "Year": "ዓመት", "Send to ward bed…": "ወደ ክፍል አልጋ ላክ…", "Save to bed": "ወደ አልጋው አስቀምጥ", "Choose a bed.": "አልጋ ይምረጡ።",
+    "Enter the first day of the last normal menstrual period.": "የመጨረሻው መደበኛ የወር አበባ የመጀመሪያ ቀን ያስገቡ።", "Enter the ultrasound date and the gestational age measured on that scan.": "አልትራሳውንድ የተሠራበትን ቀንና በዚያ የተለካውን የእርግዝና ጊዜ ያስገቡ።",
+    "Enter the date of the embryo transfer.": "ሽሉ የተዛወረበትን ቀን ያስገቡ።", "Enter the date of conception.": "ፅንስ የተከሰተበትን ቀን ያስገቡ።",
+    "Gestational age, the due date, milestones and ANC contacts appear here as soon as the date is complete. On some phones, tap Calculate after choosing the date.": "ቀኑ እንደተሟላ የእርግዝና ጊዜ፣ የመውለጃ ቀን፣ ወሳኝ ቀናትና የቅድመ ወሊድ ክትትሎች እዚህ ይታያሉ። በአንዳንድ ስልኮች ቀኑን ከመረጡ በኋላ \"አስላ\"ን ይንኩ።",
+    "Gestational age (weeks, filled from the dates)": "የእርግዝና ጊዜ (ሳምንት፣ ከቀናቱ የሚሞላ)", "If pregnant: LNMP (gestational age is calculated)": "እርጉዝ ከሆነች፦ LNMP (የእርግዝና ጊዜ ይሰላል)", "or gestational age today (weeks)": "ወይም የዛሬው የእርግዝና ጊዜ (ሳምንት)",
+    "Pregnancy dates saved to the bed. Gestational age now updates on the ward board.": "የእርግዝና ቀናት ወደ አልጋው ተቀምጠዋል። የእርግዝና ጊዜ አሁን በክፍሉ ሰሌዳ ላይ ይዘምናል።",
+    "Check the LNMP: it gives a gestational age outside 0 to 45 weeks.": "LNMPን ያረጋግጡ፦ ከ0 እስከ 45 ሳምንት ውጭ የሆነ የእርግዝና ጊዜ ይሰጣል።", "Check the date: outside 0 to 45 weeks.": "ቀኑን ያረጋግጡ፦ ከ0 እስከ 45 ሳምንት ውጭ ነው።",
     /* ---- psychiatry ---- */
     "Agitation": "መረበሽ", "Alcohol withdrawal": "የአልኮል ማቋረጥ ምልክቶች", "Suicide risk": "ራስን የማጥፋት ስጋት", "Psychosis": "ሳይኮሲስ",
     "Alcohol withdrawal score": "የአልኮል ማቋረጥ ውጤት", "Alcohol withdrawal score (CIWA-Ar)": "የአልኮል ማቋረጥ ውጤት (CIWA-Ar)",

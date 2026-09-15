@@ -21,6 +21,13 @@ window.Ward = function (ctx) {
   const fmtTime = (ms) => new Date(ms).toLocaleTimeString([], window.I18N ? I18N.timeOpts() : { hour: "2-digit", minute: "2-digit" });
   const ago = (ms) => { const m = Math.round((Date.now() - ms) / 60000); return m < 1 ? "just now" : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.floor(m / 60)} h ago` : `${Math.floor(m / 1440)} d ago`; };
   const caseName = (id) => CONDITIONS.find(c => c.id === id)?.name || "";
+  /* gestational age: calculated from the saved LNMP-equivalent when there is one, otherwise the typed value */
+  const gaText = (x) => {
+    if (x.lmp) { const days = Math.round((new Date().setHours(0, 0, 0, 0) - new Date(x.lmp).setHours(0, 0, 0, 0)) / 864e5); if (days >= 0 && days <= 45 * 7) return `${Math.floor(days / 7)}+${days % 7}`; }
+    return x.ga || "";
+  };
+  window.WD_BOARD = load;
+  window.WD_SETLMP = (id, lmp) => { const b = load(); const bed = b.beds.find(y => y.id === id); if (!bed) return false; bed.lmp = lmp; bed.ga = ""; bed.updated = Date.now(); save(b); return true; };
 
   /* schedules started for a bed, with their next due dose */
   function bedDoses(bed) {
@@ -87,7 +94,7 @@ window.Ward = function (ctx) {
     return `<li class="card bed ${x.acuity || "stable"}">
       <div class="bed-top">
         <div class="bed-no">${esc(x.bed)}</div>
-        <div class="bed-who"><b>${esc(x.initials || "—")}</b><span>${[x.age != null && x.age !== "" ? `${x.age} y` : "", x.sex ? x.sex[0].toUpperCase() : "", x.weight ? `${x.weight} kg` : "", x.ga ? `${esc(x.ga)} weeks` : ""].filter(Boolean).join(" · ")}</span></div>
+        <div class="bed-who"><b>${esc(x.initials || "—")}</b><span>${[x.age != null && x.age !== "" ? `${x.age} y` : "", x.sex ? x.sex[0].toUpperCase() : "", x.weight ? `${x.weight} kg` : "", gaText(x) ? `${esc(gaText(x))} weeks` : ""].filter(Boolean).join(" · ")}</span></div>
         <span class="chip ${a.cls}">${a.label}</span>
       </div>
       <div class="bed-dx">${esc(x.dx || caseName(x.caseId) || "No working diagnosis yet")}${x.caseId ? ` <a class="small" href="#/case/${x.caseId}">${ic("clipboard")}Case</a>` : ""}</div>
@@ -124,7 +131,9 @@ window.Ward = function (ctx) {
           <div class="inline3"><div class="field"><label for="b-age">Age (years)</label><input id="b-age" type="number" inputmode="decimal" min="0" max="120" step="0.1" value="${x.age ?? ""}"></div>
           <div class="field"><label for="b-sex">Sex</label><select id="b-sex"><option value="">—</option><option value="female" ${x.sex === "female" ? "selected" : ""}>Female</option><option value="male" ${x.sex === "male" ? "selected" : ""}>Male</option></select></div>
           <div class="field"><label for="b-w">Weight (kg)</label><input id="b-w" type="number" inputmode="decimal" min="0.3" max="250" step="0.1" value="${x.weight ?? ""}"></div></div>
-          <div class="field"><label for="b-ga">Gestational age if pregnant (weeks)</label><input id="b-ga" maxlength="10" value="${esc(x.ga || "")}" placeholder="e.g. 34+2  ·  see Pregnancy dating wheel"></div>
+          <div class="inline"><div class="field"><label for="b-lmp">If pregnant: LNMP (gestational age is calculated)</label><input id="b-lmp" type="date" value="${x.lmp ? new Date(x.lmp - new Date(x.lmp).getTimezoneOffset() * 60000).toISOString().slice(0, 10) : ""}"></div>
+          <div class="field"><label for="b-ga">or gestational age today (weeks)</label><input id="b-ga" maxlength="10" value="${esc(gaText(x))}" placeholder="e.g. 34+2"></div></div>
+          <p class="small muted" style="margin:-.4rem 0 .8rem" id="b-ga-hint">${x.lmp ? `Calculated from the LNMP: ${esc(gaText(x))} weeks today.` : `For Ethiopian dates or ultrasound dating, use the <a href="#/pregnancy">Pregnancy dating wheel</a> and save to this bed.`}</p>
           <div class="field"><label for="b-case">Working case</label><select id="b-case"><option value="">—</option>${cases.map(c => `<option value="${c.id}" ${x.caseId === c.id ? "selected" : ""}>${esc(c.name)}</option>`).join("")}</select></div>
           <div class="field"><label for="b-dx">Working diagnosis / problem</label><input id="b-dx" maxlength="120" value="${esc(x.dx || "")}" placeholder="e.g. Severe pre-eclampsia, day 1 post CS"></div>
           <div class="field"><label for="b-all">Allergies</label><input id="b-all" maxlength="80" value="${esc(x.allergies || "")}" placeholder="None known"></div>
@@ -149,6 +158,7 @@ window.Ward = function (ctx) {
       </div>
       <div class="row"><button type="button" class="btn" id="b-save">${ic("check")}${isNew ? "Add to board" : "Save bed"}</button><a class="btn ghost" href="#/ward">Cancel</a>
         ${!isNew ? `<a class="btn ghost" href="#/schedules?bed=${x.id}&label=${encodeURIComponent(x.bed + (x.initials ? " " + x.initials : ""))}${x.weight ? `&w=${x.weight}` : ""}">${ic("clock")}Start a dose schedule</a>` : ""}</div>`;
+    $("#b-lmp").addEventListener("input", () => { const v = $("#b-lmp").value; if (!v) return; const [yy, mm, dd] = v.split("-").map(Number); const days = Math.round((new Date().setHours(0, 0, 0, 0) - new Date(yy, mm - 1, dd).getTime()) / 864e5); $("#b-ga").value = days >= 0 ? `${Math.floor(days / 7)}+${days % 7}` : ""; $("#b-ga-hint").textContent = days >= 0 && days <= 45 * 7 ? `Calculated from the LNMP: ${Math.floor(days / 7)}+${days % 7} weeks today${window.EthCal ? " · LNMP " + EthCal.format(new Date(yy, mm - 1, dd), window.I18N?.lang) : ""}.` : "Check the date: outside 0 to 45 weeks."; });
     let tasks = (x.tasks || []).map(k => ({ ...k }));
     let acuity = x.acuity || "stable";
     function taskRow(k) { return `<li data-tid="${k.id}"><label><input type="checkbox" ${k.done ? "checked" : ""} data-tdone> ${esc(k.text)}</label><button type="button" class="linkbtn danger" data-tdel aria-label="Remove task">${ic("x")}</button></li>`; }
@@ -173,7 +183,14 @@ window.Ward = function (ctx) {
       if (w != null && !(w > 0 && w < 250)) { toast("Enter a weight between 0.3 and 250 kg.", true); return; }
       const vit = { bp: $("#v-bp").value.trim(), hr: num("v-hr"), rr: num("v-rr"), spo2: num("v-sp"), temp: num("v-t") };
       const vitChanged = JSON.stringify({ ...vit }) !== JSON.stringify({ bp: x.vitals?.bp || "", hr: x.vitals?.hr ?? null, rr: x.vitals?.rr ?? null, spo2: x.vitals?.spo2 ?? null, temp: x.vitals?.temp ?? null });
-      const updated = { ...x, bed: bedNo, initials: ini, age: num("b-age"), sex: $("#b-sex").value, weight: w, ga: $("#b-ga").value.trim(), caseId: $("#b-case").value, dx: $("#b-dx").value.trim(), allergies: $("#b-all").value.trim(), acuity, summary: $("#b-sum").value.trim(), contingency: $("#b-if").value.trim(), tasks, vitals: { ...vit, at: vitChanged && Object.values(vit).some(v => v !== "" && v != null) ? Date.now() : x.vitals?.at }, updated: Date.now() };
+      const lmpVal = $("#b-lmp").value;
+      let lmp = lmpVal ? (() => { const [yy, mm, dd] = lmpVal.split("-").map(Number); return new Date(yy, mm - 1, dd).getTime(); })() : null;
+      const gaTyped = $("#b-ga").value.trim();
+      // a typed GA with no LNMP becomes an LNMP-equivalent so it keeps counting forward
+      if (!lmp && gaTyped && gaTyped !== gaText(x)) { const mt = gaTyped.match(/^(\d{1,2})(?:\s*[+w]\s*(\d))?/i); if (mt) { const t = new Date(); t.setHours(0, 0, 0, 0); lmp = t.getTime() - ((+mt[1]) * 7 + (+(mt[2] || 0))) * 864e5; } }
+      if (!lmp && gaTyped && gaTyped === gaText(x)) lmp = x.lmp || null;
+      if (lmp && (lmp > Date.now() || Date.now() - lmp > 45 * 7 * 864e5)) { toast("Check the LNMP: it gives a gestational age outside 0 to 45 weeks.", true); return; }
+      const updated = { ...x, lmp, bed: bedNo, initials: ini, age: num("b-age"), sex: $("#b-sex").value, weight: w, ga: lmp ? "" : gaTyped, caseId: $("#b-case").value, dx: $("#b-dx").value.trim(), allergies: $("#b-all").value.trim(), acuity, summary: $("#b-sum").value.trim(), contingency: $("#b-if").value.trim(), tasks, vitals: { ...vit, at: vitChanged && Object.values(vit).some(v => v !== "" && v != null) ? Date.now() : x.vitals?.at }, updated: Date.now() };
       const bb = load();
       if (bb.beds.some(y => y.id !== x.id && y.bed.toLowerCase() === bedNo.toLowerCase())) { toast("That bed is already on the board.", true); return; }
       const i = bb.beds.findIndex(y => y.id === x.id);
@@ -194,7 +211,7 @@ window.Ward = function (ctx) {
       `MedBridge handover${b.name ? " · " + b.name : ""} · ${new Date().toLocaleString([], { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}${window.EthCal && EthCal.enabled() ? " · " + EthCal.format(new Date(), window.I18N?.lang) : ""}`,
       ...beds.map(x => {
         const ds = dosesFor(x), open = (x.tasks || []).filter(k => !k.done);
-        return [`\nBed ${x.bed} ${x.initials || ""} [${(ACUITY[x.acuity] || ACUITY.stable).label.toUpperCase()}]${x.weight ? " " + x.weight + " kg" : ""}${x.ga ? " · " + x.ga + " wk" : ""}`,
+        return [`\nBed ${x.bed} ${x.initials || ""} [${(ACUITY[x.acuity] || ACUITY.stable).label.toUpperCase()}]${x.weight ? " " + x.weight + " kg" : ""}${gaText(x) ? " · " + gaText(x) + " wk" : ""}`,
           `P: ${x.dx || caseName(x.caseId) || "-"}${x.allergies ? " · Allergy: " + x.allergies : ""}${x.summary ? " · " + x.summary : ""}`,
           `A: ${[...ds.map(d => `${d.name} ${d.label} ${FX.timeStr(d.due)}`), ...open.map(k => k.text)].join("; ") || "-"}`,
           `S: ${x.contingency || "-"}`].join("\n");
@@ -211,7 +228,7 @@ window.Ward = function (ctx) {
         ${beds.map(x => {
           const a = ACUITY[x.acuity] || ACUITY.stable, ds = dosesFor(x), open = (x.tasks || []).filter(k => !k.done), v = x.vitals || {};
           return `<div class="card ho-bed ${x.acuity || "stable"}">
-            <div class="ho-title"><span class="bed-no">${esc(x.bed)}</span><b>${esc(x.initials || "")}</b><span class="muted small">${[x.age != null && x.age !== "" ? `${x.age} y` : "", x.weight ? `${x.weight} kg` : "", x.ga ? `${esc(x.ga)} wk` : ""].filter(Boolean).join(" · ")}</span><span class="chip ${a.cls}" style="margin-left:auto">I · ${a.label}</span></div>
+            <div class="ho-title"><span class="bed-no">${esc(x.bed)}</span><b>${esc(x.initials || "")}</b><span class="muted small">${[x.age != null && x.age !== "" ? `${x.age} y` : "", x.weight ? `${x.weight} kg` : "", gaText(x) ? `${esc(gaText(x))} wk` : ""].filter(Boolean).join(" · ")}</span><span class="chip ${a.cls}" style="margin-left:auto">I · ${a.label}</span></div>
             <div class="ho-row"><span class="ho-k">P</span><div>${esc(x.dx || caseName(x.caseId) || "—")}${x.allergies ? ` · <span class="bad-text">Allergy: ${esc(x.allergies)}</span>` : ""}${x.summary ? `<div class="small">${esc(x.summary)}</div>` : ""}${v.bp || v.hr || v.rr || v.spo2 || v.temp ? `<div class="small muted">Obs ${[v.bp && `BP ${esc(v.bp)}`, v.hr && `HR ${v.hr}`, v.rr && `RR ${v.rr}`, v.spo2 && `SpO₂ ${v.spo2}%`, v.temp && `T ${v.temp}°`].filter(Boolean).join(" · ")}${v.at ? ` (${ago(v.at)})` : ""}</div>` : ""}</div></div>
             <div class="ho-row"><span class="ho-k">A</span><div>${ds.length || open.length ? `<ul>${ds.map(d => `<li class="${d.due < Date.now() - 5 * 60e3 ? "bad-text" : ""}"><b>${FX.timeStr(d.due)}</b> ${esc(d.name)}: ${esc(d.label)}${d.amount ? ` · ${esc(d.amount)}` : ""}</li>`).join("")}${open.map(k => `<li>${esc(k.text)}</li>`).join("")}</ul>` : `<span class="muted">No doses due in the next 12 hours and no open tasks.</span>`}</div></div>
             <div class="ho-row"><span class="ho-k">S</span><div>${x.contingency ? esc(x.contingency) : `<span class="muted">No contingency plan written.</span>`}</div></div>
