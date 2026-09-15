@@ -5709,7 +5709,7 @@ window.DRUG_DB = [
         "Think of other causes that look similar and treat them if you cannot exclude them: malaria (do a rapid test), meningitis or encephalitis, sepsis, heat stroke, catatonia, alcohol withdrawal, lithium toxicity, serotonin syndrome (jerks and clonus, on fluoxetine or amitriptyline), anticholinergic poisoning (hot DRY skin, big pupils, no rigidity).",
         "Act: stop ALL antipsychotics (and metoclopramide). Cool with tepid sponging, fans and ice packs to groin and armpits. Give generous IV fluids (0.9 % saline or Ringer's lactate) and aim for good urine output; insert a catheter if possible.",
         "Give a benzodiazepine for agitation and stiffness: lorazepam 1–2 mg IM or IV, or diazepam slowly IV (never IM).",
-        "Refer urgently to a hospital with high-dependency care. Bromocriptine or dantrolene may be used there (Kaplan lists bromocriptine 2.5 mg orally two or three times a day).",
+        "Refer urgently to a hospital with high-dependency care. Bromocriptine (see its page) or dantrolene may be used there, starting at 2.5 mg orally two or three times a day (Kaplan).",
         "After full recovery wait before restarting (often at least 2 weeks; ask a specialist), then use a low dose of a different, lower-potency or second-generation drug and increase slowly (Kaplan)."
       ],
       monitor: [
@@ -8415,6 +8415,4071 @@ window.DRUG_DB = [
     },
     {
       name: "Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med 2005"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022; DSM-5-TR Clinical Cases 2023"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "risperidone",
+  name: "Risperidone",
+  aka: [
+    "Risperdal",
+    "Risperdal Consta",
+    "Risperdal M-Tab"
+  ],
+  cls: "Second-generation antipsychotic (benzisoxazole)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "emergency",
+    "medical",
+    "paediatric"
+  ],
+  tags: [
+    "psychosis",
+    "schizophrenia",
+    "mania",
+    "bipolar",
+    "agitation",
+    "autism irritability",
+    "antipsychotic",
+    "long-acting injection",
+    "prolactin"
+  ],
+  presentation: [
+    "Tablets 0.5, 1, 2, 3 and 4 mg (strengths vary by supplier). Oral solution 1 mg/mL in some settings.",
+    "Orally disintegrating tablets 0.5, 1 and 2 mg in some settings.",
+    "Long-acting injection (Risperdal Consta) 25, 37.5 and 50 mg vials of microspheres with their own diluent, every 2 weeks, deep IM. Usually needs refrigeration (2–8 °C): check the pack. Rarely stocked in public facilities.",
+    "Paliperidone palmitate (the active metabolite, monthly injection) is a different product: do not substitute dose for dose."
+  ],
+  indications: [
+    "Schizophrenia and other psychoses, acute and maintenance",
+    "Acute mania, alone or with lithium or valproate",
+    "Severe aggression or irritability in autism or intellectual disability (specialist use)",
+    "Persistent aggression in Alzheimer dementia where there is serious risk (short term, specialist decision)"
+  ],
+  standard: {
+    summary: "Oral once or twice daily. Start low and increase slowly. Fewer movement side effects than haloperidol at low doses, but they rise above 6 mg a day. Raises prolactin more than other second-generation drugs.",
+    items: [
+      {
+        label: "Psychosis, adult (oral)",
+        text: "WHO mhGAP: start 1 mg daily and increase to 2–6 mg daily. Kaplan: 1–2 mg at night, rising to about 4 mg a day, is usually enough. Above 6 mg a day side effects rise without clear extra benefit. Confirm the maximum with local protocol."
+      },
+      {
+        label: "Acute mania, adult",
+        text: "Start 2 mg once daily and adjust by 1 mg a day; usual 1–6 mg daily (BNF). Can be combined with lithium or valproate. Add a short course of a benzodiazepine for severe agitation if needed."
+      },
+      {
+        label: "Older adults",
+        text: "Start 0.5 mg twice daily; increase by 0.5 mg twice daily to 1–2 mg twice daily (BNF). All antipsychotics raise the risk of death and stroke in older people with dementia (Kaplan: about 1.6–1.7 times)."
+      },
+      {
+        label: "Aggression in Alzheimer dementia",
+        text: "Only when there is serious risk and non-drug measures have failed: 0.25 mg twice daily, increase slowly if needed to usually 0.5 mg twice daily (maximum 1 mg twice daily), and review within 6 weeks (BNF licensed use). Not for other dementias without specialist advice."
+      },
+      {
+        label: "Kidney or liver impairment",
+        text: "Halve the starting dose and the dose steps: 0.5 mg twice daily, rising to 1–2 mg twice daily (BNF)."
+      },
+      {
+        label: "Long-acting injection (Consta)",
+        text: "Only after the patient has tolerated oral risperidone. 25 mg deep IM every 2 weeks, adjusted no more often than every 4 weeks; maximum 50 mg every 2 weeks (BNF). Continue oral risperidone for the first 3 weeks: the injection does not release drug for about 3 weeks (Kaplan). Use only the diluent supplied."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Switching between antipsychotics when one is out of stock",
+      best_for: "Pharmacy stock-out of risperidone, haloperidol, olanzapine or chlorpromazine in a patient who is stable.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Do not stop the old drug and do nothing: relapse after sudden stopping is common, and olanzapine, clozapine and chlorpromazine can cause rebound sweating, nausea, vomiting and diarrhoea (Kaplan).",
+        "There is no exact conversion between antipsychotics. Do not calculate a 'matching' dose from a table. Start the new drug at its usual starting dose and increase to its usual effective range: risperidone 2–4 mg a day, haloperidol about 5 mg a day, olanzapine 10 mg a day, chlorpromazine 150–300 mg a day (see each drug entry).",
+        "Cross-taper where you still have some of the old drug: start the new drug, then reduce the old one over 1–2 weeks (Kaplan: overlap rather than switch abruptly). If none is left, start the new drug at once.",
+        "Moving to haloperidol from risperidone: expect more stiffness, tremor and restlessness. Moving to chlorpromazine or olanzapine: expect more sleepiness and dizziness on standing. Warn the patient and family.",
+        "Moving from olanzapine or chlorpromazine to risperidone (which has little anticholinergic effect): nausea, sweating and diarrhoea in the first week suggest cholinergic rebound; a slower taper helps (Kaplan).",
+        "See the patient or phone within 1–2 weeks. Write the switch clearly on the patient card so the next clinic does not restart both drugs."
+      ],
+      monitor: [
+        "Relapse signs: poor sleep, suspiciousness, withdrawal, aggression",
+        "Stiffness, tremor, restlessness after moving to haloperidol",
+        "Sedation and falls after moving to chlorpromazine or olanzapine"
+      ],
+      cautions: [
+        "Never give two antipsychotics long-term just because both happen to be in stock.",
+        "Depot patients: see Haloperidol decanoate for depot stock-outs."
+      ]
+    },
+    {
+      title: "Raised prolactin without a prolactin test",
+      best_for: "Women or men on risperidone (or haloperidol) at follow-up.",
+      requires: [],
+      steps: [
+        "Ask directly at each visit, in private: missed or irregular periods, milk leaking from the breasts, breast swelling (also in men), low sexual desire, erection or orgasm problems. Patients rarely volunteer these, and they are a common reason for stopping medicine.",
+        "Missed periods: do a pregnancy test first. Do not assume it is the drug.",
+        "If symptoms are clearly troublesome: use the lowest effective dose, or switch to a drug that raises prolactin less (aripiprazole, quetiapine or olanzapine, Kaplan) with the prescriber.",
+        "Prolactin-related loss of periods is not reliable contraception: women can still become pregnant, especially after switching to a prolactin-sparing drug. Discuss family planning.",
+        "Adding an SSRI such as fluoxetine can raise prolactin further (Kaplan)."
+      ],
+      monitor: [
+        "Periods, breast milk leakage, sexual function at each visit"
+      ],
+      cautions: [
+        "New headache or visual field loss with very high prolactin symptoms needs referral to exclude a pituitary tumour."
+      ]
+    },
+    {
+      title: "Weight, sugar and blood pressure checks with a tape, a scale and a glucometer",
+      best_for: "Outpatient or health-centre follow-up of anyone on a second-generation antipsychotic, where laboratory lipids and HbA1c are not available.",
+      requires: [
+        "glucometer"
+      ],
+      steps: [
+        "Before starting, record: weight, height, waist at the level of the navel with a tape measure, blood pressure, and a family history of diabetes, high blood pressure and heart disease (Kaplan lists these checks).",
+        "Check a blood glucose with a glucometer, fasting if possible (before breakfast). No glucometer: a urine dipstick for glucose picks up only marked high sugar, but is better than nothing.",
+        "Weigh at every visit for at least the first 6 months after starting or changing the drug (Kaplan). Write weight and waist on the patient's card so any clinic can compare.",
+        "A rise of about 5 % of starting body weight (for example 3 kg in a 60 kg person) in the first months is a warning: give diet and activity advice and review the choice of drug.",
+        "Repeat glucose and blood pressure at about 3 months, then at least once a year. Ask each visit about thirst, passing a lot of urine, tiredness and weight loss despite eating.",
+        "If weight or sugar rise despite advice, consider a lower-risk drug (aripiprazole, or haloperidol if movement side effects allow) with the prescriber."
+      ],
+      monitor: [
+        "Weight and waist every visit early on",
+        "Glucose at baseline, about 3 months, then yearly",
+        "Blood pressure"
+      ],
+      cautions: [
+        "Vomiting, deep fast breathing and drowsiness in someone on an antipsychotic may be diabetic ketoacidosis: check glucose at once and refer."
+      ]
+    },
+    {
+      title: "Risperidone long-acting injection without a fridge or specialist clinic",
+      best_for: "Deciding whether a long-acting injection is practical, and giving it if stocked.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Check storage: most Consta packs need 2–8 °C. If the cold chain cannot be kept, a haloperidol or fluphenazine oily depot (stored at room temperature) is usually more practical.",
+        "The patient must have tolerated oral risperidone first.",
+        "Bring the pack to room temperature, mix only with the diluent supplied, shake as the leaflet says, and inject the whole suspension at once deep into the buttock (or deltoid if the product allows) with the needle supplied. It cannot be split or kept.",
+        "Continue oral risperidone for 3 weeks after the first injection (Kaplan). A missed or late second injection leaves the patient uncovered because each dose takes weeks to release.",
+        "Give every 2 weeks and record the date and site on the patient card and clinic register (see Fluphenazine decanoate for running a depot clinic)."
+      ],
+      monitor: [
+        "Mental state in the first 3–6 weeks",
+        "Movement side effects and prolactin symptoms"
+      ],
+      cautions: [
+        "Not for acute agitation.",
+        "If a dose is more than a few days late, oral cover may be needed again: confirm with the product leaflet or local protocol."
+      ]
+    }
+  ],
+  paediatric: [
+    "Adolescents 13–17 years with schizophrenia: specialist use; start 0.5 mg once daily, target about 3 mg a day (US product information). Kaplan: trials in adolescents used up to 3 mg a day.",
+    "Mania in children 10–17 years: specialist use; start 0.5 mg daily, target 1–2.5 mg a day (US product information).",
+    "Severe irritability or aggression in autism (5 years and older): specialist use; weight-based starting doses from BNF for Children or the product information, with behavioural support.",
+    "Children gain more weight and have more prolactin effects than adults (Kaplan). Weigh at every visit.",
+    "For rapid tranquillisation in young people NICE NG10 recommends IM lorazepam, not an antipsychotic injection."
+  ],
+  cautions: [
+    "Movement side effects are dose-related: acute dystonia, parkinsonism, akathisia, tardive dyskinesia. Fewer at 2–4 mg a day; more above 6 mg (Kaplan).",
+    "Raises prolactin more than other second-generation drugs: missed periods, breast milk, sexual problems, possibly bone thinning (Kaplan).",
+    "Postural hypotension and fast pulse when starting, especially in older people, dehydration and heart disease: start low.",
+    "Weight gain, raised glucose and lipids (less than olanzapine).",
+    "Older people with dementia: higher death and stroke risk. Avoid in Lewy body dementia and Parkinson disease.",
+    "Neuroleptic malignant syndrome; lowers seizure threshold; some QT prolongation (less than haloperidol IV).",
+    "Cataract surgery: tell the eye surgeon (floppy iris during surgery, product information)."
+  ],
+  antidote: "No specific antidote. Dystonia: biperiden or trihexyphenidyl. Hypotension: lie flat, IV fluids; avoid adrenaline. Neuroleptic malignant syndrome: stop and treat urgently.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Risperidone usually starts at 1–2 mg at night and can rise to 4 mg a day; 1–4 mg a day gives enough D2 blockade, and once-daily dosing works as well as twice daily.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1931"
+    },
+    {
+      book: "kaplan",
+      text: "Doses above 6 mg a day bring more side effects, especially movement side effects; children and adolescents need lower starting doses.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1931"
+    },
+    {
+      book: "kaplan",
+      text: "The long-acting risperidone injection is given IM every 2 weeks (25, 50 or 75 mg); oral risperidone must continue for the first 3 weeks.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1932"
+    },
+    {
+      book: "kaplan",
+      text: "Fluoxetine and paroxetine block CYP2D6 and change risperidone metabolism; with SSRIs prolactin can rise markedly, with breast milk leakage and breast enlargement.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1932"
+    },
+    {
+      book: "kaplan",
+      text: "Unlike the other second-generation drugs, risperidone clearly raises prolactin (breast enlargement, milk leakage, missed periods, sexual problems).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1961"
+    },
+    {
+      book: "kaplan",
+      text: "In children and adolescents risperidone can cause weight gain, dystonia and other movement side effects.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 2.16 Early-Onset Schizophrenia, pdf p. 666"
+    },
+    {
+      book: "kaplan",
+      text: "All second-generation antipsychotics carry a boxed warning: older people with dementia-related psychosis have about 1.6–1.7 times the risk of death compared with placebo.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1929"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: a man's cannabis-induced paranoid psychosis settled on risperidone during a 6-week admission.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 2 Schizophrenia Spectrum and Other Psychotic Disorders, case 2.6 Psychosis and Cannabis, pdf p. 76"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder)"
+    },
+    {
+      name: "WHO Model List of Essential Medicines (current edition) and WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Risperidone tablets and Risperdal Consta, product information (SmPC and US label)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "quetiapine",
+  name: "Quetiapine",
+  aka: [
+    "Seroquel",
+    "Seroquel XR"
+  ],
+  cls: "Second-generation antipsychotic (dibenzothiazepine)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical"
+  ],
+  tags: [
+    "psychosis",
+    "schizophrenia",
+    "mania",
+    "bipolar depression",
+    "Parkinson disease psychosis",
+    "antipsychotic",
+    "sedation"
+  ],
+  presentation: [
+    "Tablets 25, 100, 150, 200 and 300 mg (immediate release).",
+    "Modified-release tablets (XR) 50, 150, 200, 300 and 400 mg: taken once daily, never crushed. Do not swap mg for mg with immediate-release without checking the schedule.",
+    "Not available as an injection."
+  ],
+  indications: [
+    "Schizophrenia and other psychoses",
+    "Acute mania, alone or with lithium or valproate",
+    "Bipolar depression (Kaplan: best evidence among antipsychotics)",
+    "Add-on for severe depression not responding to an antidepressant (specialist)",
+    "Psychosis in Parkinson disease or Lewy body dementia when an antipsychotic is unavoidable (low dose, specialist)"
+  ],
+  standard: {
+    summary: "Oral only. Must be built up over several days because of dizziness and low blood pressure. Very few movement side effects; sedating. Not for sleep alone.",
+    items: [
+      {
+        label: "Schizophrenia, adult",
+        text: "Kaplan: start 25 mg twice daily and increase by 25–50 mg a dose every 2–3 days to 300–400 mg a day; effective range 300–800 mg a day. BNF (faster, in hospital): 50 mg day 1, 100 mg day 2, 200 mg day 3, 300 mg day 4, in 2 divided doses; usual 300–450 mg a day, maximum 750 mg a day."
+      },
+      {
+        label: "Acute mania, adult",
+        text: "BNF: 100 mg day 1, 200 mg day 2, 300 mg day 3, 400 mg day 4 (in 2 divided doses), then adjust; usual 400–800 mg a day, maximum 800 mg. Slower titration in outpatients or older people."
+      },
+      {
+        label: "Bipolar depression, adult",
+        text: "Once at bedtime: 50 mg day 1, 100 mg day 2, 200 mg day 3, 300 mg day 4; usual 300 mg a day (BNF; Kaplan: about 300 mg a day is enough). Specialist review for higher doses."
+      },
+      {
+        label: "Older adults",
+        text: "Start 25 mg a day and increase by 25–50 mg a day to the lowest effective dose (BNF). Higher risk of death and stroke in dementia. Falls from dizziness are common."
+      },
+      {
+        label: "Psychosis in Parkinson disease or Lewy body dementia",
+        text: "Specialist decision. Commonly 12.5–25 mg at night, increased slowly; confirm with local protocol. Avoid haloperidol, risperidone and other strong D2 blockers in these patients."
+      },
+      {
+        label: "Liver impairment",
+        text: "Start 25 mg a day and increase by 25–50 mg a day (BNF)."
+      },
+      {
+        label: "Missed doses",
+        text: "If stopped for more than 36 hours, restart at the starting dose and build up again (Kaplan), because of fainting risk."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Building up the dose safely without a monitor: lying and standing checks",
+      best_for: "Starting or restarting quetiapine on a ward or at home.",
+      requires: [
+        "oral",
+        "bp"
+      ],
+      steps: [
+        "Before the first dose, measure pulse and blood pressure lying, then after 1–2 minutes standing (Kaplan advises supine and standing BP before starting second-generation drugs).",
+        "Give most of the early doses at night. Tell the patient to sit on the bed edge for a minute before standing, especially at night to pass urine.",
+        "Increase only if the patient is not dizzy and the standing blood pressure has not fallen markedly (for example systolic falling by 20 mmHg or more, or feeling faint).",
+        "If dizzy or faint: hold the next increase, lie flat with legs raised, give oral fluids (IV if needed), and go back to the last tolerated dose.",
+        "No BP cuff: count the pulse lying and standing. A pulse that rises sharply on standing, pallor, sweating or faintness means stop increasing and keep the patient lying down longer.",
+        "Missed more than 36 hours: start again from 25 mg twice daily (Kaplan)."
+      ],
+      monitor: [
+        "Lying and standing BP and pulse before each dose increase",
+        "Falls, especially at night",
+        "Sedation the next morning"
+      ],
+      cautions: [
+        "Older people, dehydration, antihypertensives (labetalol, nifedipine) and alcohol all add to the fall in blood pressure."
+      ]
+    },
+    {
+      title: "Quetiapine for sleep: why not, and what to do instead",
+      best_for: "Requests for quetiapine as a sleeping tablet, and patients already on it only for sleep.",
+      requires: [],
+      steps: [
+        "Low doses have been used for insomnia (Kaplan), but the risks (weight gain, raised sugar, dizziness, falls, QT effects, rare movement disorders) are not justified for simple insomnia.",
+        "Look for the cause: pain, depression, anxiety, alcohol or khat, caffeine, night-time urination, sleep apnoea, a noisy ward.",
+        "Use sleep advice first (fixed getting-up time, no daytime naps, no khat or caffeine late in the day). If a sedative is needed short-term, see Promethazine or a benzodiazepine for a few nights only.",
+        "If a patient has taken quetiapine only for sleep for a long time: reduce by about 25 mg every 1–2 weeks rather than stopping suddenly (rebound insomnia, nausea).",
+        "Quetiapine is sometimes misused or sold (crushed, snorted or taken in large amounts, especially in prisons). Prescribe small quantities where misuse is suspected."
+      ],
+      monitor: [
+        "Sleep diary",
+        "Weight and glucose if long-term use continues"
+      ],
+      cautions: []
+    },
+    {
+      title: "Weight, sugar and blood pressure checks with a tape, a scale and a glucometer",
+      best_for: "Outpatient or health-centre follow-up of anyone on a second-generation antipsychotic, where laboratory lipids and HbA1c are not available.",
+      requires: [
+        "glucometer"
+      ],
+      steps: [
+        "Before starting, record: weight, height, waist at the level of the navel with a tape measure, blood pressure, and a family history of diabetes, high blood pressure and heart disease (Kaplan lists these checks).",
+        "Check a blood glucose with a glucometer, fasting if possible (before breakfast). No glucometer: a urine dipstick for glucose picks up only marked high sugar, but is better than nothing.",
+        "Weigh at every visit for at least the first 6 months after starting or changing the drug (Kaplan). Write weight and waist on the patient's card so any clinic can compare.",
+        "A rise of about 5 % of starting body weight (for example 3 kg in a 60 kg person) in the first months is a warning: give diet and activity advice and review the choice of drug.",
+        "Repeat glucose and blood pressure at about 3 months, then at least once a year. Ask each visit about thirst, passing a lot of urine, tiredness and weight loss despite eating.",
+        "If weight or sugar rise despite advice, consider a lower-risk drug (aripiprazole, or haloperidol if movement side effects allow) with the prescriber."
+      ],
+      monitor: [
+        "Weight and waist every visit early on",
+        "Glucose at baseline, about 3 months, then yearly",
+        "Blood pressure"
+      ],
+      cautions: [
+        "Vomiting, deep fast breathing and drowsiness in someone on an antipsychotic may be diabetic ketoacidosis: check glucose at once and refer."
+      ]
+    }
+  ],
+  paediatric: [
+    "Adolescents 13–17 years with schizophrenia, and 10–17 years with mania: specialist use only, with dosing from BNF for Children or the product information (US approved).",
+    "Blood pressure can RISE in children and adolescents on quetiapine (product information): check it at baseline and follow-up.",
+    "Weight gain and increased appetite are common in young people. Weigh at every visit.",
+    "Suicidal thoughts can increase in young people treated for depression: follow up closely."
+  ],
+  cautions: [
+    "Sleepiness, dizziness and postural hypotension, worst in the first days (Kaplan).",
+    "QT prolongation, especially with other QT drugs (amiodarone, quinine, methadone, chlorpromazine), low potassium or magnesium, slow pulse or overdose (Kaplan).",
+    "Weight gain and raised glucose and lipids (less than olanzapine; Kaplan).",
+    "Older people with dementia: higher death and stroke risk.",
+    "Very few movement side effects at any dose (Kaplan), but neuroleptic malignant syndrome and tardive dyskinesia can still occur.",
+    "Constipation and urinary retention (metabolite anticholinergic effect); caution with prostatic enlargement.",
+    "Can lower thyroid hormone levels and white cell counts (rarely neutropenia): check if symptoms suggest it.",
+    "Overdose causes deep sedation, low blood pressure, fast pulse and QT prolongation."
+  ],
+  antidote: "No specific antidote. Overdose: airway and breathing support, IV fluids for low blood pressure (noradrenaline if needed, not adrenaline), correct potassium and magnesium; ECG if available.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Quetiapine starts at 25 mg twice daily and rises by 25–50 mg a dose every 2–3 days to 300–400 mg a day; trials show benefit at 300–800 mg a day.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1936"
+    },
+    {
+      book: "kaplan",
+      text: "Do not combine quetiapine with other QT-prolonging drugs (e.g. amiodarone, chlorpromazine, methadone), or use it with slow heart rate, low potassium or magnesium, or congenital long QT.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1937"
+    },
+    {
+      book: "kaplan",
+      text: "Phenytoin speeds quetiapine clearance about fivefold.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1937"
+    },
+    {
+      book: "kaplan",
+      text: "Sleepiness, postural hypotension and dizziness are the commonest effects; they are usually short-lived and are reduced by slow titration.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1937"
+    },
+    {
+      book: "kaplan",
+      text: "Quetiapine is the second-generation drug least likely to cause movement side effects at any dose, which makes it useful for psychosis in Parkinson disease; prolactin rise is rare.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1937"
+    },
+    {
+      book: "kaplan",
+      text: "Quetiapine has the best evidence among antipsychotics for bipolar depression; about 300 mg a day is enough.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 6 Bipolar Disorders, pdf p. 1201"
+    },
+    {
+      book: "kaplan",
+      text: "Quetiapine is less well studied than clozapine for psychosis in Parkinson disease and may itself worsen parkinsonism, but it is used for this in practice.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 3.1 Delirium, pdf p. 747"
+    }
+  ],
+  sources: [
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Quetiapine (Seroquel, Seroquel XR), product information (SmPC and US label)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "clozapine",
+  name: "Clozapine",
+  aka: [
+    "Clozaril",
+    "Leponex",
+    "Denzapine"
+  ],
+  cls: "Second-generation antipsychotic for treatment-resistant schizophrenia (dibenzodiazepine)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient"
+  ],
+  tags: [
+    "treatment-resistant schizophrenia",
+    "agranulocytosis",
+    "neutropenia",
+    "myocarditis",
+    "constipation",
+    "hypersalivation",
+    "suicide in schizophrenia",
+    "antipsychotic"
+  ],
+  presentation: [
+    "Tablets 25 mg and 100 mg (some suppliers also 12.5, 50 and 200 mg; oral suspension in some countries).",
+    "Oral only.",
+    "Dispense only against a current, valid blood count result."
+  ],
+  indications: [
+    "Schizophrenia that has not responded to at least two adequate trials of different antipsychotics (treatment-resistant schizophrenia)",
+    "Schizophrenia with intolerable movement side effects on all other antipsychotics",
+    "Specialist uses: persistent suicidal behaviour in schizophrenia, psychosis in Parkinson disease, severe tardive dyskinesia"
+  ],
+  standard: {
+    summary: "The most effective antipsychotic for resistant schizophrenia, but only where regular blood counts are reliably possible. Specialist start, slow titration, documented consent, weekly counts at first, and daily checks for fever, fast pulse and constipation.",
+    items: [
+      {
+        label: "Before starting",
+        text: "Confirm treatment resistance (two adequate trials, adherence checked). Document informed consent (Kaplan). Baseline full blood count with differential (neutrophils), weight, waist, BP lying and standing, pulse, temperature, glucose, and ECG, liver and kidney tests where possible. Do not start if the white cell count is low, there is a past bone marrow disorder or past clozapine agranulocytosis, or another marrow-suppressing drug such as carbamazepine is needed (Kaplan)."
+      },
+      {
+        label: "Titration, adult",
+        text: "Day 1: 12.5 mg once or twice. Day 2: 25–50 mg. Then increase by 25–50 mg a day (or more slowly, Kaplan: 25 mg every 2–3 days) to 300 mg a day in divided doses over 2–3 weeks. Usual 200–450 mg a day; maximum 900 mg a day (BNF). Slower in older people, outpatients and anyone with low blood pressure or fast pulse."
+      },
+      {
+        label: "Blood count monitoring",
+        text: "Kaplan (US scheme): weekly for 6 months, then every 2 weeks. UK scheme: weekly for 18 weeks, then every 2 weeks to 1 year, then every 4 weeks. Stop at once if white cells fall below 3.0 × 10⁹/L or neutrophils below 1.5 × 10⁹/L (Kaplan), and never restart after agranulocytosis. Follow the national or manufacturer registry thresholds where one exists."
+      },
+      {
+        label: "Missed doses",
+        text: "More than 48 hours without clozapine (Kaplan: more than 36 hours for second-generation drugs): restart at 12.5 mg once or twice daily and re-titrate, because a full dose after a break can cause collapse, fainting and seizures. Re-titration can often be faster than the first time if the earlier titration was well tolerated; confirm with the prescriber. A break of more than a few days may also restart the blood monitoring schedule: confirm with the registry or local protocol."
+      },
+      {
+        label: "Stopping",
+        text: "Unless stopping for a low count or myocarditis, reduce over 1–2 weeks to avoid rebound psychosis and cholinergic rebound (sweating, vomiting, diarrhoea) (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "When regular blood counts are hard to get: who should and should not have clozapine",
+      best_for: "Deciding whether to start or continue clozapine in a hospital or health centre with an unreliable laboratory.",
+      requires: [],
+      steps: [
+        "Say it plainly: clozapine should only be started and continued where a white cell count with neutrophils can be done before starting and on schedule (weekly at first). Agranulocytosis can kill within days, and an early count prevents deaths (Kaplan). Where this cannot be guaranteed, do not start clozapine; use the best-tolerated alternative at an adequate dose with good adherence support (for example a depot).",
+        "Before starting, check the whole chain: a laboratory that does differentials reliably, reagent supply, transport of samples, a named person who reads the result the same day, a phone number for the patient, and a pharmacy that will not dispense without a current count.",
+        "Rule for every dispensing: no valid count, no clozapine. Dispense only enough tablets to last until the next count is due (usually 1 week at first).",
+        "If a count is late because of a laboratory or transport failure: contact the prescriber the same day. Do not continue for weeks without a count. Teach the patient to stop and come in immediately with fever or sore throat. If the patient ends up without clozapine for more than 48 hours, re-titrate from 12.5 mg.",
+        "Plan ahead for travel, holidays (including long public holidays and fasting periods) and reagent stock-outs: arrange the count at another facility and send the patient's card with the last results.",
+        "Some people of African ancestry have naturally lower neutrophil counts without infection risk. A low baseline count needs a specialist and haematology decision rather than an automatic refusal or an automatic start."
+      ],
+      monitor: [
+        "Blood count on schedule, with the result written on the patient card",
+        "Fever, sore throat, mouth ulcers at every contact"
+      ],
+      cautions: [
+        "Sore throat, fever, mouth or anal ulcers, or flu-like illness at any time: stop clozapine and do a count the same day (Kaplan, emergency table). If neutrophils are very low, treat as neutropenic sepsis with urgent IV antibiotics and refer."
+      ]
+    },
+    {
+      title: "Starting and re-starting clozapine: titration chart and daily bedside checks",
+      best_for: "Inpatient or closely supervised outpatient start, and re-titration after missed days.",
+      requires: [
+        "oral",
+        "bp"
+      ],
+      steps: [
+        "Make a written chart of doses day by day (12.5 mg, then 25–50 mg, then increases of 25–50 mg a day, or slower) and tick each dose given. Keep a copy with the patient or family.",
+        "Before each dose increase in the first 4 weeks, record temperature, pulse, lying and standing blood pressure, and ask about bowels, chest pain and breathlessness.",
+        "Hold the increase (give the same dose as yesterday) if: pulse over about 120 at rest, standing systolic falling markedly or fainting, temperature 38 °C or more, heavy sedation, or no bowel opening for 2 days or more. Assess the cause before going on.",
+        "Missed doses: count the hours since the last dose. Under 48 hours: continue the usual dose. Over 48 hours: restart at 12.5 mg once or twice daily and build up again; tell the prescriber.",
+        "Give the larger part of the dose at night to use the sedation.",
+        "Keep a towel on the pillow for drooling (Kaplan). Explain it is expected and usually improves."
+      ],
+      monitor: [
+        "Temperature, pulse, lying and standing BP daily during titration",
+        "Bowel chart",
+        "Sedation, fits, drooling"
+      ],
+      cautions: [
+        "Seizure risk rises with dose: about 4 % above 600 mg a day (Kaplan). A first fit on clozapine needs dose review and a specialist decision."
+      ]
+    },
+    {
+      title: "Myocarditis warning signs checked by hand in the first 2 months",
+      best_for: "Any patient in the first 8 weeks of clozapine, when most myocarditis appears.",
+      requires: [],
+      steps: [
+        "Myocarditis is uncommon but can be fatal (Kaplan). It usually starts in the first 1–2 months, often around weeks 2–4.",
+        "Every day in the first 4 weeks and at every visit up to 8 weeks, check: temperature, resting pulse for a full minute, breathing rate, and ask about chest pain, breathlessness, palpitations, flu-like illness or swelling of the legs.",
+        "Warning pattern: fever plus a fast resting pulse (for example persistently over 120, or rising day by day), chest pain, breathlessness or fast breathing, low blood pressure, new crackles in the lungs or ankle swelling.",
+        "Fever with fast pulse early in titration is common and often benign, but you cannot tell by hand: stop increasing, check for infection and malaria, and get an ECG, troponin and CRP if any facility can do them.",
+        "If chest pain, breathlessness or signs of heart failure appear: stop clozapine immediately and refer urgently to a hospital with ECG and cardiac tests (Kaplan). Do not restart without a cardiologist and psychiatrist decision."
+      ],
+      monitor: [
+        "Temperature, resting pulse and breathing rate daily for 4 weeks, then weekly to 8 weeks"
+      ],
+      cautions: [
+        "A persistent resting pulse over 100 later in treatment also needs review (cardiomyopathy)."
+      ]
+    },
+    {
+      title: "Constipation that can kill: preventing and spotting clozapine ileus by hand",
+      best_for: "Every patient on clozapine, for as long as they take it.",
+      requires: [],
+      steps: [
+        "Clozapine slows the whole gut. Constipation is common (Kaplan) and can progress to bowel obstruction, bowel death and perforation, sometimes with few complaints.",
+        "Ask at every contact: when did you last open your bowels, and was it hard? Patients and families should know that no stool for 3 days, or less often than usual, must be reported.",
+        "Start a laxative early, not late: a stimulant (senna or bisacodyl) plus a softener (lactulose or macrogol) if stocked. Avoid bulk laxatives (bran, ispaghula) alone: they can worsen obstruction when the gut is not moving. Encourage fluids and activity.",
+        "Examine by hand if bowels are not open for 3 days or there is pain: look for a swollen belly, feel for tenderness and hard loops of bowel, listen for bowel sounds, ask about vomiting and passing wind. Check pulse and temperature.",
+        "Danger signs: vomiting (especially green or faecal), a swollen tense belly, severe pain, no wind, fast pulse, fever or low blood pressure. Hold clozapine and refer urgently as a surgical emergency. Do not give more laxative into a blocked bowel.",
+        "Other anticholinergic drugs (trihexyphenidyl, biperiden, amitriptyline, promethazine, hyoscine) make this worse. Avoid them where possible."
+      ],
+      monitor: [
+        "Bowel chart on the ward; bowel question at every visit"
+      ],
+      cautions: [
+        "Diarrhoea on clozapine may be overflow around impacted stool: examine before giving anti-diarrhoeal medicine."
+      ]
+    },
+    {
+      title: "Weight, sugar and blood pressure checks with a tape, a scale and a glucometer",
+      best_for: "Outpatient or health-centre follow-up of anyone on a second-generation antipsychotic, where laboratory lipids and HbA1c are not available.",
+      requires: [
+        "glucometer"
+      ],
+      steps: [
+        "Before starting, record: weight, height, waist at the level of the navel with a tape measure, blood pressure, and a family history of diabetes, high blood pressure and heart disease (Kaplan lists these checks).",
+        "Check a blood glucose with a glucometer, fasting if possible (before breakfast). No glucometer: a urine dipstick for glucose picks up only marked high sugar, but is better than nothing.",
+        "Weigh at every visit for at least the first 6 months after starting or changing the drug (Kaplan). Write weight and waist on the patient's card so any clinic can compare.",
+        "A rise of about 5 % of starting body weight (for example 3 kg in a 60 kg person) in the first months is a warning: give diet and activity advice and review the choice of drug.",
+        "Repeat glucose and blood pressure at about 3 months, then at least once a year. Ask each visit about thirst, passing a lot of urine, tiredness and weight loss despite eating.",
+        "If weight or sugar rise despite advice, consider a lower-risk drug (aripiprazole, or haloperidol if movement side effects allow) with the prescriber."
+      ],
+      monitor: [
+        "Weight and waist every visit early on",
+        "Glucose at baseline, about 3 months, then yearly",
+        "Blood pressure"
+      ],
+      cautions: [
+        "Vomiting, deep fast breathing and drowsiness in someone on an antipsychotic may be diabetic ketoacidosis: check glucose at once and refer."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not licensed under 16 years in the UK. Kaplan reports clozapine is more effective than haloperidol or olanzapine in treatment-resistant early-onset schizophrenia, but it remains a last resort in young people because of side effects.",
+    "Specialist child and adolescent psychiatry services only, with the same blood monitoring as adults."
+  ],
+  cautions: [
+    "Agranulocytosis and neutropenia, highest risk in the first year (Kaplan: agranulocytosis about 0.73 % in year 1, 0.07 % in year 2). Fever or sore throat means a same-day count.",
+    "Myocarditis (mostly in the first 2 months) and cardiomyopathy (later).",
+    "Severe constipation and ileus, which has caused deaths.",
+    "Seizures, dose-related (Kaplan: about 4 % above 600 mg a day).",
+    "Sedation, postural hypotension and fainting, especially at the start or after missed days; fast pulse; night-time drooling; fever in the first weeks; urinary incontinence at night.",
+    "The greatest weight gain and diabetes risk of any antipsychotic, with olanzapine (Kaplan).",
+    "Smoking lowers clozapine levels. Stopping smoking (for example on admission to a no-smoking ward, or illness) can raise levels by about half within days to weeks, with sedation, fits and low blood pressure: tell the prescriber, who may reduce the dose (Maudsley). Restarting smoking lowers levels again.",
+    "IM or IV benzodiazepines can cause collapse and breathing depression with clozapine; benzodiazepines together with clozapine can also cause delirium (Kaplan).",
+    "Older people with dementia: higher death and stroke risk.",
+    "Neuroleptic malignant syndrome can still occur (Kaplan), sometimes with less rigidity."
+  ],
+  antidote: "No antidote. Agranulocytosis: stop clozapine permanently; treat fever as neutropenic sepsis (urgent IV antibiotics); granulocyte colony-stimulating factor where available (Kaplan). Overdose: supportive care, airway, fluids, seizure treatment.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Clozapine starts at 12.5–25 mg once or twice daily and rises by about 25 mg a day every 2–3 days to 300 mg a day in divided doses; up to 900 mg a day can be used.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1943"
+    },
+    {
+      book: "kaplan",
+      text: "Seizure risk is about 4 percent above 600 mg a day; common effects are sedation, dizziness, fainting, fast pulse, low blood pressure, weight gain, constipation and night-time drooling.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1944"
+    },
+    {
+      book: "kaplan",
+      text: "Agranulocytosis risk is about 0.73 percent in the first year and 0.07 percent in the second; neutropenia 2.32 and 0.69 percent.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1944"
+    },
+    {
+      book: "kaplan",
+      text: "White cell counts weekly for the first 6 months, then every 2 weeks if normal; stop if WBC falls below 3,000/mm3 or granulocytes below 1,500/mm3, and never re-expose after agranulocytosis. Clozapine is not dispensed without proof of monitoring.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf pp. 1944–1945"
+    },
+    {
+      book: "kaplan",
+      text: "Chest pain, breathlessness, fever or fast breathing on clozapine need immediate assessment for myocarditis or cardiomyopathy, with ECG and cardiac enzymes, and clozapine stopped at once.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1945"
+    },
+    {
+      book: "kaplan",
+      text: "Do not combine clozapine with other drugs that suppress the bone marrow, such as carbamazepine, phenytoin, sulfonamides or captopril; lithium with clozapine may increase seizures, confusion and movement disorders.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1944"
+    },
+    {
+      book: "kaplan",
+      text: "Night-time drooling starts early; the most practical measure is a towel over the pillow.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1944"
+    },
+    {
+      book: "kaplan",
+      text: "If a second-generation antipsychotic is stopped for more than 36 hours, restart at the initial titration dose; taper clozapine when stopping to avoid cholinergic rebound. Document informed consent for clozapine.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1948"
+    },
+    {
+      book: "kaplan",
+      text: "Clozapine is the most effective antipsychotic but is kept for patients who have failed at least two other antipsychotic trials, because of agranulocytosis, seizures and myocarditis.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1141"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: a woman with treatment-resistant schizophrenia improved on clozapine and chose to continue it despite large weight gain.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 2 Schizophrenia Spectrum and Other Psychotic Disorders, case 2.1 Emotionally Disturbed, pdf p. 57"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO Model List of Essential Medicines (current edition) and WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Clozapine (Clozaril / Leponex / Denzapine), product information (SmPC) and patient monitoring service requirements"
+    },
+    {
+      name: "NICE CG178 Psychosis and schizophrenia in adults, 2014"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "aripiprazole",
+  name: "Aripiprazole",
+  aka: [
+    "Abilify",
+    "Abilify Maintena"
+  ],
+  cls: "Second-generation antipsychotic (dopamine D2 partial agonist)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "paediatric"
+  ],
+  tags: [
+    "psychosis",
+    "schizophrenia",
+    "mania",
+    "bipolar",
+    "antipsychotic",
+    "partial agonist",
+    "akathisia",
+    "low metabolic risk",
+    "prolactin-sparing"
+  ],
+  presentation: [
+    "Tablets 5, 10, 15 and 30 mg (some suppliers 2 and 20 mg). Orodispersible tablets and oral solution 1 mg/mL in some settings.",
+    "Short-acting injection 7.5 mg/mL (9.75 mg in 1.3 mL) in some countries.",
+    "Long-acting injection (Abilify Maintena) 400 mg monthly: rarely stocked; needs 14 days of oral cover at the start."
+  ],
+  indications: [
+    "Schizophrenia and other psychoses, especially when weight gain, diabetes, high prolactin or sexual side effects are a problem",
+    "Acute mania and bipolar maintenance (not bipolar depression)",
+    "Add-on treatment for depression not responding to an antidepressant (specialist)",
+    "Tic disorders and irritability in autism (specialist)"
+  ],
+  standard: {
+    summary: "Once daily. Least weight gain, sugar and prolactin effects of the commonly used antipsychotics, and little QT effect, but restlessness (akathisia) and insomnia are common. Long half-life: changes take about 2 weeks to show fully.",
+    items: [
+      {
+        label: "Schizophrenia, adult",
+        text: "Start 10–15 mg once daily; usual 15 mg; range 10–30 mg a day (BNF; Kaplan). Many clinicians start at 5 mg to reduce nausea, insomnia and akathisia (Kaplan). Increase no more often than every 1–2 weeks."
+      },
+      {
+        label: "Acute mania, adult",
+        text: "15 mg once daily, alone or with lithium or valproate; maximum 30 mg a day (BNF). Not effective for bipolar depression (Kaplan)."
+      },
+      {
+        label: "Depression, add-on (specialist)",
+        text: "Low doses, commonly 2–5 mg a day and rarely above 15 mg (US product information). Confirm with local protocol."
+      },
+      {
+        label: "Older adults",
+        text: "Start low (for example 5 mg) and increase slowly; clearance is lower (Kaplan). Higher death and stroke risk in dementia."
+      },
+      {
+        label: "Interacting drugs",
+        text: "With a strong CYP2D6 inhibitor (fluoxetine, paroxetine) or strong CYP3A4 inhibitor: use about half the dose. With carbamazepine, rifampicin or phenytoin: dose may need to double (product information). Readjust when the interacting drug stops."
+      },
+      {
+        label: "Switching to aripiprazole",
+        text: "Cross-taper over 2–4 weeks: start aripiprazole and reduce the old drug gradually. Stopping a sedating or strongly D2-blocking drug abruptly can cause rebound insomnia, agitation or worsening psychosis."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Akathisia on aripiprazole: recognising and managing it without scales",
+      best_for: "New restlessness, agitation or insomnia in the first weeks of aripiprazole.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Ask: do you feel restless inside, unable to sit still? Watch: rocking, shifting legs while seated, pacing, standing up and sitting down repeatedly. Kaplan warns this can be highly distressing and often makes patients stop.",
+        "Do not mistake it for worsening psychosis or anxiety and do not increase the antipsychotic dose. Akathisia can increase suicidal and violent impulses: ask about them.",
+        "First: reduce the dose (for example back to 5–10 mg) or slow the titration.",
+        "If it persists: propranolol 10 mg two or three times daily, increasing if needed, is the usual first drug (Kaplan: beta-blockers are most effective) unless there is asthma, heart block or low blood pressure (see Propranolol). A benzodiazepine short-term, or mirtazapine or cyproheptadine at low dose, are alternatives (specialist).",
+        "Anticholinergics such as trihexyphenidyl or biperiden are not the drugs of choice for akathisia (Kaplan).",
+        "If severe and not settling within 1–2 weeks: switch to another antipsychotic."
+      ],
+      monitor: [
+        "Restlessness and sleep at each visit in the first month",
+        "Pulse and BP if propranolol is started"
+      ],
+      cautions: [
+        "Insomnia on aripiprazole: give the dose in the morning."
+      ]
+    },
+    {
+      title: "Choosing aripiprazole for a patient with weight gain, diabetes or high prolactin",
+      best_for: "Switching from olanzapine, clozapine-free regimens, risperidone or haloperidol because of metabolic or prolactin problems.",
+      requires: [
+        "glucometer"
+      ],
+      steps: [
+        "Record weight, waist, glucose and blood pressure before the switch so improvement can be shown (see the tape, scale and glucometer method).",
+        "Start aripiprazole 5–10 mg once daily while continuing the old drug, then reduce the old drug over 2–4 weeks.",
+        "Warn the patient: sleep may be worse and restlessness may appear in the first weeks; call if suspiciousness or voices return.",
+        "Women: periods and fertility often return within weeks as prolactin falls. Discuss contraception before switching.",
+        "Watch for new impulse-control problems (gambling, spending, sexual behaviour, overeating) reported with aripiprazole (product information)."
+      ],
+      monitor: [
+        "Weight, waist and glucose at 3 months",
+        "Relapse signs during the cross-taper"
+      ],
+      cautions: [
+        "Stopping a sedating drug abruptly while starting aripiprazole can cause rebound insomnia and agitation: taper."
+      ]
+    },
+    {
+      title: "Weight, sugar and blood pressure checks with a tape, a scale and a glucometer",
+      best_for: "Outpatient or health-centre follow-up of anyone on a second-generation antipsychotic, where laboratory lipids and HbA1c are not available.",
+      requires: [
+        "glucometer"
+      ],
+      steps: [
+        "Before starting, record: weight, height, waist at the level of the navel with a tape measure, blood pressure, and a family history of diabetes, high blood pressure and heart disease (Kaplan lists these checks).",
+        "Check a blood glucose with a glucometer, fasting if possible (before breakfast). No glucometer: a urine dipstick for glucose picks up only marked high sugar, but is better than nothing.",
+        "Weigh at every visit for at least the first 6 months after starting or changing the drug (Kaplan). Write weight and waist on the patient's card so any clinic can compare.",
+        "A rise of about 5 % of starting body weight (for example 3 kg in a 60 kg person) in the first months is a warning: give diet and activity advice and review the choice of drug.",
+        "Repeat glucose and blood pressure at about 3 months, then at least once a year. Ask each visit about thirst, passing a lot of urine, tiredness and weight loss despite eating.",
+        "If weight or sugar rise despite advice, consider a lower-risk drug (aripiprazole, or haloperidol if movement side effects allow) with the prescriber."
+      ],
+      monitor: [
+        "Weight and waist every visit early on",
+        "Glucose at baseline, about 3 months, then yearly",
+        "Blood pressure"
+      ],
+      cautions: [
+        "Vomiting, deep fast breathing and drowsiness in someone on an antipsychotic may be diabetic ketoacidosis: check glucose at once and refer."
+      ]
+    }
+  ],
+  paediatric: [
+    "Adolescents 15–17 years with schizophrenia (EU) or 13–17 years (US): specialist use; commonly 2 mg daily for 2 days, 5 mg for 2 days, then 10 mg daily (product information).",
+    "Mania in adolescents 13–17 years, tic disorders and irritability in autism: specialist use with doses from BNF for Children or the product information.",
+    "Sleepiness, vomiting and restlessness are common in children (Kaplan). Weight gain is less than with risperidone but still occurs.",
+    "Suicidal thoughts can increase in young people: follow up closely."
+  ],
+  cautions: [
+    "Akathisia, restlessness and insomnia (Kaplan).",
+    "Nausea, headache, dizziness; postural hypotension is possible, especially with antihypertensives (Kaplan).",
+    "Impulse-control problems (gambling, hypersexuality, compulsive shopping or eating): ask about them.",
+    "Low risk of weight gain, diabetes, prolactin rise and QT change (Kaplan), but neuroleptic malignant syndrome, tardive dyskinesia and seizures can still occur.",
+    "Older people with dementia: higher death and stroke risk.",
+    "Can lower prolactin and restore fertility after a switch: pregnancy may follow."
+  ],
+  antidote: "No specific antidote. Supportive care.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "The effective range is 10–30 mg a day; the labelled start is 10–15 mg, but nausea, insomnia and akathisia lead many clinicians to start at 5 mg.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1941"
+    },
+    {
+      book: "kaplan",
+      text: "Aripiprazole seldom causes parkinsonism but often causes distressing akathisia-like restlessness and insomnia; weight gain, diabetes, prolactin rise and QT change are not typical.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1941"
+    },
+    {
+      book: "kaplan",
+      text: "Carbamazepine lowers aripiprazole levels; fluoxetine, paroxetine and ketoconazole raise them. Lithium and valproate do not change them.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1940"
+    },
+    {
+      book: "kaplan",
+      text: "The half-life is about 75 hours, allowing once-daily dosing; clearance is lower in older people.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1940"
+    },
+    {
+      book: "kaplan",
+      text: "In schizophrenia, 15–30 mg a day was effective in short trials and for maintenance; aripiprazole is also used for mania, alone or with lithium or valproate.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1939"
+    },
+    {
+      book: "kaplan",
+      text: "Aripiprazole does not appear to work for bipolar depression.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 6 Bipolar Disorders, pdf p. 1201"
+    },
+    {
+      book: "kaplan",
+      text: "Risperidone and aripiprazole are approved (US) for schizophrenia in 13–17-year-olds.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 2.16 Early-Onset Schizophrenia, pdf p. 666"
+    },
+    {
+      book: "kaplan",
+      text: "Long-acting injections exist for fluphenazine, haloperidol, risperidone, paliperidone, aripiprazole and olanzapine; some oral cover is needed at the start.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1142"
+    }
+  ],
+  sources: [
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Aripiprazole (Abilify, Abilify Maintena), product information (SmPC and US label)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "haloperidol-decanoate",
+  name: "Haloperidol decanoate (long-acting depot)",
+  aka: [
+    "Haldol Decanoate",
+    "haloperidol depot",
+    "long-acting injectable antipsychotic",
+    "LAI"
+  ],
+  cls: "First-generation antipsychotic, long-acting depot injection (butyrophenone)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient"
+  ],
+  tags: [
+    "schizophrenia",
+    "psychosis",
+    "depot",
+    "long-acting injection",
+    "adherence",
+    "relapse prevention",
+    "antipsychotic"
+  ],
+  presentation: [
+    "50 mg/mL and 100 mg/mL oily solution (sesame oil), 1 mL ampoules. Check the strength every time: the two strengths look alike.",
+    "Store at room temperature, protected from light. Do not refrigerate or freeze.",
+    "Deep IM only. Never IV. Not for acute agitation: it takes days to work. Do not confuse with haloperidol LACTATE 5 mg/mL (short-acting)."
+  ],
+  indications: [
+    "Maintenance treatment of schizophrenia and other chronic psychoses in patients who have responded to haloperidol or another antipsychotic",
+    "Patients who often miss tablets, prefer an injection, or relapse when tablets stop"
+  ],
+  standard: {
+    summary: "Oral haloperidol first to check tolerance, then a low first injection, oral cover for the first weeks, then deep IM every 4 weeks at the lowest dose that keeps the patient well.",
+    items: [
+      {
+        label: "Before the first injection",
+        text: "Give at least one oral dose of haloperidol first to check for severe movement side effects or allergy (Kaplan). Ask about sesame allergy."
+      },
+      {
+        label: "Starting dose",
+        text: "Kaplan: a reasonable start is 25 mg (0.5 mL of 50 mg/mL). BNF: 25–75 mg every 4 weeks (older people 12.5–25 mg every 4 weeks). US product information: about 10–15 times the previous daily oral haloperidol dose, with no more than 100 mg as the first injection. Start at the low end for anyone new to depots."
+      },
+      {
+        label: "Oral cover and dose steps",
+        text: "Continue oral haloperidol, reducing it, for about the first month: steady levels can take months (Kaplan). If symptoms return in the first 2–4 weeks, use extra oral doses; after 3–4 weeks the injection can be increased to cover the total that was needed (Kaplan). BNF: increase in steps of up to 50 mg every 4 weeks; usual maximum 300 mg every 4 weeks (confirm with local protocol)."
+      },
+      {
+        label: "Maintenance",
+        text: "Usually every 4 weeks. Reduce slowly to the lowest effective dose once stable (Kaplan: consider about 20 % reductions every 6 months after stabilisation). Volumes above 3 mL should be split between two sites (US product information)."
+      },
+      {
+        label: "Switching from depot to tablets",
+        text: "Give the first oral dose on the day the next injection would have been due (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Test dose and first injections safely at a health centre",
+      best_for: "Starting haloperidol decanoate in a patient already stable on oral haloperidol (or another antipsychotic).",
+      requires: [
+        "im",
+        "oral"
+      ],
+      steps: [
+        "Confirm the patient has taken oral haloperidol before without severe dystonia, rigidity or allergy. If they never have, give oral haloperidol 1.5–5 mg daily for a few days first (Kaplan).",
+        "Check strength and volume twice with a second person: 25 mg = 0.5 mL of 50 mg/mL, or 0.25 mL of 100 mg/mL. Use a 1 mL syringe for small volumes.",
+        "Give the first injection low (25 mg; older or frail 12.5 mg). Kaplan: early absorption can be faster and cause frightening dystonia that puts patients off treatment.",
+        "Keep the patient in the clinic for about 30 minutes, and give the family written warning signs: twisted neck, eyes rolling up, tongue or jaw spasm, stiffness, high fever, confusion. Give a few oral biperiden or trihexyphenidyl tablets only if the patient is at high risk of dystonia (young men) and cannot return quickly.",
+        "Continue oral haloperidol (reducing) for about 4 weeks, then stop it if the patient is well.",
+        "Review at 1–2 weeks and before the second injection: mental state, stiffness, tremor, restlessness."
+      ],
+      monitor: [
+        "Dystonia in the first 3 days",
+        "Stiffness, tremor, restlessness at every visit",
+        "Fever with rigidity or confusion at any time (neuroleptic malignant syndrome)"
+      ],
+      cautions: [
+        "A depot cannot be removed. Side effects can last weeks, and neuroleptic malignant syndrome is more often fatal when a depot is involved (Kaplan)."
+      ]
+    },
+    {
+      title: "Injection technique for an oily depot",
+      best_for: "Any nurse or health officer giving the injection.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Check patient, drug (decanoate, not lactate), strength (50 or 100 mg/mL), dose, date and the site used last time.",
+        "Warm the ampoule in your hand for a minute so the oil flows. Draw up with a wide needle, then change to a 21 G needle long enough to reach deep muscle (usually 38 mm; longer for large buttocks).",
+        "Site: ventrogluteal or upper outer quadrant of the buttock. Alternate sides each time and record the side on the card.",
+        "Use a Z-track technique. Aspirate for several seconds; if blood appears, withdraw and use a new site. Oil must never enter a vein.",
+        "Inject slowly (oil is thick). Withdraw, release the skin, do not massage.",
+        "More than 3 mL: split between two sites (US product information)."
+      ],
+      monitor: [
+        "Pain, lumps, redness or abscess at the site at the next visit"
+      ],
+      cautions: [
+        "Sesame allergy: do not use.",
+        "Never IV, never subcutaneous, never mixed with any other injection in the syringe."
+      ]
+    },
+    {
+      title: "Depot out of stock, or patient late for the injection",
+      best_for: "Stock-outs of haloperidol decanoate, or a patient arriving late.",
+      requires: [
+        "oral",
+        "im"
+      ],
+      steps: [
+        "Late by less than one dosing interval and well: give the usual dose and set the next date from today.",
+        "Late by more than one interval, or early relapse signs: give the usual dose if it was tolerated before, and add oral haloperidol for a short time if symptoms are returning. Increase follow-up.",
+        "Several months since the last injection: treat as a new start with a low first dose and oral cover (tolerance to side effects is lost).",
+        "Out of stock: switch to fluphenazine decanoate if stocked. There is no exact conversion: start with the fluphenazine test dose (12.5 mg; see Fluphenazine decanoate) when the next haloperidol injection is due, and cover with oral haloperidol as needed.",
+        "No depot at all: give daily oral haloperidol from the day the next injection is due, supervised by family or a health extension worker. A usual oral dose is about 5 mg a day (Kaplan); adjust to response and side effects rather than calculating an exact equivalent.",
+        "Record the switch on the card and plan to return to the depot when stock arrives. Guidance varies: confirm with local protocol."
+      ],
+      monitor: [
+        "Relapse signs in the weeks after a missed or delayed injection",
+        "Movement side effects when restarting"
+      ],
+      cautions: [
+        "A late patient who is feverish, stiff and confused may have neuroleptic malignant syndrome, not relapse."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not recommended for children and adolescents (product information). Specialist decision only."
+  ],
+  cautions: [
+    "Movement side effects are common: acute dystonia (especially early and in young men), parkinsonism, akathisia, tardive dyskinesia, which can appear up to 8 weeks after a depot is stopped (Kaplan).",
+    "Neuroleptic malignant syndrome, with higher mortality when depots are involved (Kaplan).",
+    "QT prolongation and torsades de pointes: avoid with amiodarone, quinine and other QT drugs; ask about fainting and palpitations.",
+    "Effects last weeks and cannot be removed: do not use in someone who has never taken an antipsychotic, in Parkinson disease or Lewy body dementia, or in older people with dementia (higher death and stroke risk).",
+    "Raised prolactin, sedation, postural hypotension, lower seizure threshold, poor heat control in hot weather."
+  ],
+  antidote: "No antidote; the depot keeps releasing drug for weeks. Dystonia or parkinsonism: biperiden or trihexyphenidyl, often for longer than with oral drugs. Neuroleptic malignant syndrome: stop further injections and treat urgently.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Give at least one oral dose first to check for severe movement effects or allergy; a reasonable start is haloperidol decanoate 25 mg (0.5 mL). Cover symptoms in the next 2–4 weeks with oral doses, then after 3–4 weeks give a single injection equal to the total given.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1971"
+    },
+    {
+      book: "kaplan",
+      text: "Start low: absorption can be faster at first and cause frightening dystonia; some clinicians give small doses (haloperidol decanoate 6.25 mg) every few days at the start.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1971"
+    },
+    {
+      book: "kaplan",
+      text: "Depot haloperidol is given every 1–4 weeks and may take up to 6 months to reach steady state, so oral treatment continues for about the first month.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf pp. 1952–1953"
+    },
+    {
+      book: "kaplan",
+      text: "Neuroleptic malignant syndrome mortality can reach 20–30 percent or more when depot drugs are involved.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1958"
+    },
+    {
+      book: "kaplan",
+      text: "Tardive dyskinesia can begin up to 8 weeks after a depot antipsychotic is stopped.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1140"
+    },
+    {
+      book: "kaplan",
+      text: "When switching from a first-generation depot to an oral second-generation drug, give the first oral dose on the day the next injection is due.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1949"
+    },
+    {
+      book: "kaplan",
+      text: "With a long-acting injection, missed doses are known at once and there is time to act before the effect wears off.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 5 Schizophrenia Spectrum and Other Psychotic Disorders, pdf p. 1143"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder)"
+    },
+    {
+      name: "WHO Model List of Essential Medicines (current edition) and WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Haloperidol decanoate injection, product information (SmPC and US label)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "trihexyphenidyl",
+  name: "Trihexyphenidyl (benzhexol)",
+  aka: [
+    "Benzhexol",
+    "Artane",
+    "Pacitane"
+  ],
+  cls: "Anticholinergic (antimuscarinic) antiparkinsonian agent",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical"
+  ],
+  tags: [
+    "drug-induced parkinsonism",
+    "extrapyramidal side effects",
+    "EPS",
+    "acute dystonia",
+    "anticholinergic",
+    "misuse",
+    "benzhexol"
+  ],
+  presentation: [
+    "Tablets 2 mg and 5 mg. Oral only: no injection.",
+    "Syrup (for example 5 mg/5 mL) in some settings; check strength."
+  ],
+  indications: [
+    "Drug-induced parkinsonism from antipsychotics (stiffness, tremor, slow movement, drooling)",
+    "Acute dystonia after the airway is safe and when no injectable anticholinergic is available (slower than injection), and to prevent recurrence for some days afterwards",
+    "Short-term prevention of dystonia in selected high-risk patients (young men starting a high-potency antipsychotic or depot, or after a previous dystonia)",
+    "Idiopathic Parkinson disease and some dystonias (neurology use)"
+  ],
+  standard: {
+    summary: "Treat movement side effects when they appear; do not give routinely with every antipsychotic. Lowest dose, review after 4–8 weeks and taper. Small supplies: it is misused.",
+    items: [
+      {
+        label: "Drug-induced parkinsonism, adult",
+        text: "WHO mhGAP and BNF: start 1 mg once daily and increase gradually; usual 4–12 mg a day in 3–4 divided doses (BNF usual 5–15 mg a day); maximum 20 mg a day. Kaplan's table lists 2–5 mg three times daily. Confirm with local protocol. First consider lowering the antipsychotic dose or switching to a drug with fewer movement effects."
+      },
+      {
+        label: "Acute dystonia, adult (no injection available, airway safe)",
+        text: "2 mg by mouth, repeated once after about an hour if needed; works more slowly than IM biperiden or promethazine. Then 2 mg two or three times daily for several days while the antipsychotic dose is reviewed. Confirm with local protocol."
+      },
+      {
+        label: "Review and stopping",
+        text: "Review after 4–8 weeks: taper over 1–2 weeks to see if it is still needed (Kaplan). About half of patients need to continue (Kaplan). Never stop suddenly after long use: rebound stiffness and restlessness, and rarely a neuroleptic malignant-like state."
+      },
+      {
+        label: "Prophylaxis",
+        text: "Routine prophylaxis is usually not indicated (Kaplan; WHO mhGAP advises against routine anticholinergics). Consider only for high-risk patients (young men on high-potency drugs or depots, or after a dystonia) for 4–8 weeks, then taper."
+      },
+      {
+        label: "Older adults",
+        text: "Avoid if possible: confusion, delirium, urinary retention, constipation and falls. If essential, 1 mg a day and increase very slowly. Prefer lowering the antipsychotic or switching (for example to quetiapine)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Trihexyphenidyl misuse: recognising it and prescribing to prevent it",
+      best_for: "Outpatient and psychiatric clinics, pharmacies and prisons where benzhexol is widely stocked.",
+      requires: [],
+      steps: [
+        "Know why it is misused: trihexyphenidyl is the most stimulating anticholinergic and has a mood-lifting effect (Kaplan). High doses cause euphoria and hallucinations.",
+        "Warning signs: asking for it by name or for more, 'lost' prescriptions, early refills, taking it without any stiffness or tremor, getting it from several clinics or pharmacies, a patient on a second-generation antipsychotic with no movement side effects who insists on it, use with alcohol, khat or cannabis.",
+        "Examine for a real need: stiffness at the elbow, tremor, slow walking, reduced arm swing, drooling. If none, it is not needed.",
+        "Prescribe for a clear reason, write the indication on the card, give small quantities (for example 1–2 weeks), and review at 4–8 weeks with a taper plan.",
+        "In someone misusing it: do not stop abruptly after heavy use. Agree a written taper (for example reduce by 2 mg every 1–2 weeks), treat any real parkinsonism by lowering the antipsychotic or switching, and address other substance use.",
+        "Look for toxicity in misuse: confusion, hallucinations, hot flushed dry skin, big pupils, fast pulse, urinary retention, fever. Stop all anticholinergics and give supportive care (see Biperiden antidote)."
+      ],
+      monitor: [
+        "Quantity dispensed and refill dates",
+        "Movement examination at each review",
+        "Confusion, urinary retention, constipation"
+      ],
+      cautions: [
+        "Anticholinergic intoxication can be life-threatening, especially combined with amitriptyline, chlorpromazine, promethazine or olanzapine (Kaplan)."
+      ]
+    },
+    {
+      title: "Deciding whether an anticholinergic is really needed: a 3-minute movement check",
+      best_for: "Any patient on an antipsychotic asking for, or already on, trihexyphenidyl or biperiden.",
+      requires: [],
+      steps: [
+        "Watch the patient walk: reduced arm swing, shuffling, stooped posture, slow turning suggest parkinsonism.",
+        "Feel the elbow and wrist while bending and straightening slowly: lead-pipe or cogwheel stiffness.",
+        "Look for tremor with the arms outstretched and at rest, drooling and a mask-like face (Kaplan). Parkinsonism usually starts within weeks to 3 months of starting or increasing the drug (Kaplan).",
+        "Ask about inner restlessness and watch for rocking or pacing: that is akathisia. Trihexyphenidyl is not the right drug; lower the dose or use propranolol (Kaplan).",
+        "Look at the tongue and mouth at rest for writhing, chewing or lip-smacking movements: that is tardive dyskinesia. Anticholinergics can make it worse. Do not start or increase them; plan a slow taper and refer.",
+        "Only real parkinsonism or dystonia justifies trihexyphenidyl. Record what you found."
+      ],
+      monitor: [
+        "Repeat the check at 4–8 weeks before deciding to continue"
+      ],
+      cautions: [
+        "Low mood, slowness and a flat face can be depression or negative symptoms rather than parkinsonism (Kaplan)."
+      ]
+    },
+    {
+      title: "Anticholinergic load in older or medically ill patients",
+      best_for: "Patients on several drugs with anticholinergic effects (trihexyphenidyl, amitriptyline, chlorpromazine, olanzapine, clozapine, promethazine).",
+      requires: [],
+      steps: [
+        "List every medicine with anticholinergic effects, including cough and cold remedies and sleeping tablets bought at pharmacies.",
+        "Check by hand: pulse (fast), temperature, dry mouth and skin, pupil size, bladder (palpable, or not passed urine), bowels, and orientation and attention.",
+        "Remove what you can: usually trihexyphenidyl first (taper if used for a long time), then change amitriptyline to fluoxetine or sertraline, and chlorpromazine to haloperidol or quetiapine if clinically possible.",
+        "In glaucoma, prostatic enlargement or urinary retention, avoid trihexyphenidyl if at all possible (Kaplan)."
+      ],
+      monitor: [
+        "Confusion, urinary retention, constipation, falls"
+      ],
+      cautions: [
+        "In hot weather anticholinergics reduce sweating: risk of heat stroke, especially with antipsychotics."
+      ]
+    }
+  ],
+  paediatric: [
+    "Children and adolescents with drug-induced dystonia or parkinsonism: specialist advice; doses from BNF for Children. Young people are more prone to confusion and misuse.",
+    "Specialist neurology use for childhood dystonias uses different, higher-dose regimens: not covered here."
+  ],
+  cautions: [
+    "Anticholinergic effects: dry mouth, blurred vision, constipation (can progress to ileus, especially with clozapine), urinary retention, fast pulse, reduced sweating and heat stroke.",
+    "Avoid, or use only with great caution, in narrow-angle glaucoma, prostatic enlargement, urinary retention, bowel obstruction and myasthenia gravis (Kaplan).",
+    "Confusion, memory problems and delirium, especially in older people and in dementia.",
+    "Worsens tardive dyskinesia; not effective for akathisia (Kaplan).",
+    "Misuse for its stimulating, mood-lifting effect (Kaplan). Prescribe small amounts and review.",
+    "Life-threatening anticholinergic intoxication when combined with other anticholinergic drugs (Kaplan).",
+    "Do not stop suddenly after long use: rebound parkinsonism, and rarely a neuroleptic malignant-like syndrome."
+  ],
+  antidote: "No routine antidote. Anticholinergic intoxication: stop all anticholinergic drugs, cool, IV fluids, catheter for urinary retention, benzodiazepine for agitation or seizures. Physostigmine only where cardiac monitoring and resuscitation are available (Kaplan).",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Trihexyphenidyl is listed for drug-induced movement disorders at 2–5 mg by mouth three times daily (oral only).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, Table 21-3, pdf p. 1890"
+    },
+    {
+      book: "kaplan",
+      text: "Of the anticholinergic drugs, trihexyphenidyl is the most stimulating, and benztropine the least, so the least linked to abuse.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2211"
+    },
+    {
+      book: "kaplan",
+      text: "Anticholinergics are sometimes misused for their mild mood-lifting effect, trihexyphenidyl most of all.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf pp. 2212–2213"
+    },
+    {
+      book: "kaplan",
+      text: "Combining anticholinergics with other strongly anticholinergic drugs (first-generation antipsychotics, tricyclics, cold remedies) can cause life-threatening anticholinergic intoxication: delirium, seizures, fever, flushed dry skin, big pupils, quiet bowel. Stop all anticholinergics first.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2213"
+    },
+    {
+      book: "kaplan",
+      text: "Routine prophylaxis against drug-induced parkinsonism is usually not needed; treat when it appears. For parkinsonism give for 4–8 weeks, then stop over 1–2 weeks to see if it is still needed.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf pp. 2213–2214"
+    },
+    {
+      book: "kaplan",
+      text: "Use anticholinergics cautiously, if at all, with prostatic enlargement, urinary retention or narrow-angle glaucoma.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2212"
+    },
+    {
+      book: "kaplan",
+      text: "Withdraw anticholinergics after 4–6 weeks to test whether they are still needed; about half of patients need to continue.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21 Psychopharmacology, Medication-Induced Movement Disorders, pdf p. 1886"
+    },
+    {
+      book: "dsm",
+      text: "Casebook: big pupils, quiet bowel sounds, urinary retention and fluctuating attention pointed to an anticholinergic delirium.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 17 Neurocognitive Disorders, case 17.2 Agitated and Confused, pdf p. 414"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses; Bipolar disorder)"
+    },
+    {
+      name: "WHO Model List of Essential Medicines (current edition) and WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021"
+    },
+    {
+      name: "Trihexyphenidyl tablets, product information (SmPC)"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "propranolol",
+  name: "Propranolol",
+  aka: [
+    "Inderal"
+  ],
+  cls: "Non-selective beta-blocker",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical",
+    "emergency"
+  ],
+  tags: [
+    "akathisia",
+    "lithium tremor",
+    "performance anxiety",
+    "somatic anxiety",
+    "palpitations",
+    "tremor",
+    "beta-blocker",
+    "antipsychotic side effect"
+  ],
+  presentation: [
+    "Tablets 10 mg and 40 mg (80 mg and 160 mg also exist; slow-release capsules in some countries). Check the strength: 10 mg and 40 mg tablets can look alike.",
+    "Oral solution in some countries. Injection 1 mg/mL exists but is rarely stocked and is not used for psychiatric indications.",
+    "Cheap and widely stocked for hypertension, migraine and thyrotoxicosis."
+  ],
+  indications: [
+    "Antipsychotic-induced akathisia (inner restlessness, pacing), after reducing the antipsychotic dose",
+    "Lithium-induced (and valproate or antidepressant-induced) fine postural tremor",
+    "Performance anxiety (single doses before a feared event)",
+    "Physical symptoms of anxiety (palpitations, tremor) as a short-term add-on, not as the main treatment of an anxiety disorder",
+    "Adjunct only in alcohol withdrawal (never instead of a benzodiazepine)"
+  ],
+  standard: {
+    summary: "Low oral doses, pulse and blood pressure checked before doses. Never in asthma. Taper, never stop suddenly. Dangerous in overdose: give small supplies to anyone at risk of self-harm.",
+    items: [
+      {
+        label: "Akathisia",
+        text: "First reduce the antipsychotic dose or change to a drug less likely to cause akathisia. Then propranolol 10 mg two or three times daily, increased every few days if needed; usual total 30–80 mg a day (Maudsley). Kaplan lists 20–40 mg three times daily and an emergency range of 30–120 mg a day. Confirm with local protocol."
+      },
+      {
+        label: "Lithium tremor",
+        text: "First check it is not lithium toxicity (coarse tremor, vomiting, diarrhoea, unsteadiness, confusion). Lower the lithium dose if possible, cut down coffee and tea, and give lithium at bedtime. If the fine tremor still disables: propranolol 10 mg two or three times daily, increasing slowly; Kaplan's range is 20–160 mg a day in two or three doses."
+      },
+      {
+        label: "Performance anxiety",
+        text: "10–40 mg once, 20–30 minutes (up to 1 hour) before the event (Kaplan). Try the first dose on an ordinary day to learn how it feels. Not for panic disorder: benzodiazepines or SSRIs work better (Kaplan)."
+      },
+      {
+        label: "Physical symptoms of anxiety",
+        text: "40 mg once daily, increased to 40 mg two or three times daily if needed (BNF). Short term, alongside psychological help and, for an anxiety disorder, an SSRI (mhGAP)."
+      },
+      {
+        label: "Checks before each dose",
+        text: "Withhold if pulse is below 50/min or systolic blood pressure below 90 mm Hg; stop and review for severe dizziness, unsteadiness or wheeze (Kaplan). In people at risk of low pulse or blood pressure start with 20 mg a day or less."
+      },
+      {
+        label: "Stopping",
+        text: "Never stop suddenly after regular use: rebound fast pulse, tremor and, in heart disease, angina. Reduce over 1–2 weeks (Kaplan: larger doses step down to 60 mg a day, then by 10–20 mg every 3–4 days)."
+      },
+      {
+        label: "Alcohol withdrawal",
+        text: "Adjunct only, for persistent fast pulse and tremor once enough benzodiazepine has been given. It does not prevent seizures or delirium and can hide the signs used to dose benzodiazepines (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Akathisia on the ward or in clinic, with pulse and blood pressure checked by hand",
+      best_for: "Restless, pacing patient on haloperidol, fluphenazine decanoate or another antipsychotic, where no monitor is available.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Recognise akathisia: the patient says they feel restless inside, cannot sit still, shifts from foot to foot, rocks or paces. It starts within days to weeks of starting or increasing an antipsychotic, especially a depot or high-potency drug.",
+        "Do not mistake it for worsening psychosis. Giving more antipsychotic makes it worse. Ask directly about suicidal thoughts: akathisia can drive self-harm.",
+        "Tell the prescriber: reduce the antipsychotic dose, or change drug, first.",
+        "Before propranolol, ask about asthma, wheeze or chronic lung disease (do NOT give), heart failure, fainting, insulin-treated diabetes, and pregnancy.",
+        "Count the radial pulse for a full minute. Measure blood pressure if a cuff is available; if not, ask about dizziness on standing and check the patient can stand without feeling faint.",
+        "Give propranolol 10 mg. Recheck pulse and dizziness 1–2 hours after the first dose.",
+        "Continue 10 mg two or three times daily. If restlessness continues after 3–4 days and pulse stays 60 or more, increase to 20 mg two or three times daily. Most need no more than 30–80 mg a day.",
+        "Hold a dose if pulse is below 50, systolic BP below 90, or the patient is dizzy, unsteady or wheezy (Kaplan).",
+        "If there is no benefit after 1–2 weeks at a tolerated dose, stop propranolol by tapering and ask the prescriber about a short course of a benzodiazepine (diazepam) or changing the antipsychotic.",
+        "Once the akathisia settles and the antipsychotic dose is stable, reduce propranolol over 1–2 weeks rather than stopping suddenly."
+      ],
+      monitor: [
+        "Pulse before each dose for the first 3 days, then daily",
+        "Blood pressure daily at first if a cuff exists; otherwise dizziness on standing and falls",
+        "Wheeze or breathlessness",
+        "Restlessness score in words (none / mild / can't sit still) each day so improvement is visible",
+        "Mood and suicidal thoughts"
+      ],
+      cautions: [
+        "Asthma: even one dose can cause fatal bronchospasm, and salbutamol will not work well. Use a benzodiazepine for akathisia instead.",
+        "Propranolol does not treat acute dystonia or parkinsonism (Kaplan): use biperiden or trihexyphenidyl for those."
+      ]
+    },
+    {
+      title: "Lithium tremor where lithium levels cannot be measured",
+      best_for: "Outpatient or health centre following a patient on lithium with a tremor that interferes with writing, eating or work.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Look at the tremor: hold the arms out. A fine, fast tremor that has been present since starting lithium is a common side effect.",
+        "A NEW coarse tremor, or any tremor with vomiting, diarrhoea, unsteady walking, slurred speech, drowsiness or confusion is lithium toxicity until proven otherwise: stop lithium and follow the lithium toxicity case. Do not give propranolol.",
+        "First steps: ask about coffee (buna), tea and energy drinks and cut them down; ask the prescriber about a lower dose or taking all of the lithium at bedtime; check for dehydration and new drugs (NSAIDs, diuretics, ACE inhibitors).",
+        "If still disabling: propranolol 10 mg two or three times daily; increase by 10 mg per dose every week if needed, watching pulse. Kaplan's usual range is 20–160 mg a day.",
+        "Teach the patient and family: if the tremor becomes coarse or other toxicity symptoms appear while on propranolol, stop lithium and come immediately. Propranolol can hide a worsening tremor, but not the other signs."
+      ],
+      monitor: [
+        "Tremor (hands outstretched, writing a sentence) at each visit",
+        "Pulse at each visit",
+        "Signs of lithium toxicity: vomiting, diarrhoea, unsteadiness, slurred speech, confusion"
+      ],
+      cautions: [
+        "Beta-blockers can worsen depression, fatigue and nightmares in some people (Kaplan); watch mood in bipolar disorder."
+      ]
+    },
+    {
+      title: "Propranolol overdose without a cardiac monitor",
+      best_for: "Emergency or medical ward; propranolol is a common and dangerous overdose because it is cheap and widely available.",
+      requires: [
+        "iv",
+        "glucometer"
+      ],
+      steps: [
+        "Treat as life-threatening even if the patient looks well: collapse, seizures and cardiac arrest can come within 1–2 hours of a large ingestion. Call for senior help and contact poisons advice if available.",
+        "Airway, breathing, circulation. Put on oxygen if available. Insert a large IV cannula.",
+        "Check glucose now and hourly: beta-blocker poisoning can cause low glucose, especially in children.",
+        "Activated charcoal only if within about 1 hour of ingestion, the patient is fully awake and can protect the airway.",
+        "Slow pulse or low blood pressure: lie flat with legs raised, give an IV fluid bolus (for example 500 mL Ringer's lactate, then reassess the chest), and atropine 0.5–1 mg IV repeated up to 3 mg (adult). Atropine often helps only a little.",
+        "If glucagon is stocked it is the specific treatment: seek poisons or specialist advice for the dose (BNF: bolus of 50–150 micrograms/kg IV, then an infusion).",
+        "Still shocked: adrenaline infusion (see Adrenaline entry, gravity method). High-dose insulin with glucose is used in intensive care; seek specialist advice.",
+        "Seizures: diazepam or midazolam. Bronchospasm: salbutamol nebuliser (may need repeated doses).",
+        "No ECG monitor: count the pulse every 15 minutes, check blood pressure, feel for irregular rhythm, and arrange transfer to a unit with ECG monitoring if possible. Observe for at least 6 hours even without symptoms; longer after slow-release tablets.",
+        "Once medically safe: suicide risk assessment before discharge."
+      ],
+      monitor: [
+        "Pulse, blood pressure, breathing rate and consciousness every 15 minutes for the first 2 hours",
+        "Glucose hourly",
+        "Urine output"
+      ],
+      cautions: [
+        "Propranolol also blocks sodium channels in overdose: seizures and broad-complex rhythms occur at high doses.",
+        "In a patient who may harm themselves, prescribe only a week's supply at a time."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not routinely used for akathisia or anxiety in children; seek specialist advice and use BNF for Children dosing.",
+    "Children and adolescents on antipsychotics can develop akathisia; reduce the antipsychotic first.",
+    "Accidental ingestion by a child can cause low glucose, slow pulse and seizures: observe in hospital and check glucose."
+  ],
+  cautions: [
+    "Asthma or history of bronchospasm: do not use (Kaplan contraindication). Caution in COPD.",
+    "Slow pulse, heart block, heart failure, low blood pressure, severe peripheral vascular disease or Raynaud phenomenon.",
+    "Insulin-treated diabetes: hides the warning signs of hypoglycaemia (fast pulse, tremor) and delays recovery (Kaplan lists it as a contraindication). Sweating is still present.",
+    "Hides the signs of thyrotoxicosis and of hypoglycaemia; do not stop suddenly in thyrotoxicosis or heart disease.",
+    "Tiredness, nightmares, sleep problems, low mood and sexual dysfunction; rarely depression or confusion (Kaplan).",
+    "Older people: falls from low blood pressure and slow pulse; start with 10 mg once or twice daily.",
+    "Very toxic in overdose: supply small amounts to people at risk of suicide.",
+    "Smoking, phenobarbital and phenytoin lower propranolol levels; propranolol raises levels of antipsychotics (Kaplan)."
+  ],
+  antidote: "No simple antidote. Support circulation: fluids, atropine 0.5–1 mg IV up to 3 mg, glucagon if stocked (specialist or poisons advice for dosing), adrenaline infusion for shock, glucose for hypoglycaemia. Bronchospasm: salbutamol.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "For performance-type social anxiety, propranolol 10–40 mg is taken 20–30 minutes before the feared event; beta-blockers are less useful than benzodiazepines or SSRIs for panic disorder.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics (beta-adrenergic receptor antagonists), pdf p. 2128"
+    },
+    {
+      book: "kaplan",
+      text: "Lithium tremor: first lower the lithium dose, cut caffeine and give lithium at bedtime; if that fails, propranolol 20–160 mg a day in two or three doses is usually enough.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics (beta-adrenergic receptor antagonists), pdf p. 2129"
+    },
+    {
+      book: "kaplan",
+      text: "Beta-blockers treat antipsychotic-induced akathisia better than anticholinergics or benzodiazepines, but do not help acute dystonia or parkinsonism.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics (beta-adrenergic receptor antagonists), pdf p. 2129"
+    },
+    {
+      book: "kaplan",
+      text: "Contraindications listed: asthma, insulin-treated diabetes (blocks the response to hypoglycaemia), heart failure, significant vascular disease, persistent angina and hyperthyroidism; they can worsen heart block. All beta-blockers pass into breast milk.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics (beta-adrenergic receptor antagonists), pdf p. 2130"
+    },
+    {
+      book: "kaplan",
+      text: "Check pulse and blood pressure regularly; withhold the dose if pulse is under 50 or systolic BP under 90 mm Hg, stop for severe dizziness, unsteadiness or wheeze, and never stop suddenly — taper.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics (beta-adrenergic receptor antagonists), pdf p. 2133"
+    },
+    {
+      book: "kaplan",
+      text: "Emergency table: akathisia is managed by reducing the antipsychotic dose and giving propranolol 30–120 mg a day, or a benzodiazepine or antihistamine.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 25.3 Psychiatric Emergencies, table of emergencies, pdf p. 2565"
+    },
+    {
+      book: "kaplan",
+      text: "Propranolol or clonidine can block the sympathetic symptoms of alcohol withdrawal but are not better than benzodiazepines and do not treat seizures or delirium.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 909"
+    }
+  ],
+  sources: [
+    {
+      name: "British National Formulary (BNF) and BNF for Children: propranolol; emergency treatment of poisoning (beta-blockers)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Other significant mental health complaints; Psychoses)"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021 (akathisia; lithium)"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "bromocriptine",
+  name: "Bromocriptine",
+  aka: [
+    "Parlodel"
+  ],
+  cls: "Dopamine agonist (ergot derivative)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "medical",
+    "icu",
+    "emergency",
+    "outpatient"
+  ],
+  tags: [
+    "neuroleptic malignant syndrome",
+    "NMS",
+    "hyperprolactinaemia",
+    "galactorrhoea",
+    "amenorrhoea",
+    "dopamine agonist",
+    "antipsychotic side effect"
+  ],
+  presentation: [
+    "Tablets 2.5 mg (capsules 5 mg and 10 mg in some countries). Oral only: there is no injection.",
+    "Tablets can be crushed and dispersed in water for a nasogastric tube.",
+    "Often stocked for prolactinoma or Parkinson disease; may not be available on a psychiatric ward — check the hospital pharmacy."
+  ],
+  indications: [
+    "Neuroleptic malignant syndrome (NMS): adjunct to stopping the antipsychotic, cooling, fluids and benzodiazepines, in moderate to severe cases or when supportive care is not working",
+    "Antipsychotic-induced hyperprolactinaemia (amenorrhoea, galactorrhoea, sexual dysfunction) when dose reduction or a change of antipsychotic is not possible — specialist decision only",
+    "Other (non-psychiatric) uses: prolactinoma, acromegaly, Parkinson disease"
+  ],
+  standard: {
+    summary: "Oral or nasogastric only. Start low; watch blood pressure, vomiting and mental state. It can make psychosis worse, so in psychiatry it is used mainly for NMS, where the benefit is clear.",
+    items: [
+      {
+        label: "Neuroleptic malignant syndrome",
+        text: "2.5 mg orally or by nasogastric tube two or three times daily (Kaplan Table 21-4), increased step by step according to response; Kaplan's text uses 20–30 mg a day in four divided doses, and the table allows up to 45 mg a day. Continue for at least 10 days after NMS has resolved (depot antipsychotic: longer), then reduce slowly: stopping suddenly can bring NMS back. Confirm with local protocol or specialist advice."
+      },
+      {
+        label: "Always with supportive care",
+        text: "Stop every antipsychotic (and metoclopramide), cool, give generous fluids, give lorazepam or diazepam, and look for infection. Bromocriptine is added, not substituted."
+      },
+      {
+        label: "Antipsychotic-induced hyperprolactinaemia",
+        text: "First: pregnancy test, lower the antipsychotic dose, or switch to a prolactin-sparing drug (aripiprazole, quetiapine, olanzapine), or add low-dose aripiprazole (specialist). Bromocriptine only if these fail and the psychosis has been stable: start 1.25 mg at night or twice daily with food (Kaplan) and increase slowly, no faster than weekly. Typical doses are 2.5 mg two or three times daily; confirm with specialist."
+      },
+      {
+        label: "Suppressing breast milk",
+        text: "Not recommended routinely: bromocriptine after delivery has been linked to hypertension, stroke, seizures, heart attack and postpartum psychosis. Never in pre-eclampsia or postpartum hypertension."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "NMS without an ICU or CK test: bromocriptine by nasogastric tube, with safety checks",
+      best_for: "Rigid, feverish, confused patient on an antipsychotic, on a medical or psychiatric ward, who cannot swallow safely.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Recognise NMS clinically: muscle rigidity, fever, sweating, fast or changing pulse and blood pressure, confusion or reduced consciousness, sometimes dark (cola-coloured) urine. It usually develops over 1–3 days (Kaplan).",
+        "Stop all antipsychotics now, including the depot. Record the date of the last depot injection: its effect lasts weeks.",
+        "Start supportive treatment first (see the NMS case): cooling with tepid sponging and fans, ice packs in the armpits and groin, IV fluids, lorazepam or diazepam for rigidity and agitation, and search for infection and malaria.",
+        "Give bromocriptine if the patient is not improving within about 24 hours of supportive care, or immediately if severe (temperature very high, reduced consciousness, marked rigidity) and it is stocked.",
+        "Nasogastric tube: sit the patient up at least 30 degrees. Confirm tube position by your local method before anything goes down it.",
+        "Crush one 2.5 mg tablet between two spoons, mix with 10–20 mL of clean water, give it down the tube with a syringe, then flush with 20–30 mL of water.",
+        "Check blood pressure (or pulse and dizziness if no cuff) before each dose. Hold if systolic BP is below 90.",
+        "Give 2.5 mg every 8 hours. If rigidity and fever are not improving, increase by 2.5 mg per dose each day under medical review, towards 5 mg four times daily (20 mg a day); Kaplan allows up to 45 mg a day. Confirm with specialist advice.",
+        "Keep going for at least 10 days after the patient has recovered, then reduce over about a week.",
+        "Do not restart any antipsychotic for at least 2 weeks after recovery; then use a low dose of a low-potency or second-generation drug, increased slowly, with daily temperature and rigidity checks (specialist)."
+      ],
+      monitor: [
+        "Temperature, pulse, blood pressure and breathing every 2–4 hours",
+        "Rigidity (bend the elbow: is it like a lead pipe?), consciousness and ability to swallow, each shift",
+        "Urine output and colour: aim for at least 0.5 mL/kg/h; dark urine means more fluid and suspected kidney injury",
+        "Vomiting (aspiration risk) and new hallucinations or agitation"
+      ],
+      cautions: [
+        "Bromocriptine can bring back or worsen psychosis (Kaplan). In NMS this risk is accepted; treat agitation with a benzodiazepine, not an antipsychotic.",
+        "Vomiting and low blood pressure are common at the start. A drowsy patient who vomits can aspirate: keep them upright and on their side if consciousness falls.",
+        "Serotonin syndrome, anticholinergic poisoning, heat stroke, meningitis, malaria and malignant catatonia can all look like NMS. Bromocriptine does not treat them."
+      ]
+    },
+    {
+      title: "No bromocriptine: NMS care with what is on the shelf",
+      best_for: "Health centre or district hospital with no dopamine agonist and no dantrolene.",
+      requires: [],
+      steps: [
+        "Stop all antipsychotics and metoclopramide. Do not give another antipsychotic for agitation.",
+        "Cool: remove clothing, tepid sponging with fanning, ice packs or cold wet towels to neck, armpits and groin. Paracetamol has little effect on this fever.",
+        "Fluids: oral if safe to swallow; otherwise IV Ringer's lactate or saline, generous volumes with chest checks, to protect the kidneys from muscle breakdown.",
+        "Benzodiazepine: lorazepam 1–2 mg IM or IV, or diazepam 5–10 mg slowly IV (never IM), repeated for rigidity and agitation while watching breathing.",
+        "Ask whether amantadine is stocked (Kaplan: 200–400 mg a day orally in divided doses); it is an alternative dopamine-acting drug. Dantrolene is given at referral hospitals.",
+        "Prevent clots and pressure sores; turn every 2 hours.",
+        "Refer to a hospital with high-dependency care if temperature stays high, consciousness falls, urine output drops, or breathing is failing."
+      ],
+      monitor: [
+        "Temperature, pulse, blood pressure, breathing every 1–2 hours",
+        "Urine output and colour",
+        "Consciousness"
+      ],
+      cautions: [
+        "Avoid anticholinergic drugs for sedation (promethazine, chlorpromazine): they stop sweating and worsen the fever.",
+        "Do not stop an established anticholinergic (biperiden, trihexyphenidyl) abruptly in the middle of NMS; ask a specialist."
+      ]
+    },
+    {
+      title: "Antipsychotic-induced amenorrhoea or galactorrhoea without a prolactin test",
+      best_for: "Outpatient or community clinic follow-up of a woman (or man with breast enlargement) on risperidone, haloperidol or a depot.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Ask about periods, breast milk leakage, breast enlargement, low libido and erectile problems. Patients rarely volunteer these.",
+        "Rule out pregnancy first (urine pregnancy test), and breastfeeding. Ask about headache and loss of side vision (possible pituitary tumour: refer).",
+        "Consider other causes: hypothyroidism, kidney disease, other drugs (metoclopramide, some antidepressants).",
+        "Discuss with the prescriber, in this order: lower the antipsychotic dose; change to a prolactin-sparing antipsychotic (olanzapine, quetiapine or aripiprazole); or add low-dose aripiprazole.",
+        "Bromocriptine is a last option, decided with a psychiatrist, only when the psychosis has been stable for months. Start 1.25 mg at night with food; increase slowly (no faster than weekly).",
+        "Warn the patient and family that bromocriptine can bring back voices, suspiciousness or excitement: return at once if this happens.",
+        "Counsel about contraception: when prolactin falls, periods and fertility come back quickly, often before the first normal period."
+      ],
+      monitor: [
+        "Mental state at every visit, with a family member's view",
+        "Blood pressure and dizziness after the first doses",
+        "Periods and breast symptoms monthly"
+      ],
+      cautions: [
+        "Never combine with ergometrine or other ergot drugs (hypertension, heart attack: Kaplan).",
+        "Long-term use can cause fibrosis of the lungs, pleura and retroperitoneum (Kaplan): ask about breathlessness, chest pain and back pain."
+      ]
+    }
+  ],
+  paediatric: [
+    "NMS is rare in children and adolescents but does occur; seek specialist advice for bromocriptine dosing.",
+    "Hyperprolactinaemia from risperidone is common in children and adolescents: reduce or change the antipsychotic rather than add bromocriptine."
+  ],
+  cautions: [
+    "Worsens or triggers psychosis, confusion and mania (Kaplan).",
+    "Postural hypotension, nausea and vomiting at the start: give with food, start low, first dose at bedtime.",
+    "Avoid in uncontrolled hypertension, pre-eclampsia, postpartum hypertension, coronary or severe vascular disease: vasospasm, stroke, seizures and heart attack reported.",
+    "Pregnancy and breastfeeding: suppresses milk; Kaplan lists pregnancy as a contraindication (see safety).",
+    "Liver disease: use with caution (Kaplan).",
+    "Long-term use: pulmonary, pleural and retroperitoneal fibrosis; heart valve problems with ergot dopamine agonists.",
+    "Impulse-control problems (gambling, compulsive eating or sex) and sudden sleep attacks with dopamine agonists.",
+    "Interactions: antipsychotics and metoclopramide oppose its effect; erythromycin and other macrolides raise its levels; ergot drugs must not be combined."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "NMS treatment table: bromocriptine 2.5 mg orally two or three times daily, increasing up to 45 mg a day, has been associated with lower mortality alone or combined.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics (medication-induced movement disorders), Table 21-4, pdf p. 1891"
+    },
+    {
+      book: "kaplan",
+      text: "In NMS: stop the antipsychotic, cool, monitor vital signs, fluids and urine output; bromocriptine 20–30 mg a day in four doses or amantadine may be added, usually for 5 to 10 days.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1958"
+    },
+    {
+      book: "kaplan",
+      text: "Besides supportive care, dantrolene and bromocriptine are the drugs most used for NMS; bromocriptine acts directly on dopamine receptors to overcome the antipsychotic block.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics (neuroleptic malignant syndrome), pdf p. 1888"
+    },
+    {
+      book: "kaplan",
+      text: "Dopamine agonists are used against raised prolactin from antipsychotics (amenorrhoea, galactorrhoea); bromocriptine remains in use for NMS.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2223"
+    },
+    {
+      book: "kaplan",
+      text: "Side effects are common and dose-related: nausea, vomiting, postural hypotension, headache, arrhythmias; psychiatric effects include hallucinations, delusions, confusion and mania. Start low and increase no faster than weekly.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2223"
+    },
+    {
+      book: "kaplan",
+      text: "The dose for psychiatric uses is uncertain; begin with 1.25 mg twice daily with meals (to reduce nausea) and increase gradually.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2225"
+    },
+    {
+      book: "kaplan",
+      text: "Dopamine agonists are listed as contraindicated in pregnancy and especially in nursing mothers because they suppress milk; ergot alkaloids with bromocriptine may cause hypertension and heart attack.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2224"
+    }
+  ],
+  sources: [
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021 (neuroleptic malignant syndrome; hyperprolactinaemia)"
+    },
+    {
+      name: "British National Formulary (BNF): bromocriptine"
+    },
+    {
+      name: "Bromocriptine (Parlodel) product information (SmPC)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "cyproheptadine",
+  name: "Cyproheptadine",
+  aka: [
+    "Periactin"
+  ],
+  cls: "Antihistamine with serotonin (5-HT2) blocking action",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "emergency",
+    "medical",
+    "icu",
+    "paediatric"
+  ],
+  tags: [
+    "serotonin syndrome",
+    "serotonin antagonist",
+    "antidote",
+    "SSRI side effect",
+    "akathisia",
+    "antihistamine",
+    "nasogastric"
+  ],
+  presentation: [
+    "Tablets 4 mg. Syrup 2 mg/5 mL (0.4 mg/mL).",
+    "Oral only: there is no injection. Tablets can be crushed and given by nasogastric tube.",
+    "Often sold in pharmacies as an appetite stimulant, so it may be easier to find than expected."
+  ],
+  indications: [
+    "Serotonin syndrome, moderate or severe: adjunct to stopping serotonergic drugs, benzodiazepines, cooling and fluids",
+    "SSRI-induced delayed orgasm or anorgasmia (Kaplan)",
+    "Akathisia not responding to first-line treatment (Kaplan: helps some patients)",
+    "Allergic conditions (itch, urticaria)"
+  ],
+  standard: {
+    summary: "Oral or nasogastric loading dose, then small repeated doses while symptoms last. Sedating and anticholinergic. It is an add-on: stopping the causative drugs and benzodiazepines are the main treatment.",
+    items: [
+      {
+        label: "Serotonin syndrome, adult",
+        text: "12 mg first dose, then 2 mg every 2 hours while symptoms continue; once controlled, 8 mg every 6 hours (Boyer and Shannon 2005). Maximum usually 32 mg in 24 hours. Usually needed for 24–48 hours, longer after fluoxetine overdose. Confirm with poisons advice or local protocol."
+      },
+      {
+        label: "Serotonin syndrome, child",
+        text: "Seek poisons or paediatric advice. Kaplan's everyday doses give a guide to the ceiling: 2–7 years maximum 12 mg a day, 7–14 years maximum 16 mg a day. Not recommended under 2 years."
+      },
+      {
+        label: "Everyday doses (Kaplan)",
+        text: "Adults 4–20 mg a day. SSRI-induced orgasm problems: 4–16 mg 1–2 hours before sexual activity. It can reduce the antidepressant effect, so use occasionally, not daily."
+      },
+      {
+        label: "Measuring",
+        text: "Syrup 2 mg/5 mL: 2 mg = 5 mL, 8 mg = 20 mL, 12 mg = 30 mL. Use a syringe, not a household spoon."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Patient cannot swallow: crushed cyproheptadine by nasogastric tube",
+      best_for: "Agitated, rigid or drowsy patient with moderate or severe serotonin syndrome; there is no injectable form.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Confirm serotonin syndrome: started within hours of starting, increasing or combining serotonergic drugs (fluoxetine, sertraline, escitalopram, amitriptyline, imipramine, lithium, tramadol, pethidine, ondansetron, metoclopramide, linezolid). Look for tremor, jerking (myoclonus, often worse in the legs), brisk reflexes, sweating, diarrhoea, dilated pupils, agitation and fever (Kaplan).",
+        "Stop all serotonergic drugs. Start benzodiazepines, cooling and fluids first (see the serotonin syndrome case).",
+        "Pass a nasogastric tube if it can be done safely with the patient calm enough (give the benzodiazepine first). Sit the patient up. Confirm the position by your local method.",
+        "Loading dose 12 mg: crush 3 × 4 mg tablets finely between two spoons, mix with 15–20 mL of clean water, draw into a syringe and give down the tube. Flush with 20–30 mL of water. If syrup is available, 30 mL = 12 mg.",
+        "Then 2 mg every 2 hours while jerking, rigidity, agitation or fever continue: half a 4 mg tablet crushed in 10 mL water, or 5 mL of syrup. Flush after each dose.",
+        "Once settled, 8 mg (2 tablets or 20 mL syrup) every 6 hours. Stop when symptoms have gone for about 24 hours.",
+        "Write every dose and time on the chart; do not exceed 32 mg in 24 hours without senior advice."
+      ],
+      monitor: [
+        "Temperature, pulse, blood pressure and breathing every 1–2 hours until improving",
+        "Muscle jerking, rigidity and reflexes before each dose, to judge response",
+        "Sedation and breathing (it adds to benzodiazepine sedation)",
+        "Urine output and bladder (retention), and bowel sounds"
+      ],
+      cautions: [
+        "Temperature above about 41 °C, falling consciousness or breathing difficulty means life-threatening serotonin syndrome: the patient needs sedation, paralysis and ventilation. Transfer urgently; cyproheptadine will not be enough.",
+        "Cyproheptadine is anticholinergic: it can worsen confusion, cause urinary retention and reduce sweating. If NMS or anticholinergic poisoning is the real diagnosis it will not help."
+      ]
+    },
+    {
+      title: "No cyproheptadine: cooling and benzodiazepines",
+      best_for: "Any facility where cyproheptadine is not stocked; also the first step everywhere.",
+      requires: [],
+      steps: [
+        "Stop all serotonergic drugs.",
+        "Benzodiazepine for agitation, tremor and muscle jerking: lorazepam 1–2 mg IM or IV, or diazepam 5–10 mg slowly IV or orally (never IM), repeated every 30 minutes as needed while watching breathing.",
+        "Cool: remove clothes, tepid sponging with fans, ice packs or cold wet cloths to neck, armpits and groin. Paracetamol does not treat this muscle-generated fever.",
+        "Fluids: oral or IV Ringer's lactate for sweating, diarrhoea and fever.",
+        "Avoid physical restraint where possible: fighting against restraint raises temperature and causes muscle breakdown.",
+        "Chlorpromazine is mentioned by Kaplan as a serotonin blocker, but it lowers blood pressure and the seizure threshold and is dangerous if the diagnosis is NMS: only with specialist advice.",
+        "Mild cases (tremor, brisk reflexes, no fever) usually settle within 24 hours of stopping the drugs: observe for at least 6–12 hours."
+      ],
+      monitor: [
+        "Temperature, pulse, blood pressure, breathing every 1–2 hours",
+        "Consciousness and breathing after each benzodiazepine dose"
+      ],
+      cautions: [
+        "After fluoxetine the syndrome can last longer because the drug stays in the body for weeks."
+      ]
+    },
+    {
+      title: "Serotonin syndrome in a child after accidental or deliberate ingestion",
+      best_for: "Paediatric or emergency ward; child who has swallowed a parent's antidepressant or a combination of drugs.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Weigh the child. Stop all serotonergic drugs. Give benzodiazepine for agitation or jerking by weight (see Diazepam or Lorazepam entries).",
+        "Cool and give fluids as for adults.",
+        "Seek poisons or paediatric specialist advice before cyproheptadine. Use the syrup (2 mg/5 mL) measured with a syringe. Do not exceed Kaplan's everyday maximum for age without advice: 2–7 years 12 mg a day, 7–14 years 16 mg a day.",
+        "Crush tablets and give by nasogastric tube if the child cannot swallow, as for adults, using small flushes (5–10 mL).",
+        "Check glucose and look for other drugs swallowed (tricyclics, iron, paracetamol)."
+      ],
+      monitor: [
+        "Temperature, pulse, breathing, consciousness every hour",
+        "Glucose"
+      ],
+      cautions: [
+        "Children are more sensitive to antihistamines (Kaplan): watch for paradoxical excitement, hallucinations and seizures."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not recommended under 2 years.",
+    "Kaplan everyday doses: 2–7 years 2 mg two to three times daily (maximum 12 mg a day); 7–14 years 4 mg two to three times daily (maximum 16 mg a day).",
+    "For serotonin syndrome in children, seek poisons or specialist advice for dosing.",
+    "Children are more sensitive to sedation and paradoxical excitement (Kaplan). Antihistamine overdose can be fatal."
+  ],
+  cautions: [
+    "Sedation, dizziness and low blood pressure, worse in older people (Kaplan).",
+    "Anticholinergic effects: dry mouth, urinary retention, constipation, blurred vision; avoid or use very low doses in narrow-angle glaucoma, prostate enlargement and bowel obstruction (Kaplan). Can cause a central anticholinergic syndrome with psychosis.",
+    "Reduces the effect of SSRIs and other serotonergic antidepressants if taken regularly: depression may return.",
+    "Not a treatment for NMS; its anticholinergic effect reduces sweating and can worsen fever.",
+    "Adds to sedation from benzodiazepines, opioids, alcohol and other antihistamines; has abuse potential with opioids (Kaplan).",
+    "Weight gain and increased appetite with regular use.",
+    "Pregnancy and breastfeeding: see safety."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Cyproheptadine's anti-serotonin action may counteract serotonin syndrome caused by combined serotonergic drugs.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs (antihistamines), pdf p. 2217"
+    },
+    {
+      book: "kaplan",
+      text: "Serotonin syndrome: remove the causative drugs and give full supportive care; listed treatments include cyproheptadine, cooling, benzodiazepines, anticonvulsants and ventilation.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants (SSRIs), pdf p. 1990"
+    },
+    {
+      book: "kaplan",
+      text: "Cyproheptadine is unusual in being both a strong antihistamine and a 5-HT2 serotonin blocker.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs (antihistamines), pdf p. 2216"
+    },
+    {
+      book: "kaplan",
+      text: "Oral only: 4 mg tablets and 2 mg/5 mL syrup. Adults 4–20 mg a day; children 2–7 years 2 mg two to three times daily (maximum 12 mg a day); 7–14 years 4 mg two to three times daily (maximum 16 mg a day).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, Table 21-60, pdf p. 2220"
+    },
+    {
+      book: "kaplan",
+      text: "Sedation, dizziness and hypotension (worse in elderly people), anticholinergic effects, and occasionally a central anticholinergic syndrome with psychosis; avoid in breastfeeding and pregnancy where possible.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs (antihistamines), pdf p. 2217"
+    },
+    {
+      book: "kaplan",
+      text: "For akathisia, beta-blockers are the most effective drugs; anticholinergics, benzodiazepines and cyproheptadine help some patients.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics (medication-induced movement disorders), pdf p. 1893"
+    }
+  ],
+  sources: [
+    {
+      name: "Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med 2005;352:1112–20 (cyproheptadine dosing)"
+    },
+    {
+      name: "British National Formulary (BNF) and BNF for Children: cyproheptadine"
+    },
+    {
+      name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021 (serotonin syndrome)"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "chlordiazepoxide",
+  name: "Chlordiazepoxide",
+  aka: [
+    "Librium"
+  ],
+  cls: "Benzodiazepine (long-acting)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "medical",
+    "emergency",
+    "outpatient",
+    "surgical"
+  ],
+  tags: [
+    "alcohol withdrawal",
+    "delirium tremens",
+    "CIWA-Ar",
+    "detoxification",
+    "benzodiazepine",
+    "withdrawal seizures",
+    "reducing regimen"
+  ],
+  presentation: [
+    "Capsules or tablets 5 mg, 10 mg and 25 mg.",
+    "No reliable injection: IM absorption is erratic (Kaplan). If the patient cannot take tablets, use IV diazepam or IM lorazepam or midazolam instead.",
+    "May not be stocked in Ethiopian facilities; diazepam is the usual alternative (mhGAP). Chlordiazepoxide 25 mg is roughly equivalent to diazepam 10 mg (confirm with local protocol)."
+  ],
+  indications: [
+    "Alcohol withdrawal: fixed-dose reducing regimen or symptom-triggered dosing",
+    "Prevention of alcohol withdrawal seizures and delirium tremens during planned detoxification",
+    "Short-term severe anxiety (rarely used for this now)"
+  ],
+  standard: {
+    summary: "Oral only. Thiamine first. Dose either by a written reducing schedule or by symptom score (CIWA-Ar). Long-acting, so hold doses when sleepy, especially in liver disease and older people. Stop within 7–10 days.",
+    items: [
+      {
+        label: "Thiamine first",
+        text: "Every patient: give thiamine before or with the first dose (see Thiamine and the Wernicke encephalopathy case)."
+      },
+      {
+        label: "Fixed-dose reducing regimen (Kaplan example)",
+        text: "Day 1: 25 mg orally 3–4 times daily, holding any dose if sedated, with 1–2 extra doses if jittery, tremulous or with a fast pulse and sweating. Day 2: the day 1 total minus 20%, divided into 3–4 doses. Then reduce by 20% each day until stopped (usually 4–5 more days). Severe dependence may need larger starting doses: UK practice uses up to 30 mg four times daily at the start, maximum 250 mg in 24 hours (BNF). Confirm with local protocol."
+      },
+      {
+        label: "Symptom-triggered (CIWA-Ar)",
+        text: "Score with CIWA-Ar every 1–2 hours while symptomatic (app calculator: #/calc?tab=ciwa). Score 10 or more: give chlordiazepoxide 25–50 mg orally and rescore in 1 hour; below 10: no dose, rescore in 4 hours. Thresholds and doses vary (some use 8 or 10, and 20–30 mg doses): confirm with local protocol. Symptom-triggered dosing usually uses less drug and suits liver disease and older people."
+      },
+      {
+        label: "Delirium tremens",
+        text: "Kaplan example: 50–100 mg orally every 4 hours. If the patient cannot swallow, change to IV diazepam or IV/IM lorazepam; do not give chlordiazepoxide IM."
+      },
+      {
+        label: "Liver disease or older age",
+        text: "Long half-life with active metabolites (Kaplan): it accumulates. Prefer lorazepam, or use symptom-triggered chlordiazepoxide in small doses (for example 10–25 mg) and hold whenever drowsy."
+      },
+      {
+        label: "Outpatient detoxification",
+        text: "Only for mild to moderate withdrawal, no history of seizures or delirium tremens, no serious illness, a sober supporter at home and daily review. Supply one day at a time where possible; no alcohol with the tablets (mhGAP)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Symptom-triggered dosing with a hand-scored CIWA-Ar",
+      best_for: "Medical or psychiatric ward with nurses who can score every 1–2 hours; patients with liver disease, older people, or uncertain drinking history.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Give thiamine first. Check glucose, temperature, and look for infection, head injury and GI bleeding.",
+        "Score the 10 CIWA-Ar items (nausea, tremor, sweating, anxiety, agitation, touch, hearing and visual disturbances, headache, orientation). Use the app's calculator at #/calc?tab=ciwa, or a paper copy at the bedside if no phone is available. Total 0–67.",
+        "The patient must be able to talk to be scored. If confused, not speaking the same language, or delirious, do not use the score: treat as severe and dose by signs (tremor, sweating, pulse, agitation, hallucinations).",
+        "Score 10 or more: give chlordiazepoxide 25–50 mg orally (50 mg if 16 or more). Rescore after 1 hour and repeat the dose while the score stays at 10 or more (confirm local thresholds).",
+        "Score under 10: no dose. Rescore every 4 hours (every 1–2 hours in the first 24–48 hours after the last drink, or with past seizures or delirium tremens).",
+        "Before every dose check the patient is rousable. Hold the dose if sleepy, even if the score is high: a sleeping patient is not in severe withdrawal, and the drug is still working (Kaplan).",
+        "Score 21 or more, a seizure, hallucinations with confusion, or needing more than about 200 mg in 24 hours: senior review, look for another cause, and consider IV diazepam with airway support.",
+        "Keep a simple chart: time, score, dose given or held, initials. Total the doses every 24 hours; the need should fall day by day.",
+        "Stop scoring when the score has been under 10 for 24 hours without doses."
+      ],
+      monitor: [
+        "CIWA-Ar score and sedation before each dose",
+        "Breathing rate, pulse and blood pressure every 4 hours (every hour after a dose if the patient is sleepy)",
+        "Glucose, fluid intake and urine output",
+        "Eye movements, gait and confusion (Wernicke encephalopathy)"
+      ],
+      cautions: [
+        "Anxiety, fast pulse and tremor from other causes (sepsis, thyrotoxicosis, stimulant use, beta-agonists) raise the score: think before dosing.",
+        "Propranolol hides tremor and fast pulse, making the score unreliable."
+      ]
+    },
+    {
+      title: "Fixed-dose reducing schedule written out for a health centre or home",
+      best_for: "Mild to moderate withdrawal where staff cannot score hourly; health centre or supervised outpatient care.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Check suitability: no past withdrawal seizures or delirium tremens, not confused, no serious medical illness, not also dependent on other sedatives, a sober family member present, and able to come back daily.",
+        "Give thiamine (oral 100 mg three times daily for outpatients; IM if malnourished or unwell).",
+        "Write the schedule on a card, one row per day, with the times. Example based on Kaplan: Day 1: 25 mg at 07:00, 13:00, 19:00 and 23:00 (100 mg). Day 2: 20 mg four times (80 mg). Day 3: 15 mg four times (60 mg). Day 4: 10 mg four times (40 mg). Day 5: 10 mg twice (20 mg). Day 6: 10 mg at night. Then stop.",
+        "With only 25 mg and 10 mg capsules, round to doses that can be given (e.g. 20 mg = two 10 mg). Never ask families to split capsules.",
+        "Tell the supporter: miss a dose if the patient is very sleepy or hard to wake; give an extra 25 mg (once per day at most) only if shaking and sweating are clearly worse, and tell the clinic.",
+        "Supply one day's doses at a time where possible, and keep tablets locked away from the patient and children.",
+        "No alcohol at all while taking chlordiazepoxide: the combination can stop breathing.",
+        "Return to hospital immediately for a seizure, confusion, seeing or hearing things, chest pain, vomiting blood or yellow eyes."
+      ],
+      monitor: [
+        "Daily review: tremor, sweating, pulse, sleep, confusion, alcohol on breath",
+        "Sedation: can the patient be woken easily?",
+        "Tablets returned or counted"
+      ],
+      cautions: [
+        "If the patient keeps drinking, stop the schedule and admit or re-plan: alcohol plus benzodiazepine is dangerous.",
+        "Continuing beyond about 7–10 days risks benzodiazepine dependence."
+      ]
+    },
+    {
+      title: "Liver disease, older age or vomiting: making chlordiazepoxide safe or changing drug",
+      best_for: "Patient with jaundice, ascites, confusion from liver disease, age over about 65, or unable to keep tablets down.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Look for signs of advanced liver disease: jaundice, ascites, bruising, flapping tremor, confusion. Hepatic encephalopathy and withdrawal delirium can look alike, and benzodiazepines can push a patient into hepatic coma.",
+        "Prefer lorazepam where stocked (no active metabolites). If only chlordiazepoxide or diazepam is available, use symptom-triggered doses only, smaller doses (chlordiazepoxide 10–25 mg), and hold whenever drowsy.",
+        "Do not give a fixed regimen: doses from 2–3 days ago are still in the body (Kaplan: half-life 30 to over 100 hours).",
+        "Vomiting or cannot swallow: do not give chlordiazepoxide IM (erratic absorption, Kaplan). Use diazepam slowly IV, or lorazepam or midazolam IM, with breathing monitored.",
+        "Treat the other problems: thiamine, glucose, fluids, look for infection and GI bleeding; paracetamol no more than 2 g a day."
+      ],
+      monitor: [
+        "Consciousness and breathing before every dose",
+        "Flapping tremor, confusion, jaundice",
+        "Glucose"
+      ],
+      cautions: [
+        "If a sleepy patient becomes harder to wake over 1–2 days without further doses, suspect accumulation or hepatic encephalopathy, not withdrawal."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not used for alcohol withdrawal in children except on specialist advice. Adolescents with alcohol dependence need specialist care.",
+    "Newborns of mothers taking benzodiazepines late in pregnancy: watch for floppiness, poor feeding, low temperature and breathing problems, and later withdrawal (jitteriness)."
+  ],
+  cautions: [
+    "Breathing depression with alcohol, opioids (morphine, methadone), other benzodiazepines, antipsychotics and sedating antihistamines (Kaplan).",
+    "Liver disease: accumulates and can precipitate hepatic coma; use symptom-triggered small doses or lorazepam.",
+    "Older people: falls, confusion, oversedation; use lower doses.",
+    "Severe lung disease, sleep apnoea and myasthenia gravis: breathing can fail.",
+    "Dependence: limit to about 7–10 days for withdrawal; never give an open-ended supply.",
+    "Paradoxical agitation can occur.",
+    "Isoniazid (in TB treatment) raises chlordiazepoxide levels (Kaplan); rifampicin lowers them.",
+    "Flumazenil can trigger seizures in a patient in alcohol or benzodiazepine withdrawal."
+  ],
+  antidote: "Support breathing first (bag-valve-mask). Flumazenil reverses benzodiazepine sedation (see Lorazepam), but in alcohol withdrawal or benzodiazepine dependence it can cause seizures; use only for life-threatening breathing depression with specialist advice, and expect sedation to return because chlordiazepoxide lasts much longer than flumazenil.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Example regimen: day 1 chlordiazepoxide 25 mg orally 3–4 times daily, held if sedated, with 1–2 extra doses for jitteriness, tremor or autonomic signs; then reduce the total by 20% each day over 4–5 days.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, Table 4-12, pdf p. 909"
+    },
+    {
+      book: "kaplan",
+      text: "Short- or long-acting benzodiazepines both work for withdrawal, but chlordiazepoxide and diazepam must not be given IM because absorption is erratic; titrate from a high dose downward, keeping the patient calm but rousable.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 908"
+    },
+    {
+      book: "kaplan",
+      text: "With a long-acting drug such as chlordiazepoxide avoid oversedation: if the patient is sleepy, leave out the next scheduled dose.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 908"
+    },
+    {
+      book: "kaplan",
+      text: "Delirium tremens is treated like standard withdrawal but with higher doses, for example chlordiazepoxide 50–100 mg orally every 4 hours, or IV lorazepam if oral dosing is impossible.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 909"
+    },
+    {
+      book: "kaplan",
+      text: "Withdrawal seizures (peak on day 2) are treated with benzodiazepines; anticonvulsants add no benefit once another cause is excluded.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 908"
+    },
+    {
+      book: "kaplan",
+      text: "Chlordiazepoxide, like diazepam, is long acting (half-life 30 to over 100 hours, longer in slow metabolisers), and only lorazepam and midazolam are reliably absorbed IM.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2114"
+    },
+    {
+      book: "dsm",
+      text: "Withdrawal starts 4–12 hours after the last drink and peaks at 24–48 hours; seizures occur in about 3%, mostly 17–24 hours after the last drink, and treatment aims to prevent seizures and delirium tremens.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 16 Substance-Related and Addictive Disorders, case 16.2 Alcohol Withdrawal, pdf p. 385"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Disorders due to substance use: alcohol withdrawal)"
+    },
+    {
+      name: "NICE CG100 Alcohol-use disorders: diagnosis and management of physical complications (2010, updated 2017)"
+    },
+    {
+      name: "NICE CG115 Alcohol-use disorders: diagnosis, assessment and management of harmful drinking and alcohol dependence (2011)"
+    },
+    {
+      name: "British National Formulary (BNF): chlordiazepoxide"
+    },
+    {
+      name: "Sullivan JT et al. Assessment of alcohol withdrawal: the revised Clinical Institute Withdrawal Assessment for Alcohol scale (CIWA-Ar). Br J Addict 1989;84:1353–7"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "naltrexone",
+  name: "Naltrexone",
+  aka: [
+    "Revia",
+    "Vivitrol (monthly injection)"
+  ],
+  cls: "Opioid antagonist (long-acting, oral)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical"
+  ],
+  tags: [
+    "alcohol use disorder",
+    "relapse prevention",
+    "opioid use disorder",
+    "craving",
+    "opioid antagonist",
+    "precipitated withdrawal",
+    "naloxone challenge"
+  ],
+  presentation: [
+    "Tablets 50 mg (scored).",
+    "Extended-release IM injection 380 mg once monthly (Vivitrol) in some countries; rarely available.",
+    "Limited availability in Ethiopia; check before planning treatment."
+  ],
+  indications: [
+    "Alcohol dependence: relapse prevention after withdrawal, with psychosocial support (mhGAP, NICE CG115)",
+    "Opioid dependence: relapse prevention in highly motivated, fully detoxified patients with good supervision (methadone maintenance is usually more effective)"
+  ],
+  standard: {
+    summary: "50 mg once daily by mouth, started only when the patient is opioid-free. Blocks opioid painkillers for about 3 days after a dose. Liver check before starting where possible. Loss of opioid tolerance makes relapse overdose deadly.",
+    items: [
+      {
+        label: "Alcohol dependence",
+        text: "After withdrawal is complete: 25 mg on day 1, then 50 mg once daily, with psychosocial support (Kaplan: typical dose 50 mg a day). Continue for 3–12 months (mhGAP) or up to 6 months and longer if benefiting (NICE CG115). It reduces craving and heavy drinking; it does not cause a reaction with alcohol."
+      },
+      {
+        label: "Opioid dependence",
+        text: "Only after an opioid-free interval: at least 5–7 days after short-acting opioids (heroin, morphine, tramadol, codeine) and at least 10 days after methadone (Kaplan). Confirm with history, observation and, if in doubt, a naloxone challenge. Start 25 mg (Kaplan: 5–25 mg), then 50 mg daily; or 100 mg Monday and Wednesday and 150 mg Friday under supervision."
+      },
+      {
+        label: "Before starting",
+        text: "Ask about all opioids, including tramadol, codeine cough syrups and antidiarrhoeals. Examine for liver disease; check liver enzymes where possible, and monthly for 6 months if available (Kaplan). Do not start in acute hepatitis or liver failure."
+      },
+      {
+        label: "Supervision",
+        text: "Ask a family member to watch each dose being swallowed (Kaplan). Give a card: 'Takes naltrexone: opioid painkillers will not work; naloxone not needed for reversal unless opioid overdose'."
+      },
+      {
+        label: "Pain and surgery",
+        text: "Planned surgery: stop naltrexone 72 hours before if opioids will be needed. Emergency: use non-opioid analgesia and regional anaesthesia. Opioids given to overcome the block need very close monitoring (see method)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Confirming the patient is opioid-free without urine drug tests",
+      best_for: "Clinic starting naltrexone for opioid dependence (or for alcohol dependence in someone who may also use opioids) where urine tests are unavailable.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Take a careful history of every opioid used: heroin, morphine, pethidine, tramadol, codeine (including cough syrup), methadone. Ask the date and time of the last dose. Ask a family member independently.",
+        "Count the days: at least 7 days since a short-acting opioid (Kaplan minimum 5 days) and at least 10 days since methadone (Kaplan). If not yet reached, do not start: book a return date.",
+        "Examine for withdrawal signs (DSM case 16.5): dilated pupils, yawning, runny nose, tearing, gooseflesh, sweating, restlessness, diarrhoea, pulse over 100. Any of these: do not start today.",
+        "If abstinence is reliably confirmed by observers (for example after an inpatient stay), a naloxone challenge is not essential (Kaplan).",
+        "If there is any doubt, do a naloxone challenge (Kaplan Table 21-53). Subcutaneous: naloxone 0.8 mg (2 mL of 0.4 mg/mL) under the skin, observe for 20 minutes. IV: 0.2 mg, watch 30 seconds, then 0.6 mg and watch 20 minutes. Check pulse and ask about feeling hot or cold, aches, cramps and crawling skin.",
+        "Positive challenge (any withdrawal sign or symptom): do not give naltrexone. The naloxone effect wears off within an hour. Repeat the challenge after 24 hours (Kaplan).",
+        "Negative challenge: give naltrexone 25 mg in the clinic and observe for 1–2 hours before the patient leaves. Then 50 mg daily from the next day.",
+        "No naloxone available: wait the full abstinence period, give 12.5–25 mg in clinic (half or quarter of a scored 50 mg tablet; halves are more accurate), observe for at least 2 hours, and treat any withdrawal symptomatically."
+      ],
+      monitor: [
+        "Pulse, pupils, sweating, gooseflesh, yawning before and 20 minutes after the challenge",
+        "Symptoms reported by the patient: temperature changes, aches, cramps, nausea"
+      ],
+      cautions: [
+        "Precipitated withdrawal after naltrexone can last a day or more (naltrexone is long acting): vomiting, diarrhoea, dehydration, agitation. Treat with fluids, an antiemetic and a benzodiazepine (e.g. diazepam 5–10 mg orally). Do NOT try to overcome it with opioids.",
+        "A negative urine test (where available) does not prove the patient is not dependent (Kaplan)."
+      ]
+    },
+    {
+      title: "Alcohol relapse prevention at a health centre without liver function tests",
+      best_for: "Outpatient or community mental health follow-up after alcohol detoxification.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Start only after withdrawal has finished (usually 5–7 days after the last drink) and the patient wants to stay abstinent or cut down.",
+        "Screen for liver disease by examination: jaundice (look at the eyes in daylight), ascites, spider naevi, bruising, flapping tremor, confusion, a tender enlarged liver. Any sign of acute hepatitis or liver failure: do not start; refer.",
+        "Screen for opioid use (see previous method). Anyone who took an opioid in the last 7–10 days must not start.",
+        "Give 25 mg (half a tablet) with food for 2–3 days to reduce nausea, then 50 mg once daily.",
+        "Ask a sober family member to watch the dose being swallowed each day.",
+        "Combine with mhGAP psychosocial support: motivational interviewing, a plan for high-risk situations, family involvement, mutual-help groups.",
+        "Review at 2 weeks, then monthly. At each visit ask about yellow eyes, dark urine, pale stools, right upper abdominal pain, severe nausea: stop naltrexone and check liver tests if any.",
+        "Continue for 3–12 months (mhGAP). A drinking lapse is not a reason to stop; review the plan."
+      ],
+      monitor: [
+        "Drinking days and heavy drinking days (diary or family report)",
+        "Jaundice and abdominal pain monthly",
+        "Mood and suicidal thoughts",
+        "Liver enzymes at baseline and monthly for 6 months where available (Kaplan)"
+      ],
+      cautions: [
+        "Naltrexone 50 mg can harm a liver already damaged by alcohol (Kaplan). In cirrhosis, the decision needs a specialist.",
+        "Nausea is the commonest reason for stopping; giving it with food or halving the dose for a few days helps (Kaplan)."
+      ]
+    },
+    {
+      title: "Pain, trauma or relapse in a patient taking naltrexone",
+      best_for: "Emergency or surgical ward receiving a patient carrying a naltrexone card, or a patient who has stopped naltrexone.",
+      requires: [],
+      steps: [
+        "Ask when the last naltrexone dose was: the opioid block lasts about 72 hours after an oral dose (Kaplan), and a month after the injection.",
+        "Use non-opioid analgesia first: paracetamol, an NSAID if safe, local or regional anaesthesia (lidocaine, bupivacaine), ketamine for procedures.",
+        "If an opioid is essential, it must be given where breathing can be watched continuously: large doses overcome the block and can suddenly cause profound overdose, including as the naltrexone wears off (Kaplan). Titrate in small IV steps, with bag-valve-mask and naloxone ready.",
+        "Patient who stopped naltrexone: warn clearly that tolerance is gone. The dose of heroin or other opioid they used before can now kill. Offer take-home naloxone where available and discuss methadone maintenance.",
+        "Suspected overdose after stopping naltrexone: treat as any opioid overdose (see opioid overdose case)."
+      ],
+      monitor: [
+        "Breathing rate, consciousness and pupils every 15 minutes after any opioid dose for several hours"
+      ],
+      cautions: [
+        "Low doses of opioids simply do not work: do not keep escalating without monitoring."
+      ]
+    }
+  ],
+  paediatric: [
+    "Safety and dosing below 18 years are not established; use only with specialist advice.",
+    "Accidental ingestion by a child is usually low risk (Kaplan: relatively safe in overdose), but check for other drugs and observe."
+  ],
+  cautions: [
+    "Precipitates opioid withdrawal in anyone who has used opioids recently, including methadone patients (Kaplan).",
+    "Liver: contraindicated in acute hepatitis or liver failure; dose-related liver injury, possible at 50 mg a day in pre-existing liver disease (Kaplan).",
+    "Loss of opioid tolerance: very high risk of fatal overdose if the patient relapses after stopping (Kaplan).",
+    "Blocks opioid analgesics, opioid cough medicines and antidiarrhoeals for about 3 days after a dose.",
+    "Nausea, abdominal pain, headache, low energy, insomnia, anxiety and joint pains in up to 10–15% (Kaplan).",
+    "Watch mood: depression and suicidal thoughts are common in people with substance use disorders.",
+    "Pregnancy: use only for compelling need (Kaplan); see safety."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Alongside CBT, naltrexone reduces craving and heavy drinking days; the usual dose is 50 mg a day, with mild stomach upset and tiredness.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.2 Alcohol-Related Disorders, pdf p. 914"
+    },
+    {
+      book: "kaplan",
+      text: "Before naltrexone, allow at least 5 days opioid-free after a short-acting opioid such as heroin and at least 10 days after methadone; confirm by self-report and urine test, and use a naloxone challenge if in doubt.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2180"
+    },
+    {
+      book: "kaplan",
+      text: "Naloxone challenge: 0.2 mg IV, watch 30 seconds, then 0.6 mg and watch 20 minutes (or 0.8 mg subcutaneously and watch 20 minutes); any withdrawal sign means do not give naltrexone — wait 24 hours and repeat.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, Table 21-53 Naloxone Challenge Test, pdf p. 2177"
+    },
+    {
+      book: "kaplan",
+      text: "A negative urine test does not rule out dependence, so a naloxone challenge is advised unless observers can reliably confirm abstinence; start naltrexone gradually (5–25 mg) up to 50 mg a day, and ask family to watch each dose.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2183"
+    },
+    {
+      book: "kaplan",
+      text: "Liver injury is dose-related (mainly at 300 mg a day) but 50 mg may harm people with liver disease such as alcoholic cirrhosis; contraindicated in acute hepatitis or liver failure and in anyone taking opioids.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2181"
+    },
+    {
+      book: "kaplan",
+      text: "Low opioid doses have no effect on a patient taking naltrexone, but large doses can overcome the block and cause sudden profound overdose; use non-opioid analgesia while naltrexone is active.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2181"
+    },
+    {
+      book: "kaplan",
+      text: "If a former opioid user stops naltrexone, the risk of relapse is very high, and a potent opioid then gives a strong high; adherence must be a central focus.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2178"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Disorders due to substance use)"
+    },
+    {
+      name: "WHO Guidelines for the psychosocially assisted pharmacological treatment of opioid dependence, 2009"
+    },
+    {
+      name: "NICE CG115 Alcohol-use disorders: diagnosis, assessment and management of harmful drinking and alcohol dependence (2011)"
+    },
+    {
+      name: "British National Formulary (BNF): naltrexone hydrochloride"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    },
+    {
+      name: "DSM-5-TR Clinical Cases, American Psychiatric Association 2023"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "methadone",
+  name: "Methadone",
+  aka: [
+    "Methadose",
+    "Dolophine",
+    "Physeptone"
+  ],
+  cls: "Opioid agonist (long-acting)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical",
+    "maternity",
+    "emergency",
+    "surgical"
+  ],
+  tags: [
+    "opioid agonist treatment",
+    "methadone maintenance",
+    "MMT",
+    "opioid use disorder",
+    "heroin",
+    "QT prolongation",
+    "missed doses",
+    "take-home naloxone",
+    "neonatal abstinence syndrome",
+    "controlled drug"
+  ],
+  presentation: [
+    "Oral solution, commonly 1 mg/mL (concentrates of 10 mg/mL exist: READ THE LABEL; a tenfold error kills).",
+    "Tablets 5 mg and 10 mg in some countries. Injection 10 mg/mL exists but is not used in maintenance treatment.",
+    "Controlled drug: stored locked, dispensed and recorded under national regulations. In Ethiopia methadone maintenance is provided through designated treatment programmes; hospitals usually continue the dose confirmed by the programme."
+  ],
+  indications: [
+    "Opioid dependence: long-term maintenance (opioid agonist treatment), the most effective treatment (WHO 2009; Kaplan)",
+    "Supervised opioid withdrawal (detoxification) when maintenance is declined",
+    "Pregnant women with opioid dependence: maintenance is recommended over withdrawal (WHO 2009; Kaplan)",
+    "Continuing the dose of a maintenance patient admitted to hospital or prison",
+    "Severe chronic or cancer pain (specialist use; not covered here)"
+  ],
+  standard: {
+    summary: "Once-daily oral dose, swallowed under supervision. Start low and go slow: most deaths happen in the first 2 weeks, because methadone builds up over 3–5 days. Confirm the dose before giving it to a known patient. Naloxone must be at hand.",
+    items: [
+      {
+        label: "Starting (induction)",
+        text: "Assess for objective withdrawal and recent use of alcohol, benzodiazepines and other sedatives. WHO 2009 starting dose: usually 20 mg or less, and no more than 30 mg. Kaplan: 20–30 mg, a further dose after 2–4 hours only if objective withdrawal persists, and no more than 40 mg on the first day in outpatients. Lower doses if tolerance is uncertain, in older people, liver disease or with sedatives. Confirm with the national MMT guideline."
+      },
+      {
+        label: "Increasing",
+        text: "Increase by 5–10 mg no more often than every 3–5 days (Kaplan: no more than 10 mg every 2–3 days), assessing for sedation before each increase. Levels keep rising for about 5 days after each change."
+      },
+      {
+        label: "Maintenance",
+        text: "Usual effective dose 60–120 mg once daily (WHO 2009); Kaplan: best results at 80–120 mg, doses above 60 mg reduce illicit use more. Continue long term: stopping within a year leads to relapse in most people."
+      },
+      {
+        label: "Supervised dosing and take-home doses",
+        text: "Swallowed in front of staff, then the patient talks to confirm it is swallowed. Take-home doses only for stable patients according to programme rules, in a locked box, with naloxone at home."
+      },
+      {
+        label: "Missed doses",
+        text: "1–2 days missed: usual dose if not intoxicated. 3 or more consecutive days missed: tolerance may have fallen; do not give the usual dose without prescriber review; many guidelines reduce the dose (often by half) and re-titrate. 5 or more days: restart as a new induction (no more than 30 mg). Rules vary between programmes: confirm with the national MMT guideline."
+      },
+      {
+        label: "Pregnancy",
+        text: "Continue methadone; do not attempt withdrawal during pregnancy (Kaplan). The dose may need to increase in the third trimester, sometimes split into two doses (Kaplan). Plan for neonatal observation for neonatal abstinence syndrome."
+      },
+      {
+        label: "TB and HIV treatment",
+        text: "Rifampicin lowers methadone levels sharply: withdrawal usually starts within days to 2 weeks; dose increases (often large, sometimes split twice daily) are needed, and the dose must come down again over the 2 weeks after rifampicin stops. Efavirenz and nevirapine also lower methadone. Dolutegravir-based regimens (TLD) have no important interaction. See interactions."
+      },
+      {
+        label: "Heart (QT)",
+        text: "Methadone prolongs the QT interval, especially above about 100 mg a day or with other QT-prolonging drugs, low potassium or magnesium, or heart disease. Where an ECG is available, check it before and after reaching high doses. Ask about fainting and palpitations at every review."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Maintenance patient admitted when the clinic is closed and the dose cannot be confirmed",
+      best_for: "Emergency, medical, surgical or maternity ward at night or at the weekend; patient says they take methadone.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Do NOT give the stated dose just because the patient tells you it. Doses of 80–120 mg are lethal to anyone whose tolerance has fallen, and patients may have missed days.",
+        "Try to confirm: the programme card or take-home label, an after-hours number for the treatment programme, the dispensing record, the family. Record when and how much the last dose was.",
+        "Confirmed dose and last dose yesterday: give the usual dose, unless the patient is drowsy, intoxicated, has taken alcohol or benzodiazepines, or has a condition that affects breathing (then give less and discuss with a senior).",
+        "Confirmed dose but 3 or more days missed: follow the missed-dose rule (see standard) and speak to the on-call doctor.",
+        "Not confirmed: give nothing if there are no withdrawal signs. If there are objective withdrawal signs (dilated pupils, yawning, runny nose, gooseflesh, sweating, diarrhoea, fast pulse), give no more than 10–20 mg, reassess after 3–4 hours, and give a further 5–10 mg only if objective withdrawal persists. Do not exceed 30–40 mg in 24 hours until the dose is confirmed (Kaplan: first-day ceiling 40 mg).",
+        "Before every dose: check the patient is fully awake, pupils are not pinpoint, speech is not slurred and there is no smell of alcohol. Hold and review if any.",
+        "Give as liquid, watch it being swallowed, and record in the controlled drug register.",
+        "Contact the programme on the next working day. Never give take-home doses from the ward.",
+        "For pain: continue the methadone AND give normal analgesia; tolerant patients usually need more, not less, opioid for acute pain, with breathing checked."
+      ],
+      monitor: [
+        "Consciousness, breathing rate and pupils 2–4 hours after each dose (peak effect) and at night",
+        "Withdrawal signs every 4 hours",
+        "Other sedatives prescribed on the ward"
+      ],
+      cautions: [
+        "Hospital patients are at extra risk: new sedatives, opioids for pain, infection, liver or kidney problems, and interacting drugs.",
+        "Keep naloxone on the ward and know the dose."
+      ]
+    },
+    {
+      title: "Safe supervised dosing and missed-dose rules at a dispensing point",
+      best_for: "Methadone programme clinic or hospital pharmacy giving daily doses.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Identify the patient with photo ID or card each time. Check the prescription, the concentration of the solution and the dose twice (two staff where possible).",
+        "Ask and look before dosing: drowsy, slurred speech, unsteady, pinpoint pupils, alcohol smell? Ask about alcohol, benzodiazepines (diazepam, chlordiazepoxide), sleeping tablets, other opioids, new medicines.",
+        "Intoxicated: do not dose now. Ask them to wait and reassess later, or give a reduced dose after prescriber advice. Never dose a sedated patient.",
+        "Count consecutive missed days. 1–2 days: usual dose. 3 or more: refer to the prescriber before dosing; commonly the dose is reduced and built up again. 5 or more: restart as induction. Confirm with the national guideline.",
+        "Measure with a marked oral syringe or measuring cylinder. Give in a cup with water or juice, watch it swallowed, then speak with the patient.",
+        "Record dose, time and staff signatures in the register.",
+        "First 2 weeks after starting or restarting: see the patient every day, ask the family to check on them in the evening and overnight, and give take-home naloxone and teaching.",
+        "Pregnant patient: dose as normal, arrange antenatal care, and ask about more withdrawal late in pregnancy (dose may need to rise)."
+      ],
+      monitor: [
+        "Intoxication or sedation at each visit",
+        "Withdrawal symptoms 24 hours after a dose (dose too low)",
+        "Missed days, other drug use, mood and suicide risk"
+      ],
+      cautions: [
+        "Vomiting after a dose: do not simply repeat the full dose; the prescriber decides based on how soon vomiting occurred and whether it was witnessed.",
+        "Splitting or changing doses without a prescriber is a common cause of overdose and withdrawal."
+      ]
+    },
+    {
+      title: "Take-home naloxone and overdose teaching for the family",
+      best_for: "Every patient starting or restarting methadone, leaving hospital or prison, or who has missed several days.",
+      requires: [
+        "im"
+      ],
+      steps: [
+        "Explain who is at highest risk: the first 2 weeks of treatment (Kaplan: deaths in the first week at only 50–60 mg a day), after missed days or detoxification, and anyone mixing methadone with alcohol, benzodiazepines or other sedatives.",
+        "Teach the signs: cannot be woken, slow or noisy breathing or snoring that stops, blue or grey lips, pinpoint pupils.",
+        "Teach the actions: shout and shake; call for help and transport; put in the recovery position; if not breathing, give rescue breaths if trained.",
+        "Naloxone 0.4 mg IM into the outer thigh (through clothing is acceptable). Repeat every 2–3 minutes if no response, up to the supply given.",
+        "Explain clearly: methadone lasts much longer than naloxone (Kaplan). The person can stop breathing again after 30–90 minutes. Always go to hospital, even after they wake.",
+        "Supply naloxone ampoules with syringes and needles, or nasal spray where available, and a written card with these steps.",
+        "Store methadone locked and out of reach: a small amount can kill a child."
+      ],
+      monitor: [
+        "Check at each visit that the family still has naloxone and knows what to do"
+      ],
+      cautions: [
+        "A person woken with naloxone may be in withdrawal and angry, and may want to use more opioid to feel better: this is very dangerous as naloxone wears off."
+      ]
+    },
+    {
+      title: "Methadone overdose in hospital without an infusion pump",
+      best_for: "Emergency or medical ward; overdose that responds to naloxone but keeps relapsing.",
+      requires: [
+        "iv",
+        "macro_set"
+      ],
+      steps: [
+        "Airway and bag-valve-mask ventilation with oxygen first. Naloxone as in the opioid overdose case (adult 0.4 mg IV, repeated every 2–3 minutes until breathing is adequate; smaller 40–100 mcg steps in known dependent patients to avoid severe withdrawal).",
+        "Note the total dose that restored breathing. Repeated relapses are expected: methadone effects can last 24–48 hours or more.",
+        "Gravity infusion: hourly maintenance is one-half to two-thirds of the reversing dose (Harrison, see Naloxone). Example: reversing dose 0.4 mg → about 0.25 mg per hour. Add 2 mg naloxone (5 × 0.4 mg/mL ampoules) to 500 mL 0.9 % saline = 4 mcg/mL. 0.25 mg/h = about 62 mL/h = about 21 drops/min with a 20 drops/mL set (5 drops every 15 seconds).",
+        "No burette or giving set: give 0.4 mg IM every 1–2 hours as needed, plus IV titration for relapses.",
+        "Adjust the drip: breathing slow or pinpoint pupils → bolus and increase by a quarter; agitation, vomiting or withdrawal → slow it down.",
+        "Keep the patient in hospital for at least 24 hours after the last naloxone dose or after stopping the infusion, and longer if still drowsy. Confirm with local protocol.",
+        "Check glucose, temperature, and for aspiration pneumonia and muscle injury (long lie). Look for co-ingested benzodiazepines, alcohol or tricyclics.",
+        "No ECG monitor: feel the pulse for irregularity, and ask about palpitations or fainting; methadone overdose can cause torsades de pointes. Correct low potassium and give magnesium sulfate if torsades is suspected (see Magnesium sulfate).",
+        "Before discharge: suicide risk assessment, contact the treatment programme, naloxone teaching."
+      ],
+      monitor: [
+        "Breathing rate, depth, colour and consciousness every 15 minutes for 2 hours, then hourly while on naloxone",
+        "Pupils",
+        "Drip rate (count drops every hour)"
+      ],
+      cautions: [
+        "A single naloxone dose followed by discharge is how patients die from methadone overdose at home.",
+        "Label the bag clearly (drug, total dose, concentration, time): naloxone infusions are rarely used and easily confused."
+      ]
+    }
+  ],
+  paediatric: [
+    "Accidental ingestion by a child is a medical emergency even if the child looks well: a single adult dose can be fatal. Admit, observe breathing for at least 24 hours, and give naloxone by weight (0.1 mg/kg, maximum 2 mg), repeating or infusing as needed.",
+    "Neonatal abstinence syndrome: babies of mothers on methadone may show tremor, high-pitched cry, stiffness, poor sleep and feeding, sweating, yawning, and sometimes seizures; onset may be delayed and prolonged (Kaplan). Observe for several days before discharge (duration per local protocol, often at least 5 days) and treat by paediatric protocol.",
+    "Never give naloxone to the newborn of a mother on methadone: it can cause seizures.",
+    "Adolescents with opioid dependence: specialist treatment only."
+  ],
+  cautions: [
+    "Overdose risk is highest in the first 2 weeks and after missed days; deaths occurred in the first week at 50–60 mg a day (Kaplan).",
+    "QT prolongation and torsades de pointes, especially at high doses and with other QT-prolonging drugs (haloperidol, chlorpromazine, amiodarone, quinine, amitriptyline, some antibiotics and antifungals).",
+    "Breathing depression with alcohol, benzodiazepines, other opioids, sedating antipsychotics and antihistamines, tricyclics (Kaplan).",
+    "Enzyme inducers (rifampicin, carbamazepine, phenytoin, phenobarbital, efavirenz, nevirapine, heavy long-term drinking) lower levels and cause withdrawal; inhibitors (fluoxetine, erythromycin, fluconazole, ketoconazole, cimetidine) raise levels (Kaplan).",
+    "Naltrexone, naloxone, buprenorphine and pentazocine precipitate withdrawal (Kaplan).",
+    "Liver disease, head injury, asthma, severe lung disease, hypothyroidism, older age: lower doses.",
+    "Constipation, sweating, sexual dysfunction, menstrual changes, weight gain.",
+    "Stopping suddenly: withdrawal from 1–3 days, and very high relapse and overdose risk (Kaplan).",
+    "Diversion: supervised dosing, locked storage."
+  ],
+  antidote: "Naloxone: airway and ventilation first; adult 0.4 mg IV/IM, repeated every 2–3 minutes. Methadone outlasts naloxone by many hours: expect repeated doses or an infusion and keep the patient in hospital at least 24 hours after the last naloxone (confirm local protocol). Use small doses in dependent patients to avoid severe withdrawal.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Methadone maintenance cuts the risk of death by about 70%, reduces illicit drug use, crime and HIV and hepatitis transmission, and improves pregnancy outcomes; it often needs to be long term.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2167"
+    },
+    {
+      book: "kaplan",
+      text: "Overdose risk is greatest during induction and in liver disease; deaths have occurred in the first week at only 50–60 mg a day.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2171"
+    },
+    {
+      book: "kaplan",
+      text: "Starting dose 20–30 mg orally, repeated after 2–4 hours if objective withdrawal persists; the first day usually needs no more than 40 mg (and must not exceed 40 mg in outpatients), increasing by no more than 10 mg every 2–3 days.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.4 Opioid-Related Disorders, pdf p. 950"
+    },
+    {
+      book: "kaplan",
+      text: "Induction: 15–20 mg usually suppresses craving and withdrawal, some need up to 40 mg a day; avoid higher doses at induction, then raise over several weeks to at least 70 mg, usually no more than 120 mg. Doses are given dissolved in liquid under direct observation.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2173"
+    },
+    {
+      book: "kaplan",
+      text: "Maintenance works best at 80–120 mg a day with good support services; common side effects are constipation, sweating and sexual problems.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.4 Opioid-Related Disorders, pdf p. 953"
+    },
+    {
+      book: "kaplan",
+      text: "Carbamazepine, phenytoin, barbiturates, rifampicin and heavy long-term drinking lower methadone levels and can precipitate withdrawal; naltrexone, naloxone and buprenorphine precipitate acute withdrawal; opioids add to the sedation of alcohol, benzodiazepines and tricyclics.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2172"
+    },
+    {
+      book: "kaplan",
+      text: "Naloxone acts for a much shorter time than methadone, so repeated doses may be needed to stop opioid toxicity returning.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 4.4 Opioid-Related Disorders, pdf p. 948"
+    },
+    {
+      book: "dsm",
+      text: "Objective opioid withdrawal signs: diarrhoea, tearing and running nose, dilated pupils, sweating, gooseflesh, yawning, restlessness and leg twitching.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 16 Substance-Related and Addictive Disorders, case 16.5 A Downward Spiral, pdf p. 395"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO Guidelines for the psychosocially assisted pharmacological treatment of opioid dependence, 2009"
+    },
+    {
+      name: "WHO Guidelines for the identification and management of substance use and substance use disorders in pregnancy, 2014"
+    },
+    {
+      name: "WHO Community management of opioid overdose, 2014"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Disorders due to substance use)"
+    },
+    {
+      name: "WHO Model Formulary 2008"
+    },
+    {
+      name: "British National Formulary (BNF): methadone hydrochloride"
+    },
+    {
+      name: "Ethiopian national guideline for opioid substitution / methadone maintenance treatment (confirm current version locally)"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    },
+    {
+      name: "DSM-5-TR Clinical Cases, American Psychiatric Association 2023"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "sertraline",
+  name: "Sertraline",
+  aka: [
+    "Zoloft",
+    "Lustral",
+    "SSRI"
+  ],
+  cls: "Selective serotonin reuptake inhibitor (SSRI) antidepressant",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "maternity",
+    "medical",
+    "paediatric"
+  ],
+  tags: [
+    "depression",
+    "anxiety",
+    "panic disorder",
+    "PTSD",
+    "OCD",
+    "social anxiety",
+    "perinatal depression",
+    "postpartum depression",
+    "breastfeeding",
+    "pregnancy",
+    "heart disease",
+    "serotonin syndrome",
+    "switch to mania",
+    "antidepressant switching"
+  ],
+  presentation: [
+    "Tablets 50 mg and 100 mg (scored); 25 mg tablets in some markets.",
+    "Oral concentrate 20 mg/mL where available (contains alcohol; must be diluted).",
+    "Half-life about 26 hours: missed doses and abrupt stopping can cause discontinuation symptoms."
+  ],
+  indications: [
+    "Moderate to severe depression in adults, with psychosocial support",
+    "Depression and anxiety in pregnancy and after birth, including breastfeeding mothers (usually the preferred antidepressant)",
+    "Depression after a heart attack or in heart disease (few cardiac effects, few interactions)",
+    "PTSD, panic disorder, generalised and social anxiety, OCD (including children 6 years and over for OCD)",
+    "Adolescent depression when fluoxetine has not helped or is unavailable (specialist or with close review)"
+  ],
+  standard: {
+    summary: "A safe, well-tolerated SSRI with few drug interactions and very low levels in breast milk, so it is the usual choice in pregnancy, breastfeeding and heart disease. Main risks: early nausea and diarrhoea, agitation and suicidal thinking in young people, switch to mania, bleeding with anticoagulants or NSAIDs, low sodium in older people, and serotonin syndrome with other serotonergic drugs.",
+    items: [
+      {
+        label: "Adult depression",
+        text: "Start 50 mg once daily with or after food (25 mg for the first week if nausea or anxiety is a concern). If there is little response after 2–4 weeks, increase by 50 mg steps at intervals of at least 1 week, to a maximum of 200 mg daily (BNF; Kaplan). Continue at least 9–12 months after recovery (mhGAP principle for antidepressants). Confirm with local protocol."
+      },
+      {
+        label: "Panic disorder, PTSD, social anxiety",
+        text: "Start 25 mg daily for 1 week, then 50 mg daily; increase by 50 mg steps if needed, maximum 200 mg (BNF). Starting low avoids early worsening of panic (Kaplan). Benefit in anxiety disorders can take 4–8 weeks."
+      },
+      {
+        label: "Pregnancy and postpartum",
+        text: "Use the lowest effective dose (often 50–100 mg). Do not stop suddenly on discovering pregnancy: relapse rates are very high. After birth, breastfeeding can continue; watch the baby for drowsiness or poor feeding. Screen for bipolar disorder and postpartum psychosis before starting."
+      },
+      {
+        label: "Older adults and medical illness",
+        text: "Start 25 mg daily and increase slowly. Check for confusion, falls or vomiting in the first month (low sodium), especially with diuretics. Prefer paracetamol to NSAIDs."
+      },
+      {
+        label: "Children and adolescents",
+        text: "OCD: 6–12 years 25 mg daily, 13–17 years 50 mg daily, increased in 25–50 mg steps to a maximum of 200 mg (BNF for Children). Depression: fluoxetine is first choice; sertraline is a second-line option under specialist advice (NICE NG134), with weekly review for suicidal thinking for the first month."
+      },
+      {
+        label: "Stopping",
+        text: "Reduce gradually over at least 4 weeks (for example 50 mg steps every 1–2 weeks). Abrupt stopping can cause dizziness, nausea, 'electric shock' sensations, anxiety and insomnia (Kaplan)."
+      },
+      {
+        label: "Before starting",
+        text: "Ask about previous mania or hypomania and family history of bipolar disorder; suicidal thoughts; bleeding risk (heparin, aspirin, NSAIDs); other serotonergic drugs (tramadol, pethidine, amitriptyline, imipramine, lithium, fluoxetine); pregnancy plans and breastfeeding."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Starting sertraline at a health centre with follow-up by phone or health extension worker",
+      best_for: "Primary care, general OPD, antenatal and postnatal clinics without a psychiatrist or laboratory.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Confirm moderate to severe depression or a disabling anxiety disorder. Ask directly about suicidal thoughts, past mania (days of little sleep, overactivity, overspending, grandiosity), alcohol and khat use.",
+        "If there has ever been mania, do not start sertraline alone: treat as bipolar disorder and seek advice.",
+        "Give psychoeducation and practical psychosocial support at the same visit (problem-solving, behavioural activation, family support).",
+        "Starting dose: 50 mg once daily after food. For panic, anxiety, older people or anyone worried about side effects: half of a scored 50 mg tablet (25 mg) for 1 week, then 50 mg.",
+        "Explain: nausea, loose stools, headache and restlessness are common in the first 1–2 weeks and usually settle; benefit starts after 2–4 weeks; do not stop suddenly.",
+        "Record a phone number for the patient and one family member. Arrange contact at 1 week (phone call or health extension worker visit) and a clinic review at 2–4 weeks, then monthly.",
+        "At each contact ask four things: mood, suicidal thoughts, side effects, and whether doses are being taken. Ask about new overactivity or reduced need for sleep.",
+        "If there is partial or no response after 4 weeks at 50 mg and the medicine is being taken: increase to 100 mg; review again after 2–4 weeks; maximum 200 mg. Refer if no response after 2 dose increases."
+      ],
+      monitor: [
+        "Suicidal thoughts at every contact, especially in the first month and under 25 years",
+        "Agitation, akathisia (inner restlessness) or hypomania",
+        "Bleeding or bruising if on heparin, aspirin or NSAIDs",
+        "Older adults: confusion, drowsiness, falls, vomiting (possible low sodium)"
+      ],
+      cautions: [
+        "A mixed or energised state emerging on an SSRI suggests bipolar disorder, especially with a family history (DSM-5-TR Clinical Cases).",
+        "Serotonin syndrome can start within 24 hours of adding tramadol or another serotonergic drug."
+      ]
+    },
+    {
+      title: "Limited supplies and safety plan for a person at risk of suicide",
+      best_for: "Anyone starting an antidepressant with past self-harm, current suicidal thoughts, adolescents and young adults.",
+      requires: [],
+      steps: [
+        "Sertraline is relatively safe in overdose, but mixed overdoses with alcohol, paracetamol or other medicines are not. Dispense 1–2 weeks at a time until the risk is lower.",
+        "Ask a trusted family member (with the patient's consent) to keep the tablets and hand over each day's dose.",
+        "Remove or lock away pesticides, rat poison, stored medicines, ropes and weapons.",
+        "Write a simple plan: warning signs, things that help, names and phone numbers to call, the clinic or emergency number, a safe place to go.",
+        "Explain that energy can return before mood improves and that some people feel more agitated or suicidal in the first weeks; they must come back or call at once if this happens.",
+        "Imminent risk (plan and means, recent attempt, psychosis, severe agitation): do not send home alone; admit or keep under supervision and refer urgently."
+      ],
+      monitor: [
+        "Suicidal thoughts and plans at every contact",
+        "Who holds the medicines and whether old stocks have been removed",
+        "Family report of agitation or withdrawal"
+      ],
+      cautions: [
+        "Never give amitriptyline or imipramine as the 'backup' supply for a person at risk: they are lethal in overdose."
+      ]
+    },
+    {
+      title: "Switching when an antidepressant is out of stock",
+      best_for: "Pharmacies and clinics where sertraline, fluoxetine or escitalopram supply is interrupted.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Sertraline to fluoxetine: stop sertraline and start fluoxetine 20 mg the next morning (equivalent to about sertraline 50–100 mg). Fluoxetine's long half-life protects against discontinuation symptoms.",
+        "Sertraline to escitalopram: stop sertraline and start escitalopram the next day (sertraline 50 mg ≈ escitalopram 10 mg; sertraline 100 mg ≈ 10–20 mg). Avoid escitalopram with haloperidol, quinine, amiodarone or methadone (QT).",
+        "Fluoxetine to sertraline: stop fluoxetine and wait 4–7 days (longer after doses over 20 mg), then start sertraline 25–50 mg. Fluoxetine is still present for weeks: starting at full dose straight away risks serotonin syndrome.",
+        "Sertraline to mirtazapine: start mirtazapine 15 mg at night and reduce sertraline over 1–2 weeks.",
+        "Sertraline to amitriptyline or imipramine (only if no SSRI is available and no suicide risk or heart disease): reduce sertraline to 25–50 mg, start the tricyclic at 25 mg at night, then stop sertraline over 1 week and increase the tricyclic slowly. Sertraline raises tricyclic levels.",
+        "Never run two antidepressants at full dose together. Warn about serotonin syndrome and discontinuation symptoms and review within 1–2 weeks.",
+        "If the gap is only a few days and nothing else is available, reduce to a lower dose to stretch supplies rather than stopping abruptly."
+      ],
+      monitor: [
+        "Tremor, sweating, diarrhoea, fast pulse, jerking (serotonin syndrome) for 2 weeks after a switch",
+        "Dizziness, nausea, irritability, insomnia (discontinuation)",
+        "Mood and suicidal thoughts"
+      ],
+      cautions: [
+        "Switching tables differ between references; confirm with Maudsley Prescribing Guidelines or local protocol for unusual doses."
+      ]
+    },
+    {
+      title: "Perinatal depression plan at antenatal or postnatal clinic",
+      best_for: "Midwives, health officers and general practitioners caring for pregnant or breastfeeding women.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Screen for depression at antenatal and postnatal visits (low mood, loss of interest, not coping with the baby, thoughts of harm to self or baby).",
+        "Rule out postpartum psychosis and bipolar disorder: confusion, hallucinations, strange beliefs, very little sleep with high energy — this is an emergency, not a case for sertraline alone.",
+        "Mild depression: psychosocial support first. Moderate to severe, or previous severe depression: offer sertraline 50 mg daily (25 mg for 1 week if anxious).",
+        "A woman already well on sertraline or fluoxetine who becomes pregnant: usually continue rather than stopping; discuss risks and benefits and document it.",
+        "Near delivery: tell the delivery team; observe the baby for 24–48 hours for jitteriness, poor feeding, fast breathing or low temperature.",
+        "Breastfeeding: continue sertraline. Watch the baby's feeding, alertness and weight at postnatal and immunisation visits.",
+        "Involve the partner or family in support, sleep and infant care; follow up at 1–2 weeks and monthly."
+      ],
+      monitor: [
+        "Maternal mood, suicidal thoughts and thoughts of harming the baby",
+        "Baby: feeding, sleepiness, jitteriness, weight gain",
+        "Signs of mania or psychosis after delivery"
+      ],
+      cautions: [
+        "Paroxetine should be avoided in pregnancy (heart defects); sertraline and fluoxetine are preferred SSRIs (Kaplan).",
+        "Postpartum psychosis needs urgent antipsychotic treatment and supervision (see Postpartum psychosis)."
+      ]
+    }
+  ],
+  paediatric: [
+    "OCD from 6 years: 6–12 years start 25 mg daily, 13–17 years 50 mg daily; increase slowly to a maximum of 200 mg (BNF for Children). Sertraline with CBT is effective for social anxiety in young people (Kaplan).",
+    "Depression under 12: antidepressants are not recommended (mhGAP). Adolescents: fluoxetine first; sertraline second-line with specialist advice and weekly review in the first month.",
+    "All young people: warn about early agitation and suicidal thoughts; involve parents in holding the medicine."
+  ],
+  cautions: [
+    "Suicidal thoughts and agitation may increase early in treatment, especially under 25 years.",
+    "Can trigger mania in bipolar disorder; do not use alone for bipolar depression.",
+    "Bleeding with heparin, aspirin and NSAIDs; low sodium in older people and with diuretics or carbamazepine.",
+    "Serotonin syndrome with tramadol, pethidine, lithium, tricyclics, other SSRIs and MAOIs (never within 2 weeks of an MAOI).",
+    "Raises lamotrigine levels modestly; lowered by rifampicin and carbamazepine.",
+    "Stop gradually; discontinuation symptoms are common after abrupt stopping.",
+    "Epilepsy: use with care, but do not withhold needed treatment."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Start 50 mg once daily for depression; some start 25 mg to limit stomach upset; if no response after 1–3 weeks increase by 50 mg weekly to a maximum of 200 mg once daily.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1994"
+    },
+    {
+      book: "kaplan",
+      text: "Sertraline can be taken morning or evening; taking it after food may reduce stomach side effects; panic disorder should start at 25 mg to avoid provoking attacks.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1995"
+    },
+    {
+      book: "kaplan",
+      text: "Sertraline, citalopram and escitalopram are the SSRIs least likely to cause drug interactions.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1976"
+    },
+    {
+      book: "kaplan",
+      text: "Stopping antidepressants in pregnancy leads to very high relapse rates; SSRIs other than paroxetine carry no significant increase in major malformations.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1979"
+    },
+    {
+      book: "kaplan",
+      text: "Only tiny amounts of SSRIs reach breast milk with no harm found in breastfed babies; sertraline and escitalopram levels in milk are especially low.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1980"
+    },
+    {
+      book: "kaplan",
+      text: "SSRIs, especially sertraline and paroxetine, have the strongest evidence of benefit in PTSD; benzodiazepines lack evidence.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 10 Trauma- and Stressor-Related Disorders, treatment, pdf p. 1390"
+    },
+    {
+      book: "kaplan",
+      text: "Sertraline and fluvoxamine cause the most intense stomach and bowel symptoms among SSRIs; diarrhoea may persist with sertraline.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1985"
+    },
+    {
+      book: "kaplan",
+      text: "Abrupt stopping of shorter half-life SSRIs can cause dizziness, nausea, headache, anxiety, insomnia and paraesthesia; fluoxetine tapers itself and has been used to treat discontinuation from other SSRIs.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1991"
+    },
+    {
+      book: "dsm",
+      text: "A woman with depression became agitated, energised and racing in thought after sertraline was raised to 200 mg/day; a family history of bipolar disorder pointed to a bipolar diagnosis.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.9 Depressed and Anxious, pdf p. 120"
+    }
+  ],
+  sources: [
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Depression and Self-harm/suicide modules)"
+    },
+    {
+      name: "BNF and BNF for Children: sertraline"
+    },
+    {
+      name: "NICE CG192 Antenatal and postnatal mental health (2014, updated 2020)"
+    },
+    {
+      name: "NICE NG222 Depression in adults (2022); NICE NG116 Post-traumatic stress disorder (2018)"
+    },
+    {
+      name: "NICE NG134 Depression in children and young people (2019)"
+    },
+    {
+      name: "Maudsley Prescribing Guidelines in Psychiatry (antidepressant switching)"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022; DSM-5-TR Clinical Cases 2023"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "escitalopram",
+  name: "Escitalopram",
+  aka: [
+    "Lexapro",
+    "Cipralex",
+    "SSRI"
+  ],
+  cls: "Selective serotonin reuptake inhibitor (SSRI) antidepressant",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical"
+  ],
+  tags: [
+    "depression",
+    "generalised anxiety",
+    "panic disorder",
+    "social anxiety",
+    "OCD",
+    "QT prolongation",
+    "ECG",
+    "serotonin syndrome",
+    "older adults",
+    "hyponatraemia"
+  ],
+  presentation: [
+    "Tablets 5 mg, 10 mg and 20 mg (10 mg and 20 mg usually scored).",
+    "Oral drops or solution where available (check strength on the bottle).",
+    "Half-life 27–32 hours; no important active metabolites."
+  ],
+  indications: [
+    "Moderate to severe depression in adults",
+    "Generalised anxiety disorder, panic disorder, social anxiety disorder, OCD",
+    "Adolescent depression in some countries (US-approved from 12 years); in the UK and WHO mhGAP, fluoxetine is preferred under 18"
+  ],
+  standard: {
+    summary: "Effective and well tolerated with few interactions, but it prolongs the QT interval in a dose-related way. Keep to the dose limits, avoid other QT-prolonging drugs (haloperidol, quinine, amiodarone, methadone), and correct low potassium or magnesium. Otherwise the same SSRI precautions apply: suicidality in young people, mania, bleeding, low sodium and serotonin syndrome.",
+    items: [
+      {
+        label: "Adult depression",
+        text: "10 mg once daily. If needed after 2–4 weeks, increase to a maximum of 20 mg daily (BNF). Kaplan notes that trials found no additional benefit from 20 mg over 10 mg. Continue 9–12 months after recovery."
+      },
+      {
+        label: "Anxiety disorders",
+        text: "Panic disorder: 5 mg daily for 1 week, then 10 mg; maximum 20 mg. Generalised and social anxiety: 10 mg daily, maximum 20 mg (BNF)."
+      },
+      {
+        label: "Older adults (over 65)",
+        text: "Start 5 mg daily; maximum 10 mg daily (BNF). Check for low sodium symptoms (confusion, falls, vomiting)."
+      },
+      {
+        label: "Liver impairment",
+        text: "Mild to moderate: 5 mg daily for the first 2 weeks, then up to 10 mg; do not exceed 10 mg (BNF). Severe: titrate very cautiously."
+      },
+      {
+        label: "QT safety",
+        text: "Do not use with known long QT, recent heart attack, uncontrolled heart failure or slow heart rhythms, or with other QT-prolonging drugs (product information). ECG before starting where available if over 65, heart disease, fainting, or on diuretics; correct potassium and magnesium (Kaplan, for citalopram). Overdose causes QT prolongation and seizures."
+      },
+      {
+        label: "Stopping",
+        text: "Reduce gradually over at least 4 weeks (for example 10 mg to 5 mg for 1–2 weeks, then stop)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "QT-safe prescribing when no ECG is available",
+      best_for: "Clinics and wards without an ECG machine, or where the patient may receive antimalarials, antipsychotics or methadone.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Ask about fainting, palpitations, seizures with exercise or fright, sudden death in a young relative, heart attack, heart failure and a slow pulse. Any yes: choose sertraline instead.",
+        "Check the medicine list: haloperidol, chlorpromazine, amiodarone, quinine, methadone, some antibiotics (erythromycin, azithromycin, fluoroquinolones) and antifungals. If any is needed, choose sertraline, or withhold escitalopram during short courses such as IV quinine.",
+        "Look for low potassium or magnesium risk: vomiting, diarrhoea, poor intake, diuretics, alcohol dependence. Correct or wait before starting.",
+        "Count the pulse for a full minute: below 50/min or irregular — do not start; refer for an ECG.",
+        "Keep the dose at 10 mg (5 mg over 65 or in liver disease). Do not go above 20 mg (10 mg in older people).",
+        "Teach the patient and family: report fainting, palpitations or a seizure at once; stop escitalopram and seek care.",
+        "If an ECG can be done once anywhere (referral hospital), a QTc over 500 ms, or a rise over 60 ms from baseline, means stop escitalopram."
+      ],
+      monitor: [
+        "Pulse rate and regularity at each visit",
+        "Fainting or palpitations",
+        "New medicines started by other clinicians",
+        "Vomiting or diarrhoea episodes (electrolyte loss)"
+      ],
+      cautions: [
+        "Escitalopram overdose can cause seizures and QT prolongation; observe for at least 6–12 hours with pulse checks and refer if symptomatic.",
+        "Citalopram (the parent drug) has the larger QT effect; the same cautions apply more strongly."
+      ]
+    },
+    {
+      title: "Splitting tablets for low starting doses",
+      best_for: "Older adults, liver disease, panic disorder, and pharmacies stocking only 10 mg or 20 mg tablets.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "10 mg scored tablet: break along the score to give 5 mg. Use a clean tablet cutter or a clean knife on a hard surface.",
+        "20 mg scored tablet: half gives 10 mg; quartering is inaccurate — if 5 mg is needed and only 20 mg tablets exist, use 10 mg on alternate days for the first week only if the patient is not very sensitive, or ask the pharmacy to order 10 mg.",
+        "Keep split halves in the original pack or a closed container away from light and moisture; use the other half at the next dose.",
+        "Write the dose in milligrams AND as 'half a tablet' on the label; show the patient or carer with a real tablet.",
+        "Unscored or film-coated tablets that do not break evenly: do not split; use another strength."
+      ],
+      monitor: [
+        "Nausea, restlessness or panic in the first week",
+        "Whether the patient can split and take the doses correctly"
+      ],
+      cautions: [
+        "Check the package: some brands are not scored; check local product information."
+      ]
+    },
+    {
+      title: "Switching to or from escitalopram when stock runs out",
+      best_for: "Pharmacies and OPDs with irregular supply of SSRIs.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Escitalopram to sertraline: stop escitalopram and start sertraline the next day (10 mg ≈ sertraline 50 mg; 20 mg ≈ sertraline 100 mg). Preferred if QT risk, pregnancy or breastfeeding.",
+        "Escitalopram to fluoxetine: stop escitalopram and start fluoxetine 20 mg the next day.",
+        "Fluoxetine to escitalopram: stop fluoxetine, wait 4–7 days (longer after high doses), then start escitalopram 5–10 mg.",
+        "Escitalopram to mirtazapine: start mirtazapine 15 mg at night and reduce escitalopram over 1–2 weeks.",
+        "Review within 1–2 weeks: serotonin syndrome signs (tremor, sweating, diarrhoea, jerking) or discontinuation symptoms (dizziness, irritability, 'electric shocks')."
+      ],
+      monitor: [
+        "Serotonin syndrome signs",
+        "Discontinuation symptoms",
+        "Mood and suicidal thoughts"
+      ],
+      cautions: [
+        "Kaplan: over half of those who respond poorly to one SSRI respond to another, so a switch within the class is reasonable when supply or tolerability forces it."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not recommended under 18 years in UK and WHO mhGAP guidance; fluoxetine is first choice for adolescent depression. Kaplan notes US approval for adolescent depression (12–17 years), where 10 mg daily is the usual dose.",
+    "Any use in young people: weekly review for the first month for suicidal thinking, agitation and hypomania; parents hold the supply."
+  ],
+  cautions: [
+    "Dose-related QT prolongation: contraindicated with known long QT or other QT-prolonging drugs; correct low potassium or magnesium; maximum 10 mg over 65 years and in liver impairment.",
+    "Suicidal thoughts and agitation early in treatment, especially under 25 years.",
+    "Can trigger mania; not alone in bipolar disorder.",
+    "Bleeding with heparin, aspirin and NSAIDs; low sodium in older people.",
+    "Serotonin syndrome with other serotonergic drugs; never with or within 2 weeks of an MAOI.",
+    "Moderate CYP2D6 inhibitor: raises some tricyclic and beta-blocker levels.",
+    "Taper when stopping."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "The recommended dose of escitalopram is 10 mg/day; trials showed no extra benefit from 20 mg/day. Available as 10 and 20 mg scored tablets and 5 mg/5 mL solution.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1996"
+    },
+    {
+      book: "kaplan",
+      text: "All SSRIs can lengthen the QT interval, especially in overdose and when combined with an antipsychotic; citalopram (the parent racemate of escitalopram) has the largest effect, with FDA limits of 40 mg, and 20 mg over 60 years or in liver impairment.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1986"
+    },
+    {
+      book: "kaplan",
+      text: "Correct low potassium and magnesium before citalopram, and do not use it in congenital long QT syndrome.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1986"
+    },
+    {
+      book: "kaplan",
+      text: "Escitalopram is a moderate CYP2D6 inhibitor and significantly raises desipramine (a tricyclic) and metoprolol levels.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1993"
+    },
+    {
+      book: "kaplan",
+      text: "Fluoxetine and escitalopram are approved for major depression in adolescents.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 2.9 Depressive Disorders and Suicide in Children and Adolescents, pdf p. 567"
+    },
+    {
+      book: "kaplan",
+      text: "Escitalopram causes increased anxiety less often than fluoxetine, which may suit mixed anxiety and depression.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1988"
+    },
+    {
+      book: "kaplan",
+      text: "Before moving from one SSRI to a non-SSRI, try another SSRI: over half of poor responders to one SSRI respond to another.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1978"
+    },
+    {
+      book: "kaplan",
+      text: "SSRI with an MAOI, L-tryptophan or lithium can cause serotonin syndrome, progressing from diarrhoea and restlessness to hyperreflexia, myoclonus, hyperthermia and death.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1990"
+    }
+  ],
+  sources: [
+    {
+      name: "BNF: escitalopram"
+    },
+    {
+      name: "Escitalopram product information (MHRA 2011 QT dose restrictions)"
+    },
+    {
+      name: "NICE NG222 Depression in adults (2022); NICE CG113 Generalised anxiety disorder and panic disorder"
+    },
+    {
+      name: "Maudsley Prescribing Guidelines in Psychiatry (antidepressant switching)"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "imipramine",
+  name: "Imipramine",
+  aka: [
+    "Tofranil",
+    "tricyclic antidepressant",
+    "TCA"
+  ],
+  cls: "Tricyclic antidepressant",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "paediatric",
+    "emergency"
+  ],
+  tags: [
+    "depression",
+    "nocturnal enuresis",
+    "bed-wetting",
+    "panic disorder",
+    "tricyclic overdose",
+    "QRS widening",
+    "sodium bicarbonate",
+    "safe storage",
+    "accidental poisoning",
+    "suicide risk"
+  ],
+  presentation: [
+    "Tablets 10 mg and 25 mg (sugar-coated in some brands).",
+    "Oral solution 25 mg/5 mL in some markets.",
+    "A few adult tablets can seriously poison a small child; a week's supply at antidepressant doses can kill an adult."
+  ],
+  indications: [
+    "Depression in adults when SSRIs are unavailable or not tolerated (not first choice: dangerous in overdose)",
+    "Nocturnal enuresis in children 6 years and over, short-term, when alarm and behavioural measures have failed or are impractical",
+    "Panic disorder (specialist use; SSRIs preferred)"
+  ],
+  standard: {
+    summary: "The first tricyclic. Effective, but anticholinergic, sedating and as dangerous as amitriptyline in overdose (QRS widening, arrhythmia, seizures, coma). Use only in small supplies, never where there is suicide risk or heart disease, and store it out of reach of children. For bed-wetting it works while taken but relapse after stopping is common; alarms work better long term.",
+    items: [
+      {
+        label: "Adult depression",
+        text: "BNF: start up to 75 mg daily in divided doses (or 25 mg at night as a cautious start), increase gradually to 150–200 mg daily; up to 300 mg only in hospital. Kaplan: start 25 mg daily, usual range 150–300 mg/day, checking pulse and postural BP as the dose rises. Much of the dose can be given at night once tolerated. Confirm with local protocol."
+      },
+      {
+        label: "Older adults",
+        text: "Start 10 mg daily and increase gradually to 30–50 mg daily (BNF). Prefer an SSRI: falls, confusion, urinary retention and constipation are common."
+      },
+      {
+        label: "Nocturnal enuresis (BNF for Children)",
+        text: "Give 1 hour before bedtime: 6–7 years 25 mg; 8–10 years 25–50 mg; 11–17 years 50–75 mg. Maximum course 3 months including gradual withdrawal; do not repeat until a full physical examination (including ECG where possible) has been done. Kaplan gives a usual enuresis dose of 50–100 mg; use the lower BNF age bands in Ethiopian settings without monitoring."
+      },
+      {
+        label: "Before starting",
+        text: "Ask about heart disease, fainting, palpitations, epilepsy, glaucoma, urinary retention, bipolar disorder and suicidal thoughts. ECG where available (Kaplan: all patients; contraindicated if QTc over 450 ms). In children, ask about sudden death or fainting in the family and check pulse regularity."
+      },
+      {
+        label: "Stopping",
+        text: "Taper: reduce by about 25 mg every 4–7 days (Kaplan) to avoid cholinergic rebound (nausea, sweating, headache, vomiting) and rebound anxiety. For enuresis, reduce gradually over 2–4 weeks."
+      },
+      {
+        label: "Overdose",
+        text: "Manage as tricyclic overdose (see the amitriptyline entry and the Tricyclic overdose case): airway and oxygen, activated charcoal within 1 hour if the airway is safe, sodium bicarbonate 1–2 mmol/kg IV for QRS over 100 ms, arrhythmia, hypotension or seizures, benzodiazepines for seizures; observe at least 6 hours. Children who took any amount beyond their dose need assessment."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Enuresis treatment with safe storage and a star chart",
+      best_for: "Paediatric OPD and health centres; school-age children whose bed-wetting causes real distress and where an alarm is unavailable.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Confirm primary nocturnal enuresis in a child aged 6 or over (developmental age at least 5, DSM-5-TR). Look for a cause first: urinary infection (dipstick if available), constipation, diabetes (thirst, weight loss; glucose if possible), daytime wetting or weak stream (refer), snoring, or distress such as abuse or bullying.",
+        "Start with non-drug measures for at least 4–8 weeks: reassurance (it is common and not the child's fault — never punish), drink well in the day but less in the 1–2 hours before bed, toilet before bed, a night light, waking to toilet if helpful, and a simple star chart for dry nights. Treat constipation.",
+        "Only if these fail and wetting really matters (school camp, severe teasing, family conflict): imipramine 1 hour before bed at the BNF for Children dose (6–7 years 25 mg; 8–10 years 25–50 mg; 11–17 years 50–75 mg). Start at the lowest dose for the age.",
+        "Safe storage plan: dispense 2–4 weeks at a time. The parent keeps the tablets in a locked box or high locked cupboard, not in the child's room or a handbag. The parent gives the dose and watches it swallowed. Keep away from younger siblings — a few tablets can kill a toddler.",
+        "Teach the family: if any extra tablets may have been swallowed by anyone, bring the child to hospital immediately, even if well, with the packet.",
+        "Continue the star chart during treatment. Review after 2–4 weeks: dry nights, side effects (dry mouth, constipation, sleep problems, mood change, fainting).",
+        "Treat for no longer than 3 months including a gradual reduction over 2–4 weeks at the end. Expect some relapse; switch to alarm or behavioural methods rather than long-term medicine.",
+        "Where possible use it only for short planned periods (for example a school trip) rather than continuously."
+      ],
+      monitor: [
+        "Number of dry nights per week (star chart)",
+        "Pulse rate and regularity at each visit",
+        "Mood, behaviour, sleep and appetite",
+        "Safe storage: ask where the tablets are kept at every visit"
+      ],
+      cautions: [
+        "Kaplan: tricyclics have caused sudden deaths in children and adolescents; avoid in any child with heart disease, fainting, or a family history of sudden death.",
+        "The bell-and-pad alarm is more effective long term (dryness in over half of children, Kaplan); desmopressin is an alternative where stocked.",
+        "Bed-wetting that starts after a long dry period needs a search for infection, diabetes, constipation or emotional stress."
+      ]
+    },
+    {
+      title: "Prescribing imipramine safely for depression when no SSRI is available",
+      best_for: "Health centres and OPDs where fluoxetine and sertraline are out of stock.",
+      requires: [
+        "oral",
+        "bp"
+      ],
+      steps: [
+        "Ask directly about suicidal thoughts, plans and past attempts. Any risk: do not use imipramine; wait for an SSRI, refer, or use mirtazapine if available.",
+        "Screen for heart disease (fainting, palpitations, chest pain, heart failure, recent heart attack) and check the pulse for regularity. Any concern: avoid.",
+        "Start 25 mg at night (10 mg in older people). Increase by 25 mg every 3–7 days as tolerated towards 75–150 mg daily; check pulse and lying and standing BP before each increase.",
+        "Dispense no more than 1 week at a time for anyone who might be at risk (Kaplan); a family member holds the supply. Remove old tablets from the home.",
+        "Warn: dry mouth, constipation, sweating, dizziness on standing, blurred vision are common; stand up slowly; avoid alcohol; mood benefit takes 2–4 weeks.",
+        "Review at 1–2 weeks and after each dose increase. Switch to an SSRI as soon as supply returns (reduce imipramine to 25–50 mg, start the SSRI at a low dose, then stop imipramine over 1–2 weeks)."
+      ],
+      monitor: [
+        "Suicidal thoughts at every visit",
+        "Pulse rate, rhythm and postural BP",
+        "Urinary retention and constipation, especially older men",
+        "Switch to mania in anyone with bipolar history"
+      ],
+      cautions: [
+        "Not for bipolar depression without a mood stabiliser; tricyclics switch to mania more often than SSRIs (Kaplan).",
+        "Lowers the seizure threshold: low starting doses and slow increases in epilepsy."
+      ]
+    },
+    {
+      title: "Accidental or deliberate imipramine ingestion with no ECG monitor",
+      best_for: "Emergency departments and health centres receiving a child who took a sibling's tablets or an adult overdose.",
+      requires: [
+        "iv",
+        "bp",
+        "oxygen"
+      ],
+      steps: [
+        "Treat any ingestion above the prescribed dose as potentially serious; ask for all packets and estimate the maximum number of tablets missing.",
+        "Airway, breathing, oxygen. Activated charcoal (child 1 g/kg, maximum 50 g; adult 50 g) within 1 hour if awake with a safe airway.",
+        "Watch for drowsiness, agitation, dilated pupils, dry hot skin, urinary retention, fast pulse, low BP, seizures and irregular pulse. Deterioration can be sudden in the first 6 hours.",
+        "Count the pulse for a full minute and check BP every 15 minutes. Irregular pulse, falling heart rate from fast to slow, systolic BP below 90 mmHg (child: below the age-normal), seizure or falling consciousness: give sodium bicarbonate 8.4 % 1–2 mmol/kg IV slowly and repeat to effect (see amitriptyline and sodium bicarbonate entries).",
+        "Seizures: diazepam or midazolam. Do not use phenytoin, physostigmine or flumazenil.",
+        "Observe for at least 6 hours even if well; anyone with symptoms needs at least 24 hours and referral to a monitored bed if possible.",
+        "Before discharge: safe storage counselling for the family, or a suicide risk assessment after deliberate overdose."
+      ],
+      monitor: [
+        "Consciousness, breathing, pulse rate and rhythm, BP every 15 min for 6 h",
+        "Seizures, temperature, urine output"
+      ],
+      cautions: [
+        "Children are more sensitive to tricyclic toxicity than adults (Kaplan)."
+      ]
+    }
+  ],
+  paediatric: [
+    "Nocturnal enuresis from 6 years only, short courses (maximum 3 months) after non-drug measures: 6–7 years 25 mg, 8–10 years 25–50 mg, 11–17 years 50–75 mg at bedtime (BNF for Children). Kaplan: avoid tricyclics in children except as a last resort; children's doses 1.5 mg/kg/day, not above 5 mg/kg/day.",
+    "Not for depression in children or adolescents (sudden deaths reported; poor evidence).",
+    "Accidental ingestion of even a few tablets can be fatal in a small child: observe for at least 6 hours and treat as tricyclic overdose."
+  ],
+  cautions: [
+    "Contraindicated in recent heart attack, heart block or arrhythmia, and QTc over 450 ms (Kaplan).",
+    "Lethal in overdose — small supplies, family holds the tablets, locked storage in homes with children.",
+    "Anticholinergic: avoid in narrow-angle glaucoma, urinary retention, prostatism; confusion in older people.",
+    "Postural hypotension and falls; sedation; lowers seizure threshold; can trigger mania.",
+    "Fluoxetine (and less so sertraline, escitalopram) raises imipramine levels; carbamazepine and phenobarbital lower them.",
+    "Severe hypertension and arrhythmia with IV adrenaline or noradrenaline; QT risk with antipsychotics, quinine, amiodarone and methadone.",
+    "Taper slowly when stopping."
+  ],
+  antidote: "No specific antidote. Sodium bicarbonate 1–2 mmol/kg IV bolus for QRS widening, arrhythmia or hypotension; benzodiazepines for seizures. Do NOT use physostigmine or flumazenil.",
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Tricyclics (usual imipramine adult range 150–300 mg/day) should be started at 25 mg a day and increased as tolerated, checking pulse and postural BP during increases.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2031"
+    },
+    {
+      book: "kaplan",
+      text: "Avoid tricyclics in children except as a last resort; imipramine in children starts at 1.5 mg/kg/day to no more than 5 mg/kg/day, and enuresis doses are usually 50–100 mg at bedtime. Stop by tapering slowly to avoid cholinergic rebound.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2032"
+    },
+    {
+      book: "kaplan",
+      text: "Childhood enuresis is often treated with imipramine, but tricyclics have caused sudden death in children and adolescents.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2025"
+    },
+    {
+      book: "kaplan",
+      text: "Imipramine was the first medicine used for enuresis and is still used at times, but it has many side effects; alarm and behavioural treatment are the treatments of choice and bed-wetting often returns when medicine stops.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 14 Elimination Disorders, enuresis treatment, pdf p. 1545"
+    },
+    {
+      book: "kaplan",
+      text: "The bell-and-pad alarm is generally the most effective enuresis treatment, with dryness in over half of cases; keeping a star chart and restricting fluids before bed also help.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 14 Elimination Disorders, enuresis treatment, pdf p. 1544"
+    },
+    {
+      book: "kaplan",
+      text: "Get an ECG before treatment; tricyclics are contraindicated with QTc over 450 ms; fluoxetine, paroxetine and fluvoxamine can raise tricyclic levels three- to fourfold; carbamazepine and barbiturates lower them.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2030"
+    },
+    {
+      book: "kaplan",
+      text: "Imipramine is the tricyclic most studied in panic disorder (start low because of early anxiety); tricyclics are more likely than SSRIs to trigger mania and are not advised routinely for bipolar depression.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2024"
+    },
+    {
+      book: "dsm",
+      text: "Primary nocturnal enuresis is common in children aged 5–10, especially boys; the diagnosis needs a developmental age of at least 5 and exclusion of medical causes such as constipation or urinary problems.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 11 Elimination Disorders, case 11.1 Temper Tantrums and Somatic Complaints, pdf p. 329"
+    }
+  ],
+  sources: [
+    {
+      name: "BNF and BNF for Children: imipramine hydrochloride"
+    },
+    {
+      name: "NICE CG111 Bedwetting in under 19s (2010)"
+    },
+    {
+      name: "WHO Model Formulary 2008 (tricyclic antidepressants)"
+    },
+    {
+      name: "Kerr GW et al. Tricyclic antidepressant overdose: a review. Emerg Med J 2001"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022; DSM-5-TR Clinical Cases 2023"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "mirtazapine",
+  name: "Mirtazapine",
+  aka: [
+    "Remeron",
+    "Zispin",
+    "NaSSA"
+  ],
+  cls: "Noradrenergic and specific serotonergic antidepressant (alpha-2 antagonist)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical"
+  ],
+  tags: [
+    "depression",
+    "insomnia",
+    "poor appetite",
+    "weight loss",
+    "older adults",
+    "HIV",
+    "cancer",
+    "sedation",
+    "weight gain",
+    "agranulocytosis",
+    "antidepressant switching"
+  ],
+  presentation: [
+    "Tablets 15 mg (scored), 30 mg and 45 mg.",
+    "Orodispersible tablets 15 mg, 30 mg and 45 mg where available.",
+    "Half-life about 30 hours; taken once daily at bedtime."
+  ],
+  indications: [
+    "Moderate to severe depression in adults, especially with insomnia, anxiety, agitation, poor appetite or weight loss",
+    "Depression in older or medically ill adults (few sexual side effects, little nausea, few drug interactions)",
+    "Alternative when SSRIs cause intolerable nausea, sexual dysfunction or insomnia"
+  ],
+  standard: {
+    summary: "A sedating antidepressant that improves sleep and appetite early. It rarely causes nausea or sexual problems and has few interactions, but causes weight gain, daytime drowsiness and, rarely, a severe fall in white cells. Safer than tricyclics in overdose.",
+    items: [
+      {
+        label: "Adult depression",
+        text: "15 mg at bedtime. Increase to 30 mg after 1–4 weeks if response is not enough, maximum 45 mg at bedtime (BNF). Kaplan allows 15 mg steps every 5 days. Continue at least 9–12 months after recovery."
+      },
+      {
+        label: "Older adults, kidney or liver disease",
+        text: "Start 7.5–15 mg at night (half a scored 15 mg tablet) and increase slowly; clearance is reduced by up to 30 percent in liver and 50 percent in kidney impairment (Kaplan)."
+      },
+      {
+        label: "Sedation",
+        text: "Drowsiness is strongest in the first week and usually lessens (Kaplan). Always give at bedtime; warn about driving, machinery and getting up at night. Avoid alcohol and other sedatives."
+      },
+      {
+        label: "Weight and metabolic effects",
+        text: "Increased appetite in about one-third; weight gain common. Useful when weight loss is a problem; a reason to avoid in obesity or diabetes. Cholesterol and triglycerides may rise."
+      },
+      {
+        label: "Blood count warning",
+        text: "Rarely causes severe neutropenia or agranulocytosis, usually within the first 2 months. Anyone with fever, sore throat, mouth ulcers or other infection signs must be assessed; stop mirtazapine if the white count is low (Kaplan)."
+      },
+      {
+        label: "Stopping",
+        text: "Reduce gradually over 4 weeks; abrupt stopping can cause nausea, anxiety, dizziness and insomnia."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Using mirtazapine for depression with insomnia or weight loss in a health centre",
+      best_for: "OPD and chronic care clinics (HIV, TB, diabetes, oncology) where depression presents with poor sleep and poor appetite.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Confirm depression and ask about suicidal thoughts, mania history, alcohol and khat use, and sedating medicines (benzodiazepines, opioids, promethazine).",
+        "Check medical causes of weight loss and poor sleep (TB, HIV, cancer, thyroid, pain) — treat them alongside.",
+        "Start 15 mg at bedtime; in older, frail or kidney or liver patients break the scored 15 mg tablet to give 7.5 mg.",
+        "Explain: sleep and appetite usually improve within the first week; mood improves over 2–4 weeks; morning grogginess usually settles in a week.",
+        "Advise: take 1 hour before bed; do not drink alcohol; do not drive or work with machinery until you know how it affects you; get up slowly at night.",
+        "Follow up at 1–2 weeks (phone or health extension worker is fine), then monthly. If response is partial at 4 weeks, increase to 30 mg; maximum 45 mg.",
+        "Weigh the patient at each visit. If gaining weight fast and appetite is no longer a problem, give diet advice and consider switching."
+      ],
+      monitor: [
+        "Mood and suicidal thoughts",
+        "Daytime sleepiness and falls",
+        "Weight at each visit",
+        "Fever, sore throat or mouth ulcers (rare low white cells)"
+      ],
+      cautions: [
+        "Can trigger mania like other antidepressants.",
+        "In people with HIV on antiretrovirals, drug interactions are few, but check efavirenz (lowers mirtazapine) and ritonavir-boosted regimens with local HIV guidance."
+      ]
+    },
+    {
+      title: "Fever or sore throat on mirtazapine without a blood count",
+      best_for: "Health centres and clinics with no full blood count available.",
+      requires: [],
+      steps: [
+        "Tell every patient at the start: fever, chills, sore throat, mouth ulcers or any sign of infection in the first months means come to the clinic the same day.",
+        "At presentation, examine for a clear local cause (for example an obvious ear or skin infection) and for sepsis signs (fast pulse, low BP, confusion).",
+        "If fever with sore throat, mouth ulcers or no clear cause: withhold mirtazapine and refer the same day for a full blood count, especially within the first 2 months of treatment.",
+        "Treat malaria (test if possible) and bacterial infection per local protocol; do not wait for the count if the patient is unwell.",
+        "If the count shows low neutrophils, do not restart mirtazapine; choose an SSRI. If the count is normal, mirtazapine can be restarted.",
+        "Document the episode on the patient's card."
+      ],
+      monitor: [
+        "Temperature and throat or mouth ulcers",
+        "Signs of sepsis"
+      ],
+      cautions: [
+        "Low white cells after mirtazapine is rare and reversible after stopping (Kaplan), but a patient with agranulocytosis can deteriorate quickly."
+      ]
+    },
+    {
+      title: "Switching to mirtazapine when an SSRI is out of stock or not tolerated",
+      best_for: "Pharmacies and OPDs with interrupted SSRI supply, or patients with SSRI nausea, insomnia or sexual dysfunction.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "From sertraline, escitalopram or fluoxetine: start mirtazapine 15 mg at night and reduce the SSRI over 1–2 weeks (fluoxetine 20 mg can usually just stop because it tapers itself).",
+        "Mirtazapine is sometimes added to an SSRI on purpose (Kaplan), but warn about tremor, sweating, diarrhoea or jerking and review within 1–2 weeks.",
+        "From mirtazapine to an SSRI: start the SSRI at a low dose (sertraline 25–50 mg, fluoxetine 10–20 mg, escitalopram 5–10 mg) and reduce mirtazapine over 1–2 weeks; sleep may worsen for a while.",
+        "From amitriptyline or imipramine: reduce the tricyclic to 25–50 mg, start mirtazapine 15 mg, then stop the tricyclic over 1–2 weeks; watch for excessive sedation.",
+        "Never within 14 days of an MAOI (Kaplan)."
+      ],
+      monitor: [
+        "Sedation and falls",
+        "Serotonin syndrome and discontinuation symptoms",
+        "Mood and suicidal thoughts"
+      ],
+      cautions: [
+        "Switching tables differ; confirm with Maudsley Prescribing Guidelines or local protocol."
+      ]
+    }
+  ],
+  paediatric: [
+    "Not recommended for depression in children or adolescents: trials did not show benefit, and weight gain is marked. Use fluoxetine (adolescents) with psychosocial treatment and specialist advice."
+  ],
+  cautions: [
+    "Sedation and falls, especially in older people; adds to alcohol, benzodiazepines, opioids and sedating antihistamines.",
+    "Weight gain and raised lipids; caution in diabetes and obesity.",
+    "Rare agranulocytosis: urgent assessment for fever, sore throat or mouth ulcers.",
+    "Suicidal thoughts early in treatment in young people; can trigger mania.",
+    "Low sodium can occur in older people (less often than with SSRIs).",
+    "Reduce dose in kidney or liver impairment; enzyme inducers (carbamazepine, phenytoin, rifampicin) lower levels.",
+    "Never with or within 14 days of an MAOI."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Mirtazapine is highly sedating and increases appetite, suiting depressed patients with insomnia, weight loss and agitation; older patients are good candidates. Sedation usually lessens over the first week.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2012"
+    },
+    {
+      book: "kaplan",
+      text: "Start 15 mg at bedtime; if no response, increase by 15 mg every 5 days to a maximum of 45 mg at bedtime; lower doses may be needed in older people and in kidney or liver disease. Do not use within 14 days of an MAOI.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2014"
+    },
+    {
+      book: "kaplan",
+      text: "Rarely the neutrophil count fell severely within 2 months; anyone with fever, sore throat, mouth ulcers or other infection signs needs assessment and mirtazapine stopped if the white count is low. Avoid alcohol and other sedatives.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2013"
+    },
+    {
+      book: "kaplan",
+      text: "Clearance is slower by up to 30 percent in liver impairment and up to 50 percent in kidney impairment; half-life about 30 hours.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2011"
+    },
+    {
+      book: "kaplan",
+      text: "Mirtazapine is often combined with SSRIs to boost response or counter nausea, agitation and insomnia, and has no significant pharmacokinetic interactions with other antidepressants.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2012"
+    },
+    {
+      book: "kaplan",
+      text: "Kaplan advises caution in pregnancy (no fetal data) and says nursing mothers should not take it because it may pass into milk; lactation references (LactMed) consider it usually acceptable with infant monitoring.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2014"
+    },
+    {
+      book: "kaplan",
+      text: "Mirtazapine adds to the sedation of alcohol and benzodiazepines.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2014"
+    }
+  ],
+  sources: [
+    {
+      name: "BNF: mirtazapine"
+    },
+    {
+      name: "Mirtazapine product information (agranulocytosis, renal and hepatic impairment)"
+    },
+    {
+      name: "NICE NG222 Depression in adults (2022)"
+    },
+    {
+      name: "Maudsley Prescribing Guidelines in Psychiatry (antidepressant switching)"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "lamotrigine",
+  name: "Lamotrigine",
+  aka: [
+    "Lamictal",
+    "mood stabiliser",
+    "antiepileptic"
+  ],
+  cls: "Antiepileptic mood stabiliser (sodium-channel blocker)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "medical",
+    "maternity",
+    "paediatric"
+  ],
+  tags: [
+    "bipolar depression",
+    "bipolar maintenance",
+    "epilepsy",
+    "pregnancy",
+    "women of childbearing age",
+    "Stevens-Johnson syndrome",
+    "rash",
+    "titration",
+    "missed doses",
+    "valproate interaction",
+    "carbamazepine interaction",
+    "rifampicin"
+  ],
+  presentation: [
+    "Tablets 25 mg, 50 mg, 100 mg and 200 mg (usually not scored).",
+    "Dispersible/chewable tablets 2 mg, 5 mg and 25 mg; orodispersible tablets in some markets.",
+    "Half-life about 25–33 hours alone; about twice as long with valproate and about half with carbamazepine, phenytoin, phenobarbital or rifampicin."
+  ],
+  indications: [
+    "Prevention of depressive episodes in bipolar disorder (maintenance); bipolar depression",
+    "Mood stabiliser of choice for women who are or may become pregnant (instead of valproate)",
+    "Epilepsy: focal and generalised tonic-clonic seizures, alone or added to other antiepileptics (specialist for children)"
+  ],
+  standard: {
+    summary: "Well tolerated (no weight gain, little sedation) and the safest mood stabiliser in pregnancy, but it must be started slowly to avoid life-threatening rash (Stevens–Johnson syndrome, toxic epidermal necrolysis). The schedule depends on other drugs: valproate halves the dose; carbamazepine, phenytoin, phenobarbital and rifampicin raise it. It prevents bipolar depression better than mania and does not treat acute mania.",
+    items: [
+      {
+        label: "Bipolar disorder, adults, no interacting drugs (BNF)",
+        text: "25 mg once daily for 14 days, then 50 mg once daily for 14 days, then 100 mg daily for 7 days, then the usual target 200 mg daily (range 100–400 mg). Kaplan: most patients need 100–200 mg/day and doses above 200 mg added no consistent benefit."
+      },
+      {
+        label: "With valproate (BNF)",
+        text: "25 mg on alternate days for 14 days, then 25 mg daily for 14 days, then 50 mg daily for 7 days, then the usual target 100 mg daily (maximum 200 mg). Kaplan table: maximum 100 mg/day for bipolar disorder."
+      },
+      {
+        label: "With carbamazepine, phenytoin, phenobarbital or rifampicin, without valproate (BNF)",
+        text: "50 mg daily for 14 days, then 100 mg daily in 2 doses for 14 days, then 200 mg daily for 7 days, then 300 mg daily for 7 days, then the usual target 400 mg daily in 2 doses. Kaplan table: 50, then 100, then 200–400 mg (maximum 400)."
+      },
+      {
+        label: "Epilepsy, adults and children over 12, monotherapy (BNF)",
+        text: "25 mg daily for 14 days, then 50 mg daily for 14 days, then increase by at most 50–100 mg every 7–14 days; usual maintenance 100–200 mg daily in 1–2 doses (up to 500 mg). Adjust for valproate or enzyme inducers as above. Children under 12: weight-based BNF for Children schedule, specialist use."
+      },
+      {
+        label: "Missed doses",
+        text: "If more than 4 consecutive days are missed (Kaplan; BNF: more than 5 half-lives), restart at the first step of the titration, not the old dose. The time is shorter for people also taking carbamazepine, phenytoin or rifampicin; if in doubt, re-titrate."
+      },
+      {
+        label: "Rash",
+        text: "Most rashes occur in the first 8 weeks (Kaplan: first 4 months). Any rash, fever, swollen glands, mouth or eye sores: stop lamotrigine at once and assess the same day. Do not restart after a lamotrigine rash unless a specialist decides it was clearly unrelated."
+      },
+      {
+        label: "Pregnancy",
+        text: "Preferred over valproate and carbamazepine. Folic acid before and during pregnancy. Levels fall in pregnancy: review seizure or mood control each trimester and adjust with specialist advice; reduce towards the pre-pregnancy dose soon after delivery."
+      },
+      {
+        label: "Stopping",
+        text: "Taper over at least 2 weeks unless there is a rash, in which case stop at once (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Paper titration calendar for starting lamotrigine",
+      best_for: "OPD and psychiatric clinics without electronic prescribing; patients with limited literacy or many medicines.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "First check every medicine the patient takes: valproate (use the half-dose schedule), carbamazepine, phenytoin, phenobarbital, or rifampicin-containing TB treatment (use the higher schedule). Also ask about hormonal contraception (it lowers lamotrigine; oestrogen-containing pills need specialist dose advice).",
+        "Draw a calendar for 6 weeks on one page: one box per day. Write the start date in Ethiopian and Gregorian calendar if helpful.",
+        "Colour or mark weeks by dose. Example without interacting drugs: weeks 1–2 '25 mg — 1 small tablet'; weeks 3–4 '50 mg — 2 small tablets'; week 5 '100 mg — 1 large tablet'; week 6 onward '200 mg — 2 large tablets' (or as prescribed). With valproate: weeks 1–2 '25 mg every other day' (mark the no-tablet days with X).",
+        "Draw the actual tablet next to each dose (size and colour), because 25 mg and 100 mg tablets can look alike.",
+        "Dispense only the tablets for the current stage when possible (for example a 2-week pack of 25 mg) so the patient cannot jump ahead.",
+        "The patient ticks each box after taking the dose. Bring the calendar to each visit (weeks 2, 4 and 6).",
+        "Write the rash rule in large letters at the top: 'ANY rash, fever, mouth or eye sores — stop the tablets and come today.'",
+        "Write the missed-dose rule: 'If you miss more than 4 days in a row, do not restart on your own — come to the clinic to start again from the beginning.'"
+      ],
+      monitor: [
+        "Ticked calendar boxes (adherence)",
+        "Rash, fever, sore mouth or eyes at every visit in the first 2–3 months",
+        "Dizziness, double vision, unsteadiness (dose too high)",
+        "Mood (depression or switch to mania) and seizure diary if epileptic"
+      ],
+      cautions: [
+        "Children and adolescents under 16 have a higher rash risk (Kaplan).",
+        "If valproate is added to or stopped from an established lamotrigine regimen, the lamotrigine dose must change: seek advice."
+      ]
+    },
+    {
+      title: "Rash action plan without a dermatologist",
+      best_for: "Any health facility seeing a patient on lamotrigine with a new rash.",
+      requires: [],
+      steps: [
+        "Teach at the start: any rash in the first 2–3 months is treated as dangerous until proven otherwise.",
+        "Patient or family action: stop lamotrigine immediately and attend the same day. Do not wait to see if it spreads.",
+        "Clinician: look for danger signs — fever, painful or dusky red skin, blisters or peeling, sores in the mouth, eyes or genitals, swollen face or glands, jaundice, or feeling very unwell. Any of these: treat as Stevens–Johnson syndrome or drug hypersensitivity; admit, IV fluids, eye care, wound care as for burns, and refer urgently.",
+        "No danger signs: keep lamotrigine stopped. Review daily for 2–3 days; mild rash can progress (Kaplan: early stopping may not prevent severe rash).",
+        "Record 'lamotrigine allergy — rash' on the patient card and in the register. Do not restart except on specialist advice.",
+        "Cover the underlying illness: for bipolar disorder, an antipsychotic (olanzapine or haloperidol) or lithium with monitoring; for epilepsy, another antiepileptic (carbamazepine also causes serious rash — use with caution after a lamotrigine rash; phenobarbital is an option).",
+        "Stopping lamotrigine suddenly for a rash is correct even though it may raise seizure risk: arrange seizure cover if needed."
+      ],
+      monitor: [
+        "Skin, mouth, eyes daily until settled",
+        "Temperature, pulse, BP, fluid intake",
+        "Seizures or mood relapse after stopping"
+      ],
+      cautions: [
+        "Rash risk rises with too-fast titration and with valproate (Kaplan).",
+        "HIV and other antiretroviral or antibiotic rashes can look similar; stop all recently started suspect drugs if unsure."
+      ]
+    },
+    {
+      title: "Restarting after a stock-out or missed doses",
+      best_for: "Pharmacies with interrupted supply; patients who ran out or stopped during illness or travel.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Ask exactly when the last dose was taken and what other medicines have been started or stopped (valproate, carbamazepine, rifampicin, contraceptive pills).",
+        "Missed 4 days or fewer: restart the usual dose.",
+        "Missed more than 4 consecutive days (Kaplan; about 5 half-lives): restart from step 1 of the correct schedule (25 mg daily; 25 mg every other day with valproate; 50 mg daily with enzyme inducers) and titrate again with a new calendar.",
+        "If only part of the dose is available (for example only 25 mg tablets), give the full dose using several tablets rather than stopping.",
+        "If a supply gap is expected, dispense enough to cover it; tell the patient to return before the last tablet, not after.",
+        "Cover the gap while re-titrating: for bipolar disorder at high relapse risk, consider a short course of an antipsychotic; for epilepsy, discuss with a clinician (another antiepileptic may be needed)."
+      ],
+      monitor: [
+        "Rash during re-titration",
+        "Mood or seizure control during the lower-dose weeks"
+      ],
+      cautions: [
+        "Restarting at the full old dose after a break is a recognised cause of Stevens–Johnson syndrome."
+      ]
+    },
+    {
+      title: "Switching a woman of childbearing age from valproate to lamotrigine",
+      best_for: "Psychiatric and neurology clinics managing bipolar disorder or epilepsy in girls and women who could become pregnant.",
+      requires: [
+        "oral"
+      ],
+      steps: [
+        "Explain why: valproate causes serious birth defects and developmental problems; lamotrigine is much safer in pregnancy. Offer contraception and folic acid.",
+        "Keep valproate at the current dose while starting lamotrigine on the valproate schedule: 25 mg every other day for 2 weeks, 25 mg daily for 2 weeks, then 50 mg daily, then up to 100 mg daily.",
+        "Once lamotrigine is at 100 mg daily, reduce valproate gradually (for example by about 20–25 percent of the dose every 1–2 weeks), with specialist advice.",
+        "As valproate falls, lamotrigine levels fall too: increase lamotrigine in steps (for example 50 mg every 1–2 weeks) towards the usual target (200 mg for bipolar disorder; epilepsy per specialist).",
+        "For bipolar disorder at high risk of mania, lamotrigine alone may not prevent mania: consider adding or keeping an antipsychotic (olanzapine) during and after the switch.",
+        "Use a written calendar for both drugs and see the patient every 2 weeks."
+      ],
+      monitor: [
+        "Rash (especially in the first 8 weeks)",
+        "Mood (depression and mania) or seizure diary",
+        "Pregnancy test if a period is missed"
+      ],
+      cautions: [
+        "Hormonal contraceptives containing oestrogen lower lamotrigine; levels rise in the pill-free week. Discuss contraceptive choice with the prescriber (confirm with local protocol).",
+        "Switching schedules vary; confirm with specialist or local protocol."
+      ]
+    }
+  ],
+  paediatric: [
+    "Epilepsy in children: specialist use with the weight-based BNF for Children schedule using 2 mg, 5 mg and 25 mg dispersible tablets; children have a higher risk of serious rash.",
+    "Bipolar disorder: Kaplan states lamotrigine should not be taken by anyone under 16 years for this indication; specialist only."
+  ],
+  cautions: [
+    "Serious rash (Stevens–Johnson syndrome, toxic epidermal necrolysis), mostly in the first 8 weeks: slow titration, stop at once for any rash.",
+    "Valproate doubles lamotrigine levels; carbamazepine, phenytoin, phenobarbital and rifampicin lower them by about half; oestrogen contraceptives lower them.",
+    "Missed more than 4 days: re-titrate from the start.",
+    "Not a treatment for acute mania.",
+    "Dizziness, double vision, unsteadiness, headache and nausea at higher doses; aseptic meningitis and blood disorders rarely.",
+    "Lower maintenance dose in kidney impairment; reduce in moderate to severe liver impairment.",
+    "Antiepileptics carry a small increased risk of suicidal thoughts: ask at reviews.",
+    "Do not stop abruptly in epilepsy (except for rash)."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Lamotrigine lengthens the time between bipolar episodes, more for depression than mania; it is not effective as the main treatment of acute mania.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, lamotrigine, pdf p. 2082"
+    },
+    {
+      book: "kaplan",
+      text: "About 8 percent develop a benign rash in the first 4 months, but any rash may be early Stevens–Johnson syndrome, so stop at once; rash risk rises with a faster start or valproate, and in under-16s. If more than 4 consecutive days are missed, restart from the first step of the titration.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, lamotrigine, pdf p. 2083"
+    },
+    {
+      book: "kaplan",
+      text: "Valproate doubles lamotrigine levels; carbamazepine, phenytoin or phenobarbital lower them by 40–50 percent; sertraline raises them to a lesser extent.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, lamotrigine, pdf p. 2083"
+    },
+    {
+      book: "kaplan",
+      text: "Most bipolar patients need 100–200 mg/day, with no added benefit above 200 mg; lower maintenance in kidney impairment; taper over 2 weeks unless a rash appears.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, lamotrigine, pdf p. 2084"
+    },
+    {
+      book: "kaplan",
+      text: "Dosing table: monotherapy 25 mg/day weeks 1–2, 50 mg weeks 3–4, then 100–200 mg; with valproate 25 mg every other day, then 25 mg, then 50–100 mg (maximum 100); with carbamazepine 50, 100, then 200–400 mg.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, Table 21-37, pdf p. 2085"
+    },
+    {
+      book: "kaplan",
+      text: "Valproate more than doubles lamotrigine concentrations, raising the risk of Stevens–Johnson syndrome and toxic epidermal necrolysis.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, valproate, pdf p. 2077"
+    },
+    {
+      book: "kaplan",
+      text: "First-trimester lamotrigine may be linked to oral clefts; valproate and carbamazepine are linked to neural tube defects.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 General Principles of Psychopharmacology, pregnancy, pdf p. 1920"
+    },
+    {
+      book: "kaplan",
+      text: "Lamotrigine monotherapy is listed as not recommended for acute mania in CANMAT/ISBD-based recommendations.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 6 Bipolar Disorders, Table 6-6, pdf p. 1199"
+    },
+    {
+      book: "kaplan",
+      text: "Lithium combined with carbamazepine, lamotrigine, valproate or clonazepam may raise lithium levels and worsen lithium neurological side effects; start at lower doses.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, lithium, pdf p. 2063"
+    }
+  ],
+  sources: [
+    {
+      name: "BNF and BNF for Children: lamotrigine"
+    },
+    {
+      name: "NICE CG185 Bipolar disorder: assessment and management (2014, updated 2023)"
+    },
+    {
+      name: "NICE CG192 Antenatal and postnatal mental health; MHRA 2021 safety review of antiepileptic drugs in pregnancy"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Psychoses — bipolar disorder; Epilepsy modules)"
+    },
+    {
+      name: "Lamotrigine product information (titration, missed doses, hepatic impairment)"
+    },
+    {
+      name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    }
+  ],
+  review: {
+    status: "draft",
+    by: null,
+    date: null
+  }
+},
+/* ---------------------------------------------------------- */
+{
+  id: "methylphenidate",
+  name: "Methylphenidate",
+  aka: [
+    "Ritalin",
+    "Concerta",
+    "Medikinet",
+    "stimulant"
+  ],
+  cls: "Central nervous system stimulant (controlled drug)",
+  cat: "psychiatry",
+  wards: [
+    "psychiatric",
+    "outpatient",
+    "paediatric"
+  ],
+  tags: [
+    "ADHD",
+    "attention-deficit hyperactivity disorder",
+    "controlled drug",
+    "growth",
+    "height",
+    "blood pressure",
+    "pulse",
+    "tics",
+    "misuse",
+    "diversion",
+    "appetite loss",
+    "insomnia"
+  ],
+  presentation: [
+    "Immediate-release tablets 5 mg, 10 mg and 20 mg (short action, 3–4 hours).",
+    "Modified-release tablets or capsules (for example 18 mg, 27 mg, 36 mg, 54 mg; 10–60 mg) — brands are not interchangeable; availability in Ethiopia is limited.",
+    "Controlled drug: special prescription, register and secure storage under national narcotic and psychotropic drug regulations."
+  ],
+  indications: [
+    "ADHD in children 6 years and over, adolescents and adults, as part of a full treatment programme after diagnosis by a trained clinician",
+    "Narcolepsy (specialist use)"
+  ],
+  standard: {
+    summary: "The first-line medicine for ADHD and effective in about three-quarters of children, acting within 30 minutes. It is a controlled drug that can be misused or diverted, raises pulse and BP, reduces appetite and can slow growth. Supply is often limited: behavioural and school measures remain the foundation, and every child needs height, weight, BP and pulse tracked.",
+    items: [
+      {
+        label: "Children 6–17 years, immediate release (BNF for Children)",
+        text: "Start 5 mg once or twice daily (breakfast and lunch). Increase by 5–10 mg daily at weekly intervals according to response. Usual maximum 60 mg daily in 2–3 divided doses; specialists may use up to 2.1 mg/kg/day (maximum 90 mg). Last dose before 4 pm to avoid insomnia. Kaplan gives a maximum of 80 mg/day in children."
+      },
+      {
+        label: "Adults (NICE NG87, BNF)",
+        text: "Start 5 mg two or three times daily; increase weekly according to response and side effects; maximum 100 mg daily (BNF). Kaplan: maximum 90 mg daily."
+      },
+      {
+        label: "Before starting",
+        text: "Confirm the diagnosis (symptoms in 2 or more settings, starting before 12 years, causing impairment). Ask about fainting, chest pain or breathlessness on exercise, palpitations, sudden death in a young family member, known heart disease, tics, seizures, psychosis or mania, substance use (including khat), and who in the household might misuse tablets. Record height, weight (plot on a centile chart), pulse and BP (NICE NG87). Refer for cardiology review if the heart history is positive."
+      },
+      {
+        label: "Monitoring (NICE NG87)",
+        text: "Pulse and BP before and after each dose change and every 6 months. Children: height every 6 months, weight at 3 and 6 months then every 6 months, plotted on a growth chart. Review sleep, appetite, mood, tics and misuse at every visit, and whether medicine is still needed at least once a year (consider a trial off medicine)."
+      },
+      {
+        label: "Common problems",
+        text: "Poor appetite (give with or after meals, larger evening meal, snacks), insomnia (earlier last dose), headache, stomach ache, irritability or rebound as the dose wears off, raised pulse and BP, tics (Kaplan Table 21-49)."
+      },
+      {
+        label: "Do not use",
+        text: "In uncontrolled hypertension, serious heart disease or arrhythmia, glaucoma, hyperthyroidism, active psychosis or mania, severe anorexia, or within 14 days of an MAOI. Use with caution in epilepsy, tics, anxiety and substance use."
+      },
+      {
+        label: "Overdose",
+        text: "Agitation, tremor, fast pulse, high BP, fever, psychosis, seizures, arrhythmia. Supportive care: calm environment, benzodiazepines for agitation and seizures, cooling for fever, BP and pulse monitoring (Kaplan)."
+      }
+    ]
+  },
+  improvised: [
+    {
+      title: "Paper growth, BP and pulse chart for children on methylphenidate",
+      best_for: "Paediatric and child mental health clinics without electronic records or growth software.",
+      requires: [
+        "oral",
+        "bp"
+      ],
+      steps: [
+        "Use the WHO growth chart (height-for-age and BMI-for-age or weight-for-age) for the child's sex and keep it in the clinic file; give the family a copy or record in the child health card.",
+        "At baseline and every visit: measure height without shoes against a fixed wall rule, weight on the same scale, pulse for a full minute, and BP with the right-size paediatric cuff after 5 minutes' rest.",
+        "Draw a simple table on the back of the chart: date, dose, height, weight, pulse, BP, sleep, appetite, tics, mood, school report.",
+        "Plot height and weight on the centile chart each time. Action: if weight falls by more than 2 centile lines, or height growth crosses down a centile line, review diet, reduce the dose or plan a break (for example school holidays), and refer if it continues.",
+        "Pulse: a resting pulse persistently over 120/min (child) or palpitations, fainting or chest pain — stop and refer for cardiac assessment.",
+        "BP: compare with age and height norms; if systolic or diastolic BP is above the 95th centile on 2 visits, reduce or stop and refer (NICE NG87). Adults: repeated readings of 140/90 or higher — reduce or stop.",
+        "Bring school feedback (a short teacher note or rating) every 3–6 months to judge benefit."
+      ],
+      monitor: [
+        "Height and weight centiles every 6 months (weight also at 3 months)",
+        "Pulse and BP at each dose change and every 6 months",
+        "Sleep, appetite, tics, mood, psychotic symptoms"
+      ],
+      cautions: [
+        "Kaplan: continuous use for years can reduce final height by several centimetres; breaks allow catch-up growth.",
+        "Growth slowing may reflect poor food security rather than the medicine alone: ask about meals and school feeding."
+      ]
+    },
+    {
+      title: "Controlled-drug safety and preventing misuse or diversion",
+      best_for: "Pharmacies, clinics and families where methylphenidate is dispensed in limited quantities.",
+      requires: [],
+      steps: [
+        "Prescribe on the official controlled-drug prescription and record in the controlled-drug register with batch and quantity, following national regulation.",
+        "Dispense 2–4 weeks at a time; never early refills without a clear reason. Count remaining tablets at reviews if concerns arise.",
+        "The parent or a responsible adult keeps the tablets locked away and gives each dose; the child should not carry tablets to school. If a school dose is needed, arrange for a teacher or school nurse to hold a small labelled supply, or use a once-daily modified-release form if available.",
+        "Ask at every visit about older siblings, adolescents or adults in the home using stimulants or selling tablets (Kaplan: the bigger risk is others taking the supply).",
+        "Adolescents and adults: ask about crushing, snorting, taking extra doses, use for exam study or weight loss, and use with khat or alcohol. Warning signs: lost prescriptions, early requests, doses taken erratically.",
+        "If misuse is suspected: stop supply, discuss openly with the patient and family, and consider non-stimulant or behavioural approaches with specialist advice.",
+        "Unused or expired tablets: return to the pharmacy for recorded destruction."
+      ],
+      monitor: [
+        "Tablet counts and refill dates",
+        "Mood swings or behaviour change that might reflect erratic use (DSM-5-TR Clinical Cases)",
+        "Weight loss, insomnia, agitation or psychotic symptoms"
+      ],
+      cautions: [
+        "High doses and misuse can cause paranoid psychosis (Kaplan); stop and assess."
+      ]
+    },
+    {
+      title: "ADHD care when methylphenidate is unavailable or supply is interrupted",
+      best_for: "Clinics in regions with no or irregular stimulant supply.",
+      requires: [],
+      steps: [
+        "Confirm the diagnosis and screen for problems that mimic ADHD: poor hearing or vision, learning difficulty, epilepsy (absences), anaemia or hunger, sleep problems, anxiety, trauma or abuse, khat or substance use in adolescents.",
+        "Parent training: praise specific good behaviour immediately, clear short instructions, routines for mornings and homework, consistent calm consequences (time-out, loss of privileges) instead of beating, and a daily reward chart.",
+        "School plan (a letter to the teacher): seat the child near the front away from distractions, give one instruction at a time, break tasks into short parts, allow movement breaks, and use a daily report card linked to home rewards.",
+        "If methylphenidate runs out suddenly: no dangerous withdrawal occurs, but behaviour and attention will return; warn the school and family, and restart at the previous dose when supply returns if the gap was short (no re-titration needed, but recheck pulse and BP).",
+        "Alternatives with specialist advice where stocked: atomoxetine, clonidine or guanfacine (Kaplan lists these and tricyclics). Imipramine is a last-resort option only under specialist care because of cardiac and overdose risk.",
+        "Review every 3 months; refer severe or complex cases (aggression, self-harm, autism, intellectual disability) to child mental health services."
+      ],
+      monitor: [
+        "Behaviour at home and school (teacher report)",
+        "Family stress, harsh punishment or school exclusion"
+      ],
+      cautions: [
+        "Do not use antipsychotics or sedatives just to control ADHD behaviour."
+      ]
+    }
+  ],
+  paediatric: [
+    "Children 6 years and over: start 5 mg once or twice daily, increase by 5–10 mg weekly, usual maximum 60 mg daily (BNF for Children); specialist up to 2.1 mg/kg/day (maximum 90 mg). Kaplan: start 5–10 mg every 3–4 hours, maximum 20 mg four times daily or 1 mg/kg/day.",
+    "Children under 6 years: parent training first; medicine only under specialist care.",
+    "Monitor height, weight, pulse and BP every 6 months on a growth chart; consider planned breaks if growth slows."
+  ],
+  cautions: [
+    "Controlled drug: misuse and diversion, especially by others in the household.",
+    "Raises pulse and BP; avoid in structural heart disease, arrhythmia, uncontrolled hypertension; ask about exercise syncope and family sudden death.",
+    "Appetite loss, weight loss and slowed growth.",
+    "Can worsen tics, anxiety, psychosis or mania; can lower seizure threshold (use with care in epilepsy).",
+    "Avoid in glaucoma and hyperthyroidism; never with or within 14 days of an MAOI.",
+    "Avoid in pregnancy, especially the first trimester (Kaplan).",
+    "Raises tricyclic, phenytoin and phenobarbital levels; reduces the effect of antihypertensives."
+  ],
+  textbook: [
+    {
+      book: "kaplan",
+      text: "Stimulants are first-line for ADHD in children and work about 75 percent of the time, within 15–30 minutes.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2153"
+    },
+    {
+      book: "kaplan",
+      text: "Methylphenidate is usually started at 5–10 mg every 3–4 hours and may be increased to a maximum of 20 mg four times daily or 1 mg/kg/day; alternatives include clonidine, guanfacine, bupropion and tricyclics.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2154"
+    },
+    {
+      book: "kaplan",
+      text: "Common effects are stomach pain, anxiety, irritability, insomnia, fast pulse and reduced appetite; heart rate and BP rise; tics may appear or worsen.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2156"
+    },
+    {
+      book: "kaplan",
+      text: "Stimulants may worsen glaucoma, hypertension, heart disease, hyperthyroidism, anxiety, psychosis and seizures; overdose causes hypertension, fast pulse, high fever, toxic psychosis and seizures (benzodiazepines for seizures).",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2158"
+    },
+    {
+      book: "kaplan",
+      text: "Avoid stimulants in pregnancy, especially the first trimester; methylphenidate passes into breast milk. The bigger misuse risk is other household members taking the supply for abuse or sale.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2159"
+    },
+    {
+      book: "kaplan",
+      text: "Before starting, check for high BP, fast heart rhythms and tics; assess liver and kidney function.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2160"
+    },
+    {
+      book: "kaplan",
+      text: "Continuous use for years without breaks can reduce final height by several centimetres; children often catch up with weekend or holiday breaks.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 2.4 ADHD, pdf p. 435"
+    },
+    {
+      book: "kaplan",
+      text: "Immediate-release doses can be given at 8 am, noon and 4 pm; maximum 80 mg/day in children and 90 mg in adults.",
+      ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2162"
+    },
+    {
+      book: "dsm",
+      text: "In a teenager on long-term methylphenidate who became moody, clinicians should consider that the ADHD medicine is being taken in excess on some days and not at all on others.",
+      ref: "DSM-5-TR Clinical Cases 2023, ch. 3 Bipolar and Related Disorders, case 3.5 Irritability and Sadness, pdf p. 107"
+    }
+  ],
+  sources: [
+    {
+      name: "NICE NG87 Attention deficit hyperactivity disorder: diagnosis and management (2018, updated 2019)"
+    },
+    {
+      name: "BNF and BNF for Children: methylphenidate hydrochloride"
+    },
+    {
+      name: "WHO mhGAP Intervention Guide 2.0, 2016 (Child and adolescent mental and behavioural problems module)"
+    },
+    {
+      name: "WHO Child Growth Standards (growth charts)"
     },
     {
       name: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022; DSM-5-TR Clinical Cases 2023"

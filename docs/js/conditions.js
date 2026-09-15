@@ -186,7 +186,9 @@ window.CONDITIONS = [
     { id: "naloxone", role: "first", note: "Overdose with apnoea or severe respiratory depression: adult 0.4–2 mg IV, IM or intranasal, repeated every 2–3 min; synthetic opioids such as fentanyl may need twice that (Harrison). Child 0.1 mg/kg, max 2 mg. For over-sedation from therapeutic opioids instead, titrate 40 mcg increments so analgesia is kept." },
     { id: "ringers-lactate", role: "supportive", note: "For hypotension." },
     { id: "dextrose", role: "supportive", note: "Check glucose in every unconscious patient." },
-    { id: "oxygen", role: "supportive", note: "Bag-valve-mask with oxygen before and between naloxone doses." }
+    { id: "oxygen", role: "supportive", note: "Bag-valve-mask with oxygen before and between naloxone doses." },
+    { id: "methadone", role: "avoid", note: "Never give methadone during or soon after an overdose. Methadone overdose outlasts naloxone: expect repeated doses or an infusion (hourly 1/2–2/3 of the reversing dose) and observe at least 24 h after the last naloxone." },
+    { id: "naltrexone", role: "avoid", note: "Do not use to reverse overdose: it is oral, slow and causes prolonged precipitated withdrawal. Naloxone is the antidote. Recent naltrexone stoppers have lost tolerance and overdose easily." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, Table 79.5, p. 563" }, { name: "WHO. Community management of opioid overdose, 2014" }],
   textbook: [
@@ -1697,7 +1699,9 @@ window.CONDITIONS = [
       id: "oxygen",
       role: "supportive",
       note: "For low saturation after sedation; position on the side and support the airway."
-    }
+    },
+    { id: "haloperidol-decanoate", role: "avoid", note: "Never for agitation: it takes days to work and cannot be removed. Use short-acting haloperidol lactate or a benzodiazepine." },
+    { id: "clozapine", role: "avoid", note: "Do not give IM or IV benzodiazepines to a patient taking clozapine (collapse and breathing depression); ask about clozapine before sedating and use small oral doses with close observation." }
   ],
   textbook: [
     {
@@ -1838,7 +1842,13 @@ window.CONDITIONS = [
       id: "oxygen",
       role: "supportive",
       note: "If saturation is low."
-    }
+    },
+    { id: "quetiapine", role: "alternative", note: "Only when haloperidol is unsuitable, for example Parkinson disease or Lewy body dementia: 12.5–25 mg at night with caution. Evidence is limited; sedation, low blood pressure and falls." },
+    { id: "risperidone", role: "alternative", note: "If an antipsychotic is needed and haloperidol is not available: older people 0.25–0.5 mg once or twice daily, shortest time. Avoid in Parkinson disease and Lewy body dementia." },
+    { id: "trihexyphenidyl", role: "avoid", note: "Anticholinergic drugs cause and worsen delirium. Stop or taper it if the patient is taking it." },
+    { id: "cyproheptadine", role: "avoid", note: "Sedating anticholinergic antihistamine: worsens confusion (Kaplan: can cause central anticholinergic syndrome with psychosis)." },
+    { id: "imipramine", role: "avoid", note: "Anticholinergic; worsens confusion, especially in older people. Stop (taper if on long-term treatment) unless withdrawal is itself a concern." },
+    { id: "mirtazapine", role: "avoid", note: "Sedating; stop or reduce during delirium unless it was long-term and stopping causes withdrawal. Not a treatment for agitation." }
   ],
   textbook: [
     {
@@ -1993,7 +2003,10 @@ window.CONDITIONS = [
       id: "paracetamol",
       role: "supportive",
       note: "For fever and pain; maximum 2 g/day in chronic heavy drinking or liver disease."
-    }
+    },
+    { id: "chlordiazepoxide", role: "alternative", note: "Oral only: 25 mg 3–4 times daily on day 1, then reduce total by 20% a day (Kaplan), or 25–50 mg when CIWA-Ar is 10 or more. Long acting: hold if drowsy; avoid fixed schedules in liver disease." },
+    { id: "propranolol", role: "avoid", note: "Not a treatment for withdrawal: does not prevent seizures or delirium and hides tremor and fast pulse used for scoring (Kaplan). Adjunct only on specialist advice once benzodiazepine dosing is adequate." },
+    { id: "naltrexone", role: "supportive", note: "After withdrawal is complete, for relapse prevention: 25 mg then 50 mg daily for 3–12 months with psychosocial support (mhGAP). Not if liver failure, acute hepatitis or recent opioid use." }
   ],
   textbook: [
     {
@@ -2235,7 +2248,15 @@ window.CONDITIONS = [
       id: "thiamine",
       role: "adjunct",
       note: "If alcohol use or malnutrition."
-    }
+    },
+    { id: "risperidone", role: "alternative", note: "Start 1 mg daily, increase to 2–4 mg daily (mhGAP range 2–6 mg). Fewer movement effects than haloperidol at low doses; raises prolactin." },
+    { id: "quetiapine", role: "alternative", note: "25 mg twice daily, built up over days to 300–400 mg a day. Sedating with very few movement effects; watch dizziness on standing." },
+    { id: "aripiprazole", role: "alternative", note: "5–10 mg once daily, up to 15–30 mg. Least weight gain and prolactin rise; restlessness and insomnia are common." },
+    { id: "clozapine", role: "avoid", note: "Not for a first episode. Only for schizophrenia resistant to two adequate antipsychotic trials, started by a specialist where regular blood counts are possible." },
+    { id: "haloperidol-decanoate", role: "alternative", note: "Later maintenance when oral adherence fails, after oral haloperidol has been tolerated: 25 mg deep IM first, with oral cover. Not for the acute episode." },
+    { id: "trihexyphenidyl", role: "supportive", note: "Only if parkinsonism occurs: 1 mg daily increasing slowly. Do not give routinely with the antipsychotic (mhGAP); it is misused." },
+    { id: "bromocriptine", role: "avoid", note: "Dopamine agonist: can trigger or worsen hallucinations, delusions and mania (Kaplan). Stop or avoid in active psychosis unless treating NMS." },
+    { id: "methylphenidate", role: "avoid", note: "Stop: stimulants can cause or worsen psychosis, especially at high doses or with misuse (Kaplan). Restart only after specialist review." }
   ],
   textbook: [
     {
@@ -2373,7 +2394,16 @@ window.CONDITIONS = [
       id: "biperiden",
       role: "supportive",
       note: "For dystonia or parkinsonism from haloperidol."
-    }
+    },
+    { id: "risperidone", role: "first", note: "2 mg once daily, adjust by 1 mg to 1–6 mg daily, alone or with lithium or valproate. Watch for dystonia and prolactin effects." },
+    { id: "quetiapine", role: "alternative", note: "Built up from 100 mg on day 1 to 400 mg on day 4 in two doses, then up to 800 mg a day. Sedating; check lying and standing blood pressure." },
+    { id: "aripiprazole", role: "alternative", note: "15 mg once daily (maximum 30 mg), alone or with lithium or valproate. Little sedation, so a short benzodiazepine course may be needed for agitation." },
+    { id: "lamotrigine", role: "avoid", note: "Not effective as acute mania treatment (Kaplan) and needs weeks of titration. Keep it for bipolar maintenance and depression once mania is controlled." },
+    { id: "sertraline", role: "avoid", note: "Stop any antidepressant during mania; do not restart alone in bipolar disorder." },
+    { id: "escitalopram", role: "avoid", note: "Stop during mania; never as monotherapy in bipolar disorder." },
+    { id: "imipramine", role: "avoid", note: "Tricyclics carry a higher risk than SSRIs of triggering mania or rapid cycling (Kaplan); stop." },
+    { id: "mirtazapine", role: "avoid", note: "Can trigger mania like other antidepressants; stop." },
+    { id: "methylphenidate", role: "avoid", note: "Stimulants can worsen mania; stop during an episode and review the diagnosis." }
   ],
   textbook: [
     {
@@ -2497,7 +2527,13 @@ window.CONDITIONS = [
       id: "paracetamol",
       role: "avoid",
       note: "Not for treatment of depression; do not dispense large quantities to a person at risk (common overdose)."
-    }
+    },
+    { id: "quetiapine", role: "adjunct", note: "Specialist add-on for severe or psychotic depression not responding to an antidepressant, commonly 150–300 mg at night. Dangerous in overdose (sedation, QT): small supplies." },
+    { id: "aripiprazole", role: "adjunct", note: "Specialist add-on to an antidepressant: start 2–5 mg daily (range 2–15 mg); lower doses if on fluoxetine. Akathisia can increase suicidal impulses: ask about restlessness." },
+    { id: "sertraline", role: "first", note: "Start 25–50 mg daily after food, increase by 50 mg steps every 1–2 weeks if needed (maximum 200 mg). Safe in overdose; preferred in pregnancy, breastfeeding and heart disease. Small supplies and review within 1 week." },
+    { id: "escitalopram", role: "alternative", note: "10 mg daily (5 mg in older people or liver disease; usual maximum 20 mg, 10 mg over 65). Avoid with haloperidol, quinine, amiodarone or methadone (QT)." },
+    { id: "mirtazapine", role: "alternative", note: "15 mg at night, up to 45 mg; helpful when insomnia, anxiety or weight loss are prominent. Sedating; safer than tricyclics in overdose." },
+    { id: "imipramine", role: "avoid", note: "Tricyclic: can be fatal in overdose, like amitriptyline. Use an SSRI; if truly the only option, no more than 1 week supply held by family." }
   ],
   textbook: [
     {
@@ -2575,7 +2611,7 @@ window.CONDITIONS = [
     "Because fever and confusion have many causes, treat meningitis, sepsis and malaria empirically if they cannot be excluded.",
     "Differentiate: serotonin syndrome (clonus, brisk reflexes, diarrhoea), anticholinergic toxicity (dry skin, big pupils), heat stroke, catatonia, alcohol withdrawal and tetanus.",
     "Lorazepam or diazepam for agitation and rigidity; it may also help overlapping catatonia.",
-    "Dantrolene or bromocriptine (not in this app) where available, with specialist advice. Refer for intensive care if possible; ECT is used when drugs fail.",
+    "Bromocriptine (see its page) or dantrolene where available, with specialist advice. Refer for intensive care if possible; ECT is used when drugs fail.",
     "Check CK, creatinine and potassium where available. Prevent pressure sores and blood clots.",
     "Record the reaction clearly as an allergy-type alert. Wait at least 2 weeks after full recovery before any antipsychotic; then use a low dose of a lower-potency or second-generation drug, increase slowly, keep hydrated, avoid depots, and monitor temperature and rigidity."
   ],
@@ -2644,7 +2680,14 @@ window.CONDITIONS = [
       id: "oxygen",
       role: "supportive",
       note: "For low saturation or reduced consciousness."
-    }
+    },
+    { id: "clozapine", role: "avoid", note: "Clozapine can also cause NMS (Kaplan). Stop it; any later rechallenge is a specialist decision after full recovery." },
+    { id: "risperidone", role: "avoid", note: "Stop all antipsychotics, including risperidone, until fully recovered." },
+    { id: "quetiapine", role: "avoid", note: "Stop during NMS. After full recovery (often at least 2 weeks) a specialist may restart a low dose of a low-potency or second-generation drug such as quetiapine, increased slowly." },
+    { id: "aripiprazole", role: "avoid", note: "Stop all antipsychotics, including aripiprazole, until fully recovered." },
+    { id: "haloperidol-decanoate", role: "avoid", note: "Give no further injections. The depot keeps releasing drug for weeks and NMS mortality is higher with depots (Kaplan): expect a longer course and refer." },
+    { id: "bromocriptine", role: "adjunct", note: "2.5 mg orally or by nasogastric tube 2–3 times daily, increased as needed (Kaplan up to 45 mg/day); continue at least 10 days after recovery, then taper. Can worsen psychosis and lower blood pressure." },
+    { id: "cyproheptadine", role: "avoid", note: "Not a treatment for NMS; its anticholinergic effect reduces sweating and can worsen fever. Consider only if serotonin syndrome is the real diagnosis." }
   ],
   textbook: [
     {
@@ -2775,7 +2818,12 @@ window.CONDITIONS = [
       id: "oxygen",
       role: "supportive",
       note: "For low saturation or seizures."
-    }
+    },
+    { id: "cyproheptadine", role: "adjunct", note: "Moderate or severe cases: 12 mg orally or crushed by nasogastric tube, then 2 mg every 2 h while symptoms continue, then 8 mg every 6 h (max about 32 mg/day). No injection exists." },
+    { id: "sertraline", role: "avoid", note: "Stop; common cause, especially with tramadol, lithium, amitriptyline or a second antidepressant. Do not restart without review." },
+    { id: "escitalopram", role: "avoid", note: "Stop; serotonergic, and adds QT prolongation in overdose." },
+    { id: "imipramine", role: "avoid", note: "Stop; serotonergic tricyclic, and SSRIs raise its levels." },
+    { id: "mirtazapine", role: "avoid", note: "Hold; can contribute when combined with SSRIs or other serotonergic drugs." }
   ],
   textbook: [
     {
@@ -2885,7 +2933,8 @@ window.CONDITIONS = [
       id: "potassium-chloride",
       role: "supportive",
       note: "Only if potassium is measured low and urine output is adequate."
-    }
+    },
+    { id: "propranolol", role: "avoid", note: "Do not use to mask tremor when toxicity is possible: a coarse tremor with vomiting, unsteadiness or confusion needs lithium stopped, not propranolol." }
   ],
   textbook: [
     {
@@ -2998,7 +3047,10 @@ window.CONDITIONS = [
       id: "oxygen",
       role: "supportive",
       note: "For laryngeal dystonia or breathing difficulty."
-    }
+    },
+    { id: "trihexyphenidyl", role: "alternative", note: "Only if no injectable anticholinergic and the airway is safe: 2 mg by mouth, slower than IM. Then 2 mg two or three times daily for a few days while the antipsychotic is reviewed." },
+    { id: "haloperidol-decanoate", role: "avoid", note: "If dystonia follows a depot, give no further injection until reviewed; anticholinergic cover may be needed for days to weeks." },
+    { id: "propranolol", role: "adjunct", note: "For akathisia only (not dystonia or parkinsonism): 10 mg two or three times daily, usual 30–80 mg/day; hold if pulse under 50 or systolic BP under 90. Never in asthma." }
   ],
   textbook: [
     {
@@ -3121,7 +3173,9 @@ window.CONDITIONS = [
       id: "dextrose",
       role: "supportive",
       note: "If not eating; check glucose. Give thiamine if malnourished."
-    }
+    },
+    { id: "risperidone", role: "avoid", note: "Antipsychotics can worsen catatonia or trigger NMS; treat with lorazepam first." },
+    { id: "haloperidol-decanoate", role: "avoid", note: "Never start or continue a depot in catatonia; withhold the next injection and treat with lorazepam." }
   ],
   textbook: [
     {
@@ -3254,7 +3308,11 @@ window.CONDITIONS = [
       id: "biperiden",
       role: "supportive",
       note: "For dystonia from haloperidol."
-    }
+    },
+    { id: "quetiapine", role: "alternative", note: "Built up from 25 mg twice daily; low milk levels, often preferred when breastfeeding. Sedation can interfere with night feeds and baby safety." },
+    { id: "risperidone", role: "alternative", note: "1–2 mg a day, increasing to 2–4 mg. Low milk levels, but raises prolactin; watch the baby for sleepiness." },
+    { id: "bromocriptine", role: "avoid", note: "Do not use to suppress breast milk: linked to postpartum psychosis, hypertension, seizures and stroke, and can worsen psychosis (Kaplan). Stop it if already started." },
+    { id: "sertraline", role: "avoid", note: "Not alone when psychotic, manic or mixed features are present. For postpartum depression without psychosis, sertraline 50 mg is the usual first choice in breastfeeding." }
   ],
   textbook: [
     {
@@ -3405,7 +3463,9 @@ window.CONDITIONS = [
       id: "fluoxetine",
       role: "supportive",
       note: "Safer antidepressant once recovered and assessed. Note that fluoxetine raises tricyclic levels if both are taken."
-    }
+    },
+    { id: "trihexyphenidyl", role: "avoid", note: "Adds to anticholinergic toxicity (delirium, fever, urinary retention, seizures). Stop it." },
+    { id: "imipramine", role: "avoid", note: "Imipramine overdose is managed exactly like amitriptyline overdose (bicarbonate for broad QRS, benzodiazepines for seizures). Do not restart after recovery; switch to an SSRI with small supplies." }
   ],
   textbook: [
     {

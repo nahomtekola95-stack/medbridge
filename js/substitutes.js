@@ -191,14 +191,14 @@ window.SUBSTITUTES = {
     {use: "Agitation (IM)",with: "lorazepam",note: "1–2 mg IM. If not stocked, haloperidol 5 mg IM with promethazine 25–50 mg IM."}
   ],
   "fluphenazine-decanoate": [
-    {use: "Long-acting depot antipsychotic",none: true,note: "No other depot in this app. Haloperidol decanoate (50 mg/mL oily depot) is the usual alternative if stocked: start low and follow local protocol. Otherwise supervised daily oral treatment."},
+    {use: "Long-acting depot antipsychotic",with: "haloperidol-decanoate",note: "The usual alternative depot (oily, deep IM only). Start low with a test dose and follow local protocol; see its page for conversion. Otherwise supervised daily oral treatment."},
     {use: "Maintenance of psychosis (oral)",with: "haloperidol",note: "Daily supervised oral dosing by family or a health extension worker; trace missed doses."}
   ],
   "biperiden": [
     {use: "Acute dystonia",with: "promethazine",note: "25–50 mg deep IM. Sedating antihistamine with anticholinergic action (Kaplan supports antihistamines). Not under 2 years."},
     {use: "Acute dystonia",with: "diazepam",note: "5–10 mg slowly IV (Kaplan: 10 mg IV effective). Never IM. Watch breathing."},
     {use: "Acute dystonia not settling",with: "lorazepam",note: "1 mg IM or IV after the anticholinergic (Kaplan)."},
-    {use: "Drug-induced parkinsonism",none: true,note: "Trihexyphenidyl (benzhexol) 1 mg daily increasing, or benztropine, if stocked (not separate entries in this app). First try lowering the antipsychotic dose or switching to olanzapine."}
+    {use: "Drug-induced parkinsonism",with: "trihexyphenidyl",note: "Benzhexol, widely stocked: start 1 mg daily and increase slowly. First try lowering the antipsychotic dose or switching to olanzapine."}
   ],
   "promethazine": [
     {use: "Sedation in rapid tranquillisation",with: "lorazepam",note: "1–2 mg IM. Do not also give promethazine."},
@@ -248,8 +248,114 @@ window.SUBSTITUTES = {
     {use: "Other neuropathic pain and migraine prophylaxis",none: true,note: "No substitute in this app (gabapentin, pregabalin, duloxetine or propranolol if stocked locally). Use paracetamol and non-drug measures and refer."}
   ],
   "fluoxetine": [
+    {use: "Depression in adults",with: "sertraline",note: "Start 50 mg once daily. Stop fluoxetine first; its long half-life means sertraline can usually start after a few days at a low dose, watching for serotonin symptoms."},
     {use: "Depression in adults",with: "amitriptyline",note: "Effective but dangerous in overdose: small supplies, avoid in heart disease and suicide risk."},
-    {use: "Depression in adolescents",none: true,note: "No safe substitute in this app: tricyclics are not recommended under 18. Use psychological support and refer."},
-    {use: "Anxiety disorders and OCD",none: true,note: "Another SSRI (sertraline, citalopram) if stocked; benzodiazepines only short-term. Refer."}
+    {use: "Depression in adolescents",with: "sertraline",note: "Second-line SSRI under 18 with specialist advice; tricyclics are not recommended. Weekly review for suicidal thoughts at the start."},
+    {use: "Anxiety disorders and OCD",with: "sertraline",note: "Start low (25–50 mg) and increase slowly; benzodiazepines only short-term."}
+  ],
+  "risperidone": [
+    {use: "Psychosis (oral)",with: "haloperidol",note: "Start 1.5–3 mg daily (WHO mhGAP). Cheaper and widely stocked; more dystonia and parkinsonism."},
+    {use: "Psychosis or mania (oral)",with: "olanzapine",note: "5–10 mg once daily. Fewer movement effects; more weight gain and sedation."},
+    {use: "Psychosis with raised prolactin or weight problems",with: "aripiprazole",note: "10–15 mg once daily (many start 5 mg). Cross-taper; watch for restlessness."},
+    {use: "Acute mania",with: "sodium-valproate",note: "Mood stabiliser; slower onset. Avoid in women and girls who could become pregnant."},
+    {use: "Long-acting injection",with: "haloperidol-decanoate",note: "No cold chain needed. Oral haloperidol first, then 25 mg deep IM with oral cover; no exact conversion from risperidone."}
+  ],
+  "quetiapine": [
+    {use: "Psychosis or mania (oral)",with: "olanzapine",note: "5–10 mg once daily; no long titration. Weight gain and sedation."},
+    {use: "Psychosis or mania (oral)",with: "risperidone",note: "1–2 mg a day, increase to 2–4 mg. More prolactin and movement effects."},
+    {use: "Psychosis in Parkinson disease or Lewy body dementia",none: true,note: "Do not substitute haloperidol, risperidone or other strong D2 blockers: severe rigidity and falls. Reduce antiparkinson drugs, treat delirium causes, and ask a specialist (clozapine under monitoring is the evidence-based option)."},
+    {use: "Bipolar depression",with: "lithium",note: "Only where levels and kidney function can be checked. Antidepressants alone can trigger mania."},
+    {use: "Insomnia",none: true,note: "Not a reason to use quetiapine. Sleep advice; short courses of promethazine or a benzodiazepine only if needed."}
+  ],
+  "clozapine": [
+    {use: "Treatment-resistant schizophrenia",none: true,note: "No drug is as effective. Check adherence first; then use the best-tolerated antipsychotic at an adequate dose for 4–6 weeks (for example olanzapine up to 20 mg), consider a depot, and refer. Never start clozapine where blood counts cannot be done."},
+    {use: "Clozapine stopped for agranulocytosis",with: "olanzapine",note: "Kaplan: safe after clozapine agranulocytosis, but wait until the count has recovered. Never re-expose to clozapine."},
+    {use: "Temporary clozapine stock-out",none: true,note: "Every effort to get supplies: a gap over 48 hours means re-titration from 12.5 mg. Meanwhile cover severe symptoms with olanzapine or a benzodiazepine by mouth (no IM benzodiazepine) and watch for rebound psychosis and cholinergic rebound."}
+  ],
+  "aripiprazole": [
+    {use: "Psychosis (low metabolic risk)",with: "haloperidol",note: "About 5 mg a day; little weight gain but more movement effects and prolactin rise."},
+    {use: "Psychosis or mania",with: "risperidone",note: "1–2 mg a day increasing to 2–4 mg; raises prolactin."},
+    {use: "Psychosis or mania",with: "quetiapine",note: "Titrate over days from 25 mg twice daily; sedation and dizziness."},
+    {use: "Acute mania",with: "sodium-valproate",note: "Avoid in women and girls who could become pregnant."}
+  ],
+  "haloperidol-decanoate": [
+    {use: "Long-acting depot antipsychotic",with: "fluphenazine-decanoate",note: "Test dose 12.5 mg deep IM when the next haloperidol injection is due, then 12.5–50 mg every 2–4 weeks with oral cover. No exact conversion."},
+    {use: "Maintenance of psychosis (oral)",with: "haloperidol",note: "Start on the day the injection is due; about 5 mg a day, supervised by family or a health extension worker."},
+    {use: "Long-acting injection (cold chain available)",with: "risperidone",note: "Consta 25 mg every 2 weeks after oral risperidone tolerance, with 3 weeks of oral cover. Rarely stocked."}
+  ],
+  "trihexyphenidyl": [
+    {use: "Drug-induced parkinsonism",with: "biperiden",note: "1 mg twice daily orally, increasing gradually (WHO mhGAP). Same anticholinergic cautions; prescribe small amounts."},
+    {use: "Acute dystonia",with: "biperiden",note: "2–5 mg IM or slowly IV; faster than oral trihexyphenidyl."},
+    {use: "Acute dystonia",with: "promethazine",note: "25–50 mg deep IM. Not under 2 years."},
+    {use: "Acute dystonia",with: "diazepam",note: "5–10 mg slowly IV. Never IM. Watch breathing."},
+    {use: "Drug-induced parkinsonism (no anticholinergic in stock)",none: true,note: "Lower the antipsychotic dose or switch to a drug with fewer movement effects (quetiapine, olanzapine, aripiprazole). Amantadine if stocked (not in this app)."},
+    {use: "Akathisia",with: "propranolol",note: "Anticholinergics are not the drug of choice for akathisia (Kaplan). First reduce the antipsychotic dose."}
+  ],
+  "propranolol": [
+    {use: "Akathisia",with: "diazepam",note: "Short course, e.g. 5 mg orally two or three times daily; first reduce the antipsychotic. Use instead of propranolol in asthma."},
+    {use: "Akathisia",with: "lorazepam",note: "0.5–1 mg orally two or three times daily for a few days where stocked; watch sedation."},
+    {use: "Akathisia (second-line)",with: "cyproheptadine",note: "Helps some patients (Kaplan); sedating and anticholinergic. Specialist dose."},
+    {use: "Lithium tremor",none: true,note: "No drug substitute in this app. Lower the lithium dose, give it at bedtime, cut coffee and tea, and exclude lithium toxicity."},
+    {use: "Performance anxiety",none: true,note: "No good substitute: avoid benzodiazepines before performances (impair skill). Use breathing and rehearsal techniques."}
+  ],
+  "bromocriptine": [
+    {use: "Neuroleptic malignant syndrome",with: "lorazepam",note: "1–2 mg IM or IV, repeated for rigidity and agitation, with cooling and fluids. Amantadine or dantrolene, if stocked, at referral level."},
+    {use: "Neuroleptic malignant syndrome",with: "diazepam",note: "5–10 mg slowly IV (never IM) if lorazepam is unavailable; plus cooling and generous fluids."},
+    {use: "Antipsychotic-induced hyperprolactinaemia",with: "aripiprazole",note: "Switch to, or add low-dose, aripiprazole with a psychiatrist; less risk of worsening psychosis than bromocriptine."}
+  ],
+  "cyproheptadine": [
+    {use: "Serotonin syndrome",with: "lorazepam",note: "1–2 mg IM or IV every 30 min as needed with cooling and fluids; the main treatment in any case."},
+    {use: "Serotonin syndrome",with: "diazepam",note: "5–10 mg slowly IV or orally, repeated as needed. Never IM."},
+    {use: "Serotonin syndrome (severe, specialist only)",with: "chlorpromazine",note: "Kaplan lists it, but it causes hypotension and is dangerous if NMS is the true diagnosis. Only with specialist advice."}
+  ],
+  "chlordiazepoxide": [
+    {use: "Alcohol withdrawal",with: "diazepam",note: "Usual choice in Ethiopia (mhGAP): 10–20 mg orally every 1–2 h while CIWA-Ar is 10 or more, then reduce. Diazepam 10 mg is roughly chlordiazepoxide 25 mg."},
+    {use: "Alcohol withdrawal with liver disease or old age",with: "lorazepam",note: "1–4 mg orally, IM or IV by symptoms; does not accumulate. Do not miss doses."},
+    {use: "Alcohol withdrawal (benzodiazepines unsuitable, mild–moderate)",with: "carbamazepine",note: "About 800 mg a day, reduced over 5–7 days (Kaplan). Does not treat delirium tremens."}
+  ],
+  "naltrexone": [
+    {use: "Alcohol relapse prevention",none: true,note: "No substitute in this app (acamprosate or disulfiram if stocked locally). Use mhGAP psychosocial interventions and follow-up."},
+    {use: "Opioid dependence",with: "methadone",note: "Maintenance (usually 60–120 mg daily) through a treatment programme; more effective than naltrexone for most patients."}
+  ],
+  "methadone": [
+    {use: "Opioid dependence maintenance",none: true,note: "No substitute in this app (buprenorphine where the programme stocks it). Never replace with morphine or tramadol. Refer to the methadone programme."},
+    {use: "Opioid withdrawal symptoms while waiting for a programme",with: "diazepam",note: "Short course for anxiety and agitation, e.g. 5–10 mg orally up to three times daily for a few days, with fluids; does not treat craving. Watch breathing if opioids are also used."}
+  ],
+  "sertraline": [
+    {use: "Depression and anxiety in adults",with: "fluoxetine",note: "WHO mhGAP first-line and widely stocked: start 10–20 mg each morning. Stop sertraline and start fluoxetine the next day at 20 mg."},
+    {use: "Depression and anxiety in adults",with: "escitalopram",note: "Switch directly: sertraline 50 mg ≈ escitalopram 10 mg. More QT effect; avoid with haloperidol, quinine or amiodarone."},
+    {use: "Depression in pregnancy or breastfeeding",with: "fluoxetine",note: "Acceptable in pregnancy; in breastfeeding it can build up in young infants, so watch the baby for irritability and poor feeding."},
+    {use: "Depression with insomnia or poor appetite",with: "mirtazapine",note: "15 mg at night; sedation and weight gain. Taper sertraline over 1–2 weeks while starting."},
+    {use: "PTSD",with: "fluoxetine",note: "Another SSRI with the same class evidence; 20 mg daily. Trauma-focused psychological therapy remains first-line."},
+    {use: "Adults, only if no SSRI is available",with: "amitriptyline",note: "Dangerous in overdose: 1 week supply at a time held by family; avoid in heart disease, older people and suicide risk."}
+  ],
+  "escitalopram": [
+    {use: "Depression and anxiety in adults",with: "sertraline",note: "Preferred when there is QT risk or pregnancy/breastfeeding: 50 mg daily, switch directly the next day."},
+    {use: "Depression and anxiety in adults",with: "fluoxetine",note: "20 mg each morning, start the next day. Longer half-life smooths missed doses."},
+    {use: "Depression with insomnia or poor appetite",with: "mirtazapine",note: "15 mg at night; no QT concern at usual doses."},
+    {use: "Depression in adolescents",with: "fluoxetine",note: "The first choice under 18 (mhGAP, NICE): 10 mg, then 20 mg after 1–2 weeks, with weekly review."}
+  ],
+  "imipramine": [
+    {use: "Depression in adults",with: "fluoxetine",note: "Safer in overdose and in heart disease. Reduce imipramine to 25–50 mg before starting fluoxetine 10 mg, then stop imipramine over 1–2 weeks (fluoxetine raises tricyclic levels)."},
+    {use: "Depression in adults",with: "amitriptyline",note: "Same class and same overdose danger; more sedating and anticholinergic. Switch at the same dose."},
+    {use: "Nocturnal enuresis in children",none: true,note: "No drug substitute in this app (desmopressin if stocked locally). An enuresis alarm, star chart, toileting before bed and treating constipation are more effective than medicine anyway."},
+    {use: "Panic disorder",with: "sertraline",note: "Start 25 mg daily and increase slowly; first-line and safer than a tricyclic."}
+  ],
+  "mirtazapine": [
+    {use: "Depression with insomnia or poor appetite",with: "sertraline",note: "50 mg daily; does not help sleep or appetite early, so a short course of sleep hygiene support may be needed. Taper mirtazapine over 1–2 weeks."},
+    {use: "Depression in adults",with: "fluoxetine",note: "20 mg each morning; can worsen insomnia and appetite at first."},
+    {use: "Depression with insomnia in adults without suicide risk",with: "amitriptyline",note: "Sedating alternative at 25–50 mg at night, but dangerous in overdose and in heart disease or older people."}
+  ],
+  "lamotrigine": [
+    {use: "Bipolar maintenance in women who could become pregnant",with: "olanzapine",note: "Effective for preventing mania (less for depression); weight gain and sedation. Avoid valproate in this group."},
+    {use: "Bipolar maintenance",with: "lithium",note: "Only with lithium levels, kidney and thyroid monitoring; avoid first trimester."},
+    {use: "Bipolar depression",none: true,note: "No close substitute in this app. Quetiapine where stocked; otherwise an SSRI (fluoxetine) only together with a mood stabiliser or antipsychotic, never alone. Refer."},
+    {use: "Epilepsy (focal or generalised tonic-clonic) in women who could become pregnant",with: "carbamazepine",note: "For focal and tonic-clonic seizures; enzyme inducer that reduces hormonal contraception; folic acid. Not for absence or myoclonic seizures."},
+    {use: "Epilepsy",with: "phenobarbital",note: "Cheap, widely stocked WHO option; sedation and behaviour effects."},
+    {use: "Restarting after a stock-out of more than 4–5 days",none: true,note: "Not a substitute issue: restart lamotrigine from the first titration step, not at the old dose (serious rash risk)."}
+  ],
+  "methylphenidate": [
+    {use: "ADHD in children",none: true,note: "No substitute in this app. Parent training, classroom strategies and behavioural programmes are first-line where medicine is unavailable. Atomoxetine, clonidine or guanfacine if stocked locally, with specialist advice; imipramine is a last-resort option only under specialist care (overdose and cardiac risk)."},
+    {use: "Tics, anxiety or growth concerns on methylphenidate",none: true,note: "Refer to child psychiatry or paediatrics; risperidone is sometimes used for severe tics or irritability under specialist care."}
   ]
 };

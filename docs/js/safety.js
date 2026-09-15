@@ -1392,5 +1392,708 @@ window.SAFETY = {
       "NICE CG192 Antenatal and postnatal mental health",
       "LactMed (NIH): fluoxetine"
     ]
+  },
+  "risperidone": {
+    pregnancy: {
+      level: "caution",
+      text: "Do not stop treatment suddenly: relapse of psychosis or mania in pregnancy is dangerous. Kaplan notes use in pregnancy has not been well studied; larger later studies have not shown a clear rise in birth defects. Risperidone raises prolactin, which can make it harder to conceive. Use the lowest effective dose, check glucose, and warn the baby's team: use near delivery can cause sleepiness, stiffness, tremor and feeding problems in the newborn."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Kaplan advises nursing mothers not to take second-generation antipsychotics. LactMed reports low milk levels and no consistent harm, and many perinatal services accept it. If used, watch the baby for sleepiness, poor feeding, slow weight gain and stiffness. Decide with the mother."
+    },
+    renal: {
+      level: "adjust",
+      text: "Risperidone and its active metabolite are cleared by the kidneys: halve the starting dose and dose steps in any kidney impairment (BNF: 0.5 mg twice daily, increasing by 0.5 mg twice daily to 1–2 mg twice daily).",
+      bands: [
+        {
+          below: 30,
+          text: "CrCl under 30: start 0.5 mg twice daily, increase by no more than 0.5 mg twice daily, usually to no more than 1–2 mg twice daily. Watch for dizziness, sedation and stiffness. Establish oral tolerance before any long-acting injection."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Halve the starting dose and dose steps (BNF: 0.5 mg twice daily, rising to 1–2 mg twice daily). Kaplan advises caution with antipsychotics in liver disease because levels can be higher."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Use of second-generation antipsychotics in pregnancy has not been well studied; risperidone can raise prolactin 3–4 times the upper limit, and because these drugs pass into milk the chapter advises nursing mothers not to take them.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1949",
+        pdf_page: 1949,
+        quote: "potential of risperidone to raise prolactin"
+      },
+      {
+        book: "kaplan",
+        text: "Give antipsychotics with caution in liver disease, because impaired metabolism may give high plasma levels.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1968",
+        pdf_page: 1968,
+        quote: "Antipsychotics should be administered with caution in persons with hepatic disease"
+      }
+    ],
+    sources: [
+      "BNF",
+      "LactMed (NIH)",
+      "Risperidone product information (SmPC)",
+      "Maudsley Prescribing Guidelines 14th ed. 2021"
+    ]
+  },
+  "quetiapine": {
+    pregnancy: {
+      level: "caution",
+      text: "Do not stop treatment suddenly. Kaplan notes second-generation antipsychotics have not been well studied in pregnancy; available registry data have not shown a clear rise in birth defects. Quetiapine can raise blood sugar and cause weight gain: check glucose. Warn the baby's team about possible sleepiness and withdrawal or movement symptoms after use near delivery."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Kaplan advises nursing mothers not to take second-generation antipsychotics. LactMed reports very low milk levels, and quetiapine is often considered one of the preferred antipsychotics when breastfeeding. If used, watch the baby for sleepiness and poor feeding. Decide with the mother."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change in kidney impairment (product information). Start low in older patients and watch for postural hypotension."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Quetiapine is extensively metabolised by the liver. Start at 25 mg a day and increase by 25–50 mg a day to the lowest effective dose (BNF). Kaplan advises caution with antipsychotics in liver disease."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Use of second-generation antipsychotics in pregnancy has not been well studied; risperidone can raise prolactin 3–4 times the upper limit, and because these drugs pass into milk the chapter advises nursing mothers not to take them.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1949",
+        pdf_page: 1949,
+        quote: "potential of risperidone to raise prolactin"
+      },
+      {
+        book: "kaplan",
+        text: "Give antipsychotics with caution in liver disease, because impaired metabolism may give high plasma levels.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1968",
+        pdf_page: 1968,
+        quote: "Antipsychotics should be administered with caution in persons with hepatic disease"
+      }
+    ],
+    sources: [
+      "BNF",
+      "LactMed (NIH)",
+      "Quetiapine product information (SmPC)"
+    ]
+  },
+  "clozapine": {
+    pregnancy: {
+      level: "caution",
+      text: "Specialist decision. Do not stop suddenly: resistant schizophrenia often relapses badly. Kaplan notes second-generation antipsychotics have not been well studied in pregnancy; clozapine has not shown a clear pattern of birth defects but raises the risk of gestational diabetes and weight gain (check glucose), and constipation worsens in pregnancy. Continue blood counts. Warn the baby's team: newborn sleepiness, floppiness and, rarely, fits have been reported after use near delivery."
+    },
+    breastfeeding: {
+      level: "avoid",
+      text: "Avoid breastfeeding (product information). Clozapine passes into milk and may concentrate there; sedation and agranulocytosis have been reported in breastfed infants, and infant blood counts are rarely possible. Kaplan advises nursing mothers not to take second-generation antipsychotics. Support formula feeding where it is safe and affordable, or discuss an alternative antipsychotic with a specialist."
+    },
+    renal: {
+      level: "adjust",
+      text: "Start low (12.5 mg once daily on day 1) and titrate slowly in mild to moderate kidney impairment. Kaplan advises low starting doses in kidney or liver disease.",
+      bands: [
+        {
+          below: 30,
+          text: "CrCl under 30 (severe kidney impairment): avoid clozapine (product information contraindicates severe renal disease). Seek specialist advice on an alternative."
+        }
+      ]
+    },
+    hepatic: {
+      level: "avoid",
+      text: "Avoid in active, progressive liver disease or liver failure (product information). In stable mild liver disease a specialist may use a low starting dose with regular liver tests. Stop if jaundice, nausea, loss of appetite or right upper abdominal pain develop. Kaplan advises low starting doses in liver disease."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Use of second-generation antipsychotics in pregnancy has not been well studied; risperidone can raise prolactin 3–4 times the upper limit, and because these drugs pass into milk the chapter advises nursing mothers not to take them.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1949",
+        pdf_page: 1949,
+        quote: "potential of risperidone to raise prolactin"
+      },
+      {
+        book: "kaplan",
+        text: "Give antipsychotics with caution in liver disease, because impaired metabolism may give high plasma levels.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1968",
+        pdf_page: 1968,
+        quote: "Antipsychotics should be administered with caution in persons with hepatic disease"
+      }
+    ],
+    sources: [
+      "Clozapine product information (SmPC)",
+      "BNF",
+      "LactMed (NIH)",
+      "Maudsley Prescribing Guidelines 14th ed. 2021"
+    ]
+  },
+  "aripiprazole": {
+    pregnancy: {
+      level: "caution",
+      text: "Do not stop treatment suddenly. Kaplan notes second-generation antipsychotics have not been well studied in pregnancy; available registry data have not shown a clear rise in birth defects. Warn the baby's team about possible newborn sleepiness, restlessness and feeding problems after use near delivery. Aripiprazole lowers prolactin, so fertility can return after switching to it: discuss contraception."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Kaplan advises nursing mothers not to take second-generation antipsychotics. Aripiprazole lowers prolactin and can reduce milk supply (LactMed). If used, watch milk supply, the baby's weight gain and sleepiness; another antipsychotic may be preferred. Decide with the mother."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change in kidney impairment (product information)."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change needed (product information), but use with caution in severe liver impairment (limited data). Kaplan advises caution with antipsychotics in liver disease."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Use of second-generation antipsychotics in pregnancy has not been well studied; risperidone can raise prolactin 3–4 times the upper limit, and because these drugs pass into milk the chapter advises nursing mothers not to take them.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1949",
+        pdf_page: 1949,
+        quote: "potential of risperidone to raise prolactin"
+      },
+      {
+        book: "kaplan",
+        text: "Give antipsychotics with caution in liver disease, because impaired metabolism may give high plasma levels.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1968",
+        pdf_page: 1968,
+        quote: "Antipsychotics should be administered with caution in persons with hepatic disease"
+      }
+    ],
+    sources: [
+      "Aripiprazole product information (SmPC)",
+      "BNF",
+      "LactMed (NIH)"
+    ]
+  },
+  "haloperidol-decanoate": {
+    pregnancy: {
+      level: "caution",
+      text: "A depot cannot be withdrawn if problems arise and drug remains for weeks. Discuss pregnancy plans with women of child-bearing age before starting. If a woman becomes pregnant on the depot, do not stop abruptly: review with a specialist, use the lowest effective dose (or change to adjustable oral treatment), and warn the baby's team about movement symptoms and sleepiness in the newborn. Kaplan advises avoiding antipsychotics in the first trimester unless benefit outweighs risk, and prefers high-potency drugs such as haloperidol to low-potency ones."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Little information for the depot. Kaplan advises against breastfeeding on first-generation antipsychotics. Oral haloperidol at low doses is often accepted (LactMed). If the mother breastfeeds, watch the baby for sleepiness, stiffness and poor feeding; an oral drug that can be adjusted may be preferred."
+    },
+    renal: {
+      level: "adjust",
+      text: "Mostly cleared by the liver, but patients with severe kidney failure are more sensitive to sedation and hypotension.",
+      bands: [
+        {
+          below: 30,
+          text: "CrCl under 30: start with a low injection dose (for example 12.5–25 mg), lengthen the review interval, and increase slowly. Watch sedation and blood pressure."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Metabolised by the liver: levels can be higher (Kaplan). Use the lowest starting dose (for example 12.5–25 mg), increase slowly, and remember the effect cannot be removed. Sedation and confusion can be mistaken for hepatic encephalopathy."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Antipsychotics should be avoided in pregnancy, especially the first trimester, unless benefit outweighs risk; high-potency drugs are preferred over low-potency drugs, which cause hypotension.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1963",
+        pdf_page: 1963,
+        quote: "High-potency drugs are preferable to low-potency drugs"
+      },
+      {
+        book: "kaplan",
+        text: "First-generation antipsychotics pass into breast milk at low concentrations; the chapter advises against breastfeeding.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1963",
+        pdf_page: 1963,
+        quote: "Women taking these agents should be advised against breastfeeding"
+      },
+      {
+        book: "kaplan",
+        text: "Give antipsychotics with caution in liver disease, because impaired metabolism may give high plasma levels.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 Antipsychotics, pdf p. 1968",
+        pdf_page: 1968,
+        quote: "Antipsychotics should be administered with caution in persons with hepatic disease"
+      }
+    ],
+    sources: [
+      "BNF",
+      "LactMed (NIH)",
+      "Haloperidol decanoate product information (SmPC)",
+      "Maudsley Prescribing Guidelines 14th ed. 2021"
+    ]
+  },
+  "trihexyphenidyl": {
+    pregnancy: {
+      level: "caution",
+      text: "Little information on safety in pregnancy. Use only if clearly needed for real parkinsonism or dystonia, at the lowest dose; first try lowering the antipsychotic dose. Anticholinergics worsen constipation and urinary retention in pregnancy."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No good data. Anticholinergics may reduce milk supply, and the baby could have dry mouth, constipation or irritability. Use the lowest dose for the shortest time, or avoid by lowering the antipsychotic dose where possible."
+    },
+    renal: {
+      level: "adjust",
+      text: "Use with caution (BNF): start at 1 mg a day, increase slowly, and watch for confusion and urinary retention, especially in older patients."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Use with caution (BNF): start at 1 mg a day, increase slowly, and watch for confusion, which can be mistaken for hepatic encephalopathy."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Use anticholinergics cautiously, if at all, with prostatic enlargement, urinary retention or narrow-angle glaucoma.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2212",
+        pdf_page: 2212,
+        quote: "should be used cautiously, if at all, by"
+      }
+    ],
+    sources: [
+      "BNF",
+      "LactMed (NIH)",
+      "Trihexyphenidyl product information (SmPC)"
+    ]
+  },
+  "propranolol": {
+    pregnancy: {
+      level: "caution",
+      text: "Used in pregnancy for hypertension, migraine and thyrotoxicosis, but can slow fetal growth and cause slow heart rate, low glucose and breathing problems in the newborn, especially near term. For akathisia or anxiety in pregnancy, first reduce the antipsychotic or use non-drug measures; if needed, use the lowest dose for the shortest time and tell the delivery team so the baby's glucose and heart rate are watched for 24–48 hours."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Passes into milk in small amounts; generally considered compatible with breastfeeding (LactMed), but Kaplan advises caution for all beta-blockers. Watch the baby for drowsiness, poor feeding and slow breathing, especially preterm or young infants."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change: propranolol is cleared by the liver. In severe kidney impairment start with a low dose and watch pulse and blood pressure, which may fall more easily."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Reduce the dose in liver disease: less is removed on first pass through the liver, so blood levels are much higher, and it can precipitate hepatic encephalopathy. Start at 10 mg once or twice daily and increase slowly with pulse checks; avoid in decompensated cirrhosis unless a specialist is using it for varices."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Contraindications listed: asthma, insulin-treated diabetes (blocks the response to hypoglycaemia), heart failure, significant vascular disease, persistent angina and hyperthyroidism; they can worsen heart block. All beta-blockers pass into breast milk.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics (beta-adrenergic receptor antagonists), pdf p. 2130"
+      }
+    ],
+    sources: [
+      "BNF",
+      "LactMed (NIH)",
+      "WHO Model Formulary 2008",
+      "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    ]
+  },
+  "bromocriptine": {
+    pregnancy: {
+      level: "avoid",
+      text: "Kaplan lists dopamine agonists as contraindicated in pregnancy. Stop when pregnancy is confirmed unless a specialist is treating a prolactinoma. In life-threatening neuroleptic malignant syndrome in a pregnant woman, specialist advice may still support its use. Remember that lowering prolactin restores fertility: discuss contraception before starting."
+    },
+    breastfeeding: {
+      level: "avoid",
+      text: "Suppresses milk production (Kaplan). Do not use in a breastfeeding mother, and do not use routinely to stop lactation after birth: hypertension, stroke, seizures, heart attack and postpartum psychosis have been reported."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change: mainly cleared by the liver and bile."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Use with caution and at lower doses in liver disease (Kaplan): it is extensively metabolised by the liver, so levels and side effects (low blood pressure, confusion) increase. Increase the dose slowly."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Dopamine agonists are listed as contraindicated in pregnancy and especially in nursing mothers because they suppress milk; ergot alkaloids with bromocriptine may cause hypertension and heart attack.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2224"
+      }
+    ],
+    sources: [
+      "BNF",
+      "Bromocriptine product information (SmPC)",
+      "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    ]
+  },
+  "cyproheptadine": {
+    pregnancy: {
+      level: "caution",
+      text: "Kaplan advises pregnant women to avoid antihistamines because of possible teratogenicity. For moderate or severe serotonin syndrome, which is dangerous to mother and fetus, a short course is reasonable when benzodiazepines and cooling are not enough. Do not use it for appetite or allergy in pregnancy."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Antihistamines pass into milk and Kaplan advises nursing mothers to avoid them; cyproheptadine can also reduce milk supply and sedate the baby. For a short course for serotonin syndrome, the mother is usually too unwell to breastfeed: express and discard if needed, and restart breastfeeding when she is well and the drug has stopped (about 24 hours after the last dose)."
+    },
+    renal: {
+      level: "none",
+      text: "No specific dose change is established. Its metabolites are excreted in urine, so in severe kidney impairment use the lowest effective dose and watch for sedation and anticholinergic effects."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Metabolised by the liver: in cirrhosis levels can rise with repeated doses (Kaplan, for sedating antihistamines). Use smaller doses and watch sedation; avoid in severe liver disease or hepatic encephalopathy unless the benefit is clear."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Antihistamines pass into breast milk, so nursing mothers should avoid them; because of possible teratogenicity pregnant women should also avoid them. Overdose can be fatal.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs (antihistamines), pdf p. 2217"
+      }
+    ],
+    sources: [
+      "BNF",
+      "LactMed (NIH)",
+      "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    ]
+  },
+  "chlordiazepoxide": {
+    pregnancy: {
+      level: "caution",
+      text: "Alcohol withdrawal in pregnancy must be treated: untreated withdrawal and seizures harm mother and fetus. Use benzodiazepines short term at the lowest effective doses, preferably symptom-triggered, and admit. Regular use late in pregnancy can cause a floppy, sleepy newborn with breathing and feeding problems, and later neonatal withdrawal: tell the paediatric team. Refer for specialist antenatal and alcohol care."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Passes into milk. Chlordiazepoxide and its active metabolites are long acting and can build up in the baby (sleepiness, poor feeding, weight loss). A short withdrawal course is usually acceptable with the baby watched; prefer a short-acting drug such as lorazepam where available, and avoid breastfeeding while the mother is heavily sedated or drinking."
+    },
+    renal: {
+      level: "adjust",
+      text: "Mainly cleared by the liver, but people with kidney impairment are more sensitive to sedation. Start with smaller doses, prefer symptom-triggered dosing, and hold doses when drowsy.",
+      bands: [
+        {
+          below: 30,
+          text: "Moderate to severe kidney impairment: start with smaller doses, use symptom-triggered dosing rather than a fixed schedule, and hold whenever drowsy."
+        },
+        {
+          below: 10,
+          text: "Severe kidney failure: give about half the usual dose (Renal Drug Handbook) and increase only by response; watch breathing and consciousness closely."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Long half-life with active metabolites (Kaplan) that accumulate in liver disease; repeated doses can precipitate hepatic coma. Prefer lorazepam. If chlordiazepoxide is the only choice, use small symptom-triggered doses and never a fixed schedule; avoid in severe liver failure or hepatic encephalopathy."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Chlordiazepoxide, like diazepam, is long acting (half-life 30 to over 100 hours, longer in slow metabolisers), and only lorazepam and midazolam are reliably absorbed IM.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2114"
+      }
+    ],
+    sources: [
+      "BNF",
+      "The Renal Drug Handbook",
+      "NICE CG100",
+      "WHO Guidelines for the identification and management of substance use and substance use disorders in pregnancy, 2014",
+      "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    ]
+  },
+  "naltrexone": {
+    pregnancy: {
+      level: "avoid",
+      text: "Crosses the placenta; Kaplan advises use only for compelling need. Opioid dependence in pregnancy: do not start naltrexone and do not attempt opioid withdrawal; refer for methadone maintenance (WHO 2009 and 2014). A woman who becomes pregnant while on naltrexone for alcohol dependence should see a specialist to weigh relapse risk against limited safety data."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Kaplan states it is not known whether naltrexone enters milk; limited later data show small amounts. If used, watch the baby for poor feeding, irritability or vomiting, and discuss with a specialist."
+    },
+    renal: {
+      level: "none",
+      text: "No established dose change, but naltrexone and its active metabolite are excreted by the kidneys: use with caution in kidney impairment and watch for side effects."
+    },
+    hepatic: {
+      level: "avoid",
+      text: "Do not use in acute hepatitis or liver failure (Kaplan). Liver injury is dose-related, and 50 mg a day can be harmful in pre-existing liver disease such as alcoholic cirrhosis. With milder liver disease only with specialist advice and liver tests before and monthly for 6 months where available; stop if jaundice, dark urine or right upper abdominal pain appear."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Naltrexone crosses the placenta, so use in pregnancy only for compelling need; excretion in breast milk is not known.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2181"
+      },
+      {
+        book: "kaplan",
+        text: "Liver injury is dose-related (mainly at 300 mg a day) but 50 mg may harm people with liver disease such as alcoholic cirrhosis; contraindicated in acute hepatitis or liver failure and in anyone taking opioids.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2181"
+      }
+    ],
+    sources: [
+      "BNF",
+      "WHO Guidelines for the psychosocially assisted pharmacological treatment of opioid dependence, 2009",
+      "WHO Guidelines for the identification and management of substance use and substance use disorders in pregnancy, 2014",
+      "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    ]
+  },
+  "methadone": {
+    pregnancy: {
+      level: "safe",
+      text: "Recommended for pregnant women with opioid dependence: methadone maintenance is safer than continued heroin use or withdrawal (WHO 2009 and 2014; Kaplan). Do not attempt withdrawal during pregnancy (Kaplan). Use the lowest effective dose; the dose often needs to rise in the third trimester, sometimes split into two doses. No known teratogenic effect (Kaplan). The baby may develop neonatal abstinence syndrome: plan observation after birth and never give naloxone to the newborn."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Guidance differs. WHO (2014) encourages mothers on stable opioid agonist treatment to breastfeed unless the risks clearly outweigh the benefits; only small amounts pass into milk and breastfeeding may ease neonatal withdrawal. Kaplan advises mothers not to breastfeed while still taking methadone. In practice: support breastfeeding if the mother is stable, not using other drugs or alcohol, and follows HIV infant-feeding guidance; watch the baby for sleepiness, poor feeding and slow breathing, and do not stop breastfeeding abruptly."
+    },
+    renal: {
+      level: "adjust",
+      text: "Mostly cleared by the liver, but metabolites and some methadone are excreted in urine, and people with kidney failure are more sensitive to opioids. Increase doses slowly and watch sedation.",
+      bands: [
+        {
+          below: 10,
+          text: "Severe kidney failure: give about 50–75 % of the usual dose (Renal Drug Handbook) and titrate slowly by response, watching breathing and sedation; confirm with specialist."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Overdose risk is higher in liver disease, especially during induction (Kaplan). Start low, increase slowly and assess sedation before each increase; in decompensated cirrhosis or hepatic encephalopathy seek specialist advice. Stable maintenance patients with hepatitis C or B usually continue their dose with monitoring."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "In pregnancy use the lowest effective dose and do not attempt withdrawal; the third trimester may need a higher dose, sometimes split into two doses. Newborns may show tremor, high-pitched cry, poor feeding and seizures, often delayed.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2168"
+      },
+      {
+        book: "kaplan",
+        text: "Kaplan advises women not to breastfeed while still taking methadone (some are counselled to use breastfeeding to wean the infant). WHO guidance differs: see safety text.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2168"
+      },
+      {
+        book: "kaplan",
+        text: "Overdose risk is greatest during induction and in liver disease; deaths have occurred in the first week at only 50–60 mg a day.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2171"
+      }
+    ],
+    sources: [
+      "WHO Guidelines for the psychosocially assisted pharmacological treatment of opioid dependence, 2009",
+      "WHO Guidelines for the identification and management of substance use and substance use disorders in pregnancy, 2014",
+      "BNF",
+      "The Renal Drug Handbook",
+      "LactMed (NIH)",
+      "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022"
+    ]
+  },
+  "sertraline": {
+    pregnancy: {
+      level: "caution",
+      text: "Usually the preferred antidepressant when depression in pregnancy needs medicine. No significant increase in major malformations with SSRIs other than paroxetine (Kaplan), and stopping treatment often leads to relapse. Late-pregnancy use can cause neonatal adaptation symptoms (jitteriness, poor feeding, fast breathing) and a small risk of persistent pulmonary hypertension of the newborn: use the lowest effective dose, tell the delivery team and observe the baby for the first days."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Preferred antidepressant in breastfeeding: very low levels in milk and infant blood (Kaplan). Watch young or preterm babies for drowsiness, poor feeding or irritability."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change in kidney impairment. Start low and increase slowly in older people; low sodium is more likely with diuretics."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Cleared by the liver: in mild to moderate liver disease use a lower dose or less frequent dosing (BNF) and increase slowly. Avoid in severe liver disease."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Apart from paroxetine, SSRIs show no significant increase in major malformations, while stopping antidepressants in pregnancy leads to very high relapse rates.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1979"
+      },
+      {
+        book: "kaplan",
+        text: "Sertraline and escitalopram concentrations in breast milk are especially low, and no harm has been found in breastfed babies.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1980"
+      }
+    ],
+    sources: [
+      "BNF: sertraline",
+      "LactMed (NIH): sertraline",
+      "NICE CG192 Antenatal and postnatal mental health (2014, updated 2020)",
+      "WHO mhGAP Intervention Guide 2.0"
+    ]
+  },
+  "escitalopram": {
+    pregnancy: {
+      level: "caution",
+      text: "SSRIs other than paroxetine are considered acceptable when needed (Kaplan). If starting an antidepressant in pregnancy, sertraline is usually preferred because there is more experience; a woman already well on escitalopram can usually continue. Neonatal adaptation symptoms and a small risk of persistent pulmonary hypertension of the newborn with late-pregnancy use."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Low levels in milk (Kaplan) and generally considered acceptable, but sertraline is preferred when starting treatment after birth. Watch the baby for drowsiness and poor feeding."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change in mild to moderate kidney impairment. Severe impairment (CrCl below 30 mL/min): use with caution (BNF).",
+      bands: [
+        {
+          below: 30,
+          text: "Severe kidney impairment: use escitalopram with caution. Start at 5 mg daily, increase slowly and watch for confusion or low sodium (confirm with local protocol)."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Mild to moderate liver impairment: start 5 mg daily for 2 weeks, maximum 10 mg daily (BNF). Severe impairment: titrate very carefully or choose another drug."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Except for paroxetine, SSRIs are safe in pregnancy when needed; transient QTc prolongation has been seen in exposed newborns.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1996"
+      },
+      {
+        book: "kaplan",
+        text: "Sertraline and escitalopram concentrations in breast milk are especially low.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, SSRIs, pdf p. 1980"
+      }
+    ],
+    sources: [
+      "BNF: escitalopram",
+      "LactMed (NIH): escitalopram",
+      "Escitalopram product information (QT and hepatic dosing)"
+    ]
+  },
+  "imipramine": {
+    pregnancy: {
+      level: "caution",
+      text: "No clear malformation link after long use, but neonatal withdrawal (jitteriness, fast breathing, poor feeding) and anticholinergic effects can follow use near delivery. For new depression treatment in pregnancy prefer an SSRI such as sertraline, which is safer in overdose."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Small amounts in milk; generally considered compatible, but watch the baby for drowsiness and poor feeding. Sertraline is preferred when starting an antidepressant after birth."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change; use with caution in severe kidney impairment and start low in older people (postural hypotension, urinary retention, confusion)."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Metabolised by the liver: start low and increase slowly. Avoid in severe liver disease (sedation can precipitate hepatic encephalopathy)."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Obtain an ECG before tricyclic treatment; they are contraindicated with a QTc over 450 ms.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, tricyclics, pdf p. 2030"
+      }
+    ],
+    sources: [
+      "BNF: imipramine hydrochloride",
+      "LactMed (NIH): imipramine",
+      "WHO Model Formulary 2008"
+    ]
+  },
+  "mirtazapine": {
+    pregnancy: {
+      level: "caution",
+      text: "Limited data; no clear malformation signal in published cohorts, but Kaplan advises caution because fetal data are lacking. Use only if an SSRI is unsuitable; neonatal adaptation symptoms are possible after late-pregnancy use."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Kaplan says nursing mothers should not take it because it may pass into milk. Lactation references (LactMed) report low infant levels and consider it usually acceptable. Prefer sertraline; if mirtazapine is needed, watch the baby for drowsiness, poor feeding and weight gain."
+    },
+    renal: {
+      level: "adjust",
+      text: "Clearance falls by up to 50 percent in kidney impairment (Kaplan): start 7.5–15 mg at night and increase slowly.",
+      bands: [
+        {
+          below: 40,
+          text: "Moderate kidney impairment: clearance about 30 percent lower. Start 7.5–15 mg at night and increase more slowly than usual; watch for oversedation."
+        },
+        {
+          below: 10,
+          text: "Severe kidney impairment: clearance about half. Use the lowest effective dose (start 7.5 mg at night), increase only with close review of sedation and falls."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Clearance falls by up to 30 percent in liver impairment (Kaplan): start low and increase slowly. Stop if jaundice develops."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Mirtazapine clearance falls by up to 30 percent in liver impairment and up to 50 percent in kidney impairment.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2011"
+      },
+      {
+        book: "kaplan",
+        text: "Use cautiously in pregnancy (no fetal data); Kaplan says it should not be taken by nursing mothers.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, mirtazapine, pdf p. 2014"
+      }
+    ],
+    sources: [
+      "BNF: mirtazapine",
+      "Mirtazapine product information (renal and hepatic clearance)",
+      "LactMed (NIH): mirtazapine"
+    ]
+  },
+  "lamotrigine": {
+    pregnancy: {
+      level: "caution",
+      text: "The preferred mood stabiliser and one of the preferred antiepileptics in pregnancy; far safer than valproate. Kaplan notes a possible link with oral clefts in the first trimester. Give folic acid before and during pregnancy. Levels fall markedly during pregnancy (seizures or mood relapse): review the dose each trimester, and reduce back towards the pre-pregnancy dose soon after delivery to avoid toxicity (dizziness, double vision, unsteadiness). Confirm with local protocol."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Passes into milk and infant levels can be substantial. Breastfeeding is usually continued: watch the baby for rash, drowsiness, poor feeding and poor weight gain, especially in the first weeks and after maternal dose reductions after delivery."
+    },
+    renal: {
+      level: "adjust",
+      text: "Mostly excreted in urine as inactive metabolite: use a lower maintenance dose in kidney impairment (Kaplan) and increase slowly.",
+      bands: [
+        {
+          below: 30,
+          text: "Significant kidney impairment: titrate with the usual slow schedule but aim for a lower maintenance dose; watch for dizziness, unsteadiness and double vision (confirm with local protocol)."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Moderate liver impairment: reduce starting, escalation and maintenance doses by about 50 percent; severe impairment by about 75 percent (product information). Adjust further by response."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "First-trimester lamotrigine may be linked with oral clefts; valproate and carbamazepine with neural tube defects.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.1 General Principles of Psychopharmacology, pregnancy, pdf p. 1920"
+      },
+      {
+        book: "kaplan",
+        text: "People with kidney impairment should aim for a lower lamotrigine maintenance dose.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, lamotrigine, pdf p. 2084"
+      }
+    ],
+    sources: [
+      "BNF: lamotrigine",
+      "Lamotrigine product information (hepatic impairment)",
+      "NICE CG192 Antenatal and postnatal mental health",
+      "MHRA 2021 review: antiepileptic drugs in pregnancy",
+      "LactMed (NIH): lamotrigine"
+    ]
+  },
+  "methylphenidate": {
+    pregnancy: {
+      level: "avoid",
+      text: "Kaplan advises avoiding stimulants in pregnancy, especially the first trimester. Usually stop when pregnancy is planned or confirmed; continue only on specialist advice where untreated ADHD causes serious harm (e.g. driving risk)."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Passes into milk (Kaplan) in small amounts. If used, watch the baby for poor feeding, irritability, poor sleep and weight gain; specialist advice."
+    },
+    renal: {
+      level: "adjust",
+      text: "No specific dose bands. Kaplan advises assessing kidney function and using lower doses when elimination is impaired: start at the lowest dose and increase slowly with BP and pulse checks."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "No specific dose bands. Kaplan advises assessing liver function and reducing doses when metabolism is impaired: start low and titrate slowly."
+    },
+    refs: [
+      {
+        book: "kaplan",
+        text: "Stimulants should be avoided in pregnancy, especially the first trimester; methylphenidate passes into breast milk.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2159"
+      },
+      {
+        book: "kaplan",
+        text: "Assess liver and kidney function before starting and reduce stimulant doses in impaired metabolism.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.6 Stimulants, pdf p. 2160"
+      }
+    ],
+    sources: [
+      "BNF and BNF for Children: methylphenidate",
+      "LactMed (NIH): methylphenidate",
+      "NICE NG87 ADHD (2018, updated 2019)"
+    ]
   }
 };

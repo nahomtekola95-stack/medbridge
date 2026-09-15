@@ -8,7 +8,7 @@ available. Every drug has a **standard** method and one or more **"no pump / imp
 methods (intermittent regimens, alternative routes, dilutions, gravity-drip technique), plus
 calculators for drip rate, dose → drops, mg/kg, dilution, WHO Plan C fluids and child weight.
 
-> **Status: DRAFT.** All 71 drug entries are `review.status: "draft"` and have **not** been
+> **Status: DRAFT.** All 89 drug entries are `review.status: "draft"` and have **not** been
 > verified by a pharmacist or physician. Do not use for patient care until reviewed.
 
 ## Live sites
@@ -95,16 +95,20 @@ Referenced to **Kaplan & Sadock's Synopsis of Psychiatry 12th ed. (2022)** and *
 Cases (APA, 2023)**, with WHO mhGAP Intervention Guide 2.0 for dosing used in Ethiopia. Every
 textbook reference was checked word-for-word against the cited PDF page.
 
-- **13 drugs:** haloperidol, chlorpromazine, olanzapine, fluphenazine decanoate, biperiden,
-  promethazine, lorazepam, thiamine, lithium, sodium valproate, carbamazepine, amitriptyline and
-  fluoxetine, each with bedside methods for settings without monitors or drug levels (oral then IM
+- **31 drugs.** Antipsychotics: haloperidol, haloperidol decanoate, chlorpromazine, olanzapine,
+  risperidone, quetiapine, aripiprazole, clozapine, fluphenazine decanoate. Side effects and
+  emergencies: biperiden, trihexyphenidyl, promethazine, propranolol, bromocriptine,
+  cyproheptadine. Antidepressants: fluoxetine, sertraline, escitalopram, mirtazapine,
+  amitriptyline, imipramine. Mood stabilisers: lithium, sodium valproate, carbamazepine,
+  lamotrigine. Alcohol and substance use: thiamine, chlordiazepoxide, naltrexone, methadone.
+  Also lorazepam and methylphenidate. Each has bedside methods for settings without monitors or drug levels (oral then IM
   rapid tranquillisation with hand observations, dystonia treatment, depot logistics, lithium
   without levels, tricyclic overdose without an ECG monitor).
 - **14 cases** in the new "Psychiatry & mental health" group: acute agitation, delirium, alcohol
   withdrawal and delirium tremens, Wernicke encephalopathy, acute psychosis, acute mania,
   depression with suicide risk, neuroleptic malignant syndrome, serotonin syndrome, lithium
   toxicity, acute dystonia, catatonia, postpartum psychosis and tricyclic overdose.
-- **Psychiatric ward** filter, safety (pregnancy, breastfeeding, kidney, liver) and 51 new
+- **Psychiatric ward** filter, safety (pregnancy, breastfeeding, kidney, liver) and 129
   interaction rules, stock-out substitutes and never-mix rules.
 - **Alcohol withdrawal score (CIWA-Ar)** at `#/calc?tab=ciwa`, with the action for each band and a
   record of scores (scale: Sullivan et al. 1989, public domain; not in either textbook).
@@ -257,7 +261,7 @@ Plan C 15 kg phase 2 = 140 drops/min (20 gtt/mL).
 
 ## Drug coverage
 
-71 drugs, 54 clinical cases, 12 categories. The eight latest additions are ipratropium,
+89 drugs, 54 clinical cases, 12 categories. The eight latest additions are ipratropium,
 adenosine, mannitol, 3 % hypertonic saline, HIV prophylaxis (PEP and infant), first-line TB
 treatment (RHZE), snake antivenom and oxygen, with new cases for snakebite, SVT, raised
 intracranial pressure, HIV exposure and tuberculosis.
