@@ -677,6 +677,7 @@ window.Features = function (ctx) {
     const due = scheds.list().reduce((n, s) => n + (schedState(s)?.dueSoon || 0), 0);
     const T = [
       ["#/ward", "ward", "Ward board", "Every bed on one screen with acuity, doses due and tasks, and an I-PASS shift handover.", ""],
+      ["#/growth", "baby", "Child growth", "WHO z-scores and centiles for weight, height, MUAC and head circumference, with growth charts.", ""],
       ["#/pregnancy", "calendar", "Pregnancy dating wheel", "Due date and gestational age in Ethiopian and Gregorian dates, milestones, ANC contacts and fetal weight.", ""],
       ["#/resus", "zap", "Emergency drug card", "Every resuscitation dose and volume for one weight. Printable.", "emergency"],
       ["#/drip", "drop", "Drip guide", "Metronome at the target drop rate, plus tap-to-measure the real rate.", ""],

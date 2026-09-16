@@ -106,6 +106,7 @@ window.Ward = function (ctx) {
         <a class="btn ghost sm" href="#/ward?bed=${x.id}">${ic("edit")}Update</a>
         <a class="btn ghost sm" href="#/schedules?bed=${x.id}&label=${encodeURIComponent(x.bed + (x.initials ? " " + x.initials : ""))}${x.weight ? `&w=${x.weight}` : ""}">${ic("clock")}Schedule</a>
         ${x.weight ? `<button type="button" class="btn ghost sm" data-useweight="${x.id}">${ic("user")}Use weight</button>` : ""}
+        ${x.age != null && x.age !== "" && x.age <= 19 ? `<a class="btn ghost sm" href="#/growth">${ic("baby")}Growth</a>` : ""}
         <button type="button" class="linkbtn danger" data-discharge="${x.id}">${ic("x")}Discharge</button>
       </div>
     </li>`;

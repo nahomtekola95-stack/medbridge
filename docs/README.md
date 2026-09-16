@@ -98,6 +98,29 @@ floating bottom navigation, category-tinted drug tiles, pill tabs, and Figtree t
 tokens at the top of `css/style.css`. Text contrast meets WCAG AA, tap targets are at least 44 px,
 transitions run 180–260 ms and are switched off for reduced-motion users.
 
+## Child growth and anthropometry
+
+`#/growth` (Tools → Child growth) works out WHO z-scores and centiles and plots growth charts.
+
+- **Indicators:** weight-for-age, length/height-for-age, weight-for-length (under 2 years),
+  weight-for-height (2–5 years), head circumference-for-age and MUAC-for-age (3–60 months) from
+  the **WHO Child Growth Standards (2006/2007)**; weight-for-age (5–10 y), height-for-age and
+  BMI-for-age (5–19 y) from the **WHO Growth reference 5–19 years (2007)**. BMI and body surface
+  area (Mosteller) are shown too.
+- **Method:** the LMS z-score, and beyond ±3 SD the fixed-SD extension, exactly as set out in
+  *WHO Child Growth Standards: head circumference-for-age, arm circumference-for-age, triceps
+  skinfold-for-age and subscapular skinfold-for-age — methods and development* (WHO 2007),
+  "Computation of centiles and z-scores". The three worked examples in that chapter are unit tests.
+- **Data:** `js/growth-data.js` holds the official WHO LMS tables (83 KB, 31 KB compressed),
+  taken from WHO's published expanded z-score tables and reduced to points that reproduce every
+  published cut-off to within 0.002 z.
+- **Flags:** severe and moderate acute malnutrition (weight-for-height and MUAC, with bilateral
+  pitting oedema always SAM), stunting, underweight, thinness, overweight and obesity, and head
+  circumference outside ±2 SD, each with the action and a link to the case or calculator.
+- **Charts:** the WHO −3, −2, 0, +2 and +3 SD curves for any indicator with the child's visits
+  plotted on top; visits are stored on the device with initials only.
+- Tests: `node tests/growth.test.js` (590 published WHO cut-offs plus the book's examples).
+
 ## Ward board, shift handover and pregnancy dating
 
 - **Ward board** (`#/ward`, Ward in the navigation): one card per bed with bed number, initials,
