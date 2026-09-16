@@ -418,5 +418,450 @@ window.INTERACTIONS = [
   {a: ["methylphenidate"],b: ["imipramine","amitriptyline"],severity: "moderate",effect: "Methylphenidate slows tricyclic metabolism and raises tricyclic levels; fast pulse, raised BP and seizure threshold effects add up.",action: "Use lower tricyclic doses and increase slowly; check pulse and BP at each visit. Avoid in children with heart disease.",ref: "Kaplan & Sadock 12th ed. 2022, ch. 21.6, pdf p. 2159"},
   {a: ["methylphenidate"],b: ["phenytoin","phenobarbital"],severity: "moderate",effect: "Methylphenidate may slow phenytoin and phenobarbital metabolism and raise their levels (drowsiness, unsteadiness, nystagmus).",action: "Watch for antiepileptic toxicity after starting or increasing methylphenidate; check levels where available. Methylphenidate can be used in controlled epilepsy with review of seizure frequency.",ref: "Kaplan & Sadock 12th ed. 2022, ch. 21.6, pdf pp. 2158–2159"},
   {a: ["methylphenidate"],b: ["labetalol","nifedipine","hydralazine"],severity: "moderate",effect: "Methylphenidate raises BP and pulse and reduces the effect of blood-pressure-lowering drugs.",action: "Avoid methylphenidate in uncontrolled hypertension. If combined, check BP at every visit and after each dose increase.",ref: "Kaplan & Sadock 12th ed. 2022, ch. 21.6, pdf pp. 2156, 2159"},
-  {a: ["methylphenidate"],b: ["adrenaline","noradrenaline"],severity: "moderate",effect: "Additive sympathomimetic effects: sharp rises in BP and heart rate, arrhythmias.",action: "Do not withhold adrenaline in anaphylaxis or arrest. For infusions or anaesthesia, start low with frequent BP checks; many anaesthetists omit methylphenidate on the day of surgery.",ref: "BNF interactions (methylphenidate–sympathomimetics); Kaplan & Sadock 12th ed. 2022, ch. 21.6, pdf p. 2156"}
+  {a: ["methylphenidate"],b: ["adrenaline","noradrenaline"],severity: "moderate",effect: "Additive sympathomimetic effects: sharp rises in BP and heart rate, arrhythmias.",action: "Do not withhold adrenaline in anaphylaxis or arrest. For infusions or anaesthesia, start low with frequent BP checks; many anaesthetists omit methylphenidate on the day of surgery.",ref: "BNF interactions (methylphenidate–sympathomimetics); Kaplan & Sadock 12th ed. 2022, ch. 21.6, pdf p. 2156"},
+
+  /* ---- antileishmanial drugs ---- */
+  {
+    a: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    b: ["furosemide", "hydrocortisone", "dexamethasone"],
+    severity: "major",
+    effect: "Amphotericin B itself wastes potassium and magnesium in the urine. Furosemide and corticosteroids do the same, and together they produce a profound hypokalaemia — weakness, ileus, and ventricular arrhythmia — on top of the falling magnesium and calcium that amphotericin already causes.",
+    action: "Avoid the combination where you can. If furosemide or a steroid is genuinely needed, give oral potassium routinely through the amphotericin course and check potassium and magnesium at least twice weekly; replace magnesium as well, because potassium will not correct while magnesium is low. Without a laboratory, look for new weakness, cramps, a silent distended abdomen and an irregular pulse.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1, pdf p. 60; Annex 3, pdf p. 85",
+    refs: [
+      {
+        book: "whovl",
+        text: "Corticosteroids, corticotropin and other hypokalaemic drugs given with amphotericin B potentiate hypokalaemia; potassium and cardiac function should be closely monitored.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1 Liposomal amphotericin B, pdf p. 60",
+        pdf_page: 60,
+        quote: "Concurrent use of corticosteroids, corticotropin and digitalis may potentiate hypokalaemia and digitalis toxicity"
+      },
+      {
+        book: "whovl",
+        text: "High blood sugar, low potassium, low magnesium, low calcium and low sodium are very common blood findings on liposomal amphotericin B.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 85",
+        pdf_page: 85,
+        quote: "High blood sugar, low potassium, low magnesium, low calcium"
+      }
+    ]
+  },
+  {
+    a: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    b: ["digoxin"],
+    severity: "major",
+    effect: "Amphotericin-induced hypokalaemia makes digoxin toxic at an ordinary dose: bradycardia, heart block, ventricular ectopics and vomiting, often with a digoxin level that looks 'normal'.",
+    action: "Check potassium before starting amphotericin and at least twice weekly during the course; keep it at 4.0–5.0 mmol/L. Replace potassium (and magnesium) actively. Watch pulse rate and rhythm before every infusion and ask about nausea, vomiting and visual symptoms. Get an ECG where one exists. Consider withholding digoxin for the course if rate control allows.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1, pdf p. 60; BNF interactions",
+    refs: [
+      {
+        book: "whovl",
+        text: "Concurrent digitalis with amphotericin B may potentiate hypokalaemia and digitalis toxicity, predisposing to cardiac dysfunction; potassium and cardiac function should be closely monitored.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1 Liposomal amphotericin B, pdf p. 60",
+        pdf_page: 60,
+        quote: "Concurrent use of corticosteroids, corticotropin and digitalis may potentiate hypokalaemia and digitalis toxicity"
+      }
+    ]
+  },
+  {
+    a: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    b: ["gentamicin", "paromomycin"],
+    severity: "major",
+    effect: "Additive kidney injury. Amphotericin B and the aminoglycosides damage the renal tubule by different routes, and the patient with VL is usually already febrile, wasted and dehydrated — the exact setting in which acute kidney injury happens. Paromomycin adds ototoxicity to gentamicin's ototoxicity as well.",
+    action: "Do not run them together unless there is no alternative. If both are unavoidable, keep the patient well hydrated, measure creatinine before starting and at least twice weekly, keep a fluid balance chart, and dipstick the urine for protein. For the aminoglycoside, lengthen the interval rather than cutting the dose, on pharmacist advice. Stop and reassess for falling urine output, new protein in the urine, tinnitus, muffled hearing or vertigo.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1, pdf p. 60; Annex 3, pdf pp. 84–85",
+    refs: [
+      {
+        book: "whovl",
+        text: "Concurrent use of amphotericin B with other nephrotoxic medicines may enhance drug-induced renal toxicity, and intensive monitoring of renal function is recommended.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1 Liposomal amphotericin B, pdf p. 60",
+        pdf_page: 60,
+        quote: "Concurrent use of amphotericin B and other nephrotoxic medications may enhance potential drug-induced renal toxicity."
+      },
+      {
+        book: "whovl",
+        text: "Ototoxicity, conductive deafness and proteinuria are recognised adverse effects of paromomycin.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 84",
+        pdf_page: 84,
+        quote: "Injection site swelling, abscess, ototoxicity, conductive deafness, proteinuria"
+      }
+    ]
+  },
+  {
+    a: ["paromomycin"],
+    b: ["gentamicin"],
+    severity: "major",
+    effect: "Two aminoglycosides at once: the nephrotoxicity and the ototoxicity add up, and aminoglycoside hearing loss is often permanent. Neuromuscular blockade is also additive.",
+    action: "Do not give both. Ask whether the gentamicin can be replaced — ceftriaxone usually covers the same indication in a VL patient with suspected sepsis. If both are truly unavoidable, this is a senior and pharmacist decision: hydrate, check creatinine and urine protein, and do a whispered-voice hearing test before starting and weekly.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3, pdf p. 84; BNF interactions (aminoglycosides)",
+    refs: [
+      {
+        book: "whovl",
+        text: "Paromomycin causes injection-site abscess, ototoxicity, conductive deafness and proteinuria; a reversible abnormal audiogram is common.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 84",
+        pdf_page: 84,
+        quote: "Pyrexia, reversible abnormal audiogram"
+      }
+    ]
+  },
+  {
+    a: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    b: ["magnesium-sulfate"],
+    severity: "moderate",
+    effect: "Hypokalaemia caused by amphotericin B prolongs and deepens neuromuscular blockade, and magnesium blocks neuromuscular transmission in its own right. Together they can produce profound weakness and inadequate breathing, and the same applies to any muscle relaxant given in theatre during an amphotericin course.",
+    action: "Check knee reflexes, respiratory rate and the ability to lift the head off the pillow before every magnesium dose in a patient on amphotericin B, and keep calcium gluconate 1 g at the bedside. Correct potassium and magnesium before any elective procedure, and tell the anaesthetist the patient is on amphotericin B — hypokalaemia prolongs the effect of muscle relaxants.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1, pdf p. 60",
+    refs: [
+      {
+        book: "whovl",
+        text: "Amphotericin B-induced hypokalaemia may enhance the curariform effect of skeletal muscle relaxants; potassium should be closely monitored when they are given together.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1 Liposomal amphotericin B, pdf p. 60",
+        pdf_page: 60,
+        quote: "Amphotericin B-induced hypokalaemia may enhance the curariform effect of skeletal muscle relaxants"
+      }
+    ]
+  },
+  {
+    a: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    b: ["arv-prophylaxis"],
+    severity: "moderate",
+    effect: "There is no pharmacokinetic interaction — amphotericin B is neither a substrate nor an inhibitor of cytochrome P450, and exposure to it was the same in Ethiopian patients on and off ART. The problem is additive organ toxicity: tenofovir and amphotericin B are both nephrotoxic, and zidovudine with amphotericin B causes additive marrow suppression (anaemia and neutropenia).",
+    action: "Do not delay ART for this — WHO wants it started within 2 weeks of starting VL treatment. Instead monitor: creatinine before and during the amphotericin course if the regimen contains tenofovir, and haemoglobin and white cells if it contains zidovudine. Choose the ART regimen from the national HIV guideline (dolutegravir-based first line avoids both problems). Report suspected reactions to the national pharmacovigilance centre.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.3, pdf pp. 60–61",
+    refs: [
+      {
+        book: "whovl",
+        text: "Although there may be no clinically relevant pharmacokinetic interaction, both tenofovir and amphotericin B can be nephrotoxic.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.3 L-AMB, miltefosine and ART, pdf p. 61",
+        pdf_page: 61,
+        quote: "both tenofovir and amphotericin B can be nephrotoxic"
+      },
+      {
+        book: "whovl",
+        text: "Zidovudine with amphotericin B may cause additive myelosuppression; close monitoring of haematological function is recommended.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.3 L-AMB, miltefosine and ART, pdf p. 61",
+        pdf_page: 61,
+        quote: "the combination of zidovudine and amphotericin B may result in additive myelosuppression"
+      },
+      {
+        book: "whovl",
+        text: "Exposure to amphotericin B on day 1 was similar in patients taking and not taking ART, and no interaction was expected with the antiretrovirals used.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.3 L-AMB, miltefosine and ART, pdf p. 61",
+        pdf_page: 61,
+        quote: "Exposure to amphotericin B on day 1 was similar in patients taking and not taking ART"
+      }
+    ]
+  },
+  {
+    a: ["sodium-stibogluconate"],
+    b: [
+      "amiodarone",
+      "quinine",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "methadone",
+      "quetiapine",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine"
+    ],
+    severity: "major",
+    effect: "Sodium stibogluconate prolongs the QT interval and flattens or inverts T waves in its own right, and fatal arrhythmia is a recognised adverse effect. Adding any other QT-prolonging drug — an antiarrhythmic, an antimalarial, an antipsychotic, methadone or a tricyclic — multiplies the risk of torsades de pointes. Patients on a 17–30 day antimonial course are exposed every single day.",
+    action: "Do not combine. Go through the patient's whole drug list before the first injection, including anything started on another ward. Where the other drug can be stopped or swapped, do that — artesunate instead of quinine, a different antiemetic or antipsychotic. If the combination is unavoidable, that is a senior decision needing an ECG before the first dose and at least weekly, correction of potassium and magnesium, and a 60-second pulse before every dose. Stop the antimonial for syncope, a new irregular pulse or a lengthening QT.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3, pdf p. 86; BNF interactions (QT-prolonging drugs)",
+    refs: [
+      {
+        book: "whovl",
+        text: "Fatal cardiac arrhythmia and ECG changes — reduced T-wave amplitude, T-wave inversion and QT prolongation — are listed adverse effects of sodium stibogluconate.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 86",
+        pdf_page: 86,
+        quote: "Fatal cardiac arrhythmia, changes"
+      },
+      {
+        book: "whovl",
+        text: "Antimonials are more toxic in HIV patients and must be monitored carefully for pancreatitis and cardiotoxicity.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.5 Rescue treatment, pdf p. 45",
+        pdf_page: 45,
+        quote: "As antimonials are more toxic in HIV patients, they must be carefully monitored for pancreatitis and cardiotoxicity."
+      }
+    ]
+  },
+  {
+    a: ["sodium-stibogluconate"],
+    b: ["furosemide", "liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    severity: "major",
+    effect: "Hypokalaemia and hypomagnesaemia from furosemide or amphotericin B make antimonial cardiotoxicity far more dangerous: a low potassium lengthens the QT further and is the classic setting for torsades de pointes. Sequential courses also stack the cardiac and renal injury.",
+    action: "Correct potassium and magnesium before giving an antimonial, and keep potassium at 4.0–5.0 mmol/L through the course. Avoid furosemide during an antimonial course unless it is needed for heart failure. Where a patient has just finished amphotericin B and is moving to rescue antimonial treatment, check potassium, magnesium and creatinine first and allow recovery time. Get an ECG where a machine exists.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3, pdf p. 86 and 5.3.1, pdf p. 60; BNF interactions",
+    refs: [
+      {
+        book: "whovl",
+        text: "Sodium stibogluconate very commonly causes ECG changes, including reduced T-wave amplitude, T-wave inversion and QT prolongation, with fatal arrhythmia recognised.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 86",
+        pdf_page: 86,
+        quote: "changes in electrocardiogram, including reduction"
+      },
+      {
+        book: "whovl",
+        text: "Drugs that lower potassium potentiate hypokalaemia when given with amphotericin B; potassium and cardiac function should be closely monitored.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1 Liposomal amphotericin B, pdf p. 60",
+        pdf_page: 60,
+        quote: "Concurrent use of corticosteroids, corticotropin and digitalis may potentiate hypokalaemia and digitalis toxicity"
+      }
+    ]
+  },
+  {
+    a: ["miltefosine"],
+    b: ["arv-prophylaxis"],
+    severity: "moderate",
+    effect: "Miltefosine does not induce or inhibit cytochrome P450, so no classical interaction is expected and antiretroviral exposure was unchanged during VL treatment in Ethiopia. But in that same study, patients on efavirenz had significantly lower miltefosine exposure at the end of the first 28-day cycle, and miltefosine exposure was lower in VL–HIV patients than in HIV-negative East African adults. Lower exposure means a higher chance of treatment failure and relapse — the thing that kills these patients.",
+    action: "Do not change the ART for this; WHO wants ART started within 2 weeks whatever the CD4 count, and the preferred first line is dolutegravir-based rather than efavirenz-based. Instead, make sure every miltefosine dose is actually taken and absorbed: give it with food, supervise the doses, and treat vomiting rather than accepting it. Be alert to a slow response and use the day-29 test of cure to decide on extended therapy.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.2 and 5.3.3, pdf pp. 60–61",
+    refs: [
+      {
+        book: "whovl",
+        text: "Miltefosine does not markedly induce or inhibit human cytochrome P450 enzymes.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.2 Miltefosine, pdf p. 60",
+        pdf_page: 60,
+        quote: "miltefosine does not markedly induce or inhibit the activity of human cytochrome P450 enzymes"
+      },
+      {
+        book: "whovl",
+        text: "Patients treated with efavirenz had significantly lower exposure to miltefosine at the end of the first 28-day cycle.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.3 L-AMB, miltefosine and ART, pdf p. 61",
+        pdf_page: 61,
+        quote: "had significantly lower exposure to miltefosine at the end of the first cycle"
+      }
+    ]
+  },
+  {
+    a: ["miltefosine"],
+    b: ["zinc-ors"],
+    severity: "moderate",
+    effect: "Not a pharmacological interaction: miltefosine very commonly causes vomiting and diarrhoea, which cause volume depletion and can stop any oral drug taken at the same time — including ART and an oral contraceptive — from being absorbed.",
+    action: "Give miltefosine with food, always. Encourage fluid intake to avoid volume depletion, and give ORS when losses are significant. If a woman is relying on an oral contraceptive, add a non-hormonal method or use an implant or injectable for the course and the 5 months afterwards. Record vomiting episodes on the treatment card rather than just noting them, and re-give a dose that was clearly vomited straight back.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2, pdf p. 59",
+    refs: [
+      {
+        book: "whovl",
+        text: "Vomiting and diarrhoea are common on miltefosine, may cause volume depletion, and fluid intake should be encouraged.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — gastrointestinal effects, pdf p. 59",
+        pdf_page: 59,
+        quote: "Encourage fluid intake to avoid volume depletion."
+      },
+      {
+        book: "whovl",
+        text: "Vomiting and diarrhoea during miltefosine therapy may affect the absorption of oral contraceptives and compromise their efficacy; an additional non-hormonal method is advised.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — gastrointestinal effects, pdf p. 59",
+        pdf_page: 59,
+        quote: "may affect the absorption of oral contraceptives"
+      }
+    ]
+  },
+  {
+    a: ["miltefosine"],
+    b: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    severity: "moderate",
+    effect: "This is the WHO-recommended combination, not a combination to avoid — but the two drugs share toxicities and they add up. Both raise creatinine; miltefosine causes thrombocytopenia while amphotericin causes anaemia; and the VL itself already causes pancytopenia. The result is a patient whose platelets and haemoglobin fall further and whose creatinine rises during a course you must not abandon.",
+    action: "Give the combination — it is the recommended treatment and it cures more patients than L-AMB alone. Monitor rather than withhold: creatinine and potassium once or twice weekly, platelets and haemoglobin where the laboratory can do them. Look for new bruising, petechiae, and bleeding from nose or gums at every review. If creatinine rises, halve the amphotericin dose for a few days rather than stopping the course.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 and 5.2, pdf pp. 35, 55, 59",
+    refs: [
+      {
+        book: "whovl",
+        text: "Miltefosine causes thrombocytopenia and platelet counts should be monitored during therapy.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — warnings, pdf p. 59",
+        pdf_page: 59,
+        quote: "Miltefosine causes thrombocytopenia. Platelet counts should be monitored during therapy."
+      },
+      {
+        book: "whovl",
+        text: "Creatinine and potassium should be checked once or twice weekly on L-AMB, and the dose halved for a few days if renal function deteriorates.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1 Liposomal amphotericin B, pdf p. 55",
+        pdf_page: 55,
+        quote: "If renal function deteriorates, the dose should be halved for a few days."
+      },
+      {
+        book: "whovl",
+        text: "The WHO first choice in East Africa is L-AMB up to a cumulative 30 mg/kg, as 5 mg/kg on days 1, 3, 5, 7, 9 and 11, with miltefosine 100 mg daily for 28 days.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 First choice of treatment, pdf p. 35",
+        pdf_page: 35,
+        quote: "L-AMB (up to a cumulative treatment dose of 30 mg/kg body weight, given as 5 mg/"
+      }
+    ]
+  },
+  {
+    a: ["paromomycin"],
+    b: ["magnesium-sulfate"],
+    severity: "moderate",
+    effect: "Aminoglycosides and magnesium both impair neuromuscular transmission. Together they can cause profound weakness and inadequate breathing, and the effect is worse in a wasted, hypokalaemic patient.",
+    action: "Avoid the combination where possible. If magnesium is needed (eclampsia, severe asthma) while a patient is on paromomycin, check knee reflexes, respiratory rate and the ability to lift the head off the pillow before every magnesium dose, and keep calcium gluconate 1 g at the bedside. Tell the anaesthetist if the patient goes to theatre.",
+    ref: "BNF interactions (aminoglycosides–magnesium); WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3, pdf p. 84"
+  },
+  {
+    a: ["sodium-stibogluconate"],
+    b: ["paromomycin"],
+    severity: "moderate",
+    effect: "This is the East African first-line combination for VL without HIV, not a combination to avoid. The caution is practical: two daily intramuscular injections for 17 days in a wasted patient, with additive injection-site damage, plus antimonial cardiotoxicity and pancreatitis on one side and aminoglycoside oto- and nephrotoxicity on the other.",
+    action: "Give them in DIFFERENT sites on the same day and rotate both on a written four-site chart. Inspect yesterday's sites before injecting. Before every dose: 60-second pulse, and ask about palpitations, dizziness, blackouts, abdominal pain, tinnitus and muffled hearing. Whispered-voice hearing test weekly; urine dipstick for protein twice weekly. This combination is WHO's stated first line for HIV-negative patients in East Africa, and rescue treatment for VL–HIV non-responders.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3, pdf p. 28 and 4.2.3, pdf p. 36",
+    refs: [
+      {
+        book: "whovl",
+        text: "First-line treatment of VL in HIV-negative patients in East Africa is a pentavalent antimonial with paromomycin, given parenterally for 17 days.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28",
+        pdf_page: 28,
+        quote: "The first-line treatment of VL in HIV-negative patients in East Africa is parenteral"
+      },
+      {
+        book: "whovl",
+        text: "Rescue treatment for non-responders in the Ethiopian trial was sodium stibogluconate, alone or with paromomycin.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2.3 Efficacy and safety data, pdf p. 36",
+        pdf_page: 36,
+        quote: "sodium stibogluconate plus paromomycin) was given to non-responders"
+      }
+    ]
+  },
+
+  /* ---- ophthalmic drugs ---- */
+  {
+    a: ["timolol-eye"],
+    b: ["salbutamol", "ipratropium", "aminophylline"],
+    severity: "major",
+    effect: "Timolol is a NON-selective beta-blocker and enough of it is absorbed from the eye to block beta-2 receptors in the airway. It can trigger severe or fatal bronchospasm in asthma or COPD, and it blocks the bronchodilator effect of salbutamol. Fatal asthma attacks have followed the first dose of timolol eye drops. A patient who needs salbutamol, ipratropium or aminophylline has airway disease, which is a contraindication to timolol.",
+    action: "Do not start timolol in anyone who has ever had asthma or wheeze. If a patient already on timolol develops wheeze, stop the drops and tell the eye unit the same day — do not simply add salbutamol. Ask the eye unit for pilocarpine, a topical carbonic anhydrase inhibitor, brimonidine or a prostaglandin analogue instead. In an acute attack in a patient on timolol, treat the asthma as usual: higher and repeated salbutamol doses may be needed, and adrenaline is not withheld in life-threatening bronchospasm.",
+    ref: "BNF interactions (beta-blockers, topical — beta2 agonists); WHO Model Formulary 2008, timolol eye drops"
+  },
+  {
+    a: ["timolol-eye"],
+    b: ["propranolol", "labetalol"],
+    severity: "major",
+    effect: "Additive beta-blockade. The plasma level from twice-daily timolol drops to both eyes is not trivial — it bypasses first-pass metabolism — so adding an oral or IV beta-blocker can produce marked bradycardia, heart block, hypotension, fatigue and bronchospasm. Labetalol is also non-selective, so the respiratory risk doubles too.",
+    action: "Check for eye drops before prescribing any beta-blocker, and write TIMOLOL EYE DROPS in the drug list, not in the eye section, on every referral and drug chart. If both are genuinely needed, use the lowest timolol strength (0.25 %), teach punctal occlusion for 2 minutes after every drop, and check pulse and blood pressure at each visit. A resting pulse under 55, dizziness on standing or new fatigue means review the combination.",
+    ref: "BNF interactions (beta-blockers — additive effects); AAO Preferred Practice Pattern: Primary Open-Angle Glaucoma"
+  },
+  {
+    a: ["timolol-eye"],
+    b: ["digoxin", "amiodarone"],
+    severity: "major",
+    effect: "Additive slowing of the heart rate and of AV conduction: severe bradycardia, heart block, syncope and hypotension. The combination is easy to miss because the timolol is not on the drug chart — it is 'the eye drops the eye clinic gave'.",
+    action: "Avoid where possible. If unavoidable, count the pulse before starting and at every visit, ask about dizziness, fainting and falls, and get an ECG if one is available. Teach punctal occlusion, use 0.25 %, and reduce to once daily if the pressure allows. Stop the timolol and ask the eye unit for an alternative if the pulse falls below 55 or there is any new heart block.",
+    ref: "BNF interactions (beta-blockers with digoxin / amiodarone); Harrison's Principles of Internal Medicine 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology"
+  },
+  {
+    a: ["timolol-eye"],
+    b: ["adrenaline"],
+    severity: "major",
+    effect: "With beta receptors blocked, adrenaline acts mainly on alpha receptors: severe hypertension with reflex bradycardia. Beta-blockade also blunts the response to adrenaline in anaphylaxis, so the usual dose may not work.",
+    action: "NEVER withhold adrenaline in anaphylaxis or cardiac arrest because of eye drops. Give the standard IM dose, expect a poorer response, repeat it, and add IV fluids early. Glucagon 1–2 mg IV is the specific rescue for beta-blocked anaphylaxis where it exists. Outside emergencies, avoid adrenaline-containing local anaesthetic infiltration in large doses in a patient on timolol, and monitor the blood pressure.",
+    ref: "BNF interactions (beta-blockers — adrenaline); Resuscitation Council UK. Emergency treatment of anaphylaxis, 2021"
+  },
+  {
+    a: ["timolol-eye"],
+    b: ["insulin-soluble"],
+    severity: "moderate",
+    effect: "Timolol masks the warning signs of hypoglycaemia — the fast pulse, tremor and anxiety that tell a diabetic patient to eat — and slows recovery from it. Sweating is preserved and may be the only remaining clue. Diabetics are exactly the patients who attend eye clinics.",
+    action: "Warn the patient and the family that a low sugar may now feel different: sweating, confusion or odd behaviour with no palpitations. Check the glucose rather than relying on symptoms; treat lows promptly. Consider a non-beta-blocker glaucoma drop in a patient with frequent or severe hypoglycaemia, and teach punctal occlusion.",
+    ref: "BNF interactions (beta-blockers — insulin and sulfonylureas)"
+  },
+  {
+    a: ["timolol-eye"],
+    b: ["nifedipine", "hydralazine"],
+    severity: "moderate",
+    effect: "Additive lowering of blood pressure, and with rate-limiting calcium-channel blockers additive bradycardia and negative inotropy. Postural dizziness and falls in an elderly glaucoma patient are commonly blamed on age rather than on the drops.",
+    action: "Measure lying and standing blood pressure and the pulse at each visit, and ask about dizziness on standing and falls. Use the lowest effective timolol strength with punctal occlusion. Review the antihypertensive dose rather than stopping sight-saving glaucoma treatment.",
+    ref: "BNF interactions (beta-blockers with calcium-channel blockers and vasodilators)"
+  },
+  {
+    a: ["acetazolamide"],
+    b: ["lithium"],
+    severity: "moderate",
+    effect: "Acetazolamide alkalinises the urine and increases renal lithium clearance, so the lithium level falls and mood control can be lost during treatment. When the acetazolamide is stopped the level climbs again, and toxicity has been reported at that point.",
+    action: "A single emergency dose for acute angle closure needs no change. For any course beyond a day or two: check the lithium level during treatment and again about a week after stopping, where levels are available. Watch for relapse of mania or depression during treatment, and for tremor, unsteadiness, vomiting and confusion after it is stopped. Keep salt and fluid intake steady.",
+    ref: "BNF interactions (lithium — acetazolamide); Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers"
+  },
+  {
+    a: ["acetazolamide"],
+    b: ["sodium-bicarbonate"],
+    severity: "moderate",
+    effect: "Both alkalinise the urine. Together they markedly raise the risk of calcium phosphate kidney stones, and the bicarbonate partly cancels the metabolic acidosis that acetazolamide relies on for part of its effect. Sodium load may also matter in heart failure.",
+    action: "Avoid the combination where possible. If bicarbonate is genuinely needed for another reason, keep the acetazolamide course as short as possible, keep the fluid intake high, and ask about loin pain or blood in the urine. Do not use bicarbonate to 'correct' the acidosis acetazolamide causes — reduce or stop the acetazolamide instead.",
+    ref: "BNF interactions (acetazolamide — urinary alkalinisation and renal calculi)"
+  },
+  {
+    a: ["acetazolamide"],
+    b: ["furosemide", "dexamethasone", "hydrocortisone"],
+    severity: "major",
+    effect: "Additive potassium loss. Acetazolamide alone causes hypokalaemia and a metabolic acidosis; add a loop diuretic or a corticosteroid and potassium can fall fast, producing weakness, ileus, cramps and arrhythmias. Steroids plus acetazolamide is a common combination in eye practice (a steroid responder with raised pressure) and the potassium is rarely checked.",
+    action: "Check potassium before starting and every few days where a laboratory exists. Where it does not: give potassium-rich food (bananas, oranges, avocado, potatoes, beans) or an oral potassium supplement with any course longer than 2 days, and look for muscle weakness, a distended abdomen with quiet bowel sounds and palpitations. Keep the acetazolamide course short and stop it once definitive treatment is arranged.",
+    ref: "BNF interactions (acetazolamide with diuretics and corticosteroids); WHO Model Formulary 2008"
+  },
+  {
+    a: ["acetazolamide"],
+    b: ["digoxin"],
+    severity: "major",
+    effect: "Acetazolamide lowers serum potassium. Hypokalaemia makes digoxin toxicity and arrhythmias much more likely, even when the digoxin level is in range.",
+    action: "Check potassium before and during treatment and keep it at 4.0–5.0 mmol/L. Replace potassium early. Watch for nausea, vomiting, visual symptoms, new bradycardia or ectopics. Keep the acetazolamide course as short as the eye allows.",
+    ref: "BNF interactions (digoxin — hypokalaemia); Harrison's Principles of Internal Medicine 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances"
+  },
+  {
+    a: ["acetazolamide"],
+    b: ["sodium-valproate"],
+    severity: "moderate",
+    effect: "Both can raise blood ammonia and both cause a metabolic acidosis. Together they have precipitated hyperammonaemic encephalopathy (drowsiness, confusion, vomiting) and severe acidosis, particularly in children and in patients who are already unwell.",
+    action: "Avoid the combination in children where possible. If acetazolamide is needed for a sight-threatening pressure rise, give a single dose or the shortest course, watch the level of consciousness and the breathing pattern closely, and stop it if the patient becomes drowsy or starts breathing deeply and fast. Check ammonia and bicarbonate where the laboratory can do them.",
+    ref: "BNF interactions (acetazolamide — valproate, topiramate); product information"
+  },
+  {
+    a: ["acetazolamide"],
+    b: ["carbamazepine", "phenytoin", "phenobarbital"],
+    severity: "moderate",
+    effect: "Acetazolamide can raise carbamazepine levels (ataxia, drowsiness, double vision, nausea). With long-term phenytoin or phenobarbital, acetazolamide adds to the risk of osteomalacia, and the combined acidosis load is poorly tolerated.",
+    action: "For a single emergency dose, no change. For a longer course, watch for carbamazepine toxicity (unsteadiness, double vision, drowsiness) and check a level if one is available. Keep courses short; if a carbonic anhydrase inhibitor is needed long term in a patient on an enzyme-inducing anticonvulsant, that decision belongs with the eye unit and a physician.",
+    ref: "BNF interactions (carbamazepine — acetazolamide)"
+  },
+  {
+    a: ["atropine-eye", "tropicamide"],
+    b: [
+      "amitriptyline",
+      "imipramine",
+      "trihexyphenidyl",
+      "biperiden",
+      "promethazine",
+      "chlorpromazine",
+      "olanzapine",
+      "clozapine",
+      "cyproheptadine",
+      "atropine",
+      "ipratropium"
+    ],
+    severity: "moderate",
+    effect: "Anticholinergic effects add up, and eye drops are never counted in the total. Dry mouth, constipation progressing to ileus, urinary retention (especially in older men), a fast pulse, blurred vision, inability to sweat with overheating in a hot climate, and confusion or frank delirium in the elderly. Systemic anticholinergics also dilate the pupil themselves: in a patient with a shallow anterior chamber, adding a dilating eye drop can tip the eye into ACUTE ANGLE-CLOSURE GLAUCOMA — a painful, vomiting, blinding emergency. Nebulised ipratropium blown into the eyes under a loose mask does the same thing.",
+    action: "Before dilating, screen the angle with the oblique torch test (shine a torch across the eye from the temporal side, parallel to the iris; if the nasal half of the iris is in shadow the chamber is shallow — do not dilate, refer). Use the shortest-acting agent you have, dilate one eye at a time where that is enough, and teach punctal occlusion for 2 minutes. Warn the patient and the family to return at once with eye pain, halos around lights, headache or vomiting. In the elderly, ask about urinary retention and confusion at the next visit, and keep the patient out of the sun. Fit a nebuliser mask properly, or use a mouthpiece, in anyone with narrow angles.",
+    ref: "BNF interactions (antimuscarinics — additive effects); AAO Preferred Practice Pattern: Primary Angle-Closure Disease"
+  },
+  {
+    a: ["pilocarpine-eye"],
+    b: ["atropine-eye", "tropicamide"],
+    severity: "major",
+    effect: "Directly opposite actions on the same muscle. Pilocarpine is given to constrict the pupil and pull the peripheral iris out of the drainage angle; atropine and tropicamide dilate it and push the iris back into the angle. Giving a dilating drop to an eye being treated for angle closure undoes the treatment and can re-close the angle within minutes.",
+    action: "Never give a mydriatic to an eye with acute or suspected angle closure, or to the fellow eye of a patient who has had an attack, until a laser iridotomy has been done. Label the notes and the patient's card. The one exception is malignant (aqueous misdirection) glaucoma, where the treatment is the reverse — atropine, not pilocarpine — and that diagnosis must be made by an ophthalmologist.",
+    ref: "AAO Preferred Practice Pattern: Primary Angle-Closure Disease; AAO Basic and Clinical Science Course, Section 10: Glaucoma"
+  },
+  {
+    a: ["prednisolone-eye"],
+    b: ["timolol-eye", "pilocarpine-eye", "acetazolamide"],
+    severity: "moderate",
+    effect: "About one person in three is a steroid responder: topical corticosteroid raises the intraocular pressure, usually within 2–6 weeks and sometimes within days in children. In a patient already on glaucoma treatment, the steroid works directly against it and the rise is silent until the optic nerve is damaged.",
+    action: "If a patient on glaucoma treatment needs a steroid drop, say so in the referral and arrange pressure measurement within 2 weeks and then monthly. Use the weakest steroid that controls the inflammation and the shortest course, and taper deliberately rather than stopping abruptly. Where no tonometer exists, record visual acuity in each eye at every visit and ask about halos and eye ache — and refer rather than continuing the steroid blind.",
+    ref: "AAO Basic and Clinical Science Course, Section 10: Glaucoma (steroid-induced glaucoma); AAO Preferred Practice Pattern: Primary Open-Angle Glaucoma"
+  },
+  {
+    a: ["prednisolone-eye"],
+    b: ["dexamethasone", "hydrocortisone"],
+    severity: "moderate",
+    effect: "Additive corticosteroid load. Systemic steroids raise intraocular pressure and cause cataract in their own right, and both routes together increase the risk of masking or worsening an eye infection — the reason a hypopyon appearing during steroid treatment means infection until proved otherwise.",
+    action: "Where a patient is on systemic steroids for another disease, tell the eye unit, measure the intraocular pressure while both are running, and keep the topical course as short as the eye allows. Never start a topical steroid in a red eye without fluorescein staining and a diagnosis, whatever systemic steroid the patient is already taking.",
+    ref: "AAO Basic and Clinical Science Course, Section 9: Uveitis and Ocular Inflammation; BNF — corticosteroids, ocular"
+  }
 ];

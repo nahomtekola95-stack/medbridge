@@ -357,5 +357,306 @@ window.SUBSTITUTES = {
   "methylphenidate": [
     {use: "ADHD in children",none: true,note: "No substitute in this app. Parent training, classroom strategies and behavioural programmes are first-line where medicine is unavailable. Atomoxetine, clonidine or guanfacine if stocked locally, with specialist advice; imipramine is a last-resort option only under specialist care (overdose and cardiac risk)."},
     {use: "Tics, anxiety or growth concerns on methylphenidate",none: true,note: "Refer to child psychiatry or paediatrics; risperidone is sometimes used for severe tics or irritability under specialist care."}
+  ],
+
+  /* ---- visceral leishmaniasis ---- */
+  "liposomal-amphotericin-b": [
+    {
+      use: "VL–HIV, East Africa (as part of the combination)",
+      with: "amphotericin-b-deoxycholate",
+      note: "Only if no liposomal product can be obtained. Far more toxic: 4–6 h infusion, 0.9 % saline pre-load, routine potassium replacement, and a cumulative dose that damages kidneys. Chase the AmBisome donation supply first."
+    },
+    {
+      use: "VL without HIV, East Africa",
+      with: "sodium-stibogluconate",
+      note: "20 mg Sb5+/kg/day IM with paromomycin 15 mg/kg/day for 17 days is the first line in HIV-negative patients anyway. Not a substitute in advanced HIV — cardiotoxic, pancreatotoxic and poorly effective there."
+    },
+    {
+      use: "VL in pregnancy",
+      with: "amphotericin-b-deoxycholate",
+      note: "The only amphotericin substitute. Miltefosine (teratogenic) and pentavalent antimonials (abortion, preterm birth, maternal encephalopathy) are both contraindicated in pregnancy."
+    },
+    {
+      use: "Secondary prophylaxis after a first VL episode",
+      with: "amphotericin-b-deoxycholate",
+      note: "1 mg/kg every 3–4 weeks is the South-East Asia option. WHO's East Africa recommendation is pentamidine isethionate 4 mg/kg (300 mg adult) every 3–4 weeks — pentamidine is not yet in this app."
+    }
+  ],
+  "amphotericin-b-deoxycholate": [
+    {
+      use: "VL and VL–HIV treatment",
+      with: "liposomal-amphotericin-b",
+      note: "Always prefer this where it exists: similar efficacy, far less toxicity, and it is the formulation in the WHO regimens. AmBisome is donated for some East African programmes."
+    },
+    {
+      use: "VL without HIV, East Africa",
+      with: "sodium-stibogluconate",
+      note: "With paromomycin for 17 days — the East African first line in HIV-negative patients."
+    }
+  ],
+  "sodium-stibogluconate": [
+    {
+      use: "VL without HIV, East Africa (first line)",
+      with: "liposomal-amphotericin-b",
+      note: "3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg. This is the WHO second line and the regimen for complicated cases, and the choice in pregnancy and in HIV coinfection."
+    },
+    {
+      use: "VL when an antimonial is contraindicated (pregnancy, heart disease, QT drugs)",
+      with: "liposomal-amphotericin-b",
+      note: "Pentavalent antimonials are contraindicated in pregnancy. L-AMB is the safe alternative."
+    },
+    {
+      use: "Rescue treatment of VL–HIV after L-AMB plus miltefosine",
+      with: "paromomycin",
+      note: "The guideline's rescue options are sodium stibogluconate alone OR sodium stibogluconate with paromomycin. Paromomycin with miltefosine has also been used for relapse in South-East Asia."
+    }
+  ],
+  miltefosine: [
+    {
+      use: "VL–HIV combination treatment, East Africa",
+      with: "liposomal-amphotericin-b",
+      note: "WHO's stated fallback: where miltefosine is unavailable or contraindicated, give L-AMB alone up to a total of 40 mg/kg (5 mg/kg on days 1–5, 10, 17 and 24). Cure at day 29 falls from 67 % to 50 %, so use it only when you must."
+    },
+    {
+      use: "A woman of childbearing potential with no assured contraception",
+      with: "liposomal-amphotericin-b",
+      note: "Not a stock-out but a contraindication. No pregnancy test or no contraception plan covering the course and 5 months afterwards means no miltefosine — use L-AMB monotherapy."
+    },
+    {
+      use: "Oral treatment of VL",
+      none: true,
+      note: "Miltefosine is the only oral antileishmanial there is. Every other option is an injection or an infusion. There is no oral substitute."
+    }
+  ],
+  paromomycin: [
+    {
+      use: "VL without HIV, East Africa (with an antimonial)",
+      with: "sodium-stibogluconate",
+      note: "SSG monotherapy 20 mg Sb5+/kg/day for 30 days where paromomycin is out of stock — a longer course and more toxicity. Confirm with the national protocol."
+    },
+    {
+      use: "VL without HIV, East Africa",
+      with: "liposomal-amphotericin-b",
+      note: "3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg — the second-line and complicated-case regimen."
+    },
+    {
+      use: "Rescue treatment of VL–HIV",
+      with: "liposomal-amphotericin-b",
+      note: "Extending therapy with a further cycle of L-AMB plus miltefosine is what WHO suggests first for a slow responder, before rescue drugs."
+    }
+  ],
+
+  /* ---- eye and vision ---- */
+  "tetracycline-eye": [
+    {
+      use: "Newborn eye prophylaxis at birth",
+      with: "povidone-iodine",
+      note: "Povidone-iodine 2.5 % AQUEOUS drops, one drop in each eye once within 1 hour of birth. As effective against gonococcus and chlamydia, cheaper, and it does not select for resistance. Never 5 % or 10 % in a newborn's eye, and never the detergent scrub."
+    },
+    {
+      use: "Bacterial conjunctivitis",
+      with: "ciprofloxacin-eye",
+      note: "0.3 % drops 2-hourly for 2 days then 4-hourly for 5 days, or the 0.3 % ointment 3 times daily. Drops suit a school-age child who must see the board; ointment suits an infant."
+    },
+    {
+      use: "Eye care in measles or severe acute malnutrition",
+      with: "ciprofloxacin-eye",
+      note: "Any antibiotic eye preparation you have will do for prophylaxis of the ulcerated cornea; what actually changes the outcome is vitamin A on days 1, 2 and 14 plus atropine 1 % if the cornea is ulcerated."
+    },
+    {
+      use: "Trachoma (active disease)",
+      none: true,
+      note: "Azithromycin 20 mg/kg orally as a single dose (maximum 1 g; adults 1 g) is the preferred antibiotic and the one used for mass treatment — it is not in this app's drug list. Chloramphenicol 1 % eye ointment is a local alternative where it is stocked. If none of these exists, treat facial cleanliness and environment, epilate trichiatic lashes, and report the case to the woreda health office: individual antibiotics do not control trachoma."
+    },
+    {
+      use: "Established gonococcal or chlamydial ophthalmia neonatorum",
+      none: true,
+      note: "There is NO topical substitute. This needs systemic treatment: ceftriaxone 50 mg/kg IM once (maximum 150 mg) for gonococcus, oral erythromycin 50 mg/kg/day in 4 doses for 14 days for chlamydia, plus hourly saline irrigation and treatment of the mother and her partner."
+    }
+  ],
+  "ciprofloxacin-eye": [
+    {
+      use: "Bacterial conjunctivitis",
+      with: "tetracycline-eye",
+      note: "1 % ointment 3 times daily for 5 days. Blurs vision for 15–30 minutes after each dose, so give the last dose at bedtime."
+    },
+    {
+      use: "Corneal ulcer / bacterial keratitis",
+      none: true,
+      note: "There is no equivalent substitute at health-centre level. Use whatever antibiotic eye preparation you have at the same intensive frequency (chloramphenicol 0.5 % drops or gentamicin 0.3 % eye drops where stocked; ointment 2-hourly if that is all there is), add atropine 1 % for pain, do NOT pad the eye, do NOT give a steroid, and refer today. Fortified drops made from injectable antibiotics are a hospital-pharmacy preparation, not a ward improvisation."
+    },
+    {
+      use: "Fungal keratitis",
+      none: true,
+      note: "Ciprofloxacin does nothing here and neither does any other antibacterial. The drug is natamycin 5 % suspension, which is rarely stocked. Suspect fungus after injury with plant or grain material, in a slow ulcer with feathery edges and satellite lesions. Refer urgently and do not give a steroid."
+    },
+    {
+      use: "Prophylaxis after foreign-body removal or a corneal abrasion",
+      with: "tetracycline-eye",
+      note: "1 % ointment 3 times daily for 3–5 days is entirely adequate for this indication and is usually the cheaper item on the shelf."
+    }
+  ],
+  "atropine-eye": [
+    {
+      use: "Cycloplegia for uveitis, corneal ulcer or eye trauma",
+      none: true,
+      note: "Homatropine 2 % (lasts 1–3 days) and cyclopentolate 1 % (about 24 hours) are the proper alternatives and are preferable where the shorter action is wanted, but neither is in this app's drug list. If no cycloplegic of any kind exists, refer: the pain of ciliary spasm does not respond well to oral analgesia."
+    },
+    {
+      use: "Pain from ciliary spasm when there is no cycloplegic at all",
+      with: "paracetamol",
+      note: "A poor substitute — say so honestly. Regular paracetamol or ibuprofen, dark glasses, rest in a shaded room, and no reading. A cycloplegic works within an hour and analgesia does not; order homatropine 2 % or cyclopentolate 1 % for the clinic."
+    },
+    {
+      use: "Amblyopia penalisation",
+      none: true,
+      note: "Patching the good eye is the standard alternative and is usually tried first: 2–6 hours a day, supervised by the eye unit. Atropine is chosen when the patch is refused, not tolerated, or cannot be kept on."
+    },
+    {
+      use: "Dilating the pupil for a fundus examination",
+      with: "tropicamide",
+      note: "Tropicamide 1 % is the right drug for this — 4–6 hours of blur rather than 1–2 weeks. Do not use atropine for a diagnostic dilation unless there is genuinely nothing else, and then warn the patient the blur lasts a fortnight."
+    }
+  ],
+  tropicamide: [
+    {
+      use: "Dilating for fundus examination",
+      with: "atropine-eye",
+      note: "Last resort only. Atropine 1 % dilates well but the pupil stays large and reading vision stays blurred for 1–2 weeks, the patient cannot work or ride, and the pupil cannot then be used for neurological monitoring. If you must, dilate ONE eye and warn the patient in detail."
+    },
+    {
+      use: "Widening a stubborn pupil in a dark iris",
+      none: true,
+      note: "Phenylephrine 2.5 % added to tropicamide is the answer — never the 10 % strength, which has caused hypertensive crisis, myocardial infarction and stroke, and is dangerous in infants and the elderly. If only 10 % is stocked, use tropicamide alone in a darkened room and accept a smaller pupil."
+    },
+    {
+      use: "Checking for a cataract or retinoblastoma in a newborn",
+      none: true,
+      note: "No drop is needed. A red reflex check with a direct ophthalmoscope at arm's length in a darkened room, both eyes in the beam at once, needs no dilation at all. Absent, dull, white or asymmetrical reflexes mean urgent referral."
+    }
+  ],
+  "timolol-eye": [
+    {
+      use: "Chronic glaucoma in a patient with asthma, heart block or a slow pulse",
+      with: "pilocarpine-eye",
+      note: "Pilocarpine 2 % four times daily lowers pressure without beta-blockade. The catch is tolerability: brow ache, headache, dim vision from the small pupil and induced short-sightedness, so adherence is poor. Discuss with the eye unit — a topical carbonic anhydrase inhibitor, brimonidine or a prostaglandin analogue is better if the programme stocks one."
+    },
+    {
+      use: "Short-term pressure lowering when timolol is contraindicated or unavailable",
+      with: "acetazolamide",
+      note: "Effective but systemic: 250 mg 6-hourly, for days not months, with attention to potassium, and contraindicated in sulfonamide allergy, sickle cell disease and significant kidney or liver disease."
+    },
+    {
+      use: "Long-term glaucoma control when no drop at all is available",
+      none: true,
+      note: "There is no substitute for treatment. Refer for laser trabeculoplasty or iridotomy, or for drainage surgery — in many districts surgery is the more reliable answer than a drug supply chain that breaks every few months. Glaucoma blindness is painless, silent and permanent."
+    }
+  ],
+  "pilocarpine-eye": [
+    {
+      use: "Acute angle-closure glaucoma",
+      with: "acetazolamide",
+      note: "The more important of the two: 500 mg IV or orally at once, then 250 mg 6-hourly. Give it first — pilocarpine does not work until the pressure has fallen enough for the iris sphincter to contract."
+    },
+    {
+      use: "Acute angle-closure glaucoma",
+      with: "timolol-eye",
+      note: "0.5 % one drop, repeated once after 30 minutes, unless there is asthma, heart block or a pulse under 55."
+    },
+    {
+      use: "Acute angle closure not responding to drops and tablets",
+      with: "mannitol",
+      note: "1–1.5 g/kg IV over 30–45 minutes where the heart and kidneys will take the load. Catheterise an elderly man first. It is a bridge of a few hours to laser iridotomy, nothing more. Oral glycerol 1–1.5 g/kg of a 50 % solution is the alternative — not in a diabetic and useless in a vomiting patient."
+    },
+    {
+      use: "Definitive treatment of angle closure",
+      none: true,
+      note: "No drug is definitive. The treatment is laser peripheral iridotomy or surgical iridectomy, to both eyes. Drops buy hours; refer the same day."
+    }
+  ],
+  acetazolamide: [
+    {
+      use: "Acute angle-closure glaucoma",
+      with: "timolol-eye",
+      note: "0.5 % one drop, repeated once after 30 minutes. Weaker than acetazolamide but safe in sulfonamide allergy and sickle cell disease — check for asthma, heart block and bradycardia first."
+    },
+    {
+      use: "Acute angle-closure glaucoma",
+      with: "pilocarpine-eye",
+      note: "2 % (4 % in a dark iris) every 15 minutes for 2 doses then 4 times daily, once the pressure has started to fall. Also 1–2 % four times daily in the fellow eye."
+    },
+    {
+      use: "Emergency pressure lowering when acetazolamide is contraindicated",
+      with: "mannitol",
+      note: "1–1.5 g/kg IV over 30–45 minutes. Avoid in heart failure, anuria and significant dehydration; catheterise first in an elderly man. Oral glycerol 50 % 1–1.5 g/kg is the alternative, but not in diabetes and not in a vomiting patient."
+    },
+    {
+      use: "Sustained-release capsules in an emergency",
+      none: true,
+      note: "The 500 mg sustained-release capsule is NOT a substitute for immediate-release tablets in an acute attack: it releases over about 12 hours. Use two 250 mg immediate-release tablets, crushed if necessary, or the IV preparation. Never open or crush the sustained-release capsule."
+    }
+  ],
+  "prednisolone-eye": [
+    {
+      use: "Anterior uveitis or postoperative inflammation",
+      none: true,
+      note: "Dexamethasone 0.1 % drops are covered by this same entry and are the usual alternative where prednisolone acetate 1 % is not stocked — they need no shaking but penetrate the intact cornea less well, so give them more frequently in severe uveitis and review sooner. Say in the referral note which steroid was used."
+    },
+    {
+      use: "Severe uveitis where no steroid eye drop exists at all",
+      none: true,
+      note: "Do not improvise. Refer the same day: untreated uveitis causes synechiae, secondary glaucoma and cataract within weeks. Oral prednisolone is used for severe or posterior uveitis but only on specialist instruction and only once infection (tuberculosis, toxoplasmosis, herpes) has been considered — this is not a decision to make at health-centre level. Give a cycloplegic (atropine 1 %) meanwhile: it relieves the pain and prevents the iris scarring down."
+    },
+    {
+      use: "An undiagnosed red eye",
+      none: true,
+      note: "No steroid, and no substitute for a steroid. Stain with fluorescein, look with a blue light, and treat what you find. Steroid on a herpetic dendritic ulcer or on fungal keratitis blinds the eye."
+    }
+  ],
+  "tetracaine-eye": [
+    {
+      use: "Topical anaesthesia for examination, tonometry or foreign-body removal",
+      none: true,
+      note: "Oxybuprocaine (benoxinate) 0.4 % and proparacaine 0.5 % are exact equivalents and sting less; combined fluorescein–anaesthetic minims are convenient for tonometry. None of them is in this app's drug list, but any one of them substitutes directly for another."
+    },
+    {
+      use: "Topical ocular anaesthesia when no ophthalmic anaesthetic exists at all",
+      with: "lidocaine",
+      note: "Preservative-free lidocaine, drawn from a FRESH single-use ampoule of plain 1–2 % solution (never with adrenaline, never from a multi-dose vial with preservative), has been used as a topical ocular anaesthetic and 2 % lidocaine gel is a standard topical anaesthetic for cataract surgery. It stings considerably and is not a licensed eye preparation in most places — confirm with the national protocol before adopting it. Preserved or multi-dose formulations are toxic to the corneal epithelium and must not be used."
+    },
+    {
+      use: "Pain relief for a corneal abrasion, ulcer or welding flash burn at home",
+      none: true,
+      note: "NEVER. Repeated topical anaesthetic causes a non-healing ring ulcer, corneal melting, perforation and blindness. Treat the pain with oral paracetamol or ibuprofen, a cycloplegic drop (atropine 1 % or homatropine 2 %) for the ciliary spasm that causes most of the ache, and dark glasses. The bottle stays in the clinic."
+    }
+  ],
+  fluorescein: [
+    {
+      use: "Staining the cornea",
+      none: true,
+      note: "There is no substitute and no improvisation. Highlighter ink, food colouring and 'fluorescent' powders are not sterile, are not the same molecule and have caused chemical injury. Sterile strips cost very little, keep for years unopened and need no cold chain — set a re-order level of 20 and do not run out. A strip and a 2 % drop are interchangeable; a strip is safer."
+    },
+    {
+      use: "A blue light to view the stain",
+      none: true,
+      note: "Use the cobalt blue filter on a direct ophthalmoscope — most have one and most staff have never found it. Failing that, tape translucent blue plastic (a sweet wrapper, a blue folder, theatre blue gel; two layers is better than one) over a phone torch, and darken the room."
+    }
+  ],
+  "povidone-iodine": [
+    {
+      use: "Newborn eye prophylaxis at birth",
+      with: "tetracycline-eye",
+      note: "A single 1 cm ribbon of 1 % ointment into each eye within 1 hour of birth. Erythromycin 0.5 % ointment is the third option. Give one of them to every baby, and do not irrigate the eyes afterwards."
+    },
+    {
+      use: "Conjunctival antisepsis before surgery in a patient with a documented severe reaction to povidone-iodine",
+      none: true,
+      note: "Chlorhexidine 0.05 % aqueous (NOT the alcoholic or detergent preparations, and not higher strengths) is the accepted alternative for the conjunctival sac — it is not in this app's drug list. Record why iodine was avoided. Note that a reaction to intravenous radiographic contrast or to shellfish is NOT an iodine allergy and is not a reason to omit antisepsis."
+    },
+    {
+      use: "Preventing endophthalmitis",
+      none: true,
+      note: "Do not substitute an antibiotic drop for the antiseptic. Povidone-iodine 5 % left in the conjunctival sac for 3 minutes before the procedure has better evidence behind it than any pre-operative antibiotic, and costs a fraction as much."
+    }
   ]
 };

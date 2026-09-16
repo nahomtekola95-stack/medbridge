@@ -61,15 +61,15 @@
     const parts = path.split("/").filter(Boolean);
     return { view: parts[0] || "drugs", id: parts[1], q: Object.fromEntries(new URLSearchParams(qs || "")) };
   }
-  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null;
+  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null;
   const routes = { drugs: viewDrugs, drug: viewDrug, calc: viewCalc, techniques: viewTechniques, local: viewLocal, setup: viewSetup, about: viewAbout,
     case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r),
     resus: (m, r) => FX.views.resus(m, r), drip: (m, r) => FX.views.drip(m, r), schedules: (m, r) => FX.views.schedules(m, r),
     compat: (m, r) => FX.views.compat(m, r), tools: (m, r) => FX.views.tools(m, r),
     newborn: (m, r) => EX.views.newborn(m, r), interactions: (m, r) => EX.views.interactions(m, r), charts: (m, r) => EX.views.charts(m, r),
     quiz: (m, r) => EX.views.quiz(m, r), review: (m, r) => RV.views.review(m, r),
-    pregnancy: (m, r) => OB.view(m, r), growth: (m, r) => GR.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
-  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", handover: "ward" };
+    pregnancy: (m, r) => OB.view(m, r), growth: (m, r) => GR.view(m, r), optics: (m, r) => OP.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
+  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", handover: "ward" };
   function render() {
     const r = parseHash();
     const main = $("#app");
@@ -102,7 +102,7 @@
     return `<div class="callout info">${ic("book")}<div><strong>What the textbooks say.</strong> Doses and statements are paraphrased with chapter and page. The no-pump methods come from WHO and MSF field guidance; where a textbook is silent on low-resource practice, or differs from it, an editorial note says so.</div></div>` +
       groups.map(([k, arr]) => {
         const b = BOOKS[k];
-        return `<div class="card book-refs"><h4 style="margin-top:0">${ic("book")} ${esc(b.title)}${b.edition ? ` <span class="muted">· ${esc(b.edition)}${b.year ? " " + b.year : ""}</span>` : ""}</h4>
+        return `<div class="card book-refs"><h4 style="margin-top:0">${ic("book")} ${esc(b.title)}${b.edition || b.year ? ` <span class="muted">· ${esc([b.edition, b.year].filter(Boolean).join(" "))}</span>` : ""}</h4>
           <ul>${arr.map(t => `<li>${esc(t.text)}${t.ref && k !== "note" ? ` <span class="muted small">— ${esc(t.ref)}</span>` : ""}</li>`).join("")}</ul></div>`;
       }).join("");
   }
@@ -111,7 +111,7 @@
   let listState = null;
   const initListState = () => (listState ||= { q: "", cat: "", ward: settings.ward, group: "", mode: settings.filterMode, sort: store.get("sort", "group") });
   /* clinical order for grouped lists: emergencies first, nutrition last */
-  const CAT_ORDER = ["emergency", "obstetric", "cardio", "respiratory", "neuro", "infection", "endocrine", "electrolyte", "analgesia", "haem", "psychiatry", "nutrition"];
+  const CAT_ORDER = ["emergency", "obstetric", "cardio", "respiratory", "neuro", "eye", "infection", "endocrine", "electrolyte", "analgesia", "haem", "psychiatry", "nutrition"];
   const ROLE_WEIGHT = { first: 3, adjunct: 2, alternative: 1, supportive: 1, avoid: 0 };
   let usageCache = null;
   /** how often a drug is reached for across the clinical cases (first-line counts most) */
@@ -131,8 +131,13 @@
     if ((d.aka || []).some(a => a.toLowerCase().includes(needle))) return 2;
     return 3;
   };
-  function viewDrugs(main) {
+  function viewDrugs(main, r) {
     initListState();
+    /* #/drugs?mode=case&group=eye lands straight on one group of cases, so a
+       feature page can send the reader to its own conditions. */
+    const qs = r?.q || {};
+    if (qs.mode === "case" || qs.group) { listState.mode = "case"; listState.q = ""; if (qs.group && CASE_GROUPS[qs.group]) listState.group = qs.group; }
+    else if (qs.cat && CATEGORIES[qs.cat]) { listState.mode = "cat"; listState.cat = qs.cat; listState.q = ""; }
     main.innerHTML = `
       <section class="hero has-media">
         <div class="hero-media" aria-hidden="true"><picture><source media="(max-width: 759px)" srcset="img/hero-doctor-mobile.webp"><img src="img/hero-doctor-1600.webp" srcset="img/hero-doctor-900.webp 900w, img/hero-doctor-1600.webp 1600w" sizes="100vw" alt="" decoding="async" fetchpriority="high"></picture></div>
@@ -756,6 +761,7 @@
     OB = window.Obstetric({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     WD = window.Ward({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     GR = window.GrowthView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
+    OP = window.OpticsView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     FX.syncPatientChip(); FX.updateDueBadge(); FX.checkDue();
     $("#patient-chip")?.addEventListener("click", () => FX.openPatientDialog());
     const syncAccount = () => {

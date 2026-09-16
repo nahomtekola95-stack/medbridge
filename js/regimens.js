@@ -164,5 +164,86 @@ window.REGIMENS = [
     ],
     ifFail: "Drowsy, respiratory rate under 12 or low saturation: withhold, lie on side, support the airway; flumazenil is not in this app. If withdrawal is still severe after about 60 mg in total, or confusion, hallucinations or seizures develop: urgent medical review for delirium tremens, infection, hypoglycaemia, head injury or Wernicke encephalopathy. In liver failure, older age or lung disease use lorazepam instead. Never give diazepam IM.",
     ref: "WHO mhGAP Intervention Guide 2.0 (2016), Table 1 medication chart: diazepam 10–20 mg every 2 h for observable alcohol withdrawal until features resolve or the person is lightly sedated (lower doses, up to 10 mg four times daily, as outpatient); Kaplan & Sadock's Synopsis 12th ed. 2022, ch. 4.2, pdf pp. 908–909 (titrate from a high dose, omit doses if sleepy, taper ~20%/day, no IM diazepam)"
+  },
+
+  /* ---- visceral leishmaniasis ---- */
+  {
+    id: "lamb-milt-vl-hiv",
+    drug: "liposomal-amphotericin-b",
+    case: "visceral-leishmaniasis-hiv",
+    name: "Liposomal amphotericin B — VL–HIV combination (East Africa)",
+    use: "VL in an HIV co-infected patient, with oral miltefosine 100 mg/day for 28 days",
+    weightBased: true,
+    doses: [
+      {
+        at: 0,
+        label: "Day 1",
+        note: "Give a 1 mg test dose by infusion first, then the full dose over 2 h"
+      },
+      { at: 48, label: "Day 3", note: "Over 2 h" },
+      { at: 96, label: "Day 5", note: "Over 2 h" },
+      { at: 144, label: "Day 7", note: "Over 2 h" },
+      { at: 192, label: "Day 9", note: "Over 2 h" },
+      {
+        at: 240,
+        label: "Day 11",
+        note: "Last infusion — cumulative 30 mg/kg. Miltefosine continues to day 28"
+      }
+    ],
+    dose: {
+      perKg: 5,
+      unit: "mg",
+      conc: 4,
+      concLabel: "4 mg/mL after reconstituting each 50 mg vial with 12 mL water for injection — then dilute in 5 % DEXTROSE only, never saline"
+    },
+    extendable: "If the day-29 test of cure is positive in a patient who is otherwise well, WHO suggests one further cycle of the same regimen — extend the schedule rather than starting a new drug.",
+    checks: [
+      "Diluted in 5 % dextrose only — no saline anywhere in this line",
+      "Infusion set to run over 2 h, drop rate counted",
+      "Creatinine and potassium checked in the last 7 days (or urine output and clinical check if no laboratory)",
+      "Potassium replacement given",
+      "Miltefosine taken today, with food (28-day course)",
+      "For a woman of childbearing potential: pregnancy test done and contraception plan agreed before miltefosine"
+    ],
+    ifFail: "Stop the infusion permanently for anaphylaxis. For rigors, fever or hypotension, slow the drip and keep the line open with dextrose — later doses are usually easier. If creatinine rises, halve the dose for a few days rather than abandoning the course.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 First choice of treatment, pdf p. 35"
+  },
+  {
+    id: "lamb-mono-vl-hiv",
+    drug: "liposomal-amphotericin-b",
+    case: "visceral-leishmaniasis-hiv",
+    name: "Liposomal amphotericin B alone — VL–HIV (East Africa)",
+    use: "VL–HIV when miltefosine is unavailable or contraindicated (pregnancy, no assured contraception)",
+    weightBased: true,
+    doses: [
+      {
+        at: 0,
+        label: "Day 1",
+        note: "Give a 1 mg test dose by infusion first, then the full dose over 2 h"
+      },
+      { at: 24, label: "Day 2", note: "Over 2 h" },
+      { at: 48, label: "Day 3", note: "Over 2 h" },
+      { at: 72, label: "Day 4", note: "Over 2 h" },
+      { at: 96, label: "Day 5", note: "Over 2 h" },
+      { at: 216, label: "Day 10", note: "Over 2 h" },
+      { at: 384, label: "Day 17", note: "Over 2 h" },
+      { at: 552, label: "Day 24", note: "Last infusion — cumulative 40 mg/kg" }
+    ],
+    dose: {
+      perKg: 5,
+      unit: "mg",
+      conc: 4,
+      concLabel: "4 mg/mL after reconstituting each 50 mg vial with 12 mL water for injection — then dilute in 5 % DEXTROSE only, never saline"
+    },
+    extendable: "If there is no good clinical response, WHO suggests repeating the same therapy for one more course — extend the schedule.",
+    checks: [
+      "Diluted in 5 % dextrose only — no saline anywhere in this line",
+      "Infusion set to run over 2 h, drop rate counted",
+      "Creatinine and potassium checked in the last 7 days (or urine output and clinical check if no laboratory)",
+      "Potassium replacement given",
+      "ART started (within 2 weeks of starting VL treatment)"
+    ],
+    ifFail: "Stop permanently for anaphylaxis. Slow the drip for rigors, fever or hypotension, keeping the line open with dextrose. Halve the dose for a few days if renal function deteriorates.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 Recommendations, pdf p. 35"
   }
 ];

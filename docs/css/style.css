@@ -20,7 +20,7 @@
   --green: #047857; --green-soft: #def5ea;
   --amber: #8a5300; --amber-soft: #fff4dc; --amber-line: #f0c46b;
   --red: #b42318; --red-soft: #fdecea; --red-line: #f3aea7;
-  --c-emergency:#d9453c; --c-obstetric:#d6478f; --c-cardio:#e2711d; --c-endocrine:#7a4fd0; --c-electrolyte:#2b7bd6; --c-infection:#1f9d55; --c-respiratory:#1c9bc8; --c-neuro:#6d5bd0; --c-analgesia:#c98a12; --c-haem:#c93a63; --c-nutrition:#5c8a1f; --c-psychiatry:#3f7f8f;
+  --c-emergency:#d9453c; --c-obstetric:#d6478f; --c-cardio:#e2711d; --c-endocrine:#7a4fd0; --c-electrolyte:#2b7bd6; --c-infection:#1f9d55; --c-respiratory:#1c9bc8; --c-neuro:#6d5bd0; --c-analgesia:#c98a12; --c-haem:#c93a63; --c-nutrition:#5c8a1f; --c-psychiatry:#3f7f8f; --c-eye:#1d7fa8;
   --shadow-1: 0 1px 2px rgba(11,31,42,.05), 0 1px 1px rgba(11,31,42,.03);
   --shadow-2: 0 2px 4px rgba(11,31,42,.04), 0 12px 32px -12px rgba(11,31,42,.18);
   --shadow-3: 0 4px 8px rgba(11,31,42,.06), 0 24px 48px -16px rgba(11,31,42,.28);
@@ -45,7 +45,7 @@
   --green: #6ee0ab; --green-soft: #0f3326;
   --amber: #f5d08a; --amber-soft: #36270b; --amber-line: #8b6a2a;
   --red: #ffa097; --red-soft: #3d1815; --red-line: #7c3b36;
-  --c-emergency:#ff7b72; --c-obstetric:#ff85c2; --c-cardio:#ffa25c; --c-endocrine:#b79cff; --c-electrolyte:#6fb2ff; --c-infection:#5fd68f; --c-respiratory:#63c9ee; --c-neuro:#a99bff; --c-analgesia:#f1c05a; --c-haem:#ff7f9f; --c-nutrition:#a3d16a; --c-psychiatry:#7fc4d4;
+  --c-emergency:#ff7b72; --c-obstetric:#ff85c2; --c-cardio:#ffa25c; --c-endocrine:#b79cff; --c-electrolyte:#6fb2ff; --c-infection:#5fd68f; --c-respiratory:#63c9ee; --c-neuro:#a99bff; --c-analgesia:#f1c05a; --c-haem:#ff7f9f; --c-nutrition:#a3d16a; --c-psychiatry:#7fc4d4; --c-eye:#69c6e8;
   --shadow-1: 0 1px 2px rgba(0,0,0,.4);
   --shadow-2: 0 2px 4px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.7);
   --shadow-3: 0 6px 12px rgba(0,0,0,.35), 0 28px 56px -18px rgba(0,0,0,.8);
@@ -64,7 +64,7 @@
   --green: #6ee0ab; --green-soft: #0f3326;
   --amber: #f5d08a; --amber-soft: #36270b; --amber-line: #8b6a2a;
   --red: #ffa097; --red-soft: #3d1815; --red-line: #7c3b36;
-  --c-emergency:#ff7b72; --c-obstetric:#ff85c2; --c-cardio:#ffa25c; --c-endocrine:#b79cff; --c-electrolyte:#6fb2ff; --c-infection:#5fd68f; --c-respiratory:#63c9ee; --c-neuro:#a99bff; --c-analgesia:#f1c05a; --c-haem:#ff7f9f; --c-nutrition:#a3d16a; --c-psychiatry:#7fc4d4;
+  --c-emergency:#ff7b72; --c-obstetric:#ff85c2; --c-cardio:#ffa25c; --c-endocrine:#b79cff; --c-electrolyte:#6fb2ff; --c-infection:#5fd68f; --c-respiratory:#63c9ee; --c-neuro:#a99bff; --c-analgesia:#f1c05a; --c-haem:#ff7f9f; --c-nutrition:#a3d16a; --c-psychiatry:#7fc4d4; --c-eye:#69c6e8;
   --shadow-1: 0 1px 2px rgba(0,0,0,.4);
   --shadow-2: 0 2px 4px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.7);
   --shadow-3: 0 6px 12px rgba(0,0,0,.35), 0 28px 56px -18px rgba(0,0,0,.8);
@@ -933,3 +933,11 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 .growth-chart { max-width: 720px; margin: 0 auto; display: block; }
 @media print { .growth-grid { display: block; } .growth-chart { max-width: 100%; } }
 @media (max-width: 560px) { .growth-table td:last-child { display: none; } }
+
+/* optics: the power cross, drawn the way it is taught — two meridians at right
+   angles with the power written at the end of each arm */
+.power-cross { width: 132px; height: 132px; display: block; margin: 0 auto .2rem; overflow: visible; }
+.power-cross .pc-arm { stroke: var(--c-eye, var(--primary)); stroke-width: 2.4; stroke-linecap: round; }
+.power-cross .pc-lbl { font: 700 13px var(--sans); fill: var(--text); }
+.power-cross .pc-dot { fill: var(--c-eye, var(--primary)); }
+.hairline { height: 1px; background: var(--border); margin: 1.4rem 0 1.1rem; }

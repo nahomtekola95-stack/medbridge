@@ -79,5 +79,57 @@ window.COMPAT = [
   {a: ["lorazepam"],b: ["*"],severity: "caution",what: "Lorazepam injection is viscous (propylene glycol and polyethylene glycol vehicle).",do: "Dilute with an equal volume of 0.9 % saline or water for injection immediately before IM or IV use. Give IV slowly, no faster than 2 mg per minute. Do not add to other drugs in a syringe.",ref: "Lorazepam injection product information (SmPC and US label)"},
   {a: ["thiamine"],b: ["sodium-bicarbonate"],severity: "caution",what: "Thiamine is unstable in alkaline or neutral solutions and breaks down when mixed with carbonates or bicarbonate; the patient receives less thiamine.",do: "Do not mix thiamine in the same syringe, bag or line as sodium bicarbonate. Give thiamine in 0.9 % saline or 5 % glucose, flushing the line before and after.",ref: "Thiamine hydrochloride injection product information"},
   {a: ["haloperidol-decanoate"],b: ["*"],severity: "never",what: "Oily depot in sesame oil. It must never be given IV or subcutaneously, and it does not mix with water-based injections in a syringe.",do: "Deep IM only, alone in its own syringe. Aspirate before injecting. Never mix with any other drug, including short-acting haloperidol lactate.",ref: "Haloperidol decanoate product information (SmPC and US label); drug entry"},
-  {a: ["risperidone"],b: ["*"],severity: "caution",what: "The long-acting risperidone injection (Consta) is a microsphere suspension that must be made up only with the diluent supplied and given at once; other diluents or added drugs spoil the suspension and the dose released.",do: "Reconstitute only with the supplied diluent, use the supplied needle, inject the whole vial deep IM straight away, and never mix with another drug. Oral risperidone tablets and solution are unaffected.",ref: "Risperdal Consta product information (SmPC)"}
+  {a: ["risperidone"],b: ["*"],severity: "caution",what: "The long-acting risperidone injection (Consta) is a microsphere suspension that must be made up only with the diluent supplied and given at once; other diluents or added drugs spoil the suspension and the dose released.",do: "Reconstitute only with the supplied diluent, use the supplied needle, inject the whole vial deep IM straight away, and never mix with another drug. Oral risperidone tablets and solution are unaffected.",ref: "Risperdal Consta product information (SmPC)"},
+
+  /* ---- amphotericin B ---- */
+  {
+    a: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    b: ["ringers-lactate", "hypertonic-saline"],
+    severity: "never",
+    what: "Amphotericin B products are incompatible with saline and with any electrolyte solution. Liposomal amphotericin B must be reconstituted with water for injection and diluted only in 5 % dextrose — saline makes the liposomes aggregate. Amphotericin B deoxycholate precipitates outright in saline and in Ringer's lactate. Either way the patient gets little drug and the line blocks.",
+    do: "Dilute in 5 % dextrose only. Never use 0.9 % saline, Ringer's lactate or any electrolyte-containing fluid to reconstitute, dilute or flush an amphotericin line. If the same cannula must carry saline for something else, finish the saline, flush with 5 % dextrose, then start the amphotericin. If the infusion has to be slowed or paused, keep the line open with dextrose.",
+    ref: "AmBisome and amphotericin B deoxycholate product information; WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1, pdf p. 55"
+  },
+  {
+    a: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    b: ["*"],
+    severity: "never",
+    what: "No other drug may be added to an amphotericin B bag or syringe, and nothing else should share the line. It is a colloidal or liposomal preparation, and any additive can break it; its long infusion also makes it tempting to piggyback other drugs onto the same line.",
+    do: "Amphotericin B runs alone, in its own bag, over 2 h (liposomal) or 4–6 h (deoxycholate). Give everything else through a second cannula, or before and after with a 5 % dextrose flush in between. Do not add potassium to the amphotericin bag — give potassium separately.",
+    ref: "AmBisome product information; drug entry"
+  },
+  {
+    a: ["liposomal-amphotericin-b"],
+    b: ["blood-transfusion"],
+    severity: "never",
+    what: "Blood may only run with 0.9 % saline, and amphotericin B may never touch saline — the two requirements cannot be met in one line. Acute pulmonary toxicity has also been reported when intravenous amphotericin B was given at the same time as leukocyte transfusions.",
+    do: "Use a separate cannula for the transfusion. Never run an amphotericin infusion into a line carrying blood or blood products, and do not give the two simultaneously through a Y-connector.",
+    ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1, pdf p. 60; WHO The Clinical Use of Blood"
+  },
+  {
+    a: ["sodium-stibogluconate"],
+    b: ["*"],
+    severity: "caution",
+    what: "Sodium stibogluconate is supplied as a concentrated multi-dose vial for IM or slow IV use. Compatibility with other injectables is not established, and it is usually drawn up neat for intramuscular injection.",
+    do: "Give it alone, in its own syringe and its own site. If the IV route is needed, dilute only in 5 % dextrose and give over 20–30 min, or slowly into a running drip — nothing else in that line. Never mix it in a syringe with paromomycin: give the two in different sites on the same day.",
+    ref: "Sodium stibogluconate product information; WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 2, pdf p. 83"
+  },
+  {
+    a: ["paromomycin"],
+    b: ["sodium-stibogluconate", "ampicillin", "benzylpenicillin", "cloxacillin", "heparin"],
+    severity: "never",
+    what: "Paromomycin is an aminoglycoside. Penicillins inactivate aminoglycosides when mixed in a syringe or bag, and aminoglycosides precipitate with heparin. Mixing it with sodium stibogluconate in one syringe is untested and adds two different injection-site toxicities to one site.",
+    do: "Never in the same syringe. Paromomycin goes deep IM on its own, in a different site from the antimonial, with both rotated on a written four-site chart. Flush a heparin-locked line with 0.9 % saline before any aminoglycoside.",
+    ref: "BNF / aminoglycoside product information; drug entry"
+  },
+
+  /* ---- ophthalmic drugs ---- */
+  {
+    a: ["acetazolamide"],
+    b: ["*"],
+    severity: "caution",
+    what: "Reconstituted acetazolamide for injection is strongly alkaline (pH about 9.0–9.6). Mixed in a syringe or a running line with acidic drugs it can precipitate, and the precipitate is not always visible against a brown giving set.",
+    do: "Reconstitute the 500 mg vial with 5 mL water for injection (100 mg/mL) and give it as a slow IV push over 1–2 minutes into a line flushed with 0.9 % saline before and after. Do not add it to an infusion bag with other drugs and do not give it in the same syringe as anything else. Use it immediately after reconstitution.",
+    ref: "Acetazolamide sodium for injection product information; drug entry"
+  }
 ];

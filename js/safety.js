@@ -2095,5 +2095,632 @@ window.SAFETY = {
       "LactMed (NIH): methylphenidate",
       "NICE NG87 ADHD (2018, updated 2019)"
     ]
+  },
+
+  /* ---- visceral leishmaniasis ---- */
+  "liposomal-amphotericin-b": {
+    pregnancy: {
+      level: "caution",
+      text: "This is the drug to use if VL must be treated in pregnancy: WHO states that the current literature favours liposomal amphotericin B for VL in pregnant women. Untreated VL threatens mother, fetus and newborn far more than the drug does — spontaneous abortion, small-for-gestational-age babies and congenital leishmaniasis are all described. Miltefosine must NOT be added (teratogenic), and pentavalent antimonials are contraindicated, so a pregnant woman with VL–HIV gets L-AMB alone. Discuss the decision with the woman, and record the outcome in a pregnancy register as the guideline asks. If she received it in the last month of pregnancy, check the newborn's renal function."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "WHO's guidance is that breastfeeding should be avoided unless it is vital. In a setting where replacement feeding is not safe, affordable or feasible, 'vital' usually applies — weigh the real risk of not breastfeeding against a drug that is very poorly absorbed from the gut. Decide with the mother and the national infant feeding policy."
+    },
+    renal: {
+      level: "adjust",
+      text: "Nephrotoxic, though far less so than amphotericin B deoxycholate. Check creatinine, and potassium where possible, once or twice weekly through the course. If renal function deteriorates, WHO's instruction is to halve the dose for a few days — not to stop the course. Replace potassium and magnesium, adjusted to the results. Keep the patient hydrated and avoid other nephrotoxic drugs (tenofovir, gentamicin, paromomycin) where there is a choice.",
+      bands: [
+        {
+          below: 60,
+          text: "Reduced kidney function: no fixed dose reduction, but check creatinine and potassium twice weekly rather than once, give oral potassium routinely, and keep the patient well hydrated before each infusion."
+        },
+        {
+          below: 30,
+          text: "Severe impairment: halve the dose for a few days if creatinine is rising, then return to 5 mg/kg if it settles. Watch urine output every shift. Get senior or pharmacist advice before continuing; the cumulative dose still has to be reached for cure."
+        }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change is specified. Raised alkaline phosphatase and transaminases and bilirubinaemia are recognised. Check liver tests where the laboratory can do them, and look for jaundice clinically."
+    },
+    refs: [
+      {
+        book: "whovl",
+        text: "The current literature favours liposomal amphotericin B for treating VL in pregnant women.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations — pregnancy, pdf p. 46",
+        pdf_page: 46,
+        quote: "The current literature favours the use of liposomal amphotericin B for the treatment of VL in pregnant women"
+      },
+      {
+        book: "whovl",
+        text: "A fatal outcome of VL for mother, fetus and newborn is a much greater threat than the risk of adverse effects.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations — pregnancy, pdf p. 46",
+        pdf_page: 46,
+        quote: "The threat of a fatal outcome of VL for the mother"
+      },
+      {
+        book: "whovl",
+        text: "L-AMB has the highest therapeutic index and is safe to give at any age.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations — children, pdf p. 46",
+        pdf_page: 46,
+        quote: "L-AMB has the highest therapeutic index and is safe to administer to all age groups."
+      },
+      {
+        book: "whovl",
+        text: "Breastfeeding should be avoided unless it is vital.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1 Liposomal amphotericin B — administration, pdf p. 55",
+        pdf_page: 55,
+        quote: "Breast-feeding should be avoided unless it is vital."
+      },
+      {
+        book: "whovl",
+        text: "Creatinine and, if possible, potassium should be monitored once or twice weekly, with potassium and magnesium replacement adjusted accordingly.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1 Liposomal amphotericin B — administration, pdf p. 55",
+        pdf_page: 55,
+        quote: "Serum creatinine levels and, if possible, serum potassium levels should be monitored"
+      },
+      {
+        book: "whovl",
+        text: "If renal function deteriorates the dose should be halved for a few days.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1 Liposomal amphotericin B — administration, pdf p. 55",
+        pdf_page: 55,
+        quote: "If renal function deteriorates, the dose should be halved for a few days."
+      },
+      {
+        book: "whovl",
+        text: "Renal dysfunction should be checked in the newborn if the drug was given in the last month of pregnancy.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1 Liposomal amphotericin B — administration, pdf p. 55",
+        pdf_page: 55,
+        quote: "Renal dysfunction should be checked in newborns if the drug was administered"
+      },
+      {
+        book: "whovl",
+        text: "Lipid formulations are about as effective as amphotericin B deoxycholate but significantly less toxic.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2 Information on leishmanial medicines, pdf p. 55",
+        pdf_page: 55,
+        quote: "efficacy similar to that of amphotericin B deoxycholate but which are significantly less toxic"
+      }
+    ],
+    sources: [
+      "WHO guideline on VL in HIV co-infected patients, 2022",
+      "AmBisome product information",
+      "WHO Model Formulary"
+    ]
+  },
+  "amphotericin-b-deoxycholate": {
+    pregnancy: {
+      level: "caution",
+      text: "Amphotericin B deoxycholate and the lipid formulations have both been used to treat VL in pregnancy, but the literature favours the liposomal form — use L-AMB if you can get it at all. If this is the only amphotericin available, treating is still right: untreated VL threatens the mother, the fetus and the newborn far more. Miltefosine must not be added and antimonials are contraindicated. Pre-hydrate with saline, replace potassium, and record the pregnancy outcome."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No data specific to this formulation in the guideline; WHO's advice for amphotericin B products is that breastfeeding should be avoided unless it is vital. It is very poorly absorbed from the infant gut. Decide with the mother and the national infant feeding policy."
+    },
+    renal: {
+      level: "adjust",
+      text: "Markedly nephrotoxic — this is the main reason to prefer the liposomal form. Decreased renal function with azotaemia, hypokalaemia, renal tubular acidosis and nephrocalcinosis is very common; it usually improves when the drug is stopped but can be permanent, especially after large cumulative amounts (over 5 g) or with other nephrotoxic drugs. Pre-load with 0.9 % saline before every dose unless the patient has heart failure. Check creatinine and potassium at baseline and at least twice weekly; replace potassium and magnesium routinely.",
+      bands: [
+        {
+          below: 60,
+          text: "Reduced kidney function: give the saline pre-load before every dose, check creatinine and potassium twice weekly, replace potassium routinely, and stop any other nephrotoxic drug you can."
+        },
+        {
+          below: 30,
+          text: "Severe impairment: switch to liposomal amphotericin B if it can be obtained at all — it is the whole point of the lipid formulation. If it cannot, give alternate-day dosing, halve the dose while creatinine is rising, and get senior or pharmacist advice. Hold the dose for oliguria."
+        }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose adjustment is defined. Acute liver failure, hepatitis and jaundice are recognised, though uncommon. Check liver tests where possible and look for jaundice; stop and get advice if the patient becomes jaundiced."
+    },
+    refs: [
+      {
+        book: "whovl",
+        text: "In pregnancy, amphotericin B deoxycholate and the lipid formulations have generally been used, with the literature favouring the liposomal form.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations — pregnancy, pdf p. 46",
+        pdf_page: 46,
+        quote: "The current literature favours the use of liposomal amphotericin B for the treatment of VL in pregnant women"
+      },
+      {
+        book: "whovl",
+        text: "Reduced renal function with azotaemia, hypokalaemia, renal tubular acidosis and nephrocalcinosis is very common and can be permanent after large cumulative amounts or with other nephrotoxic drugs.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 85",
+        pdf_page: 85,
+        quote: "Decreased renal function and renal function abnormalities, including azotaemia, hypokalaemia"
+      },
+      {
+        book: "whovl",
+        text: "Acute renal failure, anuria and oliguria are recognised adverse effects.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 85",
+        pdf_page: 85,
+        quote: "Acute renal failure, anuria, oliguria"
+      },
+      {
+        book: "whovl",
+        text: "Fever with shaking chills typically starts within 15–20 minutes of starting the infusion.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 85",
+        pdf_page: 85,
+        quote: "usually within 15-20 min of initiation of treatment"
+      },
+      {
+        book: "whovl",
+        text: "Lipid formulations have similar efficacy but are significantly less toxic than amphotericin B deoxycholate.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2 Information on leishmanial medicines, pdf p. 55",
+        pdf_page: 55,
+        quote: "efficacy similar to that of amphotericin B deoxycholate but which are significantly less toxic"
+      },
+      {
+        book: "whovl",
+        text: "Concurrent use with other nephrotoxic medicines increases renal toxicity and requires intensive monitoring.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1 Drug interactions, pdf p. 60",
+        pdf_page: 60,
+        quote: "Concurrent use of amphotericin B and other nephrotoxic medications may enhance potential drug-induced renal toxicity."
+      }
+    ],
+    sources: [
+      "WHO guideline on VL in HIV co-infected patients, 2022",
+      "WHO Expert Committee on the Control of Leishmaniases, TRS 949, 2010",
+      "Amphotericin B product information"
+    ]
+  },
+  "sodium-stibogluconate": {
+    pregnancy: {
+      level: "avoid",
+      text: "Contraindicated. Pentavalent antimonials can cause spontaneous abortion, preterm delivery, hepatic encephalopathy in the mother, and vertical transmission. Treat VL in pregnancy with liposomal amphotericin B instead — do not delay treating, because untreated VL is more dangerous to mother and baby than the drug used to treat it. Ask about the date of the last period before the first injection in any woman who could be pregnant."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "The guideline gives no data on antimonials in breastfeeding. Antimony is excreted by the kidneys and little is known about milk transfer. Where VL in a breastfeeding mother needs treating, liposomal amphotericin B is the better-documented choice. If an antimonial must be used, watch the infant for vomiting, poor feeding and jaundice, and confirm with the national protocol."
+    },
+    renal: {
+      level: "adjust",
+      text: "Antimony is cleared by the kidneys, so impaired function means accumulation and more cardiotoxicity and pancreatitis. Check creatinine before starting where possible and keep the patient hydrated. There is no validated dose reduction — the practical decision is usually to use liposomal amphotericin B instead. Never give it with another nephrotoxic drug unless there is no alternative.",
+      bands: [
+        {
+          below: 60,
+          text: "Reduced kidney function: use only if no alternative exists. Hydrate, monitor creatinine twice weekly, take a 60-second pulse before every dose, and get an ECG before the first dose and weekly if a machine exists."
+        },
+        {
+          below: 30,
+          text: "Severe impairment: avoid. Use liposomal amphotericin B. If there is genuinely no alternative, this is a senior decision with ECG monitoring."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Hepatotoxic: jaundice and raised liver enzymes are common, and hepatic encephalopathy is described in pregnancy. Avoid in established liver disease and in a patient who is already jaundiced. Look at the eyes for jaundice before every dose where no laboratory exists, and stop for new jaundice."
+    },
+    refs: [
+      {
+        book: "whovl",
+        text: "Pentavalent antimonials are contraindicated in pregnancy — spontaneous abortion, preterm delivery, maternal hepatic encephalopathy and vertical transmission.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations, footnote, pdf p. 46",
+        pdf_page: 46,
+        quote: "Pentavalent antimonials are contraindicated in pregnancy"
+      },
+      {
+        book: "whovl",
+        text: "Fatal cardiac arrhythmia and ECG changes including QT prolongation and T-wave inversion are listed adverse effects.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 86",
+        pdf_page: 86,
+        quote: "Fatal cardiac arrhythmia, changes"
+      },
+      {
+        book: "whovl",
+        text: "A transient rise in serum lipase and amylase and symptomatic pancreatitis are very common.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 86",
+        pdf_page: 86,
+        quote: "Transient rise in serum lipase and amylase, symptomatic pancreatitis"
+      },
+      {
+        book: "whovl",
+        text: "Yellow skin and eyes, fever, rash, myalgia and injection-site pain are very common.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 86",
+        pdf_page: 86,
+        quote: "pain at injection site if"
+      },
+      {
+        book: "whovl",
+        text: "Antimonials are more toxic in HIV patients and require careful monitoring for pancreatitis and cardiotoxicity.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.5 Rescue treatment, pdf p. 45",
+        pdf_page: 45,
+        quote: "As antimonials are more toxic in HIV patients, they must be carefully monitored for pancreatitis and cardiotoxicity."
+      },
+      {
+        book: "whovl",
+        text: "Sodium stibogluconate is known to be highly toxic in HIV patients, with a cure rate of only 43 % in an Ethiopian VL–HIV series.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28",
+        pdf_page: 28,
+        quote: "which is known to be highly toxic in HIV patients"
+      }
+    ],
+    sources: [
+      "WHO guideline on VL in HIV co-infected patients, 2022",
+      "WHO Expert Committee on the Control of Leishmaniases, TRS 949, 2010",
+      "Ethiopian national kala-azar guideline — confirm current edition"
+    ]
+  },
+  miltefosine: {
+    pregnancy: {
+      level: "avoid",
+      text: "CONTRAINDICATED — it is embryotoxic and teratogenic, with fetal death and malformation in animals at doses below the maximum recommended human dose. Get a urine or serum pregnancy test before the first capsule in any woman of reproductive age. Do not prescribe it to a woman of childbearing potential unless effective contraception is assured for the whole course AND for 5 months after the last dose. Vomiting and diarrhoea on the drug can stop an oral contraceptive working, so an implant, an injectable or an added barrier method is needed. If contraception cannot be assured, WHO's alternative is liposomal amphotericin B alone up to 40 mg/kg. If a pregnancy occurs, record it in the centre's pregnancy register."
+    },
+    breastfeeding: {
+      level: "avoid",
+      text: "Either the drug or nursing should be stopped after a risk–benefit discussion, and breastfeeding should be avoided for 5 months after treatment because of the long half-life. In a setting where replacement feeding is not safe or affordable, that is a serious trade-off: treating the mother with liposomal amphotericin B alone may be the better answer. Discuss with the mother and follow the national infant feeding policy."
+    },
+    renal: {
+      level: "adjust",
+      text: "A rise in serum creatinine and blood urea was seen in the leishmaniasis trials, and WHO recommends regular monitoring of renal function. No validated dose reduction exists for impaired kidneys. Check creatinine at baseline and during the course where possible; keep the patient hydrated, because the vomiting and diarrhoea the drug causes lead to volume depletion, which is often the real reason creatinine rises.",
+      bands: [
+        {
+          below: 60,
+          text: "Reduced kidney function: no defined dose change. Monitor creatinine during the course, push oral fluids, and treat vomiting and diarrhoea actively rather than letting the patient dehydrate."
+        },
+        {
+          below: 30,
+          text: "Severe impairment: no dosing data. Get senior or pharmacist advice before starting, monitor creatinine closely, and consider L-AMB monotherapy instead."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Raised alanine and aspartate transaminases and raised bilirubin were seen in the VL trials. WHO advises monitoring transaminases and bilirubin during treatment. No defined dose reduction; in established liver disease start only with senior advice, watch for jaundice clinically at every visit, and stop for new jaundice or a rapidly rising bilirubin."
+    },
+    refs: [
+      {
+        book: "whovl",
+        text: "Miltefosine may harm the fetus and is contraindicated in pregnant women; obtain a pregnancy test before giving it to a woman of reproductive age.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — contraindications, pdf p. 57",
+        pdf_page: 57,
+        quote: "Miltefosine may harm the fetus and is thus contraindicated in pregnant women."
+      },
+      {
+        book: "whovl",
+        text: "It must not be prescribed to a woman of childbearing potential unless adequate contraception can be assured for the whole treatment and for 5 months afterwards.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — contraindications, pdf p. 58",
+        pdf_page: 58,
+        quote: "adequate contraception cannot be assured for the duration of treatment"
+      },
+      {
+        book: "whovl",
+        text: "Breastfeeding should be avoided for 5 months after treatment.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — warnings, pdf p. 58",
+        pdf_page: 58,
+        quote: "Breastfeeding should be avoided for 5 months after treatment."
+      },
+      {
+        book: "whovl",
+        text: "Vomiting and diarrhoea during miltefosine therapy may stop an oral contraceptive from being absorbed, so an additional non-hormonal method is advised.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — gastrointestinal effects, pdf p. 59",
+        pdf_page: 59,
+        quote: "may affect the absorption of oral contraceptives"
+      },
+      {
+        book: "whovl",
+        text: "Increased serum creatinine was noted in the leishmaniasis trials and regular monitoring of renal function is recommended.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — renal effects, pdf p. 58",
+        pdf_page: 58,
+        quote: "Regular monitoring of renal function is recommended."
+      },
+      {
+        book: "whovl",
+        text: "Side effects include abnormalities in liver and kidney tests, alongside the common nausea, vomiting, diarrhoea, abdominal pain, dizziness and headache; transaminases and bilirubin should be monitored.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — adverse effects, pdf p. 58",
+        pdf_page: 58,
+        quote: "abnormalities in liver or kidney tests"
+      },
+      {
+        book: "whovl",
+        text: "Ensure access to contraception and pregnancy testing for women of childbearing potential before miltefosine is given.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Recommendations — considerations, pdf p. 13",
+        pdf_page: 13,
+        quote: "Ensure access to contraception and pregnancy testing for women of child-bearing potential"
+      },
+      {
+        book: "whovl",
+        text: "Where miltefosine is contraindicated, WHO's alternative is L-AMB monotherapy up to a total of 40 mg/kg.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 Recommendations — remarks, pdf p. 35",
+        pdf_page: 35,
+        quote: "When miltefosine is not available or is contraindicated, consider using monotherapy with L-AMB"
+      }
+    ],
+    sources: [
+      "WHO guideline on VL in HIV co-infected patients, 2022",
+      "Miltefosine (Impavido) product information"
+    ]
+  },
+  paromomycin: {
+    pregnancy: {
+      level: "caution",
+      text: "There are insufficient data on paromomycin in pregnancy, and fetal ototoxicity is the main concern — as with any aminoglycoside. Liposomal amphotericin B is the drug WHO's guideline points to for VL in pregnancy, so use that instead where it can be obtained. If paromomycin is the only option, the untreated disease is still the greater danger to mother and baby: treat, keep the course as short as the protocol allows, and record the pregnancy outcome in the centre's register."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No data in the guideline. Aminoglycosides are very poorly absorbed from the infant gut, so significant systemic exposure through milk is unlikely. Watch the infant for diarrhoea and thrush. Confirm with the national protocol; do not stop breastfeeding on the strength of this drug alone where replacement feeding is unsafe."
+    },
+    renal: {
+      level: "adjust",
+      text: "An aminoglycoside: nephrotoxic, and cleared by the kidneys, so impaired function means accumulation and more ototoxicity. Proteinuria is a recognised adverse effect — dipstick the urine before starting and twice weekly, and keep a fluid balance chart. Check creatinine at baseline and mid-course where the laboratory can. As with other aminoglycosides, lengthen the interval rather than cutting the dose, and get pharmacist advice before doing either. Avoid giving it with amphotericin B, gentamicin or tenofovir unless there is no alternative.",
+      bands: [
+        {
+          below: 60,
+          text: "Reduced kidney function: use only if there is no alternative. Dipstick for protein twice weekly, keep a fluid chart, check creatinine mid-course, and test hearing weekly with the whispered-voice test."
+        },
+        {
+          below: 30,
+          text: "Severe impairment: avoid. Liposomal amphotericin B is the alternative. If paromomycin is unavoidable, this is a senior and pharmacist decision, with lengthened intervals and close monitoring."
+        }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change. Transient rises in alanine and aspartate transaminases are common, and raised alkaline phosphatase and bilirubin are seen. Check liver tests where possible; look for jaundice clinically."
+    },
+    refs: [
+      {
+        book: "whovl",
+        text: "With paromomycin the main concern in pregnancy is fetal ototoxicity, and there are insufficient data on its use in pregnant women.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations, footnote, pdf p. 46",
+        pdf_page: 46,
+        quote: "With paromomycin, ototoxicity in the fetus is the main concern."
+      },
+      {
+        book: "whovl",
+        text: "Injection-site swelling and abscess, ototoxicity, conductive deafness and proteinuria are recognised adverse effects.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 84",
+        pdf_page: 84,
+        quote: "Injection site swelling, abscess, ototoxicity, conductive deafness, proteinuria"
+      },
+      {
+        book: "whovl",
+        text: "Fever and a reversible abnormal audiogram are common findings on treatment.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 84",
+        pdf_page: 84,
+        quote: "Pyrexia, reversible abnormal audiogram"
+      },
+      {
+        book: "whovl",
+        text: "Transient increases in alanine and aspartate transaminases are recognised, with raised alkaline phosphatase and bilirubin.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 84",
+        pdf_page: 84,
+        quote: "Transient increases in alanine and aspartate"
+      },
+      {
+        book: "whovl",
+        text: "In pregnancy, the literature favours liposomal amphotericin B for treating VL.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations — pregnancy, pdf p. 46",
+        pdf_page: 46,
+        quote: "The current literature favours the use of liposomal amphotericin B for the treatment of VL in pregnant women"
+      },
+      {
+        book: "whovl",
+        text: "HIV-positive VL patients generally require higher doses of paromomycin and L-AMB.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28",
+        pdf_page: 28,
+        quote: "they generally require higher doses of paromomycin and L-AMB"
+      }
+    ],
+    sources: [
+      "WHO guideline on VL in HIV co-infected patients, 2022",
+      "WHO Expert Committee on the Control of Leishmaniases, TRS 949, 2010",
+      "BNF; WHO Model Formulary"
+    ]
+  },
+
+  /* ---- eye and vision ---- */
+  "tetracycline-eye": {
+    pregnancy: {
+      level: "safe",
+      text: "The 1 % eye ointment is acceptable in pregnancy. The warnings about tetracyclines in pregnancy (fetal tooth discolouration, effects on developing bone, maternal liver injury with large intravenous doses) relate to systemic treatment; almost nothing is absorbed from an ointment applied to the eye. Do not give oral tetracycline or doxycycline for trachoma in a pregnant woman — use azithromycin, or the ointment."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. Systemic absorption from the eye is negligible and nothing meaningful reaches the milk. The baby's own eye prophylaxis at birth is a separate, single application to the baby."
+    },
+    renal: { level: "none", text: "No dose change. Topical ocular use does not produce systemic levels." },
+    hepatic: { level: "none", text: "No dose change for topical ocular use." },
+    refs: [],
+    sources: ["WHO Model Formulary 2008", "WHO trachoma (SAFE strategy) guidance", "LactMed (NIH)", "BNF"]
+  },
+  "ciprofloxacin-eye": {
+    pregnancy: {
+      level: "safe",
+      text: "Topical ocular ciprofloxacin is acceptable in pregnancy, including for a sight-threatening corneal ulcer. Systemic absorption from drops is very low, and the cartilage concerns that attach to systemic fluoroquinolones in pregnancy and childhood do not apply to a drop. Do not withhold treatment of a corneal ulcer from a pregnant woman."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. Amounts reaching milk after ocular use are negligible. Use punctal occlusion and continue breastfeeding."
+    },
+    renal: { level: "none", text: "No dose change for eye drops or eye ointment." },
+    hepatic: { level: "none", text: "No dose change for topical ocular use." },
+    refs: [],
+    sources: [
+      "WHO Model Formulary 2008",
+      "LactMed (NIH)",
+      "BNF",
+      "AAO Preferred Practice Pattern: Bacterial Keratitis"
+    ]
+  },
+  "atropine-eye": {
+    pregnancy: {
+      level: "caution",
+      text: "Short courses for uveitis, corneal ulcer or eye trauma are acceptable when the eye needs them; the amount absorbed from one or two drops a day is small. Atropine does cross the placenta and can cause fetal tachycardia. Use 1 % sparingly, teach punctal occlusion, and avoid prolonged or repeated daily use (for example amblyopia penalisation) during pregnancy unless an ophthalmologist advises it. Prefer a shorter-acting cycloplegic (homatropine, cyclopentolate) if stocked."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Occasional doses are acceptable. Anticholinergic drugs can reduce milk production with regular use, and small amounts pass into milk; watch the infant for irritability, flushing, a fast pulse, constipation or a dry mouth. Use punctal occlusion for 2 minutes and wipe the lids dry after every dose."
+    },
+    renal: { level: "none", text: "No dose change for topical ocular use." },
+    hepatic: { level: "none", text: "No dose change for topical ocular use." },
+    refs: [],
+    sources: ["WHO Model Formulary 2008", "BNF and BNF for Children", "LactMed (NIH)"]
+  },
+  tropicamide: {
+    pregnancy: {
+      level: "caution",
+      text: "A single diagnostic dilation is acceptable in pregnancy when the retina genuinely needs to be examined — for example diabetic retinopathy screening or suspected papilloedema. Use tropicamide alone if possible: phenylephrine is a systemic vasoconstrictor and can raise blood pressure, which matters in pre-eclampsia, so avoid it in a hypertensive pregnancy and never use the 10 % strength. Teach punctal occlusion."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "A single diagnostic dose is acceptable; amounts in milk are very small and the drug is short-acting. Use punctal occlusion, wipe the lids, and if you are worried, breastfeed just before the drops rather than interrupting feeding afterwards. Anticholinergics can reduce milk supply with repeated use, which does not apply to a one-off examination."
+    },
+    renal: { level: "none", text: "No dose change for topical ocular use." },
+    hepatic: { level: "none", text: "No dose change for topical ocular use." },
+    refs: [],
+    sources: ["WHO Model Formulary 2008", "BNF and BNF for Children", "LactMed (NIH)"]
+  },
+  "timolol-eye": {
+    pregnancy: {
+      level: "caution",
+      text: "Timolol drops produce real plasma beta-blockade. Systemic beta-blockers in pregnancy are associated with fetal growth restriction and fetal bradycardia, and near term with neonatal bradycardia, hypoglycaemia and respiratory depression. Do not leave glaucoma untreated — irreversible blindness is the alternative — but use the lowest strength (0.25 %) and lowest frequency that controls the pressure, teach punctal occlusion for 2 minutes after every drop, and discuss alternatives (laser, a prostaglandin analogue, brimonidine — which must be stopped before delivery and is avoided in infants) with the eye unit. Tell the paediatric team at delivery that the mother is on a beta-blocker, and check the newborn's heart rate and blood glucose."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Timolol is excreted into breast milk and has been measured at higher concentrations in milk than in maternal plasma after ocular use, although the infant's calculated dose is small. It is usually considered compatible, with punctal occlusion. Watch the baby for a slow pulse, poor feeding, sleepiness, cold hands or wheeze, and have a lower threshold for stopping in a preterm or unwell infant."
+    },
+    renal: {
+      level: "none",
+      text: "No dose adjustment is possible or required for a drop, but the systemically absorbed fraction is cleared partly by the kidneys. In severe renal impairment watch the pulse and blood pressure more closely, and be alert to accumulation of beta-blockade (bradycardia, tiredness, dizziness on standing)."
+    },
+    hepatic: {
+      level: "none",
+      text: "No formal dose change. Timolol is metabolised by the liver (CYP2D6); in severe liver disease the absorbed fraction is cleared more slowly, so monitor pulse and blood pressure. Poor CYP2D6 metabolisers have higher levels whatever the liver function."
+    },
+    refs: [],
+    sources: [
+      "WHO Model Formulary 2008",
+      "BNF — timolol maleate (ocular)",
+      "LactMed (NIH)",
+      "AAO Preferred Practice Pattern: Primary Open-Angle Glaucoma"
+    ]
+  },
+  "pilocarpine-eye": {
+    pregnancy: {
+      level: "caution",
+      text: "There are few data, but acute angle-closure glaucoma is a sight-threatening emergency and treatment should not be withheld from a pregnant woman. Short-term use as part of the emergency combination is acceptable. Teach punctal occlusion, and arrange definitive laser iridotomy, which is safe in pregnancy, rather than continuing drops for months."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Little published information. Short-term use during an acute attack is acceptable; use punctal occlusion and wipe the lids. Watch the infant for sweating, diarrhoea, colic or a slow pulse if the mother is using it four times daily in both eyes over several days."
+    },
+    renal: { level: "none", text: "No dose change for topical ocular use." },
+    hepatic: { level: "none", text: "No dose change for topical ocular use." },
+    refs: [],
+    sources: [
+      "WHO Model Formulary 2008",
+      "BNF",
+      "AAO Preferred Practice Pattern: Primary Angle-Closure Disease"
+    ]
+  },
+  acetazolamide: {
+    pregnancy: {
+      level: "avoid",
+      text: "Avoid, particularly in the first trimester: acetazolamide is teratogenic in animals (limb defects) and there are human case reports of limb and renal anomalies, and of neonatal metabolic acidosis and electrolyte disturbance after use near term. The exception is an eye that is going blind: in acute angle-closure glaucoma or a sight-threatening pressure rise, give it — a single 500 mg dose to save an eye is a reasonable risk — document the reason, treat the attack definitively with laser as soon as possible, and tell the obstetric team. Do not use it for chronic glaucoma or for altitude sickness in pregnancy."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Small amounts enter milk (the infant receives roughly 1–2 % of the maternal weight-adjusted dose) and it is generally considered compatible with breastfeeding, including for short courses. Watch the baby for drowsiness, poor feeding, fast breathing or reduced urine output, and prefer short courses. Avoid in a preterm or jaundiced newborn if there is an alternative."
+    },
+    renal: {
+      level: "adjust",
+      text: "Acetazolamide is eliminated unchanged by the kidneys. It accumulates in renal impairment, and it both causes a metabolic acidosis and loses its effect as kidney function falls. Keep courses short, keep the patient hydrated, and watch for drowsiness and deep fast breathing. Do not give it with high-dose aspirin at any level of kidney function.",
+      bands: [
+        {
+          below: 50,
+          text: "CrCl 10–50 mL/min: increase the dose interval — give 250 mg every 12 hours rather than every 6, and do not exceed 500 mg in 24 hours. Watch for acidosis (deep fast breathing, drowsiness), hypokalaemia and confusion. Review daily; stop as soon as the eye has been treated definitively."
+        },
+        {
+          below: 10,
+          text: "CrCl under 10 mL/min: AVOID. It accumulates, it will not lower the pressure effectively, and severe metabolic acidosis follows. Use topical pressure-lowering drugs and an osmotic agent with great care, and get the patient to an ophthalmologist urgently for laser or surgery."
+        }
+      ]
+    },
+    hepatic: {
+      level: "avoid",
+      text: "Avoid in cirrhosis and in significant liver impairment. Acetazolamide causes a metabolic acidosis and reduces the urinary excretion of ammonia, which can precipitate hepatic encephalopathy. If there is no alternative in a sight-threatening emergency, give a single dose only, watch the level of consciousness closely, and stop it."
+    },
+    refs: [],
+    sources: [
+      "WHO Model Formulary 2008",
+      "BNF and BNF for Children — acetazolamide",
+      "The Renal Drug Handbook",
+      "LactMed (NIH)"
+    ]
+  },
+  "prednisolone-eye": {
+    pregnancy: {
+      level: "safe",
+      text: "Topical ocular corticosteroids are acceptable in pregnancy when there is a clear indication such as uveitis or after surgery. Systemic absorption is small and well below the doses of oral steroid used routinely in pregnancy. The danger of these drops is ocular, not obstetric: the diagnosis must be right, and the pressure must be checked if the course runs beyond 2 weeks."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. Very little reaches the milk after ocular use. Use punctal occlusion for 2 minutes and continue breastfeeding."
+    },
+    renal: { level: "none", text: "No dose change for topical ocular use." },
+    hepatic: { level: "none", text: "No dose change for topical ocular use." },
+    refs: [],
+    sources: [
+      "WHO Model Formulary 2008",
+      "LactMed (NIH)",
+      "BNF",
+      "AAO Basic and Clinical Science Course, Section 9: Uveitis and Ocular Inflammation"
+    ]
+  },
+  "tetracaine-eye": {
+    pregnancy: {
+      level: "safe",
+      text: "A drop or two for an examination or a procedure is acceptable at any stage of pregnancy; systemic absorption is minimal and the drug is short-acting. The rule that matters is the same as for everyone else: it is used in the clinic, for a procedure, and it is never dispensed."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. Amounts reaching milk after a single ocular dose are negligible; there is no need to interrupt feeding."
+    },
+    renal: { level: "none", text: "No dose change for topical ocular use." },
+    hepatic: {
+      level: "none",
+      text: "No dose change. Ester anaesthetics are broken down by plasma cholinesterase rather than by the liver."
+    },
+    refs: [],
+    sources: ["WHO Model Formulary 2008", "BNF", "LactMed (NIH)"]
+  },
+  fluorescein: {
+    pregnancy: {
+      level: "safe",
+      text: "Topical fluorescein used as a diagnostic stain is acceptable in pregnancy; systemic absorption from an intact or even an abraded eye is negligible. This is not the same as INTRAVENOUS fluorescein angiography, which is a different procedure with a different risk discussion."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible; no interruption of breastfeeding is needed after topical use. (After intravenous fluorescein angiography some units advise discarding milk for a short period — that does not apply to a strip or a drop.)"
+    },
+    renal: { level: "none", text: "No dose change for topical ocular use." },
+    hepatic: { level: "none", text: "No dose change for topical ocular use." },
+    refs: [],
+    sources: ["WHO Model Formulary 2008", "BNF", "LactMed (NIH)"]
+  },
+  "povidone-iodine": {
+    pregnancy: {
+      level: "caution",
+      text: "A single application for antisepsis before an eye procedure is acceptable. Iodine crosses the placenta and repeated or prolonged application over large areas can suppress the fetal thyroid, so avoid repeated iodine antisepsis in pregnancy and prefer chlorhexidine where an equivalent alternative exists. Check the strength: 10 % is for skin, 5 % for the conjunctival sac, 2.5 % for a newborn's eye."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Iodine is concentrated in breast milk and repeated maternal application can raise the infant's iodine load and affect the infant's thyroid, particularly in a preterm baby. A single application for an eye procedure is acceptable; avoid repeated or prolonged use over large skin areas while breastfeeding, and use chlorhexidine instead where possible."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change. Iodine absorbed after repeated application is excreted by the kidneys and can accumulate in severe renal impairment, so avoid repeated large-area application; single ocular antisepsis is not a problem."
+    },
+    hepatic: { level: "none", text: "No dose change for ocular antisepsis." },
+    refs: [],
+    sources: [
+      "WHO Model List of Essential Medicines (22nd list, 2021)",
+      "WHO Guidelines for the management of sexually transmitted infections, 2016",
+      "LactMed (NIH)",
+      "BNF"
+    ]
   }
 };

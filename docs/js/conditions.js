@@ -10,7 +10,8 @@ window.CASE_GROUPS = {
   surgical:   "Surgical",
   medical:    "Adult medical",
   paediatric: "Paediatric & neonatal",
-  psychiatric: "Psychiatry & mental health"
+  psychiatric: "Psychiatry & mental health",
+  eye: "Eye & vision"
 };
 
 window.CONDITIONS = [
@@ -546,8 +547,23 @@ window.CONDITIONS = [
     { id: "naloxone", role: "supportive", note: "If opioid analgesia causes respiratory depression." },
     { id: "oxygen", role: "supportive", note: "High-flow oxygen for major trauma and head injury (SpO2 94 % or more)." },
     { id: "mannitol", role: "adjunct", note: "Head injury with signs of herniation only, after blood pressure is restored: 0.5 g/kg over 20–30 min as a bridge to surgery. Worsens hypovolaemia." },
-    { id: "hypertonic-saline", role: "adjunct", note: "Preferred osmotic agent for a head-injured patient who is also hypotensive or bleeding: 3 % saline 2–5 mL/kg over 10–20 min." }
-  ],
+    { id: "hypertonic-saline", role: "adjunct", note: "Preferred osmotic agent for a head-injured patient who is also hypotensive or bleeding: 3 % saline 2–5 mL/kg over 10–20 min." },
+      {
+        id: "fluorescein",
+        role: "adjunct",
+        note: "Any facial injury: record the visual acuity in both eyes, then stain. A Seidel-positive wound, a peaked pupil or brown tissue at the wound means an open globe — shield it, never pad it, and it goes to theatre."
+      },
+      {
+        id: "tetracaine-eye",
+        role: "adjunct",
+        note: "To examine an injured eye and to remove a conjunctival or superficial corneal foreign body. Evert the upper lid every time. Never dispense it."
+      },
+      {
+        id: "atropine-eye",
+        role: "supportive",
+        note: "1 % once or twice daily for traumatic iritis and hyphaema, with rest, head elevation and a shield — not for an eye with a leaking wound."
+      }
+    ],
   sources: [{ name: "CRASH-2 collaborators. Lancet 2010" }, { name: "WHO. Surgical Care at the District Hospital, 2003" }],
   textbook: [
     { book: "schwartz", text: "Hypotensive resuscitation is controversial and mainly for penetrating vascular injury (SBP around 90); TBI needs SBP >100, so it is not appropriate for most blunt trauma.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 195" },
@@ -582,8 +598,18 @@ window.CONDITIONS = [
     { id: "blood-transfusion", role: "supportive", note: "For anaemia after excision or in extensive burns." },
     { id: "atropine", role: "adjunct", note: "Before ketamine, to reduce salivation." },
     { id: "potassium-chloride", role: "adjunct", note: "Replace after the first 24 hours as losses continue." },
-    { id: "oxygen", role: "first", note: "High-flow oxygen by non-rebreather mask for smoke inhalation or suspected carbon monoxide, regardless of SpO2 (oximeters read falsely normal with CO)." }
-  ],
+    { id: "oxygen", role: "first", note: "High-flow oxygen by non-rebreather mask for smoke inhalation or suspected carbon monoxide, regardless of SpO2 (oximeters read falsely normal with CO)." },
+      {
+        id: "tetracaine-eye",
+        role: "adjunct",
+        note: "Facial or chemical burns: one drop lets you irrigate the eye properly, and re-instil it every 5–10 minutes through the irrigation. Irrigate before you do anything else."
+      },
+      {
+        id: "fluorescein",
+        role: "adjunct",
+        note: "After irrigation, stain both eyes in any facial or flame burn: corneal exposure and chemical injury are missed under the swelling."
+      }
+    ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 91 Burn injuries, p. 654" }, { name: "WHO. Surgical Care at the District Hospital, 2003" }],
   textbook: [
     { book: "schwartz", text: "Parkland 3-4 mL/kg/% burn LR (half in first 8 h); ABA now recommends 2 mL/kg/%; children <20 kg also need maintenance fluid with glucose.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 254" },
@@ -938,8 +964,23 @@ window.CONDITIONS = [
     { id: "blood-transfusion", role: "adjunct", note: "10 mL/kg whole blood over 3 h, with furosemide, for haemoglobin under 4 g/dL." },
     { id: "furosemide", role: "adjunct", note: "1 mg/kg at the start of transfusion only." },
     { id: "ringers-lactate", role: "avoid", note: "Plan C rates cause heart failure here. Use 15 mL/kg over 1 h for shock only." },
-    { id: "oxygen", role: "supportive", note: "Pneumonia or heart failure with SpO2 under 90 %." }
-  ],
+    { id: "oxygen", role: "supportive", note: "Pneumonia or heart failure with SpO2 under 90 %." },
+      {
+        id: "tetracycline-eye",
+        role: "adjunct",
+        note: "1 % ointment 3 times daily where there are eye signs, alongside vitamin A. The cornea can melt within 48 hours in severe acute malnutrition."
+      },
+      {
+        id: "atropine-eye",
+        role: "adjunct",
+        note: "1 drop of 1 % for corneal ulceration, to relax the eye and reduce the risk of lens extrusion (Nelson) — the eye preparation, not the injection."
+      },
+      {
+        id: "fluorescein",
+        role: "supportive",
+        note: "Examine and stain the cornea of every child on admission and at each review; corneal damage here is silent, rapid and blinding."
+      }
+    ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 62, pp. 428–430" }, { name: "WHO. Updates on the management of severe acute malnutrition, 2013" }],
   review: { status: "draft" }
 },
@@ -1060,14 +1101,19 @@ window.CONDITIONS = [
   ],
   drugs: [
     { id: "vitamin-a", role: "first", note: "50,000 to 200,000 IU by age, on days 1, 2 and 14. Give to every child with measles in a deficient area." },
-    { id: "chloramphenicol", role: "adjunct", note: "Eye ointment for conjunctivitis and corneal involvement." },
-    { id: "atropine", role: "adjunct", note: "One drop of 1 % for corneal ulceration, to relax the eye." },
+    { id: "tetracycline-eye", role: "adjunct", note: "1 % eye ointment three times a day for five days for conjunctivitis. Chloramphenicol eye ointment is an alternative where it is the one stocked — the systemic chloramphenicol entry is a different medicine." },
+    { id: "atropine-eye", role: "adjunct", note: "One drop of 1 % eye drops twice a day for corneal ulceration, to relax the eye and ease pain. Not the atropine injection." },
     { id: "ampicillin", role: "adjunct", note: "With gentamicin for measles pneumonia." },
     { id: "benzylpenicillin", role: "alternative", note: "For secondary bacterial pneumonia." },
     { id: "zinc-ors", role: "adjunct", note: "For accompanying diarrhoea." },
     { id: "paracetamol", role: "supportive", note: "Fever and mouth pain." },
-    { id: "oxygen", role: "supportive", note: "Measles pneumonia with SpO2 under 90 % or danger signs." }
-  ],
+    { id: "oxygen", role: "supportive", note: "Measles pneumonia with SpO2 under 90 % or danger signs." },
+      {
+        id: "fluorescein",
+        role: "supportive",
+        note: "Stain the cornea of every child with measles and red eyes: corneal ulceration here is what causes the blindness, and it is missed without a blue light."
+      }
+    ],
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013" }, { name: "Nelson 22nd ed. 2024, ch. 62, p. 428" }],
   review: { status: "draft" }
 },
@@ -3503,5 +3549,1100 @@ window.CONDITIONS = [
   review: {
     status: "draft"
   }
-}
+},
+
+  /* ---- visceral leishmaniasis ---- */
+  {
+    id: "visceral-leishmaniasis",
+    name: "Visceral leishmaniasis (kala-azar)",
+    group: "medical",
+    aka: ["kala-azar", "kala azar", "leishmaniasis", "VL", "black fever"],
+    summary: "Weeks of fever with a big spleen and wasting in someone who has been in the north-west lowlands. Untreated it kills. The drugs are toxic and the course is long, so the diagnosis must be made properly — and every patient must be tested for HIV, because that changes the treatment completely.",
+    redflags: [
+      "Fever for more than 2 weeks that has not responded to antimalarials",
+      "Splenomegaly with progressive weight loss in a patient from Humera, Metema, Abdurafi, the Tigray or Amhara lowlands, or a returning seasonal labourer",
+      "Haemoglobin under 5 g/dL, or bleeding from nose and gums (thrombocytopenia)",
+      "Jaundice, oedema, or a patient too weak to stand — advanced disease, high early mortality",
+      "Any new fever or breathlessness during treatment: bacterial sepsis and pneumonia kill these patients"
+    ],
+    steps: [
+      "Suspect it: fever over 2 weeks plus splenomegaly plus weight loss, in or from an endemic lowland area, not responding to antimalarials.",
+      "Test for HIV in every single patient. It changes the drug, the prognosis and the follow-up.",
+      "Confirm the diagnosis: rK39 rapid test, and a direct agglutination test in a serial algorithm where available. In East Africa serology alone is less reliable than on the Indian subcontinent.",
+      "If serology is negative but suspicion is high, or this could be a relapse, the diagnosis needs parasites: spleen, bone marrow or lymph node aspirate by someone trained to do it.",
+      "Take a full blood count and a malaria test; pancytopenia is usual and malaria co-infection is common in the same lowlands.",
+      "Treat: pentavalent antimonial plus paromomycin for 17 days is the East African first line in HIV-negative patients. Liposomal amphotericin B is the second line and the regimen for complicated cases.",
+      "Treat what is killing the patient alongside the parasite: transfuse severe anaemia, give antibiotics for sepsis, treat malaria, and feed the patient.",
+      "Screen for TB — it hides behind the same wasting and fever.",
+      "Test of cure and follow-up: parasitological test of cure where the protocol requires it, and review at 6 months. Freedom from symptoms 6 months after treatment is final cure.",
+      "Before discharge, counsel the patient about relapse symptoms and give them a copy of the treatment card — many of these patients are migrant workers who will be far away."
+    ],
+    drugs: [
+      {
+        id: "sodium-stibogluconate",
+        role: "first",
+        note: "20 mg Sb5+/kg/day IM or slow IV for 17 days with paromomycin. Pulse before every dose; stop for syncope, arrhythmia or severe abdominal pain. Contraindicated in pregnancy. Confirm the dose with the national protocol."
+      },
+      {
+        id: "paromomycin",
+        role: "first",
+        note: "15 mg/kg/day deep IM for 17 days with the antimonial. Different injection site from the antimonial. Check hearing weekly; dipstick the urine for protein."
+      },
+      {
+        id: "liposomal-amphotericin-b",
+        role: "alternative",
+        note: "Second line and the regimen for complicated cases: 3–5 mg/kg per daily dose over 6–10 days, total 30 mg/kg. The choice in pregnancy, and where an antimonial is unsafe."
+      },
+      {
+        id: "miltefosine",
+        role: "alternative",
+        note: "The only oral option. Contraindicated in pregnancy and needs assured contraception for the course and 5 months after. Less used as monotherapy in East Africa."
+      },
+      {
+        id: "amphotericin-b-deoxycholate",
+        role: "alternative",
+        note: "Only where liposomal amphotericin B cannot be obtained. Far more toxic: slow infusion, saline pre-load, potassium replacement."
+      },
+      {
+        id: "blood-transfusion",
+        role: "supportive",
+        note: "Severe anaemia is common and is often what kills first. Transfuse slowly; watch for fluid overload in a wasted patient."
+      },
+      {
+        id: "ceftriaxone",
+        role: "adjunct",
+        note: "Bacterial sepsis and pneumonia are the commonest fatal complications. Treat a new fever or a deteriorating patient as sepsis while investigating."
+      },
+      {
+        id: "artesunate",
+        role: "adjunct",
+        note: "Malaria is endemic in the same lowlands and often co-exists. Test and treat; do not assume the fever is all kala-azar."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "For fever and for the pain of daily IM injections; give before amphotericin infusions."
+      },
+      {
+        id: "zinc-ors",
+        role: "supportive",
+        note: "For diarrhoea and dehydration, which are common and worsen the wasting."
+      },
+      {
+        id: "vitamin-a",
+        role: "supportive",
+        note: "In children with malnutrition, as part of the national malnutrition protocol."
+      },
+      {
+        id: "ringers-lactate",
+        role: "supportive",
+        note: "Careful rehydration. These patients have little cardiac reserve — avoid large rapid boluses without shock."
+      }
+    ],
+    sources: [
+      {
+        name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia, 2022"
+      },
+      {
+        name: "WHO Expert Committee on the Control of Leishmaniases, Technical Report Series 949, 2010"
+      },
+      {
+        name: "Ethiopian national guideline for diagnosis and treatment of leishmaniasis — confirm current edition"
+      }
+    ],
+    textbook: [
+      {
+        book: "whovl",
+        text: "The case definition is an illness with prolonged irregular fever, splenomegaly and/or weight loss as its main features.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.1 Case definition, pdf p. 33"
+      },
+      {
+        book: "whovl",
+        text: "Where malaria and leishmaniasis are co-endemic, suspect VL when fever lasts more than 2 weeks and has not responded to antimalarials, drug-resistant malaria having been considered.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.1 Case definition, pdf p. 33"
+      },
+      {
+        book: "whovl",
+        text: "Diagnosis rests on positive parasitology from bone marrow, spleen, liver, lymph node or blood, and/or positive serology such as rK39 or the direct agglutination test.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.1 Case definition, pdf p. 33"
+      },
+      {
+        book: "whovl",
+        text: "In East Africa the rK39 rapid test should be used together with the direct agglutination test in a serial algorithm, because rK39 accuracy is lower here than on the Indian subcontinent.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "whovl",
+        text: "Pancytopenia is common in VL, and hypergammaglobulinaemia is frequent but of limited diagnostic value.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.1 Laboratory findings, pdf p. 34"
+      },
+      {
+        book: "whovl",
+        text: "First-line treatment of VL in HIV-negative patients in East Africa is a pentavalent antimonial with paromomycin for 17 days; liposomal amphotericin B at 3–5 mg/kg daily over 6–10 days to a total of 30 mg/kg is the second-line and complicated-case regimen.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "whovl",
+        text: "Final cure is a patient who, after initial cure, remains free of symptoms 6 months after the end of treatment.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.4 Treatment outcomes, pdf p. 44"
+      },
+      {
+        book: "whovl",
+        text: "Poverty worsens outcomes: malnutrition and anaemia increase the severity of VL, and in Ethiopia many patients are migratory, which delays diagnosis and causes loss to follow-up.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.9.1 Poverty, pdf p. 52"
+      },
+      {
+        book: "note",
+        text: "The doses for VL in HIV-negative patients (antimonial 20 mg Sb5+/kg/day, paromomycin 15 mg/kg/day, both 17 days) are not restated in the 2022 VL–HIV guideline. They follow the WHO Expert Committee report (TRS 949, 2010) and East African national protocols — confirm with the national kala-azar protocol.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "visceral-leishmaniasis-hiv",
+    name: "Visceral leishmaniasis with HIV",
+    group: "medical",
+    aka: ["kala-azar with HIV", "VL-HIV", "VL HIV coinfection", "leishmaniasis HIV"],
+    summary: "Two infections that make each other worse. VL is an AIDS-defining illness; the parasite load is huge, the rapid test is less sensitive, relapse is the rule and mortality is high. WHO's answer in East Africa is liposomal amphotericin B WITH miltefosine, antiretroviral therapy started within 2 weeks, and secondary prophylaxis afterwards.",
+    redflags: [
+      "Known HIV with fever, splenomegaly and wasting — or VL that keeps coming back",
+      "CD4 under 200 cells/mm3, not on ART, or a previous VL episode: highest risk of relapse and death",
+      "Negative rK39 rapid test but a strong clinical suspicion — this does NOT rule out VL in advanced HIV",
+      "Cough, night sweats or weight loss: screen for TB; concurrent TB predicts death",
+      "Any patient still parasite-positive at the end of treatment: they will relapse without further action"
+    ],
+    steps: [
+      "Establish HIV status in every VL patient, and think of VL in every person living with HIV from an endemic lowland area.",
+      "Diagnose properly: serology is less sensitive here — rK39 was 77 % sensitive against 87 % in HIV-negative patients in Ethiopia. Use rK39 with a direct agglutination test in series. If they are negative and you still suspect VL, get a tissue aspirate.",
+      "Relapse and atypical presentations can only be diagnosed by finding parasites. Spleen aspirate is more sensitive than bone marrow or lymph node.",
+      "Screen routinely for TB at VL diagnosis and again at follow-up.",
+      "TREAT: liposomal amphotericin B 5 mg/kg on days 1, 3, 5, 7, 9 and 11 (total up to 30 mg/kg) PLUS oral miltefosine 100 mg/day for 28 days. Where miltefosine is unavailable or contraindicated, L-AMB alone up to 40 mg/kg (5 mg/kg on days 1–5, 10, 17 and 24).",
+      "Before any miltefosine in a woman of childbearing potential: pregnancy test, and contraception assured for the course and 5 months afterwards. No plan, no miltefosine — use L-AMB alone.",
+      "ART: start as soon as possible, within 2 weeks of starting VL treatment, whatever the CD4 count. A 2-week gap allows some immune recovery and reduces immune reconstitution syndrome.",
+      "Give comprehensive care: nutritional support, treatment of other opportunistic infections, and cotrimoxazole prophylaxis per the national HIV guideline.",
+      "Test of cure around day 29. A patient who is clinically well but still parasite-positive is a slow responder: WHO suggests extending therapy with one more course of the same regimen.",
+      "Still no response after the extended course: rescue treatment — sodium stibogluconate, alone or with paromomycin — with careful monitoring for pancreatitis and cardiotoxicity.",
+      "After a negative test of cure, start SECONDARY PROPHYLAXIS: in East Africa pentamidine isethionate 4 mg/kg (300 mg in an adult) every 3–4 weeks. Prefer a drug not used for the primary episode.",
+      "Stop prophylaxis only when CD4 stays above 350 cells/mm3, or the viral load has been undetectable, for at least 6 months, with no clinical evidence of relapse.",
+      "Follow up at 6-monthly intervals, or more often, to catch late relapse. Record where the patient will be living and which centre is nearest."
+    ],
+    drugs: [
+      {
+        id: "liposomal-amphotericin-b",
+        role: "first",
+        note: "5 mg/kg on days 1, 3, 5, 7, 9, 11 — up to 30 mg/kg total — with miltefosine. Alone, up to 40 mg/kg (days 1–5, 10, 17, 24) if miltefosine cannot be used. Dilute in 5 % dextrose only."
+      },
+      {
+        id: "miltefosine",
+        role: "first",
+        note: "100 mg/day for 28 days in East Africa (14 days in South-East Asia), with food. Pregnancy test and assured contraception for the course and 5 months after are mandatory."
+      },
+      {
+        id: "arv-prophylaxis",
+        role: "first",
+        note: "Start ART within 2 weeks of starting VL treatment, whatever the CD4 count. This app's entry covers prophylaxis only — choose and dose the ART regimen from the national HIV guideline (WHO preferred first line is dolutegravir with an NRTI backbone)."
+      },
+      {
+        id: "amphotericin-b-deoxycholate",
+        role: "alternative",
+        note: "Where liposomal amphotericin B is unobtainable, and as secondary prophylaxis at 1 mg/kg every 3–4 weeks in the South-East Asia regimen. Far more toxic."
+      },
+      {
+        id: "sodium-stibogluconate",
+        role: "avoid",
+        note: "Not a first-line drug here: cure rate only 43 % in VL–HIV in Ethiopia and known to be highly toxic in HIV. Rescue treatment only, with careful monitoring for pancreatitis and cardiotoxicity, and check the national protocol first."
+      },
+      {
+        id: "paromomycin",
+        role: "alternative",
+        note: "Rescue treatment with sodium stibogluconate for non-responders. HIV-positive patients generally need higher doses than HIV-negative patients."
+      },
+      {
+        id: "tb-rhze",
+        role: "adjunct",
+        note: "Screen for TB at VL diagnosis and at follow-up. Concurrent TB was an independent risk factor for death. Start ART within 2 weeks of TB treatment too."
+      },
+      {
+        id: "blood-transfusion",
+        role: "supportive",
+        note: "Cytopenias are more frequent and more pronounced than in HIV-negative VL. Transfuse slowly."
+      },
+      {
+        id: "ceftriaxone",
+        role: "adjunct",
+        note: "For bacterial sepsis and pneumonia, which are common and often the immediate cause of death."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "For fever, and 30 minutes before an amphotericin infusion to blunt the rigors."
+      },
+      {
+        id: "potassium-chloride",
+        role: "adjunct",
+        note: "Amphotericin B causes hypokalaemia and hypomagnesaemia; replace potassium through the course and adjust to levels where they can be measured."
+      },
+      {
+        id: "zinc-ors",
+        role: "supportive",
+        note: "For the diarrhoea and volume depletion that miltefosine and HIV enteropathy cause."
+      }
+    ],
+    sources: [
+      {
+        name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia, 2022"
+      },
+      {
+        name: "WHO Consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring, 2021"
+      }
+    ],
+    textbook: [
+      {
+        book: "whovl",
+        text: "HIV and Leishmania suppress each other's control: co-infected patients have more severe disease, higher relapse and failure rates, more drug toxicity and higher mortality than either infection alone.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Executive summary, pdf p. 11"
+      },
+      {
+        book: "whovl",
+        text: "For East Africa WHO suggests liposomal amphotericin B up to 30 mg/kg, as 5 mg/kg on days 1, 3, 5, 7, 9 and 11, with miltefosine 100 mg daily for 28 days, in preference to L-AMB alone (conditional recommendation, very-low-certainty evidence).",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 First choice of treatment, pdf p. 35"
+      },
+      {
+        book: "whovl",
+        text: "Where miltefosine is unavailable or contraindicated, use L-AMB alone up to a total of 40 mg/kg; determine HIV status in every VL patient and screen routinely for TB.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 Recommendations — remarks, pdf p. 35"
+      },
+      {
+        book: "whovl",
+        text: "In the Ethiopian trial the day-29 cure rate was 67 % with the combination against 50 % with L-AMB monotherapy, rising to 88 % at day 58 with the combination.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2.3 Efficacy and safety data, pdf p. 37"
+      },
+      {
+        book: "whovl",
+        text: "The rK39 rapid test is less sensitive in HIV coinfection — 77 % against 87 % in an Ethiopian study — so parasitological tests are still relied on, and tissue aspirates give a higher yield because tissue parasite densities are higher.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.1 Laboratory findings in VL–HIV coinfection, pdf p. 34"
+      },
+      {
+        book: "whovl",
+        text: "In advanced HIV a negative rapid test does not rule out VL; diagnosis then depends on parasitological examination of spleen, bone marrow or lymph node aspirate.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "whovl",
+        text: "ART should be started as soon as possible, within 2 weeks of starting VL treatment, regardless of CD4 count; the 2-week gap allows immune recovery and helps prevent immune reconstitution inflammatory syndrome.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.7.2 ART, pdf p. 51"
+      },
+      {
+        book: "whovl",
+        text: "Use secondary prophylaxis after a first VL episode in HIV co-infected patients; in East Africa, pentamidine isethionate 4 mg/kg per day (300 mg for an adult) every 3–4 weeks.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.3 Maintenance therapy / secondary prophylaxis, pdf p. 38"
+      },
+      {
+        book: "whovl",
+        text: "Prophylaxis can stop once the CD4 count is held above 350 cells/mm3, or the viral load has been undetectable, for at least 6 months with no evidence of relapse; prefer a drug not used for the primary episode.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.3 Secondary prophylaxis — remarks, pdf p. 38"
+      },
+      {
+        book: "whovl",
+        text: "Relapse means recurrence of VL signs and symptoms with parasitological confirmation at any time after initial cure; WHO suggests repeating the same therapy for one more course when the first course gives no good clinical response.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.5 Treatment for relapse and rescue treatment, pdf p. 45"
+      },
+      {
+        book: "whovl",
+        text: "Risk of relapse is higher with a low CD4 count, multiple previous episodes, no ART, failure to achieve cure in the first episode, no rise in CD4 at follow-up, and no secondary prophylaxis.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 29"
+      },
+      {
+        book: "whovl",
+        text: "Co-infected patients should be followed up at 6-monthly intervals, or as national protocols require, to detect late relapse.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.4 Follow-up, pdf p. 45"
+      },
+      {
+        book: "whovl",
+        text: "In Humera in north-west Ethiopia the HIV rate among VL patients reached 40 %, and the pooled prevalence of HIV among VL patients in north-west Ethiopia was 24 %.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "whovl",
+        text: "Antimonials are more toxic in HIV patients and need careful monitoring for pancreatitis and cardiotoxicity; sodium stibogluconate had a cure rate of only 43 % in VL–HIV in Ethiopia.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.5 Rescue treatment and 3.3, pdf pp. 45 and 28"
+      }
+    ],
+    review: { status: "draft" }
+  },
+
+  /* ---- eye and vision ---- */
+  {
+    id: "red-eye",
+    name: "Acute red eye",
+    group: "eye",
+    aka: ["pink eye", "conjunctivitis", "sore eye", "eye triage"],
+    summary: "Most red eyes are harmless conjunctivitis. A few will blind the patient this week. Vision, pain, the look of the cornea and the pupil separate the two, and all four can be checked with a torch and an eye chart.",
+    redflags: [
+      "Reduced vision in the red eye — the single most important sign",
+      "Real pain, not itching or grittiness; pain that keeps the patient awake",
+      "Photophobia — light hurts",
+      "Hazy, dull or white cornea; any white or grey spot on the cornea",
+      "Pupil not round, not reacting, or mid-dilated and fixed",
+      "Contact lens wearer with a red eye — treat as an ulcer until proven otherwise",
+      "Any trauma, any chemical splash, any hammering of metal on metal",
+      "Baby under 28 days old with a red or sticky eye",
+      "Traditional eye medicine already put in the eye",
+      "One eye, severe pain, vomiting and haloes — angle-closure glaucoma"
+    ],
+    steps: [
+      "Measure and write down the vision in EACH eye separately, before you touch the eye. Use a Snellen or E chart at 6 m, or count fingers at a measured distance if there is no chart. A red eye that still sees 6/6 is very rarely dangerous.",
+      "Ask five questions: is it pain or itch? Is the vision changed? Does light hurt? One eye or both? Was there trauma, a chemical, a contact lens, or anything already put in the eye?",
+      "Look with a bright torch held to the side: is the cornea clear and shiny, or hazy? Is the redness all over, or a deep ring around the cornea (ciliary flush)? Is the pupil round and reacting? Is there pus or blood in the front of the eye?",
+      "Check the red reflex with an ophthalmoscope from arm's length. A dull or absent red reflex in a red eye means something is in the way — refer.",
+      "Stain with fluorescein and look with a blue light (a torch with a blue filter or the blue setting of an ophthalmoscope). Any stained area is an epithelial defect: an abrasion, an ulcer or a dendrite.",
+      "Evert the upper lid of every red eye. A retained foreign body under the lid produces vertical scratch lines on the cornea and will not settle until you remove it.",
+      "SAFE to treat here — simple conjunctivitis: both eyes, gritty rather than painful, normal vision, clear cornea, round reacting pupil, discharge, no photophobia. Clean the lids with boiled cooled water, antibiotic eye ointment, own towel and pillow, hand washing, no sharing of eye medicines. Review in 48 hours if not improving.",
+      "Allergic itch with stringy discharge and no pain, often seasonal and in both eyes, is treated with cool compresses and lubricant, not antibiotics. Confirm with the national protocol before using an antihistamine drop.",
+      "REFER THE SAME DAY: reduced vision, real pain, photophobia, hazy or ulcerated cornea, abnormal pupil, hypopyon, contact lens wearer, trauma, chemical splash, newborn, or a red eye that is worse after 48 hours of treatment.",
+      "Never start a steroid eye drop in a red eye you have not diagnosed, and never send a patient home with a bottle of topical anaesthetic.",
+      "Do not pad a discharging infected eye. Pads keep pus in and hide deterioration."
+    ],
+    drugs: [
+      {
+        id: "tetracycline-eye",
+        role: "first",
+        note: "1 % eye ointment, a ribbon in the lower lid 2–3 times daily for 5–7 days, for simple bacterial conjunctivitis. The ointment most health centres actually stock. Warn that it blurs vision for a few minutes."
+      },
+      {
+        id: "ciprofloxacin-eye",
+        role: "alternative",
+        note: "0.3 % drops where stocked, especially for a contact lens wearer or a discharging eye while referral is arranged. Drops are easier to give often than ointment."
+      },
+      {
+        id: "fluorescein",
+        role: "supportive",
+        note: "Strip or drop plus a blue light. Without a slit lamp this is the most useful test you have: it shows abrasions, ulcers and the branching pattern of a herpes dendrite."
+      },
+      {
+        id: "tetracaine-eye",
+        role: "adjunct",
+        note: "One drop in the clinic only, to let you open a spasming lid, evert it and remove a foreign body. Use it, then keep the bottle. Never dispense it."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "Oral analgesia. If paracetamol is not enough for a red eye, the diagnosis is not conjunctivitis."
+      },
+      {
+        id: "prednisolone-eye",
+        role: "avoid",
+        note: "Do not start a steroid drop in an undiagnosed red eye. On a herpes dendrite it produces a large geographic ulcer; on a bacterial or fungal ulcer it accelerates destruction; used for weeks it causes glaucoma and cataract. Steroid drops belong to someone with a slit lamp."
+      },
+      {
+        id: "dexamethasone",
+        role: "avoid",
+        note: "The same rule for every steroid, including injectable dexamethasone used as a drop and the combined antibiotic-plus-steroid drops sold over the counter. Read the label of anything the patient brings."
+      },
+      {
+        id: "atropine-eye",
+        role: "adjunct",
+        note: "If this is uveitis (deep ache, photophobia, reduced vision, small or irregular pupil): 1 % twice daily for the pain and to stop the iris scarring to the lens. It is given with a steroid, never instead of one."
+      },
+      {
+        id: "acetazolamide",
+        role: "adjunct",
+        note: "If the eye is hard as a marble with a hazy cornea, a mid-dilated fixed pupil, vomiting and halos, this is acute angle closure, not conjunctivitis: 500 mg IV or orally at once and refer today."
+      }
+    ],
+    sources: [
+      { name: "WHO Regional Office for Africa. Primary eye care training manual, 2018" },
+      { name: "WHO Pocket Book of Hospital Care for Children, 2013" },
+      { name: "AAO Basic and Clinical Science Course, Section 8: External Disease and Cornea" },
+      {
+        name: "Ethiopian national standard treatment guidelines — confirm the current edition for drop choice and duration"
+      }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "If sight improves when the patient looks through a pinhole, the blur is usually refractive rather than disease of the eye itself; the useful pinhole size is about 1.2 mm.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 3 Optics of the Human Eye, pdf p. 147"
+      },
+      {
+        book: "bcsc",
+        text: "Contact lens wearers must be told they carry an increased risk of bacterial keratitis and taught the symptoms that mean they need to be seen.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 232"
+      },
+      {
+        book: "bcsc",
+        text: "A direct ophthalmoscope uses the patient's own eye as a simple magnifier and is the instrument for checking the red reflex.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 8 Optical Instruments, pdf p. 298"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "acute-angle-closure-glaucoma",
+    name: "Acute angle-closure glaucoma",
+    group: "eye",
+    aka: ["acute glaucoma", "angle closure", "hard painful eye", "haloes around lights"],
+    summary: "The pressure in one eye rises within hours and the optic nerve dies. It is one of the few eye emergencies where the drugs in a district hospital cupboard change the outcome — but they only buy time. The cure is a laser or surgical hole in the iris.",
+    redflags: [
+      "Severe pain in one eye and the brow, with nausea and vomiting — often mistaken for migraine, malaria or an acute abdomen",
+      "Coloured haloes or rainbow rings around lights",
+      "Vision suddenly down to counting fingers or worse",
+      "Mid-dilated, often oval pupil that does not react to light",
+      "Hazy, steamy cornea that dulls the iris pattern",
+      "Eye feels hard as a marble compared with the other eye on gentle finger palpation",
+      "Started in the dark, after a dilating drop, or after an anticholinergic drug"
+    ],
+    steps: [
+      "Confirm at the bedside: ask the patient to look down, and roll both index fingers gently on the upper lid of each eye in turn. The affected eye feels stony hard next to the normal one. A hard eye, a hazy cornea and a fixed mid-dilated pupil is enough to start treatment without a tonometer.",
+      "Check the vision in both eyes and write it down before treatment, so you can tell whether you are winning.",
+      "Lie the patient flat on their back. This can let the lens fall back a little and open the angle.",
+      "Give acetazolamide 500 mg by mouth or IV immediately, then 250 mg every 6 hours. Do not use it in sulfonamide allergy, sickle cell disease or severe kidney or liver failure. Confirm the dose with the national protocol.",
+      "Add timolol 0.5 % one drop to the affected eye. Ask about asthma, COPD and slow pulse first.",
+      "Add pilocarpine 2 % one drop, repeated after 15 minutes, then four times daily. It often does nothing until the pressure has started to fall, because a very high pressure makes the iris muscle ischaemic — so give it after acetazolamide and timolol, and give it again once they are working.",
+      "Treat the pain and the vomiting properly. Retching raises the pressure further and makes everything worse.",
+      "Reassess after 30–60 minutes: is the pain easing, the cornea clearing, the pupil starting to move? If nothing has changed and mannitol is available and safe, give it.",
+      "REFER THE SAME DAY for laser peripheral iridotomy, or surgical iridectomy where there is no laser. Medicine alone does not cure this and the attack can recur the moment the drops stop.",
+      "Tell the referral centre that the other eye is anatomically the same and is usually treated prophylactically at the same visit.",
+      "Do NOT dilate the pupil. Do not give systemic atropine or hyoscine. Look through the list of everything the patient is already taking for anticholinergics, and stop what you can.",
+      "Not every hard painful eye is primary angle closure: a swollen cataract, uveitis, or trauma can do the same. Refer regardless; the emergency drugs are similar."
+    ],
+    drugs: [
+      {
+        id: "acetazolamide",
+        role: "first",
+        note: "500 mg orally or IV stat, then 250 mg every 6 hours. Cuts aqueous production. Avoid in sulfonamide allergy, sickle cell disease and severe renal or hepatic failure. Expect tingling of the fingers and a metallic taste. Confirm with the national protocol."
+      },
+      {
+        id: "timolol-eye",
+        role: "first",
+        note: "0.5 %, one drop to the affected eye, repeat after 30 minutes then twice daily. Use 0.25 % or omit in asthma, COPD, heart block or bradycardia — it is absorbed systemically. Pressing on the inner corner of the lid for a minute after the drop reduces that."
+      },
+      {
+        id: "pilocarpine-eye",
+        role: "first",
+        note: "2 % one drop, repeat at 15 minutes, then four times daily. Pulls the iris out of the angle. Usually ineffective while the pressure is very high — repeat it after acetazolamide and timolol have acted. It blurs near vision and causes a brow ache."
+      },
+      {
+        id: "mannitol",
+        role: "alternative",
+        note: "1–2 g/kg IV over 30–60 minutes when the pressure will not come down with everything above. Do not use in heart failure, pulmonary oedema or anuric renal failure. Catheterise first — the diuresis is large and a full bladder in a vomiting patient is miserable. Confirm with the national protocol."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "Regular oral analgesia; rarely enough on its own in a full-blown attack."
+      },
+      {
+        id: "morphine",
+        role: "adjunct",
+        note: "Titrated for severe pain. Opioids constrict the pupil, which does no harm here, but they also cause vomiting — give an antiemetic with it."
+      },
+      {
+        id: "prednisolone-eye",
+        role: "adjunct",
+        note: "A topical steroid is part of the specialist regimen once the diagnosis is certain, to settle the intense inflammation. Do not start it at a health centre where you cannot be sure the cornea is not ulcerated."
+      },
+      {
+        id: "atropine",
+        role: "avoid",
+        note: "Systemic atropine, hyoscine and other anticholinergics can precipitate or worsen angle closure by dilating the pupil. Check the patient's other medicines."
+      },
+      {
+        id: "tropicamide",
+        role: "avoid",
+        note: "Never dilate a painful red eye with a hard globe. A dilating drop given for a fundus examination is a classic way to cause this attack."
+      },
+      {
+        id: "promethazine",
+        role: "avoid",
+        note: "The usual ward antiemetic, but it has anticholinergic activity and can widen the pupil. Use metoclopramide or ondansetron instead if they are stocked; confirm with the national protocol."
+      },
+      {
+        id: "tetracaine-eye",
+        role: "supportive",
+        note: "For tonometry, and for corneal indentation if you have been taught it. Clinic use only."
+      },
+      {
+        id: "atropine-eye",
+        role: "avoid",
+        note: "Absolutely contraindicated: it dilates the pupil and pushes the iris further into the angle. The same applies to systemic anticholinergics and to nebulised ipratropium blown into the eye under a loose mask."
+      }
+    ],
+    sources: [
+      { name: "AAO Basic and Clinical Science Course, Section 10: Glaucoma" },
+      { name: "WHO Regional Office for Africa. Primary eye care training manual, 2018" },
+      {
+        name: "Ethiopian national standard treatment guidelines — confirm acetazolamide and mannitol dosing"
+      }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "A waterlogged cornea scatters light because the swelling disturbs the orderly spacing of the stromal collagen; this is the optics behind the hazy cornea and the haloes around lights.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 2 Physical Optics, pdf p. 138"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "chemical-eye-injury",
+    name: "Chemical eye injury",
+    group: "eye",
+    aka: ["alkali burn", "acid burn", "lime in the eye", "cement burn", "caustic soda"],
+    summary: "The only eye emergency where treatment starts before the history and before the vision test. Irrigate first, for longer than feels necessary. Alkali keeps burning inwards; acid tends to stop at the surface. Minutes decide whether the eye survives.",
+    redflags: [
+      "White or blanched conjunctiva and limbus instead of red — dead vessels, the worst sign",
+      "Hazy or white cornea; you cannot see the iris pattern",
+      "Alkali: lime, cement, wood-ash lye, caustic soda, ammonia, plaster, fertiliser, drain cleaner",
+      "Lime or cement particles stuck under the lids",
+      "Both eyes affected",
+      "Any loss of vision"
+    ],
+    steps: [
+      "IRRIGATE NOW. Do not take a history, do not measure vision, do not look for a doctor first. Start the fluid running within seconds of the patient arriving.",
+      "One drop of topical anaesthetic makes irrigation possible. Without it the lids clamp shut and no fluid reaches the eye.",
+      "Run Ringer's lactate or normal saline through an ordinary giving set held above the eye. Clean drinking water is better than nothing and far better than a delay while you find saline.",
+      "Irrigate continuously for at least 20–30 minutes, usually 1–2 litres. Hold the lids apart. Ask the patient to look up, down, left and right so the fluid reaches all the fornices.",
+      "Evert the upper lid and pull down the lower lid and sweep both fornices with a moistened cotton bud. Solid lime and cement particles keep releasing alkali and irrigation alone will not wash them out.",
+      "If you have litmus paper or a urine dipstick, test the pH in the lower fornix 5 minutes after stopping (not while fluid is running). Keep irrigating until it is neutral, about 7–7.5, then recheck 20–30 minutes later — alkali leaches back out of the tissue and the pH can rise again.",
+      "Do NOT try to neutralise. No acid for an alkali, no bicarbonate for an acid. The reaction gives off heat and adds a thermal burn. Water, saline or Ringer's lactate only.",
+      "Only now: measure the vision, stain with fluorescein, and examine the cornea, the limbus and the lids with a torch.",
+      "Grade roughly by how much of the limbus is white and how cloudy the cornea is. A clear cornea with a fully red limbus usually does well. Any blanching of the limbus, or a cornea through which you cannot see iris detail, is a same-day referral.",
+      "Start antibiotic ointment, a cycloplegic drop for the deep aching pain, and oral analgesia.",
+      "Find out exactly what the chemical was and send the container or the name with the patient.",
+      "Review daily. A chemically burned eye can look better on day 2 and then melt in the second week.",
+      "Ask how it happened. Assault with acid, and an injury at a workplace with no goggles, both need to be recorded."
+    ],
+    drugs: [
+      {
+        id: "tetracaine-eye",
+        role: "first",
+        note: "One drop before irrigation and repeated during it. This is what makes 30 minutes of irrigation achievable. Clinic use only — keep the bottle."
+      },
+      {
+        id: "ringers-lactate",
+        role: "first",
+        note: "The irrigation fluid, run through a giving set. Ringer's lactate is more comfortable than normal saline; either is fine. Never delay the first minute of irrigation to find the ideal fluid."
+      },
+      {
+        id: "fluorescein",
+        role: "supportive",
+        note: "After irrigation, to map the epithelial defect. Draw it or measure it so tomorrow's review means something."
+      },
+      {
+        id: "tetracycline-eye",
+        role: "first",
+        note: "1 % ointment four times daily over the raw surface to prevent infection while the epithelium closes."
+      },
+      {
+        id: "ciprofloxacin-eye",
+        role: "alternative",
+        note: "0.3 % drops four times daily where they are stocked, especially if the epithelial defect is large."
+      },
+      {
+        id: "atropine-eye",
+        role: "adjunct",
+        note: "1 % one drop 2–3 times daily. Relieves the deep ciliary spasm pain and reduces the chance of the pupil sticking to the lens. Confirm with the national protocol."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "Regular oral analgesia for days, not one dose."
+      },
+      {
+        id: "morphine",
+        role: "adjunct",
+        note: "A significant chemical burn hurts like a skin burn. Do not under-treat it."
+      },
+      {
+        id: "sodium-bicarbonate",
+        role: "avoid",
+        note: "Do not irrigate an acid burn with bicarbonate, and do not put a weak acid in an alkali burn. Neutralisation is exothermic and adds a thermal injury on top of the chemical one."
+      },
+      {
+        id: "prednisolone-eye",
+        role: "avoid",
+        note: "A topical steroid has a place in the first week in specialist hands, but after about day 7–10 it blocks collagen repair and is associated with corneal melting and perforation. Do not start it at a health centre."
+      },
+      {
+        id: "povidone-iodine",
+        role: "avoid",
+        note: "Antiseptics are not irrigation fluid. Nothing but saline, Ringer's lactate or clean water goes on a chemically burned surface."
+      }
+    ],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "WHO Regional Office for Africa. Primary eye care training manual, 2018" },
+      { name: "AAO Basic and Clinical Science Course, Section 8: External Disease and Cornea" }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "Corneal distortion or swelling reduces contrast sensitivity, so vision can stay poor and washed out even after the surface has healed.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 3 Optics of the Human Eye, pdf p. 152"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "open-globe-injury",
+    name: "Open globe injury",
+    group: "eye",
+    aka: ["penetrating eye injury", "perforated eye", "ruptured globe", "eye shield"],
+    summary: "The wall of the eye is cut or burst. From this moment everything you do is about not squeezing it. Pressure on an open globe pushes the iris, lens and vitreous out through the wound, and that eye does not come back.",
+    redflags: [
+      "A visible full-thickness cut in the cornea or sclera",
+      "Pupil pulled into a teardrop or peak pointing towards the wound",
+      "Dark tissue (iris) sitting in or under the wound",
+      "Shallow or flat front chamber; blood level in the front of the eye",
+      "The eye feels soft; the globe looks collapsed",
+      "Bright red haemorrhage all the way round the white of the eye after blunt trauma",
+      "History of hammering metal on metal, chiselling, or an explosion — an intraocular foreign body can sit in an eye that looks almost normal"
+    ],
+    steps: [
+      "STOP examining. Do not press the eye, do not force the lids open, do not use a speculum, do not check the pressure, do not irrigate, do not put any drop or ointment in.",
+      "Record the vision in both eyes if the patient can cooperate — even 'counting fingers' or 'perceives light' is valuable to the surgeon. Do not force it.",
+      "Shield the eye at once. Use a rigid eye shield, or cut the bottom off a paper or plastic cup and tape it so that it rests on the bony orbital rim and nothing touches the eye. NEVER a pad — a pad presses.",
+      "Tape a note to the shield: 'SUSPECTED OPEN GLOBE — DO NOT REMOVE'.",
+      "Nil by mouth from now. Assume theatre.",
+      "Stop everything that raises pressure inside the eye: crying, rubbing, coughing, straining, vomiting, bending. This is why good analgesia and a good antiemetic are treatment, not comfort.",
+      "Give systemic broad-spectrum antibiotics HERE, before transfer, not on arrival at the referral hospital. Endophthalmitis is what blinds these eyes.",
+      "Give tetanus prophylaxis according to the national schedule.",
+      "Ask specifically about hammering metal on metal and write the answer down. If yes, assume a metal fragment inside the eye and request a plain orbital X-ray at the referral hospital.",
+      "Do not attempt to remove any protruding object. Stabilise it and shield around it.",
+      "Refer urgently, the same day, lying quietly, escorted, eye shielded. A repair within 24 hours gives the best result.",
+      "In a child, sedation to 'get a better look' has cost eyes. A child who fights is a child who squeezes. Shield, refer, and let theatre do the examination.",
+      "Protect the other eye. Document its vision, and tell the family that long-term protective spectacles for the good eye will matter for the rest of the patient's life."
+    ],
+    drugs: [
+      {
+        id: "ceftriaxone",
+        role: "first",
+        note: "Systemic cover started before transfer: adult 1–2 g IV/IM once daily, child 50–80 mg/kg once daily. Regimens for an open globe vary — confirm with the national protocol and tell the receiving surgeon exactly what you gave and when."
+      },
+      {
+        id: "cloxacillin",
+        role: "adjunct",
+        note: "Adds Gram-positive cover where the protocol uses a two-drug combination. Staphylococci are the common endophthalmitis organisms after trauma."
+      },
+      {
+        id: "morphine",
+        role: "first",
+        note: "Proper analgesia is pressure control. A patient in severe pain writhes, screws the eyes shut and retches."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "Regular background analgesia alongside the opioid."
+      },
+      {
+        id: "promethazine",
+        role: "adjunct",
+        note: "Antiemetic. Vomiting can expel the contents of an open eye — treat nausea before it happens, especially once an opioid has been given."
+      },
+      {
+        id: "tetracycline-eye",
+        role: "avoid",
+        note: "NEVER put ointment in a suspected open globe. Ointment that enters through the wound causes a severe intraocular inflammatory reaction and makes the repair harder. Nothing goes in the eye — shield only."
+      },
+      {
+        id: "tetracaine-eye",
+        role: "avoid",
+        note: "Do not anaesthetise the eye to get a better look. It encourages you to open the lids and press. It also puts an unnecessary fluid into an open eye."
+      },
+      {
+        id: "fluorescein",
+        role: "avoid",
+        note: "The Seidel test — watching fluorescein stream away from a leaking wound — is an ophthalmologist's test at a slit lamp. At a health centre, do not instil anything into a suspected open globe."
+      },
+      {
+        id: "ketamine",
+        role: "avoid",
+        note: "Not as ward sedation to examine the eye: an open globe needs theatre, not a better look. Its use as the theatre anaesthetic is the anaesthetist's decision; the old teaching that it raises intraocular pressure is now considered overstated."
+      },
+      {
+        id: "ciprofloxacin-eye",
+        role: "avoid",
+        note: "Topical antibiotic does not treat a penetrating injury and the ointment form is harmful. Systemic antibiotics, a shield (never a pad), nil by mouth, an antiemetic so the patient does not vomit and raise the pressure, analgesia, and immediate referral to theatre."
+      },
+      {
+        id: "tropicamide",
+        role: "avoid",
+        note: "Do not dilate. Do not manipulate. Shield and refer."
+      },
+      {
+        id: "povidone-iodine",
+        role: "avoid",
+        note: "Never instil any strength into an eye with a full-thickness wound. Skin preparation around the eye is done in theatre, by the operating team."
+      }
+    ],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      {
+        name: "AAO Basic and Clinical Science Course, Section 7: Oculofacial Plastic and Orbital Surgery; Section 8: External Disease and Cornea"
+      },
+      {
+        name: "Ethiopian national standard treatment guidelines — confirm the antibiotic regimen and tetanus schedule"
+      }
+    ],
+    textbook: [],
+    review: { status: "draft" }
+  },
+  {
+    id: "corneal-ulcer",
+    name: "Corneal ulcer (bacterial keratitis)",
+    group: "eye",
+    aka: ["keratitis", "white spot on the eye", "hypopyon", "fungal ulcer", "corneal abscess"],
+    summary: "A white or grey patch on the cornea with a red, painful eye. In rural Ethiopia the story is usually a scratch from grain chaff, a stick, a thorn or a cow's tail at harvest, followed by a traditional remedy put in the eye. Left a week it perforates. Treated hourly from day one it usually heals with a scar.",
+    redflags: [
+      "White, grey or yellow opacity on the cornea",
+      "Pus level in the front chamber (hypopyon)",
+      "Pain, photophobia and reduced vision together",
+      "Branching, feathery lines that stain with fluorescein — herpes dendrite, never a steroid",
+      "Feathery edges, satellite spots, or injury with plant material — think fungus",
+      "Ulcer in the centre of the cornea, or larger than about 2 mm",
+      "Contact lens wearer",
+      "Soft eye, or dark tissue plugging the ulcer — perforation",
+      "The patient's only seeing eye"
+    ],
+    steps: [
+      "Vision in both eyes, written down, before anything else.",
+      "Ask what has already been put in the eye: plant sap, breast milk, butter, urine, herbal drops, a hot instrument. Ask kindly — if the patient feels judged they will not tell you, and it changes the picture and the risk of fungus.",
+      "Stain with fluorescein and look with a blue light. Measure the stained area with a ruler held near the eye and write the size down, or draw it. Tomorrow's review is meaningless without today's measurement.",
+      "If a laboratory exists, scrape the ulcer edge under topical anaesthetic with a sterile blade and send a Gram stain and culture before the first drop of antibiotic. If not, treat empirically — do not delay.",
+      "Start an intensive topical antibiotic: one drop EVERY HOUR, day and night, for the first 48 hours. This is the whole treatment. Four times a day fails.",
+      "Write the hourly times on a chart at the bedside and teach a relative to give them. Admit the patient if hourly drops at home are not realistic.",
+      "Add a cycloplegic: atropine 1 % two to three times daily. It relieves the deep aching pain of ciliary spasm and stops the iris sticking to the lens.",
+      "Never a steroid drop. Not in the drops you prescribe and not in anything the patient bought in a shop — check the label of every bottle they bring.",
+      "Give proper oral analgesia. A corneal ulcer is severely painful and is routinely under-treated.",
+      "Stop contact lens wear completely. Throw away the lenses, the case and the solutions. Send the lens and case for culture if the lab can take them.",
+      "Review every day. Improving means less pain, a smaller stained area and a flatter hypopyon. If it is bigger tomorrow, refer today.",
+      "Suspect fungus after injury with plant material, or when a bacterial ulcer does not improve after 48–72 hours: feathery edges, raised surface, satellite lesions. Natamycin is the drug and it is almost never stocked — refer rather than continue an antibiotic that is not working.",
+      "Refer the same day: central ulcer, vision worse than 6/60, hypopyon, ulcer over about 2 mm, thinning cornea, suspected fungus or herpes, contact lens wearer, a child, or the only eye.",
+      "Any child with a corneal ulcer plus measles or malnutrition gets high-dose vitamin A immediately — see the xerophthalmia case.",
+      "Counsel early. Many of these eyes heal to a white scar and permanently reduced vision; say so honestly at the start rather than at the end."
+    ],
+    drugs: [
+      {
+        id: "ciprofloxacin-eye",
+        role: "first",
+        note: "0.3 % drops, one drop EVERY HOUR day and night for 48 hours, then 2-hourly by day, then reduce over 1–2 weeks. Ointment at night only if hourly drops overnight are impossible. Confirm the regimen with the national protocol."
+      },
+      {
+        id: "atropine-eye",
+        role: "first",
+        note: "1 % one drop 2–3 times daily. Pain relief and prevention of posterior synechiae. Warn that vision will be blurred and the eye light-sensitive for up to two weeks after stopping."
+      },
+      {
+        id: "tetracycline-eye",
+        role: "alternative",
+        note: "1 % ointment 4–6 times daily where no fluoroquinolone drop exists. Much weaker against a true corneal ulcer — treat it as a holding measure while you arrange referral, not as the treatment."
+      },
+      {
+        id: "fluorescein",
+        role: "supportive",
+        note: "Stain and measure daily. A photograph on a phone against a ruler is an excellent record when there is no slit lamp."
+      },
+      { id: "paracetamol", role: "supportive", note: "Regular, not as required." },
+      {
+        id: "morphine",
+        role: "adjunct",
+        note: "For a large or central ulcer in the first days. Under-treated eye pain is the norm and it is avoidable."
+      },
+      {
+        id: "vitamin-a",
+        role: "adjunct",
+        note: "Any child with a corneal ulcer and measles or malnutrition: 50,000 IU under 6 months, 100,000 IU at 6–12 months, 200,000 IU over 12 months, on day 1, day 2 and day 14."
+      },
+      {
+        id: "prednisolone-eye",
+        role: "avoid",
+        note: "The single most important rule in this case. A steroid drop accelerates a bacterial ulcer, turns a herpes dendrite into a large geographic ulcer, and is catastrophic in fungal keratitis. No steroid without a slit lamp and an ophthalmologist."
+      },
+      {
+        id: "dexamethasone",
+        role: "avoid",
+        note: "The same applies to injectable dexamethasone used as an eye drop and to the combined antibiotic-plus-steroid preparations widely sold over the counter."
+      },
+      {
+        id: "tetracaine-eye",
+        role: "avoid",
+        note: "One drop in clinic for the scrape or the examination is correct. A bottle sent home is not: repeated topical anaesthetic stops the epithelium healing, is directly toxic to the cornea, and hides a worsening ulcer behind a comfortable eye. Eyes have been lost this way."
+      },
+      {
+        id: "tropicamide",
+        role: "avoid",
+        note: "Too short-acting to hold a painful ciliary spasm and it does not prevent synechiae. Use atropine 1 % for an ulcer."
+      }
+    ],
+    sources: [
+      { name: "WHO Regional Office for Africa. Primary eye care training manual, 2018" },
+      { name: "AAO Basic and Clinical Science Course, Section 8: External Disease and Cornea" },
+      {
+        name: "WHO Pocket Book of Hospital Care for Children, 2013 (measles and corneal involvement)"
+      },
+      {
+        name: "Ethiopian national standard treatment guidelines — confirm the topical antibiotic and the tapering schedule"
+      }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "Extra risk factors for lens-related infection include earlier eye infection, wearing lenses while swimming, smoke, dry eye, lid margin disease and allergy.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 232"
+      },
+      {
+        book: "bcsc",
+        text: "Rinsing a contact lens or its case in tap water risks contaminating it; peroxide systems do not kill Acanthamoeba.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 246"
+      },
+      {
+        book: "bcsc",
+        text: "An opacity in the visual pathway scatters light and can cut contrast badly even when it is small, so vision is worse than the size of the lesion suggests.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 1 Geometric Optics, pdf p. 84"
+      },
+      {
+        book: "bcsc",
+        text: "Cycloplegia means paralysing accommodation with an anticholinergic eye drop.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. Introduction, Quick-Start Guide to Optics and How to Refract, pdf p. 55"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "ophthalmia-neonatorum",
+    name: "Ophthalmia neonatorum",
+    group: "eye",
+    aka: [
+      "neonatal conjunctivitis",
+      "sticky eye in the newborn",
+      "gonococcal conjunctivitis",
+      "chlamydial conjunctivitis"
+    ],
+    summary: "Any conjunctivitis in the first 28 days of life is an emergency until proven otherwise. Gonococcus can eat through a cornea in 24–48 hours. Treatment is systemic, not a tube of ointment, and it is not finished until the mother and her partner are treated too.",
+    redflags: [
+      "Profuse thick pus, and lids so swollen the eye cannot be opened — gonococcus until proven otherwise",
+      "Onset in the first 2–5 days of life",
+      "Any haze, dullness or white spot on the cornea",
+      "A baby who is also feeding poorly, febrile, floppy, or has a swollen joint — disseminated gonococcal infection",
+      "Onset at 5–14 days with watery then mucopurulent discharge, especially with cough or fast breathing — chlamydia, which also causes pneumonia at 4–12 weeks",
+      "Mother with untreated discharge, or no antenatal care"
+    ],
+    steps: [
+      "Timing is the best clue but never reliable enough to withhold treatment. Day 1–5 with heavy pus means gonococcus; day 5–14 with less angry discharge suggests chlamydia; the first 24–48 hours with a mild watery eye after birth prophylaxis is usually chemical irritation and settles on its own.",
+      "Send a Gram stain if the laboratory can do one. Gram-negative intracellular diplococci confirm gonococcus. Do not wait for the result to start treatment.",
+      "Gonococcal: give a SINGLE dose of ceftriaxone 25–50 mg/kg IM or IV, maximum 125 mg. Do not give it with calcium-containing IV fluids such as Ringer's lactate, and avoid it in a significantly jaundiced or preterm baby — use cefotaxime 100 mg/kg where it is stocked. Confirm the dose with the national protocol.",
+      "Irrigate the eye with warm saline every 1–2 hours at first, until no more pus forms, and continue several times a day. Washing the pus out matters as much as the antibiotic.",
+      "Topical antibiotic alone NEVER treats gonococcal ophthalmia. It is an addition, not a substitute.",
+      "Chlamydial: treat systemically by mouth — erythromycin 50 mg/kg/day in four divided doses for 14 days, or azithromycin 20 mg/kg once daily for 3 days. Topical treatment does not clear the nasopharynx and does not prevent the pneumonia. Neither drug has an entry in this app yet — check stock and confirm with the national protocol.",
+      "Warn the mother about forceful vomiting in a baby under 6 weeks given erythromycin or azithromycin: infantile hypertrophic pyloric stenosis has been linked to both. It is uncommon, but she should come back.",
+      "Treat the mother AND her partner or partners for gonorrhoea and chlamydia at the same visit, with the national STI regimen. If you do not, the baby is reinfected and the mother keeps the infection. Offer HIV and syphilis testing at the same time.",
+      "Admit any baby with corneal involvement, systemic signs, or where hourly eye toilet at home is not realistic.",
+      "PREVENTION: every newborn gets a single application of tetracycline 1 % eye ointment to each eye within one hour of birth. Wipe the lids clean first, apply a ribbon in each lower lid, and do NOT irrigate the eye afterwards. Where it is out of stock, 2.5 % aqueous povidone-iodine is the alternative.",
+      "Refer the same day if the cornea is hazy or ulcerated, or if the eye is not clearly better after 24 hours of systemic treatment.",
+      "Wear gloves and wash your hands: gonococcal conjunctivitis transfers readily to the staff's own eyes."
+    ],
+    drugs: [
+      {
+        id: "ceftriaxone",
+        role: "first",
+        note: "Gonococcal ophthalmia: a SINGLE dose of 25–50 mg/kg IM or IV, maximum 125 mg. Never mix or run with calcium-containing fluids (fatal precipitation in neonates); avoid in jaundice or under 41 weeks corrected age — cefotaxime 100 mg/kg is the alternative there."
+      },
+      {
+        id: "tetracycline-eye",
+        role: "first",
+        note: "1 % ointment. Prophylaxis: one single application to each eye within 1 hour of birth, not irrigated off. Established disease: 4–6 times daily as an addition to the systemic antibiotic, never instead of it."
+      },
+      {
+        id: "povidone-iodine",
+        role: "alternative",
+        note: "2.5 % aqueous drops as birth prophylaxis where tetracycline eye ointment is out of stock. Use only the dilute aqueous preparation — the 10 % surgical scrub must never go into an eye."
+      },
+      {
+        id: "ampicillin",
+        role: "adjunct",
+        note: "With gentamicin as the neonatal sepsis regimen if the baby is systemically unwell. A septic baby with an eye infection is treated as sepsis, not as an eye."
+      },
+      {
+        id: "gentamicin",
+        role: "adjunct",
+        note: "Partner to ampicillin in the neonatal sepsis regimen. Not a substitute for ceftriaxone in gonococcal disease."
+      },
+      {
+        id: "fluorescein",
+        role: "supportive",
+        note: "Stain before you dismiss a sticky eye. A corneal ulcer in a newborn changes everything about the urgency."
+      },
+      { id: "prednisolone-eye", role: "avoid", note: "No steroid drop in a newborn eye, ever." },
+      {
+        id: "dexamethasone",
+        role: "avoid",
+        note: "The same for any steroid preparation used topically or given systemically for a neonatal red eye."
+      },
+      {
+        id: "ciprofloxacin-eye",
+        role: "alternative",
+        note: "A reasonable topical adjunct where stocked, at all ages including neonates. It does not replace the systemic antibiotic."
+      }
+    ],
+    sources: [
+      { name: "WHO Pocket Book of Hospital Care for Children, 2013" },
+      {
+        name: "WHO. Guidelines for the management of sexually transmitted infections / gonococcal infections — confirm the current edition"
+      },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 238 Gonococcal infections" },
+      {
+        name: "Ethiopian national standard treatment guidelines — confirm the neonatal doses and the maternal STI regimen"
+      }
+    ],
+    textbook: [],
+    review: { status: "draft" }
+  },
+  {
+    id: "trachoma",
+    name: "Trachoma",
+    group: "eye",
+    aka: ["TF", "TT", "trichiasis", "SAFE strategy", "blinding trachoma"],
+    summary: "A repeated chlamydial conjunctivitis of childhood that scars the upper lid over decades, turns the lashes inwards, and grinds the cornea white. Ethiopia carries one of the largest shares of the world's trachoma burden. One patient at a time does not control it: the SAFE strategy does.",
+    redflags: [
+      "Lashes touching the eyeball (trichiasis) — a surgical emergency for sight, not a chronic complaint",
+      "Corneal opacity blurring any part of the pupil margin",
+      "An adult who keeps plucking their own lashes",
+      "Pain, watering and photophobia in an adult from a trachoma-endemic district"
+    ],
+    steps: [
+      "Evert the upper lid and look at the tarsal conjunctiva in good light with a x2.5 loupe. This examination is the whole diagnosis.",
+      "Grade with the WHO simplified system. TF: five or more follicles, each at least 0.5 mm, on the central upper tarsal conjunctiva. TI: pronounced inflammatory thickening obscuring more than half the deep tarsal vessels. TS: scarring of the tarsal conjunctiva. TT: at least one lash touching the eyeball, or evidence of recent epilation. CO: corneal opacity blurring part of the pupil margin.",
+      "Active disease (TF or TI), usually in children: azithromycin 20 mg/kg as a single oral dose, maximum 1 g. Adults 1 g single dose. Confirm the dose and eligibility with the national programme.",
+      "Where azithromycin is unavailable, or for infants under 6 months: tetracycline 1 % eye ointment twice daily to both eyes for six weeks. It works, but very few families complete six weeks, which is why mass azithromycin replaced it.",
+      "Treating one child does not fix trachoma. Report the case to the woreda (district) health office and link the household to the trachoma programme.",
+      "TRICHIASIS (TT): refer for lid surgery — bilamellar tarsal rotation, which in Ethiopia is done by trained integrated eye care workers at health centre level. This is the S of SAFE.",
+      "Do not just pull the lashes out. Epilation regrows stiffer, sharper lashes within weeks and the cornea keeps being scraped. If surgery is weeks away, epilation plus a lubricant is a holding measure only, and the patient must still be booked for surgery.",
+      "Stain with fluorescein to show the corneal abrasions the lashes are causing. Showing the patient that the eye is being damaged is often what persuades them to accept surgery.",
+      "F — Facial cleanliness: wash children's faces daily with soap and water. Flies feed on discharge from the eyes and nose and carry the organism from child to child.",
+      "E — Environmental improvement: latrines, a nearer water supply, keeping animals and their dung away from the house. This is what ends transmission permanently.",
+      "Mass drug administration is decided at district level on the prevalence of TF in children aged 1–9 years: annual MDA for at least three years where TF is 10 % or more, then re-survey. MDA is given to everyone in the district over 6 months of age. Confirm the current thresholds and schedule with the national programme.",
+      "Elimination as a public health problem is defined as TF under 5 % in children aged 1–9 years, and trichiasis unknown to the health system under 0.2 % in adults aged 15 and over. Confirm against the current WHO criteria.",
+      "Screen the rest of the household. Trachoma clusters in families, and mothers and grandmothers carry most of the trichiasis."
+    ],
+    drugs: [
+      {
+        id: "tetracycline-eye",
+        role: "first",
+        note: "1 % ointment twice daily to both eyes for six weeks, for active TF or TI where azithromycin is not available and for infants under 6 months. Note: single-dose oral azithromycin 20 mg/kg (max 1 g) is the programme drug of choice but has no entry in this app yet — confirm stock and the national protocol."
+      },
+      {
+        id: "fluorescein",
+        role: "supportive",
+        note: "Stain to demonstrate the corneal abrasions caused by in-turned lashes. Evidence of corneal damage moves a trichiasis patient up the surgical list."
+      },
+      {
+        id: "tetracaine-eye",
+        role: "adjunct",
+        note: "One drop in clinic to examine a painful trichiasis eye or to epilate. Clinic use only — never dispensed."
+      },
+      {
+        id: "lidocaine",
+        role: "adjunct",
+        note: "Local infiltration for bilamellar tarsal rotation surgery, performed only by a trained surgeon or integrated eye care worker. Confirm the strength and whether adrenaline is used with the national surgical protocol."
+      },
+      {
+        id: "prednisolone-eye",
+        role: "avoid",
+        note: "Steroid drops are often sold for a 'chronic red eye'. They do nothing for trachoma and risk glaucoma, cataract and a runaway corneal infection."
+      }
+    ],
+    sources: [
+      { name: "WHO. Trachoma fact sheet and the WHO simplified trachoma grading system" },
+      { name: "WHO Alliance for the Global Elimination of Trachoma — the SAFE strategy" },
+      {
+        name: "Federal Ministry of Health, Ethiopia. National trachoma elimination programme — confirm current MDA thresholds and surgical pathways"
+      }
+    ],
+    textbook: [],
+    review: { status: "draft" }
+  },
+  {
+    id: "xerophthalmia",
+    name: "Xerophthalmia (vitamin A deficiency)",
+    group: "eye",
+    aka: ["night blindness", "Bitot spot", "keratomalacia", "vitamin A deficiency", "corneal xerosis"],
+    summary: "The eye signs of vitamin A deficiency, in order of severity. Night blindness and Bitot spots reverse within days for the cost of two capsules. Keratomalacia melts a cornea within a day and blinds the child for life. It clusters around measles and severe acute malnutrition.",
+    redflags: [
+      "ANY corneal change — dullness, a dry patch, cloudiness, a soft grey area — in a malnourished child or a child with measles is an emergency tonight, not tomorrow",
+      "Recent or current measles",
+      "Severe acute malnutrition, persistent diarrhoea, or a child no longer breastfeeding early",
+      "A mother who says the child cannot find things at dusk or will not move after dark",
+      "Both eyes affected — vitamin A deficiency is a whole-body problem"
+    ],
+    steps: [
+      "Recognise the stages (WHO classification). XN: night blindness. X1A: conjunctival xerosis — a dry, dull, wrinkled conjunctiva. X1B: Bitot spot — a foamy or cheesy triangular patch on the white of the eye, usually temporal, that cannot be wiped off. X2: corneal xerosis — the cornea loses its shine and looks dry. X3A: corneal ulceration or keratomalacia over less than a third of the cornea. X3B: a third or more. XS: corneal scar. XF: xerophthalmic fundus.",
+      "GIVE VITAMIN A NOW, by mouth, by age, on day 1, day 2 and day 14: under 6 months 50,000 IU; 6–11 months 100,000 IU; 12 months and over 200,000 IU.",
+      "Snip the capsule and squeeze the oil into the child's mouth. Do not hand a whole capsule to a small child — they choke on them. The oil can go down a nasogastric tube in an unconscious child.",
+      "Any corneal involvement: add antibiotic eye ointment three times daily, atropine 1 % one drop, and cover the eye with a shield. Let nobody press on the eye — a softened cornea perforates under a thumb.",
+      "Do not force the lids open for a better look if the cornea might perforate.",
+      "Treat the whole child at the same time: measles, diarrhoea, malnutrition, worms, any infection. The eye sign is the visible end of a systemic problem.",
+      "Give vitamin A to EVERY child with measles in a vitamin A deficient area, whether or not there are eye signs. It reduces measles deaths.",
+      "Refer the same day for any corneal involvement.",
+      "Routine supplementation in deficient areas: 100,000 IU once at 6–11 months, then 200,000 IU every 4–6 months from 12 to 59 months. Record the date on the child's card so a campaign dose is not duplicated within a month.",
+      "Dose women of child-bearing age carefully: 200,000 IU is teratogenic. A pregnant woman with night blindness gets no more than 10,000 IU daily or 25,000 IU weekly.",
+      "Food advice, because the capsule is not a cure for the diet: dark green leaves, orange and yellow fruit and vegetables, liver, eggs, milk, red palm oil. Support continued breastfeeding.",
+      "Be honest about the scar. A corneal scar left after keratomalacia will not clear. The whole point of looking for night blindness and Bitot spots is that they are the stage before blindness."
+    ],
+    drugs: [
+      {
+        id: "vitamin-a",
+        role: "first",
+        note: "The treatment. Under 6 months 50,000 IU; 6–11 months 100,000 IU; 12 months and over 200,000 IU — on day 1, day 2 and day 14. A transient bulging fontanelle or vomiting after dosing settles on its own."
+      },
+      {
+        id: "tetracycline-eye",
+        role: "first",
+        note: "1 % ointment three times daily where the cornea is involved, to prevent secondary bacterial infection of a dry, breaking-down surface."
+      },
+      {
+        id: "atropine-eye",
+        role: "adjunct",
+        note: "1 % one drop to relax the eye, ease the pain, and reduce the chance of the lens pushing out if a softened cornea perforates."
+      },
+      {
+        id: "ciprofloxacin-eye",
+        role: "alternative",
+        note: "0.3 % drops where frank corneal ulceration has developed and a fluoroquinolone is stocked — then manage as a corneal ulcer, hourly at first."
+      },
+      {
+        id: "fluorescein",
+        role: "supportive",
+        note: "Stain shows the punctate dryness before it becomes an ulcer, and maps the defect once it has. Repeat it daily."
+      },
+      {
+        id: "zinc-ors",
+        role: "supportive",
+        note: "Persistent diarrhoea is both cause and consequence. Zinc and ORS belong in the same treatment package as the vitamin A."
+      },
+      {
+        id: "prednisolone-eye",
+        role: "avoid",
+        note: "Never a steroid on a dry, thinning or melting cornea. It stops repair and invites perforation."
+      },
+      {
+        id: "tetracaine-eye",
+        role: "supportive",
+        note: "To examine an eye the child will not open. One drop, in the clinic, never dispensed."
+      }
+    ],
+    sources: [
+      {
+        name: "WHO Pocket Book of Hospital Care for Children, 2013 (measles, xerophthalmia, severe acute malnutrition)"
+      },
+      {
+        name: "WHO. Guideline: vitamin A supplementation in infants and children 6–59 months of age, 2011"
+      },
+      { name: "WHO classification of xerophthalmia (XN, X1A, X1B, X2, X3A, X3B, XS, XF)" },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 62 Severe acute malnutrition" }
+    ],
+    textbook: [],
+    review: { status: "draft" }
+  }
 ];

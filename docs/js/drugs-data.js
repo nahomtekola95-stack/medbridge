@@ -40,7 +40,8 @@ window.CATEGORIES = {
   analgesia:  "Analgesia, sedation & anaesthesia",
   haem:       "Haematology & bleeding",
   nutrition:  "Nutrition & micronutrients",
-  psychiatry: "Psychiatry & mental health"
+  psychiatry: "Psychiatry & mental health",
+  eye:        "Eye & vision"
 };
 
 window.WARDS = {
@@ -12490,5 +12491,2707 @@ window.DRUG_DB = [
     by: null,
     date: null
   }
-}
+},
+
+  /* ---- visceral leishmaniasis (kala-azar) ---- */
+  {
+    id: "liposomal-amphotericin-b",
+    name: "Liposomal amphotericin B",
+    aka: ["AmBisome", "L-AMB", "liposomal ampho B"],
+    cls: "Antileishmanial / antifungal (liposomal polyene)",
+    cat: "infection",
+    wards: ["medical", "paediatric", "maternity", "icu", "outpatient"],
+    tags: ["visceral leishmaniasis", "kala-azar", "VL-HIV", "leishmaniasis", "AmBisome"],
+    presentation: [
+      "50 mg vial of yellow lyophilised powder, usually supplied with a 5 micron filter needle.",
+      "Reconstituted with 12 mL water for injection = 4 mg/mL.",
+      "Unopened vials: store at or below 25 °C (they do NOT need a refrigerator). Reconstituted vial: 2–8 °C, use within 24 h."
+    ],
+    indications: [
+      "VL in an HIV co-infected patient in East Africa — with miltefosine (WHO first choice)",
+      "VL–HIV when miltefosine is unavailable or contraindicated — L-AMB alone",
+      "VL in pregnancy (the formulation WHO's guideline says the literature favours)",
+      "Complicated or second-line VL in HIV-negative patients in East Africa",
+      "Relapse and extended therapy after a poor response"
+    ],
+    standard: {
+      summary: "Test dose 1 mg, then 5 mg/kg by infusion over 2 h on alternate days. Reconstitute with water for injection, dilute in 5 % dextrose only, never saline.",
+      items: [
+        {
+          label: "VL–HIV, East Africa (first choice)",
+          text: "L-AMB 5 mg/kg on days 1, 3, 5, 7, 9 and 11 — up to a cumulative 30 mg/kg — TOGETHER WITH oral miltefosine 100 mg/day for 28 days. This combination is what WHO suggests over L-AMB alone (conditional recommendation, very-low-certainty evidence)."
+        },
+        {
+          label: "VL–HIV when miltefosine is not available or is contraindicated",
+          text: "L-AMB alone, 5 mg/kg on days 1–5, 10, 17 and 24 — up to a total of 40 mg/kg. Cure at day 29 was 50 % with monotherapy against 67 % with the combination in the Ethiopian trial."
+        },
+        {
+          label: "VL without HIV, East Africa",
+          text: "L-AMB is the second-line drug and the regimen for complicated cases: 3–5 mg/kg per daily dose by infusion over 6–10 days, up to a total of 30 mg/kg. First line remains a pentavalent antimonial with paromomycin for 17 days."
+        },
+        {
+          label: "Test dose and infusion",
+          text: "A 1 mg test dose by infusion is recommended, then the full dose over 2 h. Slow the drip or stop it briefly, keeping the line open with dextrose, if the patient reacts."
+        },
+        {
+          label: "Preparation",
+          text: "Reconstitute each 50 mg vial with 12 mL water for injection and shake vigorously for about 30 seconds → 4 mg/mL. Withdraw through the 5 micron filter. Dilute only in 5 % dextrose, to 0.2–2 mg/mL. NEVER reconstitute or dilute with 0.9 % saline and never add another drug to the bag (product information)."
+        },
+        {
+          label: "Poor response",
+          text: "If the patient does not respond, and after other diagnoses have been excluded, WHO suggests extending therapy — one further course of the same regimen. Patients still not responding go to rescue treatment."
+        },
+        {
+          label: "Monitoring",
+          text: "Creatinine, and potassium where possible, once or twice weekly through treatment, with potassium and magnesium replacement adjusted to the results. If renal function deteriorates, halve the dose for a few days."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Gravity infusion by drop counting — no pump",
+        best_for: "Any VL treatment centre with a giving set. This is how almost every AmBisome dose in Ethiopia is actually given.",
+        requires: ["iv", "macro_set"],
+        steps: [
+          "Work out the dose first: 5 mg/kg. A 60 kg adult needs 300 mg = 6 vials = 75 mL of the 4 mg/mL reconstituted liquid.",
+          "Dilute in 5 % dextrose to 1–2 mg/mL. 300 mg diluted to 2 mg/mL is 150 mL total; to 1 mg/mL it is 300 mL. Use the more concentrated end in a wasted, oedematous or anaemic patient who cannot take the extra fluid.",
+          "150 mL over 2 h = 75 mL/h = 25 drops/min with a 20 gtt/mL set (about 6 drops per 15 seconds).",
+          "300 mL over 2 h = 150 mL/h = 50 drops/min with a 20 gtt/mL set (about 12–13 drops per 15 seconds).",
+          "Child 20 kg: 100 mg = 25 mL of 4 mg/mL, diluted to 100 mL in a burette = 1 mg/mL. 100 mL over 2 h = 50 mL/h = 50 drops/min on a microdrip (60 gtt/mL).",
+          "Mark the bag or burette with tape at the half-way level and check at 1 h — if it is ahead, slow it; if behind, do NOT catch up by running it fast.",
+          "Use an in-line filter if the set has one; a filter pore of at least 1.0 micron is required. Do not use a smaller pore filter — it removes the liposomes.",
+          "If another drug has to go through the same cannula, flush with 5 % dextrose before and after. Never with saline."
+        ],
+        monitor: [
+          "Count the drop rate every 30 min",
+          "Pulse, respiratory rate, temperature and blood pressure before the infusion, at 30 min, and at the end",
+          "Urine output recorded on the chart every shift"
+        ],
+        cautions: [
+          "Never mix or flush with 0.9 % saline — the liposomes aggregate and the dose is lost.",
+          "Never add any other drug to the bag.",
+          "Anaphylaxis has been reported: if it happens, stop the infusion at once and give no further infusions."
+        ]
+      },
+      {
+        title: "Storing AmBisome where the power and the cold chain fail",
+        best_for: "Lowland treatment centres (Humera, Metema, Abdurafi) with heat and interrupted electricity.",
+        requires: [],
+        steps: [
+          "Unopened vials do NOT need a refrigerator — they need to stay at or below 25 °C. In a 35–40 °C lowland ward that is the real problem, not the fridge.",
+          "Keep the carton in the coolest, darkest, most ventilated store you have; put a thermometer with the stock and write the temperature down twice a day.",
+          "If the store rises above 25 °C, moving the stock into the vaccine refrigerator (2–8 °C) is a reasonable protective measure — it is not the labelled condition, so record it and tell the pharmacist.",
+          "Once reconstituted, the vial must go to 2–8 °C and be used within 24 h. If the fridge fails, reconstitute only what you will infuse in the next few hours.",
+          "Once diluted in dextrose, start the infusion within a few hours; do not keep a hanging bag overnight.",
+          "Do not use a vial that has been frozen, that is discoloured, or whose reconstituted liquid is not a clear yellow translucent suspension.",
+          "Write the reconstitution date and time on every vial. Confirm the conditions on your own carton — formulations differ."
+        ],
+        monitor: [
+          "Store thermometer read and recorded twice daily",
+          "Expiry and reconstitution times written on each vial"
+        ],
+        cautions: [
+          "A generic liposomal amphotericin B is not automatically interchangeable with AmBisome; WHO says other lipid formulations should be assessed for toxicity, bioequivalence and efficacy before clinical use."
+        ]
+      },
+      {
+        title: "Watching the infusion without a monitor",
+        best_for: "Wards with no ECG, no pulse oximeter and no daily biochemistry.",
+        requires: ["bp"],
+        steps: [
+          "Record pulse, respiratory rate, temperature and blood pressure before you start.",
+          "Sit with the patient through the 1 mg test dose and the first 15 minutes of the full dose — that is when rigors, fever, breathlessness and hypotension appear.",
+          "A temperature rise of more than 1 °C, rigors, a fast pulse or a falling blood pressure are infusion reactions: slow the drip, keep the line open with dextrose, and give paracetamol. They usually settle and later doses are easier.",
+          "Measure urine output: less than 0.5 mL/kg/h, or a patient who stops passing urine, means stop and reassess before the next dose.",
+          "Where creatinine can be done at all, do it before the first dose and then once or twice a week. If it rises, halve the dose for a few days rather than abandon the course.",
+          "Hypokalaemia and hypomagnesaemia are expected. Without a laboratory, look for new weakness, cramps, ileus or an irregular pulse and replace potassium orally; give oral potassium routinely through the course where local protocol allows."
+        ],
+        monitor: [
+          "Temperature and pulse hourly during the infusion",
+          "Urine output every shift",
+          "Creatinine and potassium once or twice weekly if available"
+        ],
+        cautions: [
+          "Do not use a patient's poor response to blame the drug before excluding TB, another opportunistic infection and malnutrition."
+        ]
+      }
+    ],
+    paediatric: [
+      "WHO states L-AMB has the highest therapeutic index and is safe to give at all ages.",
+      "None of the VL–HIV trials enrolled children, so the combination regimen in children is an extrapolation.",
+      "Use a burette so the volume cannot run in fast; 5 mg/kg diluted to 1 mg/mL over 2 h."
+    ],
+    cautions: [
+      "Contraindicated only in known hypersensitivity to amphotericin B deoxycholate.",
+      "Hypokalaemia, hypomagnesaemia, hypocalcaemia and a rising creatinine are common; replace potassium and magnesium.",
+      "Additive nephrotoxicity with tenofovir, gentamicin and other nephrotoxic drugs; additive marrow suppression with zidovudine.",
+      "Breastfeeding should be avoided unless it is vital. Check the newborn's renal function if the mother had it in the last month of pregnancy."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 5,
+      doseUnit: "mg",
+      conc: 4,
+      concUnit: "mg/mL",
+      label: "One dose (5 mg/kg); volume of the 4 mg/mL reconstituted vial, then dilute in 5 % dextrose"
+    },
+    sources: [
+      {
+        name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia, 2022"
+      },
+      {
+        name: "AmBisome (liposomal amphotericin B) product information — reconstitution, dilution, filter and storage"
+      },
+      {
+        name: "WHO Expert Committee on the Control of Leishmaniases, Technical Report Series 949, 2010"
+      }
+    ],
+    textbook: [
+      {
+        book: "whovl",
+        text: "For VL in HIV co-infected patients in East Africa, WHO suggests liposomal amphotericin B up to a cumulative 30 mg/kg, given as 5 mg/kg on days 1, 3, 5, 7, 9 and 11, together with miltefosine 100 mg daily for 28 days, in preference to L-AMB alone.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 First choice of treatment, pdf p. 35"
+      },
+      {
+        book: "whovl",
+        text: "Where miltefosine cannot be used, L-AMB alone up to a total of 40 mg/kg is the alternative.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 Recommendations, pdf p. 35"
+      },
+      {
+        book: "whovl",
+        text: "A 1 mg test dose by infusion is recommended, followed by the full dose over 2 hours, with the rate supervised and reduced or briefly stopped as needed while the line is kept open with dextrose.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1 Liposomal amphotericin B — administration, pdf p. 55"
+      },
+      {
+        book: "whovl",
+        text: "Creatinine, and potassium where possible, should be checked once or twice weekly, with potassium and magnesium replacement adjusted to the results; if renal function worsens the dose is halved for a few days.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1 Liposomal amphotericin B — administration, pdf p. 55"
+      },
+      {
+        book: "whovl",
+        text: "L-AMB is far less toxic than amphotericin B deoxycholate, but anaphylaxis has occurred; a severe reaction means stopping the infusion and giving no further doses.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.1 Liposomal amphotericin B — warning, pdf p. 56"
+      },
+      {
+        book: "whovl",
+        text: "In pregnancy the current literature favours liposomal amphotericin B for treating VL, and WHO states L-AMB has the highest therapeutic index and is safe at all ages.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations, pdf p. 46"
+      },
+      {
+        book: "whovl",
+        text: "For VL without HIV in East Africa, L-AMB is the second-line or complicated-case regimen at 3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "note",
+        text: "Reconstitution with 12 mL water for injection to 4 mg/mL, dilution in 5 % dextrose only, the 5 micron withdrawal filter and the 1.0 micron minimum in-line filter pore, and the storage conditions, come from the AmBisome product information, not from the WHO guideline. Confirm against your own carton and the national protocol.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "amphotericin-b-deoxycholate",
+    name: "Amphotericin B deoxycholate",
+    aka: ["conventional amphotericin B", "Fungizone", "AmB deoxycholate"],
+    cls: "Antileishmanial / antifungal (polyene)",
+    cat: "infection",
+    wards: ["medical", "paediatric", "icu"],
+    tags: ["visceral leishmaniasis", "kala-azar", "VL-HIV", "leishmaniasis", "cryptococcal meningitis"],
+    presentation: [
+      "50 mg vial of lyophilised powder.",
+      "Reconstituted with 10 mL water for injection = 5 mg/mL; then diluted in 5 % dextrose to about 0.1 mg/mL for infusion.",
+      "Store the dry vial at 2–8 °C, protected from light; confirm on your carton."
+    ],
+    indications: [
+      "VL where liposomal amphotericin B is out of stock or unaffordable",
+      "Secondary prophylaxis after a first VL episode in South-East Asia (1 mg/kg every 3–4 weeks)",
+      "VL in pregnancy where L-AMB is not available"
+    ],
+    standard: {
+      summary: "Use only when liposomal amphotericin B is unavailable. Far more toxic: give slowly, pre-hydrate with saline, and replace potassium and magnesium.",
+      items: [
+        {
+          label: "Say this plainly",
+          text: "Amphotericin B deoxycholate is MUCH more toxic than the liposomal form. WHO describes the lipid formulations as similarly effective but significantly less toxic. Nephrotoxicity, hypokalaemia, rigors and anaemia are the rule, not the exception. Use L-AMB if you can get it."
+        },
+        {
+          label: "VL treatment dose",
+          text: "0.75–1 mg/kg by infusion daily or on alternate days for 15–20 doses. This dose is NOT in the 2022 VL–HIV guideline; it comes from the WHO Expert Committee report (TRS 949) — confirm with the national protocol."
+        },
+        {
+          label: "Secondary prophylaxis (South-East Asia)",
+          text: "1 mg/kg every 3–4 weeks. In East Africa WHO recommends pentamidine 4 mg/kg (300 mg for an adult) every 3–4 weeks instead, and a drug different from the one used for the primary episode."
+        },
+        {
+          label: "Preparation",
+          text: "Reconstitute the 50 mg vial with 10 mL water for injection (5 mg/mL). Dilute ONLY in 5 % dextrose to about 0.1 mg/mL — 50 mg in 500 mL. It precipitates in saline and in any electrolyte solution."
+        },
+        {
+          label: "Infusion",
+          text: "Give each dose over 4–6 hours. Give a 1 mg test dose by infusion first and stay with the patient."
+        },
+        {
+          label: "Pre-hydration",
+          text: "0.9 % saline 500–1000 mL in an adult (10–20 mL/kg in a child) before each dose reduces renal injury, unless the patient has heart failure or gross oedema. The saline goes through a SEPARATE line or is finished and the line flushed with dextrose before the amphotericin starts."
+        },
+        {
+          label: "Potassium and magnesium",
+          text: "Expect potassium and magnesium to fall with every dose. Give oral potassium routinely with the course where the protocol allows, and magnesium if available; check them before starting and at least twice weekly."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Slow infusion by gravity with drop counting",
+        best_for: "Any ward with a giving set; the burette version for children.",
+        requires: ["iv", "macro_set"],
+        steps: [
+          "60 kg adult on 1 mg/kg = 60 mg. Reconstitute two vials (100 mg in 20 mL), draw 12 mL (60 mg), add to 500 mL of 5 % dextrose → about 0.12 mg/mL.",
+          "500 mL over 6 h = 83 mL/h = 28 drops/min with a 20 gtt/mL set (7 drops per 15 seconds).",
+          "500 mL over 4 h = 125 mL/h = 42 drops/min (10–11 drops per 15 seconds). Do not go faster than 4 h.",
+          "Child 20 kg on 1 mg/kg = 20 mg = 4 mL of the 5 mg/mL. Put it in a burette with 200 mL of 5 % dextrose (0.1 mg/mL) and run over 4 h = 50 mL/h = 50 drops/min on a microdrip.",
+          "Test dose: 1 mg (0.2 mL of the 5 mg/mL) in 20 mL of 5 % dextrose over 20–30 min, staying with the patient, before the first full dose.",
+          "Protect the bag from strong light where you can; a paper wrap or a pillowcase is enough.",
+          "Never run it in over less than 4 hours because the ward is busy — that is when cardiac arrest from a rapid infusion happens."
+        ],
+        monitor: [
+          "Drop rate every 30 min",
+          "Pulse, temperature and blood pressure at 0, 30 min, then hourly",
+          "Urine output every shift"
+        ],
+        cautions: [
+          "Never dilute in or flush with 0.9 % saline, Ringer's lactate or any electrolyte solution — it precipitates.",
+          "Never mix any other drug in the bag.",
+          "Rapid infusion can cause cardiac arrest, arrhythmia and shock."
+        ]
+      },
+      {
+        title: "Managing the rigors and fever without hydrocortisone protocols",
+        best_for: "Wards where every patient shakes on the drug and staff are tempted to abandon the course.",
+        requires: [],
+        steps: [
+          "Fever with shaking chills typically starts 15–20 minutes after the infusion begins. Warn the patient beforehand so they are not frightened into refusing the next dose.",
+          "Give paracetamol about 30 minutes before each infusion.",
+          "If rigors start, slow the drip; they usually settle. Restart at the slower rate.",
+          "Reactions almost always get milder with each successive dose. Record what happened so the next shift does not over-react.",
+          "Stop permanently only for anaphylaxis — swelling of the lips or tongue, wheeze, collapse — not for rigors."
+        ],
+        monitor: [
+          "Temperature before and 30 min into the infusion",
+          "Whether the reaction is milder than the previous dose"
+        ],
+        cautions: ["Do not routinely pre-medicate with steroids: they add to the hypokalaemia."]
+      },
+      {
+        title: "Renal and electrolyte monitoring with no laboratory",
+        best_for: "Health facilities with no creatinine or potassium assay.",
+        requires: [],
+        steps: [
+          "Put a fluid balance chart on the bed on day one and keep it. Falling urine output is the earliest sign you can see.",
+          "Weigh the patient twice a week: sudden weight gain means salt and water retention, weight loss means the wasting is not being corrected.",
+          "Give the saline pre-load before each dose unless the patient has heart failure — this is the single most effective thing you can do without a laboratory.",
+          "Watch for hypokalaemia clinically: new profound weakness, muscle cramps, a distended silent abdomen (ileus), or an irregular pulse. Give oral potassium and get an ECG if one exists.",
+          "Dipstick the urine for blood and protein where strips exist.",
+          "Any patient who becomes oliguric, confused or has an irregular pulse: hold the next dose and get senior help or refer."
+        ],
+        monitor: [
+          "Urine output every shift",
+          "Weight twice weekly",
+          "Pulse rhythm daily; ECG only where available"
+        ],
+        cautions: [
+          "Permanent kidney damage is more likely after large cumulative amounts (over 5 g total) or with other nephrotoxic drugs."
+        ]
+      }
+    ],
+    paediatric: [
+      "Same mg/kg dose. Always use a burette so the whole bag cannot run in.",
+      "Children dehydrate faster: give the saline pre-load and keep the fluid chart."
+    ],
+    cautions: [
+      "Far more toxic than the liposomal form — nephrotoxicity, hypokalaemia, anaemia and infusion reactions are common.",
+      "Contraindicated in known hypersensitivity to amphotericin B.",
+      "Additive nephrotoxicity with tenofovir, gentamicin, paromomycin; additive marrow suppression with zidovudine.",
+      "Hypokalaemia potentiates digoxin toxicity and prolongs the action of muscle relaxants."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 1,
+      doseUnit: "mg",
+      conc: 5,
+      concUnit: "mg/mL",
+      label: "One dose (1 mg/kg); volume of the 5 mg/mL reconstituted vial — then dilute in 5 % dextrose to about 0.1 mg/mL"
+    },
+    sources: [
+      {
+        name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia, 2022"
+      },
+      {
+        name: "WHO Expert Committee on the Control of Leishmaniases, Technical Report Series 949, 2010"
+      },
+      { name: "Amphotericin B deoxycholate product information" }
+    ],
+    textbook: [
+      {
+        book: "whovl",
+        text: "Lipid formulations of amphotericin B are about as effective as amphotericin B deoxycholate but significantly less toxic.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2 Information on leishmanial medicines, pdf p. 55"
+      },
+      {
+        book: "whovl",
+        text: "For secondary prophylaxis in South-East Asia, amphotericin B deoxycholate 1 mg/kg every 3–4 weeks is one option; in East Africa pentamidine 4 mg/kg every 3–4 weeks is recommended instead.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.3 Secondary prophylaxis, pdf p. 38"
+      },
+      {
+        book: "whovl",
+        text: "Fever with shaking chills usually begins within 15–20 minutes of starting the infusion, with malaise, weight loss, hypotension and pain at the injection site.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 85"
+      },
+      {
+        book: "whovl",
+        text: "Reduced renal function with azotaemia, hypokalaemia, renal tubular acidosis and nephrocalcinosis is very common; it usually improves when the drug is stopped but can be permanent, especially after large cumulative amounts or with other nephrotoxic drugs.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 85"
+      },
+      {
+        book: "whovl",
+        text: "Acute renal failure, anuria and oliguria are recognised, as are cardiac arrest, shock, arrhythmia and pulmonary oedema.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 85"
+      },
+      {
+        book: "whovl",
+        text: "Concurrent use with other nephrotoxic medicines increases renal toxicity and calls for intensive monitoring of renal function.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.1 Drug interactions, pdf p. 60"
+      },
+      {
+        book: "whovl",
+        text: "In pregnancy, amphotericin B deoxycholate and the lipid formulations have both been used, although the literature favours the liposomal form.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations — pregnancy, pdf p. 46"
+      },
+      {
+        book: "note",
+        text: "The VL treatment dose of 0.75–1 mg/kg for 15–20 doses is not stated in the 2022 VL–HIV guideline; it follows the WHO Expert Committee report (TRS 949, 2010). Reconstitution in water for injection, dilution in 5 % dextrose only and the saline pre-load are product-information and standard practice. Confirm with the national kala-azar protocol.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "sodium-stibogluconate",
+    name: "Sodium stibogluconate",
+    aka: ["SSG", "pentavalent antimony", "Pentostam", "antimonial"],
+    cls: "Pentavalent antimonial antileishmanial",
+    cat: "infection",
+    wards: ["medical", "paediatric", "outpatient"],
+    tags: ["visceral leishmaniasis", "kala-azar", "leishmaniasis", "SSG", "antimonial"],
+    presentation: [
+      "30 mL vial containing 100 mg/mL of pentavalent antimony (Sb5+), for IM or slow IV use.",
+      "Store below 25 °C, protected from light. Once broached, the multi-dose vial must be handled with strict asepsis and dated."
+    ],
+    indications: [
+      "First-line treatment of VL in HIV-NEGATIVE patients in East Africa, combined with paromomycin for 17 days",
+      "SSG monotherapy where paromomycin is out of stock",
+      "Rescue treatment of VL–HIV that has not responded to L-AMB plus miltefosine — with close cardiac and pancreatic monitoring"
+    ],
+    standard: {
+      summary: "20 mg Sb5+/kg once daily by deep IM injection or slow IV. Cardiotoxic and pancreatotoxic; much more dangerous in HIV.",
+      items: [
+        {
+          label: "East Africa, VL without HIV (first line)",
+          text: "SSG 20 mg Sb5+/kg/day IM or slow IV PLUS paromomycin 15 mg/kg/day IM, both for 17 days. WHO's 2022 guideline names this combination as the East African first line for HIV-negative patients but does not restate the doses — confirm the mg/kg and the duration with the national kala-azar protocol."
+        },
+        {
+          label: "SSG alone",
+          text: "20 mg Sb5+/kg/day for 30 days when paromomycin is unavailable. Longer course, more toxicity."
+        },
+        {
+          label: "In HIV coinfection",
+          text: "SSG is NOT the WHO first choice for a co-infected patient. A retrospective Ethiopian series found a cure rate of only 43 %, and WHO describes it as known to be highly toxic in HIV patients. It appears in this guideline only as rescue treatment for non-responders, alone or with paromomycin, and WHO warns that antimonials are more toxic in HIV patients and require careful monitoring for pancreatitis and cardiotoxicity. Several national programmes, including Ethiopia's, restrict antimonials in advanced HIV disease because of excess mortality — check the national protocol before you prescribe it to a co-infected patient."
+        },
+        {
+          label: "Route",
+          text: "Deep IM is the usual route in the field. If given IV it must go in slowly through a fine needle; IV administration causes pain and thrombosis."
+        },
+        {
+          label: "Before the first dose",
+          text: "Ask about palpitations, blackouts and known heart disease. Record a baseline pulse and, where a machine exists, an ECG. Check amylase or lipase at baseline if the laboratory can do it."
+        },
+        {
+          label: "Stop the drug",
+          text: "Stop for QT prolongation or new T-wave changes, syncope, an irregular or very slow pulse, or severe abdominal pain with vomiting (pancreatitis). Fatal arrhythmia is a recognised adverse effect."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "IM injection technique and site rotation over a 17–30 day course",
+        best_for: "Wards giving daily antimonial injections to wasted patients for weeks.",
+        requires: ["im"],
+        steps: [
+          "Work out the volume: 20 mg/kg ÷ 100 mg/mL. A 60 kg adult needs 1200 mg = 12 mL; a 20 kg child 400 mg = 4 mL; a 35 kg adolescent 700 mg = 7 mL.",
+          "Never put more than about 5 mL into one adult site (2 mL in a small child). Split 12 mL into three injections, or two of 6 mL if the patient tolerates it.",
+          "Use the upper outer quadrant of the buttock or the ventrogluteal site in adults; the anterolateral thigh in children under 3 years and in the very wasted.",
+          "Rotate: right buttock, left buttock, right thigh, left thigh, and back again — draw a four-site chart on the treatment card and tick the site used each day.",
+          "Use a long enough needle (38 mm green in an adult) to reach muscle; in a severely wasted kala-azar patient there is very little muscle, so pinch the muscle up and go in at 90°.",
+          "Change the needle after drawing up, aspirate before injecting, inject slowly (about 1 mL per 10 seconds), then press — do not rub.",
+          "Examine yesterday's sites before injecting today. Redness, a lump or a fluctuant swelling means a site infection or sterile abscess: stop using that area and treat.",
+          "Warm the vial to room temperature in your hand first — cold antimonial hurts more and the patients default."
+        ],
+        monitor: [
+          "Injection sites inspected daily",
+          "Pain score — a patient who starts refusing doses is usually in pain, not non-adherent"
+        ],
+        cautions: [
+          "Pain at the injection site is very common. Sterile abscesses and infection follow poor site rotation.",
+          "Never use a multi-dose vial without strict asepsis in a ward where many patients are HIV-positive."
+        ]
+      },
+      {
+        title: "Slow IV when IM is impossible",
+        best_for: "Massive wasting, bleeding tendency, or a patient who cannot tolerate IM.",
+        requires: ["iv"],
+        steps: [
+          "Dilute the day's dose in 50–100 mL of 5 % dextrose and run it over 20–30 minutes, or give it slowly through a fine needle directly into a running drip.",
+          "Watch the cannula site: thrombophlebitis and thrombosis on IV administration are recognised.",
+          "Count the pulse before, during and 10 minutes after. Stop for any new irregularity.",
+          "Do not push a large undiluted volume of antimonial into a vein."
+        ],
+        monitor: ["Pulse before, during and after each dose", "Cannula site daily"],
+        cautions: ["Pain and thrombosis on intravenous administration are listed adverse effects."]
+      },
+      {
+        title: "Watching for cardiotoxicity and pancreatitis with no ECG and no amylase",
+        best_for: "Treatment centres with no cardiac monitor and no biochemistry.",
+        requires: [],
+        steps: [
+          "Count a full 60-second pulse before EVERY dose and write it on the card. A new irregular pulse, a rate under 50, or a rate that has changed a lot from the patient's baseline means hold the dose and get help.",
+          "Ask every day: any palpitations, dizziness on standing, blackout or near-blackout? Syncope on an antimonial is an emergency — stop the drug.",
+          "Ask every day about abdominal pain. Severe upper abdominal pain boring through to the back, with vomiting and a patient who will not eat, is pancreatitis until proved otherwise: stop the drug.",
+          "Look at the eyes and skin for jaundice, and ask about nose or gum bleeding.",
+          "Keep potassium up: hypokalaemia from any cause makes antimonial arrhythmia more likely. Encourage bananas and oral potassium where available.",
+          "Do not give SSG at the same time as other QT-prolonging drugs — check the patient's full list, including any antipsychotic, amiodarone, quinine or methadone.",
+          "If an ECG machine exists anywhere in the hospital, get one before the first dose and about weekly. A QT that lengthens or T waves that flatten or invert means stop."
+        ],
+        monitor: [
+          "60-second pulse before every dose",
+          "Daily: palpitations, dizziness, syncope, abdominal pain",
+          "ECG at baseline and weekly where available"
+        ],
+        cautions: [
+          "Fatal cardiac arrhythmia is a listed adverse effect of sodium stibogluconate.",
+          "Risk is higher in HIV coinfection, malnutrition, older patients and with other QT-prolonging drugs."
+        ]
+      }
+    ],
+    paediatric: [
+      "Same 20 mg Sb5+/kg/day. Children tolerate antimonials somewhat better than adults but the injection volume is the problem.",
+      "Use the anterolateral thigh and keep each site under about 2 mL."
+    ],
+    cautions: [
+      "Cardiotoxic: ECG changes, reduced or inverted T waves, QT prolongation, fatal arrhythmia.",
+      "Pancreatitis, with a transient rise in lipase and amylase, is common.",
+      "Contraindicated in pregnancy — spontaneous abortion, preterm delivery, maternal hepatic encephalopathy and vertical transmission.",
+      "More toxic in HIV coinfection; cure rate in VL–HIV in Ethiopia was only 43 %.",
+      "Transient falls in platelets, white cells and haemoglobin; nose and gum bleeding."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 20,
+      doseUnit: "mg",
+      conc: 100,
+      concUnit: "mg Sb5+/mL",
+      label: "Daily dose (20 mg Sb5+/kg); split an adult volume over 2–3 IM sites"
+    },
+    sources: [
+      {
+        name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia, 2022"
+      },
+      {
+        name: "WHO Expert Committee on the Control of Leishmaniases, Technical Report Series 949, 2010"
+      },
+      {
+        name: "Ethiopian national guideline for diagnosis and treatment of leishmaniasis — confirm current edition"
+      }
+    ],
+    textbook: [
+      {
+        book: "whovl",
+        text: "The first-line treatment of VL in HIV-negative patients in East Africa is a pentavalent antimonial with paromomycin, given parenterally for 17 days.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "whovl",
+        text: "A retrospective Ethiopian series found only a 43 % cure rate with sodium stibogluconate in VL–HIV patients, and the drug is known to be highly toxic in HIV.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "whovl",
+        text: "Antimonials are more toxic in HIV patients and must be monitored carefully for pancreatitis and cardiotoxicity.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.5 Treatment for relapse and rescue treatment, pdf p. 45"
+      },
+      {
+        book: "whovl",
+        text: "In the Ethiopian trial, rescue treatment for non-responders was sodium stibogluconate, alone or with paromomycin.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2.3 Efficacy and safety data, pdf p. 36"
+      },
+      {
+        book: "whovl",
+        text: "Fatal cardiac arrhythmia and ECG changes — reduced T-wave amplitude, T-wave inversion and QT prolongation — are listed cardiopulmonary adverse effects.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 86"
+      },
+      {
+        book: "whovl",
+        text: "A transient rise in serum lipase and amylase and symptomatic pancreatitis are very common.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 86"
+      },
+      {
+        book: "whovl",
+        text: "Pain at the injection site after IM use, and pain and thrombosis after IV use, are very common, as are fever, rash, jaundice, myalgia and malaise.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 86"
+      },
+      {
+        book: "whovl",
+        text: "Pentavalent antimonials are contraindicated in pregnancy: spontaneous abortion, preterm delivery, maternal hepatic encephalopathy and vertical transmission.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations, footnote, pdf p. 46"
+      },
+      {
+        book: "whovl",
+        text: "Generic sodium stibogluconate is supplied as a 30 mL vial of 100 mg/mL for IM or IV use.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 2 Costs of medicines, pdf p. 83"
+      },
+      {
+        book: "note",
+        text: "The 20 mg Sb5+/kg/day dose, the 17-day SSG-plus-paromomycin course and the 30-day monotherapy course are not stated in the 2022 VL–HIV guideline; they follow the WHO Expert Committee report (TRS 949, 2010) and the East African national protocols. Confirm with the national kala-azar protocol. The guideline does not formally contraindicate SSG in HIV — it reports poor cure rates and high toxicity; national programmes restrict it in advanced HIV.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "miltefosine",
+    name: "Miltefosine",
+    aka: ["Impavido", "hexadecylphosphocholine"],
+    cls: "Oral antileishmanial (alkylphosphocholine)",
+    cat: "infection",
+    wards: ["medical", "paediatric", "outpatient"],
+    tags: ["visceral leishmaniasis", "kala-azar", "VL-HIV", "leishmaniasis", "oral"],
+    presentation: [
+      "50 mg and 10 mg capsules, oral.",
+      "Store at 20–25 °C (excursions 15–30 °C permitted). Protect from moisture — keep the capsules in the original blister until the moment of the dose."
+    ],
+    indications: [
+      "VL in an HIV co-infected patient in East Africa — 28 days with liposomal amphotericin B",
+      "VL–HIV in South-East Asia — 14 days with L-AMB",
+      "Extended therapy for a slow responder, as a second cycle with L-AMB"
+    ],
+    standard: {
+      summary: "The only oral antileishmanial. 100 mg/day for 28 days in East Africa, with L-AMB. Teratogenic: pregnancy test and contraception are mandatory.",
+      items: [
+        {
+          label: "East Africa (adult)",
+          text: "100 mg/day for 28 days, alongside L-AMB 5 mg/kg on days 1, 3, 5, 7, 9 and 11. In practice 50 mg twice daily with food."
+        },
+        {
+          label: "South-East Asia (adult)",
+          text: "100 mg/day for 14 days with the same L-AMB schedule."
+        },
+        {
+          label: "Children",
+          text: "2–11 years: 2.5 mg/kg per day. 12 years and over weighing under 25 kg: 50 mg/day. Weighing 25–50 kg: 100 mg/day. No trial of the combination enrolled children, so this is an extrapolation."
+        },
+        {
+          label: "With food, always",
+          text: "Give with food to reduce nausea, vomiting and diarrhoea. A capsule swallowed on an empty stomach is often vomited and then not absorbed."
+        },
+        {
+          label: "Women of childbearing potential",
+          text: "Contraindicated in pregnancy — it is embryotoxic and teratogenic. Obtain a urine or serum pregnancy test before the first dose. Do not prescribe it where adequate contraception cannot be assured for the whole course AND for 5 months afterwards. Vomiting and diarrhoea during treatment can stop an oral contraceptive working: an additional non-hormonal method is needed."
+        },
+        {
+          label: "Breastfeeding",
+          text: "Either the drug or nursing is stopped after a risk–benefit discussion. Breastfeeding should be avoided for 5 months after treatment."
+        },
+        {
+          label: "Monitoring",
+          text: "Platelets (it causes thrombocytopenia), creatinine, and liver transaminases and bilirubin during therapy where the laboratory can do them. Counsel about eye symptoms and arrange eye examination during and after treatment — the drug has a long half-life."
+        },
+        {
+          label: "Stop the drug",
+          text: "Stop for an exfoliative or bullous rash (Stevens–Johnson syndrome)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Supervised oral dosing on the ward and at home",
+        best_for: "A 28-day course in a migratory, food-insecure, often defaulting population.",
+        requires: ["oral"],
+        steps: [
+          "Give it with a meal, not with water alone. Time the dose to the ward food round: 50 mg with breakfast and 50 mg with the evening meal.",
+          "Watch the patient swallow and keep a tick-box card with 28 boxes, one per day, signed by the person who watched.",
+          "If the patient vomits within about an hour of the dose and you can see the capsule, or vomits repeatedly, give the dose again with food and record it. If vomiting repeats, give the next dose after a snack and consider splitting into smaller more frequent portions rather than abandoning the course.",
+          "Do not double up to make up a missed day. Record the missed dose; the course is defined in days of drug taken.",
+          "Persistent vomiting or diarrhoea causes volume depletion: push oral fluids, and ORS if the losses are large.",
+          "Part of the 28 days can be taken at home once the L-AMB infusions are finished. Before discharge: count the capsules out with the patient, write the finish date in the Ethiopian calendar, give a contact number, and name a treatment supporter in the household.",
+          "Give the patient a copy of the treatment card. Many patients are seasonal labourers who will move — write down where they will be and which centre is nearest.",
+          "Keep the capsules in the blister and out of the sun and damp; a migrant worker's bag in the lowlands is hot and humid."
+        ],
+        monitor: [
+          "Daily tick-box card, signed",
+          "Vomiting and diarrhoea recorded, not just noted",
+          "Capsule count at every follow-up visit"
+        ],
+        cautions: [
+          "A tablet handed over in a paper twist and not supervised is the commonest reason a 28-day course fails.",
+          "Nausea, vomiting and diarrhoea are the most common side effects and the commonest reason patients stop."
+        ]
+      },
+      {
+        title: "Pregnancy testing and contraception before the first capsule",
+        best_for: "Every woman of childbearing potential — the one absolute prerequisite for this drug.",
+        requires: [],
+        steps: [
+          "Do a urine pregnancy test before the first dose. No test, no miltefosine — use L-AMB alone up to 40 mg/kg instead.",
+          "Agree a contraception plan that covers the 28 days AND the 5 months after the last capsule. Write the end date on the card, in the Ethiopian calendar too.",
+          "An injectable (for example depot medroxyprogesterone) or an implant is more reliable here than an oral pill, because vomiting and diarrhoea on miltefosine can stop an oral contraceptive from being absorbed. If the woman is on a pill, add condoms for the whole period.",
+          "Explain, in her language and without an audience, why this matters: the drug damages the fetus.",
+          "If she becomes pregnant during or after treatment, record it in the pregnancy register the guideline asks centres to keep.",
+          "If contraception cannot be assured, do not prescribe miltefosine. WHO's alternative is L-AMB monotherapy up to 40 mg/kg."
+        ],
+        monitor: [
+          "Pregnancy test documented before dose 1",
+          "Contraception method and end date on the treatment card"
+        ],
+        cautions: [
+          "Miltefosine is contraindicated in pregnancy.",
+          "The guideline names the contraindication in women of childbearing potential as the only disadvantage of the combination regimen."
+        ]
+      },
+      {
+        title: "Following up eyes, platelets and liver with no laboratory",
+        best_for: "Health centres continuing the oral phase after discharge.",
+        requires: [],
+        steps: [
+          "Ask about vision at every visit: blurring, floaters, pain, redness, light sensitivity. Any new eye symptom means refer for eye examination and discuss stopping — reported ocular events include uveitis.",
+          "Check the conjunctivae and gums for bleeding and look for new bruising or petechiae; VL itself causes thrombocytopenia and miltefosine adds to it.",
+          "Look at the eyes and under the tongue for jaundice; ask about dark urine.",
+          "Look at the whole skin at each visit. A blistering or peeling rash means stop the drug immediately.",
+          "Where any laboratory exists, check platelets, creatinine and transaminases at least once during the course.",
+          "Warn male patients that scrotal pain and reduced ejaculate have been reported, so they come back rather than stop the drug silently."
+        ],
+        monitor: [
+          "Vision symptoms at every visit",
+          "Bleeding, bruising, jaundice, rash",
+          "Platelets, creatinine, transaminases where available"
+        ],
+        cautions: [
+          "Counsel every patient to have regular eye examination during and after treatment — the drug has a long half-life."
+        ]
+      }
+    ],
+    paediatric: [
+      "2–11 years: 2.5 mg/kg per day. 12 years and over under 25 kg: 50 mg/day. 25–50 kg: 100 mg/day.",
+      "No trial enrolled children; use is by extrapolation.",
+      "The 10 mg capsule makes paediatric dosing possible — do not open or split 50 mg capsules to estimate a dose."
+    ],
+    cautions: [
+      "Contraindicated in pregnancy (embryotoxic and teratogenic), in Sjögren–Larsson syndrome, and in hypersensitivity.",
+      "Contraception is required for the course and for 5 months afterwards.",
+      "Vomiting and diarrhoea are very common and can defeat an oral contraceptive and cause volume depletion.",
+      "Thrombocytopenia, raised creatinine, raised transaminases and bilirubin.",
+      "Ocular adverse events including uveitis have been reported.",
+      "Efavirenz was associated with lower miltefosine exposure in an Ethiopian study; miltefosine exposure was lower in VL–HIV patients than in HIV-negative adults."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 2.5,
+      doseUnit: "mg",
+      maxDose: 100,
+      label: "Child 2–11 years (2.5 mg/kg/day). Adults and children 25–50 kg: a flat 100 mg/day; 12 years and over under 25 kg: 50 mg/day"
+    },
+    sources: [
+      {
+        name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia, 2022"
+      },
+      { name: "Miltefosine (Impavido) product information" }
+    ],
+    textbook: [
+      {
+        book: "whovl",
+        text: "In East Africa the WHO combination is L-AMB with miltefosine 100 mg daily for 28 days; in South-East Asia the miltefosine course is 14 days.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 First choice of treatment, pdf p. 35"
+      },
+      {
+        book: "whovl",
+        text: "Miltefosine may harm the fetus and is contraindicated in pregnancy; a urine or serum pregnancy test must be obtained before giving it to a woman of reproductive age.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — contraindications, pdf p. 57"
+      },
+      {
+        book: "whovl",
+        text: "It must not be prescribed to a woman of childbearing potential unless adequate contraception can be assured for the whole treatment and for 5 months afterwards; breastfeeding should be avoided for 5 months after treatment.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — warnings, pdf p. 58"
+      },
+      {
+        book: "whovl",
+        text: "Vomiting and diarrhoea are common, may cause volume depletion, and may stop an oral contraceptive from being absorbed — an additional non-hormonal method is advised.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — gastrointestinal effects, pdf p. 59"
+      },
+      {
+        book: "whovl",
+        text: "Give it by mouth with food to lessen the gastrointestinal effects; store at 20–25 °C and protect from moisture.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — administration, pdf p. 57"
+      },
+      {
+        book: "whovl",
+        text: "Miltefosine causes thrombocytopenia and platelet counts should be monitored during therapy; renal function and liver transaminases and bilirubin should also be monitored.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — warnings, pdf pp. 58–59"
+      },
+      {
+        book: "whovl",
+        text: "Patients should be counselled and undergo regular eye examination during and after treatment, as ocular adverse events have been reported and the drug has a long half-life.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2.2 Miltefosine — ophthalmic effects, pdf p. 58"
+      },
+      {
+        book: "whovl",
+        text: "Children aged 2–11 years take 2.5 mg/kg per day; from 12 years, 50 mg/day under 25 kg and 100 mg/day at 25–50 kg.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations — children, pdf p. 46"
+      },
+      {
+        book: "whovl",
+        text: "Miltefosine does not markedly induce or inhibit human cytochrome P450 enzymes, so interactions with antiretrovirals are not expected.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.2 Drug interactions, pdf p. 60"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "paromomycin",
+    name: "Paromomycin",
+    aka: ["aminosidine", "paromomycin sulfate"],
+    cls: "Aminoglycoside antileishmanial",
+    cat: "infection",
+    wards: ["medical", "paediatric", "outpatient"],
+    tags: ["visceral leishmaniasis", "kala-azar", "leishmaniasis", "aminoglycoside"],
+    presentation: ["2 mL vial of 375 mg/mL, for IM (or IV) use.", "Store below 25 °C, protected from light."],
+    indications: [
+      "First-line treatment of VL in HIV-NEGATIVE patients in East Africa, with a pentavalent antimonial for 17 days",
+      "Rescue treatment of VL–HIV that has failed L-AMB plus miltefosine, with sodium stibogluconate",
+      "Paromomycin with miltefosine has been used for relapse in South-East Asia"
+    ],
+    standard: {
+      summary: "15 mg/kg once daily by deep IM injection for 17 days, with a pentavalent antimonial. Nephrotoxic and ototoxic.",
+      items: [
+        {
+          label: "East Africa, VL without HIV (first line)",
+          text: "Paromomycin 15 mg/kg/day IM PLUS sodium stibogluconate 20 mg Sb5+/kg/day, both for 17 days. WHO's 2022 guideline names the antimonial-plus-paromomycin combination as the East African first line for HIV-negative patients but does not restate the doses — confirm with the national kala-azar protocol."
+        },
+        {
+          label: "Monotherapy",
+          text: "20 mg/kg/day IM for 21 days has been used in East Africa where an antimonial cannot be given. Confirm with the national protocol."
+        },
+        {
+          label: "Check the label before you calculate",
+          text: "Some vials are labelled as paromomycin BASE and some as the SULFATE salt, and the mg/kg dose differs accordingly. Read the vial and the protocol together before working out the volume. If they do not match, ask the pharmacist — do not guess."
+        },
+        {
+          label: "In HIV coinfection",
+          text: "HIV-positive VL patients generally need higher doses of paromomycin and L-AMB than HIV-negative patients. Paromomycin is not part of the WHO first-line combination for co-infected patients; it appears as rescue treatment with sodium stibogluconate."
+        },
+        {
+          label: "Monitoring",
+          text: "Hearing, balance and kidney function. A reversible abnormal audiogram is a common finding; ototoxicity, conductive deafness and proteinuria are less common but real."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Deep IM injection and site rotation for a 17-day course",
+        best_for: "Daily injections in a wasted patient who is also getting daily antimonial.",
+        requires: ["im"],
+        steps: [
+          "Work out the volume: 15 mg/kg ÷ 375 mg/mL. A 60 kg adult needs 900 mg = 2.4 mL; a 35 kg patient 525 mg = 1.4 mL; a 20 kg child 300 mg = 0.8 mL. The volume is small — one site is enough.",
+          "This patient is probably getting sodium stibogluconate at the same time. Plan the sites together: put the antimonial and the paromomycin in DIFFERENT sites on the same day, and rotate both on a written four-site chart.",
+          "Upper outer quadrant of the buttock or the ventrogluteal site in adults; anterolateral thigh in small children and the very wasted.",
+          "Change the needle after drawing up, aspirate, inject slowly, then press without rubbing.",
+          "Inspect yesterday's sites before injecting. Injection-site swelling and abscess are recognised adverse effects — a fluctuant, hot or tender lump means stop using that area and treat it.",
+          "Measure small paediatric volumes with a 1 mL syringe, not a 5 mL one: 0.8 mL in a 5 mL syringe is guesswork."
+        ],
+        monitor: ["Injection sites daily", "Mild injection-site pain is expected; a hot tender lump is not"],
+        cautions: ["Do not give the antimonial and paromomycin into the same site on the same day."]
+      },
+      {
+        title: "Checking hearing with no audiometer",
+        best_for: "Every facility giving paromomycin; almost none have audiometry.",
+        requires: [],
+        steps: [
+          "Before the first dose, do a whispered-voice test: stand about an arm's length behind the patient, ask them to block the opposite ear, and whisper three numbers or words after a full exhalation. Record what they could repeat, each ear separately. That is your baseline.",
+          "Repeat it once or twice a week and at the end of the course, in a quiet room, and write the result on the treatment card each time.",
+          "Ask directly every day: any ringing in the ears, any muffled hearing, any dizziness or spinning, any unsteadiness in the dark?",
+          "A patient who starts asking you to repeat yourself, or who turns one ear towards you, has had a change in hearing until proved otherwise.",
+          "New tinnitus, a drop in the whispered-voice test, or vertigo: hold the drug and get senior advice. Hearing loss from aminoglycosides can be permanent.",
+          "Check hearing again at follow-up after the course — some loss appears late.",
+          "If the patient is also on gentamicin or amikacin for something else, that combination is a serious problem: ask whether the other aminoglycoside can be changed."
+        ],
+        monitor: [
+          "Whispered-voice test at baseline, weekly and at the end",
+          "Daily: tinnitus, muffled hearing, dizziness, unsteadiness"
+        ],
+        cautions: [
+          "Reversible abnormal audiograms are common; ototoxicity and conductive deafness are listed adverse effects."
+        ]
+      },
+      {
+        title: "Kidney monitoring with a dipstick and a fluid chart",
+        best_for: "Wards with no creatinine assay.",
+        requires: [],
+        steps: [
+          "Dipstick the urine for protein before the first dose and then twice a week — proteinuria is a listed adverse effect and the strip is usually the only test available.",
+          "Keep a fluid balance chart. A falling urine output is the sign you can see without a laboratory.",
+          "Keep the patient well hydrated; these patients are often already dehydrated, febrile and malnourished, which is exactly when aminoglycoside nephrotoxicity happens.",
+          "Where creatinine can be measured at all, do it at baseline and at least once mid-course.",
+          "If the urine output falls or protein appears and rises, hold the dose and get senior advice. Do not simply reduce the dose without advice: for aminoglycosides it is usually the interval that is lengthened, not the dose that is cut.",
+          "Avoid giving it with other nephrotoxic drugs — amphotericin B, gentamicin, tenofovir — unless there is no alternative, and then monitor intensively."
+        ],
+        monitor: [
+          "Urine dipstick for protein twice weekly",
+          "Urine output every shift",
+          "Creatinine at baseline and mid-course where available"
+        ],
+        cautions: ["Additive nephrotoxicity and ototoxicity with gentamicin, amphotericin B and tenofovir."]
+      }
+    ],
+    paediatric: [
+      "Same mg/kg dose; volumes are small, so use a 1 mL syringe.",
+      "Hearing is harder to test in a small child — ask the mother whether the child still turns to her voice and startles to sound."
+    ],
+    cautions: [
+      "Ototoxicity and conductive deafness; a reversible abnormal audiogram is common.",
+      "Proteinuria and nephrotoxicity; additive with amphotericin B, gentamicin and tenofovir.",
+      "Injection-site swelling and abscess.",
+      "Transient rises in transaminases, alkaline phosphatase and bilirubin.",
+      "Insufficient data in pregnancy; fetal ototoxicity is the main concern."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 15,
+      doseUnit: "mg",
+      conc: 375,
+      concUnit: "mg/mL",
+      label: "Daily IM dose (15 mg/kg) — check whether your vial is labelled as base or sulfate before using this volume"
+    },
+    sources: [
+      {
+        name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia, 2022"
+      },
+      {
+        name: "WHO Expert Committee on the Control of Leishmaniases, Technical Report Series 949, 2010"
+      },
+      {
+        name: "Ethiopian national guideline for diagnosis and treatment of leishmaniasis — confirm current edition"
+      }
+    ],
+    textbook: [
+      {
+        book: "whovl",
+        text: "In East Africa, VL in HIV-negative patients is treated first line with a pentavalent antimonial and paromomycin given parenterally for 17 days.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "whovl",
+        text: "HIV-positive VL patients generally need higher doses of paromomycin and L-AMB than HIV-negative patients.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
+      },
+      {
+        book: "whovl",
+        text: "Rescue treatment for non-responders in the Ethiopian trial was sodium stibogluconate, alone or with paromomycin.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2.3 Efficacy and safety data, pdf p. 36"
+      },
+      {
+        book: "whovl",
+        text: "Injection-site swelling and abscess, ototoxicity, conductive deafness and proteinuria are recognised uncommon adverse effects.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 84"
+      },
+      {
+        book: "whovl",
+        text: "Fever and a reversible abnormal audiogram are common; headache, lethargy and mild injection-site pain are very common.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 84"
+      },
+      {
+        book: "whovl",
+        text: "Nausea and a metallic taste are very common, with vomiting and pruritus common.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 3 Adverse effects, pdf p. 84"
+      },
+      {
+        book: "whovl",
+        text: "Paromomycin is supplied as a 2 mL vial of 375 mg/mL for intramuscular or intravenous use.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), Annex 2 Costs of medicines, pdf p. 83"
+      },
+      {
+        book: "whovl",
+        text: "In pregnancy the main concern with paromomycin is fetal ototoxicity, and there are insufficient data on its use in pregnant women.",
+        ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.6 Special situations, footnote, pdf p. 46"
+      },
+      {
+        book: "note",
+        text: "The 15 mg/kg/day dose with an antimonial for 17 days, and 20 mg/kg/day for 21 days as monotherapy, are not stated in the 2022 VL–HIV guideline; they follow the WHO Expert Committee report (TRS 949, 2010) and East African protocols. Vials may be labelled as base or as sulfate — confirm the labelling and the dose with the national kala-azar protocol before calculating a volume.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- eye and vision ---- */
+  {
+    id: "tetracycline-eye",
+    name: "Tetracycline eye ointment",
+    aka: ["Tetracycline hydrochloride 1 % eye ointment", "TEO"],
+    cls: "Tetracycline antibiotic, topical ocular",
+    cat: "eye",
+    wards: ["outpatient", "neonatal", "maternity", "paediatric", "emergency"],
+    tags: ["trachoma", "ophthalmia neonatorum", "conjunctivitis", "newborn eye care", "SAFE strategy"],
+    presentation: [
+      "1 % eye ointment in a 3.5 g or 5 g tube (10 mg tetracycline per gram).",
+      "Store below 25 °C. It melts and runs in a hot room but is still usable; it must never be frozen.",
+      "One tube treats one patient. Once opened, discard after 4 weeks — sooner if the tip has touched an eye."
+    ],
+    indications: [
+      "Prophylaxis of ophthalmia neonatorum — a single application to both eyes at birth",
+      "Active trachoma (individual and household treatment when azithromycin is unavailable)",
+      "Bacterial conjunctivitis",
+      "Eye care in measles and severe acute malnutrition, with vitamin A"
+    ],
+    standard: {
+      summary: "Topical only. It is one of the cheapest sight-saving medicines there is, and the birth-room dose takes fifteen seconds.",
+      items: [
+        {
+          label: "Newborn prophylaxis",
+          text: "A single 1 cm ribbon into the lower lid of EACH eye within 1 hour of birth, after wiping the lids clean with a dry sterile swab. Do not irrigate the eyes afterwards. One application only — it is not repeated."
+        },
+        {
+          label: "Trachoma (individual)",
+          text: "1 cm ribbon into both eyes twice daily for 6 weeks. Azithromycin 20 mg/kg orally as a single dose (maximum 1 g) is the preferred antibiotic and the one used for mass treatment; ointment is the alternative where azithromycin is not available or is contraindicated."
+        },
+        {
+          label: "Bacterial conjunctivitis",
+          text: "Clean the discharge away with clean water first, then 1 cm ribbon into the affected eye(s) 3 times daily for 5 days (some protocols use twice daily for 7 days — confirm with the national protocol). Treat both eyes if both are involved."
+        },
+        {
+          label: "Ophthalmia neonatorum (established disease)",
+          text: "Ointment alone is NOT adequate treatment. Gonococcal disease needs ceftriaxone 50 mg/kg IM as a single dose (maximum 150 mg) plus hourly saline irrigation; chlamydial disease needs oral erythromycin 50 mg/kg/day in 4 divided doses for 14 days. Use the ointment only as an adjunct to keep the lids clean and comfortable."
+        },
+        {
+          label: "Measles / severe acute malnutrition",
+          text: "With pus or corneal clouding: clean the eyes, then 1 cm ribbon 3 times daily until improvement, plus vitamin A on days 1, 2 and 14. Add atropine 1 % if the cornea is ulcerated."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Giving eye ointment correctly",
+        best_for: "Every facility. Most treatment failures here are technique failures, not resistance.",
+        requires: [],
+        steps: [
+          "Wash your hands. Wash them again between patients — conjunctivitis spreads on hands more than on anything else.",
+          "Wipe away crusts and discharge first with clean water or saline and a clean swab, from the inner corner outwards, using a fresh swab for each eye and each wipe. Ointment will not reach the eye through a layer of pus.",
+          "Ask the patient to look up. Pull the lower lid down with one finger to make a gutter.",
+          "Squeeze a ribbon about 1 cm long along the inside of that gutter, from the inner corner outwards. Do NOT let the nozzle touch the lashes, the lid or the eye.",
+          "Let go of the lid and ask the patient to close the eye gently for a minute; do not squeeze it shut. Wipe away the excess.",
+          "Warn the patient that vision will be blurred and greasy for 15–30 minutes. Give the last dose at bedtime so the blurring does not matter, and tell them not to ride, drive or work at height after a dose.",
+          "Show the patient or the mother how to do it, then watch them do it once before they leave."
+        ],
+        monitor: [
+          "Discharge and redness at 48 h; the eye should be clearly better by then",
+          "Pain, drop in vision or a white spot on the cornea — refer the same day"
+        ],
+        cautions: [
+          "Never touch the tube nozzle to the eye or the lid; that is how a tube becomes a source of infection.",
+          "One tube per patient. Do not use a ward tube on several children.",
+          "Ointment blurs vision. If a child needs to see for school, use the ointment at night and drops by day where drops exist."
+        ]
+      },
+      {
+        title: "Birth-room prophylaxis against ophthalmia neonatorum",
+        best_for: "Every delivery, at any level of care, including home deliveries attended by a health extension worker.",
+        requires: [],
+        steps: [
+          "Do it within 1 hour of birth, at the same time as the other newborn care steps. Do not delay skin-to-skin or the first feed for it — do it after the first breastfeed if the baby is stable.",
+          "Wipe each eyelid clean with a separate dry sterile swab. Do not open the lids forcefully.",
+          "Gently part the lids and lay a 1 cm ribbon in the lower fornix of the first eye, then, without touching the tube to anything, the second eye.",
+          "Do NOT wash or irrigate the eyes afterwards — that removes the medicine.",
+          "Record it on the newborn record. It is a single application and is not repeated.",
+          "If tetracycline is out of stock: povidone-iodine 2.5 % aqueous drops, one drop in each eye, is an equally acceptable single-dose alternative and is cheaper; erythromycin 0.5 % ointment is the other option. Never use povidone-iodine 10 %, and never use silver nitrate above 1 %.",
+          "Prophylaxis does not treat established infection. Any baby with a red, swollen or discharging eye in the first 28 days needs ceftriaxone and referral, not more ointment."
+        ],
+        monitor: [
+          "Look at the eyes again at the 6-hour and day-3 checks and at every postnatal visit",
+          "Teach the mother: sticky or swollen eyes in the first month means come back today"
+        ],
+        cautions: [
+          "Prophylaxis fails in about 1 in 10 gonococcal exposures. It is not a reason to skip treating the mother and her partner.",
+          "Do not use the mother's or a sibling's tube. Use the delivery-room tube, and replace it monthly."
+        ]
+      },
+      {
+        title: "Trachoma: treating the whole household",
+        best_for: "Dry, dusty, water-short districts where trachoma is endemic. Treating one child and sending them home to the same faces re-infects them within weeks.",
+        requires: [],
+        steps: [
+          "Trachoma is managed by the SAFE strategy, and the antibiotic is only the 'A': Surgery for trichiasis, Antibiotics, Facial cleanliness, Environmental improvement (latrines, water supply, rubbish and fly control).",
+          "Examine the everted upper lid of the child and of every household member, in good daylight, using a simple loupe if you have one. Grade with the WHO simplified system: TF (follicles), TI (intense inflammation), TS (scarring), TT (trichiasis), CO (corneal opacity).",
+          "Treat the whole household, not just the child with signs. Azithromycin 20 mg/kg orally once (maximum 1 g; adults 1 g) is the preferred treatment. Where azithromycin is unavailable: tetracycline 1 % ointment to both eyes twice daily for 6 weeks.",
+          "Six weeks of ointment is a long time and people stop early. Give the tube with a marked calendar or a simple tally card, and link the doses to two fixed events each day (morning wash, bedtime).",
+          "Teach and demonstrate face washing for every child every morning, and do not assume it is happening — ask where the water comes from and how far it is carried.",
+          "Refer anyone with trichiasis (a lash touching the globe) for lid surgery. In the meantime, epilate the offending lashes with forceps and give the family the forceps and instructions — it is a holding measure, not a treatment, and it must be repeated every few weeks.",
+          "Report the case: districts with TF of 5 % or more in children aged 1–9 qualify for mass drug administration, and a case you see is a signal."
+        ],
+        monitor: [
+          "Re-examine at 6 weeks and again at 6 months",
+          "Ask specifically about lashes rubbing and about pain in bright light"
+        ],
+        cautions: [
+          "Individual treatment does not control trachoma. If you are seeing cases, notify the woreda health office.",
+          "Oral tetracycline and doxycycline are avoided in children under 8 and in pregnancy; the 1 % eye ointment is not, because almost nothing is absorbed.",
+          "Corneal opacity from old trachoma will not improve with antibiotics — do not keep treating a blind white eye."
+        ]
+      },
+      {
+        title: "Keeping eye medicines usable in a hot clinic with no fridge",
+        best_for: "Health centres and health posts where the room reaches 30–35 °C and the fridge, if there is one, is full of vaccines.",
+        requires: [],
+        steps: [
+          "Most eye ointments and drops in this section — tetracycline, ciprofloxacin, atropine, timolol, pilocarpine, tropicamide — are stable at room temperature below 25–30 °C and do NOT need a fridge. Do not take vaccine fridge space for them.",
+          "Keep the box out of direct sun and off the metal roof side of the room. The top shelf near the ceiling is the hottest place in the building; the floor of an inner room is the coolest.",
+          "Evaporative cooling costs nothing: stand the tubes and bottles in an unglazed clay pot, wrap it in a wet cloth, and keep it in the draught of an open window or doorway. Re-wet the cloth twice a day. This reliably runs several degrees below room temperature.",
+          "Melted ointment is still active: stand the tube upright in the cool place until it firms up, and use it. Discoloured (brown or black) ointment, or drops that have become cloudy, discoloured or have visible particles, are discarded.",
+          "Write the date of opening on every tube and bottle with a marker. Discard 4 weeks after opening, or on the manufacturer's expiry, whichever is first.",
+          "Prednisolone acetate 1 % is a suspension: keep it upright, never freeze it, and shake it hard before every dose. Chloramphenicol eye drops, where stocked, are the exception that does want a fridge."
+        ],
+        monitor: [
+          "A 'discard by' date written on every opened container",
+          "Monthly stock check: pull anything discoloured, cloudy or past date"
+        ],
+        cautions: [
+          "Never freeze eye drops or ointment; freezing and thawing breaks suspensions and can crack the container seal.",
+          "A cool box with ice packs is for transport only — condensation inside a warm clinic contaminates caps."
+        ]
+      }
+    ],
+    paediatric: [
+      "The 1 % eye ointment is safe at any age, including in the newborn: systemic absorption is negligible, so the tooth staining and bone effects of oral tetracyclines do not apply.",
+      "Newborn prophylaxis is a single application to both eyes within 1 hour of birth.",
+      "In measles or severe acute malnutrition, look at the cornea: clouding or an ulcer means vitamin A now, atropine 1 %, antibiotic ointment, and a pad and shield with same-day referral."
+    ],
+    cautions: [
+      "Ointment is not adequate treatment for gonococcal or chlamydial ophthalmia neonatorum — those need systemic antibiotics.",
+      "Blurs vision for 15–30 minutes after each dose.",
+      "Sharing a tube between patients transmits infection; the nozzle becomes contaminated the first time it touches an eye.",
+      "Increasing resistance in some settings; if there is no improvement at 48–72 hours, re-examine rather than repeat the course."
+    ],
+    sources: [
+      { name: "WHO Model Formulary 2008 — tetracycline eye ointment" },
+      {
+        name: "WHO Model List of Essential Medicines (22nd list, 2021), ophthalmological preparations"
+      },
+      {
+        name: "WHO Alliance for the Global Elimination of Trachoma by 2020 — SAFE strategy and the WHO simplified trachoma grading system"
+      },
+      {
+        name: "WHO Guidelines for the management of sexually transmitted infections, 2016 (ophthalmia neonatorum)"
+      },
+      {
+        name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013 (eye problems, measles, severe malnutrition)"
+      }
+    ],
+    textbook: [],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "ciprofloxacin-eye",
+    name: "Ciprofloxacin eye drops",
+    aka: ["Ciloxan", "Ciprofloxacin 0.3 % ophthalmic solution", "Ciprofloxacin 0.3 % eye ointment"],
+    cls: "Fluoroquinolone antibiotic, topical ocular",
+    cat: "eye",
+    wards: ["outpatient", "emergency", "paediatric", "medical", "surgical"],
+    tags: ["corneal ulcer", "bacterial keratitis", "conjunctivitis", "hourly drops", "eye emergency"],
+    presentation: [
+      "0.3 % eye drops (3 mg/mL) in a 5 mL dropper bottle — about 100–125 drops per bottle.",
+      "0.3 % eye ointment in a 3.5 g tube, where stocked.",
+      "Store below 25 °C, away from light. Do not freeze. Discard 4 weeks after opening."
+    ],
+    indications: [
+      "Bacterial keratitis / corneal ulcer (the intensive hourly regimen)",
+      "Bacterial conjunctivitis not responding to simpler treatment, and in contact lens wearers",
+      "Eye injury with a corneal abrasion at risk of infection",
+      "Before and after eye surgery where the protocol specifies it"
+    ],
+    standard: {
+      summary: "Topical. A corneal ulcer is an emergency with a deadline measured in hours: the first day of treatment decides whether the eye keeps useful vision.",
+      items: [
+        {
+          label: "Corneal ulcer / bacterial keratitis — day 1",
+          text: "Loading: 1 drop every 5 minutes for the first 30 minutes (6 doses). Then 1 drop every 15 minutes for the rest of the first 6 hours, then 1 drop every 30 minutes for the remainder of the first 24 hours, DAY AND NIGHT."
+        },
+        { label: "Corneal ulcer — day 2", text: "1 drop every hour, day and night." },
+        {
+          label: "Corneal ulcer — days 3–14",
+          text: "1 drop every 4 hours, continued until the epithelium has healed and the infiltrate is shrinking. Do not stop at 5 days because the pain has gone."
+        },
+        {
+          label: "Bacterial conjunctivitis",
+          text: "1–2 drops every 2 hours while awake for 2 days, then 1–2 drops every 4 hours while awake for 5 more days. Ointment: a 1 cm ribbon 3 times daily for 2 days, then twice daily for 5 days."
+        },
+        {
+          label: "Always with the antibiotic",
+          text: "Add a cycloplegic (atropine 1 % once or twice daily) for pain and to prevent synechiae, and give oral analgesia. Do NOT pad an infected eye, and never add a steroid drop at the start."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "The hourly drop schedule for a corneal ulcer — including through the night",
+        best_for: "A district hospital or health centre with an ulcer that cannot be referred tonight. This is the single method in this section most likely to save an eye.",
+        requires: [],
+        steps: [
+          "Admit the patient. Hourly drops cannot be done from home, and an outpatient told to 'put them in often' will manage four doses a day.",
+          "Write a drug chart with a printed row for EVERY dose and clock time, including 01:00, 02:00, 03:00 and 04:00, and have the nurse sign each one. An unsigned box is a missed dose.",
+          "Day 1 loading, at the bedside, before anything else: 1 drop every 5 minutes for 30 minutes. Then every 15 minutes to 6 hours, then every 30 minutes to the end of the first 24 hours. Day 2: hourly, day and night. Days 3 onwards: 4-hourly.",
+          "Teach an attendant (the patient's relative, who is at the bedside anyway) to give the night-time drops with the nurse checking. Give them a cheap wind-up or phone alarm and a tally card with the times printed on it. This is how it is actually done where there is one nurse for the ward.",
+          "One drop is enough. The eye holds about 7 microlitres; a drop is 30–50. A second drop simply washes the first one out and empties the bottle three times as fast.",
+          "If two different drops are due at the same time, leave at least 5 minutes between them, or the second washes out the first.",
+          "Give atropine 1 % one drop twice daily for pain, oral paracetamol, and reassure: the eye will hurt for 48 hours whatever you do.",
+          "Do NOT pad the eye, do not give a steroid drop, and do not give the patient a topical anaesthetic to take away.",
+          "Mark the size of the ulcer daily: measure the white infiltrate in millimetres against a paper ruler, draw it, and note whether the patient can count fingers. Improvement means less pain, a smaller epithelial defect on fluorescein and less infiltrate — usually by 48 hours.",
+          "Refer urgently (same day) if: the ulcer is central, larger than 2 mm, there is a hypopyon, the eye is getting worse at 48 h, vision is hand movements or worse, or you suspect fungus (a gradual ulcer after injury with plant material, feathery edges, satellite lesions — extremely common after harvest work and NOT treated by ciprofloxacin)."
+        ],
+        monitor: [
+          "Every dose signed on the chart, including the night doses",
+          "Daily: pain score, visual acuity, size of the epithelial defect on fluorescein, size of the infiltrate, presence and height of hypopyon",
+          "Bottle level — a 5 mL bottle will not survive day 1 at this rate; have 3–4 bottles ready before you start"
+        ],
+        cautions: [
+          "Ciprofloxacin leaves a white crystalline deposit on the ulcer surface in about 1 in 6 patients. It looks alarming, it is not the ulcer getting worse, and it clears when the drops are reduced.",
+          "Ciprofloxacin does not treat fungal keratitis (natamycin 5 % is the drug there) and is weak against some streptococci — reassess at 48 h rather than simply continuing.",
+          "Never start a steroid drop in an ulcer at a level where the diagnosis cannot be confirmed with a slit lamp.",
+          "A contact lens wearer with an ulcer: remove the lens, keep it in a clean container for the referral centre, and suspect Pseudomonas or Acanthamoeba."
+        ]
+      },
+      {
+        title: "Giving eye drops correctly — one drop is enough",
+        best_for: "Every patient given any eye drop, at any level. Taught once, it doubles the dose that actually reaches the eye and makes the bottle last.",
+        requires: [],
+        steps: [
+          "Wash hands. Shake the bottle if it is a suspension (prednisolone acetate); check the label, the strength and the expiry, and check which eye.",
+          "Sit or lie the patient with the head tilted back, looking up at the ceiling.",
+          "Pull the lower lid down to make a pocket. Rest the heel of your hand on the patient's cheek so the bottle cannot stab the eye if they jerk.",
+          "Hold the bottle 1–2 cm above the eye. Do NOT touch the tip to the lashes, the lid, the eye or your fingers.",
+          "Let ONE drop fall into the pocket. One drop is a full dose: the eye can only hold about a tenth of it.",
+          "Ask the patient to close the eye gently — not screw it shut, which pumps the drop out — for 1–2 minutes, and to press a fingertip on the inner corner of the eye (punctal occlusion) for the same time. This keeps the drug in the eye and out of the bloodstream.",
+          "Wipe the excess off the cheek with a clean tissue. Replace the cap without touching the tip.",
+          "If the drop misses or the patient blinks it away, repeat once. If more than one medicine is due, wait 5 minutes between them, and put the ointment LAST.",
+          "A patient who cannot aim: have them lie flat with eyes closed, put the drop in the inner corner of the closed eye, then open the eye and the drop runs in."
+        ],
+        monitor: [
+          "Watch the patient give a dose themselves before they leave the clinic",
+          "Count the days a bottle lasts: far too long usually means the drops are not going in"
+        ],
+        cautions: [
+          "Two drops at once is not a double dose; it is one dose plus a wasted drop.",
+          "A tip that has touched the eye is contaminated — and the eye it touched was usually infected."
+        ]
+      },
+      {
+        title: "One bottle, one patient",
+        best_for: "Outpatient departments, eye camps and wards where a single 'clinic bottle' is used on everyone who walks in.",
+        requires: [],
+        steps: [
+          "Never use one bottle for more than one patient. The dropper tip touches lashes and lids, and organisms travel back into the bottle. Epidemic keratoconjunctivitis and Pseudomonas ulcers have been traced to shared clinic bottles.",
+          "If the drug must be given to several patients in one session (for example dilating drops at a screening camp), hold the bottle 2 cm above the eye, never touch anything, use a fresh gloved or freshly washed hand for each patient, and discard the bottle at the end of the session if any tip contact occurred.",
+          "Preferably use single-use minims for procedures, or sterile fluorescein strips instead of fluorescein solution.",
+          "Label every patient's bottle with their name and the date it was opened. Send the bottle home with the patient rather than keeping it in the ward cupboard.",
+          "Never decant eye drops into another container, never top one bottle up from another, and never dilute eye drops with tap water or 'clean' water. Tap water carries Pseudomonas and Acanthamoeba.",
+          "Discard the bottle 4 weeks after opening, or immediately if the tip touched a discharging eye, if the solution is cloudy, or if the patient has an ulcer."
+        ],
+        monitor: [
+          "Open-date written on every bottle",
+          "A cluster of red eyes in patients who attended the same clinic session is a shared-bottle outbreak until proved otherwise"
+        ],
+        cautions: [
+          "This applies with extra force to topical anaesthetic and to fluorescein solution, which support Pseudomonas growth particularly well.",
+          "Preservative in the bottle does not sterilise it, and multi-dose bottles are routinely contaminated within days of first use."
+        ]
+      },
+      {
+        title: "When only ointment is stocked",
+        best_for: "Health posts and health centres where drops have run out but a tube of antibiotic ointment is on the shelf.",
+        requires: [],
+        steps: [
+          "For conjunctivitis, ointment is fine and in children it is often better: it stays in contact longer, does not need to be repeated as often, and a child who screams and squeezes their eyes shut will still get a ribbon of ointment into the lower fornix.",
+          "For a corneal ulcer, ointment is NOT an equivalent substitute for the intensive drop regimen. It cannot be given every 15 minutes and it will not achieve the same corneal concentration. Start the ointment 2-hourly by day and 4-hourly at night, add atropine, and arrange referral today rather than tomorrow.",
+          "Do not try to make drops by melting ointment, dissolving tablets, or diluting an injectable solution. Injectable ciprofloxacin is not formulated for the eye — the pH and the preservatives damage the corneal epithelium. Fortified drops made from injectable antibiotics (for example cefazolin and gentamicin) are a real hospital technique but must be prepared under a laminar flow hood by a pharmacist with sterile diluent; do not improvise them on the ward.",
+          "If both are available, use drops by day and ointment at night — the ointment carries the patient through the hours when nobody is giving doses.",
+          "Tell the patient the ointment will blur vision for about half an hour after each dose."
+        ],
+        monitor: [
+          "Re-examine at 48 h; ointment-only treatment of a keratitis that is not improving needs referral, not a longer course"
+        ],
+        cautions: [
+          "Never put an ointment into an eye with a suspected open globe or a full-thickness laceration — it can enter the eye and cause a severe inflammatory reaction. Shield and refer.",
+          "Do not use ointment under a bandage contact lens or a pressure pad in an infected eye."
+        ]
+      }
+    ],
+    paediatric: [
+      "Topical ciprofloxacin is used at all ages, including in neonates. The cartilage concern with oral fluoroquinolones does not apply to a drop: systemic absorption is negligible.",
+      "A child with a red eye, photophobia and a white spot on the cornea has an ulcer until proved otherwise: examine with fluorescein and treat today.",
+      "In measles and severe acute malnutrition the cornea can melt in 48 hours. Give vitamin A as well, and check the cornea at every visit."
+    ],
+    cautions: [
+      "White crystalline precipitate on the ulcer is a known and harmless effect of the drug at high frequency.",
+      "No cover against fungi — suspect fungal keratitis after injury with vegetable matter, in slow ulcers with feathery margins and satellite lesions, and refer.",
+      "Transient stinging and a bitter taste at the back of the throat are normal.",
+      "Do not use in a patient with a known fluoroquinolone allergy."
+    ],
+    sources: [
+      {
+        name: "WHO Model List of Essential Medicines (22nd list, 2021) — ciprofloxacin 0.3 % eye drops"
+      },
+      { name: "Ciprofloxacin 0.3 % ophthalmic solution product information (corneal ulcer regimen)" },
+      { name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013 (eye problems)" },
+      { name: "AAO Preferred Practice Pattern: Bacterial Keratitis" }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "Contact lens care instructions state plainly that the dropper tip and the bottle must never be allowed to become contaminated.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 247"
+      },
+      {
+        book: "bcsc",
+        text: "Rinsing a lens or its case with tap water risks contamination, and serious eye infections follow when solutions are not discarded and replaced as instructed.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 246"
+      },
+      {
+        book: "bcsc",
+        text: "Anyone wearing lenses overnight must be told about the raised risk of bacterial keratitis and the symptoms that mean they need to be seen.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 232"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "atropine-eye",
+    name: "Atropine eye drops / ointment",
+    aka: ["Atropine sulfate 1 % eye drops", "Atropine 1 % eye ointment", "Cycloplegic"],
+    cls: "Antimuscarinic — long-acting cycloplegic and mydriatic, topical ocular",
+    cat: "eye",
+    wards: ["outpatient", "emergency", "paediatric", "medical", "surgical"],
+    tags: [
+      "uveitis",
+      "cycloplegia",
+      "corneal ulcer",
+      "eye trauma",
+      "amblyopia",
+      "anticholinergic toxicity"
+    ],
+    presentation: [
+      "1 % eye drops (10 mg/mL) in a 5 or 10 mL bottle; 0.5 % is made for infants and young children.",
+      "1 % eye ointment in a 3.5 g tube — the safer form in small children because much less runs down the tear duct.",
+      "Store below 25 °C. Discard 4 weeks after opening. Keep it clearly separate from the atropine INJECTION ampoules."
+    ],
+    indications: [
+      "Anterior uveitis (iritis) — relieves pain and prevents the iris sticking to the lens",
+      "Corneal ulcer and corneal abrasion with severe ciliary spasm",
+      "Blunt or penetrating eye trauma, traumatic iritis and hyphaema",
+      "Cycloplegic refraction in children when tropicamide or cyclopentolate is not enough",
+      "Penalisation of the better-seeing eye in amblyopia"
+    ],
+    standard: {
+      summary: "Topical. Two effects, both useful: it paralyses the ciliary muscle (which is what hurts in uveitis) and it dilates the pupil (which stops the iris scarring down onto the lens). It lasts a long time — 7 to 14 days from one dose.",
+      items: [
+        {
+          label: "Anterior uveitis",
+          text: "1 drop of 1 % two or three times daily until the anterior chamber is quiet and the pain has gone, then reduce. It is given WITH a steroid drop, never instead of one."
+        },
+        {
+          label: "Corneal ulcer / abrasion with spasm",
+          text: "1 drop of 1 % once or twice daily for pain. It does not treat the ulcer; the antibiotic does."
+        },
+        {
+          label: "Blunt trauma and hyphaema",
+          text: "1 drop of 1 % once or twice daily; keeps the eye comfortable and the pupil dilated while the blood clears. Combine with rest, head elevation and a shield."
+        },
+        {
+          label: "Cycloplegic refraction (child)",
+          text: "1 % ointment (not drops) into both eyes twice daily for 3 days before the examination, in children over 3 months; 0.5 % under 3 months. Refract on day 4. This is a specialist request — it is not needed for an ordinary sight test."
+        },
+        {
+          label: "Amblyopia penalisation",
+          text: "1 drop of 1 % into the GOOD eye — daily, or on two consecutive days each week (Saturday and Sunday), which works as well as daily dosing in moderate amblyopia. It is prescribed and followed up by an eye unit; the patch is the usual first choice."
+        },
+        {
+          label: "Severe malnutrition / measles with corneal ulceration",
+          text: "1 drop of 1 % to relax the eye and reduce the risk of the lens being pushed out through a perforating ulcer, alongside vitamin A and an antibiotic (Nelson)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "A cycloplegic when there is no slit lamp",
+        best_for: "Health centres and district hospitals where the red painful eye has to be judged by torch, magnifying loupe and fluorescein.",
+        requires: [],
+        steps: [
+          "Decide first whether this eye should be dilated at all. Do NOT give atropine if: the eye is hard and the cornea hazy with a mid-dilated fixed pupil (acute angle closure — atropine makes it far worse); the anterior chamber looks shallow in the fellow eye when you shine a torch across the iris from the side and the far side of the iris is in shadow; there is a penetrating injury with a leaking wound (shield and refer, no drops beyond an antibiotic); or the patient is a small infant in whom you cannot supervise the dose.",
+          "Then decide whether the eye needs one. Ciliary spasm is the pain of uveitis, corneal ulcer and corneal abrasion: a deep, boring ache with photophobia and a small, sluggish, sometimes irregular pupil, worse on reading or focusing near. That pain does not respond well to paracetamol and responds within an hour to a cycloplegic.",
+          "Stain with fluorescein and look with a blue light before you decide: a branching (dendritic) ulcer means herpes simplex — give the cycloplegic for comfort, give an antiviral if you have it, and NEVER a steroid.",
+          "Look for the iris sticking to the lens (posterior synechiae): shine a torch, note the shape of the pupil; an irregular, cog-wheel or scalloped pupil that does not dilate evenly is synechiae. That is the reason to dilate: a pupil bound down in the small position scars permanently and can block the flow of aqueous.",
+          "Give 1 drop of 1 % atropine, then occlude the puncta (fingertip on the inner corner) for 2 minutes. Re-examine in 30–45 minutes: the pupil should be large and round, and the pain noticeably less. If synechiae are still tethering the pupil into a cog-wheel shape, that eye needs a specialist today.",
+          "Tell the patient before they leave that this eye will be blurred for near work and dazzled by light for one to two weeks, and give them a cheap pair of dark glasses or a wide-brimmed hat. They must not ride a motorbike or work at height.",
+          "Where a shorter action is wanted (an abrasion that will heal in two days, or an examination), homatropine 2 % (1–3 days) or cyclopentolate 1 % (about 24 hours) is preferable to atropine if stocked."
+        ],
+        monitor: [
+          "Pupil size and shape at 30–45 minutes and at each review",
+          "Pain score — a cycloplegic that has not touched the pain by the next day means the diagnosis is wrong",
+          "Visual acuity at every visit, one eye at a time"
+        ],
+        cautions: [
+          "Atropine in an eye with a narrow angle can precipitate acute angle-closure glaucoma — a blind, painful, vomiting emergency. If in doubt, use the shortest-acting agent you have, dilate only one eye, and warn the patient to return immediately with pain, halos or vomiting.",
+          "Cycloplegia for pain is an adjunct. It never replaces the antibiotic in an ulcer or the steroid in uveitis.",
+          "Only ever dilate ONE eye of a patient who is having neurological observations — and write it in large letters above the bed and in the notes."
+        ]
+      },
+      {
+        title: "Atropine safely in a small child",
+        best_for: "Infants and children under about 5, where systemic anticholinergic poisoning from an EYE DROP is a real and under-recognised event.",
+        requires: [],
+        steps: [
+          "Use the OINTMENT rather than drops wherever possible in children under 5. A drop runs straight down the nasolacrimal duct and is absorbed from the nasal mucosa with no first-pass metabolism; ointment largely stays in the eye.",
+          "Use 0.5 % in infants under 3 months and in any small or underweight child. Do not use 1 % in a newborn.",
+          "Give ONE drop or a small (0.5 cm) ribbon, and no more. The excess is not extra treatment — it is extra dose.",
+          "After instilling, press a fingertip over the inner corner of the eye (the tear sac) for 2 full minutes, and then wipe the lids and cheek dry with a tissue. These two actions cut the systemic dose by more than half.",
+          "Give the tube or bottle to ONE responsible adult, count the doses with them, and write the exact schedule down. Tell them plainly: this is a dangerous medicine if it is given more often than written, and it must be kept where a child cannot reach it.",
+          "Teach the family the warning signs and what to do: a red, hot, dry face; a dry mouth and no tears; fast heartbeat; fever without infection; a child who is drowsy, or restless, seeing things and talking nonsense. Stop the drops and come straight back.",
+          "If poisoning occurs: stop the atropine, cool the child actively (this fever comes from not being able to sweat, not from infection — sponge and fan, do not bundle), give fluids, and observe. It resolves over hours to a day or two. Physostigmine is the specific antidote but is rarely available and is not needed for an eye-drop exposure; benzodiazepines can be used for severe agitation. Do NOT give an antipsychotic — most have anticholinergic effects of their own and will make it worse."
+        ],
+        monitor: [
+          "Pulse, temperature, skin (dry or sweating), behaviour and level of consciousness at each visit",
+          "Ask specifically about flushing and fever at home",
+          "Weight, in a child who is also malnourished — small children need the lower strength"
+        ],
+        cautions: [
+          "Fatal and near-fatal atropine poisoning has been reported in small children from 1 % eye drops given too often. It is not a trivial medicine.",
+          "Children with Down syndrome, cerebral palsy, albinism or severe malnutrition are more sensitive — use 0.5 % and the shortest course.",
+          "Do not use atropine drops to treat a squint or a dilated pupil without an eye specialist's instruction.",
+          "In hot weather the inability to sweat is dangerous — keep the child out of the sun."
+        ]
+      },
+      {
+        title: "Amblyopia penalisation when there is no optometrist to follow up",
+        best_for: "Districts with one eye unit for a large catchment, where a child is started on atropine at the eye clinic and followed up locally.",
+        requires: [],
+        steps: [
+          "Understand what you are doing: the drop goes in the GOOD eye, to blur its near vision and force the lazy eye to work. Putting it in the wrong eye is a real error — write the eye on the bottle in large letters, and draw it on the card.",
+          "Glasses first. Atropine (or patching) is only started after the child has worn the correct spectacle correction for several weeks — many children improve on glasses alone.",
+          "Two consecutive days a week (for example every Saturday and Sunday) works as well as daily dosing for moderate amblyopia and is much easier for families to remember and cheaper. Daily dosing is used for severe amblyopia.",
+          "Use 1 drop of 1 % and occlude the puncta for 2 minutes; the drop is going into a healthy eye, so there is no reason to over-dose it.",
+          "At every review measure vision in EACH eye separately, with the child's glasses on, using a picture or tumbling-E chart at a measured distance with the other eye properly covered (a sticking-plaster occluder, not the child's own hand).",
+          "Watch the good eye. If vision in the treated (good) eye drops by more than one line and stays down, stop the atropine and refer — reverse amblyopia is uncommon but it happens and it is reversible if caught.",
+          "Treatment runs for months, and it is abandoned by families who were not told that. Say at the start: this will take 6 months or more, the child will complain, and stopping early wastes everything done so far.",
+          "Amblyopia treatment works best under 7 years and can still help up to about 12–17; do not turn an older child away, refer them."
+        ],
+        monitor: [
+          "Visual acuity in each eye separately at every visit, recorded as a number, not 'improved'",
+          "Any new squint, head turn or complaint of double vision",
+          "Redness or light sensitivity in the treated eye"
+        ],
+        cautions: [
+          "The drop goes in the good eye. Confirm which eye at every single visit.",
+          "The treated eye is dazzled and cannot focus for reading — arrange with the school, or the child will be punished for not seeing the board.",
+          "Do not start or change penalisation without the eye unit's instruction; the risk is treating the wrong eye or missing an organic cause of poor vision (cataract, retinoblastoma, optic nerve disease)."
+        ]
+      }
+    ],
+    paediatric: [
+      "Use 0.5 % under 3 months and prefer ointment to drops under 5 years.",
+      "Systemic anticholinergic toxicity from eye drops is a genuine paediatric emergency: flushing, fever, dry mouth, tachycardia, restlessness, hallucinations, ileus and urinary retention.",
+      "For cycloplegic refraction in children, tropicamide or cyclopentolate is tried first; atropine is used when they fail to relax accommodation (BCSC), and in infants and children with esotropia.",
+      "In severe acute malnutrition or measles with a corneal ulcer, atropine 1 % is given with vitamin A and an antibiotic ointment (Nelson)."
+    ],
+    cautions: [
+      "Can precipitate acute angle-closure glaucoma in an eye with a shallow anterior chamber.",
+      "Blurred near vision and glare for 1–2 weeks after a single dose — warn every patient, and no driving or riding.",
+      "Never confuse the 1 % eye preparation with atropine INJECTION; store them apart.",
+      "Systemic absorption is enough to matter in infants, the elderly, and people with fever in a hot climate (it blocks sweating).",
+      "Avoid in Down syndrome and in patients with prostatic symptoms or a history of urinary retention where a long-acting agent can be avoided."
+    ],
+    antidote: "There is no routine antidote for an eye-drop exposure. Stop the drug, cool the patient actively, give fluids, and observe: it wears off over hours to two days. Physostigmine 0.5–2 mg slow IV in adults (0.02 mg/kg in children) reverses severe central anticholinergic toxicity but risks bradycardia and seizures, needs ECG monitoring and atropine at the bedside, and is almost never indicated after topical use. Never use an antipsychotic for the agitation.",
+    sources: [
+      { name: "WHO Model Formulary 2008 — atropine eye preparations" },
+      { name: "WHO Model List of Essential Medicines (22nd list, 2021)" },
+      {
+        name: "Nelson Textbook of Pediatrics, 22nd ed. 2024 (severe malnutrition with corneal ulceration)"
+      },
+      {
+        name: "Pediatric Eye Disease Investigator Group (PEDIG) — Amblyopia Treatment Studies: atropine versus patching; weekend versus daily atropine"
+      },
+      {
+        name: "AAO Basic and Clinical Science Course, Section 6: Pediatric Ophthalmology and Strabismus"
+      }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "Atropine refraction may be needed in infants, in children with esotropia and in very high myopia when tropicamide or cyclopentolate does not fully paralyse accommodation in clinic.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 4 Clinical Refraction, pdf p. 191"
+      },
+      {
+        book: "bcsc",
+        text: "Atropine drops inhibit accommodation, and low-dose atropine has been studied to slow the progression of childhood myopia.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 3 Optics of the Human Eye, pdf p. 161"
+      },
+      {
+        book: "bcsc",
+        text: "Cycloplegia means paralysing accommodation with anticholinergic eye drops, and is indicated whenever the accommodative state is uncertain — routinely in children under 10.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, Quick-Start Guide to Optics and How to Refract, pdf p. 55"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "tropicamide",
+    name: "Tropicamide eye drops",
+    aka: ["Mydriacyl", "Tropicamide 0.5 % / 1 %", "with phenylephrine 2.5 %"],
+    cls: "Short-acting antimuscarinic mydriatic and cycloplegic, topical ocular",
+    cat: "eye",
+    wards: ["outpatient", "emergency", "medical", "paediatric", "neonatal"],
+    tags: [
+      "dilating drops",
+      "fundus examination",
+      "mydriatic",
+      "diabetic retinopathy",
+      "retinopathy of prematurity"
+    ],
+    presentation: [
+      "0.5 % and 1 % eye drops in 5 or 10 mL bottles.",
+      "Phenylephrine 2.5 % eye drops, used with it for a wider pupil. Phenylephrine 10 % also exists — do NOT use it.",
+      "Store below 25 °C, protect from light. Discard 4 weeks after opening."
+    ],
+    indications: [
+      "Dilating the pupil for examination of the retina and optic disc",
+      "Dilating for cataract assessment and before eye surgery",
+      "Short-acting cycloplegia for refraction in older children and adults",
+      "Retinopathy of prematurity screening (in diluted strengths, with phenylephrine)"
+    ],
+    standard: {
+      summary: "Topical, for examination. Tropicamide dilates and partly paralyses accommodation for about 4–6 hours; phenylephrine dilates only, and is added when the iris is dark or the pupil is stubborn.",
+      items: [
+        {
+          label: "Routine dilation (adult)",
+          text: "1 drop of tropicamide 1 %, repeat after 5 minutes. Examine at 20–30 minutes. Add 1 drop of phenylephrine 2.5 % at the same time for dark irides, diabetics and elderly patients."
+        },
+        {
+          label: "Cycloplegic refraction (older child / adult)",
+          text: "Tropicamide 1 %, 1 drop twice 5 minutes apart, refract at 30 minutes. It is a weak cycloplegic: in children under about 10 use cyclopentolate 1 %, and atropine if that fails (BCSC)."
+        },
+        {
+          label: "Child (over 3 months)",
+          text: "Tropicamide 0.5–1 % with phenylephrine 2.5 %, 1 drop of each, repeated once after 5–10 minutes."
+        },
+        {
+          label: "Neonate and preterm (ROP screening)",
+          text: "Use the weakest effective combination — commonly cyclopentolate 0.2 % with phenylephrine 1 %, or tropicamide 0.5 % with phenylephrine 2.5 %, 1 drop once or twice, with punctal occlusion and the excess wiped away. Confirm the strength with the national ROP protocol. NEVER phenylephrine 10 %."
+        },
+        {
+          label: "Duration",
+          text: "Pupil back to normal in 4–6 hours (tropicamide); reading vision blurred for up to 6 hours. Phenylephrine 2.5 % lasts about 3–5 hours."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Dilating for fundus examination at health-centre level",
+        best_for: "Any clinic with a direct ophthalmoscope and a patient who needs the retina or optic disc seen — diabetes, hypertension, unexplained visual loss, headache with suspected papilloedema, malaria with coma.",
+        requires: [],
+        steps: [
+          "RECORD BEFORE YOU DILATE, and write it in the notes: visual acuity in each eye; the size of both pupils; and the pupil reactions, including the swinging-torch test for a relative afferent pupillary defect. Once dilated, these cannot be assessed for hours, and the RAPD is often the single most useful sign in the eye.",
+          "Run the checklist in the 'When NOT to dilate' card below.",
+          "Explain: 'Your vision will be blurred and bright light will hurt for about 6 hours. Do not drive, ride a motorbike or work at height today. Come back at once if the eye becomes painful and red or you see rings around lights.'",
+          "Instil 1 drop of tropicamide 1 % into each eye; occlude the puncta for a minute. Repeat after 5 minutes. Add phenylephrine 2.5 % if the iris is dark brown, the patient is diabetic, or the pupil is not moving at 15 minutes.",
+          "Wait a full 20–30 minutes. Almost every failed fundus examination at this level is an examination attempted at 8 minutes.",
+          "Darken the room as much as you can: shut the door, close the shutter, hang a blanket. A dark room does more for the view than a second drop.",
+          "Examine with the direct ophthalmoscope: red reflex first from arm's length, then move in, follow a vessel back to the disc, assess the disc margin, cup and colour, then the four quadrants, then ask the patient to look straight at the light for the macula (do that last — it is the most uncomfortable).",
+          "Give the patient a piece of card or dark glasses for the walk home, and tell them how long the blur lasts."
+        ],
+        monitor: [
+          "Pupil size at 20 minutes",
+          "After the examination: ask about eye pain before the patient leaves",
+          "Diabetics: record what you saw, with a date for the next examination"
+        ],
+        cautions: [
+          "Never dilate both eyes of a patient who is having neurological observations for head injury or a stroke.",
+          "Warn about the acute angle-closure risk: it is rare after dilation (roughly 1 in 10 000–20 000) but it is blinding and it happens hours later, at home, at night.",
+          "Do not give the patient the bottle to take home."
+        ]
+      },
+      {
+        title: "When NOT to dilate — the card to keep by the ophthalmoscope",
+        best_for: "Everyone who dilates pupils. All of these are situations where dilating either harms the patient or destroys the information you need.",
+        requires: [],
+        steps: [
+          "NOT if the pupil reaction is part of the monitoring: head injury, stroke, poisoning, intracranial bleeding, any patient on neurological observations, any unconscious patient being watched for a blown pupil. If the retina genuinely must be seen, dilate ONE eye only, tell the team, write it on the observation chart and above the bed.",
+          "NOT if this eye may have acute angle closure or a very shallow anterior chamber: a hard red eye with a hazy cornea, a mid-dilated unreactive pupil, severe pain with vomiting and halos around lights. Dilating that eye is catastrophic. Screen with the oblique torch test — shine a torch across the eye from the temporal side parallel to the iris plane; if the nasal half of the iris is in shadow, the chamber is shallow: do not dilate, and refer.",
+          "NOT in a suspected open globe or penetrating injury, and not in an eye with a wound that may be leaking. Shield it and refer.",
+          "NOT before you have measured and written down the visual acuity and pupil responses.",
+          "CAUTION after intraocular lens surgery where the lens is iris-supported, and in a patient who has had laser iridotomy for angle closure — ask the eye unit first.",
+          "CAUTION with phenylephrine in a patient with uncontrolled hypertension, ischaemic heart disease, an arrhythmia, or on a monoamine oxidase inhibitor; and in low-birth-weight infants. Use tropicamide alone in those patients.",
+          "NEVER use phenylephrine 10 %. It has caused severe hypertension, arrhythmia, myocardial infarction and stroke, and it is dangerous in infants and the elderly. If only 10 % is stocked, use tropicamide alone rather than diluting it at the bedside.",
+          "If the patient is going to drive themselves home or has come alone on a motorbike and has no alternative, that is a reason to arrange the examination for another day, not to skip the drops and guess."
+        ],
+        monitor: [
+          "Whether an RAPD was documented before dilation",
+          "Pain or vomiting in the 24 hours after dilation"
+        ],
+        cautions: [
+          "A dilated pupil in a head-injured patient has been mistaken for coning and led to unnecessary emergency surgery, and a genuine coning pupil has been dismissed as 'the drops'. Both have happened.",
+          "Tropicamide is an anticholinergic: in the elderly it can contribute to confusion, and it can cause urinary retention in men with prostatic enlargement."
+        ]
+      },
+      {
+        title: "Dilating a newborn or a small infant safely",
+        best_for: "Neonatal units screening for retinopathy of prematurity, and any baby needing a red reflex or fundus examination (suspected congenital cataract, retinoblastoma, birth trauma).",
+        requires: [],
+        steps: [
+          "A red reflex check needs NO drops at all. Do it on every newborn: a dark room, a direct ophthalmoscope at arm's length set to 0, both eyes in the beam at once. Absent, dull, white or asymmetrical reflexes mean urgent referral — cataract, retinoblastoma, glaucoma. Do this before you reach for any drop.",
+          "For ROP screening and full fundus examination, use the smallest dose that works: 1 drop of the diluted combination per eye, given once and repeated once after 10–15 minutes if the pupil is not dilated. Confirm the strengths with the national ROP protocol — commonly cyclopentolate 0.2 % with phenylephrine 1 %, or tropicamide 0.5 % with phenylephrine 2.5 %.",
+          "Occlude the puncta with a fingertip for 1–2 minutes and wipe the lids and cheeks dry immediately. In a 1 kg baby, a drop that runs down the nose is a substantial systemic dose.",
+          "Do not instil more than twice. If the pupil will not dilate, that itself is information (a rigid pupil, synechiae, poor perfusion) — call the ophthalmologist rather than repeating drops.",
+          "Time the examination away from a feed, offer sucrose or breast milk on a dummy for pain, swaddle the baby, and have a second person watching the baby (not the eye) throughout.",
+          "Watch for at least 1 hour afterwards: apnoea, bradycardia, hypertension, abdominal distension and feed intolerance all follow mydriatic drops in preterm babies."
+        ],
+        monitor: [
+          "Heart rate, oxygen saturation, blood pressure and apnoea for at least 1 hour after the drops",
+          "Feeding and abdominal distension over the next 12 hours",
+          "Pupil size — it should be back to normal within 6–8 hours"
+        ],
+        cautions: [
+          "NEVER phenylephrine 10 % in a child, and never undiluted 2.5 % repeated more than twice in a preterm infant.",
+          "Anticholinergic drops slow the gut: watch for abdominal distension and vomiting in a preterm baby.",
+          "ROP screening is a timed programme (first examination at 4–6 weeks of age or 31 weeks corrected, whichever is later, for babies under 32 weeks or under 1500 g — confirm with the national protocol). A single examination is useless; missing the follow-up examination is how babies go blind."
+        ]
+      }
+    ],
+    paediatric: [
+      "Tropicamide is a weak cycloplegic: it dilates well but does not fully paralyse accommodation. Children under 10 who need an accurate refraction need cyclopentolate 1 %, or atropine if that fails (BCSC).",
+      "Use the weakest strengths in neonates, with punctal occlusion, and monitor for apnoea, bradycardia and feed intolerance.",
+      "Never use phenylephrine 10 % at any age."
+    ],
+    cautions: [
+      "Blurred near vision, glare and difficulty reading for 4–6 hours; no driving or riding.",
+      "Rare precipitation of acute angle-closure glaucoma — warn every dilated patient what to look for.",
+      "Phenylephrine raises blood pressure, especially at 10 % and in infants and the elderly.",
+      "Stings on instillation; transient flushing and a dry mouth are common in children.",
+      "Do not dilate a patient whose pupils are being watched neurologically."
+    ],
+    sources: [
+      { name: "WHO Model Formulary 2008 — mydriatics and cycloplegics" },
+      { name: "WHO Model List of Essential Medicines (22nd list, 2021)" },
+      { name: "AAO Preferred Practice Pattern: Comprehensive Adult Medical Eye Evaluation" },
+      {
+        name: "WHO / national retinopathy of prematurity screening guidance — confirm screening criteria and drop strengths locally"
+      }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "Tropicamide and cyclopentolate are the office cycloplegics; atropine is reserved for when they fail to paralyse accommodation.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 4 Clinical Refraction, pdf p. 191"
+      },
+      {
+        book: "bcsc",
+        text: "Children usually need drug-induced cycloplegia for retinoscopy because fogging alone will not relax accommodation.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 4 Clinical Refraction, pdf p. 169"
+      },
+      {
+        book: "bcsc",
+        text: "The choice and dose of cycloplegic depend on the patient's age, accommodative amplitude and refractive error.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 4 Clinical Refraction, pdf p. 185"
+      },
+      {
+        book: "bcsc",
+        text: "A dilated pupil shifts the best focus and makes the eye behave as if more myopic — one reason vision is blurred after dilating drops.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 1 Geometric Optics, pdf p. 91"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "timolol-eye",
+    name: "Timolol eye drops",
+    aka: ["Timoptol", "Timolol maleate 0.25 % / 0.5 % eye drops"],
+    cls: "Non-selective beta-blocker, topical ocular",
+    cat: "eye",
+    wards: ["outpatient", "medical", "emergency", "surgical", "paediatric"],
+    tags: [
+      "glaucoma",
+      "intraocular pressure",
+      "beta-blocker",
+      "asthma",
+      "bradycardia",
+      "punctal occlusion"
+    ],
+    presentation: [
+      "0.25 % and 0.5 % eye drops in a 5 mL bottle (about 100–125 drops).",
+      "Store below 25 °C, upright, away from light. Discard 4 weeks after opening.",
+      "A drop in the eye is a systemic dose: it drains down the tear duct and is absorbed from the nose straight into the blood, avoiding the liver."
+    ],
+    indications: [
+      "Primary open-angle glaucoma and ocular hypertension — long-term pressure control",
+      "Acute angle-closure glaucoma, as part of the emergency combination",
+      "Raised intraocular pressure after trauma, surgery or steroid use"
+    ],
+    standard: {
+      summary: "Topical, but with real systemic beta-blockade. Treat every prescription as though you were giving an oral beta-blocker, because in terms of plasma levels you nearly are.",
+      items: [
+        {
+          label: "Chronic glaucoma (adult)",
+          text: "Start 0.25 %, 1 drop twice daily. Increase to 0.5 % twice daily if the pressure is not controlled. Some patients are controlled on 0.5 % once daily in the morning — use the lowest strength and frequency that works."
+        },
+        {
+          label: "Acute angle closure",
+          text: "1 drop of 0.5 % (repeat once after 30 minutes) as part of the combination with acetazolamide and pilocarpine. It is an adjunct; acetazolamide does the heavy lifting."
+        },
+        {
+          label: "Child",
+          text: "Use 0.25 % and punctal occlusion, and only under specialist supervision. Apnoea, bradycardia and bronchospasm have been reported in infants. Congenital glaucoma is a surgical disease — drops are a holding measure until theatre."
+        },
+        {
+          label: "Before the first dose",
+          text: "Ask about asthma or wheeze (ever), chronic lung disease, heart failure, fainting and slow pulse; count the pulse; and check for a known heart block. Any of these means choose another drug."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Punctal occlusion — the two minutes that halve the systemic dose",
+        best_for: "Every patient on timolol, and useful for every eye drop with systemic effects. It costs nothing and takes two minutes.",
+        requires: [],
+        steps: [
+          "Instil ONE drop into the lower fornix.",
+          "The patient closes the eye GENTLY — not screwed shut — and does not blink.",
+          "At the same moment, press a fingertip firmly on the inner corner of the eye, against the side of the nose, over the tear sac.",
+          "Hold for 2 full minutes by the clock. Most people let go at 15 seconds; say 'count slowly to one hundred and twenty' or use the clinic clock.",
+          "Then wipe the excess off the lids and cheek with a tissue.",
+          "Doing this reduces the amount of drug reaching the bloodstream by roughly half to two-thirds, and it also increases how much stays in the eye — so it makes the drug both safer and more effective.",
+          "Teach it, then watch the patient do it before they leave, and check it again at every follow-up. It is forgotten within weeks.",
+          "If the patient cannot manage the finger, the alternative is simply to close the eyes gently and keep them closed for 3 minutes without blinking — less effective but much better than nothing."
+        ],
+        monitor: [
+          "Watch the technique at every visit",
+          "Resting pulse at every visit — a fall from 78 to 52 is the drops",
+          "Ask about new wheeze, breathlessness on the flat, cold hands, tiredness, nightmares and low mood"
+        ],
+        cautions: [
+          "This technique makes timolol safer; it does not make it safe in asthma.",
+          "Two drops at a time does not improve pressure control and doubles the systemic dose."
+        ]
+      },
+      {
+        title: "Screening for asthma and a slow pulse before the first drop",
+        best_for: "Health centres and OPD clinics where glaucoma drops are dispensed without an eye or medical review. Deaths from asthma have followed a first dose of timolol.",
+        requires: ["bp"],
+        steps: [
+          "Ask, and write down the answers: 'Have you ever had asthma, or wheezing, or a tight chest?' 'Have you ever used a salbutamol inhaler or had a nebuliser?' 'Do you get breathless walking on the flat?' 'Do you cough at night?' 'Have you ever fainted or been told your heart is slow?' 'Do you have heart failure?'",
+          "A 'yes' to asthma or wheeze at any time in life, or to heart failure, second- or third-degree heart block, or a resting pulse under 55, means DO NOT start timolol. Ask the eye unit for pilocarpine, a topical carbonic anhydrase inhibitor, a prostaglandin analogue or a brimonidine, depending on what the programme stocks.",
+          "Count the pulse for a full minute and take the blood pressure before the first dose, and write both in the notes.",
+          "Listen to the chest. A quiet wheeze in a patient who says they have no asthma is a reason to stop and think.",
+          "Give the first dose in the clinic and keep the patient for 30 minutes if there is any doubt.",
+          "Bring the patient back at 2–4 weeks: repeat the pulse, and ask the wheeze and breathlessness questions again. Bronchospasm can appear days or weeks after starting.",
+          "Write TIMOLOL EYE DROPS on the patient's card and on any referral letter, in the drug list, not in the eye section. Anaesthetists and physicians routinely miss it.",
+          "A patient on timolol who is admitted for anything else must have it recorded on the drug chart: it interacts with adrenaline, salbutamol, verapamil and digoxin exactly as an oral beta-blocker does."
+        ],
+        monitor: [
+          "Pulse and BP before starting and at every review",
+          "Peak flow if you have a meter and the patient has any respiratory history",
+          "New tiredness, dizziness on standing, cold hands, impotence, low mood or vivid dreams"
+        ],
+        cautions: [
+          "Fatal bronchospasm has been reported after topical timolol in patients with asthma. This is the most dangerous eye drop in this section.",
+          "It masks the warning signs of hypoglycaemia in patients on insulin.",
+          "It can be additive with oral beta-blockers (propranolol, labetalol), verapamil, digoxin and amiodarone — check the whole drug list, and remember the patient may not think of drops as 'medicines'."
+        ]
+      },
+      {
+        title: "Running a glaucoma follow-up when there is no tonometer",
+        best_for: "Health centres holding patients between eye-unit visits, and districts where the nearest tonometer is a day's travel away.",
+        requires: [],
+        steps: [
+          "Be honest about what you can and cannot do: without a tonometer you cannot titrate the treatment. Your job is to keep the patient on the drops, keep them safe from the drug, and get them back to the eye unit on time.",
+          "Adherence is the whole battle. Glaucoma is painless and takes the vision slowly from the edges, so patients stop the drops when the bottle runs out or the eye feels fine. Say at every visit: 'These drops do not make you see better. They stop you going blind. The day you stop them is the day the damage starts again.'",
+          "Count the days a bottle lasts. One 5 mL bottle given twice daily to one eye should last about 6–8 weeks; twice daily to both eyes, about 3–4 weeks. A bottle that lasts 4 months is not being used; a bottle that lasts 10 days is being over-used or spilled.",
+          "Dispense enough to reach the next visit plus 2 weeks, and tell them which day to come for a refill — not 'when it runs out'.",
+          "What you CAN follow without a tonometer: visual acuity in each eye at every visit, recorded as a number; a simple confrontation visual field; the size and colour of the optic disc cup with a direct ophthalmoscope if you are trained (do not dilate a patient with a shallow chamber); pain, halos and red eye; and the drug's systemic effects (pulse, wheeze).",
+          "Refer back urgently, not at the next routine visit, if: vision drops by two lines or more; the eye becomes painful or red; the patient sees halos around lights; or a new field defect appears.",
+          "Write the diagnosis, the drop, the strength and the eye(s) on a card the patient keeps. Many patients cannot say which drop they are on, and bottles get relabelled or shared within a family.",
+          "Never let a family share one bottle: apart from infection, the person the drops were not prescribed for may have asthma."
+        ],
+        monitor: [
+          "Visual acuity each eye, each visit",
+          "Pulse and respiratory symptoms each visit",
+          "Bottle count and refill dates",
+          "Attendance at the eye unit — chase defaulters; glaucoma defaulters go blind"
+        ],
+        cautions: [
+          "A quiet, comfortable eye tells you nothing about the pressure. Do not reassure on that basis.",
+          "Timolol's pressure-lowering effect can wane over months (tachyphylaxis) — another reason the eye unit review matters.",
+          "Do not stop timolol abruptly in a patient who also has ischaemic heart disease without discussing it with a physician."
+        ]
+      }
+    ],
+    paediatric: [
+      "Only under specialist supervision, using 0.25 % with punctal occlusion.",
+      "Apnoea, bradycardia and bronchospasm have been reported in neonates and infants given topical timolol.",
+      "Congenital glaucoma (a big, cloudy, watering, light-shy eye in a baby) is a surgical emergency — refer the same week; drops only hold the pressure while transfer is arranged."
+    ],
+    cautions: [
+      "Contraindicated in asthma, any history of bronchospasm, severe COPD, sinus bradycardia, sick sinus syndrome, second- or third-degree AV block, overt heart failure and cardiogenic shock.",
+      "Masks hypoglycaemia in diabetics on insulin or sulfonylureas.",
+      "Additive with systemic beta-blockers, verapamil, diltiazem, digoxin and amiodarone.",
+      "Stinging, dry eye, corneal anaesthesia and punctate keratitis with long use.",
+      "Tell the anaesthetist before surgery — it is a beta-blocker."
+    ],
+    sources: [
+      { name: "WHO Model Formulary 2008 — timolol eye drops" },
+      {
+        name: "WHO Model List of Essential Medicines (22nd list, 2021) — timolol 0.25 %, 0.5 % eye drops"
+      },
+      { name: "AAO Preferred Practice Pattern: Primary Open-Angle Glaucoma" },
+      { name: "BNF — timolol maleate, ocular" }
+    ],
+    textbook: [],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "pilocarpine-eye",
+    name: "Pilocarpine eye drops",
+    aka: ["Pilocarpine hydrochloride / nitrate 2 % and 4 % eye drops", "Miotic"],
+    cls: "Muscarinic agonist (miotic), topical ocular",
+    cat: "eye",
+    wards: ["emergency", "outpatient", "medical", "surgical"],
+    tags: ["acute angle closure", "glaucoma", "miosis", "eye emergency", "laser iridotomy"],
+    presentation: [
+      "2 % and 4 % eye drops in 5 or 10 mL bottles (1 % and 0.5 % also exist).",
+      "Store below 25 °C, away from light. Discard 4 weeks after opening."
+    ],
+    indications: [
+      "Acute angle-closure glaucoma — to pull the iris out of the drainage angle",
+      "Prophylaxis of the fellow eye in acute angle closure, until laser iridotomy is done",
+      "Before and after laser peripheral iridotomy, where the protocol specifies it",
+      "Chronic angle-closure glaucoma where nothing else is available"
+    ],
+    standard: {
+      summary: "Topical. It constricts the pupil, which drags the peripheral iris away from the trabecular meshwork and reopens the angle. It works only once the pressure has come down enough for the iris muscle to respond.",
+      items: [
+        {
+          label: "Acute angle closure — affected eye",
+          text: "Give acetazolamide and a topical beta-blocker FIRST. Once the pressure is falling (in practice after 30–60 minutes, or once the eye is softer and the cornea clearer): pilocarpine 2 % (4 % in a dark brown iris), 1 drop every 15 minutes for 2 doses, then 1 drop 4 times daily until definitive treatment."
+        },
+        {
+          label: "Acute angle closure — fellow eye",
+          text: "Pilocarpine 1–2 %, 1 drop 4 times daily until that eye has had a prophylactic laser iridotomy. The fellow eye has the same anatomy and about half of them will close within 5 years if it is not treated."
+        },
+        {
+          label: "Definitive treatment",
+          text: "Drops only buy time. The treatment is laser peripheral iridotomy (or surgical iridectomy). Refer the same day — this is one of the few true ophthalmic emergencies, and vision is lost in hours."
+        },
+        {
+          label: "Duration of action",
+          text: "Miosis for 4–8 hours; the drop is given four times daily."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Acute angle closure at a health centre with no ophthalmologist",
+        best_for: "The classic presentation: an older patient, often long-sighted, with a sudden severely painful red eye, blurred vision, halos around lights, vomiting and headache — frequently admitted to a medical ward as 'migraine' or 'gastritis' while the eye goes blind.",
+        requires: ["oral", "iv"],
+        steps: [
+          "Recognise it. The eye is red with the redness deepest around the cornea; the cornea is hazy or steamy; the pupil is mid-dilated, oval and does not react; the eye feels hard as a marble compared with the other one when you press both gently through the closed lids with your fingertips; vision is very poor; and the patient is vomiting. Headache and vomiting with ONE red eye is angle closure until proved otherwise.",
+          "Start treatment before referral, not after. Every hour at high pressure destroys optic nerve.",
+          "1. Acetazolamide 500 mg IV slowly, or 500 mg orally (crush an immediate-release 250 mg tablet ×2; NOT the sustained-release capsule). Check first for sulfonamide allergy, sickle cell disease and severe kidney or liver disease.",
+          "2. Timolol 0.5 % 1 drop (unless asthma, heart block or a slow pulse).",
+          "3. Wait 30–60 minutes, then pilocarpine 2 % 1 drop, repeat after 15 minutes, then 4 times daily. Giving pilocarpine first, at a pressure of 60 mmHg or more, usually does nothing: the iris sphincter is ischaemic and paralysed.",
+          "4. Pilocarpine 1–2 % four times daily to the OTHER eye as well.",
+          "5. A steroid drop (prednisolone acetate 1 % or dexamethasone 0.1 %) four times daily reduces the inflammation — but only once you are confident of the diagnosis.",
+          "6. Treat the pain and vomiting properly: they are severe. Analgesia, an antiemetic, and nothing by mouth if surgery is likely.",
+          "7. Lie the patient FLAT on their back. The lens falls back slightly and the angle opens a little. It costs nothing.",
+          "8. Arrange transfer the same day. Telephone ahead. Send a note with the exact times and doses of every drug you gave.",
+          "If the pressure will not come down and transfer will be delayed by many hours, add oral glycerol 1–1.5 g/kg of a 50 % solution in cold lemon juice (NOT in a diabetic, and not if the patient is vomiting), or mannitol 1–1.5 g/kg IV over 30–45 minutes if you have it and the heart and kidneys will tolerate the load. Both are temporary.",
+          "Corneal indentation with a cotton bud or a squint hook, pressing the centre of the cornea for 30 seconds through a topical anaesthetic, can break an attack by forcing aqueous into the angle. It is an ophthalmologist's manoeuvre — do it only if you have been taught it, and never on an eye that may have been injured."
+        ],
+        monitor: [
+          "Pain, vision and how hard the eye feels, hourly",
+          "Corneal clarity — a clearing cornea means the pressure is falling",
+          "Pupil — it should start to constrict once the pressure comes down; that is the sign pilocarpine is working",
+          "Urine output and vomiting if glycerol or mannitol is used"
+        ],
+        cautions: [
+          "Never give atropine or any other dilating drop to this eye, and never give a drug that dilates the pupil systemically (many antihistamines, tricyclics, antispasmodics, nebulised ipratropium blown into the eye).",
+          "Do not persist with drops for days because the pain has settled. The angle needs a hole in the iris.",
+          "Acetazolamide is contraindicated in sulfonamide allergy and dangerous in sickle cell disease and severe renal or hepatic impairment.",
+          "Beware of mistaking uveitis or endophthalmitis for angle closure: in uveitis the pupil is SMALL and the eye is soft. Pilocarpine in uveitis makes the iris stick down."
+        ]
+      },
+      {
+        title: "The fellow eye",
+        best_for: "Any patient who has had an attack in one eye — the commonest omission in the whole of emergency ophthalmology.",
+        requires: [],
+        steps: [
+          "Both eyes of a patient with angle closure have the same crowded anatomy. Untreated, a large proportion of fellow eyes will suffer an attack, and that is the eye the patient is living on.",
+          "Start pilocarpine 1–2 %, 1 drop four times daily in the unaffected eye as soon as the diagnosis is made.",
+          "Refer BOTH eyes for laser iridotomy, and say so explicitly in the referral letter; a hurried eye clinic will otherwise treat only the eye that hurts.",
+          "Teach the patient and the family the warning symptoms in the second eye: a sudden ache in or above the eye, coloured rings around lights, blurring that comes on in the evening or in a dark room, and nausea. Tell them to come at once, day or night.",
+          "Warn the patient, for life, that certain medicines can bring on an attack: dilating eye drops, and oral or injected drugs with anticholinergic or strongly adrenergic effects (tricyclic antidepressants, antihistamines, some anti-Parkinson and antispasmodic drugs, nebulised ipratropium if it blows into the eye). Write it on their card.",
+          "After a successful laser iridotomy in both eyes, the pilocarpine is usually stopped — by the eye unit, not by you."
+        ],
+        monitor: [
+          "Ask about symptoms in BOTH eyes at every visit",
+          "Confirm the second eye actually received its laser"
+        ],
+        cautions: [
+          "Pilocarpine in the fellow eye is a holding measure for days to weeks, not a long-term treatment: it causes brow ache and dim vision and it is abandoned.",
+          "Do not start pilocarpine in the fellow eye of a patient whose 'angle closure' was actually caused by inflammation or a swollen lens — ask the eye unit."
+        ]
+      },
+      {
+        title: "Why pilocarpine fails — and what to do about it",
+        best_for: "The situation where you have given the drops correctly and nothing has happened.",
+        requires: [],
+        steps: [
+          "At an intraocular pressure above about 40–50 mmHg the iris sphincter is ischaemic and simply cannot contract, so pilocarpine does nothing. Lower the pressure first with acetazolamide and a beta-blocker, then repeat the pilocarpine.",
+          "A dark brown iris needs a stronger drop: use 4 % where 2 % has failed. A pale blue iris responds to 1–2 %, and 4 % just adds side effects.",
+          "Check the diagnosis. If the pupil is small and the eye soft, this is uveitis, not angle closure. If the eye is hard but the pupil reacts and the cornea is clear, consider another secondary glaucoma. If there has been recent intraocular surgery, or the eye is getting worse on pilocarpine, consider a posterior 'pushing' mechanism (malignant/aqueous misdirection glaucoma) — pilocarpine makes that WORSE and the treatment is the opposite: cycloplegia with atropine. That distinction needs an ophthalmologist.",
+          "Expect and explain the side effects, or the patient will stop: a severe brow ache and headache for the first day or two, dim and blurred vision (a small pupil in a dark hut is genuinely disabling), and short-sightedness from ciliary spasm, especially in younger patients.",
+          "Watch for systemic muscarinic effects if it is being given four times daily to both eyes: sweating, salivation, nausea and abdominal cramps, a slow pulse, and wheeze in an asthmatic. Punctal occlusion for 2 minutes after each drop reduces all of them.",
+          "If the pressure is still not falling and referral will be delayed, re-check that the acetazolamide was actually given and absorbed (a vomiting patient may not have kept an oral dose down — use the IV route), and add an osmotic agent."
+        ],
+        monitor: [
+          "Pupil size — the first sign it is working",
+          "Corneal clarity and pain",
+          "Pulse, sweating, wheeze and abdominal cramps with repeated dosing"
+        ],
+        cautions: [
+          "Pilocarpine increases inflammation and can cause posterior synechiae — avoid it in a uveitic eye.",
+          "It can rarely precipitate retinal detachment in a high myope.",
+          "Never rely on pilocarpine alone to treat an attack."
+        ]
+      }
+    ],
+    paediatric: [
+      "Angle-closure glaucoma is very rare in children; a hard, painful, red eye in a child needs an urgent specialist opinion rather than pilocarpine.",
+      "Systemic muscarinic effects (sweating, salivation, bradycardia, bronchospasm, cramps) come on at much smaller doses in a child — use punctal occlusion and wipe away the excess.",
+      "Congenital glaucoma is treated surgically, not with miotics."
+    ],
+    cautions: [
+      "Brow ache, headache, dim vision and induced short-sightedness are usual, not adverse events — but they are why patients stop.",
+      "Avoid in uveitic angle closure and in malignant (aqueous misdirection) glaucoma, where it makes things worse.",
+      "Caution in asthma, peptic ulcer, bradycardia and Parkinson's disease.",
+      "Caution in high myopia (retinal detachment reported).",
+      "Drops only buy hours. Laser iridotomy is the treatment."
+    ],
+    sources: [
+      { name: "WHO Model Formulary 2008 — pilocarpine eye drops" },
+      {
+        name: "WHO Model List of Essential Medicines (22nd list, 2021) — pilocarpine 2 %, 4 % eye drops"
+      },
+      { name: "AAO Preferred Practice Pattern: Primary Angle-Closure Disease" },
+      { name: "AAO Basic and Clinical Science Course, Section 10: Glaucoma" }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "Pilocarpine 0.5–1 % is used as a miotic when a large pupil causes glare and poor night vision after keratorefractive surgery.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 7 Keratorefractive Surgery, pdf p. 289"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "acetazolamide",
+    name: "Acetazolamide",
+    aka: ["Diamox"],
+    cls: "Carbonic anhydrase inhibitor (systemic)",
+    cat: "eye",
+    wards: ["emergency", "medical", "outpatient", "surgical", "paediatric", "icu"],
+    tags: [
+      "acute angle closure",
+      "raised intraocular pressure",
+      "glaucoma",
+      "systemic drug for an eye emergency",
+      "altitude sickness"
+    ],
+    presentation: [
+      "250 mg tablets (immediate release).",
+      "500 mg sustained-release capsules — NOT for an emergency; they release over 12 hours.",
+      "500 mg powder vial for injection, reconstituted with 5 mL water for injection (100 mg/mL). Where stocked, this is the fastest route in a vomiting patient.",
+      "Tablets are heat-stable. Reconstituted injection: use immediately."
+    ],
+    indications: [
+      "Acute angle-closure glaucoma — the single most effective drug in the first hour",
+      "Raised intraocular pressure from any cause while definitive treatment is arranged (trauma, hyphaema, steroid response, post-operative)",
+      "Chronic glaucoma, short term, where topical treatment is insufficient and surgery is awaited",
+      "Also used for acute mountain sickness (125–250 mg twice daily) — not an eye indication, mentioned only so the tablets are recognised"
+    ],
+    standard: {
+      summary: "This is a SYSTEMIC drug used for an eye emergency: it reduces aqueous production by about half. It has real systemic toxicity, so check the contraindications before the first dose — but do not let that delay treatment of an eye that is going blind.",
+      items: [
+        {
+          label: "Acute angle closure (adult)",
+          text: "500 mg IV slowly over 1–2 minutes, or 500 mg orally at once (two crushed 250 mg immediate-release tablets), then 250 mg orally every 6 hours. Maximum 1 g in 24 hours. Use the IV route if the patient is vomiting — and most are."
+        },
+        {
+          label: "Child",
+          text: "5 mg/kg per dose orally, 3–4 times daily (usual range 5–10 mg/kg per dose; maximum 750 mg in 24 hours). For an acute emergency a single dose of 5–10 mg/kg IV or orally is used. Ranges differ between references — use the lower figure and confirm with the national protocol."
+        },
+        {
+          label: "Route in a vomiting patient",
+          text: "IV if you have it. If not: crush an immediate-release tablet in a little water and give it with an antiemetic, and repeat the dose if it is vomited within 30 minutes. NEVER crush the sustained-release capsule."
+        },
+        {
+          label: "Before the first dose — ask",
+          text: "Sulfonamide allergy (avoid), sickle cell disease or trait with crisis history (avoid — acidosis precipitates sickling), severe kidney disease, liver disease or cirrhosis (avoid — can precipitate encephalopathy), known low potassium, pregnancy (avoid in the first trimester), Addison's disease."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Lowering the pressure fast when there is no IV acetazolamide",
+        best_for: "Health centres and district hospitals that stock only tablets, facing an eye that must hold out until morning transport.",
+        requires: ["oral"],
+        steps: [
+          "Use the 250 mg IMMEDIATE-RELEASE tablets. Give two (500 mg) at once. Crushing them and giving them in a spoonful of water speeds absorption a little and helps a nauseated patient swallow them.",
+          "NEVER open or crush the 500 mg sustained-release capsule for an emergency — the whole point of that formulation is that it does not release quickly, and you will believe you have treated the patient when you have not.",
+          "Give an antiemetic first (and by injection, not by mouth) if the patient is vomiting. An acetazolamide tablet in a vomit bowl has treated nobody. Metoclopramide or promethazine IM, then the tablets 15 minutes later.",
+          "Then 250 mg orally every 6 hours. Do not exceed 1 g in 24 hours, and do not continue beyond 24–48 hours without review: this is a bridge to laser or surgery, not a treatment.",
+          "Add the topical drugs at the same time (timolol, then pilocarpine once the pressure is falling) — they work by different mechanisms and the effects add up.",
+          "If the eye is not softening after 1–2 hours and transfer is still hours away, add an osmotic agent: oral glycerol 1–1.5 g/kg of a 50 % solution, chilled and mixed with lemon juice to make it drinkable (contraindicated in diabetes — it is a sugar — and useless in a vomiting patient), or mannitol 1–1.5 g/kg IV over 30–45 minutes if the heart and kidneys will take the fluid load. Pass a urinary catheter first in an elderly man: an osmotic diuretic plus a big prostate equals acute retention on top of everything else.",
+          "Write down every drug, dose and time and send the list with the patient. The receiving unit needs to know how much acetazolamide has already gone in."
+        ],
+        monitor: [
+          "Eye: pain, vision, corneal clarity and how hard the globe feels, hourly",
+          "Patient: pulse, BP, urine output, and whether the tablets stayed down",
+          "Tingling in the fingers, toes and around the mouth — expected, and a sign the drug is in",
+          "Drowsiness or confusion, especially in the elderly or anyone with liver disease — stop the drug"
+        ],
+        cautions: [
+          "Sulfonamide allergy: acetazolamide is a sulfonamide. A history of Stevens-Johnson syndrome or anaphylaxis to co-trimoxazole or sulfadoxine means do not give it. A simple rash to a sulfonamide is a relative contraindication — weigh it against a blinding eye and say so in the notes.",
+          "Sickle cell disease: the metabolic acidosis acetazolamide causes can precipitate a crisis. Avoid.",
+          "Severe liver disease: it raises blood ammonia and can precipitate encephalopathy. Avoid.",
+          "Severe renal impairment (CrCl under 10 mL/min): it will not work and it accumulates. Avoid.",
+          "Do not give it with high-dose aspirin: severe acidosis, salicylate toxicity and death have been reported in that combination."
+        ]
+      },
+      {
+        title: "Making a paediatric dose from a 250 mg tablet",
+        best_for: "Children with raised intraocular pressure from trauma, congenital glaucoma awaiting surgery or a steroid response, where no syrup exists.",
+        requires: ["oral", "syringe_1ml"],
+        steps: [
+          "Confirm the weight and the dose in writing before you start. 5 mg/kg per dose is the conservative starting figure; ranges up to 10 mg/kg per dose 3–4 times daily are quoted. Maximum 750 mg in 24 hours. Confirm with the national protocol or the paediatric formulary.",
+          "Crush ONE 250 mg immediate-release tablet to a fine powder between two clean metal spoons.",
+          "Tip the powder into a clean 10 mL syringe barrel or a small cup and add water to make exactly 10 mL. That gives 25 mg/mL. Stir or shake until evenly dispersed — it is a suspension, not a solution, so it must be shaken immediately before each dose.",
+          "Draw the dose: millilitres = (dose in mg) ÷ 25. A 10 kg child at 5 mg/kg needs 50 mg = 2 mL.",
+          "Give it straight away. It is bitter; follow it with milk, juice or sweetened water. Discard whatever is left — do not keep a crushed-tablet suspension for the next dose, and never keep it overnight.",
+          "Give the child plenty to drink: acetazolamide causes a diuresis and children dehydrate quickly.",
+          "If the child vomits within 30 minutes, repeat the dose once. If they vomit again, stop and seek help rather than chasing the dose.",
+          "Prescribe potassium-rich foods or a potassium supplement if it will be given for more than a few days, and check potassium if the laboratory can do it."
+        ],
+        monitor: [
+          "Weight-based dose recalculated at each admission",
+          "Fluid intake and urine output",
+          "Drowsiness, fast deep breathing (acidosis), vomiting or refusal to feed",
+          "Potassium where available; otherwise look for weakness and a distended abdomen"
+        ],
+        cautions: [
+          "Acetazolamide in infants causes metabolic acidosis readily; a drowsy, fast-breathing baby on acetazolamide has acidosis until proved otherwise.",
+          "Do not use in a child with sickle cell disease.",
+          "Never crush the sustained-release capsule to make a paediatric dose."
+        ]
+      },
+      {
+        title: "Following the side effects without a laboratory",
+        best_for: "Any facility giving acetazolamide for more than a day or two with no serum electrolytes available.",
+        requires: [],
+        steps: [
+          "Tell the patient what to expect so they do not stop the drug and do not panic: tingling in the fingers, toes and around the mouth in almost everyone; a metallic or flat taste, and fizzy drinks tasting foul; passing more urine; tiredness.",
+          "Watch for what matters, all of which you can see without a laboratory:",
+          "Low potassium — weakness, cramps, a distended abdomen with sluggish bowel sounds, palpitations. Give potassium-rich food (bananas, oranges, avocado, potatoes, beans) routinely with any course over 2 days, or oral potassium if you have it. Risk is higher if the patient is also on furosemide or a steroid.",
+          "Metabolic acidosis — deep, fast, sighing breathing, drowsiness and vomiting. Stop the drug.",
+          "Kidney stones — new loin pain or blood in the urine, particularly with courses of weeks. Keep the fluid intake up.",
+          "Severe skin reaction — any new rash, especially with fever, mouth or eye ulcers or peeling, means STOP immediately. Stevens-Johnson syndrome and toxic epidermal necrolysis are rare but occur, and this drug is a sulfonamide.",
+          "Blood problems — sore throat, fever, bruising or bleeding. Rare (aplastic anaemia, agranulocytosis) but fatal; stop the drug and refer.",
+          "Confusion or drowsiness in the elderly or anyone with liver disease — stop the drug.",
+          "Do not continue acetazolamide indefinitely as 'glaucoma treatment' because the patient cannot get to the eye unit. It is a short-term drug; long-term use needs supervision, potassium monitoring and a clear plan."
+        ],
+        monitor: [
+          "Daily: breathing pattern, level of consciousness, skin, mouth and eyes, abdominal distension",
+          "Fluid balance and urine output",
+          "Potassium and creatinine where the laboratory exists — at baseline and every few days"
+        ],
+        cautions: [
+          "Hypokalaemia with acetazolamide plus furosemide plus a steroid is a common and dangerous combination.",
+          "It raises lithium levels' variability by changing renal handling — check with a pharmacist before combining.",
+          "Stop it and reconsider if the patient is not improving: continuing it does not substitute for an iridotomy or drainage surgery."
+        ]
+      }
+    ],
+    paediatric: [
+      "5 mg/kg per dose orally 3–4 times daily is the conservative starting point; quoted ranges go to 10 mg/kg per dose, maximum 750 mg/day. Confirm with the national protocol before prescribing.",
+      "Metabolic acidosis and dehydration develop faster in infants — watch the breathing and the fluid intake.",
+      "Not for a child with sickle cell disease.",
+      "Congenital glaucoma needs surgery; acetazolamide only holds the pressure until theatre."
+    ],
+    cautions: [
+      "It is a sulfonamide: avoid in sulfonamide allergy; stop at once for any rash with fever or mucosal involvement.",
+      "Avoid in sickle cell disease, severe renal impairment, hepatic impairment or cirrhosis, hyponatraemia, hypokalaemia and metabolic acidosis.",
+      "Avoid with high-dose aspirin (severe acidosis and salicylate toxicity).",
+      "Paraesthesia, altered taste, polyuria, fatigue, kidney stones, and rarely marrow suppression.",
+      "Avoid in the first trimester of pregnancy unless sight is threatened.",
+      "Sustained-release capsules are useless in an emergency."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 5,
+      doseUnit: "mg",
+      conc: 25,
+      concUnit: "mg/mL",
+      maxDose: 250,
+      label: "Child dose 5 mg/kg per dose (range 5–10 mg/kg; max 750 mg/day) using one 250 mg tablet crushed into 10 mL water = 25 mg/mL"
+    },
+    sources: [
+      { name: "WHO Model Formulary 2008 — acetazolamide" },
+      { name: "WHO Model List of Essential Medicines (22nd list, 2021) — acetazolamide" },
+      { name: "AAO Preferred Practice Pattern: Primary Angle-Closure Disease" },
+      { name: "BNF and BNF for Children — acetazolamide" }
+    ],
+    textbook: [],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "prednisolone-eye",
+    name: "Steroid eye drops (prednisolone / dexamethasone)",
+    aka: ["Prednisolone acetate 1 % eye drops", "Dexamethasone 0.1 % eye drops", "Pred Forte", "Maxidex"],
+    cls: "Corticosteroid, topical ocular",
+    cat: "eye",
+    wards: ["outpatient", "surgical", "medical", "emergency", "paediatric"],
+    tags: ["uveitis", "iritis", "postoperative", "steroid-induced glaucoma", "herpetic ulcer", "red eye"],
+    presentation: [
+      "Prednisolone acetate 1 % eye drops, 5 or 10 mL — a SUSPENSION; it must be shaken hard before every dose or the patient gets water.",
+      "Dexamethasone 0.1 % eye drops (solution) — more widely stocked, penetrates the cornea less well than prednisolone acetate.",
+      "Store upright below 25 °C. Never freeze. Discard 4 weeks after opening."
+    ],
+    indications: [
+      "Anterior uveitis / iritis",
+      "After cataract and other intraocular surgery, on the surgeon's schedule",
+      "Severe allergic and inflammatory eye disease, under specialist direction",
+      "Chemical (especially alkali) injury, started by or on the instruction of an eye specialist"
+    ],
+    standard: {
+      summary: "Powerful and genuinely sight-saving in uveitis — and the drug most likely, in this whole section, to blind a patient if it is given for the wrong red eye. Diagnosis first, always.",
+      items: [
+        {
+          label: "Anterior uveitis",
+          text: "Prednisolone acetate 1 % (shaken), 1 drop every 1–2 hours while awake for the first 2–3 days, then reduce gradually over 4–6 weeks as the eye quietens. ALWAYS with a cycloplegic (atropine 1 % twice daily) for pain and to prevent the iris sticking down."
+        },
+        {
+          label: "After cataract surgery",
+          text: "Typically 1 drop 4 times daily, tapering weekly over about 4 weeks, with a topical antibiotic. Follow the operating surgeon's written schedule exactly."
+        },
+        {
+          label: "Tapering",
+          text: "Never stop abruptly. Reduce step by step (for example 6 times daily → 4 → 3 → 2 → 1 → alternate days), a step every 3–7 days, guided by the eye. Stopping suddenly causes rebound inflammation."
+        },
+        {
+          label: "Absolute rule",
+          text: "Never start a steroid eye drop in an undiagnosed red eye, never without staining the cornea with fluorescein first, and never as a repeat prescription given out over a counter."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "The red-eye rule: fluorescein before any steroid",
+        best_for: "Every clinician who might be handed a bottle of dexamethasone drops and a patient with a red eye. This one habit prevents more blindness than any treatment in this section.",
+        requires: [],
+        steps: [
+          "Before any steroid drop, answer four questions. If you cannot answer all four, do not give it — refer.",
+          "1. Is the cornea stained? Put in fluorescein and look with a blue light. ANY epithelial defect means no steroid until the cause is known. A BRANCHING, feathery, tree-like (dendritic) stain is herpes simplex: a steroid turns it into a geographic ulcer, then a perforation, then a blind eye — and it can happen within days.",
+          "2. Is there a white or grey spot in the cornea? That is an infiltrate or an ulcer, which may be bacterial, fungal (very common after injury with plant material during harvest) or amoebic. Steroids let all of them run away.",
+          "3. Is the eye painful with photophobia and a small pupil, and is the vision reduced? That pattern is uveitis — the one red eye that genuinely needs the steroid, and needs it quickly. Look for a hypopyon (a level of pus in the bottom of the anterior chamber) and irregular pupil from synechiae.",
+          "4. Is the eye hard, with a hazy cornea, a mid-dilated fixed pupil and vomiting? That is angle closure. It needs acetazolamide, not steroid alone.",
+          "Simple conjunctivitis — itchy or sticky, both eyes, normal vision, no pain, no photophobia, pupil normal — does NOT need a steroid. Ever. This is where most of the harm is done.",
+          "If the diagnosis is uveitis and you are starting the steroid, start the cycloplegic in the same visit and arrange review within 2–3 days.",
+          "Write on the bottle and in the notes: the diagnosis, the eye, the schedule, and the review date. Then tell the patient, in their own words: 'This medicine is dangerous if you use it for a different eye problem later. Do not keep it, do not share it, do not restart it without being seen.'"
+        ],
+        monitor: [
+          "Fluorescein stain at the first visit and at every review while on steroid",
+          "Vision in the affected eye, each visit",
+          "Pain: steroid-treated uveitis should feel better in 48 hours; getting worse means the diagnosis is wrong"
+        ],
+        cautions: [
+          "Steroid on a herpetic dendritic ulcer is the classic blinding error in general practice.",
+          "Steroid on fungal keratitis accelerates perforation.",
+          "Combined steroid–antibiotic drops are convenient and dangerous for exactly this reason: they are given for undiagnosed red eyes.",
+          "Never give a steroid drop to a patient you cannot review."
+        ]
+      },
+      {
+        title: "Detecting steroid-induced glaucoma without a tonometer",
+        best_for: "Anywhere steroid drops are used for more than 2 weeks with no pressure measurement available.",
+        requires: [],
+        steps: [
+          "About one person in three is a 'steroid responder': the pressure rises, usually within 2–6 weeks of starting, and it is completely silent until the optic nerve is damaged. Children respond faster and more strongly, sometimes within days.",
+          "Rule of practice: if a steroid eye drop is to be used for more than 2 weeks, the pressure MUST be measured. If you cannot measure it, the patient must be referred to somewhere that can — build that into the plan at the start rather than at week six.",
+          "In the meantime, the things you can check: visual acuity in that eye at every visit (a drop of two lines in a quiet, comfortable eye on steroids is a red flag); ask about halos around lights and eye ache; and compare how hard the two eyes feel to gentle fingertip pressure through the closed lids, using the patient's other eye as the control. Digital tension is crude and cannot detect moderate rises — it only picks up a stony-hard eye — so treat a normal-feeling eye as uninformative, not reassuring.",
+          "If a Schiøtz tonometer is in the cupboard, use it: it needs no slit lamp, only a topical anaesthetic, a supine patient and the conversion table. Clean and disinfect the footplate between patients.",
+          "Keep the course as short as the disease allows, use the weakest steroid that controls it (dexamethasone 0.1 % and prednisolone acetate 1 % are both strong; fluorometholone and loteprednol, where stocked, raise pressure less), and taper deliberately.",
+          "If the pressure has risen: the steroid is stopped or reduced by the eye unit, and the pressure usually settles over 2–4 weeks — but a patient kept on steroid drops for months can be left with permanent glaucoma.",
+          "Also look for cataract with prolonged use: gradual painless blurring and glare, worse in bright sun, in an eye that was fine before. It is dose- and duration-related and does not reverse."
+        ],
+        monitor: [
+          "Visual acuity each eye, each visit",
+          "Halos, eye ache, worsening blur",
+          "Actual intraocular pressure at 2 weeks and then monthly wherever a tonometer exists",
+          "Duration of therapy — count the weeks, and question any course beyond 6"
+        ],
+        cautions: [
+          "Steroid-induced pressure rise is silent. Absence of pain means nothing.",
+          "Children can develop a large rise within days.",
+          "Patients who buy steroid drops over a counter for months are a common cause of end-stage glaucoma in young adults — ask specifically what drops a patient has been using and for how long."
+        ]
+      },
+      {
+        title: "Getting a full dose out of the bottle",
+        best_for: "Wards and clinics where prednisolone acetate is prescribed hourly and the bottle runs out in two days, or where the patient is getting no drug at all.",
+        requires: [],
+        steps: [
+          "Prednisolone acetate is a SUSPENSION — the drug is a white powder sitting on the bottom. An unshaken bottle delivers almost nothing at the start and an overdose at the end. Shake it hard for 5–10 seconds, immediately before EVERY dose, in front of the patient the first time.",
+          "Store it upright so the sediment stays at the bottom where shaking can lift it.",
+          "One drop is the dose. The eye holds about 7 microlitres; a drop is 30–50. A second drop is drug on the cheek.",
+          "Close the eye gently for 2 minutes with a fingertip on the inner corner. This keeps more of the drug in the eye and reduces the (small) systemic absorption.",
+          "Where two drops are due together, leave 5 minutes between them and put any ointment last.",
+          "If only dexamethasone 0.1 % solution is stocked: it is a reasonable substitute for most uses and needs no shaking, but it penetrates the intact cornea less well than prednisolone acetate 1 %, so for severe uveitis give it more frequently and review sooner. Say so in the referral note.",
+          "Do not decant a steroid drop into a smaller container to 'make it last', and do not dilute it.",
+          "Make sure the discharge prescription includes enough bottles to complete the taper. A patient who runs out at week two will stop abruptly and rebound."
+        ],
+        monitor: [
+          "Watch the patient shake the bottle and instil a drop before discharge",
+          "Count the bottles needed for the whole taper and dispense them"
+        ],
+        cautions: [
+          "An unshaken suspension is the commonest reason 'the steroid is not working'.",
+          "Never share a steroid bottle between patients; never use a leftover bottle from a previous illness.",
+          "Do not use a steroid drop with a contact lens in the eye."
+        ]
+      }
+    ],
+    paediatric: [
+      "Children are strong steroid responders: the pressure can rise within days and the rise can be large. Only use topical steroids in children under specialist direction, keep the course short, and arrange pressure measurement.",
+      "Juvenile idiopathic arthritis causes a painless, white, symptom-free uveitis that is found only by screening — a child with arthritis and a normal-looking eye still needs an eye examination.",
+      "Never give a steroid drop to a child with a red eye without fluorescein staining and a diagnosis."
+    ],
+    cautions: [
+      "Contraindicated in undiagnosed red eye, in any epithelial defect of unknown cause, in herpes simplex dendritic ulcer, and in untreated bacterial, fungal or amoebic keratitis.",
+      "Steroid-induced ocular hypertension and glaucoma — silent, and commoner in children.",
+      "Posterior subcapsular cataract with prolonged use.",
+      "Delayed healing of corneal wounds and abrasions; corneal thinning and perforation in an already thin cornea.",
+      "Masks and worsens infection; a hypopyon appearing on steroid treatment means infection until proved otherwise.",
+      "Systemic absorption is small but not zero with intensive prolonged use in a small child."
+    ],
+    sources: [
+      { name: "WHO Model Formulary 2008 — corticosteroid eye preparations" },
+      {
+        name: "WHO Model List of Essential Medicines (22nd list, 2021) — prednisolone 0.5 % eye drops"
+      },
+      { name: "AAO Preferred Practice Pattern: Bacterial Keratitis; Herpes Simplex Keratitis" },
+      { name: "AAO Basic and Clinical Science Course, Section 9: Uveitis and Ocular Inflammation" }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "Topical corticosteroids may be given for several weeks, but only with monitoring for infection, raised intraocular pressure and cataract.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 251"
+      },
+      {
+        book: "bcsc",
+        text: "Long-term topical eye medication, including corticosteroids, is listed among the conditions that raise the risk of complications in the eye.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 231"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "tetracaine-eye",
+    name: "Tetracaine eye drops",
+    aka: [
+      "Amethocaine 0.5 % eye drops",
+      "Tetracaine hydrochloride 0.5 %",
+      "(oxybuprocaine 0.4 %, proparacaine 0.5 %)"
+    ],
+    cls: "Topical ocular local anaesthetic (ester)",
+    cat: "eye",
+    wards: ["emergency", "outpatient", "surgical", "paediatric", "medical"],
+    tags: ["topical anaesthetic", "foreign body", "tonometry", "chemical injury", "never take home"],
+    presentation: [
+      "0.5 % eye drops in 10 mL bottles, or single-use minims (much safer — use minims wherever they exist).",
+      "Oxybuprocaine (benoxinate) 0.4 % and proparacaine 0.5 % are equivalent alternatives and sting less.",
+      "Store below 25 °C, protect from light. Some products need refrigeration — check the label. Discard the bottle 1 week after opening, and immediately after use on an infected or injured eye."
+    ],
+    indications: [
+      "Examination of a painful eye that will not open",
+      "Removal of a conjunctival or corneal foreign body",
+      "Tonometry (applanation or Schiøtz)",
+      "Irrigation of a chemical injury",
+      "Removal of sutures, syringing of the tear duct, and minor lid procedures"
+    ],
+    standard: {
+      summary: "One drop, for one procedure, in the clinic. It is a diagnostic and procedural drug, never a treatment for pain — and the bottle never leaves the room with the patient.",
+      items: [
+        {
+          label: "Dose",
+          text: "1 drop into the lower fornix. Onset 10–30 seconds, full effect at about 1 minute, lasting 10–20 minutes. Repeat once after 1 minute for a deeper effect or a longer procedure."
+        },
+        {
+          label: "Warn the patient",
+          text: "It stings sharply for a few seconds. Say so first, or the patient will pull away and you will lose the eye for the procedure."
+        },
+        {
+          label: "Chemical injury",
+          text: "The one place repeated drops during a procedure are right: re-instil every 5–10 minutes through a 30-minute irrigation, because the pain is what stops people irrigating properly."
+        },
+        {
+          label: "Never",
+          text: "Never dispense it, never give a bottle to a patient, never send a supply home, and never use it to control the pain of an abrasion, an ulcer, welding flash burn or any other condition."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Never give the bottle to the patient",
+        best_for: "Every emergency department and outpatient clinic. This is a short card, and it is the most important thing on this page.",
+        requires: [],
+        steps: [
+          "Repeated topical anaesthetic destroys the cornea. It is directly toxic to the corneal epithelium, stops it healing, abolishes the blink reflex and the protective pain that keeps a person from rubbing the eye, and masks an infection that is getting worse.",
+          "The result — anaesthetic abuse keratopathy — is a non-healing ring-shaped ulcer, corneal melting, perforation and permanent blindness, in an eye that started with a simple healing abrasion. It has happened repeatedly to health workers and to their relatives, because they are the people with access to the bottle.",
+          "So: the drop goes in, the procedure happens, the bottle stays in the clinic. Keep it in a locked or supervised cupboard, not in the patient's bag and not on the open trolley.",
+          "For the pain of a corneal abrasion or ulcer, treat it properly instead: oral paracetamol or ibuprofen, a cycloplegic drop (atropine 1 % or homatropine 2 %) which relieves the ciliary spasm that causes most of the ache, dark glasses, and — for an uninfected traumatic abrasion only — a firm pad for 24 hours if your protocol uses one.",
+          "Tell the patient honestly: 'This stinging drop lets me examine and treat your eye now. It wears off in twenty minutes. I am not giving you any to take home, because using it again and again destroys the eye. These tablets and this other drop are what will control the pain.'",
+          "If a patient returns repeatedly with a non-healing corneal ulcer and no obvious cause — especially a health worker, a pharmacy worker or their family — ask directly whether they have been using anaesthetic drops, and ask to see what is in the house."
+        ],
+        monitor: [
+          "Any non-healing epithelial defect: ask about anaesthetic use",
+          "Bottle count in the department — a topical anaesthetic bottle that empties fast is being taken"
+        ],
+        cautions: [
+          "Never dispense, never prescribe, never 'just give them a few drops for tonight'.",
+          "Do not use it repeatedly yourself to make a difficult examination easier over several visits.",
+          "An anaesthetised eye has no blink reflex: it must be protected until sensation returns."
+        ]
+      },
+      {
+        title: "Removing a corneal or subtarsal foreign body",
+        best_for: "Health centres and district emergency rooms. Grinding, hammering, chopping wood, threshing and dust in the wind are the usual histories.",
+        requires: [],
+        steps: [
+          "Record the visual acuity in BOTH eyes before you touch the eye. It is the single most important medico-legal and clinical number you will write, and afterwards it is too late.",
+          "Ask about the mechanism. High-speed metal on metal (hammer and chisel, grinding) can drive a fragment INSIDE the eye. If the history is hammering or grinding, or the eye is soft, or the pupil is pear-shaped, or there is a full-thickness laceration, or fluorescein shows a stream of aqueous, STOP: this is an open globe. No pressure, no drops beyond what is already in, shield it, give tetanus cover and systemic antibiotics, keep the patient nil by mouth, and refer immediately.",
+          "Otherwise: 1 drop of tetracaine 0.5 %, warn about the sting, wait 1 minute, repeat once.",
+          "EVERT THE UPPER LID. A foreign body under the upper lid causes vertical scratch marks on the cornea and is missed constantly. Ask the patient to look down, take the lashes between finger and thumb, press the lid against a cotton bud or the edge of a bent paper clip placed above the tarsal plate, and roll the lid back. Sweep with a moistened cotton bud.",
+          "Stain with fluorescein and look with a blue light before and after: vertical linear scratches mean look again under that lid.",
+          "For a superficial corneal foreign body: use good light and magnification (a loupe, or a magnifying glass and a torch held by an assistant). Rest your hand on the patient's cheek. Ask them to fix on a distant object. Try first with a moistened cotton bud rolled gently across it.",
+          "If that fails, use the bevel of a 25 G or 26 G needle on a syringe barrel (the barrel gives you control), held TANGENTIALLY — parallel to the corneal surface, never pointing at the eye — and lift the particle off from the side. Approach from the temporal side, out of the patient's line of sight.",
+          "Stop if the patient cannot keep still, if the foreign body is central and deep, if it does not lift after two attempts, or if you are not confident. A scarred central cornea from a clumsy removal is worse than a referral.",
+          "A rust ring from iron may be left after removal. A small peripheral one can be left to be removed in a few days when it softens; a central one is a referral.",
+          "Afterwards: antibiotic ointment (tetracycline or ciprofloxacin) three times daily for 3–5 days, a cycloplegic if there is spasm, oral analgesia, tetanus cover if the injury was dirty, and review at 48 hours. Do not pad an eye you suspect may be infected or that had organic (plant) material in it."
+        ],
+        monitor: [
+          "Visual acuity before and after, written down",
+          "Fluorescein stain after removal — the defect should be smaller each day",
+          "Review at 48 h: pain increasing, a white spot, or a hypopyon means an ulcer is forming"
+        ],
+        cautions: [
+          "Never use a needle on an eye you have not first excluded an open globe in.",
+          "Never use a needle on a child who cannot keep still — refer.",
+          "Everted lid and fluorescein: do both, every time.",
+          "The anaesthetic wears off in 20 minutes and the eye will hurt again — tell the patient before they leave so they do not come back believing the treatment failed."
+        ]
+      },
+      {
+        title: "Chemical injury: the one time you use it repeatedly",
+        best_for: "Lime, cement, battery acid, caustic soda, ammonia-based cleaners, and traditional eye remedies. Alkali is worse than acid and keeps burning for hours.",
+        requires: [],
+        steps: [
+          "IRRIGATE FIRST. Do not take a history, do not test the vision, do not find a doctor. Minutes matter more than anything else you will do.",
+          "Instil 1 drop of tetracaine immediately — not for comfort but because an unanaesthetised patient with a chemical burn physically cannot keep the eye open long enough to be irrigated, and inadequate irrigation is how these eyes are lost.",
+          "Irrigate with whatever sterile fluid is at hand and in quantity: normal saline or Ringer's lactate through a giving set is ideal (Ringer's is better tolerated), 1–2 litres over at least 20–30 minutes. Clean drinking water is better than waiting for saline.",
+          "Hold the lids open (an assistant, or a lid speculum, or a bent paper clip used as a lid retractor), run the fluid across the eye from the inner corner outwards, and have the patient move the eye in all directions so the fornices are washed.",
+          "EVERT BOTH LIDS and sweep the fornices with a moistened cotton bud. Particles of lime and cement lodge there and keep burning — this step is skipped constantly and it is the one that saves the eye.",
+          "Re-instil the anaesthetic every 5–10 minutes through the irrigation as it wears off.",
+          "Check the pH with a urine dipstick strip or litmus paper laid in the lower fornix, if you have one; keep irrigating until it is neutral (about 7.0–7.5) and re-check 20–30 minutes after stopping, because it drifts back.",
+          "Only then: history, visual acuity, fluorescein staining, and examination for corneal clouding and for a white, bloodless (ischaemic) limbus — the whiter the limbus, the worse the outlook.",
+          "Refer all but the most trivial. Give antibiotic ointment, a cycloplegic, and oral analgesia; a steroid drop and oral vitamin C are used in alkali burns but should be started by or on the instruction of an eye specialist.",
+          "Never try to neutralise an acid with an alkali or the reverse. Water or saline only."
+        ],
+        monitor: [
+          "pH in the fornix before stopping and again 20–30 minutes later",
+          "Corneal clarity and limbal blanching",
+          "Visual acuity, after irrigation"
+        ],
+        cautions: [
+          "Lime and cement burns look mild at first and are among the worst. Always evert and sweep.",
+          "Do not delay irrigation for anything, including registration, payment or finding a senior.",
+          "Repeated anaesthetic here is justified for the duration of the procedure only — the bottle still does not go home."
+        ]
+      },
+      {
+        title: "Making an eye pad and a shield from what is available",
+        best_for: "Any facility without a stock of eye pads and plastic shields — which is most of them. The distinction between the two decides whether an injured eye survives the journey.",
+        requires: [],
+        steps: [
+          "Know the difference. A PAD presses gently on the closed lids and is used to protect a healing epithelium (a clean traumatic abrasion, after foreign-body removal in some protocols) and to rest a comfortable eye. A SHIELD touches only the bones around the eye and must not touch the globe at all: it is used when the eye must not be pressed — any suspected open globe, penetrating injury, corneal laceration, or an eye after intraocular surgery.",
+          "NEVER pad an eye that may be perforated. Pressure on an open globe pushes the contents out. If in any doubt, shield, do not pad.",
+          "To make a pad: fold a square of clean gauze into a firm oval about 5 × 3 cm — two or three layers, or one gauze square folded twice. Ask the patient to close BOTH eyes. Lay the pad over the closed lid, and tape it diagonally from the middle of the forehead to the cheekbone with two or three strips of adhesive tape, firmly enough that the lid cannot open underneath it. A pad that lets the eye blink underneath is worse than no pad — it abrades the cornea.",
+          "To make a shield: cut the bottom third off a clean plastic drinking cup or a small plastic bottle, so you have a shallow cone. Trim the rim smooth. Rest the rim on the bone of the brow and the cheek — check with your fingers that nothing touches the eyelashes — and tape it firmly from forehead to cheek. Old X-ray film cut into an oval about 8 × 6 cm and curved, or the bottom of a clear plastic food container, works just as well and lets you see through it.",
+          "Do not put anything inside the shield: no gauze, no cotton wool, no ointment.",
+          "If nothing else exists, the patient's own cupped hand, or a paper cup taped in place, will hold for a journey. Tell the patient not to press.",
+          "Give the patient a pair of dark glasses or a card visor for photophobia, tell them not to rub, and write the time the pad or shield was applied on the tape itself.",
+          "Do not pad an eye with an infected ulcer, an eye with discharge, or both eyes of an elderly or confused patient (they will fall). One eye at a time unless an ophthalmologist has said otherwise.",
+          "Review a padded abrasion at 24 hours: remove the pad, stain with fluorescein, and do not simply re-pad for days."
+        ],
+        monitor: [
+          "Pain under the pad — increasing pain means take it off and look",
+          "Time of application written on the tape",
+          "Fluorescein stain at each pad change"
+        ],
+        cautions: [
+          "A shield is for a possibly-open globe; a pad is not. Getting this the wrong way round destroys eyes.",
+          "Never pad an eye that has had a topical anaesthetic and been sent home without review — the patient cannot feel what is happening under the pad.",
+          "Do not pad in suspected infection or with discharge present."
+        ]
+      }
+    ],
+    paediatric: [
+      "Used at all ages for examination and foreign-body removal; the sting frightens children, so warn them and give it with the child lying down and held securely.",
+      "A child who will not open the eye after an injury needs examination under anaesthesia if a drop does not make it possible — do not force the lids.",
+      "Never leave a bottle where a child or a family can take it home."
+    ],
+    cautions: [
+      "Toxic to the corneal epithelium with repeated use: delayed healing, ring ulcer, melting, perforation, blindness.",
+      "Abolishes the blink reflex and protective pain — the eye must be protected until sensation returns (about 20 minutes), and the patient must not rub it.",
+      "Masks worsening infection.",
+      "Stings on instillation; transient redness is common. True allergy to ester anaesthetics occurs but is rare.",
+      "Multi-dose bottles become contaminated readily and have caused Pseudomonas keratitis — use minims where possible and discard the bottle after use on an infected eye.",
+      "Do not use before taking a swab or scrape for culture if that is planned — the preservative inhibits bacterial growth. Take the sample first, or use a preservative-free minim."
+    ],
+    sources: [
+      { name: "WHO Model Formulary 2008 — tetracaine eye drops" },
+      { name: "WHO Model List of Essential Medicines (22nd list, 2021) — tetracaine 0.5 % eye drops" },
+      {
+        name: "AAO Preferred Practice Pattern: Corneal Abrasion and Foreign Body; Chemical (Alkali and Acid) Injury of the Conjunctiva and Cornea"
+      },
+      { name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013 (eye injuries)" }
+    ],
+    textbook: [],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "fluorescein",
+    name: "Fluorescein (eye stain)",
+    aka: ["Fluorescein sodium 2 % eye drops", "Fluorescein strips", "Fluoret"],
+    cls: "Diagnostic ocular stain",
+    cat: "eye",
+    wards: ["emergency", "outpatient", "surgical", "paediatric", "medical"],
+    tags: ["corneal staining", "Seidel test", "abrasion", "dendritic ulcer", "tonometry", "diagnosis"],
+    presentation: [
+      "Sterile impregnated paper strips (1 mg fluorescein per strip), individually wrapped — the preferred form.",
+      "2 % aqueous eye drops, single-use minims or 5–10 mL bottles. Combined fluorescein–oxybuprocaine and fluorescein–lidocaine minims exist and are convenient for tonometry.",
+      "Store below 25 °C. A multi-dose fluorescein bottle supports Pseudomonas growth — strips or minims wherever possible."
+    ],
+    indications: [
+      "Staining the cornea to find an abrasion, ulcer or dendritic (herpes) ulcer",
+      "Seidel test — looking for aqueous leaking from a corneal or scleral wound",
+      "Applanation and Schiøtz tonometry",
+      "Checking the fit of a rigid contact lens; checking tear duct patency (dye disappearance test)"
+    ],
+    standard: {
+      summary: "A diagnostic dye, not a treatment — and the cheapest and most useful thing on an eye tray. Under blue light, anywhere the corneal surface is missing glows bright green.",
+      items: [
+        {
+          label: "With a strip",
+          text: "Moisten the tip of a sterile strip with ONE drop of sterile saline (not tap water). Ask the patient to look up, pull the lower lid down, and touch the wet tip to the inside of the lower lid — not the cornea. Ask them to blink a few times to spread it. Look with a blue light."
+        },
+        {
+          label: "With 2 % drops",
+          text: "1 drop into the lower fornix, blink, look. Use a single-use minim where you can."
+        },
+        {
+          label: "What you are looking for",
+          text: "Bright green where the epithelium is missing. A linear or geographic patch = abrasion. Vertical scratches = a foreign body under the upper lid — evert it. A branching, tree-like pattern with knobbed ends = herpes simplex dendritic ulcer: give NO steroid. A round stained area with an underlying white infiltrate = ulcer. Pooling green over a wound that then runs clear = a leak (see the Seidel card)."
+        },
+        {
+          label: "Remove contact lenses first",
+          text: "Fluorescein stains soft contact lenses permanently. Take them out, and wait at least an hour (preferably longer) before putting them back."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "A blue light when there is no slit lamp",
+        best_for: "Health centres, health posts and night duty in a district hospital. Fluorescein under white light is almost useless; under blue light it is diagnostic.",
+        requires: [],
+        steps: [
+          "The cheapest reliable blue light is the cobalt filter on a direct ophthalmoscope — most ophthalmoscopes have one on the filter wheel and most staff have never used it. Find it on your ophthalmoscope now, before you need it at 2 a.m.",
+          "Failing that: a mobile phone torch with a piece of translucent blue plastic taped over it. Blue sweet wrappers, a blue plastic folder, the blue plastic of a drip-set wrapper, or theatre blue gel all work. Two layers give a deeper blue than one. Fix it with tape so it does not slip during the examination.",
+          "A blue-light phototherapy lamp from the neonatal unit works but is too bright and awkward; a paediatric pulse oximeter probe does not.",
+          "Darken the room. The green glow is faint and the effect is lost in daylight or under a fluorescent tube.",
+          "Hold the light at an angle to the cornea, not straight on, and view from the side. Use a magnifying loupe, a +20 D lens or an ophthalmoscope set on +10 to +20 held close if you have nothing else.",
+          "Add fluorescein, ask the patient to blink twice to spread it, then look. Excess dye pooling in the tear lake is normal; what you want is a discrete area that stays green after blinking.",
+          "Photograph what you see on a phone with the blue light on, for the referral letter and for comparison tomorrow. Note in the record the size in millimetres and draw it.",
+          "If you have no blue light at all, fluorescein under bright white light still shows a moderate defect as a yellow-green patch — better than nothing, but do not rule out a dendrite on that basis."
+        ],
+        monitor: [
+          "Size of the stained area in mm, drawn and dated at each examination",
+          "Whether the defect is shrinking day by day"
+        ],
+        cautions: [
+          "A dendritic ulcer missed for want of a blue light will be given a steroid drop and the eye may be lost.",
+          "Do not use an ultraviolet 'money-checker' lamp on an eye.",
+          "Stain the eye AFTER measuring vision and AFTER taking any culture sample."
+        ]
+      },
+      {
+        title: "Seidel test — is this wound leaking?",
+        best_for: "Any laceration of the cornea or sclera, an eye after trauma with a shallow anterior chamber, or a wound after surgery that may be leaking. It answers the one question that decides whether the patient travels tonight.",
+        requires: [],
+        steps: [
+          "Do NOT press on the eye at any point. Do not pull the lids apart; hold them at the bony rim if you must.",
+          "Use a strip, or concentrated 2 % drops — you want a heavy, dark orange layer of dye, not a thin wash.",
+          "Apply the dye directly over the suspicious area: touch the moistened strip to the conjunctiva just next to the wound, or lay a drop over it, so the site is covered by a thick layer of concentrated dye. It will look dark orange-brown, not green.",
+          "Look immediately with the blue light and magnification, and keep watching for at least 30–60 seconds.",
+          "POSITIVE: a bright green stream or rivulet appears within the dark dye and runs downwards, like a waterfall, where clear aqueous is washing the dye away. That is a full-thickness leak — an open globe.",
+          "If nothing appears, ask the patient to blink once, or gently, very gently, ask them to look down; a slow leak may take a moment. Never push on the globe to 'bring it out' — you can convert a sealed wound into an extruding one.",
+          "A POSITIVE Seidel test means: stop examining, place a shield (never a pad), nil by mouth, tetanus cover, systemic antibiotics on the local protocol, antiemetic so the patient does not vomit and raise the pressure, analgesia, and immediate referral to theatre. No more drops, no ointment, no pressure.",
+          "Also look for the other signs of an open globe, which may be present with a negative test: a pear-shaped or peaked pupil, brown tissue (iris or uvea) visible at the wound, a shallow or flat anterior chamber, blood in the chamber, a soft eye, and the history of high-speed metal."
+        ],
+        monitor: [
+          "Whether the test was positive or negative, written in the notes with the time",
+          "Visual acuity before the test",
+          "Pupil shape"
+        ],
+        cautions: [
+          "A negative Seidel test does NOT exclude an open globe — a self-sealing or plugged wound is common. History and the other signs decide.",
+          "Never press on the eye, never pad it, never instil ointment.",
+          "Antibiotic ointment in an open globe can enter the eye and cause severe inflammation."
+        ]
+      },
+      {
+        title: "Making strips last, and why the bottle is dangerous",
+        best_for: "Facilities with two strips left in the drawer and no order due for a month.",
+        requires: [],
+        steps: [
+          "Use ONE strip per patient and discard it. A strip is sterile until it is unwrapped and it is contaminated the moment it touches an eye.",
+          "Moisten the strip with a single drop of sterile saline from a fresh ampoule, or with a drop of sterile topical anaesthetic — never with tap water, bottled drinking water or the patient's tears from another eye. Fluorescein solution and water both support Pseudomonas, and Pseudomonas eats corneas in 48 hours.",
+          "If only a multi-dose fluorescein BOTTLE exists: treat it as a last resort, never let the tip touch anything, discard it 1 week after opening, and never use it on an eye with a wound or an ulcer. Outbreaks of Pseudomonas keratitis have been traced to shared fluorescein bottles.",
+          "Do not cut strips in half to make them go further: you will contaminate both halves handling them, and 1 mg is already a small amount.",
+          "Order fluorescein strips deliberately. They are among the cheapest items in eye care, they are stable at room temperature, they last for years unopened, and running out of them means red eyes will be treated blind.",
+          "Do not try to make fluorescein from anything else. Highlighter pen ink, food dye and 'fluorescent' powders are not sterile, not the same molecule, and have caused chemical injury. There is no improvised substitute for this one — order the strips.",
+          "Record the result in the notes even when it is negative: 'fluorescein: no stain' is a useful sentence the next day."
+        ],
+        monitor: [
+          "Stock level of strips — set a re-order level of 20",
+          "Any cluster of Pseudomonas ulcers among patients seen in the same clinic"
+        ],
+        cautions: [
+          "Never re-use a strip between eyes or between patients.",
+          "Fluorescein permanently stains soft contact lenses and temporarily stains skin and clothes.",
+          "Topical fluorescein is safe; the serious allergic reactions reported with fluorescein are with the INTRAVENOUS dye used for angiography, which is a different procedure."
+        ]
+      }
+    ],
+    paediatric: [
+      "Safe at all ages including newborns; a strip is easier than a drop in a struggling child.",
+      "In an unco-operative child, put the moistened strip against the lower lid margin while the eye is closed and let the tears carry it in when the eye opens.",
+      "Fluorescein staining is the way to find a corneal ulcer in measles and severe acute malnutrition — look at every such child's cornea."
+    ],
+    cautions: [
+      "Not a treatment. It stains, it does not heal.",
+      "Remove soft contact lenses before use; they stain permanently.",
+      "Multi-dose solution is readily contaminated by Pseudomonas — use sterile strips or single-use minims.",
+      "Take any culture swab or scrape BEFORE staining and before any anaesthetic drop.",
+      "Do not press on the globe when doing a Seidel test."
+    ],
+    sources: [
+      { name: "WHO Model Formulary 2008 — fluorescein eye drops" },
+      {
+        name: "WHO Model List of Essential Medicines (22nd list, 2021) — fluorescein 1 %, 2 % eye drops"
+      },
+      { name: "AAO Preferred Practice Pattern: Corneal Abrasion and Foreign Body" },
+      { name: "AAO Basic and Clinical Science Course, Section 8: External Disease and Cornea" }
+    ],
+    textbook: [
+      {
+        book: "bcsc",
+        text: "In Goldmann applanation tonometry the tear film is stained with fluorescein and viewed under cobalt blue light so the two half-circles can be aligned.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 8 Optical Instruments, pdf p. 311"
+      },
+      {
+        book: "bcsc",
+        text: "Fluorescein shows where a rigid lens clears or touches the cornea: clearance pools as a bright green area, touch appears dark.",
+        ref: "AAO BCSC Section 3: Clinical Optics 2019–2020, ch. 5 Contact Lenses, pdf p. 236"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "povidone-iodine",
+    name: "Povidone-iodine (ophthalmic use)",
+    aka: ["PVP-I", "Betadine", "Povidone-iodine 2.5 % / 5 % / 10 %"],
+    cls: "Iodophor antiseptic",
+    cat: "eye",
+    wards: ["neonatal", "maternity", "surgical", "outpatient", "emergency"],
+    tags: [
+      "ophthalmia neonatorum",
+      "antisepsis",
+      "endophthalmitis prevention",
+      "newborn eye care",
+      "preoperative"
+    ],
+    presentation: [
+      "10 % aqueous solution — the common hospital stock bottle. For SKIN only.",
+      "5 % aqueous ophthalmic solution — for the conjunctival sac before surgery or an intravitreal injection.",
+      "2.5 % aqueous ophthalmic drops — for newborn eye prophylaxis.",
+      "Povidone-iodine SURGICAL SCRUB contains detergent. It must never come near the eye at any strength.",
+      "Store below 25 °C, away from light. Iodine solutions lose activity slowly once opened; write the opening date on the bottle."
+    ],
+    indications: [
+      "Prophylaxis of ophthalmia neonatorum — a single application of 2.5 % drops at birth",
+      "Antisepsis of the conjunctival sac before eye surgery or an intravitreal injection (5 %)",
+      "Antisepsis of the eyelids and surrounding skin before eye surgery (10 %)",
+      "Adjunct in adenoviral conjunctivitis in some protocols (specialist use)"
+    ],
+    standard: {
+      summary: "The right strength in the right place. 10 % on the skin, 5 % in the conjunctival sac, 2.5 % in a newborn's eye. Ten per cent in the eye causes a severe chemical injury.",
+      items: [
+        {
+          label: "Newborn prophylaxis",
+          text: "1 drop of 2.5 % aqueous solution into each eye once, within 1 hour of birth, after wiping the lids. Do not irrigate afterwards. It is as effective as tetracycline or erythromycin ointment against gonococcus and chlamydia, costs less, and does not select for antibiotic resistance."
+        },
+        {
+          label: "Before eye surgery or an intravitreal injection",
+          text: "10 % to the lids, lashes and surrounding skin; then 5 % instilled into the conjunctival sac and left in contact for at least 3 minutes before the procedure. This step does more to prevent endophthalmitis than any antibiotic."
+        },
+        {
+          label: "Contact time",
+          text: "Iodine needs time. Three minutes in the fornix is the figure to hold to; a splash wiped straight off is not antisepsis."
+        },
+        {
+          label: "Never",
+          text: "Never instil 10 % into the eye. Never use the detergent-containing surgical scrub near the eye. Never use it in an open globe or a perforated cornea."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Newborn eye prophylaxis with 2.5 % drops",
+        best_for: "Any delivery room, health centre or home delivery, and especially where tetracycline ointment is out of stock — which is often.",
+        requires: [],
+        steps: [
+          "Do it within 1 hour of birth, after the first breastfeed if the baby is stable. Do not delay skin-to-skin contact for it.",
+          "Wipe each closed eyelid with a separate dry sterile swab, from the inner corner outwards.",
+          "Gently part the lids and let ONE drop of 2.5 % aqueous povidone-iodine fall into the lower fornix of each eye. Do not touch the dropper to the lid, lashes or eye.",
+          "Do NOT rinse the eyes afterwards.",
+          "Record it on the newborn record. A single application — it is not repeated.",
+          "Expect transient lid redness and a little watering. This is normal and settles within hours. Severe redness, swelling or corneal clouding means the wrong strength was used — irrigate copiously with saline and seek help immediately.",
+          "This does not treat established infection. A baby with red, swollen, discharging eyes in the first 28 days needs ceftriaxone 50 mg/kg IM (maximum 150 mg) as a single dose, saline irrigation of the eyes, and referral; and the mother and her partner need treating for gonorrhoea and chlamydia."
+        ],
+        monitor: [
+          "The eyes at the 6-hour check, day-3 check and every postnatal visit",
+          "Any redness, swelling or discharge in the first month is treated as ophthalmia neonatorum until proved otherwise"
+        ],
+        cautions: [
+          "Only the 2.5 % AQUEOUS ophthalmic preparation. Not 5 %, not 10 %, never the scrub.",
+          "Repeated iodine exposure in a newborn (for example, daily cord care with iodine plus eye prophylaxis) can suppress the thyroid, particularly in preterm babies. A single eye application is not the problem; repeated whole-body iodine antisepsis is. Use chlorhexidine for cord care.",
+          "Avoid in a baby with a known thyroid disorder and discuss with a paediatrician."
+        ]
+      },
+      {
+        title: "Diluting 10 % when 5 % or 2.5 % is not stocked",
+        best_for: "Theatres and health centres with only the standard brown 10 % bottle on the shelf. This is done, but it must be done properly and it is second-best.",
+        requires: [],
+        steps: [
+          "First check what you are holding. The bottle must be povidone-iodine AQUEOUS SOLUTION 10 %. If the label says 'surgical scrub', 'scrub solution', 'skin cleanser' or lists a detergent or soap, it cannot be used on or near the eye at any dilution — the detergent causes severe corneal injury. Alcoholic iodine preparations are also excluded.",
+          "Dilute with sterile normal saline (0.9 %) only — from a fresh, unopened ampoule or bag. Never water for injection alone (it is hypotonic and stings badly), never tap or boiled water, never the ward's open saline bottle.",
+          "To make 5 %: 1 part of 10 % solution plus 1 part sterile saline (for example, 5 mL + 5 mL).",
+          "To make 2.5 %: 1 part of 10 % solution plus 3 parts sterile saline (for example, 2.5 mL + 7.5 mL).",
+          "Mix in a sterile container using a sterile syringe, label it with the strength and the time, use it within a few hours, and discard the remainder. Do not store bedside dilutions, and do not make a week's supply.",
+          "Say plainly in the notes that a dilution was used because the ophthalmic preparation was unavailable, and confirm the practice with the national protocol — some programmes supply the 2.5 % and 5 % preparations and expect them to be used.",
+          "Order the proper strengths. A ready-made 2.5 % ophthalmic solution removes a whole class of dilution error in a busy delivery room at 3 a.m."
+        ],
+        monitor: [
+          "Label on every dilution: strength, diluent, time made",
+          "Any eye that becomes severely red or the cornea hazy after antisepsis — irrigate at once and review"
+        ],
+        cautions: [
+          "Getting the dilution wrong in the direction of stronger causes a chemical burn of the cornea.",
+          "Never dilute the detergent scrub formulation and never use it in the eye.",
+          "Do not use povidone-iodine of any strength in an eye with a penetrating injury or a perforated ulcer."
+        ]
+      },
+      {
+        title: "Three minutes before any eye procedure",
+        best_for: "Cataract campaigns, eye theatres, minor lid surgery and any intravitreal injection. Endophthalmitis after cataract surgery is a catastrophe that this step prevents.",
+        requires: [],
+        steps: [
+          "Clean the lids, lashes and surrounding skin with 10 % povidone-iodine on a swab, working outwards, and let it dry. Pay attention to the lid margins and the lashes — that is where the organisms are.",
+          "Instil 5 % povidone-iodine into the conjunctival sac: several drops, with the lids held open, so the fornices are filled.",
+          "Leave it in contact for at least 3 minutes by the clock before draping and before the first incision or injection. Use the time for the rest of the preparation; do not shorten it.",
+          "Isolate the lashes and the lid margin with the drape or with tape, so they cannot touch the field.",
+          "Do not irrigate the iodine out before starting; it may be rinsed with sterile saline at the end of the preparation if the surgeon wishes.",
+          "Ask about iodine allergy first. True iodine allergy is rare — a reaction to intravenous radiographic contrast, or to shellfish, is NOT an iodine allergy and is not a reason to omit this step. A documented severe reaction to topical povidone-iodine itself is: use chlorhexidine 0.05 % aqueous for the conjunctiva in that case, and record why.",
+          "If the patient has thyroid disease, a single application is acceptable; discuss repeated use."
+        ],
+        monitor: [
+          "Contact time, timed and recorded",
+          "Corneal clarity at the end of the procedure",
+          "Any post-operative pain, redness or falling vision in the first week — endophthalmitis is an emergency"
+        ],
+        cautions: [
+          "Never the 10 % solution in the conjunctival sac.",
+          "Never a detergent scrub formulation.",
+          "Do not substitute an antibiotic drop for this step. Topical antiseptic before surgery has better evidence behind it than pre-operative antibiotics."
+        ]
+      }
+    ],
+    paediatric: [
+      "2.5 % aqueous drops are the newborn prophylaxis strength, given once in each eye within an hour of birth.",
+      "Repeated iodine antisepsis in preterm babies can suppress the thyroid — use chlorhexidine for cord care and keep iodine exposure to the single eye application.",
+      "For eye surgery in children, the same 10 % skin / 5 % conjunctival sac rule applies."
+    ],
+    cautions: [
+      "10 % in the eye causes a chemical injury to the cornea. Check the strength on the label every time.",
+      "The detergent-containing surgical scrub must never touch the eye.",
+      "Do not use in an open globe, a perforated ulcer or a deep corneal laceration.",
+      "Avoid repeated use in neonates, in thyroid disease and in pregnancy (iodine crosses the placenta) — single applications are acceptable.",
+      "Stings and causes transient lid redness and watering; this is expected."
+    ],
+    sources: [
+      { name: "WHO Model List of Essential Medicines (22nd list, 2021) — povidone-iodine" },
+      {
+        name: "WHO Guidelines for the management of sexually transmitted infections, 2016 (ophthalmia neonatorum prophylaxis)"
+      },
+      { name: "WHO recommendations on newborn health / postnatal care of the mother and newborn" },
+      {
+        name: "ESCRS Guidelines for the prevention and treatment of endophthalmitis following cataract surgery (povidone-iodine antisepsis)"
+      },
+      { name: "AAO Preferred Practice Pattern: Cataract in the Adult Eye" }
+    ],
+    textbook: [],
+    review: { status: "draft", by: null, date: null }
+  }
 ];
