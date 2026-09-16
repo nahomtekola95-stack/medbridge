@@ -927,3 +927,9 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 .growth-chart .kidpt { fill: var(--primary); stroke: var(--surface); stroke-width: 2; }
 .growth-table td { vertical-align: middle; }
 .growth-table td:first-child { font-weight: 650; }
+/* growth: results beside the chart on wide screens, and never a full-width chart */
+.growth-grid { display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 1000px) { .growth-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); } }
+.growth-chart { max-width: 720px; margin: 0 auto; display: block; }
+@media print { .growth-grid { display: block; } .growth-chart { max-width: 100%; } }
+@media (max-width: 560px) { .growth-table td:last-child { display: none; } }

@@ -222,7 +222,7 @@
         const last = visits[visits.length - 1];
         const rows = Object.keys(IND).filter(k => a && a[k]).map(k => { const r = a[k]; const lv = r.z < -3 || r.z > 3 ? "bad" : r.z < -2 || r.z > 2 ? "warn" : "ok"; return `<tr><td>${esc(r.label)}</td><td><b>${fmt(r.value, 1)} ${esc(r.unit)}</b></td><td><span class="chip ${lv}">${zTxt(r.z)} SD</span></td><td>${r.centile < 1 ? "<1" : r.centile > 99 ? ">99" : Math.round(r.centile)}th</td><td class="small muted">median ${fmt(r.median, 1)}</td></tr>`; }).join("");
         const share = a ? `WHO growth check — ${kid.initials || "child"} (${kid.sex === "female" ? "girl" : "boy"}, ${ageText(last.ageDays)})\n${Object.keys(IND).filter(k => a[k]).map(k => `${a[k].label}: ${fmt(a[k].value, 1)} ${a[k].unit} = ${zTxt(a[k].z)} SD`).join("\n")}\n${a.flags.map(f => f.title).join("; ")}\nDraft reference, confirm against the national protocol.` : "";
-        return `<div class="card">
+        return `<div class="growth-grid"><div class="card">
             <div class="row" style="justify-content:space-between"><h3 style="margin:0">${esc(kid.initials || "Child")} · ${kid.sex === "female" ? "girl" : "boy"}${last ? ` · ${esc(ageText(last.ageDays))}` : ""}</h3>
             <div class="row">${share ? shareButton(share, "Share") : ""}<a class="btn ghost sm" href="#/growth?kid=${kid.id}&add=1" id="g-addvisit">${ic("edit")}Add visit</a></div></div>
             ${a ? `<div class="tablewrap"><table class="plain growth-table"><tbody>${rows}</tbody></table></div>
@@ -234,7 +234,7 @@
               <select id="g-chart" aria-label="Chart" style="min-height:40px;border-radius:11px;border:1px solid var(--border-strong);background:var(--surface);padding:.3rem .6rem">${Object.entries(IND).map(([k, v]) => `<option value="${k}" ${st.chart === k ? "selected" : ""}>${esc(v.label)}</option>`).join("")}</select></div>
             <div id="g-chartbox">${chart(st.chart, kid.sex, visits, kid.dob)}</div>
             <p class="small muted">Lines are the WHO −3, −2, 0, +2 and +3 SD curves. Dots are this child's visits.</p>
-          </div>
+          </div></div>
           ${visits.length ? `<div class="card"><h3>Visits</h3><div class="tablewrap"><table class="plain"><tr><th>Date</th><th>Age</th><th>Weight</th><th>Length/height</th><th>MUAC</th><th>HC</th><th></th></tr>
             ${visits.map(v => `<tr><td>${new Date(v.at).toLocaleDateString()}</td><td>${esc(ageText(v.ageDays))}</td><td>${fmt(v.weight, 2)}</td><td>${fmt(v.height, 1)}</td><td>${fmt(v.muac, 1)}</td><td>${fmt(v.hc, 1)}</td><td><button type="button" class="linkbtn danger" data-delvisit="${v.at}">${ic("x")}</button></td></tr>`).join("")}</table></div></div>` : ""}`;
       }
