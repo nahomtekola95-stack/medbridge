@@ -48,9 +48,21 @@ for (const [id, e] of Object.entries(NEONATAL)) {
     if (!e.rules.some(r => ok(ga, r.gaMin, r.gaMax) && ok(pma, r.pmaMin, r.pmaMax) && ok(pna, r.pnaMin, r.pnaMax) && ok(wt, r.wtMin, r.wtMax))) { errs.push(`neonatal ${id}: no rule for GA ${ga}, day ${pna}, ${wt} kg`); break outer; }
   }
 }
+/* Every drug pair must be covered by at most ONE rule. The checker matches a
+   pair in either direction, so two rules that both name the pair (usually a
+   broad "drug + QT-prolonging drugs" list overlapping a specific rule) show the
+   reader the same warning twice, in two different wordings. Narrow one rule's
+   list instead — keep whichever wording is actually useful for that pair. */
+const seenPair = {};
 INTERACTIONS.forEach((r, i) => {
   [...r.a, ...r.b].forEach(x => { if (!ids.has(x)) errs.push(`interaction ${i}: unknown drug ${x}`); });
   if (!["major", "moderate"].includes(r.severity) || !r.effect || !r.action) errs.push(`interaction ${i}: needs severity, effect and action`);
+  for (const a of r.a) for (const b of r.b) {
+    if (a === b) { errs.push(`interaction ${i}: ${a} paired with itself`); continue; }
+    const key = [a, b].sort().join(" + ");
+    if (seenPair[key] !== undefined) errs.push(`interaction ${i}: ${key} is already covered by rule ${seenPair[key]} — the reader would get two warnings for one pair`);
+    else seenPair[key] = i;
+  }
 });
 COMPAT.forEach((c, i) => [...c.a, ...c.b].forEach(x => { if (x !== "*" && !ids.has(x)) errs.push(`compat ${i}: unknown drug ${x}`); }));
 Object.entries(SUBSTITUTES).forEach(([k, v]) => { if (!ids.has(k)) errs.push(`substitutes: unknown drug ${k}`); v.forEach(x => { if (x.with && !ids.has(x.with)) errs.push(`substitutes ${k}: unknown drug ${x.with}`); }); });
