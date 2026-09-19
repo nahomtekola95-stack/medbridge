@@ -8,15 +8,45 @@
 window.SUBSTITUTES = {
   "oxytocin": [
     { use: "PPH prevention and treatment", with: "misoprostol", note: "Prevention 600 mcg orally; treatment 800 mcg sublingual. Heat-stable, no cold chain." },
-    { use: "PPH treatment (second uterotonic)", with: "ergometrine", note: "0.2 mg IM — only if blood pressure is normal; never in pre-eclampsia." }
+    { use: "PPH treatment (second uterotonic)", with: "ergometrine", note: "0.2 mg IM — only if blood pressure is normal; never in pre-eclampsia." },
+    {
+      use: "PPH prevention where there is no reliable fridge",
+      with: "carbetocin",
+      note: "Heat-stable carbetocin 100 mcg IM or IV, one dose. WHO 2025 makes this the first choice where the oxytocin cold chain cannot be kept: no refrigerated transport, no refrigerated storage, no silent loss of potency. Costs much more than oxytocin and must be given by someone trained to inject. Check the carton says heat-stable."
+    },
+    {
+      use: "PPH prevention where there is no fridge AND no carbetocin",
+      with: "misoprostol",
+      note: "400 mcg or 600 mcg orally, once, immediately after the birth — the WHO 2025 alternative when heat-stable carbetocin is unavailable. The 400 mcg dose causes less shivering and fever."
+    },
+    {
+      use: "PPH prevention where no skilled health worker can inject",
+      with: "misoprostol",
+      note: "400 mcg or 600 mcg orally given by a community or lay health worker. Recommended by WHO 2025 for exactly this situation; do not wait for an injection that will not come."
+    }
   ],
   "misoprostol": [
     { use: "PPH prevention and treatment", with: "oxytocin", note: "10 IU IM. Needs a cold chain to stay potent." },
-    { use: "PPH treatment", with: "ergometrine", note: "0.2 mg IM if blood pressure is normal." }
+    { use: "PPH treatment", with: "ergometrine", note: "0.2 mg IM if blood pressure is normal." },
+    {
+      use: "PPH prevention where there is no reliable fridge",
+      with: "carbetocin",
+      note: "Heat-stable carbetocin 100 mcg IM/IV is WHO's first choice here and misoprostol the alternative — so if both are on the shelf, use the carbetocin and keep the misoprostol for the births nobody can attend with a syringe."
+    }
   ],
   "ergometrine": [
     { use: "PPH treatment", with: "misoprostol", note: "800 mcg sublingual; safe in hypertension." },
-    { use: "PPH treatment", with: "oxytocin", note: "First-line uterotonic in any case." }
+    { use: "PPH treatment", with: "oxytocin", note: "First-line uterotonic in any case." },
+    {
+      use: "PPH prevention (third stage of labour)",
+      none: true,
+      note: "Ergometrine is no longer recommended for prevention at all (WHO 2025) — there is no substitution question, it should not be used. Prevent with oxytocin 10 IU, or heat-stable carbetocin 100 mcg where the cold chain fails, or misoprostol 400-600 mcg orally. The same applies to Syntometrine."
+    },
+    {
+      use: "PPH treatment where refrigeration has failed",
+      with: "misoprostol",
+      note: "800 mcg sublingual. Ergometrine is heat- and light-sensitive and fails silently; misoprostol does not, and is safe when the blood pressure is high."
+    }
   ],
   "magnesium-sulfate": [
     { use: "Eclampsia", with: "diazepam", note: "Only if magnesium is genuinely unavailable. Less effective, and it sedates mother and baby. Refer for magnesium." },
@@ -657,6 +687,30 @@ window.SUBSTITUTES = {
       use: "Preventing endophthalmitis",
       none: true,
       note: "Do not substitute an antibiotic drop for the antiseptic. Povidone-iodine 5 % left in the conjunctival sac for 3 minutes before the procedure has better evidence behind it than any pre-operative antibiotic, and costs a fraction as much."
+    }
+  ],
+
+  /* ---- carbetocin ---- */
+  carbetocin: [
+    {
+      use: "PPH prevention where the cold chain cannot be maintained",
+      with: "misoprostol",
+      note: "400 mcg or 600 mcg orally, once, immediately after the birth. This is the substitute WHO 2025 names when heat-stable carbetocin is not available. Heat-stable, needs no needle, and a community or lay health worker can give it."
+    },
+    {
+      use: "PPH prevention where the cold chain IS reliable",
+      with: "oxytocin",
+      note: "10 IU IM or IV within 1 minute of birth. It is the uterotonic of choice when several options are stocked, and roughly a nineteenth of the non-subsidised price of carbetocin."
+    },
+    {
+      use: "PPH treatment",
+      none: true,
+      note: "Carbetocin is not a treatment drug and there is nothing to substitute. Treat with IV oxytocin first, plus tranexamic acid 1 g IV within 3 h of birth, then ergometrine or misoprostol 800 mcg sublingual as second-line, with massage, fluids, compression and escalation."
+    },
+    {
+      use: "Induction or augmentation of labour",
+      none: true,
+      note: "Not an indication for carbetocin at all. Use oxytocin by pump or drop counting, or low-dose misoprostol in hospital."
     }
   ]
 };

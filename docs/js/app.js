@@ -61,15 +61,15 @@
     const parts = path.split("/").filter(Boolean);
     return { view: parts[0] || "drugs", id: parts[1], q: Object.fromEntries(new URLSearchParams(qs || "")) };
   }
-  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null;
+  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null, PP = null;
   const routes = { drugs: viewDrugs, drug: viewDrug, calc: viewCalc, techniques: viewTechniques, local: viewLocal, setup: viewSetup, about: viewAbout,
     case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r),
     resus: (m, r) => FX.views.resus(m, r), drip: (m, r) => FX.views.drip(m, r), schedules: (m, r) => FX.views.schedules(m, r),
     compat: (m, r) => FX.views.compat(m, r), tools: (m, r) => FX.views.tools(m, r),
     newborn: (m, r) => EX.views.newborn(m, r), interactions: (m, r) => EX.views.interactions(m, r), charts: (m, r) => EX.views.charts(m, r),
     quiz: (m, r) => EX.views.quiz(m, r), review: (m, r) => RV.views.review(m, r),
-    pregnancy: (m, r) => OB.view(m, r), growth: (m, r) => GR.view(m, r), optics: (m, r) => OP.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
-  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", handover: "ward" };
+    pregnancy: (m, r) => OB.view(m, r), growth: (m, r) => GR.view(m, r), optics: (m, r) => OP.view(m, r), pph: (m, r) => PP.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
+  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", pph: "tools", handover: "ward" };
   function render() {
     const r = parseHash();
     const main = $("#app");
@@ -394,6 +394,7 @@
       <div class="row case-tools">
         <button type="button" class="btn ghost sm" data-open-patient>${ic("user")}${FX.patient.weight ? `Doses for ${Calc.round(FX.patient.weight, 1)} kg` : "Set weight for doses"}</button>
         <a class="btn ghost sm" href="#/resus${FX.patient.weight ? "?w=" + FX.patient.weight : ""}">${ic("zap")}Emergency card</a>
+        ${/^(pph|secondary-pph|pph-prevention|retained-placenta|uterine-inversion)$/.test(c.id) ? `<a class="btn ghost sm" href="#/pph">${ic("drop")}PPH first response</a>` : ""}
         ${c.group === "obstetric" ? `<a class="btn ghost sm" href="#/pregnancy">${ic("calendar")}Pregnancy dates</a>` : ""}
         ${c.group === "paediatric" || /malnutrition|diarrhoea|dehydration/.test(c.id) ? `<a class="btn ghost sm" href="#/growth">${ic("baby")}Child growth</a>` : ""}
         ${regs.map(g => `<a class="btn ghost sm" href="#/schedules?regimen=${g.id}">${ic("clock")}Schedule: ${esc(g.name.split(" — ")[0])}</a>`).join("")}
@@ -762,6 +763,7 @@
     WD = window.Ward({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     GR = window.GrowthView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     OP = window.OpticsView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
+    PP = window.PphView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     FX.syncPatientChip(); FX.updateDueBadge(); FX.checkDue();
     $("#patient-chip")?.addEventListener("click", () => FX.openPatientDialog());
     const syncAccount = () => {

@@ -680,6 +680,7 @@ window.Features = function (ctx) {
       ["#/optics", "eye", "Optics and refraction", "Transpose a prescription, work out the reading add, convert visual acuity and size a magnifier.", ""],
       ["#/growth", "baby", "Child growth", "WHO z-scores and centiles for weight, height, MUAC and head circumference, with growth charts.", ""],
       ["#/pregnancy", "calendar", "Pregnancy dating wheel", "Due date and gestational age in Ethiopian and Gregorian dates, milestones, ANC contacts and fetal weight.", ""],
+      ["#/pph", "drop", "PPH first response", "Measured blood loss, the six-part bundle on a 15-minute clock, and the tranexamic acid window.", "emergency"],
       ["#/resus", "zap", "Emergency drug card", "Every resuscitation dose and volume for one weight. Printable.", "emergency"],
       ["#/drip", "drop", "Drip guide", "Metronome at the target drop rate, plus tap-to-measure the real rate.", ""],
       ["#/schedules", "clock", "Dose schedules", `Clock times, pre-dose checks and reminders for repeat regimens.${due ? ` <b class="bad-text">${due} due</b>` : ""}`, ""],

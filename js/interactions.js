@@ -863,5 +863,31 @@ window.INTERACTIONS = [
     effect: "Additive corticosteroid load. Systemic steroids raise intraocular pressure and cause cataract in their own right, and both routes together increase the risk of masking or worsening an eye infection — the reason a hypopyon appearing during steroid treatment means infection until proved otherwise.",
     action: "Where a patient is on systemic steroids for another disease, tell the eye unit, measure the intraocular pressure while both are running, and keep the topical course as short as the eye allows. Never start a topical steroid in a red eye without fluorescein staining and a diagnosis, whatever systemic steroid the patient is already taking.",
     ref: "AAO Basic and Clinical Science Course, Section 9: Uveitis and Ocular Inflammation; BNF — corticosteroids, ocular"
+  },
+
+  /* ---- carbetocin ---- */
+  {
+    a: ["carbetocin"],
+    b: ["oxytocin", "misoprostol", "ergometrine"],
+    severity: "moderate",
+    effect: "Duplicate uterotonics. For PREVENTION of postpartum haemorrhage WHO 2025 is explicit that only ONE uterotonic should be used — oxytocin, carbetocin or misoprostol. Adding a second gives no established extra benefit and adds that drug's side-effects: nausea and vomiting with ergometrine (and hypertension, which is why ergometrine is no longer recommended for prevention at all), shivering, fever and diarrhoea with misoprostol.",
+    action: "Choose one prophylactic uterotonic and give it within 1 minute of the birth. If the woman then bleeds, that is treatment, not prophylaxis: give IV oxytocin and tranexamic acid, and add ergometrine or sublingual misoprostol 800 µg as second-line — but do NOT give a second dose of carbetocin, whose use for treatment WHO 2025 says should be discouraged for lack of evidence.",
+    ref: "WHO Consolidated guidelines on PPH 2025, Recommendations 7 and 25, pdf pp. 38 and 61",
+    refs: [
+      {
+        book: "whopph",
+        text: "Only one of oxytocin, carbetocin or misoprostol should be used to prevent PPH in the third stage.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7, pdf p. 38",
+        pdf_page: 38,
+        quote: "only one \nof the following uterotonics should be used"
+      },
+      {
+        book: "whopph",
+        text: "Carbetocin has not been adequately studied for repeat dosing to treat PPH, so using it that way should be discouraged until there is evidence.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 25 remarks, pdf p. 61",
+        pdf_page: 61,
+        quote: "should be discouraged until robust evidence on safety and efficacy for PPH treatment becomes available"
+      }
+    ]
   }
 ];

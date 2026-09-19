@@ -68,14 +68,14 @@ window.DRUG_DB = [
   tags: ["PPH", "postpartum haemorrhage", "induction", "augmentation"],
   presentation: [
     "10 IU/mL, 1 mL ampoule (also 5 IU/mL).",
-    "Store 2–8 °C; loses potency with heat exposure — keep in cold chain where possible."
+    "Store 2–8 °C: oxytocin needs refrigerated transport AND refrigerated storage, and heat quietly destroys it without changing how the ampoule looks. Where that cold chain cannot be consistently kept, WHO 2025 says do not simply carry on with oxytocin — stock heat-stable carbetocin 100 µg, or misoprostol 400–600 µg orally, for prevention."
   ],
   indications: ["Prevention of PPH (third stage)", "Treatment of PPH (uterine atony)", "Induction / augmentation of labour"],
   standard: {
-    summary: "Pump-controlled infusion for induction; gravity infusion tables for PPH are already the WHO standard.",
+    summary: "Pump-controlled infusion for induction; gravity infusion tables for PPH are already the WHO standard. Start PPH treatment on the objective trigger, not on a guess: measured blood loss of 500 mL or more, or 300 mL or more with any abnormal haemodynamic sign (pulse over 100, shock index over 1, systolic BP under 100 or diastolic under 60), whichever comes first in the 24 hours after birth.",
     items: [
-      { label: "PPH prevention", text: "10 IU IM within 1 minute of birth. First-line uterotonic (WHO). If given IV, dilute it and infuse — a 10-unit IV bolus causes profound transient hypotension, dangerous in a bleeding or cardiac patient (Williams)." },
-      { label: "PPH treatment", text: "20 IU in 1 L NS or RL IV at 60 drops/min (≈180 mL/h), then 20 IU in 1 L at 40 drops/min. Do not exceed 3 L of oxytocin-containing fluid." },
+      { label: "PPH prevention", text: "10 IU IM or IV within 1 minute of birth, at vaginal birth and at caesarean. It is the uterotonic of choice wherever several options are stocked (WHO 2025). If she ALREADY has an IV line running for another reason at a vaginal birth, give the 10 IU intravenously — diluted and slowly over 1–2 minutes — in preference to IM; this reduces PPH, severe PPH and transfusion. Do not site a cannula only to do this. Never a rapid undiluted bolus: it causes profound transient hypotension, dangerous in a bleeding or cardiac patient (Williams)." },
+      { label: "PPH treatment", text: "IV oxytocin is the first-line treatment drug, including for a woman who already had it for prevention — repeat dosing is safe and effective. WHO 2025: an initial 10 IU IV, diluted and given slowly over 1–2 minutes, or diluted in a small volume of crystalloid over 5–10 minutes; then a maintenance infusion of 10–20 IU in crystalloid over the next 4 hours, titrated to uterine tone. The Ethiopian national guideline writes the same maintenance as 20–40 IU in 1 litre of fluid. The older gravity regimen (20 IU in 1 L at 60 drops/min, then 20 IU in 1 L at 40 drops/min) delivers this and is still how it is run without a pump. Do not exceed 3 L of oxytocin-containing fluid (water intoxication)." },
       { label: "Induction / augmentation (pump)", text: "Start 1–2 mIU/min, increase every 30 min until 3 contractions per 10 min lasting >40 s; usual max 20–32 mIU/min." }
     ]
   },
@@ -92,19 +92,26 @@ window.DRUG_DB = [
         "Never give undiluted oxytocin as an IV bolus — causes hypotension."
       ],
       monitor: ["Bleeding, uterine tone, pulse and BP every 15 min", "Urine output", "Fluid volume infused"],
-      cautions: ["If bleeding continues: ergometrine 0.2 mg IM (not if hypertensive), misoprostol 800 mcg sublingual, tranexamic acid 1 g IV, bimanual compression, referral."]
+      cautions: ["Give tranexamic acid 1 g IV over 10 min at the same time as the first uterotonic — it is part of the first-response bundle, not a later step. If bleeding continues despite oxytocin: ergometrine (WHO 2025 names the intravenous route for treatment; 0.2 mg IM is the usual practical dose where slow IV is not safe — never if hypertensive or pre-eclamptic), or misoprostol 800 mcg sublingual, plus bimanual compression and escalation or referral."]
     },
     {
       title: "No IV access: IM oxytocin",
       best_for: "PPH treatment or prevention when a cannula cannot be placed immediately.",
       requires: ["im"],
       steps: [
-        "10 IU IM into the anterolateral thigh. Repeat 10 IU IM after 20 min if atony persists while IV access is obtained... (many protocols cap total at 40 IU) — verify local protocol.",
-        "Add misoprostol 800 mcg sublingual if oxytocin alone insufficient.",
-        "Obtain IV/IO access as soon as possible for fluids and the infusion above."
+        "10 IU IM into the anterolateral thigh. This is the full prevention dose and the right first move for treatment when there is no line — WHO 2025 and the Ethiopian national guideline both give oxytocin 10 IU IM or IV.",
+        "Then work on access, not on more intramuscular oxytocin. There is no good evidence for repeated IM dosing, and the treatment regimen the guidelines describe is intravenous: once a line is in, 20–40 IU in 1 litre of crystalloid (Ethiopian national guideline), keeping below 3 litres of oxytocin-containing fluid in total.",
+        "While someone else gets the cannula in: tranexamic acid 1 g IV over 10 minutes as soon as there is a line (within 3 hours of birth), uterine massage and bimanual compression, empty the bladder, and examine the genital tract. These are part of the same first response, not later steps.",
+        "Still bleeding and still no line: misoprostol 800 mcg sublingual works without injection or a cold chain. Consider the intraosseous route for fluids and drugs if you have a needle and the training.",
+        "If she needs to move, put the anti-shock garment on before the journey and send someone who can keep compressing."
       ],
-      monitor: ["Bleeding, pulse, BP"],
-      cautions: []
+      monitor: [
+        "Bleeding, uterine tone, pulse and BP every 15 min",
+        "Whether IV access has actually been achieved — write the time"
+      ],
+      cautions: [
+        "Intramuscular absorption is unreliable in shock, when the circulation has shut down at the skin. Treat a poor response as a reason to get access faster, not as a reason to give more intramuscular oxytocin."
+      ]
     },
     {
       title: "Augmentation of labour by drop counting (WHO)",
@@ -123,7 +130,7 @@ window.DRUG_DB = [
   cautions: ["Water intoxication with large volumes (use NS/RL, monitor urine output).", "Hypotension/tachycardia with rapid IV.", "Uterine rupture risk with hyperstimulation, especially grand multiparity or previous scar."],
   sources: [
     { name: "WHO. Managing Complications in Pregnancy and Childbirth, 2nd ed. 2017", url: "https://www.who.int/publications/i/item/9789241565493" },
-    { name: "WHO recommendations for the prevention and treatment of postpartum haemorrhage (2012) and updates (2018, 2020)" }
+    { name: "WHO. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025 — supersedes the 2012 recommendations and the 2018 uterotonics update" }
   ],
   textbook: [
     { book: "williams", text: "A 10-unit IV bolus causes marked transient hypotension; give oxytocin as a dilute continuous infusion or IM. Parkland: 20 units per liter at 10 to 20 mL/min after placental delivery until firm, then 1 to 2 mL/min; 10 units IM if no IV access.", ref: "Williams Obstetrics 25th ed. 2018, ch. 27 Vaginal Delivery, pdf p. 1156" },
@@ -132,8 +139,14 @@ window.DRUG_DB = [
     { book: "gabbe", text: "Prophylactic uterotonic, preferably oxytocin, recommended after all births (ACOG, WHO) as part of active third-stage management.", ref: "Gabbe's Obstetrics 9th ed., ch. 13 Normal Labor and Delivery, p. 271" },
     { book: "gabbe", text: "PPH from atony: oxytocin first-line, starting 10-80 U in 500-1000 mL crystalloid IV; IM or intrauterine possible. Hemorrhage algorithm lists 10-40 U IV or 10 U IM.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 405" },
     { book: "gabbe", text: "At caesarean, IV bolus 5-10 IU and/or infusion 10-40 IU are common; authors prefer infusion of at least 20 IU because of bolus side effects.", ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 431" },
-    { book: "gabbe", text: "Induction: low-dose protocols start 0.5-2 mU/min, increasing by 1-2 mU/min every 15-40 min; most protocols do not exceed 42 mU/min.", ref: "Gabbe's Obstetrics 9th ed., ch. 14 Induction of Labor, p. 285" }
-  ],
+    { book: "gabbe", text: "Induction: low-dose protocols start 0.5-2 mU/min, increasing by 1-2 mU/min every 15-40 min; most protocols do not exceed 42 mU/min.", ref: "Gabbe's Obstetrics 9th ed., ch. 14 Induction of Labor, p. 285" },
+  { book: "whopph", text: "Oxytocin is cheap and widely available but needs refrigerated transport and storage at 2–8 °C; where that cannot be guaranteed its quality and effect suffer and a heat-stable uterotonic should be used instead.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.1 remarks, pdf p. 39" },
+  { book: "whopph", text: "Where a woman giving birth vaginally already has intravenous access, give the 10 IU of oxytocin intravenously, diluted and slowly over one to two minutes, rather than intramuscularly.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 8, pdf p. 41" },
+  { book: "whopph", text: "For treatment, 10 IU of oxytocin is usually given intravenously first — diluted and slow, never a rapid injection — followed where needed by 10–20 IU diluted in crystalloid over the next four hours, titrated to the uterus; re-dosing is safe in a woman who already had oxytocin for prophylaxis.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 24 remarks, pdf p. 60" },
+  { book: "whopph", text: "Treat on measured loss: 300 mL or more with any abnormal haemodynamic sign — pulse over 100, shock index above 1, systolic below 100 mmHg or diastolic below 60 mmHg — or 500 mL or more, whichever comes first within 24 hours of birth.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 22, pdf p. 14" },
+  { book: "whopph", text: "If IV oxytocin is not available or the bleeding does not respond to it, use intravenous ergometrine, the oxytocin–ergometrine fixed-dose combination, or a prostaglandin such as 800 micrograms of sublingual misoprostol.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 25, pdf p. 61" },
+  { book: "whopph", text: "The 2025 consolidated guideline replaces the earlier WHO PPH recommendations, updating the uterotonic recommendations that had stood since 2012 and 2018.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 11 remarks, pdf p. 47" }
+],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -1591,12 +1604,16 @@ window.DRUG_DB = [
   cat: "haem",
   wards: ["emergency", "maternity", "medical", "surgical"],
   tags: ["PPH", "trauma", "haemorrhage", "epistaxis"],
-  presentation: ["500 mg/5 mL ampoule (100 mg/mL).", "Tablets 500 mg."],
+  presentation: [
+    "500 mg/5 mL ampoule (100 mg/mL) — the PPH dose is 1 g, so two ampoules, 10 mL.",
+    "Tablets 500 mg.",
+    "Heat-stable: shelf life about 3 years and it can be kept at room temperature (15–30 °C). No cold chain, so it belongs in every delivery room and every referral bag."
+  ],
   indications: ["Postpartum haemorrhage (within 3 h of birth)", "Trauma haemorrhage / TBI (within 3 h)", "Epistaxis, dental and menstrual bleeding"],
   standard: {
-    summary: "1 g slow IV over 10 min; trauma second dose by 8-h pump infusion.",
+    summary: "PPH: 1 g slow IV over 10 min, started within 3 hours of birth, with a second 1 g IV if bleeding continues after 30 min or restarts within 24 h. Trauma: second dose by 8-h pump infusion. Intravenous route only for PPH, and never as a substitute for a uterotonic.",
     items: [
-      { label: "PPH (WHO)", text: "1 g IV over 10 min as soon as PPH is diagnosed, in addition to uterotonics; repeat 1 g after 30 min if bleeding continues." },
+      { label: "PPH (WHO)", text: "1 g in 10 mL (100 mg/mL) IV at 1 mL per minute — that is over 10 minutes — as soon as PPH is diagnosed, in addition to uterotonics, and within 3 hours of the BIRTH (not of the diagnosis; if the time of birth is unknown use the best estimate). Give it in every case of PPH whatever the cause, including genital tract trauma: you do not need to identify the source of bleeding first. Second dose 1 g IV if bleeding continues after 30 min OR if bleeding restarts within 24 hours of completing the first dose. Intravenous use only — no other route has been evaluated." },
       { label: "Trauma (CRASH-2)", text: "1 g IV over 10 min then 1 g over 8 h (pump)." }
     ]
   },
@@ -1607,7 +1624,7 @@ window.DRUG_DB = [
       requires: ["iv"],
       steps: [
         "Draw 1 g (10 mL) into a 10 mL syringe. Inject 1 mL every minute for 10 min (watch the second hand), or dilute in 100 mL NS in a burette and let it run over ~10 min.",
-        "PPH: repeat 1 g after 30 min if bleeding continues. Do not use > 3 h after birth."
+        "PPH: the 3-hour limit applies to STARTING treatment and is measured from the birth — do not start TXA more than 3 h after the birth, because beyond that there is no benefit and the point estimates lean towards harm. The second 1 g is different: give it if bleeding continues 30 min after the first dose, or if bleeding restarts at any time within 24 hours of completing the first dose — even if that is beyond the 3-hour mark."
       ],
       monitor: ["BP", "Bleeding"],
       cautions: []
@@ -1632,16 +1649,28 @@ window.DRUG_DB = [
       cautions: []
     }
   ],
-  cautions: ["Avoid in active thromboembolism; reduce dose in renal failure.", "Williams advises against antifibrinolytics once consumptive coagulopathy is established (for example placental abruption or amniotic fluid embolism) and reports renal cortical necrosis with tranexamic acid. This does not change the WHO recommendation to give it early in postpartum haemorrhage.", "Never intrathecal (fatal)."],
-  sources: [{ name: "WHO recommendation on tranexamic acid for the treatment of PPH, 2017" }, { name: "WOMAN trial collaborators. Lancet 2017; CRASH-2 collaborators. Lancet 2010" }],
+  cautions: [
+    "Avoid in active thromboembolism; reduce dose in renal failure. WHO 2025: avoid where there is a clear contraindication to antifibrinolytics, for example a known thromboembolic event during the pregnancy.",
+    "Williams advises against antifibrinolytics once consumptive coagulopathy is established (for example placental abruption or amniotic fluid embolism) and reports renal cortical necrosis with tranexamic acid. This does not change the WHO recommendation to give it early in postpartum haemorrhage.",
+    "Never intrathecal (fatal). Deaths have followed TXA given by mistake into the intrathecal space during obstetric spinal anaesthesia — the ampoule looks like a local anaesthetic ampoule. Store it away from the spinal tray and read the label aloud.",
+    "NOT for prevention. WHO 2025 does not recommend tranexamic acid to prevent PPH at vaginal birth or at caesarean birth: it gave no benefit over standard prophylaxis and a small increase in thromboembolic events could not be ruled out.",
+    "TXA is an antifibrinolytic, not a uterotonic. It must never be used in place of a prophylactic uterotonic — it does not contract the uterus."
+  ],
+  sources: [{ name: "WHO. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025 (Recommendations 14, 15 and 27) — incorporating the 2017 tranexamic acid recommendation" }, { name: "WOMAN trial collaborators. Lancet 2017; CRASH-2 collaborators. Lancet 2010" }],
   textbook: [
     { book: "williams", text: "Tranexamic acid inhibits clot lysis; Williams calls the evidence for adjunctive use in obstetrical haemorrhage limited, notes an association with renal cortical necrosis, and does not recommend routine prophylaxis.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1748" },
     { book: "williams", text: "In consumptive coagulopathy (DIC), antifibrinolytics such as tranexamic acid are not recommended because fibrinolysis is needed to clear widespread fibrin thromboses.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1736" },
     { book: "gabbe", text: "TXA for PPH reduced maternal death by nearly 20%; must be given within 3 h of bleeding onset to be effective.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
     { book: "gabbe", text: "Caesarean: pre-incision TXA 10 mg/kg IV (usually 1 g) reduces blood loss; prophylaxis after cord clamping did not reduce death or transfusion composite in large RCT.", ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 432" },
     { book: "schwartz", text: "CRASH-2: early TXA in bleeding trauma limits rebleeding and reduces mortality; benefit is within 3 h, later treatment worsened outcome.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 5 Shock, p. 145" },
-    { book: "schwartz", text: "EAST conditionally recommends early TXA in severe injury; do not give with active intravascular clotting or with activated PCC or factor IX complex concentrates.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 117" }
-  ],
+    { book: "schwartz", text: "EAST conditionally recommends early TXA in severe injury; do not give with active intravascular clotting or with activated PCC or factor IX complex concentrates.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 117" },
+  { book: "whopph", text: "Give 1 g intravenously at 1 mL per minute over ten minutes, with a second 1 g intravenously if bleeding continues after thirty minutes or restarts within twenty-four hours of finishing the first dose.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 27 remarks, pdf p. 62" },
+  { book: "whopph", text: "The three-hour window runs from the time of birth, or the best estimate of it; TXA is given in every case of PPH whatever the source of bleeding, and the recommendation covers the intravenous route only.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 27 remarks, pdf pp. 62–63" },
+  { book: "whopph", text: "A second gram is given if bleeding restarts within twenty-four hours of completing the first dose; separately, starting TXA more than three hours after birth is not supported, as the effect beyond three hours points towards harm.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 27 remarks, pdf pp. 62–63" },
+  { book: "whopph", text: "TXA is not recommended for preventing PPH at vaginal or caesarean birth; it is an antifibrinolytic and not a uterotonic, and must never replace a first-line prophylactic uterotonic.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendations 14 and 15, pdf pp. 50–51" },
+  { book: "ethpph", text: "Tranexamic acid is cheap, easy to give, has a shelf life of about three years and can be stored at room temperature, 15 to 30 °C, in most places; it should always be to hand in delivery and postpartum areas.", ref: "Ethiopian national PPH guideline 2022, Use of tranexamic acid in PPH management, pdf p. 23" },
+  { book: "whopph", text: "Early intravenous tranexamic acid within three hours of birth, in addition to standard care, is recommended for women with PPH after vaginal or caesarean birth; the earlier standalone TXA recommendation is integrated here.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 27, pdf p. 62" }
+],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -1714,7 +1743,12 @@ window.DRUG_DB = [
     }
   ],
   paediatric: ["Weigh the child. If no scale: (age in years + 4) × 2 kg (1–5 y); see the weight calculator."],
-  cautions: ["FEAST 2011: fluid boluses increased mortality in febrile African children without severe dehydration/hypovolaemia — reserve boluses for true shock.", "Severe anaemia (Hb < 5) with respiratory distress: transfuse rather than crystalloid."],
+  cautions: [
+    "FEAST 2011: fluid boluses increased mortality in febrile African children without severe dehydration/hypovolaemia — reserve boluses for true shock.",
+    "Severe anaemia (Hb < 5) with respiratory distress: transfuse rather than crystalloid.",
+    "Postpartum haemorrhage: use isotonic crystalloid (Ringer's lactate or 0.9 % saline), not colloid. WHO 2025 recommends crystalloid in preference to colloid for resuscitating women with PPH — colloids cost more, need stricter storage and carry an anaphylaxis risk without a clinical advantage.",
+    "In PPH, watch for fluid overload, particularly in a woman with pre-eclampsia or heart disease. The destination is control of the bleeding, not a full drip stand."
+  ],
   calc: { type: "planC" },
   sources: [{ name: "WHO Pocket Book of Hospital Care for Children 2013 (Plan C; shock)" }, { name: "WHO. Updated guideline: paediatric emergency triage, assessment and treatment, 2016" }, { name: "Maitland K et al. FEAST. NEJM 2011" }, { name: "WHO/GTFCC Cholera outbreak response field manual, 2019" }],
   textbook: [
@@ -1729,8 +1763,9 @@ window.DRUG_DB = [
     { book: "schwartz", text: "Titrate burn resuscitation to MAP 60 mmHg and urine output 30 mL/h in adults, 1-1.5 mL/kg/h in children; formulas are only guidelines.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 254" },
     { book: "schwartz", text: "Trauma: resuscitation usually begins with isotonic crystalloid, typically Ringer's lactate, but patients arriving in shock (SBP <90) should get a massive transfusion protocol instead of crystalloid.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 191" },
     { book: "nelson", text: "Dehydration: fluid bolus 20 mL/kg isotonic fluid (NS, Ringer lactate or Plasma-Lyte) over about 20 min; severe dehydration may need multiple boluses as fast as possible.", ref: "Nelson 22nd ed. 2024, ch. 70 Deficit therapy, p. 530" },
-    { book: "nelson", text: "Septic shock: Surviving Sepsis suggests up to 40–60 mL/kg in 10–20 mL/kg boluses in the first hour, titrated to markers of cardiac output and stopped if overload develops — for settings with intensive care access, or any setting when hypotension is present. Where no intensive care is available, boluses are restricted (consistent with FEAST and WHO guidance).", ref: "Nelson 22nd ed. 2024, ch. 85 Shock, p. 611" }
-  ],
+    { book: "nelson", text: "Septic shock: Surviving Sepsis suggests up to 40–60 mL/kg in 10–20 mL/kg boluses in the first hour, titrated to markers of cardiac output and stopped if overload develops — for settings with intensive care access, or any setting when hypotension is present. Where no intensive care is available, boluses are restricted (consistent with FEAST and WHO guidance).", ref: "Nelson 22nd ed. 2024, ch. 85 Shock, p. 611" },
+  { book: "whopph", text: "Isotonic crystalloids such as Ringer's lactate or normal saline are preferred to colloids for fluid resuscitation in PPH, and care is needed to avoid overload, especially with pre-eclampsia or cardiac disease.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 28 remarks, pdf p. 63" }
+],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -1806,10 +1841,10 @@ window.DRUG_DB = [
   ],
   indications: ["Prevention and treatment of postpartum haemorrhage", "Induction of labour (low dose, hospital only)", "Incomplete abortion and miscarriage care", "Cervical preparation before procedures"],
   standard: {
-    summary: "Oxytocin remains first-line for PPH where a cold chain exists; misoprostol is the heat-stable alternative and the adjunct when bleeding continues.",
+    summary: "Oxytocin remains the uterotonic of choice where a cold chain exists. Misoprostol is now one of the three uterotonics WHO 2025 recommends for preventing PPH at ALL births — not merely a fallback — and it is the recommended prevention drug where no skilled person can give an injection. For treatment it is the alternative when IV oxytocin is unavailable or the bleeding is not responding; there is no added benefit in giving it at the same time as oxytocin.",
     items: [
-      { label: "PPH prevention", text: "600 mcg orally once, immediately after birth, when oxytocin is unavailable or cannot be given safely (WHO)." },
-      { label: "PPH treatment", text: "800 mcg sublingual once, in addition to oxytocin and tranexamic acid. Do not repeat." },
+      { label: "PPH prevention", text: "400 mcg OR 600 mcg orally, once, immediately after the birth (preferably within 1 minute) — recommended for all births as one of the three prevention uterotonics, not only when oxytocin is missing. There is no clear evidence that 600 mcg works better than 400 mcg, and the higher dose gives more shivering, fever and diarrhoea, so 400 mcg is the reasonable choice. Giving it does not force early cord clamping. Where no skilled health worker is present to inject, oral misoprostol given by a community or lay health worker is the recommended option." },
+      { label: "PPH treatment", text: "800 mcg sublingual once, when IV oxytocin is unavailable or the bleeding is not responding to oxytocin. Do NOT give it routinely at the same time as oxytocin — WHO 2025 found no added benefit from adjunct misoprostol in a woman already receiving oxytocin for treatment. Tranexamic acid 1 g IV is given regardless, as part of the first-response bundle. Do not repeat the misoprostol dose." },
       { label: "Incomplete abortion", text: "600 mcg orally once, or 400 mcg sublingual once." },
       { label: "Induction (viable fetus)", text: "25 mcg orally or vaginally every 2 h (oral) or 6 h (vaginal). Hospital with fetal monitoring only." }
     ]
@@ -1820,9 +1855,9 @@ window.DRUG_DB = [
       best_for: "Community and health-post level with no cold chain, no IV and no oxytocin.",
       requires: ["oral"],
       steps: [
-        "Prevention: 600 mcg (3 × 200 mcg tablets) orally immediately after the baby is born, before the placenta delivers. Swallow with water.",
+        "Prevention: 400 mcg (2 × 200 mcg tablets) or 600 mcg (3 tablets) orally immediately after the baby is born, before the placenta delivers. Swallow with water. Both doses are recommended; 400 mcg causes less shivering, fever and diarrhoea and there is no clear evidence that 600 mcg works better.",
         "Treatment of bleeding: 800 mcg (4 tablets) sublingual — placed under the tongue and left to dissolve, not swallowed. Sublingual acts fastest.",
-        "Give only ONE treatment dose. Repeating does not stop bleeding and causes high fever.",
+        "Give only ONE treatment dose. If she already had misoprostol for prevention and there is no injectable uterotonic anywhere, there is no evidence to guide a further dose — weigh the risk of toxicity and hyperpyrexia before giving one, and put your effort into compression, fluids, tranexamic acid and transfer instead.",
         "At the same time: rub up the uterus, empty the bladder, put the baby to the breast, and start bimanual compression if bleeding is heavy.",
         "Refer immediately. Write the dose, route and exact time on the referral note — the receiving facility must not repeat it."
       ],
@@ -1863,10 +1898,16 @@ window.DRUG_DB = [
     { book: "gabbe", text: "Misoprostol is a safe, cheap uterotonic needing no refrigeration; sublingual gives fastest onset at lowest dose, rectal highest bioavailability. Algorithm caps total at 1000 mcg.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
     { book: "gabbe", text: "Postpartum haemorrhage table: misoprostol 600–1000 mcg rectally and/or 400 mcg sublingually, total not above 1000 mcg; side-effects include fever, chills and diarrhoea.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 420" },
     { book: "gabbe", text: "Induction: ACOG recommends 25 mcg vaginally every 3-6 h; oral regimens use 20-25 mcg every 2 h; oxytocin may start 4 h after last dose.", ref: "Gabbe's Obstetrics 9th ed., ch. 14 Induction of Labor, p. 283" },
-    { book: "note", text: "Nelson covers misoprostol chiefly as a cause of neonatal exposure and in obstetric context; PPH regimens are obstetric and are taken from WHO.", ref: "Editorial note" }
-  ],
+    { book: "note", text: "Nelson covers misoprostol chiefly as a cause of neonatal exposure and in obstetric context; PPH regimens are obstetric and are taken from WHO.", ref: "Editorial note" },
+  { book: "whopph", text: "Misoprostol, 400 or 600 micrograms orally, is recommended for preventing PPH at all births; for treatment there is no added benefit in giving it alongside oxytocin.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendations 7.3 and 25, pdf pp. 40 and 61" },
+  { book: "whopph", text: "Either 400 or 600 micrograms orally is recommended for prevention at all births; there is no clear evidence the larger dose is more effective and higher doses probably cause worse side-effects.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.3, pdf p. 40" },
+  { book: "whopph", text: "There is no added benefit in offering misoprostol at the same time as oxytocin when treating PPH; 800 micrograms sublingually is the accepted treatment dose when misoprostol is used.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 25 remarks, pdf p. 61" },
+  { book: "whopph", text: "Trials have mostly used 600 or 400 micrograms; there is no clear evidence the larger dose is better and higher doses are likely to cause worse side-effects.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.3 remarks, pdf p. 40" },
+  { book: "whopph", text: "Where misoprostol has already been given for prophylaxis and no injectable uterotonic is available, there is not enough evidence to guide further misoprostol dosing; providers should weigh the risk of toxicity.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 25 remarks, pdf p. 61" },
+  { book: "whopph", text: "The 2025 consolidated guideline replaces the earlier WHO recommendations on uterotonics for PPH prevention.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 11 remarks, pdf p. 47" }
+],
   sources: [
-    { name: "WHO recommendations for the prevention and treatment of postpartum haemorrhage, 2012 (and 2018 updates)" },
+    { name: "WHO. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025 — supersedes the 2012 recommendations and the 2018 uterotonics update" },
     { name: "WHO. Managing Complications in Pregnancy and Childbirth, 2nd ed. 2017" },
     { name: "FIGO misoprostol-only recommended regimens, 2023" }
   ],
@@ -1884,13 +1925,13 @@ window.DRUG_DB = [
   presentation: [
     "0.2 mg/mL (0.5 mg/mL in some countries) 1 mL ampoule.",
     "Heat- and light-sensitive: requires 2–8 °C and protection from light. Discoloured ampoules have lost potency.",
-    "Syntometrine = oxytocin 5 IU + ergometrine 0.5 mg in 1 mL."
+    "Syntometrine = oxytocin 5 IU + ergometrine 0.5 mg in 1 mL. WHO 2025 does NOT recommend this fixed-dose combination for PPH prevention — it carries an even larger ergometrine dose than ergometrine used alone, and screening for hypertensive disorders is not possible in many settings. It may still be used as second-line treatment."
   ],
-  indications: ["Second-line treatment of PPH from uterine atony", "Third stage of labour where policy includes it"],
+  indications: ["Second-line treatment of PPH from uterine atony", "NOT for routine prevention in the third stage — WHO 2025 no longer recommends ergometrine or methylergometrine for preventing PPH"],
   standard: {
-    summary: "Given after oxytocin when bleeding continues, provided blood pressure is normal.",
+    summary: "A TREATMENT drug only. WHO 2025 no longer recommends ergometrine for PPH prevention at any birth — prevention is oxytocin, carbetocin or misoprostol — because the extra hypertension (about 43 more women per 1000) is not repaid by any clear benefit. It keeps its place as second-line treatment, given after oxytocin when bleeding continues and blood pressure is normal. Countries are asked to procure it in limited quantities for treatment only.",
     items: [
-      { label: "PPH treatment", text: "0.2 mg IM. Repeat 0.2 mg IM after 15 min if bleeding continues, then every 4 h if needed. Maximum 5 doses (1 mg) in 24 h." },
+      { label: "PPH treatment", text: "Second-line, after oxytocin. WHO 2025 names the INTRAVENOUS route for treatment (ergometrine/methylergometrine injections are 200–500 µg IM or IV). Practical regimen where slow IV is unsafe or unsupervised: 0.2 mg IM, repeat 0.2 mg IM after 15 min if bleeding continues, then every 4 h if needed, maximum 5 doses (1 mg) in 24 h. Check the blood pressure before every dose." },
       { label: "IV route", text: "0.2 mg IV slowly over at least 1 min — only for life-threatening bleeding, because of hypertension and vomiting." }
     ]
   },
@@ -1919,24 +1960,37 @@ window.DRUG_DB = [
       steps: [
         "Ergometrine loses potency quickly above 25 °C and in light. Keep ampoules in the vaccine fridge inside their carton.",
         "Discard any ampoule that has turned yellow or brown, or that has been out of the fridge for weeks.",
-        "If refrigeration cannot be guaranteed, stock misoprostol instead — it is heat-stable and does not fail silently."
+        "If refrigeration cannot be guaranteed, do not rely on ergometrine at all. For PREVENTION, WHO 2025 says stock heat-stable carbetocin 100 µg, or misoprostol 400–600 µg orally if carbetocin is not available; both are heat-stable and neither fails silently. Ergometrine is no longer a recommended prevention option in any setting."
       ],
       monitor: [],
       cautions: ["A clear ampoule is not proof of potency; a discoloured one is proof of degradation."]
     }
   ],
-  cautions: ["Hypertension, stroke, seizure, myocardial ischaemia.", "Nausea and vomiting in about a quarter of women.", "Do not give before delivery of the baby."],
+  cautions: [
+    "Hypertension, stroke, seizure, myocardial ischaemia.",
+    "Nausea and vomiting in about a quarter of women.",
+    "Do not give before delivery of the baby.",
+    "NOT for prevention. WHO 2025 withdrew ergometrine, and the oxytocin–ergometrine fixed-dose combination, from PPH prophylaxis; its use in the third stage of labour is no longer justified when oxytocin, carbetocin and misoprostol are available. It remains a second-line treatment drug.",
+    "The danger is greatest where hypertensive disorders cannot be screened for before the injection — which is most health centres and every home birth."
+  ],
   textbook: [
     { book: "williams", text: "Second-line for atony: methylergonovine or ergonovine 0.2 mg IM, repeatable every 2 to 4 hours. Ergots, especially IV, may cause dangerous hypertension, particularly in preeclampsia or with HIV protease inhibitors.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1678" },
     { book: "williams", text: "If given IV, methylergonovine 0.2 mg is injected slowly over not less than 60 seconds to avoid sudden hypertension; relatively contraindicated in hypertensive women.", ref: "Williams Obstetrics 25th ed. 2018, ch. 27 Vaginal Delivery, pdf p. 1157" },
     { book: "gabbe", text: "Methylergonovine 0.2 mg IM, repeatable every 2-4 h, for atony.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 420" },
     { book: "gabbe", text: "Contraindicated in hypertension (also scleroderma, migraine, Raynaud); unstable at room temperature.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
     { book: "gabbe", text: "Methergine should not be used in women with hypertensive disorders.", ref: "Gabbe's Obstetrics 9th ed., ch. 13 Normal Labor and Delivery, p. 271" },
-    { book: "note", text: "Not covered as a paediatric drug in Nelson. Obstetric regimens are from WHO.", ref: "Editorial note" }
-  ],
+    { book: "note", text: "Not covered as a paediatric drug in Nelson. Obstetric regimens are from WHO.", ref: "Editorial note" },
+  { book: "whopph", text: "Ergometrine and methylergometrine are no longer recommended for preventing postpartum haemorrhage: the benefit is uncertain and the risk of hypertension is high.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 9.1, pdf p. 42" },
+  { book: "whopph", text: "The group withdrew ergometrine from prophylaxis because of the increased risk of hypertension, about 43 more women per 1000, and the potential harm in women with undiagnosed cardiovascular disease.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 9.1 justification, pdf p. 42" },
+  { book: "whopph", text: "Ergometrine and methylergometrine injections are given as 200 to 500 micrograms intramuscularly or intravenously; for treatment of PPH the intravenous route is the one WHO names.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendations 9.1 remarks and 25, pdf pp. 43 and 61" },
+  { book: "whopph", text: "The fixed-dose combination of oxytocin 5 IU with ergometrine 500 micrograms intramuscularly is not recommended for preventing PPH; it contains more ergometrine than ergometrine given alone.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 9.2, pdf p. 43" },
+  { book: "whopph", text: "Where the oxytocin cold chain cannot be kept, heat-stable carbetocin 100 micrograms IM/IV is the recommended choice, with oral misoprostol 400 or 600 micrograms as the alternative; the ergometrine options that the 2018 guidance allowed here are no longer included.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 11 and remarks, pdf pp. 46–47" },
+  { book: "whopph", text: "Prophylactic use of ergometrine cannot be justified given the absence of clear added benefit over safer alternatives, and countries are asked to update their guidelines, essential medicines lists and procurement accordingly.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 9.1 remarks, pdf p. 42" },
+  { book: "whopph", text: "Ergometrine was a context-specific prevention option in the 2018 WHO uterotonics recommendations; reviewing newer evidence, the group withdrew it.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 9.1 remarks, pdf p. 42" }
+],
   sources: [
     { name: "WHO. Managing Complications in Pregnancy and Childbirth, 2nd ed. 2017" },
-    { name: "WHO recommendations: uterotonics for the prevention of postpartum haemorrhage, 2018" }
+    { name: "WHO. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025 — supersedes the 2018 uterotonics recommendations, which had allowed ergometrine for prevention" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -3807,7 +3861,7 @@ window.DRUG_DB = [
     items: [
       { label: "Child, severe anaemia", text: "Whole blood 20 mL/kg over 3–4 h, or packed cells 10 mL/kg. WHO threshold: Hb under 4 g/dL, or 4–6 g/dL with respiratory distress, heart failure, impaired consciousness or hyperparasitaemia." },
       { label: "Severe acute malnutrition", text: "Whole blood 10 mL/kg slowly over 3 h, or packed cells 5–7 mL/kg if there are signs of heart failure, with furosemide 1 mg/kg IV at the start." },
-      { label: "Adult haemorrhage", text: "Transfuse to control of bleeding and clinical endpoints rather than to a haemoglobin number; give tranexamic acid 1 g within 3 h." },
+      { label: "Adult haemorrhage", text: "Transfuse to control of bleeding and clinical endpoints rather than to a haemoglobin number; give tranexamic acid 1 g IV within 3 h of birth (PPH) or of injury (trauma). WHO 2025 for PPH: base the decision to transfuse on the woman's underlying risk, on continuous clinical AND haematological assessment, and on a written protocol — not on a single reading. In rapid, massive ongoing PPH a restrictive haemoglobin trigger is not practical and the haemoglobin measurement itself is unreliable; treat the bleeding and the patient in front of you." },
       { label: "Expected rise", text: "Whole blood 20 mL/kg or packed cells 10 mL/kg raises the haemoglobin by roughly 2–3 g/dL." }
     ]
   },
@@ -3883,8 +3937,9 @@ window.DRUG_DB = [
     { book: "schwartz", text: "Whole blood is advantageous in remote/austere settings where platelets are unavailable and was associated with improved survival versus component therapy in military casualties.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 121" },
     { book: "schwartz", text: "Damage control resuscitation: permissive hypotension, minimal crystalloid, early balanced blood products in whole-blood-like ratios, and haemostatic adjuncts.", ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 119" },
     { book: "nelson", text: "Severe acute malnutrition with very severe anaemia, haemoglobin under 4 g/dL, or 4–6 g/dL with respiratory distress: give whole blood 10 mL/kg slowly over 3 hours, or packed cells 5–7 mL/kg if there are signs of heart failure, with furosemide 1 mg/kg IV at the start of the transfusion. In shock not improving, assume septic shock, give maintenance fluid 4 mL/kg/hr while waiting for blood, and order 10 mL/kg fresh whole blood transfused slowly over 3 hours.", ref: "Nelson 22nd ed. 2024, ch. 62 Severe acute malnutrition, Table, p. 428" },
-    { book: "nelson", text: "After receiving 100 mL/kg of red-cell transfusions, regular assessment for iron overload should begin, usually including serum ferritin and MRI assessment of hepatic iron every 1–2 years; children on chronic transfusion should also have annual screening for transfusion-transmitted infections including hepatitis B, hepatitis C and HIV.", ref: "Nelson 22nd ed. 2024, ch. 511 Sickle cell disease, p. 2976" }
-  ],
+    { book: "nelson", text: "After receiving 100 mL/kg of red-cell transfusions, regular assessment for iron overload should begin, usually including serum ferritin and MRI assessment of hepatic iron every 1–2 years; children on chronic transfusion should also have annual screening for transfusion-transmitted infections including hepatitis B, hepatitis C and HIV.", ref: "Nelson 22nd ed. 2024, ch. 511 Sickle cell disease, p. 2976" },
+  { book: "whopph", text: "The decision to transfuse in acute or ongoing PPH should rest on underlying risk, continuous clinical and haematological assessment and clear protocols; with rapid massive bleeding a restrictive haemoglobin trigger is often impractical and the haemoglobin unreliable.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 41, pdf p. 73" }
+],
   sources: [
     { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024" },
     { name: "WHO Pocket Book of Hospital Care for Children 2013 (blood transfusion)" },
@@ -15192,6 +15247,249 @@ window.DRUG_DB = [
       { name: "AAO Preferred Practice Pattern: Cataract in the Adult Eye" }
     ],
     textbook: [],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- carbetocin ---- */
+  {
+    id: "carbetocin",
+    name: "Carbetocin",
+    aka: ["Heat-stable carbetocin", "HSC", "Pabal", "Duratocin"],
+    cls: "Long-acting oxytocin analogue (uterotonic)",
+    cat: "obstetric",
+    wards: ["maternity", "surgical", "emergency", "outpatient"],
+    tags: ["PPH", "postpartum haemorrhage", "prevention", "third stage", "heat-stable", "no cold chain"],
+    presentation: [
+      "100 µg in 1 mL ampoule or vial — a single fixed dose, no dilution and no calculation.",
+      "HEAT-STABLE formulation: no cold chain. It does not need refrigerated transport or storage, which is the whole reason it exists. Store as the carton states, out of direct sun.",
+      "CONVENTIONAL (non-heat-stable) carbetocin also exists and looks almost identical. It has the same active drug but different excipients, and it needs a fridge like oxytocin — read the carton before you trust it in a hot room."
+    ],
+    indications: [
+      "Prevention of postpartum haemorrhage in the third stage of labour, at vaginal birth and at caesarean section",
+      "First choice for PPH prevention where the oxytocin cold chain cannot be relied on (heat-stable formulation)"
+    ],
+    standard: {
+      summary: "One 100 µg dose after the baby is born. It is a PREVENTION drug only — WHO 2025 does not recommend carbetocin for treating a postpartum haemorrhage that has already started, nor for induction or augmentation of labour.",
+      items: [
+        {
+          label: "PPH prevention",
+          text: "100 µg IM or IV, once, immediately after the birth of the baby (preferably within 1 minute). Vaginal birth or caesarean section. Giving it does not stop you delaying cord clamping (WHO 2025)."
+        },
+        {
+          label: "Where there is no reliable fridge",
+          text: "Heat-stable carbetocin 100 µg IM/IV is the recommended choice for PPH prevention when the oxytocin cold chain cannot be consistently maintained. If heat-stable carbetocin is not available, misoprostol 400 µg or 600 µg orally is the alternative (WHO 2025, Recommendation 11)."
+        },
+        {
+          label: "Where the fridge is reliable",
+          text: "Oxytocin 10 IU remains the uterotonic of choice when several options are stocked and cold chain is secure. In that setting the heat-stable formulation offers no extra advantage and is not specifically required (WHO 2025, Recommendations 10 and 7.2)."
+        },
+        {
+          label: "NOT for treatment",
+          text: "Do not use carbetocin to treat an established PPH. Repeat dosing after a prophylactic dose has not been adequately studied and WHO 2025 says its use for treatment should be discouraged until there is evidence. Treat with IV oxytocin, then ergometrine or sublingual misoprostol 800 µg, plus tranexamic acid."
+        },
+        {
+          label: "Ethiopian national guideline",
+          text: "The Ethiopian MoH 2022 guideline lists heat-stable carbetocin 100 µg IM/IV as a SECOND-LINE prevention drug, behind oxytocin. WHO 2025 goes further and makes it the first choice wherever the cold chain fails — which covers most health centres and health posts. Follow your facility protocol and note the difference."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Carrying a uterotonic to an outreach birth — what changes when it is carbetocin",
+        best_for: "Midwives covering health posts, home births and long referral routes with no fridge and no ice.",
+        requires: ["im"],
+        steps: [
+          "Oxytocin in an outreach bag is a gamble: it needs 2–8 °C in storage, transport and handling, and a hot bag on a long walk quietly destroys it. Heat-stable carbetocin needs none of that — it goes in the bag like a syringe or a pair of gloves.",
+          "Pack it as: one 100 µg ampoule per expected birth, plus a spare, a 2 mL syringe, a 21–23 G needle and an alcohol swab. No cool box, no ice packs, no vaccine carrier.",
+          "Keep the ampoules in their carton and out of direct sunlight. Heat-stable does not mean sun-proof: the carton also protects from light and from the ampoule being chipped in a bag.",
+          "At the birth: dry and assess the baby first, then give 100 µg IM into the anterolateral thigh within 1 minute of the birth. Do not clamp the cord early just to give the injection.",
+          "Record the drug, the dose, the route and the exact time on the labour record and on any referral note, so nobody at the receiving facility assumes she has had nothing.",
+          "If the woman then bleeds, carbetocin has done its job or it has not — do not give a second ampoule. Move to uterine massage, IV access, oxytocin if you have it, misoprostol 800 µg sublingual, tranexamic acid 1 g IV and referral."
+        ],
+        monitor: [
+          "Uterine tone and blood loss for at least the first 2 hours, with objective measurement (calibrated drape) if you have one",
+          "Pulse and BP at 15 minutes and then as the protocol says",
+          "Nausea, abdominal pain, headache, shivering, fever — all mild and self-limiting, and no more common than with oxytocin"
+        ],
+        cautions: [
+          "Carbetocin is for AFTER the baby is born. Never give it before delivery of the baby.",
+          "One dose only. There is no second-dose regimen for carbetocin.",
+          "Only the HEAT-STABLE formulation may be carried without a cold chain. Check the carton — see the next card."
+        ]
+      },
+      {
+        title: "Telling heat-stable from conventional carbetocin before you rely on it",
+        best_for: "Stores, pharmacy and any midwife handed an unfamiliar box of carbetocin.",
+        requires: [],
+        steps: [
+          "Both formulations contain exactly the same active drug at the same 100 µg dose. The difference is in the excipients — the inactive carrier — and therefore only in the storage conditions.",
+          "Read the storage sentence on the carton and the ampoule label, not the brand name. Heat-stable stock says it does not require refrigeration, or gives a room-temperature range. Conventional stock says store at 2–8 °C, or refrigerate.",
+          "If the carton says 2–8 °C, treat that ampoule exactly like oxytocin: cold chain from the store to the delivery room, and no place in an outreach bag.",
+          "If the storage sentence is missing, unreadable or in a language nobody in the room reads, assume it is the conventional product and keep it in the fridge until the pharmacist confirms otherwise.",
+          "Label the shelf, not just the box: keep heat-stable and conventional carbetocin in physically separate places, because the ampoules are near-identical and a mix-up is silent.",
+          "Tell the store keeper what you need when ordering: asking for 'carbetocin' may bring either product. Ask for heat-stable carbetocin by name."
+        ],
+        monitor: [],
+        cautions: [
+          "There is no way to tell from the ampoule contents which formulation you are holding, and no colour change when either has been spoiled. The carton is the only evidence.",
+          "Heat-stable carbetocin is the formulation WHO recommends where cold chain cannot be guaranteed. Conventional carbetocin carried without a fridge gives you the cost of carbetocin with the fragility of oxytocin."
+        ]
+      },
+      {
+        title: "Only conventional carbetocin arrived, and the fridge is not reliable",
+        best_for: "Health centres where the power fails, the vaccine fridge is shared, or the supply is whatever the district sent.",
+        requires: [],
+        steps: [
+          "Do not assume it is ruined and do not assume it is fine. Keep it in the most reliable cold space you have — the vaccine fridge with a temperature card — exactly as you would keep oxytocin, and use the oldest stock first.",
+          "Put it in the delivery room's cold box only for the shift it will be used, and return unused ampoules; repeated warming and cooling is worse than a steady 2–8 °C.",
+          "At the same time, make sure a genuinely heat-stable option is in the room for the births you cannot cover: misoprostol 400–600 µg orally is heat-stable, needs no needle and no fridge, and is the WHO alternative when heat-stable carbetocin is not available.",
+          "Escalate the supply problem in writing. WHO 2025 asks countries to procure a heat-stable uterotonic where the cold chain cannot be guaranteed; a facility repeatedly sent the refrigerated product has a procurement problem, not a clinical one.",
+          "Never compensate for doubtful potency by giving two ampoules. A second dose of carbetocin is not a studied regimen, and doubling a dead ampoule is still nothing."
+        ],
+        monitor: [
+          "Fridge temperature log, twice daily",
+          "Stock expiry dates and the date each box left the cold chain"
+        ],
+        cautions: [
+          "A uterotonic that has lost potency fails silently — the first sign is a woman bleeding after a birth you thought was covered.",
+          "Where the cold chain genuinely cannot be maintained, a heat-stable drug you trust beats an expensive drug you hope is still active."
+        ]
+      },
+      {
+        title: "Choosing the prevention uterotonic from what is actually in the room",
+        best_for: "Every birth. Thirty seconds of decision before the head is out.",
+        requires: [],
+        steps: [
+          "Only ONE uterotonic is given for prevention — oxytocin, carbetocin or misoprostol. Not two, and never a routine combination.",
+          "Reliable fridge, oxytocin in it, and it has been cold the whole way from the district store: oxytocin 10 IU IM within 1 minute. It is the agent of choice when several options are available, and it is by far the cheapest.",
+          "She already has an IV running for another reason, at a vaginal birth: give the 10 IU of oxytocin IV instead, diluted and slowly over 1–2 minutes. Do not site a cannula only in order to do this.",
+          "Cold chain you do not trust — no power, no temperature card, a long hot transport, or oxytocin of uncertain quality — and heat-stable carbetocin is in the room: carbetocin 100 µg IM.",
+          "No reliable cold chain and no heat-stable carbetocin: misoprostol 400 µg or 600 µg orally. It is the WHO alternative, costs little, and a community or lay health worker can give it where nobody can inject.",
+          "No skilled person present to give an injection at all: misoprostol orally, given by the community health worker, is the recommended option — not a delayed injection.",
+          "Whatever you choose, give it within 1 minute of the birth, record it, and do not delay cord clamping because of it."
+        ],
+        monitor: [
+          "Uterine tone and measured blood loss for the first 2 hours",
+          "Pulse, BP and shock index if bleeding starts"
+        ],
+        cautions: [
+          "Ergometrine and the oxytocin–ergometrine fixed-dose combination are no longer recommended for PREVENTION at all (WHO 2025) — the hypertension risk outweighs the benefit. They still have a place in treatment.",
+          "Carbetocin costs far more than oxytocin — roughly nineteen times the non-subsidised price — so it is a cold-chain decision, not a routine upgrade.",
+          "Tranexamic acid is not a uterotonic and must never be used in place of a prophylactic uterotonic."
+        ]
+      }
+    ],
+    paediatric: [
+      "Not a paediatric or neonatal drug. Carbetocin is given to the mother after birth and has no indication in children.",
+      "It is given after the baby is delivered, so there is no fetal exposure; the amount reaching a breastfed baby's milk is negligible."
+    ],
+    cautions: [
+      "PREVENTION ONLY. WHO 2025 does not recommend carbetocin for treating established PPH, for induction or for augmentation of labour.",
+      "One dose. Repeat dosing has not been adequately studied and is discouraged.",
+      "Never give before the baby is born.",
+      "Side-effects are mild and no more frequent than with oxytocin: nausea, abdominal pain, headache, shivering and fever.",
+      "It must be given by a health worker trained to give injectable uterotonics; unlike misoprostol it cannot be task-shifted to a lay health worker.",
+      "Unit cost is high and varies enormously between subsidised and non-subsidised supply — the reason it is targeted at cold-chain-limited settings rather than used everywhere.",
+      "As with oxytocin, watch fluid balance in a woman with pre-eclampsia or heart disease."
+    ],
+    textbook: [
+      {
+        book: "whopph",
+        text: "Carbetocin 100 micrograms IM or IV is recommended to prevent postpartum haemorrhage at all births; where the cold chain cannot be guaranteed, use the heat-stable formulation.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2, pdf p. 39"
+      },
+      {
+        book: "whopph",
+        text: "Heat-stable carbetocin 100 micrograms IM/IV is the recommended choice for prevention where the oxytocin cold chain cannot be kept; if it is not stocked, oral misoprostol 400 or 600 micrograms is the alternative.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 11, pdf p. 46"
+      },
+      {
+        book: "whopph",
+        text: "The recommendation covers prevention only; carbetocin is not currently recommended for induction, augmentation or the treatment of PPH.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 remarks, pdf p. 39"
+      },
+      {
+        book: "whopph",
+        text: "Repeat carbetocin dosing for treatment after a prophylactic dose has not been adequately studied, so using it for treatment should be discouraged until there is evidence.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 25 remarks, pdf p. 61"
+      },
+      {
+        book: "whopph",
+        text: "The heat-stable and conventional products differ only in their excipients, not in the active drug; the heat-stable one needs no refrigeration and so removes cold-chain cost.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 remarks, pdf p. 39"
+      },
+      {
+        book: "whopph",
+        text: "Where cold-chain storage and transport really are reliable, the heat-stable formulation adds nothing and is not specifically required.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 remarks, pdf p. 40"
+      },
+      {
+        book: "whopph",
+        text: "A WHO trial of nearly 30 000 women used 100 micrograms of intramuscular heat-stable carbetocin across high-, middle- and low-income settings.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 remarks, pdf p. 40"
+      },
+      {
+        book: "whopph",
+        text: "Give it as soon as possible, preferably within a minute of the birth; doing so need not force early cord clamping.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 remarks, pdf p. 39"
+      },
+      {
+        book: "whopph",
+        text: "Side-effects such as nausea, abdominal pain, headache, shivering and fever are barely different from placebo.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 justification, pdf p. 39"
+      },
+      {
+        book: "whopph",
+        text: "The benefits are substantial but the current unit cost is high, so the effect on equity differs between settings.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 justification, pdf p. 39"
+      },
+      {
+        book: "whopph",
+        text: "Carbetocin probably reduces the need for a second uterotonic compared with oxytocin, but unsubsidised it costs roughly nineteen times as much.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 10 justification, pdf p. 45"
+      },
+      {
+        book: "whopph",
+        text: "Heat-stable carbetocin has to be given by skilled health personnel trained in injectable uterotonics, whereas misoprostol can be given by community or lay workers.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 11 remarks, pdf p. 47"
+      },
+      {
+        book: "ethpph",
+        text: "The Ethiopian national guideline places heat-stable carbetocin 100 micrograms IM/IV as a second-line prevention drug after oxytocin, and expects it to become widely available in low- and lower-middle-income countries.",
+        ref: "Ethiopian national PPH guideline 2022, section 3 PPH prevention, pdf p. 18"
+      },
+      {
+        book: "ethpph",
+        text: "Carbetocin is described as a long-acting oxytocin analogue acting at the same uterine receptors, producing rhythmic contractions and raised uterine tone.",
+        ref: "Ethiopian national PPH guideline 2022, Annex I Characteristics of potential uterotonics, pdf p. 30"
+      },
+      {
+        book: "ethpph",
+        text: "Given IV it produces sustained contractions within about 2 minutes lasting some 6 minutes, then rhythmic contractions for about an hour; the half-life is about 40 minutes.",
+        ref: "Ethiopian national PPH guideline 2022, Annex I Characteristics of potential uterotonics, pdf p. 31"
+      },
+      {
+        book: "figopph",
+        text: "FIGO's 2012 low-resource guidance listed carbetocin 100 micrograms IM or IV over 1 minute among PPH treatment options; WHO 2025 supersedes this and restricts carbetocin to prevention.",
+        ref: "FIGO PPH in low-resource settings 2012, Fig. 5 drug regimens, pdf p. 6"
+      },
+      {
+        book: "note",
+        text: "Carbetocin is not in Williams Obstetrics 25th ed. or Gabbe 9th ed. as a routine agent for these settings; the regimens here are taken from the WHO 2025 consolidated guideline and the Ethiopian national guideline.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025"
+      },
+      {
+        name: "National guideline on prevention and management of postpartum haemorrhage, Ministry of Health, Ethiopia, May 2022"
+      },
+      {
+        name: "FIGO guidelines: prevention and treatment of postpartum haemorrhage in low-resource settings, Int J Gynecol Obstet 2012;117"
+      }
+    ],
     review: { status: "draft", by: null, date: null }
   }
 ];

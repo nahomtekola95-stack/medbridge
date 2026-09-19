@@ -2722,5 +2722,59 @@ window.SAFETY = {
       "LactMed (NIH)",
       "BNF"
     ]
+  },
+
+  /* ---- carbetocin ---- */
+  carbetocin: {
+    pregnancy: {
+      level: "avoid",
+      text: "Carbetocin is given AFTER the baby is born, never during pregnancy or labour. It is a long-acting oxytocin analogue and would cause sustained uterine contraction with a fetus still in utero. There is no fetal exposure when it is used correctly, because the only recommended moment to give it is within about 1 minute of the birth of the baby (or of the last baby in a multiple birth). It has no role in induction or augmentation of labour: WHO 2025 recommends it for the prevention of postpartum haemorrhage only."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible with breastfeeding, and it is recommended at all births including those of women who will breastfeed. It is a single 100 µg dose of an oxytocin analogue given once, and oxytocin itself is a normal part of milk let-down. Put the baby to the breast as usual; there is no need to withhold or discard milk."
+    },
+    renal: {
+      level: "none",
+      text: "No dose adjustment is described in the WHO 2025 PPH guideline or the Ethiopian national guideline, and there is nothing to adjust: it is a single fixed 100 µg dose, not an infusion. As with oxytocin, the practical concern in kidney impairment or pre-eclampsia is the fluid given alongside it — watch fluid balance and urine output, and avoid overload."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose adjustment is described. A single fixed 100 µg dose; there is no titration and no cumulative exposure."
+    },
+    refs: [
+      {
+        book: "whopph",
+        text: "Carbetocin 100 micrograms IM or IV is recommended for preventing PPH at all births, with the heat-stable form where the cold chain cannot be guaranteed.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2, pdf p. 39",
+        pdf_page: 39,
+        quote: "Carbetocin (100 µg, intramuscularly/intravenously) is recommended for the prevention of postpartum"
+      },
+      {
+        book: "whopph",
+        text: "Give it as soon as possible after the birth, preferably within a minute; it is not recommended for induction, augmentation or treatment.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 remarks, pdf p. 39",
+        pdf_page: 39,
+        quote: "not currently recommended for other obstetric indications"
+      },
+      {
+        book: "whopph",
+        text: "The recommended moment is immediately after the birth of the baby or babies, and it does not force early cord clamping.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 remarks, pdf p. 39",
+        pdf_page: 39,
+        quote: "To maximize efficacy, carbetocin is best given immediately"
+      },
+      {
+        book: "whopph",
+        text: "Side-effects such as nausea, abdominal pain, headache, shivering and fever are barely different from no uterotonic.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 7.2 justification, pdf p. 39",
+        pdf_page: 39,
+        quote: "nausea, abdominal pain, headache, shivering and fever"
+      }
+    ],
+    sources: [
+      "WHO. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025",
+      "National guideline on prevention and management of postpartum haemorrhage, Ministry of Health, Ethiopia, 2022"
+    ]
   }
 };

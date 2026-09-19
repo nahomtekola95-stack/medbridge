@@ -302,43 +302,178 @@ window.CONDITIONS = [
   review: { status: "draft" }
 },
 {
-  id: "pph", name: "Postpartum haemorrhage", group: "obstetric",
-  aka: ["PPH", "bleeding after delivery", "uterine atony"],
-  summary: "The leading cause of maternal death. Four causes: tone, tissue, trauma and thrombin. Uterine massage, uterotonics and tranexamic acid come first, and a theatre decision must not be delayed for them.",
-  redflags: ["Blood loss over 500 mL, or any loss with a rising pulse or falling BP", "Soft, boggy uterus", "Retained placenta or placental fragments", "Tear or rupture", "Continued bleeding despite uterotonics — go to theatre"],
-  steps: [
-    "Call for help. Rub up the uterus, empty the bladder, two large cannulae, cross-match.",
-    "Oxytocin first; add the others if bleeding continues.",
-    "Tranexamic acid within 3 hours of birth.",
-    "Look for the cause: explore for retained tissue, inspect for tears, consider rupture.",
-    "Bimanual compression, aortic compression or a uterine balloon while arranging theatre.",
-    "Do not wait for blood to arrive before operating on a bleeding woman."
-  ],
-  drugs: [
-    { id: "oxytocin", role: "first", note: "10 IU IM for prevention; 20 IU in 1 L at 60 drops/min for treatment. Never undiluted IV." },
-    { id: "tranexamic-acid", role: "first", note: "1 g IV over 10 min within 3 h of birth, repeat once after 30 min. Reduces death from bleeding." },
-    { id: "misoprostol", role: "first", note: "800 mcg sublingual. Heat-stable, no cold chain, works at any level of care." },
-    { id: "ergometrine", role: "adjunct", note: "0.2 mg IM if the BP is normal. Never in pre-eclampsia." },
-    { id: "ringers-lactate", role: "first", note: "Resuscitation while blood is found." },
-    { id: "blood-transfusion", role: "first", note: "Call donors early; do not wait until she is moribund." },
-    { id: "metronidazole", role: "adjunct", note: "With ampicillin for sepsis after manual removal or instrumentation." },
-    { id: "ampicillin", role: "adjunct", note: "Prophylaxis after manual removal of the placenta." },
-    { id: "ketamine", role: "supportive", note: "For examination under anaesthesia or laparotomy where there is no anaesthetist." },
-    { id: "oxygen", role: "supportive", note: "Oxygen by mask at 6–8 L/min during resuscitation of haemorrhagic shock." }
-  ],
-  sources: [{ name: "WHO recommendations for the prevention and treatment of PPH, 2012/2018" }, { name: "WOMAN trial. Lancet 2017" }],
-  textbook: [
-    { book: "williams", text: "On immediate PPH, inspect for lacerations and retained placental fragments, massage the uterus and give uterotonics; ergot derivatives are second-line if atony persists after oxytocin.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1677" },
-    { book: "williams", text: "If bleeding persists despite uterotonics, immediately and simultaneously begin bimanual uterine compression, which controls most cases.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1679" },
-    { book: "williams", text: "Establish large-bore IV access, rapid crystalloid while blood is made available, and ready the operating room and surgical/anaesthesia team immediately.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1744" },
-    { book: "williams", text: "After manual removal of the placenta evidence of antibiotic benefit is lacking, but WHO recommends prophylaxis and Parkland gives a single dose to women not already on antibiotics.", ref: "Williams Obstetrics 25th ed. 2018, ch. 27 Vaginal Delivery, pdf p. 1157" },
-    { book: "gabbe", text: "Uterotonics are mainstay for atony; oxytocin first-line, then second agent chosen by side-effect profile and contraindications, with bimanual massage.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 405" },
-    { book: "gabbe", text: "Tranexamic acid within 3 h of bleeding onset reduced maternal death by nearly 20%.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" },
-    { book: "gabbe", text: "Resuscitation: two large-bore lines, crystalloid, pRBC if Hb <7 or active bleeding with coagulopathy; massive transfusion 4:4:1.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 417" },
-    { book: "gabbe", text: "If drugs fail, inspect for lacerations, then intrauterine vacuum, tamponade, embolisation or surgery.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 406" }
-  ],
-  review: { status: "draft" }
-},
+    id: "pph",
+    name: "Postpartum haemorrhage",
+    group: "obstetric",
+    aka: ["PPH", "bleeding after delivery", "uterine atony", "E-MOTIVE", "treatment bundle"],
+    summary: "Measure the blood, do not guess it — a calibrated drape, from the moment the baby is out. Once she crosses the trigger, the whole first-response bundle goes in together: massage, oxytocin, tranexamic acid, fluids, examine the genital tract, escalate. Not one drug at a time. And the decision to open the abdomen must not wait for the drugs to work.",
+    redflags: [
+      "Measured loss 500 mL or more — or 300 mL or more with pulse over 100, systolic under 100, diastolic under 60, or shock index over 1",
+      "Soft, boggy uterus on abdominal palpation at any time in the first hours",
+      "Placenta not delivered, or delivered with a piece missing",
+      "Steady trickle from a firm, well-contracted uterus — that is a tear, a cervical laceration or a rupture, not atony",
+      "Oozing from cannula sites, or blood that will not clot in a bedside test",
+      "Still bleeding after the full bundle — this is refractory PPH. Escalate now, do not repeat the drugs and wait"
+    ],
+    steps: [
+      "Measure, do not estimate. Calibrated drape under her buttocks at every vaginal birth, from delivery of the baby. Visual estimates under-read, so PPH is found late or not at all. No drape: weigh pads and swabs (1 g = 1 mL), or count soaked gauze — a 10 × 10 cm swab holds about 12 mL, 30 × 30 cm about 100 mL, 45 × 45 cm about 160 mL.",
+      "Trigger to treat: measured loss 500 mL, OR 300 mL with any one abnormal sign — pulse over 100, systolic under 100, diastolic under 60, shock index over 1. Whichever comes first. Most of it happens in the first 2 hours, so keep measuring and keep feeling the fundus every 15 minutes.",
+      "Call for help out loud and say who you need. Note the time. Everything below should be running within 15 minutes of the diagnosis.",
+      "Give the bundle TOGETHER, not in sequence: uterine massage + oxytocin + tranexamic acid + IV crystalloid + examination of the genital tract + escalation. The old ladder — oxytocin first, add the rest only if she keeps bleeding — is exactly what the current guidance moved away from.",
+      "Only two of you in the room? Person A stays at the uterus: rub up a contraction, keep a hand there, move to bimanual compression if it stays soft. Person B does everything else in this order — two large cannulae and cross-match blood, 1 L Ringer's with 20–40 IU oxytocin running fast, tranexamic acid 1 g IV over 10 minutes down the second line, catheter (a full bladder stops the uterus contracting). Then B examines the genital tract while A keeps compressing. Nobody leaves the room to fetch things: that is what the PPH trolley is for.",
+      "Find the cause while you are treating, not afterwards. TONE — soft uterus, commonest. TISSUE — lay the placenta out and check it is complete; explore the cavity if not. TRAUMA — good light, speculum, look at perineum, vagina and cervix; feel for rupture. THROMBIN — oozing puncture sites, no clot after 7 minutes in a bedside clotting test.",
+      "Not stopping: bimanual compression — fist in the anterior fornix lifting the uterus onto the other hand pressed behind it from the abdomen. Add aortic compression by a helper: closed fist just above the umbilicus, slightly left, leaning your weight on it until the femoral pulse disappears. Both can be held for as long as it takes, and neither delays anything else. Hand them to a helper so the most skilled person stays free.",
+      "Balloon tamponade for atony only, and only where theatre and blood can follow immediately, retained tissue and tears have been excluded, and somebody can watch her. Condom tied onto a Foley, 300–500 mL of clean saline until bleeding stops, tied off, taped to her thigh, out after 6–24 hours. Do NOT pack the uterus with gauze — it conceals bleeding and delays the operation that would save her.",
+      "Anti-shock garment the moment you decide to refer, and keep it on for the whole journey. Ankles first, working up; abdominal ball over the umbilicus; check she can still breathe. It buys time, it is not treatment — the bleeding still has to be stopped.",
+      "Theatre is decided on the bleeding, not on whether the drugs have had a fair chance. Do not wait for blood to arrive before operating on a woman who is bleeding. Conservative first — brace suture, then uterine and utero-ovarian ligation — then subtotal or total hysterectomy without further delay if she is still bleeding.",
+      "Send for donors early. Transfuse on how she looks, not on a haemoglobin — in acute bleeding the number can still read normal. Aim above 70 g/L.",
+      "After it stops: oxytocin infusion continues about 4 hours; pulse, BP, blood loss and fundus every 15 minutes for an hour, then every 30 minutes for 2 hours. Check haemoglobin and send her home on iron."
+    ],
+    drugs: [
+      {
+        id: "oxytocin",
+        role: "first",
+        note: "Treatment: 10 IU IV diluted and given over 1–2 min (or over 5–10 min in a small bag), then 20–40 IU in 1 L crystalloid, maintained about 4 h. Never a fast undiluted IV push — it drops the blood pressure. Prevention: 10 IU IM/IV."
+      },
+      {
+        id: "tranexamic-acid",
+        role: "first",
+        note: "1 g IV over 10 min, given as part of the bundle from the start — not held back as a rescue drug. Repeat 1 g once if still bleeding at 30 min or it restarts within 24 h. No benefit beyond 3 h from birth. Store it away from bupivacaine: intrathecal TXA has killed women."
+      },
+      {
+        id: "ringers-lactate",
+        role: "first",
+        note: "Isotonic crystalloid, in preference to colloid. 2 L fast in major PPH, then blood. Go easier if she has pre-eclampsia or heart disease."
+      },
+      {
+        id: "blood-transfusion",
+        role: "first",
+        note: "Call donors early. Decide on the clinical picture, not one haemoglobin. Aim above 70 g/L. Whole blood is acceptable where components do not exist, if it is cross-matched."
+      },
+      {
+        id: "misoprostol",
+        role: "alternative",
+        note: "800 mcg sublingual when there is no IV oxytocin, or bleeding does not respond to it. Heat-stable, no cold chain, works at any level of care. No added benefit given alongside oxytocin — do not use it as a routine adjunct."
+      },
+      {
+        id: "ergometrine",
+        role: "alternative",
+        note: "0.2 mg IM or slow IV as second-line when oxytocin fails. Never in hypertension, pre-eclampsia or cardiac disease. Maximum 1 mg in 24 h. Not for prevention any more, and never while the placenta is still inside."
+      },
+      { id: "oxygen", role: "supportive", note: "15 L/min by mask in major PPH. Lie her flat." },
+      {
+        id: "ampicillin",
+        role: "adjunct",
+        note: "Single dose before any hand or instrument enters the uterus — manual removal, exploration, evacuation."
+      },
+      {
+        id: "metronidazole",
+        role: "adjunct",
+        note: "500 mg IV with ampicillin as the Ethiopian prophylaxis regimen for intrauterine procedures."
+      },
+      {
+        id: "ketamine",
+        role: "supportive",
+        note: "For manual removal, examination under anaesthesia or laparotomy where there is no anaesthetist. Keeps the blood pressure up in a shocked woman."
+      },
+      {
+        id: "carbetocin",
+        role: "avoid",
+        note: "A prevention drug, not a treatment. It has not been studied for treating PPH and WHO discourages using it for that — reach for oxytocin, then ergometrine or misoprostol."
+      }
+    ],
+    sources: [
+      {
+        name: "WHO consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025"
+      },
+      {
+        name: "WHO recommendations on the assessment of postpartum blood loss and use of a treatment bundle for PPH, 2023"
+      },
+      {
+        name: "National guideline on prevention and management of PPH, Ministry of Health, Ethiopia, 2022"
+      },
+      {
+        name: "FIGO guidelines: prevention and treatment of PPH in low-resource settings, IJGO 117, 2012"
+      },
+      {
+        name: "E-MOTIVE trial, 2023 — a 60% reduction in severe PPH, laparotomy for bleeding or death from PPH (reported in the WHO 2023 bundle guideline, pdf p. 14)"
+      },
+      { name: "WOMAN trial. Lancet 2017" }
+    ],
+    textbook: [
+      {
+        book: "whopph",
+        text: "Eyeballing blood loss misses PPH or finds it too late. Measure it — a calibrated drape after vaginal birth is the method with the evidence behind it.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 21 Measurement of blood loss, pdf p. 56"
+      },
+      {
+        book: "whopph",
+        text: "Start first-response treatment at measured loss of 500 mL, or 300 mL with any abnormal haemodynamic sign — whichever comes first, watching hardest in the first 2 hours.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 22 Criteria for diagnosing PPH, pdf p. 57"
+      },
+      {
+        book: "whopph",
+        text: "The abnormal signs that count: pulse over 100, systolic under 100, diastolic under 60, or shock index over 1 (pulse divided by systolic).",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 22 remarks, pdf p. 58"
+      },
+      {
+        book: "whopph",
+        text: "The bundle drugs and manoeuvres are now one intervention given fast and together, not a ladder climbed one rung at a time.",
+        ref: "WHO Consolidated guidelines on PPH 2025, 3.5 First-response treatment, pdf p. 59"
+      },
+      {
+        book: "whobundle",
+        text: "The 2023 bundle recommendation names the six components: massage, an oxytocic, tranexamic acid, IV fluids, examination of the genital tract, and escalation of care.",
+        ref: "WHO Assessment of postpartum blood loss and treatment bundle 2023, Rec. 2, pdf p. 24"
+      },
+      {
+        book: "whopph",
+        text: "Aim to have every part of the bundle running within 15 minutes of the diagnosis. If a component is missing, start the ones you have.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 29 remarks, pdf p. 64"
+      },
+      {
+        book: "whopph",
+        text: "Oxytocin for treatment is 10 IU IV, diluted and pushed over 1-2 minutes or infused over 5-10 minutes; then 10-20 IU in crystalloid over the next 4 hours. Never a fast undiluted push.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 24 remarks, pdf p. 60"
+      },
+      {
+        book: "whopph",
+        text: "Tranexamic acid 1 g IV over 10 minutes, repeated once after 30 minutes if bleeding continues or restarts within 24 hours.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 27 remarks, pdf p. 62"
+      },
+      {
+        book: "whopph",
+        text: "Bimanual compression: fist in the vagina lifting the uterus against the abdominal hand pressing on the fundus. A holding measure, not a cure.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 33 remarks, pdf p. 68"
+      },
+      {
+        book: "whopph",
+        text: "Aortic compression: fist pressed down just above the umbilicus, slightly left of midline. It is working when the femoral pulse disappears.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 34 remarks, pdf p. 69"
+      },
+      {
+        book: "whopph",
+        text: "A balloon is only safe where theatre and blood can follow immediately, where the first-line protocol is already running, and where retained tissue and trauma have been excluded.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 36 Uterine balloon tamponade, pdf p. 70"
+      },
+      {
+        book: "whopph",
+        text: "Carbetocin is a prevention drug. It has not been studied for treating PPH and WHO discourages using it for that.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 25 remarks, pdf p. 61"
+      },
+      {
+        book: "ethpph",
+        text: "Ethiopian protocol for major PPH: if drugs do not stop it, operate early rather than late.",
+        ref: "Ethiopia National PPH guideline 2022, 4.2 Major PPH, pdf p. 27"
+      },
+      {
+        book: "ethpph",
+        text: "A rough check when there is no drape: a soaked 10 x 10 cm gauze holds about 12 mL, a 30 x 30 cm about 100 mL, a 45 x 45 cm about 160 mL.",
+        ref: "Ethiopia National PPH guideline 2022, 2.2 Blood loss estimation, pdf p. 18"
+      }
+    ],
+    review: { status: "draft" }
+  },
 {
   id: "preterm-labour", name: "Preterm labour", group: "obstetric",
   aka: ["threatened preterm birth", "antenatal steroids"],
@@ -375,40 +510,177 @@ window.CONDITIONS = [
   review: { status: "draft" }
 },
 {
-  id: "puerperal-sepsis", name: "Puerperal sepsis & chorioamnionitis", group: "obstetric",
-  aka: ["postpartum infection", "endometritis", "septic abortion"],
-  summary: "Fever with uterine tenderness or offensive lochia after birth, abortion or ruptured membranes. Antibiotics plus evacuation of infected tissue; antibiotics alone will not cure a uterus full of retained products.",
-  redflags: ["Fever with a tender uterus or offensive discharge", "Tachycardia out of proportion to the fever", "Recent instrumentation or unsafe abortion", "Signs of shock or peritonitis — go to theatre"],
-  steps: [
-    "Triple antibiotics IV immediately.",
-    "Evacuate retained products; drain any pelvic collection.",
-    "Fluids and transfusion as needed; tetanus prophylaxis after unsafe abortion.",
-    "Reassess at 48 hours; if no better, look for an abscess or a retained fragment.",
-    "Discharge once afebrile for 24–48 hours; further oral antibiotics are not needed after an uncomplicated recovery (Williams)."
-  ],
-  drugs: [
-    { id: "ampicillin", role: "first", note: "2 g IV every 6 h, with gentamicin and metronidazole." },
-    { id: "gentamicin", role: "first", note: "Once daily by weight." },
-    { id: "metronidazole", role: "first", note: "500 mg every 8 h; oral is as good as IV once she can swallow." },
-    { id: "ceftriaxone", role: "alternative", note: "Where the triple regimen is unavailable, with metronidazole." },
-    { id: "oxytocin", role: "adjunct", note: "To contract the uterus during and after evacuation." },
-    { id: "misoprostol", role: "avoid", note: "Do not use medical evacuation when the uterus is infected. Evacuate septic retained products by manual vacuum aspiration or suction curettage under antibiotic cover (Williams)." },
-    { id: "ringers-lactate", role: "supportive", note: "Resuscitation." },
-    { id: "paracetamol", role: "supportive", note: "Fever and pain." },
-    { id: "blood-transfusion", role: "supportive", note: "For anaemia from bleeding or haemolysis." }
-  ],
-  sources: [{ name: "WHO. Managing Complications in Pregnancy and Childbirth, 2017" }, { name: "WHO recommendations for prevention and treatment of maternal peripartum infections, 2015" }],
-  textbook: [
-    { book: "williams", text: "Moderate to severe metritis needs IV broad-spectrum antibiotics; about 90 percent improve in 48 to 72 hours. Persistent fever prompts a search for phlegmon, abscess, infected haematoma or septic pelvic thrombophlebitis.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1474" },
-    { book: "williams", text: "Ampicillin plus an aminoglycoside plus metronidazole covers most organisms in serious pelvic infections; clindamycin-gentamicin remains the standard comparator.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1475" },
-    { book: "williams", text: "Septic abortion: prompt broad-spectrum antibiotics plus suction curettage of retained products; laparotomy if peritonitis or free air, hysterectomy if the uterus is necrotic.", ref: "Williams Obstetrics 25th ed. 2018, ch. 18 Abortion, pdf p. 767" },
-    { book: "gabbe", text: "Endometritis diagnosed by two of: fever ≥38 °C, uterine tenderness, purulent lochia; far commoner after caesarean.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1120" },
-    { book: "gabbe", text: "Stop IV antibiotics once clinically improved and afebrile 24-48 h; if no response in 48 h re-examine and add ampicillin.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1121" },
-    { book: "gabbe", text: "Sepsis: antibiotics ideally within 1 h; source control surgery (evacuation, abscess drainage) should not be delayed for instability.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1125" },
-    { book: "gabbe", text: "Septic shock: 1-2 L crystalloid, transfuse to Hb ≥7, norepinephrine if MAP <65; hydrocortisone if unresponsive.", ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1124" }
-  ],
-  review: { status: "draft" }
-},
+    id: "puerperal-sepsis",
+    name: "Puerperal sepsis & chorioamnionitis",
+    group: "obstetric",
+    aka: ["postpartum infection", "endometritis", "metritis", "septic abortion", "childbed fever"],
+    summary: "Any bacterial infection of the genital tract between rupture of membranes and 6 weeks after delivery or abortion. Fever, a tender uterus, offensive lochia. The order that saves her is assess, resuscitate, isolate, take specimens, start antibiotics — admission paperwork comes later. Antibiotics alone will not cure a uterus that still has tissue in it.",
+    redflags: [
+      "Fever 38 °C or more with a tender uterus or foul-smelling lochia",
+      "Fundus higher than it should be for the day — subinvolution with retained tissue",
+      "Tachycardia out of proportion to the fever; cold, confused, oliguric — septic shock",
+      "Rebound tenderness, distension, absent bowel sounds, vomiting — peritonitis, go to theatre",
+      "Recent instrumentation, unsafe abortion, or anything inserted into the vagina",
+      "Still febrile 72 hours after starting the combination — the diagnosis or the source is wrong"
+    ],
+    steps: [
+      "Assess and resuscitate first: airway, oxygen, two cannulae, fluids, catheter. Take her temperature, pulse, BP, respiratory rate and urine output and write them down.",
+      "Isolate her as soon as you suspect infection — separate room or a corner of the ward, gown and gloves kept for her alone, hands washed before and after, her utensils not shared. This is to protect the other mothers and babies, and it costs nothing.",
+      "Take specimens (blood culture, high vaginal and endocervical swabs, urine) — but never wait for results before starting antibiotics.",
+      "Triple IV antibiotics now: ampicillin 2 g every 6 h, gentamicin 5 mg/kg once daily, metronidazole 500 mg every 8 h. A combination, because several organisms are usually involved and you will not know which for days. Continue until she has been fever-free for 48 hours.",
+      "When the IV course stops, stop. Oral antibiotics afterwards add nothing to an uncomplicated recovery.",
+      "Empty the uterus if there is tissue in it. A soft, bulky uterus with heavy, offensive lochia and clots means retained fragments. Digital exploration to clear clots and large pieces; ovum forceps or a large curette if needed. Do this under antibiotic cover — not with misoprostol.",
+      "Tetanus toxoid if anything may have been put into the vagina — cow dung, mud, herbs — and her vaccination history is not certain.",
+      "Give plenty of fluid: IV at first if she is ill, oral as well once she is awake and no anaesthetic is planned. Watch for overload — septic kidneys make less urine, and too much fluid too fast fills the lungs.",
+      "Reassess at 72 hours. Still febrile means look again: pelvic abscess, infected haematoma, phlegmon, a retained fragment, septic thrombophlebitis. Refer if you cannot find and drain it.",
+      "Peritonitis — first dose of antibiotics IV, a drip up, nasogastric tube, and move her now. Do not delay source control for instability.",
+      "Chorioamnionitis (fever, offensive liquor, tender uterus, fetal heart over 160): start ampicillin and gentamicin and deliver as soon as possible. Mother and baby are both in danger. Transfer prepared for delivery and newborn resuscitation on the way.",
+      "The baby usually stays with her and keeps breastfeeding unless she is very ill. Strict handwashing before and after handling him, and watch him closely for early signs of infection.",
+      "Prevention is the real work: clean hands and clean instruments at every birth, fewer vaginal examinations, antibiotics and referral when membranes have been ruptured 18 hours or more, tetanus immunisation in pregnancy, treating anaemia and sexually transmitted infection antenatally, and talking honestly with families about substances put into the vagina."
+    ],
+    drugs: [
+      {
+        id: "ampicillin",
+        role: "first",
+        note: "2 g IV every 6 h with gentamicin and metronidazole. Also the single prophylactic dose before manual removal or uterine exploration."
+      },
+      {
+        id: "gentamicin",
+        role: "first",
+        note: "5 mg/kg IV once daily by weight. Watch urine output — septic kidneys are the limiting factor."
+      },
+      {
+        id: "metronidazole",
+        role: "first",
+        note: "500 mg IV every 8 h for the anaerobes. Oral is as good once she can swallow."
+      },
+      {
+        id: "ceftriaxone",
+        role: "alternative",
+        note: "With metronidazole where the triple regimen is not stocked. Does not cover enterococcus as ampicillin does."
+      },
+      {
+        id: "benzylpenicillin",
+        role: "alternative",
+        note: "2 million units IV every 6 h with gentamicin and metronidazole where the infection involves necrotic tissue or fasciitis."
+      },
+      {
+        id: "oxytocin",
+        role: "adjunct",
+        note: "To contract the uterus during and after evacuation of infected retained tissue."
+      },
+      {
+        id: "ringers-lactate",
+        role: "supportive",
+        note: "Resuscitation and to bring the fever down. Go carefully once urine output falls."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "Fever and pain. Tepid sponging as well if the temperature is very high."
+      },
+      {
+        id: "blood-transfusion",
+        role: "supportive",
+        note: "Anaemia makes death from sepsis far more likely. Correct it."
+      },
+      {
+        id: "oxygen",
+        role: "supportive",
+        note: "For septic shock while fluids and antibiotics take effect."
+      },
+      {
+        id: "ketamine",
+        role: "supportive",
+        note: "For evacuation or laparotomy where there is no anaesthetist."
+      },
+      {
+        id: "misoprostol",
+        role: "avoid",
+        note: "Do not use medical evacuation on an infected uterus. Clear it by digital exploration, manual vacuum aspiration or curettage under antibiotic cover."
+      }
+    ],
+    sources: [
+      { name: "WHO. Managing puerperal sepsis — midwifery education modules, 2nd ed., 2006" },
+      {
+        name: "WHO consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025"
+      },
+      {
+        name: "National guideline on prevention and management of PPH, Ministry of Health, Ethiopia, 2022"
+      },
+      {
+        name: "WHO recommendations for prevention and treatment of maternal peripartum infections, 2015"
+      }
+    ],
+    textbook: [
+      {
+        book: "whosepsis",
+        text: "Puerperal sepsis is any bacterial infection of the genital tract after birth. It usually shows after 24 hours, but appears sooner after prolonged rupture of membranes or long labour without antibiotics.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 1 Defining puerperal sepsis, pdf p. 23"
+      },
+      {
+        book: "whosepsis",
+        text: "The window runs from rupture of membranes or the onset of labour to the 42nd day after delivery or abortion.",
+        ref: "WHO Managing puerperal sepsis 2006, Glossary, pdf p. 146"
+      },
+      {
+        book: "whosepsis",
+        text: "What you are looking for: fever 38 C or more, chills, lower abdominal pain, a tender uterus, a fundus higher than it should be, foul lochia, sometimes shock.",
+        ref: "WHO Managing puerperal sepsis 2006, Appendix pre- and post-test, pdf p. 152"
+      },
+      {
+        book: "whosepsis",
+        text: "The order that saves her: assess, resuscitate, isolate, take specimens, start antibiotics. Admission paperwork waits.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Priorities, pdf p. 69"
+      },
+      {
+        book: "whosepsis",
+        text: "Ampicillin 2 g IV every 6 h, gentamicin 5 mg/kg IV every 24 h, metronidazole 500 mg IV every 8 h — continued until she has been fever-free for 48 hours.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Choice of antibiotic, pdf p. 70"
+      },
+      {
+        book: "whosepsis",
+        text: "The combination is used because several organisms are usually involved and cultures are not back yet — it covers aerobes and anaerobes together.",
+        ref: "WHO Managing puerperal sepsis 2006, Quiz answers, pdf p. 89"
+      },
+      {
+        book: "whosepsis",
+        text: "When the IV course ends, stop. Oral antibiotics afterwards add nothing.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Choice of antibiotic, pdf p. 70"
+      },
+      {
+        book: "whosepsis",
+        text: "Still febrile at 72 hours means the diagnosis or the treatment is wrong. Re-examine her, and refer if you cannot find it.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Choice of antibiotic, pdf p. 70"
+      },
+      {
+        book: "whosepsis",
+        text: "Give tetanus toxoid if anything was put into the vagina — cow dung, mud, herbs — and her vaccination history is unclear.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Tetanus toxoid, pdf p. 70"
+      },
+      {
+        book: "whosepsis",
+        text: "A soft bulky uterus with heavy, foul lochia and clots means retained placental fragments. Explore digitally and take them out; ovum forceps or a large curette if needed.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Ruling out retained placental fragments, pdf p. 71"
+      },
+      {
+        book: "whosepsis",
+        text: "Peritonitis — rebound tenderness, distension, absent bowel sounds, vomiting, shock — means first dose of antibiotics, a drip, and immediate transfer.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Managing peritonitis, pdf p. 72"
+      },
+      {
+        book: "whosepsis",
+        text: "Chorioamnionitis: fever, offensive liquor, tender uterus, fast fetal heart. Delivery should happen as soon as possible, with ampicillin and gentamicin started before transfer.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Managing chorioamnionitis, pdf p. 75"
+      },
+      {
+        book: "whopph",
+        text: "Every woman who has a hand or an instrument put inside the uterus gets antibiotic prophylaxis.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 31 Antibiotic prophylaxis, pdf p. 66"
+      }
+    ],
+    review: { status: "draft" }
+  },
 {
   id: "caesarean", name: "Caesarean section", group: "obstetric",
   aka: ["C-section", "operative delivery", "spinal"],
@@ -4643,6 +4915,587 @@ window.CONDITIONS = [
       { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 62 Severe acute malnutrition" }
     ],
     textbook: [],
+    review: { status: "draft" }
+  },
+
+  /* ---- postpartum haemorrhage and the third stage ---- */
+  {
+    id: "retained-placenta",
+    name: "Retained placenta",
+    group: "obstetric",
+    aka: ["placenta not delivered", "manual removal of placenta", "adherent placenta"],
+    summary: "The placenta is still inside after the baby. If she is bleeding, this is PPH and the whole bundle runs at once. If she is not bleeding, do not reach for a uterotonic — it tightens the uterus around your hand and delays the thing that actually works. Controlled cord traction, then a bladder empty and her upright, then manual removal by 30 minutes.",
+    redflags: [
+      "Bleeding with the placenta still inside — treat as PPH, bundle now",
+      "Placenta undelivered at 30 minutes",
+      "No cleavage plane at manual removal — morbidly adherent placenta, stop and get a surgeon",
+      "Cord snapped off at the introitus",
+      "Fundus suddenly not palpable, or a mass at the vulva — you have inverted the uterus",
+      "Placenta delivered but a cotyledon or a piece of membrane is missing"
+    ],
+    steps: [
+      "First question: is she bleeding? If yes, this is PPH — run the full first-response bundle (massage, oxytocin, tranexamic acid, fluids, examine, escalate) at the same time as you deal with the placenta.",
+      "If she is NOT bleeding, do not give a uterotonic for the retained placenta alone. The evidence does not support it, and a tight uterus makes assessment and removal harder.",
+      "Not delivered by 15 minutes: controlled cord traction with counter-pressure above the pubis — but only if you are trained in it and a prophylactic uterotonic has been given. Let her empty her bladder or catheterise her. Let her sit up, squat or move; gravity helps. Keep watching the blood loss.",
+      "Still undelivered at 30 minutes: start preparing for manual removal. Waiting longer is associated with more blood loss and more severe PPH.",
+      "Before you put a hand in: explain it to her, empty the bladder, give analgesia — pethidine with slow IV diazepam, or ketamine — and give a single dose of prophylactic antibiotic. Ampicillin 2 g IV plus metronidazole 500 mg IV, or cefazolin 1 g IV plus metronidazole. Elbow-length gloves if you have them, clean the vulva, drape her.",
+      "Technique: hold the cord with a clamp and pull it parallel to the floor. One hand follows the cord into the uterus. Once you reach the placenta, let go of the cord and put that hand on the abdomen to hold the fundus down — this counter-traction is what stops you pulling the uterus inside out. Find the edge with your fingers, keep them tight together, and use the side of the hand to work a plane between placenta and wall, all the way round.",
+      "If the edge will not lift and there is no plane, STOP. That is an adherent placenta and it needs an operation, not a stronger pull. Leave it, keep the drip running, and arrange surgery or transfer.",
+      "When it is fully separated, bring it out with the hand while the abdominal hand pushes the fundus the other way. Then spread the placenta out and check it is complete, and sweep the cavity again for anything left.",
+      "Straight after removal, and only now: oxytocin 20 IU in 1 L at 60 drops/min, an assistant massaging the fundus. Still bleeding heavily — ergometrine 0.2 mg IM if she is not hypertensive, or misoprostol. Then examine for and repair any cervical or vaginal tear.",
+      "Observation: pulse, BP, bleeding and fundal tone every 15 minutes for an hour, then every 30 minutes for two hours.",
+      "No theatre, no anaesthetist, manual removal failed? Put up the drip, give tranexamic acid if she is bleeding and within 3 hours of birth, apply the anti-shock garment, and transfer to a facility that can do a curettage or laparotomy. Send someone with her. Do not keep trying.",
+      "Umbilical vein oxytocin injection is a research procedure, not routine care — do not let it delay manual removal."
+    ],
+    drugs: [
+      {
+        id: "oxytocin",
+        role: "first",
+        note: "20 IU in 1 L at 60 drops/min AFTER the placenta is out. Do not give it for a retained placenta with no bleeding."
+      },
+      {
+        id: "ampicillin",
+        role: "first",
+        note: "2 g IV single dose before manual removal or any intrauterine exploration. Prophylaxis is recommended for everyone, not just the obviously infected."
+      },
+      {
+        id: "metronidazole",
+        role: "first",
+        note: "500 mg IV with the ampicillin — the Ethiopian national prophylaxis regimen for manual removal."
+      },
+      {
+        id: "ketamine",
+        role: "supportive",
+        note: "Analgesia for manual removal where there is no anaesthetist. Safer than a spinal in a woman who may be hypovolaemic."
+      },
+      {
+        id: "diazepam",
+        role: "supportive",
+        note: "Slow IV with pethidine as the alternative analgesia combination in the national guideline. Have naloxone and a bag-valve mask at hand."
+      },
+      {
+        id: "tranexamic-acid",
+        role: "adjunct",
+        note: "1 g IV over 10 min if she is bleeding, within 3 h of birth. Part of the bundle, not a rescue."
+      },
+      {
+        id: "ringers-lactate",
+        role: "supportive",
+        note: "Line in before you start, not after she bleeds."
+      },
+      {
+        id: "blood-transfusion",
+        role: "adjunct",
+        note: "Cross-match before manual removal in a woman who is already anaemic."
+      },
+      {
+        id: "misoprostol",
+        role: "alternative",
+        note: "800 mcg sublingual for bleeding after removal where there is no injectable uterotonic."
+      },
+      {
+        id: "ergometrine",
+        role: "avoid",
+        note: "Not while the placenta is still inside. It causes a tetanic contraction that traps the placenta and carries cardiac risk. After removal it is fine, if she is not hypertensive."
+      }
+    ],
+    sources: [
+      {
+        name: "WHO consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025"
+      },
+      {
+        name: "National guideline on prevention and management of PPH, Ministry of Health, Ethiopia, 2022 — Annex II, Manual removal of placenta"
+      },
+      {
+        name: "FIGO guidelines: prevention and treatment of PPH in low-resource settings, IJGO 117, 2012"
+      }
+    ],
+    textbook: [
+      {
+        book: "whopph",
+        text: "A uterotonic is only for retained placenta if she is actually bleeding. Otherwise it tightens the uterus, makes removal harder and delays the definitive step.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 30 Uterotonics for retained placenta, pdf p. 65"
+      },
+      {
+        book: "whopph",
+        text: "Not delivered by 15 minutes and not bleeding: controlled cord traction, let her move or squat, empty the bladder. Watch her blood loss the whole time.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 30 remarks, pdf p. 65"
+      },
+      {
+        book: "whopph",
+        text: "Still undelivered at 30 minutes: start getting ready for manual removal. Waiting longer has been linked with more blood loss and more severe PPH.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 30 remarks, pdf p. 66"
+      },
+      {
+        book: "whopph",
+        text: "Do not give ergometrine with the placenta still inside. It causes a tetanic contraction that traps it, and it carries cardiac risk.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 30 remarks, pdf p. 65"
+      },
+      {
+        book: "whopph",
+        text: "Prophylaxis covers any hand or instrument entering the cavity — ampicillin or a first-generation cephalosporin, or amoxicillin-clavulanate 1 g/200 mg IV as a single dose.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 31 remarks, pdf p. 66"
+      },
+      {
+        book: "ethpph",
+        text: "Ethiopian regimen for uterine instrumentation: ampicillin 2 g IV plus metronidazole 500 mg IV, or cefazolin 1 g IV plus metronidazole 500 mg IV, as a single dose.",
+        ref: "Ethiopia National PPH guideline 2022, Annex II Manual removal of placenta, pdf p. 32"
+      },
+      {
+        book: "ethpph",
+        text: "Give analgesia first — pethidine and slow IV diazepam, or ketamine — then the single dose of prophylactic antibiotic, then remove.",
+        ref: "Ethiopia National PPH guideline 2022, Annex II Manual removal of placenta, pdf p. 32"
+      },
+      {
+        book: "ethpph",
+        text: "The abdominal hand never leaves the fundus: it holds the uterus down while the inside hand works, or you will pull the uterus inside out.",
+        ref: "Ethiopia National PPH guideline 2022, Annex II Manual removal of placenta, pdf p. 32"
+      },
+      {
+        book: "ethpph",
+        text: "If the edge will not lift and there is no plane between placenta and wall, stop. That is an adherent placenta and it needs an operation, not a stronger pull.",
+        ref: "Ethiopia National PPH guideline 2022, Annex II Manual removal of placenta, pdf p. 32"
+      },
+      {
+        book: "ethpph",
+        text: "Straight after removal: oxytocin 20 IU in 1 L at 60 drops/min, an assistant massaging the fundus, then check the placenta is complete and repair any tear.",
+        ref: "Ethiopia National PPH guideline 2022, Annex II Manual removal of placenta, pdf p. 33"
+      },
+      {
+        book: "ethpph",
+        text: "Afterwards check pulse, BP, bleeding and fundus every 15 minutes for an hour, then every 30 minutes for two hours.",
+        ref: "Ethiopia National PPH guideline 2022, Annex II Post-procedure tasks, pdf p. 33"
+      },
+      {
+        book: "whopph",
+        text: "Injecting oxytocin into the umbilical vein is a research procedure, not routine care.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 32 Umbilical vein oxytocin, pdf p. 67"
+      },
+      {
+        book: "figopph",
+        text: "If manual removal fails, transfer to a centre that can do a curettage under anaesthesia.",
+        ref: "FIGO PPH in low-resource settings 2012, Fig. 11 treatment algorithm, pdf p. 10"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "uterine-inversion",
+    name: "Uterine inversion",
+    group: "obstetric",
+    aka: ["inverted uterus", "uterus turned inside out", "acute puerperal inversion"],
+    summary: "The uterus has turned inside out and come down, usually because the cord was pulled before the placenta separated. Heavy bleeding, shock out of proportion to it, and no fundus where the fundus should be. Push it back at once — and give no uterotonic until it is back in, because a contracted uterus cannot be replaced. Once it is in, give the uterotonic.",
+    redflags: [
+      "Fundus not palpable abdominally after delivery, or a dimple where it should be",
+      "A dark red mass at the introitus or filling the vagina, often with the placenta still attached",
+      "Shock far worse than the visible blood loss",
+      "Severe lower abdominal pain immediately after the third stage",
+      "Replacement fails on first attempt — this is now a surgical emergency"
+    ],
+    steps: [
+      "Recognise it: feel the abdomen. No fundus, or a cup-shaped dip, plus a mass in the vagina, means inversion. Shock that looks worse than the blood on the floor is the giveaway.",
+      "Shout for help, lie her flat, oxygen, two large cannulae, fluids fast, cross-match. Treat the shock and replace the uterus at the same time — neither waits for the other.",
+      "Do NOT give oxytocin, ergometrine or misoprostol yet. A contracted uterus cannot be pushed back through the ring.",
+      "Do NOT try to peel the placenta off first if it is still attached. Removing it before replacement makes the bleeding much worse. Replace with the placenta in place, then deal with it.",
+      "Replace it now, with analgesia: pethidine and slow IV diazepam, or ketamine. Cup the fundus (the part that came out last is replaced first), and push steadily upward along the axis of the vagina towards the umbilicus. Steady pressure, not jabs. Hold it there for several minutes once it is in.",
+      "The sooner you do it the easier it is — the constriction ring tightens with every minute. Do not wait for transfer to try.",
+      "As soon as it is back in and you can feel a fundus abdominally: NOW give the uterotonic. Oxytocin 20–40 IU in 1 L running fast, keep your hand on the fundus until it is firm, and add ergometrine or misoprostol if it stays soft.",
+      "It has almost certainly bled a lot. Run the rest of the PPH bundle — tranexamic acid 1 g IV within 3 hours of birth, crystalloid, blood — and recheck the genital tract for tears.",
+      "Replacement failed, or it re-inverts: this needs theatre (hydrostatic replacement or a laparotomy). Put the anti-shock garment on, keep the drip and the oxygen going, and transfer with an attendant. Do not keep pushing for an hour instead of moving.",
+      "Prevent the next one: never pull on the cord before the placenta has separated, never without a uterotonic given, and never if you are not trained in controlled cord traction. Always keep the other hand guarding the fundus. Where there is no skilled attendant, do not do cord traction at all."
+    ],
+    drugs: [
+      {
+        id: "ketamine",
+        role: "first",
+        note: "Analgesia and relaxation for replacement where there is no anaesthetist. Holds the blood pressure up in a shocked woman, which a spinal will not."
+      },
+      {
+        id: "diazepam",
+        role: "alternative",
+        note: "Slow IV with pethidine — the analgesia pairing the Ethiopian national guideline gives for intrauterine procedures. Have a bag-valve mask ready."
+      },
+      {
+        id: "ringers-lactate",
+        role: "first",
+        note: "Fast, two lines. The shock is partly neurogenic and partly haemorrhagic — treat both."
+      },
+      { id: "oxygen", role: "first", note: "By mask while you replace it." },
+      {
+        id: "oxytocin",
+        role: "first",
+        note: "20–40 IU in 1 L, but ONLY after the uterus is back inside. Given before replacement it makes replacement impossible."
+      },
+      {
+        id: "tranexamic-acid",
+        role: "adjunct",
+        note: "1 g IV over 10 min once it is replaced, if within 3 h of birth. Inversion usually comes with major blood loss."
+      },
+      {
+        id: "blood-transfusion",
+        role: "adjunct",
+        note: "Cross-match early; the loss is often underestimated."
+      },
+      {
+        id: "ergometrine",
+        role: "adjunct",
+        note: "0.2 mg IM after replacement if the uterus stays soft and she is not hypertensive. Never before replacement."
+      },
+      {
+        id: "misoprostol",
+        role: "alternative",
+        note: "800 mcg sublingual after replacement where there is no injectable uterotonic. Never before."
+      },
+      { id: "ampicillin", role: "adjunct", note: "Prophylaxis — a hand has been inside the uterus." }
+    ],
+    sources: [
+      {
+        name: "FIGO guidelines: prevention and treatment of PPH in low-resource settings, IJGO 117, 2012 — Fig. 11 algorithm"
+      },
+      {
+        name: "National guideline on prevention and management of PPH, Ministry of Health, Ethiopia, 2022"
+      },
+      {
+        name: "WHO consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025"
+      }
+    ],
+    textbook: [
+      {
+        book: "figopph",
+        text: "Replace the uterus first. Do not give a uterotonic and do not try to peel the placenta off until it is back inside.",
+        ref: "FIGO PPH in low-resource settings 2012, Fig. 11 treatment algorithm, pdf p. 10"
+      },
+      {
+        book: "figopph",
+        text: "If it will not go back, move her to a facility with a theatre — this becomes a surgical problem.",
+        ref: "FIGO PPH in low-resource settings 2012, Fig. 11 treatment algorithm, pdf p. 10"
+      },
+      {
+        book: "figopph",
+        text: "Inversion sits alongside atony, retained placenta and lacerations on the list of causes to work through when examining a bleeding woman.",
+        ref: "FIGO PPH in low-resource settings 2012, Fig. 11 treatment algorithm, pdf p. 10"
+      },
+      {
+        book: "ethpph",
+        text: "It is a trauma cause of PPH, and it comes from high parity and from pulling too hard on the cord.",
+        ref: "Ethiopia National PPH guideline 2022, Table 3 Risk factors and causes, pdf p. 22"
+      },
+      {
+        book: "ethpph",
+        text: "Ethiopian health-centre protocol: replace the uterus with analgesia, and refer if you do not succeed.",
+        ref: "Ethiopia National PPH guideline 2022, Figure 3 Flow chart for PPH treatment at health centres, pdf p. 25"
+      },
+      {
+        book: "ethpph",
+        text: "The hospital flow chart starts at the same place — replace the uterus under analgesia — before any surgical option is considered.",
+        ref: "Ethiopia National PPH guideline 2022, Figure 4 Flow chart for PPH treatment at hospitals, pdf p. 26"
+      },
+      {
+        book: "ethpph",
+        text: "Analgesia to use: pethidine with slow IV diazepam, or ketamine — the same cover the national guideline gives for manual removal.",
+        ref: "Ethiopia National PPH guideline 2022, Annex II Manual removal of placenta, pdf p. 32"
+      },
+      {
+        book: "whopph",
+        text: "Badly done cord traction is the classic cause. Where no skilled attendant is present, WHO says do not do cord traction at all.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 17 remarks, pdf p. 53"
+      },
+      {
+        book: "figopph",
+        text: "Never pull on the cord before the placenta has separated or without a uterotonic given — that is how the uterus comes with it.",
+        ref: "FIGO PPH in low-resource settings 2012, Management of PPH, pdf p. 5"
+      },
+      {
+        book: "whopph",
+        text: "Once it is back in place the uterus is usually atonic — go straight into the standard bundle for tone.",
+        ref: "WHO Consolidated guidelines on PPH 2025, 3.5 First-response treatment, pdf p. 59"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "secondary-pph",
+    name: "Secondary postpartum haemorrhage",
+    group: "obstetric",
+    aka: ["late PPH", "delayed postpartum bleeding", "bleeding after going home"],
+    summary: "Bleeding from 24 hours after delivery up to 6 weeks. Almost always retained products, endometritis, or a placental site that has not involuted — usually two of the three together. Treat the infection and empty the uterus. Tranexamic acid has no role here: the window closed at 3 hours after birth.",
+    redflags: [
+      "Heavy or clotted bleeding days or weeks after delivery",
+      "Uterus soft and bulkier than the day should allow — subinvolution",
+      "Fever with offensive lochia and a tender uterus — endometritis",
+      "Shock: this can be sudden and torrential, not a slow ooze",
+      "Delivery outside a facility, or a placenta that was never checked for completeness",
+      "Bleeding restarting after it had settled"
+    ],
+    steps: [
+      "Resuscitate first if she is shocked — two cannulae, crystalloid, cross-match, oxygen, catheter. She may have been anaemic for weeks already, so she has no reserve.",
+      "Feel the uterus. Soft, bulky and higher than it should be, with heavy foul lochia and clots, means retained tissue. Look at the cervix with a speculum: an open os supports it.",
+      "Take high vaginal and endocervical swabs, plus a blood count and cross-match.",
+      "Start antibiotics whenever endometritis is suspected — and it usually is. Ampicillin 2 g IV 6-hourly, gentamicin 5 mg/kg daily, metronidazole 500 mg 8-hourly, until she has been fever-free 48 hours. Do not wait for the swab results.",
+      "Ultrasound if you have it, to look for retained products. But a normal scan does not clear her — the diagnosis by ultrasound is unreliable, so treat what you find clinically.",
+      "Empty the uterus if there is tissue in it, under antibiotic cover. Gauze curettage, or manual vacuum aspiration with a 16 mm cannula, or a banjo curette. The postpartum uterus is thin and soft — this should be done or supervised by someone experienced, or it perforates.",
+      "Give a uterotonic during and after evacuation: oxytocin 20 IU in 1 L. Ergometrine 0.2 mg IM if she keeps bleeding and is not hypertensive.",
+      "Do not give tranexamic acid. The benefit is confined to the first 3 hours after birth, and beyond that the signal points towards harm.",
+      "Transfuse on how she looks, not on one haemoglobin. Then treat the anaemia properly — iron for several weeks before discharge follow-up.",
+      "Still bleeding after evacuation and antibiotics: think uterine artery pseudoaneurysm, arteriovenous malformation, gestational trophoblastic disease, or a coagulation problem. That needs a referral centre.",
+      "No evacuation capacity where you are? Give the first dose of antibiotics, put up the drip, apply the anti-shock garment if she is shocked, and transfer with an attendant and a written note of what you gave and when.",
+      "Before she leaves, tell her and her family in plain words what to come back for: bleeding heavier than a normal period, clots, fever, offensive discharge, feeling faint."
+    ],
+    drugs: [
+      {
+        id: "ampicillin",
+        role: "first",
+        note: "2 g IV every 6 h with gentamicin and metronidazole. Start on suspicion, not on swab results."
+      },
+      { id: "gentamicin", role: "first", note: "5 mg/kg IV once daily." },
+      { id: "metronidazole", role: "first", note: "500 mg IV every 8 h; oral once she can swallow." },
+      {
+        id: "ceftriaxone",
+        role: "alternative",
+        note: "With metronidazole where the triple regimen is not stocked."
+      },
+      { id: "oxytocin", role: "first", note: "20 IU in 1 L during and after evacuation." },
+      {
+        id: "ergometrine",
+        role: "adjunct",
+        note: "0.2 mg IM for continued bleeding from a soft uterus, if she is not hypertensive."
+      },
+      {
+        id: "misoprostol",
+        role: "alternative",
+        note: "For bleeding where there is no injectable uterotonic. Not for evacuating an infected uterus — that needs instrumentation."
+      },
+      {
+        id: "ringers-lactate",
+        role: "supportive",
+        note: "Resuscitation. She has usually been anaemic for weeks."
+      },
+      {
+        id: "blood-transfusion",
+        role: "first",
+        note: "Often needed. Decide on the clinical picture — a single haemoglobin in acute bleeding is misleading."
+      },
+      { id: "ketamine", role: "supportive", note: "For evacuation where there is no anaesthetist." },
+      { id: "paracetamol", role: "supportive", note: "Fever and cramping pain." },
+      {
+        id: "tranexamic-acid",
+        role: "avoid",
+        note: "No role after 3 hours from birth. Beyond that window it does not help and the effect estimates point towards harm."
+      }
+    ],
+    sources: [
+      {
+        name: "National guideline on prevention and management of PPH, Ministry of Health, Ethiopia, 2022 — Secondary PPH"
+      },
+      { name: "WHO. Managing puerperal sepsis — midwifery education modules, 2nd ed., 2006" },
+      {
+        name: "WHO consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025"
+      }
+    ],
+    textbook: [
+      {
+        book: "ethpph",
+        text: "Secondary PPH is bleeding from 24 hours after delivery up to 6 weeks.",
+        ref: "Ethiopia National PPH guideline 2022, 2.1 Classification, pdf p. 17"
+      },
+      {
+        book: "ethpph",
+        text: "Three causes to work through: retained products of conception, endometritis or endomyometritis, and an abnormally involuting placental site.",
+        ref: "Ethiopia National PPH guideline 2022, Secondary PPH, pdf p. 29"
+      },
+      {
+        book: "ethpph",
+        text: "Ultrasound may help exclude retained products, but a normal scan does not rule them out — the diagnosis is unreliable.",
+        ref: "Ethiopia National PPH guideline 2022, Secondary PPH, pdf p. 29"
+      },
+      {
+        book: "ethpph",
+        text: "Evacuation of retained tissue should be done or supervised by an experienced clinician — the soft postpartum uterus perforates easily.",
+        ref: "Ethiopia National PPH guideline 2022, Secondary PPH, pdf p. 29"
+      },
+      {
+        book: "ethpph",
+        text: "Take high vaginal and endocervical swabs, and start antibiotics when endometritis is suspected.",
+        ref: "Ethiopia National PPH guideline 2022, Secondary PPH, pdf p. 29"
+      },
+      {
+        book: "ethpph",
+        text: "For retained fragments the national protocol uses gauze curettage, or manual vacuum aspiration with a 16 mm cannula, or a banjo curette.",
+        ref: "Ethiopia National PPH guideline 2022, Figure 4 Flow chart for PPH treatment at hospitals, pdf p. 26"
+      },
+      {
+        book: "whosepsis",
+        text: "A uterus that is soft and bulkier than it should be, with heavy foul lochia and clots, is holding placental tissue.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Ruling out retained placental fragments, pdf p. 71"
+      },
+      {
+        book: "whosepsis",
+        text: "When it is infected, treat as puerperal sepsis: ampicillin 2 g IV 6-hourly, gentamicin 5 mg/kg IV daily, metronidazole 500 mg IV 8-hourly until fever-free for 48 hours.",
+        ref: "WHO Managing puerperal sepsis 2006, Session 4 Choice of antibiotic, pdf p. 70"
+      },
+      {
+        book: "whopph",
+        text: "Tranexamic acid has no place here: the benefit is gone more than 3 hours after birth and the signal beyond that points to harm.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 27 remarks, pdf p. 63"
+      },
+      {
+        book: "whopph",
+        text: "Transfuse on how she looks, not on a single haemoglobin — in acute bleeding the number can be falsely reassuring.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 41 remarks, pdf p. 74"
+      },
+      {
+        book: "whopph",
+        text: "A referral protocol has to say who decides, what is done before she moves, and who travels with her.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 45 remarks, pdf p. 80"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "pph-prevention",
+    name: "Third stage of labour & PPH prevention",
+    group: "obstetric",
+    aka: ["AMTSL", "active management of the third stage", "prophylactic uterotonic", "preventing PPH"],
+    summary: "Every birth gets ONE quality-assured uterotonic — oxytocin, carbetocin or misoprostol, not a combination. That single drug is what prevents PPH; cord traction adds a little, uterine massage adds nothing, and early cord clamping harms the baby. Then measure the blood loss and feel the fundus every 15 minutes for an hour. Tranexamic acid is not a prevention drug.",
+    redflags: [
+      "Oxytocin that has not been kept at 2–8 °C — assume it may be weak and use a heat-stable drug",
+      "No skilled attendant trained in controlled cord traction — then do not do cord traction",
+      "Anaemia found in pregnancy and not treated before labour",
+      "Known risk: over-distended uterus, prolonged or very rapid labour, previous PPH, previous uterine surgery, praevia, pre-eclampsia — she should deliver where blood and surgery exist",
+      "Soft or boggy fundus at any check in the first hours",
+      "No uterotonic in the room at the moment of birth"
+    ],
+    steps: [
+      "Have the uterotonic drawn up and in the room before the baby is born. Give it within one minute of birth, for every single birth.",
+      "Choose ONE: oxytocin 10 IU IM or IV; or carbetocin 100 mcg IM or IV; or misoprostol 400–600 mcg orally. One drug, not two. Where several are stocked, oxytocin is the agent of choice.",
+      "If she already has a drip running, give the 10 IU oxytocin IV rather than IM — diluted, slowly, over 1 to 2 minutes.",
+      "Cannot guarantee the cold chain? Oxytocin needs 2–8 °C transport and storage, and warm ampoules lose potency. Use heat-stable carbetocin 100 mcg; if that is not stocked, misoprostol 400 or 600 mcg orally.",
+      "Where there is no skilled attendant to give an injection — a home birth, a health post — a community or lay health worker giving misoprostol 400–600 mcg orally is the recommended option.",
+      "Do not give ergometrine, the fixed oxytocin-ergometrine combination, or injectable prostaglandins for prevention. WHO no longer recommends any of them for this. (The Ethiopian national guideline still permits an ergometrine-containing uterotonic when oxytocin is unavailable AND hypertensive disease can be safely excluded — follow the national protocol if that is your standard, but know that it differs from WHO 2025.)",
+      "Do not give tranexamic acid to prevent PPH, at vaginal birth or at caesarean. It is not a uterotonic and it does not replace one.",
+      "Do not clamp the cord before 1 minute unless the baby is asphyxiated and must be moved for resuscitation. Delay 1–3 minutes, including in preterm birth and in women living with HIV.",
+      "Controlled cord traction only if you are a skilled attendant trained in it — it shaves a little blood loss and a few minutes off the third stage. Where no such attendant is present, do not do it: expectant management plus the uterotonic is safer than a badly done pull.",
+      "Do not do sustained uterine massage as prevention in a woman who has had a prophylactic uterotonic — it adds nothing. Massage is a treatment for atony, not a routine.",
+      "Measure the blood loss with a calibrated drape at every vaginal birth, from the moment the baby is out. This is how PPH gets found in time.",
+      "Feel the fundus abdominally every 15 minutes for the first hour, then per local protocol through the first 1–2 hours. Soft or boggy at any check means examine and act now.",
+      "At caesarean: remove the placenta by cord traction, not manual removal — less endometritis. Give the uterotonic at the same time.",
+      "Start before labour. Find and treat anaemia in pregnancy. Women with known risk factors should deliver where blood transfusion and surgery are available. Remember that most women who bleed had no risk factor at all."
+    ],
+    drugs: [
+      {
+        id: "oxytocin",
+        role: "first",
+        note: "10 IU IM or IV within 1 minute of birth, for every birth including caesarean. IV route preferred if a line is already running — diluted, over 1–2 min. Needs 2–8 °C storage."
+      },
+      {
+        id: "carbetocin",
+        role: "alternative",
+        note: "100 mcg IM/IV. The heat-stable formulation is the choice where the oxytocin cold chain cannot be guaranteed. Prevention only — not for treating PPH."
+      },
+      {
+        id: "misoprostol",
+        role: "alternative",
+        note: "400 or 600 mcg orally where there is no heat-stable carbetocin, or no skilled attendant to inject. The only option for many home births."
+      },
+      {
+        id: "ergometrine",
+        role: "avoid",
+        note: "No longer recommended for prevention by WHO 2025, alone or in the fixed combination with oxytocin. The Ethiopian national guideline still allows it when oxytocin is unavailable and hypertension is excluded — check which protocol you are working under."
+      },
+      {
+        id: "tranexamic-acid",
+        role: "avoid",
+        note: "Not for prevention, vaginal or caesarean. It is an antifibrinolytic, not a uterotonic, and must never replace one. It stays first-line for TREATMENT."
+      },
+      {
+        id: "ringers-lactate",
+        role: "supportive",
+        note: "Have a line and a litre ready for anyone with risk factors."
+      },
+      {
+        id: "blood-transfusion",
+        role: "supportive",
+        note: "Know your donors and your blood bank before the birth, not during the bleed."
+      }
+    ],
+    sources: [
+      {
+        name: "WHO consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025 — Recs. 7–23"
+      },
+      {
+        name: "National guideline on prevention and management of PPH, Ministry of Health, Ethiopia, 2022"
+      },
+      {
+        name: "WHO recommendations on the assessment of postpartum blood loss and use of a treatment bundle for PPH, 2023"
+      }
+    ],
+    textbook: [
+      {
+        book: "whopph",
+        text: "Every birth gets one quality-assured uterotonic in the third stage — one of oxytocin 10 IU IM/IV, carbetocin 100 micrograms IM/IV, or misoprostol 400-600 micrograms orally. One, not a combination.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 7 Uterotonic for prevention, pdf p. 12"
+      },
+      {
+        book: "whopph",
+        text: "Oxytocin needs 2-8 C transport and storage. Where you cannot guarantee that, assume the ampoule may be weak and use a heat-stable drug instead.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 7.1 remarks, pdf p. 39"
+      },
+      {
+        book: "whopph",
+        text: "Where the oxytocin cold chain cannot be kept, heat-stable carbetocin 100 micrograms is the choice; if that is not stocked, misoprostol 400 or 600 micrograms orally.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 11 Heat-stable carbetocin, pdf p. 46"
+      },
+      {
+        book: "whopph",
+        text: "If she already has a drip running, give the 10 IU oxytocin IV — diluted, slowly, over 1 to 2 minutes — rather than IM.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 8 Route of oxytocin, pdf p. 12"
+      },
+      {
+        book: "whopph",
+        text: "Ergometrine, the fixed oxytocin-ergometrine combination and injectable prostaglandins are all no longer recommended for prevention.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 9 Uterotonics not recommended, pdf p. 12"
+      },
+      {
+        book: "whopph",
+        text: "Controlled cord traction only where a skilled attendant is present; where there is none, do not do it. Do not clamp the cord before 1 minute unless the baby needs resuscitation. Sustained uterine massage after a prophylactic uterotonic adds nothing.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recs. 17, 19, 20, pdf p. 13"
+      },
+      {
+        book: "whopph",
+        text: "Tranexamic acid is not for prevention, at vaginal birth or at caesarean. It is not a uterotonic and does not replace one.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Recs. 14 and 15, pdf p. 13"
+      },
+      {
+        book: "whopph",
+        text: "Feel the fundus every 15 minutes through the first hour. A soft or boggy uterus at any point means act now.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 23 Uterine tone assessment, pdf p. 59"
+      },
+      {
+        book: "whopph",
+        text: "Where there is no skilled attendant to give an injection, a community or lay health worker giving misoprostol 400-600 micrograms orally is recommended.",
+        ref: "WHO Consolidated guidelines on PPH 2025, Rec. 12 Community administration of misoprostol, pdf p. 13"
+      },
+      {
+        book: "ethpph",
+        text: "The Ethiopian national guideline gives the same three choices, and adds that an ergometrine-containing uterotonic may be used when oxytocin is absent and hypertension can be safely excluded.",
+        ref: "Ethiopia National PPH guideline 2022, 3. PPH Prevention, pdf p. 18"
+      },
+      {
+        book: "ethpph",
+        text: "The Ethiopian guideline positions heat-stable carbetocin as the second-line prevention drug rather than an equal first choice.",
+        ref: "Ethiopia National PPH guideline 2022, 3. PPH Prevention, pdf p. 18"
+      },
+      {
+        book: "ethpph",
+        text: "Start before the birth: find and treat anaemia in pregnancy, and plan for women at risk to deliver where blood and surgery exist.",
+        ref: "Ethiopia National PPH guideline 2022, 3. PPH Prevention, pdf p. 18"
+      },
+      {
+        book: "whobundle",
+        text: "Measure the loss at every birth, not only when it looks heavy — detection is what makes the treatment bundle work.",
+        ref: "WHO Assessment of postpartum blood loss and treatment bundle 2023, Rec. 1, pdf p. 24"
+      }
+    ],
     review: { status: "draft" }
   }
 ];

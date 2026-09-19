@@ -941,3 +941,23 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 .power-cross .pc-lbl { font: 700 13px var(--sans); fill: var(--text); }
 .power-cross .pc-dot { fill: var(--c-eye, var(--primary)); }
 .hairline { height: 1px; background: var(--border); margin: 1.4rem 0 1.1rem; }
+
+/* PPH first response: a running blood-loss total, and the bundle as a checklist
+   that reads at arm's length while both your hands are busy */
+.pph-total { display: flex; align-items: baseline; justify-content: center; gap: .4rem; padding: .9rem; border-radius: 14px;
+  background: var(--surface-2); border: 1px solid var(--border); }
+.pph-total b { font-size: clamp(2.4rem, 12vw, 3.4rem); font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.pph-total span { font-size: 1rem; font-weight: 650; color: var(--muted); }
+.pph-total.warn { background: var(--amber-soft); border-color: transparent; color: var(--amber); }
+.pph-total.danger { background: var(--red-soft); border-color: transparent; color: var(--red); }
+.pph-signs { display: grid; gap: .35rem; }
+@media (min-width: 640px) { .pph-signs { grid-template-columns: 1fr 1fr; } }
+.pph-bundle { list-style: none; margin: 0; padding: 0; display: grid; gap: .55rem; }
+.pph-bundle li { display: flex; gap: .7rem; align-items: flex-start; padding: .65rem; border-radius: 13px;
+  border: 1px solid var(--border); background: var(--surface); }
+.pph-bundle li.done { background: var(--green-soft); border-color: transparent; }
+.pph-bundle li > div { min-width: 0; }
+.pph-tick { flex: 0 0 auto; width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border-strong);
+  background: var(--surface-2); color: var(--text); display: grid; place-items: center; cursor: pointer; }
+.pph-tick[aria-pressed="true"] { background: var(--green); border-color: transparent; color: #fff; }
+.pph-letter { font-weight: 800; font-size: .95rem; letter-spacing: .02em; }
