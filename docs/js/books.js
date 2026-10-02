@@ -15,5 +15,7 @@ window.BOOKS = {
   ethpph:   { title: "National guideline on prevention and management of postpartum haemorrhage (Ministry of Health, Ethiopia)", edition: "", year: 2022, scope: "The Ethiopian national PPH protocol" },
   figopph:  { title: "FIGO guidelines: prevention and treatment of postpartum haemorrhage in low-resource settings", edition: "Int J Gynecol Obstet 117", year: 2012, scope: "PPH where theatre, blood and an anaesthetist may be far away" },
   whosepsis:{ title: "WHO Managing puerperal sepsis (midwifery education modules)", edition: "2nd ed.", year: 2006, scope: "Puerperal sepsis: recognition, treatment and prevention" },
+  ethepi:   { title: "Routine immunization catch-up vaccination guidelines (Ministry of Health, Ethiopia)", edition: "", year: 2022, scope: "Catch-up immunisation: minimum ages, minimum intervals and upper age limits" },
+  asellaor: { title: "List of OR materials for surgical cases, Asella Referral and Teaching Hospital", edition: "", year: 2025, scope: "What to have ready in theatre for each operation — institutional practice, not a guideline" },
   note:     { title: "Editorial notes", edition: "", year: null, scope: "Where the textbooks differ from low-resource practice or are silent" }
 };

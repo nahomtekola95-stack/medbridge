@@ -5497,5 +5497,476 @@ window.CONDITIONS = [
       }
     ],
     review: { status: "draft" }
+  },
+
+  /* ---- immunisation ---- */
+  {
+    id: "catch-up-vaccination",
+    name: "Catch-up vaccination (missed or late doses)",
+    group: "paediatric",
+    aka: [
+      "missed vaccine doses",
+      "late vaccination",
+      "defaulter",
+      "incomplete immunisation",
+      "EPI catch-up",
+      "under-immunised"
+    ],
+    summary: "A child who arrives late is still eligible. Screen the card at every health contact, give one dose of every antigen due today in the same visit, and never restart an interrupted series — give only the doses still missing.",
+    redflags: [
+      "No card and no reliable history — treat the child as unvaccinated and start today; do not send them away to look for the card",
+      "A dose given before the minimum age, or before the minimum interval, is invalid and has to be repeated",
+      "Past the upper age limit the dose can no longer be given: BCG after 1 year, Penta, PCV, Rota and IPV after 24 months, OPV and measles after 59 months",
+      "Hep B birth dose, HPV and Td are not eligible for catch-up",
+      "A child leaving the facility with doses still due is a missed opportunity — vaccinate or refer the same day"
+    ],
+    steps: [
+      "Ask the age today and ask for the child health card at EVERY contact, not only at immunisation visits. No card and no confirmed history: count the child as unvaccinated.",
+      "List what is missing against the schedule. Give one dose of each antigen that is due now, at this visit. Several injections at one visit are safe and are the point — they protect the child sooner and cut return visits. Example from the guideline: a child of 9 months due MCV1 who never had OPV3, Penta3 or IPV gets all four today.",
+      "Check the minimum age before each dose: BCG and OPV from birth, Penta, PCV and Rota from 6 weeks, IPV from 14 weeks, measles from 9 months.",
+      "Check the minimum interval since the last dose of the same antigen: 4 weeks for Penta, PCV, Rota, IPV and OPV1 onwards; 6 weeks from OPV0 to OPV1. Measles dose 2 is due at 15 months, but only 4 weeks after dose 1 if dose 1 was given late.",
+      "Check the upper age limit: BCG up to 1 year; Penta, PCV, Rota and IPV up to 24 months; OPV and measles up to 59 months. Hep B birth dose, HPV and Td cannot be caught up.",
+      "NEVER restart a series and never repeat a dose already given, however many months or years have passed. Give only the remaining doses.",
+      "Record every dose by its true number in the series (Penta2 is Penta2 even at 20 months), on the card, in the register and on the tally sheet — tallied in the right age column, under 1 year or 1 year and older. No previous entry in the EPI register: open a new row.",
+      "Work out the date of the next visit from the minimum interval, write it on the card and say it out loud to the carer. Say which vaccines were given and what reaction to expect, and answer their questions.",
+      "Once the child is back on track, go back to the ordinary national schedule until the series is complete."
+    ],
+    drugs: [
+      {
+        id: "vitamin-a",
+        role: "supportive",
+        note: "Catch-up sessions and PIRI are run together with vitamin A supplementation, deworming and nutrition counselling — give what is due at the same visit."
+      }
+    ],
+    textbook: [
+      {
+        book: "ethepi",
+        text: "An interrupted primary series is never restarted and previous doses are never repeated; give only the remaining doses needed to complete the series.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), catch-up vaccination schedule (Table 5), pdf p. 15"
+      },
+      {
+        book: "ethepi",
+        text: "The catch-up schedule sets, for each antigen, a minimum age for the first dose, a minimum interval between doses and an upper age limit.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), catch-up vaccination schedule (Table 5), pdf p. 15"
+      },
+      {
+        book: "ethepi",
+        text: "BCG catch-up is allowed up to 1 year of age.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 5, pdf p. 15"
+      },
+      {
+        book: "ethepi",
+        text: "Rota, PCV, Penta and IPV catch-up is allowed up to 24 months of age.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 5, pdf p. 15"
+      },
+      {
+        book: "ethepi",
+        text: "OPV and measles catch-up is allowed up to 59 months of age.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 5, pdf p. 15"
+      },
+      {
+        book: "ethepi",
+        text: "The minimum interval from OPV0 to OPV1 is 6 weeks; every later OPV dose needs 4 weeks.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 5, pdf p. 15"
+      },
+      {
+        book: "ethepi",
+        text: "Measles dose 1 is from 9 months and dose 2 at 15 months, but if dose 1 was given late the two doses need only be 4 weeks apart.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 5, pdf p. 15"
+      },
+      {
+        book: "ethepi",
+        text: "Every routine antigen may be caught up except the hepatitis B birth dose, HPV and Td.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 5 note, pdf p. 15"
+      },
+      {
+        book: "ethepi",
+        text: "If more than one vaccine is due, give one dose of each at the same visit and do not defer any of them.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 2 summary instructions, pdf p. 32"
+      },
+      {
+        book: "ethepi",
+        text: "Worked example: a child arriving at 9 months for MCV1 who has not had OPV3, Penta3 or IPV is eligible for all four vaccines at that visit.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 2 summary instructions, pdf p. 32"
+      },
+      {
+        book: "ethepi",
+        text: "Giving several vaccine injections at one visit is safe, protects the child sooner and cuts return visits and defaulting.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 2 summary instructions, pdf p. 32"
+      },
+      {
+        book: "ethepi",
+        text: "For most vaccines the minimum interval between primary-series doses is 4 weeks; for HPV it is 5 months.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 2 summary instructions, pdf p. 32"
+      },
+      {
+        book: "ethepi",
+        text: "With no written or confirmed vaccination history, treat the child as unvaccinated, and do not blame the carer for missing doses.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 2 summary instructions, pdf p. 32"
+      },
+      {
+        book: "ethepi",
+        text: "A dose given before the minimum age, or before the minimum interval since the previous dose, is invalid and must be repeated once the age or interval is reached.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), key terms, pdf p. 7"
+      },
+      {
+        book: "ethepi",
+        text: "An invalid dose may not produce an adequate immune response, so it should be repeated once the minimum age or interval has been reached.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), key terms, pdf p. 7"
+      },
+      {
+        book: "ethepi",
+        text: "Timeliness is the aim, but for most vaccines it is almost always better to vaccinate late than never.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), principles of catch-up vaccination, pdf p. 13"
+      },
+      {
+        book: "ethepi",
+        text: "A few antigens do have upper age limits: the hepatitis B birth dose within 24 hours, OPV0 up to 14 days of life and BCG within 12 months.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), principles of catch-up vaccination, footnote 1, pdf p. 13"
+      },
+      {
+        book: "ethepi",
+        text: "Carers should be told to safeguard the home-based record and bring it to every visit, reinforcing that it is never too late to be immunised.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), principles of catch-up vaccination, pdf p. 13"
+      },
+      {
+        book: "ethepi",
+        text: "At every health contact, review the child's vaccination history to see whether any dose is missing or due.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 1 job aid, pdf p. 31"
+      },
+      {
+        book: "ethepi",
+        text: "Respect the minimum age of eligibility and the minimum permissible interval between doses.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 1 job aid, pdf p. 31"
+      },
+      {
+        book: "ethepi",
+        text: "Record every dose given, on time or late, and tally it in the column matching the child's age (under 1 year, or 1 year and older).",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 1 job aid, pdf p. 31"
+      },
+      {
+        book: "ethepi",
+        text: "Screening is three steps: ask the child's age and what has already been given, decide from the chart what is due, then tell the carer when to come back.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Box 4 health worker screening instructions, pdf p. 26"
+      },
+      {
+        book: "ethepi",
+        text: "Book the next visit at the correct minimum interval and tell the carer the date, so they know when to return.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), recording and reporting, pdf p. 28"
+      },
+      {
+        book: "ethepi",
+        text: "Record a catch-up dose by the dose number in the series it actually is, regardless of the child's age.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), recording and reporting, pdf p. 28"
+      },
+      {
+        book: "ethepi",
+        text: "Delay between doses of a series never requires restarting it, however long ago the last dose was given.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), availing vaccines and supplies, pdf p. 24"
+      },
+      {
+        book: "ethepi",
+        text: "BCG and measles come in multi-dose vials that must be discarded 6 hours after opening, so catching up older children in the same session reduces wastage.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), availing vaccines and supplies, pdf p. 24"
+      },
+      {
+        book: "ethepi",
+        text: "The tally sheet now has two age columns: doses given under 1 year, and doses given at 1 year and older.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 8 recording and reporting, pdf p. 29"
+      },
+      {
+        book: "ethepi",
+        text: "Any time a child is vaccinated, on time or late, record it on the child health card and tell the carer to keep the card safe and bring it to every visit.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 8 recording and reporting, pdf p. 29"
+      },
+      {
+        book: "ethepi",
+        text: "Catch-up is part of ordinary routine immunisation: whenever a child is brought, on schedule or late, assess eligibility and vaccinate as per the catch-up table.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), decision-making around special catch-up strategies, pdf p. 16"
+      },
+      {
+        book: "ethepi",
+        text: "Once the child is back on track, return to the ordinary national schedule until the series is complete.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 2 summary instructions, pdf p. 32"
+      },
+      {
+        book: "note",
+        text: "The guideline contradicts itself on IPV and the app does not pick a side. Table 4 (the routine schedule, p. 14) gives IPV 1 dose at week 14, and the Annex 1 job aid chart (p. 31) and the catch-up reporting format (p. 34) also show a single IPV. Table 5 (the catch-up schedule, p. 15) gives IPV 2 doses, minimum age 14 weeks, minimum interval 4 weeks, upper age limit 24 months. Count the doses your facility's current card and tally sheet expect, and confirm with the national protocol before deciding whether a second IPV is owed.",
+        ref: "Editorial note: internal discrepancy between Table 4 (pdf p. 14), Table 5 (pdf p. 15) and Annex 1 (pdf p. 31) of the 2022 Ethiopian catch-up guideline"
+      },
+      {
+        book: "note",
+        text: "The guideline also differs with itself on the hepatitis B birth dose. Table 4 (p. 14) allows it up to 14 days old for a baby born at home; the principles footnote (p. 13) and the job aid (p. 31) both set the limit at 24 hours after birth, and Table 5 lists the birth dose as not eligible for catch-up at all. For a baby brought late after a home delivery, confirm with the national protocol rather than assuming the 14-day window.",
+        ref: "Editorial note: internal discrepancy between Table 4 (pdf p. 14), footnote 1 (pdf p. 13) and Annex 1 (pdf p. 31) of the 2022 Ethiopian catch-up guideline"
+      }
+    ],
+    sources: [
+      {
+        name: "Routine Immunization Catch-up Vaccination Guidelines, Federal Ministry of Health, Ethiopia, May 2022 (Tables 4 and 5, Box 4, Annexes 1–2)"
+      },
+      {
+        name: "WHO guidance for immunization during the second year of life, 2018 — the basis the Ethiopian job aid in Annex 1 is adapted from"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "zero-dose-child",
+    name: "Zero-dose child (never vaccinated)",
+    group: "paediatric",
+    aka: [
+      "never vaccinated",
+      "unimmunised child",
+      "no vaccines",
+      "defaulter tracing",
+      "newborn tracking",
+      "under-immunised"
+    ],
+    summary: "A child with no vaccine at all. Nothing is lost: start the whole series today at the right minimum ages, then bring them back at 4-week intervals. The harder half of the job is finding them — the defaulter register, the newborn list and house-to-house tracing.",
+    redflags: [
+      "An unvaccinated child in a measles or polio outbreak area — start today, do not book them for another day",
+      "No card and no entry in the register: treat as unvaccinated and open a new row; do not guess at a history",
+      "Over the upper age limit the dose is gone: BCG after 1 year, Penta, PCV, Rota and IPV after 24 months, OPV and measles after 59 months",
+      "Child found by an outreach or campaign team and not written down anywhere — they will be lost again",
+      "Carer blamed or scolded for never bringing the child; they will not come back"
+    ],
+    steps: [
+      "Confirm there really is no history. No card, no register entry, no confirmed account from the carer: count the child as zero-dose and open a new row in the EPI register.",
+      "Give every antigen the child is eligible for TODAY, at the correct minimum ages: BCG (if under 1 year), OPV, Penta, PCV and Rota from 6 weeks, IPV from 14 weeks, measles from 9 months. All in one visit.",
+      "Book the return visit 4 weeks later for the next dose of each series, write the date on a new card, and keep bringing them back at 4-week intervals until the series are complete — PIRI sessions are deliberately run monthly for three months for exactly this.",
+      "Record everything by the real dose number and tally in the age column matching the child's age; doses given above 1 year of age (except MCV2) are reported on the separate catch-up monthly reporting format, not through DHIS2.",
+      "Find the others. Work the defaulter list and register before each session; keep a newborn tracking list; send HEWs or community volunteers house to house to trace dropouts and zero-dose children and link them to a session; take the lists campaign teams compile and add them to your microplan.",
+      "Use the other doors into the facility: the MCV2 visit at 15–24 months, under-five and sick-child clinics, nutrition screening, growth monitoring, vitamin A rounds and hospital discharge. Screen the card at all of them.",
+      "Check stock before you start offering catch-up to older children: OPV and measles use rises when the eligible age goes up to 5 years. Reallocate from a nearby facility or ask the hub early rather than running out mid-session.",
+      "Zero-dose is the programme's own measure of failure, not the family's. Ask what stopped them coming — distance, movement, a bad experience, rumour — and fix that before the next visit."
+    ],
+    drugs: [
+      {
+        id: "vitamin-a",
+        role: "supportive",
+        note: "Catch-up and PIRI sessions are run with vitamin A supplementation, deworming and nutrition counselling; give what is due at the same visit."
+      },
+      {
+        id: "zinc-ors",
+        role: "supportive",
+        note: "Diarrhoea is one of the commonest reasons a zero-dose child is in front of you at all. Treat it and vaccinate at the same visit."
+      }
+    ],
+    textbook: [
+      {
+        book: "ethepi",
+        text: "A zero-dose child is one who has had no routine vaccines at all; operationally Gavi counts a child with no first dose of DPT-containing vaccine.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), key terms, pdf p. 8"
+      },
+      {
+        book: "ethepi",
+        text: "Gavi's operational definition of zero-dose is no first dose of diphtheria-tetanus-pertussis-containing vaccine.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), key terms, pdf p. 8"
+      },
+      {
+        book: "ethepi",
+        text: "An under-immunised child is one without a full course; operationally, no third dose of DTP-containing vaccine.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), key terms, pdf p. 8"
+      },
+      {
+        book: "ethepi",
+        text: "Around 1.25 million Ethiopian children had not received Penta3, and five regions account for 95% of unimmunised children.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), country context, pdf p. 10"
+      },
+      {
+        book: "ethepi",
+        text: "Every facility needs a working process for newborn tracking and for defaulter tracking, to find zero-dose and under-immunised children in its catchment.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), routine immunization services throughout the year, pdf p. 18"
+      },
+      {
+        book: "ethepi",
+        text: "Health workers should routinely trace defaulters and the births happening in their community, and offer services to every eligible child.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), decision-making around special catch-up strategies, pdf p. 16"
+      },
+      {
+        book: "ethepi",
+        text: "Facilities should review the defaulter list or register to identify and reach missed children at vaccination sessions.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), planning for catch-up vaccination, pdf p. 23"
+      },
+      {
+        book: "ethepi",
+        text: "House-to-house visits by health extension workers or community volunteers trace dropouts and zero-dose children and link them to catch-up vaccination.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), community engagement, pdf p. 27"
+      },
+      {
+        book: "ethepi",
+        text: "Supplementary campaign teams should list the zero-dose and under-immunised children they find, with location, and hand the list to the nearest facility.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), integrate with supplemental vaccination activities, pdf p. 20"
+      },
+      {
+        book: "ethepi",
+        text: "School registration checks are a catch-up strategy for screening and vaccinating children who missed polio or measles doses.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), school vaccination checks, pdf p. 19"
+      },
+      {
+        book: "ethepi",
+        text: "A school vaccination check needs no proof-of-vaccination mandate and must not exclude undocumented children.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), school vaccination checks, pdf p. 19"
+      },
+      {
+        book: "ethepi",
+        text: "PIRI sessions are sometimes repeated at 4-week intervals, for example monthly for three months, so a three-dose series such as Penta1-2-3 can be completed.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), periodic intensification of routine immunization, pdf p. 19"
+      },
+      {
+        book: "ethepi",
+        text: "PIRI doses are given after reviewing the individual's vaccination status and count as routine doses, recorded in the register and on the home-based record.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), periodic intensification of routine immunization, pdf p. 19"
+      },
+      {
+        book: "ethepi",
+        text: "PIRI can be combined with vitamin A supplementation, deworming and nutrition counselling.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), periodic intensification of routine immunization, pdf p. 20"
+      },
+      {
+        book: "ethepi",
+        text: "If no previous record can be found in the EPI register, enter the child as a new row and give the doses needed.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 8 recording and reporting, pdf p. 29"
+      },
+      {
+        book: "ethepi",
+        text: "Doses given above 1 year of age (except MCV2) are reported separately on the catch-up monthly reporting format rather than through DHIS2.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 8 recording and reporting, pdf p. 29"
+      },
+      {
+        book: "ethepi",
+        text: "Expect a temporary rise in OPV and measles use when an older age group starts being caught up; watch stock and reallocate early.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), availing vaccines and supplies, pdf p. 24"
+      },
+      {
+        book: "ethepi",
+        text: "With no written or confirmed vaccination history, treat the child as unvaccinated, and do not blame the carer for missing doses.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 2 summary instructions, pdf p. 32"
+      },
+      {
+        book: "ethepi",
+        text: "An interrupted primary series is never restarted and previous doses are never repeated; give only the remaining doses needed to complete the series.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), catch-up vaccination schedule (Table 5), pdf p. 15"
+      }
+    ],
+    sources: [
+      {
+        name: "Routine Immunization Catch-up Vaccination Guidelines, Federal Ministry of Health, Ethiopia, May 2022 (key terms, country context, strategies, Table 8, Annex 2)"
+      },
+      {
+        name: "See also the catch-up vaccination case for the minimum ages, intervals and upper age limits"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "vaccinating-the-sick-child",
+    name: "Vaccinating the sick child (missed opportunities)",
+    group: "paediatric",
+    aka: [
+      "missed opportunity for vaccination",
+      "false contraindications",
+      "contraindications to vaccination",
+      "screen and refer",
+      "deferring vaccines"
+    ],
+    summary: "The commonest reason an Ethiopian child misses a dose is that somebody decided today was not the day. Mild illness, low-grade fever, diarrhoea, malnutrition, breastfeeding and antibiotics are not reasons to withhold a vaccine. Screen the card at the sick-child visit and at discharge, then vaccinate or refer the same day.",
+    redflags: [
+      "Child admitted or seen for illness and discharged without the card being looked at",
+      "Dose deferred for mild illness, low-grade fever, diarrhoea, malnutrition, breastfeeding or a course of antibiotics — none of these is a contraindication",
+      "Severe acute illness needing admission: defer the vaccine, but write it on the discharge plan so it is given before the child goes home",
+      "Anaphylaxis or a severe allergic reaction to a previous dose of the same vaccine — that antigen is not repeated",
+      "Carer told to 'come back when the child is well' with no date and no card entry — this is how a child becomes a defaulter"
+    ],
+    steps: [
+      "Treat the illness on its own protocol first. That does not change what follows.",
+      "Ask for the child health card at this visit, whatever the child came for: sick-child (IMNCI) visit, under-five clinic, nutrition screening, growth monitoring, vitamin A round, outpatients, or the day of discharge from the ward.",
+      "If doses are due and you can give them, give them now. If you cannot, refer the child to an immunisation provider the same day and write the referral down — screen AND refer, not screen and advise.",
+      "Do not defer a dose that is due or overdue for mild illness. Mild illness with or without low-grade fever, mild diarrhoea, a course of antibiotics, malnutrition, breastfeeding, prematurity or low birth weight, a family history of reactions, and recovery from an illness are all FALSE contraindications (WHO — confirm with the national protocol).",
+      "Genuine reasons to withhold are few (WHO — confirm with the national protocol): anaphylaxis or severe allergic reaction to a previous dose of that vaccine or one of its components; live vaccines including BCG in a child with known symptomatic HIV infection or severe immunosuppression; rotavirus vaccine after intussusception or with an uncorrected congenital gut malformation. Severe acute illness is a reason to postpone, not to cancel.",
+      "A child too sick to vaccinate today is a child who needs a date. Put the vaccine on the discharge or follow-up plan, give the carer the date in writing, and keep them on the defaulter list until it is given.",
+      "Before the child leaves: say which vaccines were given, what reaction to expect, which doses are still to be caught up, and when to come back. Then answer their questions."
+    ],
+    drugs: [
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "For fever or discomfort after the injection if the child needs it. Not given routinely before a vaccine, and a low-grade fever on the day is not a reason to withhold the dose."
+      },
+      {
+        id: "vitamin-a",
+        role: "supportive",
+        note: "Due at the same contact in many children; the guideline expects catch-up vaccination to be integrated with vitamin A and nutrition services."
+      },
+      {
+        id: "zinc-ors",
+        role: "supportive",
+        note: "Treat the diarrhoea and vaccinate at the same visit. Mild diarrhoea does not postpone OPV or rotavirus in the national schedule — confirm with the national protocol for a child vomiting the oral dose."
+      }
+    ],
+    textbook: [
+      {
+        book: "ethepi",
+        text: "Every health contact is a chance to review vaccination status and give the doses the child is eligible for, or refer to an immunisation provider.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), reducing missed opportunities for vaccination, pdf p. 18"
+      },
+      {
+        book: "ethepi",
+        text: "Screening points include sick-child (IMNCI) visits, well-child visits, under-five clinics, nutrition screening and discharge from hospital.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), reducing missed opportunities for vaccination, pdf p. 18"
+      },
+      {
+        book: "ethepi",
+        text: "Where the health worker cannot vaccinate, the child must be referred to an immunisation provider rather than simply sent home.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), reducing missed opportunities for vaccination, pdf p. 18"
+      },
+      {
+        book: "ethepi",
+        text: "The MCV2 visit in the second year of life, and paediatric, growth-monitoring, vitamin A and general outpatient visits, are all openings to catch up missed doses.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Box 1 using the 2YL vaccination platform, pdf p. 18"
+      },
+      {
+        book: "ethepi",
+        text: "Catch-up should be integrated with other family health services such as IMNCI, growth monitoring and vitamin A supplementation.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Table 6 summary of catch-up strategies, pdf p. 21"
+      },
+      {
+        book: "ethepi",
+        text: "Do not needlessly defer vaccines that are due or overdue.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), Annex 2 summary instructions, pdf p. 32"
+      },
+      {
+        book: "ethepi",
+        text: "Supervision should reinforce that vaccination status is checked at every health contact, including non-immunisation visits, and that late is better than never.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), building health worker knowledge and practice, pdf p. 26"
+      },
+      {
+        book: "ethepi",
+        text: "Counselling at the visit should cover the next visit date, which vaccine was given, possible adverse events following immunisation, and any doses still to catch up.",
+        ref: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022), building health worker knowledge and practice, pdf p. 26"
+      },
+      {
+        book: "note",
+        text: "The Ethiopian catch-up guideline (2022) names sick-child visits, nutrition screening and hospital discharge as places to screen and vaccinate, and says not to defer doses unnecessarily, but it does not list contraindications anywhere — the word does not appear in the document. The true-versus-false contraindication list in this case is standard WHO immunisation guidance, not the Ethiopian guideline. Confirm it against the national protocol and the vaccine's own package insert before withholding any dose.",
+        ref: "Editorial note: the 2022 Ethiopian catch-up guideline contains no contraindication list; list taken from WHO immunisation guidance"
+      },
+      {
+        book: "note",
+        text: "The same guideline mentions adverse events following immunisation only once, as something to discuss with the carer at the visit (pdf p. 26). It gives no list of expected reactions, no reporting threshold and no management. For AEFI definitions, the reportable list and what to do, use the national AEFI surveillance guideline and WHO AEFI guidance — MedBridge does not carry that content yet.",
+        ref: "Editorial note: AEFI is out of scope of the 2022 Ethiopian catch-up guideline (single mention, pdf p. 26)"
+      }
+    ],
+    sources: [
+      {
+        name: "Routine Immunization Catch-up Vaccination Guidelines, Federal Ministry of Health, Ethiopia, May 2022 (reducing missed opportunities, pdf pp. 18, 21, 26, 32) — for the screening and referral rules"
+      },
+      {
+        name: "WHO immunisation guidance on contraindications and false contraindications — for the true-versus-false contraindication list, which the Ethiopian guideline does not cover. Confirm with the national protocol."
+      },
+      {
+        name: "WHO Pocket Book of Hospital Care for Children 2013 — check immunisation status of every sick child and vaccinate before discharge"
+      }
+    ],
+    review: { status: "draft" }
   }
 ];
