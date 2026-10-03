@@ -15491,5 +15491,314 @@ window.DRUG_DB = [
       }
     ],
     review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- warfarin ---- */
+  {
+    id: "warfarin",
+    name: "Warfarin",
+    aka: ["Coumadin", "Marevan", "Vitamin K antagonist", "VKA", "Coumarin anticoagulant"],
+    cls: "Oral anticoagulant (vitamin K antagonist)",
+    cat: "haem",
+    wards: ["medical", "outpatient", "surgical", "maternity"],
+    tags: [
+      "anticoagulation",
+      "INR",
+      "DVT",
+      "PE",
+      "VTE",
+      "atrial fibrillation",
+      "mechanical heart valve",
+      "rheumatic heart disease",
+      "mitral stenosis",
+      "bleeding"
+    ],
+    presentation: [
+      "Tablets, usually scored. Strengths in circulation include 1 mg, 2 mg, 2.5 mg, 3 mg and 5 mg; which ones you get depends on the supplier. Check what your pharmacy actually stocks.",
+      "Tablet COLOUR IS NOT A RELIABLE GUIDE TO STRENGTH. Colours differ between manufacturers and countries: pink is 5 mg under the UK colour scheme but 1 mg under the US scheme, and blue is 3 mg in one and 4 mg in the other. Read the strength on the box every time.",
+      "Store in the original container, away from light and moisture."
+    ],
+    indications: [
+      "Treatment of deep vein thrombosis and pulmonary embolism after the initial heparin (not in pregnancy), and prevention of recurrence",
+      "Stroke prevention in atrial fibrillation, especially with rheumatic mitral stenosis",
+      "Mechanical heart valves: lifelong, with no oral substitute",
+      "Bioprosthetic valve or mitral valve repair, usually for the first 3 months",
+      "Antiphospholipid syndrome with thrombosis"
+    ],
+    standard: {
+      summary: "An oral anticoagulant with a narrow margin between too little (clot, stroke, valve thrombosis) and too much (bleeding). The dose needed varies widely between patients and changes with diet, illness and other medicines, so it is adjusted to the INR. Warfarin is only safe where an INR can be measured.",
+      items: [
+        {
+          label: "Starting dose",
+          text: "5 mg once daily, in the evening. Start lower, at 2.5 mg (half of a 5 mg tablet), if the patient is elderly, weighs under 50 kg, has liver disease, heart failure, poor food intake or recent surgery, takes an interacting drug (amiodarone, metronidazole and others; see Interactions), or is at high risk of bleeding. Do not use 10 mg loading doses unless the INR can be checked every day."
+        },
+        {
+          label: "INR checks",
+          text: "First INR after 3 doses (day 3–5), then every 2–3 days until two results in a row are in range, then weekly for 3–4 weeks. Once stable on the same dose, every 3–4 weeks. Check again within a week after any dose change, new or stopped medicine, illness or big change in diet."
+        },
+        {
+          label: "Target INR 2.0–3.0 (aim for 2.5)",
+          text: "Deep vein thrombosis and pulmonary embolism; atrial fibrillation, including AF with rheumatic mitral stenosis; bioprosthetic valves (first 3 months); antiphospholipid syndrome; a bileaflet or tilting-disc mechanical AORTIC valve with sinus rhythm, a normal left atrium and no other risk factor."
+        },
+        {
+          label: "Target INR 2.5–3.5 (aim for 3.0)",
+          text: "Any mechanical MITRAL valve. Also older caged-ball or tilting-disc aortic valves, and a mechanical valve in any position with atrial fibrillation, left atrial enlargement, low ejection fraction or a previous embolism. If you don't know the valve type or position, ask the cardiac centre and do not lower the target in the meantime."
+        },
+        {
+          label: "Overlap with heparin (DVT/PE)",
+          text: "Start warfarin on the first day of enoxaparin or heparin. Continue the heparin for AT LEAST 5 DAYS AND until the INR has been in range on 2 consecutive days (two results at least 24 h apart). Both conditions must be met. An INR of 2 on day 2–3 only shows that factor VII has fallen. The patient is not yet protected until factor X and prothrombin fall (half-lives 24 and 72 h), and the full effect takes 5–7 days."
+        },
+        {
+          label: "Adjusting the dose",
+          text: "Change the total weekly dose by 10–20 %, and wait 5–7 days before judging the effect. Example with 5 mg tablets: 5 mg daily is 35 mg/week. A 10 % reduction to 32.5 mg/week is 5 mg on six days and 2.5 mg on one fixed day (e.g. Sunday)."
+        },
+        {
+          label: "High INR, no bleeding",
+          text: "Above target but below 5: give a lower dose or skip one dose, then recheck within a week. INR 5–10: withhold warfarin for 1–2 days, recheck, and restart at a lower weekly dose. If bleeding risk is high, consider oral vitamin K 1–2.5 mg. INR above 10: withhold, give oral vitamin K 2.5–5 mg and recheck the next day. If no oral form exists, the 10 mg/mL ampoule can be given by mouth (0.1 mL = 1 mg, measured in a 1 mL syringe). Avoid 10 mg doses: they make warfarin ineffective for days, which is dangerous for a patient with a mechanical valve."
+        },
+        {
+          label: "Bleeding",
+          text: "Minor bleeding (nose, gums, bruising) with a high INR: withhold warfarin, give vitamin K 1–3 mg slow IV, and use local pressure or tranexamic acid mouthwash. Major bleeding (GI, intracranial, or a falling blood pressure) at ANY INR: stop warfarin and give vitamin K 5–10 mg slow IV over 20–30 min. Add four-factor prothrombin complex concentrate 25–50 IU/kg if available; otherwise fresh frozen plasma 15 mL/kg, or fresh whole blood if there is no plasma. Recheck the INR after plasma and again at 6–12 h, because plasma wears off before vitamin K (which takes about 8–10 h) has worked. If the patient bleeds with an INR in range, look for a cause: GI or urinary bleeding often reveals an underlying lesion."
+        },
+        {
+          label: "Surgery and procedures",
+          text: "Dental extraction, cataract and minor skin surgery: continue warfarin and check the INR within 72 h before (see the Pre-op tool). Moderate or high bleeding-risk surgery: give the last dose 6 days before (5 full days without warfarin). Check the INR the day before; if it is 1.5 or above, give oral vitamin K 1–2 mg. Operate when the INR is below 1.5 (1.4 or below for a spinal or epidural). Restart at the usual dose that evening or the next day, once bleeding is controlled. Heparin BRIDGING is only for mechanical valves and for VTE within the last 3 months. Do NOT bridge for atrial fibrillation alone: in the BRIDGE trial bridging increased major bleeding without preventing strokes."
+        },
+        {
+          label: "How long",
+          text: "DVT/PE: at least 3 months. Three months is usually enough after major surgery or trauma; with no identifiable cause or a lasting risk factor, consider longer treatment and decide with a physician. Mechanical valve, rheumatic mitral stenosis with AF, and AF with risk factors: lifelong."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "No INR test, or an INR you cannot trust",
+        best_for: "Health centres and district hospitals where the laboratory cannot run an INR, the reagent has run out, or there is no point-of-care meter.",
+        requires: [],
+        steps: [
+          "Be honest about the risk. The dose each patient needs varies more than tenfold and is changed by food, illness and other medicines. Without an INR, nobody can tell an ineffective dose from a dangerous one. There is no safe fixed or 'low' warfarin dose that removes the need for monitoring. A fixed low-dose regimen was tested in atrial fibrillation (SPAF III) and failed to prevent strokes.",
+          "Do NOT START warfarin unless the patient can get an INR checked, at least weekly at first. Never start it without monitoring in: the elderly; anyone under 50 kg; liver disease or heavy alcohol use; heart failure; kidney failure; previous major bleeding or peptic ulcer; severe uncontrolled hypertension; anyone taking TB drugs, carbamazepine, phenytoin, phenobarbital, amiodarone or metronidazole; a woman who could become pregnant and is not using reliable contraception; anyone who cannot return.",
+          "DVT or PE and no INR: do not use warfarin. Give enoxaparin (or subcutaneous unfractionated heparin) for the WHOLE course, at least 3 months (see Heparin). It needs no INR, only a platelet count if possible. If injections cannot be continued at home, refer to a facility with INR testing.",
+          "Mechanical valve, or rheumatic mitral stenosis with AF, and no INR: warfarin is still the only long-term option, so it has to be started somewhere that can measure the INR. Admit the patient or refer to a hospital with INR, and give therapeutic enoxaparin in the meantime.",
+          "Atrial fibrillation WITHOUT a mechanical valve or mitral stenosis, and no INR: do not start warfarin. Refer the patient. A direct oral anticoagulant (apixaban, rivaroxaban, dabigatran) is the alternative if the patient can obtain one. Aspirin is not an adequate substitute.",
+          "Patient already STABLE on warfarin when the laboratory stops: if recent INRs were in range on the current dose, continue the SAME dose. Never raise or lower it without a result. Do not start interacting medicines if an alternative exists. Ask about bleeding at every contact. Send the patient for an INR at the nearest facility that can do one within 2–4 weeks, or sooner for a mechanical valve, a new medicine or an illness. Never stop warfarin abruptly in a patient with a mechanical valve because the test is unavailable.",
+          "An INR you cannot trust: if a result does not fit the patient (e.g. 6 with no change in dose, diet or medicines, or 1.0 in someone who reliably takes warfarin), repeat it before acting, unless the patient is bleeding. Common errors are an under-filled citrate tube (falsely high), a clotted sample, and blood drawn through a heparinised line.",
+          "A prothrombin time in SECONDS is not an INR. Ask the laboratory for the INR. If they cannot report one, the INR is (patient PT ÷ mean normal PT) raised to the power of the reagent's ISI, which is printed on the reagent box. The laboratory must re-establish the mean normal PT for every new reagent batch. If the reagent or the laboratory changes, expect the result to shift.",
+          "The 20-minute whole blood clotting test cannot measure the effect of warfarin. A normal result is NOT reassuring. Never dose warfarin from it.",
+          "Point-of-care fingerstick INR meters are acceptable where they exist. Use the manufacturer's quality control, compare them with the laboratory from time to time, and confirm high readings (above about 4–5) with the laboratory before giving vitamin K to a non-bleeding patient."
+        ],
+        monitor: [
+          "Bleeding: black stools, vomiting blood, blood in the urine, prolonged nosebleeds, heavy periods, large bruises, sudden severe headache",
+          "Haemoglobin if there is any suspicion of bleeding",
+          "Signs of clotting: new leg swelling, breathlessness, stroke symptoms, a muffled valve click or new breathlessness in a valve patient"
+        ],
+        cautions: [
+          "Running warfarin without monitoring is not a cheaper version of anticoagulation. It is an uncontrolled risk. If the patient cannot be monitored and does not have a mechanical valve or rheumatic mitral stenosis, they are usually safer on enoxaparin, on a direct oral anticoagulant, or (for low-risk AF) without anticoagulation, than on blind warfarin."
+        ]
+      },
+      {
+        title: "Gomen and diet: keep vitamin K steady, do not ban it",
+        best_for: "Every patient on warfarin in Ethiopia, at the first visit and again before fasting seasons.",
+        requires: [],
+        steps: [
+          "Gomen (Ethiopian kale and collard greens) is very rich in vitamin K, which is the natural antidote to warfarin. So are kosta (Swiss chard), spinach, lettuce and other dark green leaves. Cabbage (tikil gomen) has less.",
+          "The rule is CONSISTENCY, NOT AVOIDANCE. The warfarin dose is set around what the patient normally eats. A patient who suddenly eats much MORE gomen will see the INR fall, risking a clot. One who suddenly eats much LESS will see the INR rise, risking bleeding. Do not tell patients to stop eating gomen: they will stop for a while, then return to it and their INR will crash.",
+          "At the first visit ask how often the household eats gomen and other greens (e.g. 'three times a week'), and write it on the warfarin card. Ask the patient to keep roughly the same amount every week.",
+          "Fasting seasons: Orthodox fasts (the 55-day Abiy Tsom before Fasika, Wednesdays and Fridays, and others) usually mean more vegetables and greens and no meat or dairy. The diet swings back when the fast ends. Check the INR 1–2 weeks after a long fast begins and again after it ends. Muslim patients fasting in Ramadan should take warfarin at the same time every day, for example with the evening meal.",
+          "Not eating (vomiting, diarrhoea, fever, a hospital stay with poor intake) raises the INR. Check it after several days of illness. When the patient goes home and eats normally again, the INR may fall.",
+          "Alcohol (tej, tella, areke): heavy drinking or a binge can push the INR up and makes bleeding more dangerous. Advise none, or small regular amounts, and never binges.",
+          "Ask about traditional and herbal medicines and supplements at every visit. Any new one is a reason to check the INR. Multivitamins and nutrition supplements that contain vitamin K count as diet.",
+          "Never use gomen to treat a high INR at home, and never cut out gomen to make the warfarin 'stronger'."
+        ],
+        monitor: [
+          "INR 1–2 weeks after any big change in diet, a fast starting or ending, or several days of poor eating"
+        ],
+        cautions: [
+          "An INR that keeps swinging without any change in dose or medicines is often a diet or adherence story. Ask before changing the dose."
+        ]
+      },
+      {
+        title: "One tablet strength, every dose written in milligrams AND tablets",
+        best_for: "Pharmacies, wards and clinics where several warfarin brands and strengths come and go with supply.",
+        requires: [],
+        steps: [
+          "Confusing strengths is a classic cause of warfarin overdose: a 5 mg tablet taken in place of a 1 mg tablet is five times the dose. Colours differ between manufacturers and countries (pink is 5 mg on the UK scheme and 1 mg on the US scheme), so colour alone means nothing.",
+          "Stock ONE strength per facility where possible, ideally a scored 5 mg tablet. Halves give 2.5 mg steps. Make finer changes by varying the dose on fixed days of the week, not by quartering tablets.",
+          "Write every dose twice, in milligrams and in tablets with their strength, on the prescription, the pharmacy label and the patient's card. Example: 'Warfarin 7.5 mg = 1½ tablets of 5 mg, every evening'. Never write 'warfarin 1 tablet'.",
+          "For a weekly schedule, write a simple table on the card, one line per day: 'Mon 5 mg (1 tablet) … Sun 2.5 mg (½ tablet)'. The patient ticks each day.",
+          "At every refill the patient shows the tablets they have at home. Compare the strength and marking with the new box. If the strength, brand or colour has changed, explain it, write the new strength and colour on the card, take away the old supply if it differs, and check the INR within 1–2 weeks.",
+          "Avoid keeping two strengths at home. If it cannot be avoided, use separate labelled containers and show the patient and a family member which tablet is which.",
+          "Take it once daily in the evening, at the same time. A morning INR can then change that day's dose. A missed dose is taken the same day if remembered. If it is only remembered the next day, skip it: never double up.",
+          "On the ward, prescribe in milligrams with the INR target on the chart, and look at that day's INR before each dose is given."
+        ],
+        monitor: ["INR 1–2 weeks after any change of brand, supplier or strength"],
+        cautions: [
+          "Do not dispense several months of a new strength to a patient who cannot read the label without first teaching them, with a family member present."
+        ]
+      },
+      {
+        title: "The patient who lives days away from the clinic",
+        best_for: "Rural patients who cannot attend weekly, especially those with rheumatic valve disease or mechanical valves who need warfarin for life.",
+        requires: [],
+        steps: [
+          "Decide BEFORE starting. The first month needs an INR every few days and then weekly. If the patient cannot manage that, keep them near the hospital (admission, a maternity waiting home, relatives in town) until two INRs in a row are in range on the same dose. Otherwise choose an alternative (enoxaparin for a DVT/PE course), or refer to a facility near their home that can do the INR.",
+          "Find the nearest facility with INR testing to the patient's HOME, not to the hospital. Arrange for the test to be done there and the result phoned or texted to your clinic. Write the clinic phone number on the card and phone back the dose.",
+          "Once stable (several INRs in range on the same dose, with no new medicines or illness), test every 4 weeks. For a very stable patient for whom travel is the main barrier, some guidelines allow up to 12 weeks between tests. Do not stretch the interval for a mechanical valve in the first months, or after any change.",
+          "Supply tablets of ONE strength to last until the next INR, plus about a week's reserve for delays (rain, transport, stock-outs). Do not give a store of mixed strengths.",
+          "Give a warfarin card listing: the reason for treatment, the target INR, the dose in mg and tablets, the last INR and its date, and the next test date. Add: 'Show this card to every health worker and pharmacy'. Also list the medicines to avoid: TB drugs, metronidazole, cotrimoxazole, fluconazole, antiepileptics, aspirin, diclofenac, ibuprofen, and herbal remedies.",
+          "Teach the patient AND a family member the danger signs and what to do: STOP warfarin and come the same day for black stools, vomiting blood, red or brown urine, a nosebleed that will not stop, heavy periods, large bruises, a severe headache, or any fall with a head injury.",
+          "If a long gap without testing is unavoidable, keep the same dose, avoid new medicines, keep the diet steady, and test at the first chance.",
+          "Women who could become pregnant need reliable contraception: an IUD or DMPA injection, because enzyme-inducing drugs weaken pills and implants. Tell them to do a pregnancy test as soon as a period is late and to come at once if it is positive. Warfarin must be changed to heparin before the 6th week (see Safety)."
+        ],
+        monitor: [
+          "INR every 4 weeks once stable, sooner after any change",
+          "Card complete and up to date at every visit",
+          "Bleeding and clotting symptoms at every contact, including at health posts"
+        ],
+        cautions: [
+          "A patient who cannot be monitored at all, and who does not have a mechanical valve or rheumatic mitral stenosis, is usually safer without warfarin than on unmonitored warfarin."
+        ]
+      }
+    ],
+    paediatric: [
+      "Specialist use only (usually mechanical valves, Fontan circulation, or thrombosis), and only where the INR can be checked often. Targets are the same as for adults.",
+      "BNF for Children: 0.2 mg/kg (max 10 mg) on day 1, reduced to 0.1 mg/kg (max 5 mg) if liver function is impaired or after a Fontan operation. Then adjust to the INR, with frequent checks.",
+      "Infants: formula milk contains vitamin K and makes babies resistant to warfarin, while breastfed babies are very sensitive. Any change in feeding changes the INR."
+    ],
+    cautions: [
+      "Bleeding is the main harm, and at least half of the bleeds happen when the INR is above range. Keep it in range, ask about bleeding at every visit, and treat high INRs promptly (see Standard: High INR).",
+      "No aspirin or NSAIDs (diclofenac, ibuprofen) unless a specialist has decided the combination is needed. Aspirin with warfarin raises bleeding two- to threefold. Use paracetamol for pain (see Interactions).",
+      "Many drugs change the INR: see the Interactions tab. Not listed there because they are not drug entries in this app, but they also RAISE the INR: cotrimoxazole, fluconazole, ciprofloxacin and erythromycin. Antiretroviral regimens containing efavirenz, nevirapine or ritonavir-boosted protease inhibitors can move it either way, so check the INR when ART is started or changed.",
+      "Skin necrosis on days 2–5 (thighs, breasts, buttocks) in protein C or S deficiency. If it happens, stop warfarin, give vitamin K and anticoagulate with heparin. In known deficiency, start warfarin at a low dose with a full heparin overlap.",
+      "Pregnancy: contraindicated except in specialist-managed mechanical valves. See the Safety tab. Compatible with breastfeeding.",
+      "Avoid IM injections where possible (risk of a large haematoma). Use the oral, IV or SC route. If an IM vaccine is needed, use a fine needle and press firmly for 2 minutes.",
+      "Fever, diarrhoea, poor intake, worsening heart failure, liver congestion and an overactive thyroid all RAISE the INR.",
+      "A head injury on warfarin needs assessment even if the patient seems well, because bleeding can be delayed."
+    ],
+    antidote: "Vitamin K1 (phytomenadione): oral 1–2.5 mg for a high INR without bleeding (2.5–5 mg if the INR is above 10); 5–10 mg slow IV for serious bleeding, given with four-factor prothrombin complex concentrate (25–50 IU/kg) or fresh frozen plasma 15 mL/kg, or fresh whole blood if neither is available. IV vitamin K takes about 8–10 h to work; PCC and plasma work at once but wear off.",
+    textbook: [
+      {
+        book: "harrison",
+        text: "Warfarin is usually started at 5–10 mg, lower in patients with CYP2C9 or VKORC1 variants that make them sensitive, then titrated to the target INR.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 951"
+      },
+      {
+        book: "harrison",
+        text: "Target INR 2.0–3.0 for most indications; 2.5–3.5 for mechanical valves in the mitral position, older ball-and-cage aortic valves, and any mechanical valve with atrial fibrillation.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 951"
+      },
+      {
+        book: "harrison",
+        text: "Mechanical valves: bileaflet or tilting-disc AORTIC valve with normal left atrium and sinus rhythm INR 2.5 (range 2–3); MITRAL tilting-disc or bileaflet valve INR 3.0 (range 2.5–3.5).",
+        ref: "Harrison 22nd ed. 2025, ch. 438 Ischemic Stroke, Table 438-3, p. 3445"
+      },
+      {
+        book: "harrison",
+        text: "Warfarin is required for rheumatic mitral stenosis and mechanical heart valves; DOACs are not substitutes there.",
+        ref: "Harrison 22nd ed. 2025, ch. 258 Atrial Fibrillation, p. 1950"
+      },
+      {
+        book: "harrison",
+        text: "Onset is delayed: the antithrombotic effect depends on lowering factor X and prothrombin, whose half-lives are 24 and 72 h, so established or high-risk thrombosis needs a parenteral anticoagulant for at least 5 days.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 951"
+      },
+      {
+        book: "harrison",
+        text: "Early INR prolongation reflects the fall in factor VII; continue the parenteral anticoagulant until the INR has been therapeutic for at least 2 consecutive days, with a minimum of 5 days.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952"
+      },
+      {
+        book: "harrison",
+        text: "VTE: usual start 5 mg, target INR 2.0–3.0; continue the parenteral anticoagulant for at least 5 days and until two INRs at least 1 day apart are in range.",
+        ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, p. 2163"
+      },
+      {
+        book: "harrison",
+        text: "Fluctuations in dietary vitamin K intake change warfarin's effect, and many drugs alter its absorption, clearance or metabolism, so coagulation monitoring is essential.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 951"
+      },
+      {
+        book: "harrison",
+        text: "Stable patients still need an INR every 3–4 weeks; check more often when a new medicine is started or the dose is changed.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952"
+      },
+      {
+        book: "harrison",
+        text: "No bleeding, INR 3.5–10: withhold warfarin until back in range; INR over 10: oral vitamin K 2.5–5 mg may be given. Higher oral doses (5–10 mg) can make the patient temporarily resistant to warfarin.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952"
+      },
+      {
+        book: "harrison",
+        text: "Serious bleeding with a raised INR: vitamin K 5–10 mg by slow IV infusion, repeated until the INR is normal, plus four-factor prothrombin complex concentrate, which corrects the INR faster than fresh frozen plasma.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952"
+      },
+      {
+        book: "harrison",
+        text: "Over-anticoagulation without symptoms can be corrected with minimal doses of vitamin K (1 mg orally or IV) while keeping the patient anticoagulated.",
+        ref: "Harrison 22nd ed. 2025, ch. 121 Coagulation Disorders, p. 935"
+      },
+      {
+        book: "harrison",
+        text: "No need to stop warfarin for dental cleaning, simple extraction, cataract surgery or skin biopsy; for moderate or high bleeding-risk procedures stop it 5 days before. High-thrombotic-risk patients such as those with mechanical valves can be bridged with LMWH once the INR is below 2, last dose 12–24 h before surgery.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952"
+      },
+      {
+        book: "harrison",
+        text: "Aspirin with an anticoagulant such as warfarin raises the bleeding risk two- to threefold; if the combination is truly needed use low-dose aspirin (75–100 mg).",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 943"
+      },
+      {
+        book: "williams",
+        text: "Postpartum VTE: start warfarin with heparin, usually 5 to 10 mg for the first 2 days, titrated to INR 2 to 3; keep therapeutic UFH or LMWH for 5 days and until the INR is in range for 2 consecutive days. Postpartum women need larger doses.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 52 Thromboembolic Disorders, pdf p. 2247"
+      },
+      {
+        book: "williams",
+        text: "Warfarin embryopathy (nasal hypoplasia, stippled epiphyses) follows exposure between the 6th and 9th weeks; about 6 % after exposure in that window, about 1 % in one meta-analysis when the dose was 5 mg/day or less.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 12 Teratology, Teratogens, and Fetotoxic Agents, pdf p. 545"
+      },
+      {
+        book: "williams",
+        text: "Mechanical valves: warfarin is the most effective drug for preventing maternal thromboembolism but harms the fetus; heparin is safer for the fetus but the maternal thromboembolic risk is much higher.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2117"
+      },
+      {
+        book: "note",
+        text: "Lower starting doses for the elderly, the underweight, liver disease, heart failure and interacting drugs are not stated in Harrison or Williams (Harrison mentions only genetic variants). They follow CHEST 2012 (Holbrook) and BNF practice, as does the 10–20 % weekly-dose adjustment.",
+        ref: "Editorial note"
+      },
+      {
+        book: "note",
+        text: "Heparin overlap: Harrison ch. 123 and Williams say until the INR is in range on 2 consecutive days; Harrison ch. 290 says two INRs at least 1 day apart; other sources say 'in range for 24 hours'. All of these mean at least two in-range results 24 h or more apart, AND at least 5 days of heparin.",
+        ref: "Editorial note"
+      },
+      {
+        book: "note",
+        text: "Harrison does not discuss the BRIDGE trial. 'No bridging for AF alone' follows Douketis et al., NEJM 2015, and CHEST 2022, and matches this app's Pre-op tool. The vitamin K doses for INR 5–10 and for minor bleeding, PCC 25–50 IU/kg, and FFP 15 mL/kg follow the British Society for Haematology guideline (Keeling 2011). Neither book covers the improvised methods (no INR, Ethiopian diet, tablet strengths, remote patients): they are editorial guidance for district practice.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "Holbrook A et al. Evidence-based management of anticoagulant therapy. CHEST 2012;141(2 Suppl):e152S–e184S"
+      },
+      {
+        name: "Keeling D et al. Guidelines on oral anticoagulation with warfarin, 4th edition. Br J Haematol 2011;154:311–324 (British Society for Haematology)"
+      },
+      {
+        name: "Douketis JD et al. Perioperative bridging anticoagulation in patients with atrial fibrillation (BRIDGE). N Engl J Med 2015;373:823–833"
+      },
+      {
+        name: "Douketis JD et al. Perioperative management of antithrombotic therapy: ACCP guideline. CHEST 2022;162:e207–e243"
+      },
+      {
+        name: "Stroke Prevention in Atrial Fibrillation Investigators. Adjusted-dose warfarin versus low-intensity, fixed-dose warfarin plus aspirin for high-risk patients with atrial fibrillation (SPAF III). Lancet 1996;348:633–638"
+      },
+      {
+        name: "Otto CM et al. 2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease"
+      },
+      { name: "BNF and BNF for Children: warfarin monograph and interactions appendix" }
+    ],
+    review: { status: "draft", by: null, date: null }
   }
 ];

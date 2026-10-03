@@ -2776,5 +2776,95 @@ window.SAFETY = {
       "WHO. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025",
       "National guideline on prevention and management of postpartum haemorrhage, Ministry of Health, Ethiopia, 2022"
     ]
+  },
+
+  /* ---- warfarin ---- */
+  warfarin: {
+    pregnancy: {
+      level: "avoid",
+      text: "Contraindicated for DVT/PE, atrial fibrillation and other indications in pregnancy: use enoxaparin or heparin instead. Warfarin crosses the placenta. Exposure in weeks 6–9 causes warfarin embryopathy (nasal hypoplasia, stippled epiphyses) in about 6 % of exposed pregnancies. Later exposure causes fetal haemorrhage and brain abnormalities, and delivery while the fetus is anticoagulated risks fetal intracranial bleeding. Miscarriage and stillbirth are also more common. Women on warfarin who could become pregnant need reliable contraception and a pregnancy test as soon as a period is late, so that they can be changed to heparin before week 6. THE EXCEPTION is a MECHANICAL HEART VALVE. Warfarin prevents valve thrombosis better than heparin, and heparin carries a much higher risk of maternal valve thrombosis, stroke and death. Specialist teams therefore choose one of these: dose-adjusted enoxaparin throughout (twice daily, anti-Xa monitored); heparin in the first trimester (to 12–13 weeks), then warfarin until about 36 weeks, then heparin again; or, for the highest-risk valves, warfarin throughout, especially if the dose is 5 mg/day or less (embryopathy risk under 3 %, over 8 % above 5 mg/day). This is a joint cardiology and obstetric decision: refer early. Do not stop anticoagulation in a pregnant woman with a mechanical valve while waiting for the decision; give therapeutic enoxaparin. Change from warfarin to heparin by 36 weeks or at least 2 weeks before a planned birth. If labour starts on warfarin, the baby is anticoagulated too: reverse the mother with vitamin K plus plasma or PCC, involve the obstetrician about mode of delivery, and give the newborn vitamin K."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible with breastfeeding. Warfarin does not pass into milk in meaningful amounts and does not anticoagulate the baby. It is the oral anticoagulant of choice after delivery, started alongside heparin. Make sure the baby has had its routine vitamin K at birth."
+    },
+    renal: {
+      level: "adjust",
+      text: "There is no formula-based dose change, because warfarin is cleared by the liver. But kidney failure increases bleeding risk and usually lowers the dose needed: start at 2.5 mg and check the INR more often. In severe kidney disease (CrCl under 30 mL/min) warfarin is often the only practical long-term oral anticoagulant, because enoxaparin accumulates and direct oral anticoagulants are restricted. Harrison advises considering alternatives in CKD and on dialysis because warfarin is a risk factor for calciphylaxis. Stop it if painful skin nodules or ulcers appear in a patient with advanced CKD, and anticoagulate another way."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "The liver makes the clotting factors and clears warfarin, so liver disease makes the patient far more sensitive and raises the baseline INR. Mild disease: start at 2.5 mg and check the INR often. AVOID in cirrhosis with jaundice, ascites or a raised INR before treatment, and in heavy alcohol use. There the INR no longer reflects the warfarin effect, and bleeding (e.g. from varices) is likely. Use enoxaparin, at a lower dose and with care, if anticoagulation is essential."
+    },
+    refs: [
+      {
+        book: "williams",
+        text: "Warfarin embryopathy follows exposure between the 6th and 9th weeks of gestation, with a prevalence of about 6 % after exposure in this window.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 12 Teratology, Teratogens, and Fetotoxic Agents, pdf p. 545",
+        pdf_page: 545,
+        quote: "from exposure between the 6th and 9th weeks’ gestation"
+      },
+      {
+        book: "williams",
+        text: "Warfarin used beyond the first trimester can cause fetal haemorrhage; about half of embryopathy cases also have central nervous system anomalies.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 12 Teratology, Teratogens, and Fetotoxic Agents, pdf p. 546",
+        pdf_page: 546,
+        quote: "If used beyond the first trimester, warfarin may lead to hemorrhage into fetal"
+      },
+      {
+        book: "williams",
+        text: "For mechanical valves warfarin is the most effective anticoagulant for preventing maternal thromboembolism; heparin is less hazardous for the fetus but carries a much higher maternal thromboembolic risk.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2117",
+        pdf_page: 2117,
+        quote: "warfarin is the most effective anticoagulant for preventing maternal"
+      },
+      {
+        book: "williams",
+        text: "Embryopathy risk is under 3 % at 5 mg/day or less and over 8 % above 5 mg/day; one accepted regimen gives LMWH or UFH until 13 weeks, then warfarin until near delivery, then heparin.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2118",
+        pdf_page: 2118,
+        quote: "13 weeks, and then warfarin is substituted until near delivery"
+      },
+      {
+        book: "harrison",
+        text: "Mechanical valve in pregnancy: avoid warfarin in the first trimester; its superiority in preventing valve thrombosis justifies use in the second and third trimesters, switching to heparin at 36 weeks.",
+        ref: "Harrison 22nd ed. 2025, ch. 491 Medical Disorders During Pregnancy, p. 3900",
+        pdf_page: 3943,
+        quote: "superiority of warfarin in preventing valve thrombosis merits its use"
+      },
+      {
+        book: "williams",
+        text: "Warfarin, LMWH and UFH do not accumulate in breast milk and are compatible with breastfeeding.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2118",
+        pdf_page: 2118,
+        quote: "These anticoagulants are compatible with breastfeeding"
+      },
+      {
+        book: "harrison",
+        text: "Warfarin does not pass into breast milk and can safely be given to nursing mothers.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952",
+        pdf_page: 995,
+        quote: "Warfarin does not pass into the breast milk"
+      },
+      {
+        book: "harrison",
+        text: "Warfarin is considered a risk factor for calciphylaxis in chronic kidney disease.",
+        ref: "Harrison 22nd ed. 2025, ch. 322 Chronic Kidney Disease, p. 2391",
+        pdf_page: 2434,
+        quote: "a risk factor for calciphylaxis"
+      },
+      {
+        book: "harrison",
+        text: "In outpatients with cirrhosis warfarin is avoided; LMWH has been used safely.",
+        ref: "Harrison 22nd ed. 2025, ch. 121 Coagulation Disorders, p. 935",
+        pdf_page: 978,
+        quote: "In the outpatient setting, warfarin is avoided"
+      }
+    ],
+    sources: [
+      "BNF",
+      "Otto CM et al. 2020 ACC/AHA Valvular Heart Disease Guideline (anticoagulation in pregnancy)",
+      "LactMed (NIH): warfarin"
+    ]
   }
 };

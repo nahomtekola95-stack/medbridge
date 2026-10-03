@@ -1139,8 +1139,13 @@ window.CONDITIONS = [
     { id: "morphine", role: "supportive", note: "For severe pleuritic pain from pulmonary embolism." },
     { id: "furosemide", role: "avoid", note: "The raised venous pressure of pulmonary embolism is not fluid overload; diuresis worsens the low output state." },
     { id: "tranexamic-acid", role: "avoid", note: "Antifibrinolytics are contraindicated in active thromboembolism." },
-    { id: "oxygen", role: "supportive", note: "Pulmonary embolism with hypoxaemia." }
-  ],
+    { id: "oxygen", role: "supportive", note: "Pulmonary embolism with hypoxaemia." },
+      {
+        id: "warfarin",
+        role: "first",
+        note: "Long-term oral anticoagulation. Start with heparin and overlap for at least 5 days and until the INR has been 2–3 on two consecutive days — warfarin alone in the first days can make clotting worse."
+      }
+    ],
   sources: [{ name: "Kearon C et al. FIDO. JAMA 2006" }, { name: "CHEST Antithrombotic Therapy for VTE Disease, 2021" }],
   textbook: [
     { book: "harrison", text: "Parenteral options include enoxaparin 1 mg/kg twice daily with normal renal function, or UFH infusion titrated to aPTT 2-3 times upper normal.", ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, p. 2163" },
@@ -6834,6 +6839,11 @@ window.CONDITIONS = [
         id: "furosemide",
         role: "avoid",
         note: "The raised neck veins of PE are not fluid overload; diuresis worsens the low output."
+      },
+      {
+        id: "warfarin",
+        role: "first",
+        note: "Oral anticoagulant for continuing treatment after a post-operative clot, overlapped with heparin until the INR is in range. Usually 3 months for a clot provoked by surgery."
       }
     ],
     textbook: [],

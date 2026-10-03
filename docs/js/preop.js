@@ -115,7 +115,7 @@
               ${p.highRiskMeds ? `<span class="chip bad">${p.highRiskMeds} to stop</span>` : ""}</div>
             ${p.medsByRule.map(g => `<h4 class="po-group">${esc(g.label)}</h4>
               ${g.items.map(m => `<div class="callout ${g.rule.startsWith("stop") ? "danger" : g.rule === "continue" ? "ok-callout" : "warn"}">${ic(g.rule.startsWith("stop") ? "alert" : g.rule === "continue" ? "check" : "info")}<div>
-                <strong>${esc(m.label)}</strong>${m.timing ? ` — ${esc(m.timing)}` : ""}
+                <strong>${m.drugId && (window.DRUG_DB || []).some(d => d.id === m.drugId) ? `<a href="#/drug/${esc(m.drugId)}">${esc(m.label)}</a>` : esc(m.label)}</strong>${m.timing ? ` — ${esc(m.timing)}` : ""}
                 ${m.note ? `<p class="small" style="margin:.25rem 0 0">${esc(m.note)}</p>` : ""}
                 ${m.ifStoppedWrongly ? `<p class="small muted" style="margin:.2rem 0 0"><b>If stopped wrongly:</b> ${esc(m.ifStoppedWrongly)}</p>` : ""}
                 ${m.ifContinuedWrongly ? `<p class="small muted" style="margin:.2rem 0 0"><b>If continued wrongly:</b> ${esc(m.ifContinuedWrongly)}</p>` : ""}

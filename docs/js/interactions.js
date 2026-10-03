@@ -889,5 +889,172 @@ window.INTERACTIONS = [
         quote: "should be discouraged until robust evidence on safety and efficacy for PPH treatment becomes available"
       }
     ]
+  },
+
+  /* ---- warfarin ---- */
+  {
+    a: ["warfarin"],
+    b: ["tb-rhze"],
+    severity: "major",
+    effect: "Rifampicin strongly induces the liver enzymes that clear warfarin. Over 1–2 weeks the INR falls and warfarin may stop working: most patients need their dose doubled or more. The isoniazid in the same tablet has a small opposite effect, but rifampicin dominates. The danger comes at the END of TB treatment, or when rifampicin is interrupted for hepatitis. The induction wears off over about 2 weeks, and on the raised dose the INR climbs into the bleeding range.",
+    action: "If the indication allows, avoid the combination. For a DVT/PE that needs only a few months, give enoxaparin for the whole course instead of warfarin. Where warfarin must continue (mechanical valve, rheumatic mitral stenosis with AF), start TB treatment only where the INR can be checked. Check it twice weekly for the first 3–4 weeks, raise the weekly dose in 10–20 % steps, then check at least every 2 weeks while rifampicin continues. Plan the STOP in advance: check the INR weekly for at least 4–6 weeks after the last rifampicin dose, and step the warfarin dose back down as the INR rises. Write this warning on both the TB card and the warfarin card. Without INR testing, do not combine them: refer.",
+    ref: "BNF interactions (rifampicin–coumarins); Harrison 22nd ed. 2025, ch. 71, Table 71-2, p. 489; ch. 133, Table 133-5, p. 1044; ch. 149, Table 149-3, p. 1172",
+    refs: [
+      {
+        book: "harrison",
+        text: "Rifampin increases warfarin requirements.",
+        ref: "Harrison 22nd ed. 2025, ch. 133 Infective Endocarditis, Table 133-5, p. 1044",
+        pdf_page: 1087,
+        quote: "Rifampin increases warfarin and dicumarol requirements for anticoagulation"
+      },
+      {
+        book: "harrison",
+        text: "Rifampin lowers levels of CYP2C9 substrates such as warfarin; avoid the combination if possible.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "Substrates of CYP2C9 (e.g., warfarin, tolbutamide)"
+      }
+    ]
+  },
+  {
+    a: ["warfarin"],
+    b: ["carbamazepine", "phenytoin", "phenobarbital"],
+    severity: "major",
+    effect: "Enzyme-inducing antiepileptics speed the breakdown of warfarin. Over 1–3 weeks the INR falls and clot or valve-thrombosis risk rises. When the antiepileptic is STOPPED, the INR climbs over several weeks; with phenobarbital the effect fades slowest. Phenytoin is unpredictable: it can briefly raise the INR when started, then lower it, and warfarin can raise phenytoin levels (watch for ataxia and nystagmus).",
+    action: "In a patient on warfarin, prefer an antiepileptic that does not induce enzymes, e.g. lamotrigine, or sodium valproate (see its own warfarin rule). If an inducer is unavoidable, check the INR weekly for at least 4–6 weeks after starting it, after any dose change, and after STOPPING it, adjusting the weekly warfarin dose by 10–20 %. A single loading dose for status epilepticus is not a reason to withhold it; check the INR within a week if maintenance continues. Without INR testing, do not start a long-term inducer in a warfarin patient: refer.",
+    ref: "BNF interactions (antiepileptics–coumarins); Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489",
+    refs: [
+      {
+        book: "harrison",
+        text: "Rifampin, carbamazepine and phenytoin induce drug metabolism and decrease the concentration and effect of warfarin.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489",
+        pdf_page: 532,
+        quote: "Decreased concentrations and effects of: Warfarin"
+      }
+    ]
+  },
+  {
+    a: ["warfarin"],
+    b: ["metronidazole", "chloramphenicol"],
+    severity: "major",
+    effect: "Both block the breakdown of warfarin (metronidazole through CYP2C9). The INR can double within 3–5 days and serious bleeding follows. This is one of the commonest causes of warfarin bleeding, because metronidazole is prescribed so often for diarrhoea, vaginal discharge and abdominal infection.",
+    action: "Use another antibiotic if one will do: e.g. ceftriaxone instead of chloramphenicol, and for vaginal or anaerobic infection an alternative chosen with the prescriber. If metronidazole or chloramphenicol is essential, reduce the warfarin dose by about one-third from the first day. Check the INR on day 3–5 and weekly during the course, return to the usual dose when the course ends, and recheck the INR within a week. Without INR testing, avoid the combination. If it is unavoidable, reduce warfarin by a third for the course and tell the patient the danger signs.",
+    ref: "BNF interactions (metronidazole–coumarins; chloramphenicol–coumarins); Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1178",
+    refs: [
+      {
+        book: "harrison",
+        text: "Metronidazole inhibits CYP2C9; with warfarin it decreases warfarin metabolism and enhances its effect, requiring close monitoring.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1178",
+        pdf_page: 1221,
+        quote: "coadministration with warfarin can result in"
+      }
+    ]
+  },
+  {
+    a: ["warfarin"],
+    b: ["amiodarone"],
+    severity: "major",
+    effect: "Amiodarone inhibits the enzymes that clear warfarin. The INR rises slowly over weeks (the peak may not come for 6–8 weeks), and most patients need 30–50 % less warfarin. Amiodarone has a half-life of weeks, so the effect persists for months after it is stopped. A stable patient who starts amiodarone and then bleeds weeks later is the classic story.",
+    action: "When amiodarone is started, reduce the weekly warfarin dose by about one-third to one-half and check the INR weekly for at least 8 weeks, then at the usual interval. When amiodarone is stopped, expect the INR to drift DOWN over 1–3 months; check it every 2–4 weeks and increase the dose as needed. For rate control in AF without INR testing, prefer digoxin or a beta-blocker over amiodarone.",
+    ref: "BNF interactions (amiodarone–coumarins); Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489 and p. 490",
+    refs: [
+      {
+        book: "harrison",
+        text: "Amiodarone inhibits many CYPs and P-glycoprotein and increases warfarin's effect.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489",
+        pdf_page: 532,
+        quote: "Amiodarone (inhibits many CYPs and P-glycoprotein): Warfarin"
+      },
+      {
+        book: "harrison",
+        text: "A patient on a stable warfarin dose may bleed after amiodarone is introduced, because amiodarone inhibits warfarin metabolism.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, p. 490",
+        pdf_page: 533,
+        quote: "chronic stable warfarin dose may develop a bleeding complication after"
+      }
+    ]
+  },
+  {
+    a: ["warfarin"],
+    b: ["fluoxetine", "sertraline", "escitalopram"],
+    severity: "moderate",
+    effect: "SSRIs deplete platelet serotonin and impair platelet function, so bleeding (especially gastrointestinal) is more likely even with an INR in range. Fluoxetine also inhibits warfarin metabolism and can raise the INR; sertraline does so slightly, escitalopram little. Fluoxetine's very long half-life means its effect lasts weeks after stopping.",
+    action: "This is not a reason to withhold treatment for depression. Prefer sertraline or escitalopram to fluoxetine. Check the INR 1–2 weeks after starting, changing the dose of, or stopping the SSRI (with fluoxetine, recheck again at 4–6 weeks). Ask about black stools. Do not add aspirin or NSAIDs, and consider omeprazole in older patients or anyone with a previous ulcer.",
+    ref: "BNF interactions (SSRIs–coumarins); Harrison 22nd ed. 2025, ch. 463 Psychiatric Disorders, p. 3664",
+    refs: [
+      {
+        book: "harrison",
+        text: "SSRIs may interfere with hepatic metabolism of anticoagulants and increase anticoagulation.",
+        ref: "Harrison 22nd ed. 2025, ch. 463 Psychiatric Disorders, p. 3664",
+        pdf_page: 3707,
+        quote: "SSRIs may interfere with hepatic metabolism of anticoagulants"
+      }
+    ]
+  },
+  {
+    a: ["warfarin"],
+    b: ["sodium-valproate"],
+    severity: "moderate",
+    effect: "Valproate displaces warfarin from albumin and can cause thrombocytopenia and platelet dysfunction. The INR may rise a little, and bleeding becomes more likely even when the INR is in range.",
+    action: "Valproate is still preferable to an enzyme-inducing antiepileptic in a warfarin patient. Check the INR 1–2 weeks after starting or stopping it, check a platelet count if there is bruising or bleeding, and remember it must not be used in women who could become pregnant unless no alternative works.",
+    ref: "BNF interactions (valproate–coumarins)"
+  },
+  {
+    a: ["warfarin"],
+    b: ["paracetamol"],
+    severity: "moderate",
+    effect: "Regular paracetamol (2 g a day or more for several days) can raise the INR; occasional doses do not. Even so, it is by far the safest painkiller for a patient on warfarin. NSAIDs and aspirin cause bleeding ulcers and add an antiplatelet effect.",
+    action: "Use paracetamol as the painkiller of choice. If a patient takes it regularly at full dose for more than 3 days, check the INR within a week, and warn against suddenly starting or stopping large regular amounts. Keep to 4 g a day or less (less in liver disease or low body weight).",
+    ref: "BNF interactions (paracetamol–coumarins: prolonged regular use possibly enhances anticoagulant effect)"
+  },
+  {
+    a: ["warfarin"],
+    b: ["heparin"],
+    severity: "moderate",
+    effect: "Additive anticoagulation. The overlap is INTENDED when warfarin is started for DVT/PE (warfarin is not protective for several days) and during bridging for a mechanical valve. Outside those plans the combination simply doubles bleeding risk. Unfractionated heparin can also slightly prolong the INR, and blood drawn through a heparinised line gives falsely high results.",
+    action: "When starting warfarin, continue enoxaparin or heparin for at least 5 days AND until the INR is in range on 2 consecutive days, then STOP the heparin; do not stop it early because one INR is above 2. Do not add prophylactic heparin to a patient whose INR is already in range. Draw INR samples by fresh venepuncture, never from the heparin line.",
+    ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952; Williams Obstetrics 25th ed. 2018, ch. 52, pdf p. 2247",
+    refs: [
+      {
+        book: "harrison",
+        text: "Continue the parenteral anticoagulant until the INR has been therapeutic for at least 2 consecutive days, with a minimum of 5 days.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952",
+        pdf_page: 995,
+        quote: "until the INR has been therapeutic for at least 2 consecutive days"
+      }
+    ]
+  },
+  {
+    a: ["warfarin"],
+    b: ["ceftriaxone", "ampicillin", "benzylpenicillin", "cloxacillin"],
+    severity: "moderate",
+    effect: "During infection the INR often moves. It tends to rise with fever, poor food intake (less dietary vitamin K), diarrhoea, and broad-spectrum antibiotics that reduce gut vitamin K. Occasionally it falls: penicillins related to cloxacillin (nafcillin, dicloxacillin) have lowered it. The direction cannot be predicted for an individual patient.",
+    action: "No routine dose change at the start of a course. Check the INR 3–5 days after starting and again within a week of finishing, and ask about bleeding. Without INR testing, keep the usual dose, make sure the patient is eating, and watch for bleeding.",
+    ref: "BNF interactions (penicillins and cephalosporins–coumarins); Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172 (nafcillin)"
+  },
+  {
+    a: ["warfarin"],
+    b: ["dexamethasone", "hydrocortisone"],
+    severity: "moderate",
+    effect: "Corticosteroids can change the INR (high doses usually raise it within days) and, given with an anticoagulant, raise the risk of gastrointestinal bleeding.",
+    action: "One or two doses need no action. For a course lasting more than a few days, check the INR within 3–7 days of starting and after stopping, and consider omeprazole for gastric protection.",
+    ref: "BNF interactions (corticosteroids–coumarins: high-dose corticosteroids enhance anticoagulant effect)"
+  },
+  {
+    a: ["warfarin"],
+    b: ["vitamin-k"],
+    severity: "moderate",
+    effect: "Vitamin K is warfarin's antidote. That is intended when the INR is too high, but large doses (10 mg) make the patient resistant to warfarin for a week or more. Supplements and multivitamins containing vitamin K lower the INR.",
+    action: "For a high INR WITHOUT bleeding use small doses (oral 1–2.5 mg, or 2.5–5 mg if the INR is above 10) so that warfarin can be restarted. Keep 5–10 mg IV for serious bleeding. After a large dose in a patient with a mechanical valve or recent clot, give therapeutic enoxaparin until the INR is back in range. Ask about vitamin-containing supplements.",
+    ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952",
+    refs: [
+      {
+        book: "harrison",
+        text: "With INR 3.5–10 and no bleeding, withhold warfarin; higher oral vitamin K doses (5–10 mg) reverse the INR faster but may make patients temporarily resistant to warfarin.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952",
+        pdf_page: 995,
+        quote: "3.5 and 10, warfarin should be withheld until the INR returns to the"
+      }
+    ]
   }
 ];

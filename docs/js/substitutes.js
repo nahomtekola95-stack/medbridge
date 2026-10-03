@@ -712,5 +712,39 @@ window.SUBSTITUTES = {
       none: true,
       note: "Not an indication for carbetocin at all. Use oxytocin by pump or drop counting, or low-dose misoprostol in hospital."
     }
+  ],
+
+  /* ---- warfarin ---- */
+  warfarin: [
+    {
+      use: "DVT or PE treatment (not pregnant), when there is no INR testing or warfarin is out of stock",
+      with: "heparin",
+      note: "Enoxaparin 1 mg/kg SC every 12 h (or 1.5 mg/kg once daily) for the WHOLE course, at least 3 months. No INR is needed; check platelets once at day 5–7 if possible. If CrCl is under 30 mL/min, give 1 mg/kg once daily. If there is no enoxaparin: SC unfractionated heparin 333 IU/kg, then 250 IU/kg every 12 h (unmonitored, FIDO regimen). Cost and daily injections are the barriers. A direct oral anticoagulant (rivaroxaban, apixaban) also replaces warfarin here, if the patient can obtain one (not in this app)."
+    },
+    {
+      use: "VTE in pregnancy",
+      with: "heparin",
+      note: "Use enoxaparin throughout pregnancy and for at least 6 weeks after delivery. Never use warfarin for VTE in pregnancy. Warfarin may be started after delivery (overlap with heparin) and is compatible with breastfeeding."
+    },
+    {
+      use: "Warfarin stopped for surgery: bridging for a mechanical valve or a clot within 3 months",
+      with: "heparin",
+      note: "Start therapeutic enoxaparin 1 mg/kg SC every 12 h once the INR falls below range, and give the last dose 24 h before surgery. Restart it 24 h after low-bleeding-risk surgery or 48–72 h after high-risk surgery, and continue until the INR is back in range. See the Pre-op tool. Do NOT bridge for atrial fibrillation alone."
+    },
+    {
+      use: "Mechanical heart valve (long term)",
+      none: true,
+      note: "No substitute. Direct oral anticoagulants are contraindicated: dabigatran and apixaban were less effective than warfarin at preventing valve thrombosis, and aspirin alone is not enough. If warfarin runs out, do not let the patient go without anticoagulation: give therapeutic enoxaparin (1 mg/kg SC every 12 h) until warfarin is restocked, borrow from another facility, and refer if neither is possible."
+    },
+    {
+      use: "Rheumatic mitral stenosis with atrial fibrillation",
+      none: true,
+      note: "Warfarin is required. Rivaroxaban did worse than warfarin in rheumatic heart disease with AF, and the other DOACs are not licensed for it. For a short gap in supply, give therapeutic enoxaparin; for long-term use there is no alternative, so keep warfarin and INR testing available for these patients."
+    },
+    {
+      use: "Atrial fibrillation without a mechanical valve or mitral stenosis, when warfarin cannot be monitored",
+      none: true,
+      note: "A direct oral anticoagulant (apixaban, rivaroxaban, dabigatran, edoxaban) is the alternative if the patient can obtain and afford one; none is in this app. Aspirin is NOT an adequate substitute: it prevents fewer strokes than warfarin and is no safer for bleeding. Long-term enoxaparin is not a standard AF treatment. Refer to a centre with INR testing."
+    }
   ]
 };

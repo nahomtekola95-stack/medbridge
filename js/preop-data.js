@@ -1367,7 +1367,7 @@ window.PREOP = {
     {
       id: "warfarin-af",
       label: "Warfarin — atrial fibrillation (no mechanical valve)",
-      drugId: null,
+      drugId: "warfarin",
       rule: "stop",
       timing: "Last dose 6 days before surgery (5 full days without warfarin). Check INR the day before: if 1.5 or above, give oral vitamin K 1–2 mg and recheck on the morning. Proceed when INR is below 1.5 — 1.4 or below for a spinal or epidural. Restart at the usual dose the evening of surgery or the next day once bleeding is controlled. NO heparin bridging.",
       ifStoppedWrongly: "Stopping for a minor procedure that could be done on warfarin, or forgetting to restart it at discharge, leaves the patient exposed to stroke. Adding heparin 'bridging' does harm: in the BRIDGE trial it increased major bleeding without reducing strokes.",
@@ -1385,7 +1385,7 @@ window.PREOP = {
     {
       id: "warfarin-mechanical-valve",
       label: "Warfarin — mechanical heart valve",
-      drugId: null,
+      drugId: "warfarin",
       rule: "stop-and-bridge",
       timing: "Last warfarin dose 6 days before surgery. When the INR falls below the patient's target range (usually about 3 days before surgery), start therapeutic enoxaparin 1 mg/kg SC every 12 hours (1 mg/kg once daily if creatinine clearance is below 30 mL/min). Last enoxaparin dose 24 hours before surgery. Check INR the day before; proceed when below 1.5. After surgery: restart warfarin at the usual dose that evening or the next day; restart therapeutic enoxaparin 24 hours after low-bleeding-risk surgery or 48–72 hours after high-bleeding-risk surgery (prophylactic dose in the meantime if the surgeon agrees), and continue until the INR is back in the target range.",
       ifStoppedWrongly: "Valve thrombosis or embolic stroke — can be fatal within days. Mitral and older-design valves carry the highest risk. Large doses of vitamin K make re-anticoagulation slow and dangerous — use small oral doses only if needed.",
@@ -1402,7 +1402,7 @@ window.PREOP = {
     {
       id: "warfarin-vte",
       label: "Warfarin — previous DVT or PE",
-      drugId: null,
+      drugId: "warfarin",
       rule: "stop",
       timing: "Clot more than 3 months ago: stop as for AF (last dose 6 days before; INR below 1.5 on the day; below or equal to 1.4 for a spinal), no bridging; give prophylactic-dose LMWH after surgery until warfarin is back in range. Clot within the last 3 months: postpone elective surgery until at least 3 months of anticoagulation; if surgery cannot wait, bridge with therapeutic enoxaparin as for a mechanical valve — specialist decision.",
       ifStoppedWrongly: "Recurrent DVT or PE — highest risk in the first 3 months after the clot.",
@@ -1417,7 +1417,7 @@ window.PREOP = {
     {
       id: "warfarin-minor",
       label: "Warfarin — minor procedures (dental extraction, cataract, minor skin surgery)",
-      drugId: null,
+      drugId: "warfarin",
       rule: "continue",
       timing: "Continue warfarin. Check the INR within the 72 hours before (24 hours is better). For dental extraction, proceed if the INR is below 4 and use local measures — packing, sutures, tranexamic acid mouthwash. Not for anything under spinal or epidural anaesthesia.",
       ifStoppedWrongly: "Unnecessary exposure to stroke or clot for a procedure whose bleeding is easily controlled.",
