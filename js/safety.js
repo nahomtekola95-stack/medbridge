@@ -4855,5 +4855,134 @@ window.SAFETY = {
       "WHO Guidelines for malaria (current edition)",
       "Ethiopian National Malaria Guidelines (confirm)"
     ]
+  },
+
+  /* ---- clindamycin, doxycycline, nystatin ---- */
+  clindamycin: {
+    pregnancy: {
+      level: "safe",
+      text: "Compatible with pregnancy (Harrison Table 149-1) and widely used in obstetrics: caesarean prophylaxis in penicillin allergy, postpartum endometritis, and as the malaria partner with quinine when doxycycline cannot be used (Gabbe, Williams, Nelson)."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible (Harrison Table 149-1). Small amounts pass into milk and breastfeeding is usually continued (Gabbe). Ask the mother to report diarrhoea, blood in the stool or thrush in the baby (LactMed)."
+    },
+    renal: { level: "none", text: "No dose change in kidney impairment (product information)." },
+    hepatic: {
+      level: "none",
+      text: "No routine dose change (product information). In severe liver disease, use with care and check liver tests on long courses."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "Clindamycin: compatible with pregnancy and with breastfeeding (Table 149-1).",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-1, p. 1169",
+        pdf_page: 1212,
+        quote: "Clindamycin Compatible Compatible"
+      },
+      {
+        book: "gabbe",
+        text: "Clindamycin passes into breast milk in low amounts, and breastfeeding is usually continued.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "into breast milk in low levels, and nursing is usually continued"
+      }
+    ],
+    sources: [
+      "Harrison 22nd ed. 2025, Table 149-1",
+      "Gabbe's Obstetrics 9th ed., ch. 7",
+      "Clindamycin product information",
+      "LactMed (NIH)"
+    ]
+  },
+  doxycycline: {
+    pregnancy: {
+      level: "avoid",
+      text: "Avoid for routine use: tetracyclines bind to developing teeth and bone, with tooth staining after second- or third-trimester exposure (Gabbe); contraindicated in the second and third trimesters (Harrison Table 149-1) and in pregnancy (Williams). First-trimester doxycycline is not known to carry risk (Gabbe). Use alternatives: clindamycin or artemether–lumefantrine for malaria, azithromycin for chlamydia, co-trimoxazole for brucellosis. Exception: life-threatening typhus or spotted fever, where Harrison finds little evidence of harm from doxycycline and advises it late in pregnancy for epidemic typhus; decide with a senior."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "A short course is compatible: Harrison Table 149-1 lists tetracyclines as compatible, and tooth staining has not been reported in breastfed babies because milk calcium binds the drug (Gabbe). Harrison's relapsing-fever chapter lists tetracyclines as contraindicated in nursing women, so prefer an alternative for long courses (weeks) and where one works as well."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change: unlike tetracycline itself, doxycycline does not accumulate in kidney failure (product information, BNF)."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change, but use with care in liver disease and avoid combining with other liver-toxic drugs; rare liver injury is reported (Harrison Table 229-1)."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Tetracyclines cross the placenta and bind to calcium in developing teeth and bone: brown staining of deciduous teeth (exposure in the second or third trimester) and inhibited bone growth. First-trimester doxycycline is not known to carry risk, but alternatives are recommended in pregnancy.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 130",
+        pdf_page: 163,
+        quote: "First-trimester exposure to doxycycline is not known to carry any risk"
+      },
+      {
+        book: "williams",
+        text: "Primaquine and doxycycline are contraindicated in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2723",
+        pdf_page: 2723,
+        quote: "Primaquine and doxycycline are contraindicated in pregnancy"
+      },
+      {
+        book: "harrison",
+        text: "Tetracyclines: contraindicated in the second and third trimesters; compatible with breastfeeding (Table 149-1).",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-1, p. 1169",
+        pdf_page: 1212,
+        quote: "Contraindicated in second and third trimesters"
+      },
+      {
+        book: "gabbe",
+        text: "Tooth staining or delayed bone growth has not been reported in babies breastfed by mothers taking tetracyclines; binding to calcium in milk limits absorption.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "Tooth staining or delayed bone growth from tetracyclines has not"
+      }
+    ],
+    sources: [
+      "Harrison 22nd ed. 2025, ch. 149, 190, 192, 229",
+      "Gabbe's Obstetrics 9th ed., ch. 7",
+      "Williams Obstetrics 25th ed. 2018, ch. 64",
+      "Doxycycline product information",
+      "BNF",
+      "LactMed (NIH)"
+    ]
+  },
+  nystatin: {
+    pregnancy: {
+      level: "safe",
+      text: "Safe. Poorly absorbed from skin and mucous membranes, and topical use has not been linked to birth defects (Gabbe). Nystatin pessaries are the alternative for vaginal thrush in pregnancy when no topical azole is stocked; oral fluconazole is not (see Fluconazole)."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. No milk data, but with almost no absorption no problem is expected (Gabbe). It can be put on the nipples to treat mother and baby together (Nelson)."
+    },
+    renal: { level: "none", text: "No dose change: not absorbed." },
+    hepatic: { level: "none", text: "No dose change: not absorbed." },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Nystatin is poorly absorbed from intact skin and mucous membranes, and topical use has not been associated with birth defects.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131",
+        pdf_page: 164,
+        quote: "Nystatin (Mycostatin) is poorly absorbed from intact skin and mucous"
+      },
+      {
+        book: "gabbe",
+        text: "No breast-milk data for nystatin, but with poor oral bioavailability and little vaginal absorption no problem is expected.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "No data are available with nystatin, miconazole, or clotrimazole in"
+      }
+    ],
+    sources: [
+      "Gabbe's Obstetrics 9th ed., ch. 7",
+      "Nelson 22nd ed. 2024, ch. 280",
+      "Nystatin product information",
+      "LactMed (NIH)"
+    ]
   }
 };

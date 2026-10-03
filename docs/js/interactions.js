@@ -3330,5 +3330,91 @@ window.INTERACTIONS = [
         quote: "Sulfamethoxazole"
       }
     ]
+  },
+
+  /* ---- clindamycin, doxycycline, nystatin ---- */
+  {
+    a: ["clindamycin"],
+    b: ["suxamethonium", "vecuronium", "atracurium", "rocuronium", "pancuronium"],
+    severity: "moderate",
+    effect: "Clindamycin has a neuromuscular-blocking action of its own. It enhances and prolongs suxamethonium and the non-depolarising relaxants, with a risk of prolonged paralysis or weakness returning in recovery. The risk is greater when gentamicin or magnesium sulfate is also given, as at caesarean section in a penicillin-allergic woman or in pre-eclampsia.",
+    action: "Do not withhold clindamycin when it is indicated. When it is STARTED before or during anaesthesia (for example caesarean prophylaxis), tell the anaesthetist. Give relaxant top-ups by response, use a nerve stimulator if available, and make sure reversal is complete (sustained head lift, strong grip, good tidal breathing) before extubation. Watch breathing closely in recovery; if weakness returns, support ventilation and do not give more relaxant. Never paralyse a patient you cannot intubate and ventilate. When clindamycin is STOPPED, no change is needed.",
+    ref: "Clindamycin product information (neuromuscular blocking properties); BNF interactions (clindamycin–muscle relaxants)",
+    refs: []
+  },
+  {
+    a: ["doxycycline"],
+    b: ["zinc-ors"],
+    severity: "moderate",
+    effect: "Zinc binds doxycycline in the gut, as iron, calcium, magnesium and aluminium antacids do, so less is absorbed (Harrison; BNF). A single-dose cholera treatment given together with the zinc tablet may fail.",
+    action: "Give doxycycline at least 2 h before zinc, or 6 h after it (Harrison). In cholera, give the single doxycycline dose once vomiting has settled after rehydration, then the zinc tablet 2 h later. ORS itself does not need to be stopped. If zinc is STARTED during a doxycycline course, keep the 2-hour gap for every dose; when zinc is STOPPED, nothing changes.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172; BNF interactions (tetracyclines–zinc)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Tetracyclines with calcium, magnesium, iron or aluminium: absorption falls; give the tetracycline 2 h before or 6 h after.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "Administer tetracycline 2 h before or 6 h after interacting drug"
+      }
+    ]
+  },
+  {
+    a: ["doxycycline"],
+    b: ["warfarin"],
+    severity: "moderate",
+    effect: "Tetracyclines increase and prolong the effect of warfarin (Harrison), and fever and poor eating during the infection push the INR up further. Bleeding risk rises.",
+    action: "When doxycycline is STARTED in a patient on warfarin, check the INR within 3–5 days, adjust warfarin to the INR and ask about bleeding. When it is STOPPED, check the INR again within about a week, as it may fall back. Short single-dose courses (cholera) need no change.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172; ch. 229, Table 229-1, p. 1746; BNF interactions (tetracyclines–coumarins)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Tetracyclines prolong the effect of warfarin (Table 229-1).",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1746",
+        pdf_page: 1789,
+        quote: "Warfarin: effect prolonged by tetracyclines"
+      }
+    ]
+  },
+  {
+    a: ["doxycycline"],
+    b: ["tb-rhze", "carbamazepine", "phenytoin", "phenobarbital"],
+    severity: "moderate",
+    effect: "Rifampicin (in TB treatment), carbamazepine, phenytoin and phenobarbital speed up the clearance of doxycycline and lower its levels, so treatment can fail. The rifampicin–doxycycline brucellosis regimen relapses more often, possibly for this reason (Harrison).",
+    action: "Do not stop TB or epilepsy treatment. When doxycycline is STARTED in a patient on one of these, give the full 100 mg every 12 h (never a once-daily or reduced dose) and check that fever and symptoms settle as expected. Where an equally good alternative exists, prefer it: azithromycin for chlamydia; atovaquone–proguanil or another agent for malaria prophylaxis. Brucellosis in a patient on TB treatment: ask a senior, because the regimen needs tailoring (Harrison). The inducing effect lasts about 2 weeks after the inducer is STOPPED.",
+    ref: "Harrison 22nd ed. 2025, ch. 174 Brucellosis, p. 1334; Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3, Table 21-39, pdf p. 2091; BNF interactions (doxycycline–rifampicin, carbamazepine, phenytoin, barbiturates)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Rifampicin lowers doxycycline levels and increases its clearance; the rifampicin–doxycycline brucellosis regimen relapses more often.",
+        ref: "Harrison 22nd ed. 2025, ch. 174 Brucellosis, p. 1334",
+        pdf_page: 1377,
+        quote: "possibly because doxycycline levels are reduced"
+      },
+      {
+        book: "kaplan",
+        text: "Carbamazepine may decrease the plasma concentration of doxycycline (Table 21-39).",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, Table 21-39, pdf p. 2091",
+        pdf_page: 2091,
+        quote: "Doxepin Doxycycline Ethosuximide"
+      }
+    ]
+  },
+  {
+    a: ["doxycycline"],
+    b: ["lithium"],
+    severity: "moderate",
+    effect: "Tetracyclines can increase lithium retention and raise the lithium level (Kaplan). Diarrhoea, vomiting or fever from the infection add to the risk of toxicity.",
+    action: "When doxycycline is STARTED, check a lithium level after about 5–7 days where possible, keep fluids up, and teach the signs of toxicity: coarse tremor, unsteadiness, slurred speech, vomiting, diarrhoea and confusion. If the lithium dose was changed during the course, check the level again after doxycycline is STOPPED.",
+    ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2059; BNF interactions (lithium–tetracyclines)",
+    refs: [
+      {
+        book: "kaplan",
+        text: "Monitor lithium levels if a tetracycline is used (e.g. for acne): it can increase lithium retention.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2059",
+        pdf_page: 2059,
+        quote: "if tetracycline is used for the treatment of acne"
+      }
+    ]
   }
 ];

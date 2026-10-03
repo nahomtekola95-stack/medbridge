@@ -1729,7 +1729,7 @@ window.DRUG_DB = [
       steps: [
         "Total 100 mL/kg RL in 3 h: first 30 mL/kg as fast as possible (within 30 min — free flow through 2 × 16–18 G lines), then 70 mL/kg over 2.5 h (70 kg: 4.9 L ≈ 2 L/h ≈ 650 drops/min → run near free flow and check the bag every 15 min).",
         "Start ORS by mouth as soon as vomiting stops; then match ongoing losses (cholera cot bucket volumes).",
-        "Add potassium via ORS (contains 20 mmol/L); antibiotics (doxycycline 300 mg once) after rehydration."
+        "Add potassium via ORS (contains 20 mmol/L); antibiotics (doxycycline 300 mg once, where the local strain is susceptible) after rehydration."
       ],
       monitor: ["Radial pulse, urine output, stool volume", "Overload in the elderly and cardiac patients"],
       cautions: ["Normal saline is acceptable if RL unavailable but lacks potassium/base — give ORS early."]
@@ -13606,7 +13606,7 @@ window.DRUG_DB = [
         ],
         cautions: [
           "Individual treatment does not control trachoma. If you are seeing cases, notify the woreda health office.",
-          "Oral tetracycline and doxycycline are avoided in children under 8 and in pregnancy; the 1 % eye ointment is not, because almost nothing is absorbed.",
+          "Oral tetracycline and doxycycline are avoided for ROUTINE use in children under 8 and in pregnancy — but doxycycline is the treatment of choice at any age for suspected rickettsial disease, where withholding it is the greater danger (Nelson). The 1 % eye ointment is not avoided at all, because almost nothing is absorbed.",
           "Corneal opacity from old trachoma will not improve with antibiotics — do not keep treating a blind white eye."
         ]
       },
@@ -13658,7 +13658,9 @@ window.DRUG_DB = [
         name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013 (eye problems, measles, severe malnutrition)"
       }
     ],
-    textbook: [],
+    textbook: [,
+    { book: "nelson", text: "For children with spotted fever rickettsial disease, the treatment of choice is doxycycline, given by weight, with no lower age limit.", ref: "Nelson 22nd ed. 2024, ch. 274 Spotted Fever Group Rickettsioses, p. 1907" }
+  ],
     review: { status: "draft", by: null, date: null }
   },
   {
@@ -25885,6 +25887,861 @@ window.DRUG_DB = [
       { name: "Harrison 22nd ed. 2025, ch. 229, 231 and 470" },
       { name: "Nelson 22nd ed. 2024, ch. 325 and 334" },
       { name: "Williams Obstetrics 25th ed. 2018, ch. 64" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- clindamycin, doxycycline, nystatin ---- */
+  {
+    id: "clindamycin",
+    name: "Clindamycin",
+    aka: [
+      "Dalacin C",
+      "Cleocin",
+      "Clindamycin phosphate (injection)",
+      "Clindamycin hydrochloride (capsules)",
+      "Lincosamide"
+    ],
+    cls: "Lincosamide antibiotic (anaerobes, staphylococci, streptococci; switches off toxin production)",
+    cat: "infection",
+    wards: ["maternity", "surgical", "medical", "paediatric", "icu", "outpatient"],
+    tags: [
+      "malaria partner",
+      "quinine",
+      "pregnancy malaria",
+      "endometritis",
+      "caesarean prophylaxis",
+      "penicillin allergy",
+      "necrotising fasciitis",
+      "toxic shock",
+      "MRSA",
+      "osteomyelitis",
+      "septic arthritis",
+      "abscess",
+      "cellulitis",
+      "anaerobes",
+      "lung abscess",
+      "dental infection",
+      "C. difficile",
+      "pseudomembranous colitis"
+    ],
+    presentation: [
+      "Injection (clindamycin phosphate) 150 mg/mL: 2 mL = 300 mg, 4 mL = 600 mg, 6 mL = 900 mg. Must be DILUTED and infused, never pushed undiluted (product information).",
+      "Capsules 150 mg and 300 mg. Oral absorption is excellent (Harrison), so capsules work as well as the injection once the patient can swallow.",
+      "Oral solution or granules 75 mg/5 mL in some brands; rarely stocked. Do not refrigerate the made-up solution (product information).",
+      "Room temperature. Not on every district shelf: check before you plan to rely on it in theatre."
+    ],
+    indications: [
+      "Malaria partner drug: oral quinine plus clindamycin for 7 days. It is the partner of choice in pregnancy and in children under 8, where doxycycline is avoided (Harrison, Nelson; Gabbe for the first trimester)",
+      "Postpartum endometritis and pelvic infection after caesarean: clindamycin 900 mg 8-hourly with gentamicin (Gabbe, Williams)",
+      "Caesarean prophylaxis when the woman has a significant penicillin allergy: one dose, with gentamicin (Gabbe, Williams)",
+      "Bone, joint and soft-tissue infection, abscess and cellulitis from staphylococci or streptococci, including many MRSA (see Cloxacillin); dental infection and lung abscess (Harrison)",
+      "Necrotising fasciitis and streptococcal or staphylococcal toxic shock: ADDED to penicillin and surgery to stop toxin production (Harrison, Gabbe)",
+      "Intrapartum GBS prophylaxis in penicillin allergy ONLY when the GBS isolate is known to be susceptible (Gabbe)"
+    ],
+    standard: {
+      summary: "Clindamycin stops bacteria making protein, including the toxins that drive necrotising fasciitis and toxic shock, so in those it is given WITH a penicillin and surgery, never instead of them. It is absorbed almost completely by mouth. It does not cover E. coli and the other gram-negative bacteria, which is why it is paired with gentamicin in the pelvis. Its big cost is Clostridioides difficile colitis: clindamycin was one of the first antibiotics linked to it (Harrison). Use it for a real indication, for the shortest course that works, and ask every patient on it about diarrhoea every day.",
+      items: [
+        {
+          label: "Adult IV or IM",
+          text: "600–900 mg IV every 8 h (Harrison), diluted and infused (see 'IV clindamycin without a pump'). Necrotising fasciitis: 600–900 mg every 6–8 h (Harrison Table 134-2). IM: no more than 600 mg in one injection (product information)."
+        },
+        {
+          label: "Adult oral",
+          text: "150–450 mg every 6 h (product information); MRSA skin infection 300–450 mg four times daily for 7–10 days (Harrison). Swallow with a full glass of water, sitting up (product information)."
+        },
+        {
+          label: "Child",
+          text: "10 mg/kg every 8 h by mouth or IV, i.e. 30 mg/kg/day (Nelson: 30–40 mg/kg/day in 3–4 doses). Up to 40 mg/kg/day for serious bone, joint or toxin-mediated infection. Maximum 600 mg per dose (Nelson)."
+        },
+        {
+          label: "Malaria, with quinine",
+          text: "Clindamycin 20 mg/kg/day for 7 days: 10 mg/kg twice daily (Harrison) or the same daily total in 3 doses (Nelson), with oral quinine 10 mg salt/kg 8-hourly for 7 days (see Quinine). Use it instead of doxycycline in pregnancy and under 8 years (Nelson). Artemether–lumefantrine remains first line (see Artemether–lumefantrine)."
+        },
+        {
+          label: "Caesarean prophylaxis, penicillin allergy",
+          text: "Clindamycin 900 mg IV (Gabbe/ACOG; Williams gives 600 mg, 900 mg if obese) plus gentamicin 5 mg/kg IV, within 60 minutes before skin incision, or as soon as possible after it in an emergency (Gabbe). One dose only."
+        },
+        {
+          label: "Postpartum endometritis",
+          text: "900 mg IV every 8 h plus gentamicin 5 mg/kg once daily or 1.5 mg/kg every 8 h (Gabbe Table 58.5); add ampicillin 2 g 6-hourly if GBS-colonised (Gabbe) or not better by 48–72 h (Williams). Continue until 24 h after the fever settles; no oral course is needed afterwards for uncomplicated endometritis (Gabbe)."
+        },
+        {
+          label: "Necrotising fasciitis, toxic shock",
+          text: "600–900 mg IV every 8 h WITH penicillin G 2–4 million units every 4 h, and urgent surgical debridement (Harrison Table 153-3; Schwartz). Staphylococcal toxic shock: with cloxacillin, and remove any tampon or packing (Harrison)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "IV clindamycin without a pump",
+        best_for: "Wards and theatres with only a standard giving set, a burette or a syringe.",
+        requires: ["iv", "macro_set"],
+        steps: [
+          "Never give clindamycin undiluted or as a fast IV push: low blood pressure and cardiac arrest have followed rapid injection (product information).",
+          "Dilute to no more than 18 mg/mL and run no faster than 30 mg per minute (product information). In practice: 600 mg in 50–100 mL of sodium chloride 0.9 % or 5 % dextrose over at least 20 minutes; 900 mg in 100 mL over at least 30 minutes. Do not give more than 1.2 g in a single 1-hour infusion.",
+          "Drops per minute = volume (mL) × drop factor (drops/mL, printed on the set packet) ÷ minutes. Example: 100 mL over 30 minutes is about 67 drops/min with a 20-drop set, 50 drops/min with a 15-drop set.",
+          "Child: put the dose in a burette with enough fluid to keep it at 18 mg/mL or weaker (150 mg needs at least 10 mL; 20–50 mL is easier to time) and run it over 20–30 minutes. On a microdrip set (60 drops/mL), drops per minute = mL per hour.",
+          "No IV line: the injection can be given IM, up to 600 mg per site, deep into a large muscle (product information). It is painful.",
+          "Change to capsules as soon as the patient can swallow: oral clindamycin is absorbed almost completely (Harrison)."
+        ],
+        monitor: [
+          "Blood pressure and pulse during the first infusion",
+          "The drip rate after 5 minutes, then at the halfway mark: a free-flowing set can empty a 100 mL bag in a few minutes",
+          "Stool frequency every day"
+        ],
+        cautions: [
+          "If the bag ran in too fast, check the blood pressure and pulse at once and lie the patient flat if low.",
+          "Check line compatibility before giving it through the same cannula as another drug."
+        ]
+      },
+      {
+        title: "Penicillin-allergic woman going for caesarean",
+        best_for: "Labour ward and theatre, including emergency caesarean at a district hospital.",
+        requires: ["iv"],
+        steps: [
+          "Ask what happened with penicillin. Anaphylaxis, swelling of the face or throat, breathing difficulty or hives soon after a dose is a significant allergy (Williams). Nausea or diarrhoea alone is not.",
+          "Significant allergy: clindamycin 900 mg IV plus gentamicin 5 mg/kg IV, within 60 minutes before incision (Gabbe/ACOG; Williams uses 600 mg, 900 mg if obese). In an emergency, give them as soon as you can, even after the incision (Gabbe).",
+          "Run the clindamycin as an infusion over at least 20–30 minutes (see the IV method); do not push it while the anaesthetist is inducing.",
+          "Tell the anaesthetist: clindamycin and gentamicin both prolong the muscle relaxants used for general anaesthesia (see Interactions).",
+          "Clindamycin out of stock: tell the obstetrician before starting and follow the hospital protocol. Do not delay a caesarean for the antibiotic.",
+          "Fever or foul liquor before delivery is chorioamnionitis: that is treatment, not prophylaxis (see Ampicillin and Gentamicin)."
+        ],
+        monitor: [
+          "Blood pressure during the infusion",
+          "After general anaesthesia: breathing, head lift and grip strength in recovery"
+        ],
+        cautions: [
+          "Prophylaxis is one dose. Do not continue clindamycin after the operation unless you are treating an infection.",
+          "Most GBS is now clindamycin-resistant in many countries (Gabbe: 40–68 %): it is not reliable GBS prophylaxis without a susceptibility result."
+        ]
+      },
+      {
+        title: "Diarrhoea during or after clindamycin: think C. difficile",
+        best_for: "Any ward, OPD or pharmacy, including where no stool toxin test exists.",
+        requires: ["oral"],
+        steps: [
+          "Ask every patient on clindamycin about their stools every day, and tell them to come back if diarrhoea starts in the weeks after the course. Think of C. difficile in anyone who had an antibiotic in the past 2 months (Harrison).",
+          "Stop clindamycin, and any other antibiotic that can be stopped: this is the first step (Harrison). If the original infection still needs treating, ask a senior to choose another antibiotic.",
+          "Replace fluid with ORS or IV fluid as for any diarrhoea. Do NOT give loperamide or opioids: they can mask worsening disease (Harrison).",
+          "Oral vancomycin is the treatment of choice (Harrison); it must be swallowed, because IV vancomycin does not reach the bowel. Where only metronidazole is available, oral metronidazole is the fallback for non-severe disease (IDSA 2017; see Metronidazole), with a lower cure rate (Harrison).",
+          "Refer urgently for any danger sign: white count over 15,000, rising creatinine, fever, a swollen or tender abdomen, or diarrhoea that suddenly stops while the belly swells (ileus or toxic megacolon) (Harrison).",
+          "Wash hands with soap and water, not only alcohol gel: the spores survive alcohol (Harrison). Clean the bed space with bleach and keep the patient's toilet separate if you can."
+        ],
+        monitor: [
+          "Stool count and fluid balance every day",
+          "Abdomen: distension, tenderness, bowel sounds",
+          "White count and creatinine where available"
+        ],
+        cautions: [
+          "Recurrence after treatment is common (15–30 %, Harrison): tell the patient to return if diarrhoea comes back.",
+          "Children: pseudomembranous colitis is seldom seen (Nelson), but stop the drug if diarrhoea develops."
+        ]
+      },
+      {
+        title: "Clindamycin out of stock",
+        best_for: "Stock-outs, which are frequent.",
+        requires: [],
+        steps: [
+          "Malaria partner with quinine: doxycycline if the patient is not pregnant and is 8 years or older. In pregnancy, use artemether–lumefantrine as the national guideline allows (see Artemether–lumefantrine and Quinine).",
+          "Staphylococcal bone, joint or skin infection: cloxacillin (see Cloxacillin). Possible MRSA: co-trimoxazole (see Co-trimoxazole and Cloxacillin).",
+          "Postpartum endometritis: ampicillin plus gentamicin plus metronidazole (Gabbe, SMFM regimen for genital tract sepsis; see Metronidazole).",
+          "Anaerobic cover anywhere: metronidazole.",
+          "Necrotising fasciitis or toxic shock: give high-dose penicillin and get the patient to theatre. Debridement saves lives; never wait for clindamycin (Schwartz). Harrison names linezolid as the other toxin-suppressing option, but it is rarely stocked."
+        ],
+        monitor: [],
+        cautions: [
+          "Plain amoxicillin and ampicillin do NOT cover Staphylococcus aureus (see Cloxacillin).",
+          "Metronidazole does not cover staphylococci or streptococci: it replaces clindamycin only for anaerobes."
+        ]
+      }
+    ],
+    paediatric: [
+      "10 mg/kg every 8 h by mouth or IV (Nelson: 30–40 mg/kg/day in 3–4 doses); maximum 600 mg per dose (Nelson).",
+      "Malaria with quinine: clindamycin, not doxycycline, is the partner under 8 years (Nelson): 20 mg/kg/day for 7 days.",
+      "Capsules are 150 mg. A child who cannot swallow a capsule needs the oral solution or the injection: ask the pharmacy what is stocked.",
+      "Neonates: the dose interval depends on age and maturity; confirm with a neonatal formulary.",
+      "Pseudomembranous colitis is seldom seen in children (Nelson), but stop the drug if diarrhoea develops."
+    ],
+    cautions: [
+      "C. difficile diarrhoea and pseudomembranous colitis (Harrison): the main reason to use clindamycin only when it is the right drug. Stop it if diarrhoea develops (see the improvised method).",
+      "Never give as an undiluted or fast IV injection (product information).",
+      "Prolongs neuromuscular block from suxamethonium and the non-depolarising relaxants (product information, BNF): tell the anaesthetist; see Interactions.",
+      "Does not cover gram-negative bacteria: pair it with gentamicin for pelvic and abdominal infection.",
+      "Resistance: inducible resistance in some MRSA (Harrison, Nelson); many GBS strains are resistant (Gabbe).",
+      "Rash; rarely Stevens–Johnson syndrome (Harrison). Stop if the skin blisters or the mouth or eyes are involved.",
+      "Capsules can irritate the oesophagus: swallow with a full glass of water, sitting up (product information)."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 10,
+      doseUnit: "mg",
+      conc: 150,
+      concUnit: "mg/mL",
+      maxDose: 600,
+      label: "Child dose (10 mg/kg every 8 h, max 600 mg) at 150 mg/mL injection: dilute before infusing"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Clindamycin covers anaerobes and susceptible staphylococci and streptococci (dental infection, lung abscess, skin and soft tissue). It is given with a bactericidal drug (a penicillin or vancomycin) to stop new toxin synthesis in streptococcal or staphylococcal toxic shock, and is a partner drug for malaria and toxoplasmosis. Oral bioavailability is excellent. Adverse effects: nausea, vomiting, diarrhoea, C. difficile diarrhoea and pseudomembranous colitis, rash, rarely Stevens–Johnson syndrome.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177"
+      },
+      {
+        book: "harrison",
+        text: "Clindamycin, ampicillin and the cephalosporins were the first antibiotics linked to C. difficile infection, which is common wherever antibiotic use is high.",
+        ref: "Harrison 22nd ed. 2025, ch. 139 Clostridioides difficile Infection, Including Pseudomembranous Colitis, p. 1082"
+      },
+      {
+        book: "harrison",
+        text: "C. difficile infection: stopping the causative antibiotic where possible is the first step; avoid antiperistaltic drugs and opiates, which may mask symptoms and worsen disease. Specific treatment is now started promptly; oral vancomycin cured more patients than metronidazole in the largest trial.",
+        ref: "Harrison 22nd ed. 2025, ch. 139 Clostridioides difficile Infection, Including Pseudomembranous Colitis, p. 1084"
+      },
+      {
+        book: "harrison",
+        text: "Start oral vancomycin (or fidaxomicin) at once for a patient who looks seriously ill with C. difficile infection, especially with a white count over 15,000/µL or a raised creatinine. Fulminant disease can present with ileus and no diarrhoea.",
+        ref: "Harrison 22nd ed. 2025, ch. 139 Clostridioides difficile Infection, Including Pseudomembranous Colitis, p. 1085"
+      },
+      {
+        book: "harrison",
+        text: "Group A streptococcal necrotising fasciitis or myositis: surgical debridement plus penicillin G 2–4 million units IV every 4 h plus clindamycin 600–900 mg IV every 8 h. Streptococcal toxic shock: the same antibiotics plus IV immunoglobulin.",
+        ref: "Harrison 22nd ed. 2025, ch. 153 Streptococcal Infections, Table 153-3, p. 1208"
+      },
+      {
+        book: "harrison",
+        text: "Skin infections: clindamycin 600–900 mg IV every 8 h is an alternative for cellulitis; group A streptococcal necrotising fasciitis: clindamycin 600–900 mg IV every 6–8 h plus penicillin G (or a first- or second-generation cephalosporin).",
+        ref: "Harrison 22nd ed. 2025, ch. 134 Infections of the Skin, Muscles, and Soft Tissues, Table 134-2, p. 1054"
+      },
+      {
+        book: "harrison",
+        text: "Staphylococcal toxic shock: clindamycin is advocated with an antistaphylococcal penicillin (or vancomycin) because, as a protein-synthesis inhibitor, it reduces toxin production. Remove tampons or packing.",
+        ref: "Harrison 22nd ed. 2025, ch. 152 Staphylococcal Infections, p. 1205"
+      },
+      {
+        book: "harrison",
+        text: "Uncomplicated falciparum malaria, second line: quinine 10 mg salt/kg three times daily for 7 days plus clindamycin 10 mg/kg twice daily for 7 days (or doxycycline/tetracycline, which are not given in pregnancy or under 8 years).",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-6, p. 1770"
+      },
+      {
+        book: "nelson",
+        text: "Quinine plus clindamycin 20 mg/kg/day by mouth in 3 divided doses for 7 days. Clindamycin with quinine is the preferred option for pregnant women and children under 8 years.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.2, p. 2176"
+      },
+      {
+        book: "nelson",
+        text: "Oral clindamycin 30–40 mg/kg/day divided 3–4 times daily is well absorbed and is often used when either MRSA or MSSA is possible.",
+        ref: "Nelson 22nd ed. 2024, ch. 227 Staphylococcus, p. 1697"
+      },
+      {
+        book: "nelson",
+        text: "Some MRSA strains show inducible clindamycin resistance: check with the laboratory before treating a serious MRSA infection with clindamycin. Pseudomembranous colitis, common with clindamycin in adults, is seldom seen in children.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, p. 1689"
+      },
+      {
+        book: "williams",
+        text: "Caesarean prophylaxis with significant penicillin or cephalosporin allergy (anaphylaxis, angioedema, respiratory distress, urticaria): a single 600 mg IV dose of clindamycin with a weight-based aminoglycoside dose; 900 mg for obese women. Give within 60 minutes before incision.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 30 Cesarean Delivery and Peripartum Hysterectomy, pdf p. 1256"
+      },
+      {
+        book: "gabbe",
+        text: "ACOG: for penicillin-allergic women, clindamycin 900 mg plus an aminoglycoside 5 mg/kg within 60 minutes before the start of caesarean section (or as soon as possible after incision).",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1121"
+      },
+      {
+        book: "gabbe",
+        text: "Postpartum endometritis: clindamycin 900 mg every 8 h plus gentamicin (Table 58.5). In group A streptococcal infection clindamycin is added because its effect does not depend on inoculum size and it suppresses M-protein and exotoxin synthesis.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1120"
+      },
+      {
+        book: "williams",
+        text: "Pelvic infection after caesarean: clindamycin plus gentamicin gave a 95 % response and remains the standard regimen; some add ampicillin if there is no response by 48–72 h.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1475"
+      },
+      {
+        book: "gabbe",
+        text: "GBS resistance to clindamycin has risen to 40–68 % worldwide; clindamycin is used for intrapartum GBS prophylaxis only when the isolate is known to be susceptible.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1114"
+      },
+      {
+        book: "gabbe",
+        text: "Uncomplicated malaria in the first trimester: quinine plus clindamycin is first line in Gabbe; ACT in the second and third trimesters.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1133"
+      },
+      {
+        book: "harrison",
+        text: "MRSA skin infection: oral options include clindamycin 300–450 mg four times daily for 7–10 days. Inducible resistance may limit clindamycin; ask for a D-test if the isolate is erythromycin-resistant and clindamycin-sensitive.",
+        ref: "Harrison 22nd ed. 2025, ch. 60 Eczema, Psoriasis, Cutaneous Infections, Acne, and Other Common Skin Disorders, p. 383"
+      },
+      {
+        book: "schwartz",
+        text: "Necrotising soft-tissue infection rests on three principles: source control with wide surgical debridement, broad-spectrum IV antibiotics, and supportive care and resuscitation. Do not let imaging delay surgery.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 16 The Skin and Subcutaneous Tissue, p. 526"
+      },
+      {
+        book: "gabbe",
+        text: "Post-caesarean endometritis: clindamycin with an aminoglycoside such as gentamicin has better safety and efficacy than other regimens. Continue for at least 24 h after the fever settles; once uncomplicated endometritis improves on IV treatment, no oral course is needed. No response in 2–3 days: look for wound infection, abscess, haematoma or septic pelvic thrombophlebitis.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 436"
+      },
+      {
+        book: "note",
+        text: "The IV limits (dilute to 18 mg/mL or weaker, no faster than 30 mg/min, no more than 1.2 g in a 1-hour infusion, no more than 600 mg per IM injection), the warning about rapid injection, swallowing capsules with a full glass of water, not refrigerating the oral solution, and the potentiation of neuromuscular blockers are from the clindamycin product information and the BNF; none of the textbooks addresses the neuromuscular interaction. The adult oral range 150–450 mg 6-hourly is from the product information. Oral metronidazole as a fallback for non-severe C. difficile where oral vancomycin is unavailable follows the IDSA/SHEA 2017 guideline. The improvised methods are editorial guidance for district practice.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      { name: "Clindamycin (Dalacin C / Cleocin) capsule and injection product information" },
+      { name: "BNF / BNF for Children: clindamycin (interactions: muscle relaxants)" },
+      {
+        name: "IDSA/SHEA Clinical practice guidelines for Clostridium difficile infection, 2017 and 2021 update"
+      },
+      {
+        name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 60, 134, 139, 149, 152, 153, 231"
+      },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 225, 227, 334" },
+      { name: "Gabbe's Obstetrics, 9th ed., ch. 7, 21, 58" },
+      { name: "Williams Obstetrics, 25th ed. 2018, ch. 30, 37" },
+      { name: "Schwartz's Principles of Surgery, 11th ed., ch. 16" },
+      { name: "Ethiopian National Malaria Guidelines (confirm the regimen in use)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "doxycycline",
+    name: "Doxycycline",
+    aka: [
+      "Vibramycin",
+      "Doxy",
+      "Doxycycline hyclate",
+      "Doxycycline monohydrate",
+      "Tetracycline antibiotic"
+    ],
+    cls: "Tetracycline antibiotic (rickettsiae, spirochaetes, chlamydia, malaria partner)",
+    cat: "infection",
+    wards: ["medical", "paediatric", "maternity", "outpatient", "emergency"],
+    tags: [
+      "typhus",
+      "louse-borne typhus",
+      "epidemic typhus",
+      "rickettsia",
+      "spotted fever",
+      "relapsing fever",
+      "Jarisch-Herxheimer",
+      "displaced people",
+      "lice",
+      "malaria partner",
+      "malaria prophylaxis",
+      "quinine",
+      "cholera",
+      "chlamydia",
+      "STI",
+      "brucellosis",
+      "leptospirosis",
+      "MRSA",
+      "photosensitivity",
+      "pill oesophagitis"
+    ],
+    presentation: [
+      "Tablets or capsules 100 mg (hyclate or monohydrate); dispersible 100 mg tablets in some brands.",
+      "IV doxycycline 100 mg vials exist but are rarely stocked in Ethiopia.",
+      "Cheap, on the essential medicines list and usually on the shelf. Store dry, at room temperature, out of the light."
+    ],
+    indications: [
+      "Rickettsial fevers: louse-borne (epidemic) typhus, murine and scrub typhus, tick-borne spotted fevers. Drug of choice at ALL ages, including children under 8 (Nelson, Harrison)",
+      "Louse-borne relapsing fever (still seen in Ethiopia, especially among displaced people) and tick-borne relapsing fever. Give the first dose under observation: Jarisch–Herxheimer reaction (Harrison)",
+      "Malaria: partner with oral quinine for 7 days (not in pregnancy or under 8: use clindamycin), and prophylaxis (Harrison, Nelson)",
+      "Cholera, moderate or severe: one 300 mg dose after rehydration where the strain is susceptible (Harrison)",
+      "Chlamydia, and with gonorrhoea treatment when chlamydia cannot be excluded (Harrison); follow the national STI guideline",
+      "Brucellosis, with gentamicin or streptomycin, or with rifampicin, for 6 weeks (Harrison)",
+      "Leptospirosis, mild (Harrison); MRSA skin infection (Harrison)"
+    ],
+    standard: {
+      summary: "Doxycycline is the drug for the fevers of crowding, lice and displacement: louse-borne typhus and relapsing fever and the other rickettsial fevers. It is also an oral partner for malaria and treats cholera, chlamydia, brucellosis and leptospirosis. It is well absorbed by mouth. Three things matter most. (1) The first dose for relapsing fever can set off a Jarisch–Herxheimer reaction that kills, so give it where the patient can be watched for 24 hours. (2) Swallow it upright with a full glass of water, because a tablet stuck in the oesophagus causes an ulcer. (3) Keep it 2 hours away from zinc, iron, calcium, antacids and milk. It is avoided in pregnancy and under 8 for routine use, but a short course is the treatment of choice for suspected rickettsial disease at any age (Nelson, Harrison).",
+      items: [
+        {
+          label: "Usual adult dose",
+          text: "100 mg every 12 h by mouth (Harrison). IV only if comatose or vomiting (Harrison), where the vial exists."
+        },
+        {
+          label: "Typhus and spotted fevers",
+          text: "Adult 100 mg every 12 h; child 2.2 mg/kg every 12 h, max 100 mg per dose, at ANY age (Nelson: 4 mg/kg/day, max 200 mg/day). Continue until afebrile for 3 days, at least 5–7 days in all (Nelson); Harrison: until 3–5 days after the fever settles. Epidemic louse-borne typhus: a single 200 mg dose (4.4 mg/kg under 45 kg) can be used in an outbreak (Nelson), but it fails in some cases (Harrison)."
+        },
+        {
+          label: "Louse-borne relapsing fever",
+          text: "Ethiopian adult regimen (Harrison): procaine benzylpenicillin 400,000 units IM once, then doxycycline 100 mg every 12 h for 7 days, starting several hours later or the next day. It reduced both relapse and Jarisch–Herxheimer reactions. In an epidemic with limited resources, a single dose of 200 mg (child 5 mg/kg) usually works (Harrison). Observe for 24 h after the first antibiotic dose."
+        },
+        {
+          label: "Tick-borne relapsing fever",
+          text: "100 mg every 12 h for 10 days (Harrison; Nelson for children over 8)."
+        },
+        {
+          label: "Malaria, with quinine",
+          text: "Adult 100 mg every 12 h; child 8 years and over 2.2 mg/kg every 12 h; for 7 days (Nelson). Harrison gives 3 mg/kg once daily. With oral quinine 10 mg salt/kg 8-hourly for 7 days (see Quinine). Not in pregnancy or under 8: use clindamycin (Nelson)."
+        },
+        {
+          label: "Malaria prophylaxis",
+          text: "100 mg once daily (8 years and over: 2 mg/kg, up to 100 mg), from 1–2 days before entering the malarious area until 4 weeks after leaving (Harrison)."
+        },
+        {
+          label: "Cholera",
+          text: "After rehydration, where susceptible: adult 300 mg once (Harrison). Child: 2–4 mg/kg once, up to 300 mg; 300 mg from 12 years (Nelson). Harrison gives 4–6 mg/kg for children over 8. Azithromycin is the alternative (see the severe-dehydration case)."
+        },
+        {
+          label: "Chlamydia",
+          text: "100 mg every 12 h for 7 days (Harrison). Pregnancy: azithromycin instead (see Azithromycin)."
+        },
+        {
+          label: "Brucellosis",
+          text: "100 mg every 12 h for 6 weeks, with gentamicin 5–6 mg/kg daily for 1–2 weeks (or streptomycin), or with rifampicin 600–900 mg daily (Harrison). Children and pregnant women: high-dose co-trimoxazole instead (Harrison)."
+        },
+        {
+          label: "Leptospirosis",
+          text: "Mild: 100 mg every 12 h for 7 days (Harrison). Severe: IV benzylpenicillin or ceftriaxone (Harrison)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "First dose for louse-borne relapsing fever: watch for the Jarisch–Herxheimer reaction",
+        best_for: "Health centres, hospitals and camps for displaced people, especially during an outbreak.",
+        requires: ["iv", "bp"],
+        steps: [
+          "Suspect relapsing fever in anyone with high fever who has body lice or comes from a crowded camp, prison or shelter. Spirochaetes on the thick or thin blood film (the malaria slide) confirm it. Malaria, typhus or typhoid can be present at the same time (Harrison).",
+          "Before the first dose: put in an IV cannula, hang 0.9 % saline or Ringer's lactate, and record pulse, blood pressure, temperature and breathing. Use a bed you can see from the nursing station. Never give the first dose and send the patient home.",
+          "Adult: procaine benzylpenicillin 400,000 units IM first, then doxycycline 100 mg every 12 h for 7 days from several hours later or the next day. This Ethiopian regimen reduced both the reaction and relapse (Harrison). If the outbreak protocol uses single-dose doxycycline 200 mg (child 5 mg/kg), give it the same way (Harrison).",
+          "Expect the reaction 1–3 h after the first dose: fear, shaking chills, a rising fever, then sweating and a falling blood pressure. Platelets may fall further (Harrison). It follows the first dose in 20–60 % of louse-borne cases (Harrison).",
+          "Check pulse, blood pressure and temperature every 15–30 minutes for the first 4 hours, then every 1–2 hours. Keep the patient under close observation for at least 24 hours (Harrison).",
+          "Treat the reaction: lay the patient flat, give IV fluid boluses for low blood pressure, cool the fever, and give oxygen if you have it. Call a senior or refer if shock persists (Harrison: IV fluid and circulatory support). Steroids or paracetamol given beforehand do not prevent it (Nelson).",
+          "Delouse the patient, their clothes and bedding, and the people around them. Body lice live in clothing (Nelson)."
+        ],
+        monitor: [
+          "Pulse, blood pressure and temperature every 15–30 min for 4 h, then 1–2-hourly to 24 h",
+          "Urine output",
+          "Bleeding from gums or puncture sites (low platelets)"
+        ],
+        cautions: [
+          "The same reaction can follow other antibiotics, for example ciprofloxacin, given for unsuspected relapsing fever (Harrison). Watch any febrile patient from a lice-infested setting after the first antibiotic dose.",
+          "Pregnant women and children under 8 are given penicillin or erythromycin in Harrison's algorithm. Observe them in the same way: the reaction follows any effective antibiotic."
+        ]
+      },
+      {
+        title: "Swallowing it safely, and keeping it apart from zinc, iron, calcium and milk",
+        best_for: "OPD, pharmacy, cholera treatment centres and malaria clinics.",
+        requires: ["oral"],
+        steps: [
+          "Take each dose sitting or standing, with a full glass of water, and stay upright afterwards. Never take it just before lying down at night. Too little water or lying down lets the tablet stick in the oesophagus, and doxycycline is one of the commonest causes of pill ulcers (Harrison).",
+          "Sudden chest pain or pain on swallowing after a dose means a pill ulcer (Harrison). Stop the tablets and review: change to another drug if there is one, and refer if the patient cannot swallow fluids.",
+          "Give it 2 h before (or 6 h after) zinc, iron, calcium or magnesium tablets and antacids, and not with milk (Harrison). Taking it with ordinary food is fine and reduces nausea.",
+          "Cholera: give the single dose once vomiting has settled after rehydration, and the zinc tablet 2 h later. Do not stop ORS: it contains no zinc or calcium.",
+          "Sun: doxycycline makes the skin burn easily (Harrison). Advise long sleeves, a hat and shade, especially for farmers and soldiers on prophylaxis."
+        ],
+        monitor: ["Ask about chest pain or pain on swallowing at each visit"],
+        cautions: [
+          "Do not crush it into milk, or give it with tea or coffee with milk.",
+          "Vaginal thrush and diarrhoea are common on longer courses (Harrison)."
+        ]
+      },
+      {
+        title: "Children under 8 and pregnant women: when doxycycline is still right",
+        best_for: "Paediatric wards, OPD, maternity and outbreak teams.",
+        requires: ["oral"],
+        steps: [
+          "Suspected typhus or spotted fever (fever and headache with lice or tick exposure, a rash or an eschar) in a child of ANY age: give doxycycline 2.2 mg/kg (max 100 mg) every 12 h. Nelson makes it the treatment of choice under 8 because short courses carry negligible risk of tooth staining; Harrison allows up to five courses with minimal risk. Chloramphenicol is less effective (Harrison) and carries higher mortality (Nelson).",
+          "Louse-borne relapsing fever in a child: Harrison gives single-dose doxycycline 5 mg/kg in an epidemic, but its treatment algorithm uses erythromycin under 9 years. Nelson recommends erythromycin under 8, noting that doxycycline courses under 2 weeks appear safe over 2 years. Follow the national outbreak protocol, and do not leave a sick child untreated while you decide.",
+          "Where another drug works as well, use it under 8. Malaria partner: clindamycin (Nelson). Brucellosis: co-trimoxazole (Harrison). Chlamydia and trachoma: azithromycin. Cholera: a single dose of doxycycline is acceptable at any age (Nelson); azithromycin is the alternative.",
+          "Pregnancy, routine indications: avoid (Williams, Gabbe). Malaria: clindamycin with quinine, or artemether–lumefantrine as the national guideline allows. Chlamydia: azithromycin. Brucellosis: co-trimoxazole (Harrison).",
+          "Pregnancy with life-threatening typhus or spotted fever: Nelson reserves chloramphenicol for pregnancy. Harrison finds little evidence of harm from doxycycline in pregnancy, calls chloramphenicol less effective, and for epidemic typhus advises chloramphenicol early in pregnancy and doxycycline late. Decide with a senior; do not leave her without effective treatment.",
+          "Making a child's dose from the 100 mg tablet: halve or quarter it (50 mg, 25 mg), crush it into a spoonful of water or soft food (not milk), give it at once, then give a drink of water."
+        ],
+        monitor: [
+          "Fever chart: treated rickettsial fever usually settles within 48 h (Nelson). If it does not, reconsider the diagnosis (malaria, typhoid, relapsing fever)."
+        ],
+        cautions: [
+          "The 'avoid under 8' rule protects against tooth staining from long or repeated courses. It is not a reason to withhold a short course for a life-threatening rickettsial infection (Nelson, Harrison)."
+        ]
+      },
+      {
+        title: "Too ill or vomiting to swallow, and no IV doxycycline",
+        best_for: "Wards treating severe typhus, relapsing fever or leptospirosis where the IV form is not stocked.",
+        requires: ["oral"],
+        steps: [
+          "Harrison gives doxycycline IV when the patient is comatose or vomiting. Without the vial, the tablet can go down a nasogastric tube: crush it in 10–20 mL of water, give it, and flush with at least 30 mL of water.",
+          "Hold milk-based tube feeds for 2 h either side of each dose (Harrison: calcium-containing foods, including milk, reduce absorption).",
+          "A conscious patient who is vomiting: give an antiemetic (see Metoclopramide or Ondansetron), then the dose about 30 minutes later.",
+          "Nothing can be given by mouth or tube, and the patient has typhus: IV chloramphenicol is the alternative (Harrison, Nelson; see Chloramphenicol). It is less effective, so switch to doxycycline as soon as it can be swallowed.",
+          "Severe leptospirosis: IV benzylpenicillin or ceftriaxone instead (Harrison)."
+        ],
+        monitor: ["Check the tube position before each dose", "Temperature and pulse 4-hourly"],
+        cautions: [
+          "Never push crushed tablets down a tube without flushing: the drug can block the tube or stick in the oesophagus."
+        ]
+      }
+    ],
+    paediatric: [
+      "Dose: 2.2 mg/kg every 12 h, max 100 mg per dose (Nelson); 45 kg and over, the adult dose (Nelson).",
+      "Suspected rickettsial disease (typhus, spotted fever): give at ANY age (Nelson, Harrison). Short courses do not cause meaningful tooth staining (Nelson).",
+      "Other indications under 8: use an equally good alternative where one exists. Malaria partner: clindamycin. Brucellosis: co-trimoxazole. Chlamydia: azithromycin.",
+      "Relapsing fever: Harrison single dose 5 mg/kg; Nelson and Harrison's algorithm prefer erythromycin under 8–9 years. Follow the national outbreak protocol.",
+      "Cholera: a single dose of 2–4 mg/kg, up to 300 mg; 300 mg from 12 years (Nelson)."
+    ],
+    cautions: [
+      "Jarisch–Herxheimer reaction 1–3 h after the first dose in relapsing fever: it can be fatal. Observe for 24 h (Harrison). It can also occur in leptospirosis (Harrison).",
+      "Pill oesophagitis: swallow upright with a full glass of water, never just before lying down (Harrison).",
+      "Photosensitivity (Harrison): avoid strong sun.",
+      "Absorption falls with zinc, iron, calcium, magnesium, antacids and milk: separate by 2 h (Harrison; see Interactions).",
+      "Increases the effect of warfarin (Harrison; see Interactions).",
+      "Pregnancy and under 8: avoid for routine use because of tooth staining and effects on growing bone (Harrison, Gabbe), but see the improvised method for life-threatening infection.",
+      "Nausea, vomiting, diarrhoea and vaginal thrush (Harrison); rarely liver injury (Harrison).",
+      "No dose change in kidney failure, unlike tetracycline itself (product information)."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 2.2,
+      doseUnit: "mg",
+      maxDose: 100,
+      label: "Child dose (2.2 mg/kg every 12 h, max 100 mg); 45 kg and over: 100 mg"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Tetracyclines (doxycycline) treat rickettsial infection, spirochaetes (leptospirosis, relapsing fever, syphilis), sexually transmitted infections (chlamydia), brucellosis, MRSA skin infection and malaria. Absorption falls with calcium- and iron-containing products, including milk: space doses at least 2 h apart. Main adverse effects: nausea, vomiting, diarrhoea, photosensitivity. Avoided in pregnancy and under 8 years because of effects on growing bone.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177"
+      },
+      {
+        book: "harrison",
+        text: "Tetracyclines with antacids or anything containing calcium, magnesium, iron or aluminium: absorption falls; give the tetracycline 2 h before or 6 h after. Tetracyclines increase the effect of warfarin.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172"
+      },
+      {
+        book: "harrison",
+        text: "Pill oesophagitis: the tablet lodges in the oesophagus when taken with too little water or before lying down; doxycycline and tetracycline are among the commonest causes. Sudden chest pain and pain on swallowing, often waking the patient.",
+        ref: "Harrison 22nd ed. 2025, ch. 334 Diseases of the Esophagus, p. 2513"
+      },
+      {
+        book: "harrison",
+        text: "Louse-borne relapsing fever, limited resources or epidemic: a single oral dose of doxycycline 200 mg (child 5 mg/kg) or tetracycline 500 mg (child 12.5 mg/kg) usually suffices. Tetracyclines are contraindicated in pregnant and nursing women; give penicillin, or erythromycin if allergic.",
+        ref: "Harrison 22nd ed. 2025, ch. 190 Relapsing Fever, p. 1447"
+      },
+      {
+        book: "harrison",
+        text: "In Ethiopia, a regimen that reduced both relapse and Jarisch–Herxheimer reactions in adults with louse-borne relapsing fever: procaine penicillin 400,000 units IM once, then several hours later or the next day doxycycline 100 mg twice daily (or tetracycline) for 7 days.",
+        ref: "Harrison 22nd ed. 2025, ch. 190 Relapsing Fever, p. 1448"
+      },
+      {
+        book: "harrison",
+        text: "The Jarisch–Herxheimer reaction in relapsing fever can be severe and fatal unless the patient is closely monitored for at least 24 h with IV fluid and circulatory support available. Apprehension, rigors, fever and hypotension begin 1–3 h after the first antibiotic dose; it follows the first dose in 20–60 % of louse-borne cases.",
+        ref: "Harrison 22nd ed. 2025, ch. 190 Relapsing Fever, p. 1448"
+      },
+      {
+        book: "harrison",
+        text: "Epidemic (louse-borne) typhus: doxycycline 100 mg twice daily by mouth (IV if comatose or vomiting) until 3–5 days after the fever settles. In an epidemic a single 200 mg dose can be tried but fails in some cases. In pregnancy: chloramphenicol early, doxycycline late in pregnancy.",
+        ref: "Harrison 22nd ed. 2025, ch. 192 Rickettsial Diseases, p. 1459"
+      },
+      {
+        book: "harrison",
+        text: "Rocky Mountain spotted fever: doxycycline is the drug of choice for children and adults, 100 mg twice daily, given empirically when suspected. Children may receive up to five courses with minimal risk of dental staining. There is little evidence of tetracycline harm to mothers or fetuses who receive doxycycline; chloramphenicol is less effective.",
+        ref: "Harrison 22nd ed. 2025, ch. 192 Rickettsial Diseases, p. 1457"
+      },
+      {
+        book: "nelson",
+        text: "Suspected spotted fever (RMSF): the treatment of choice for patients of ALL ages, including children under 8, is doxycycline 4 mg/kg/day divided every 12 h by mouth or IV (maximum 200 mg/day), for at least 5–7 days and until afebrile for 3 days. Recent studies show negligible tooth discoloration under 8 years. Chloramphenicol is reserved for doxycycline allergy and pregnancy and carries higher mortality.",
+        ref: "Nelson 22nd ed. 2024, ch. 274 Spotted Fever Group Rickettsioses, p. 1905"
+      },
+      {
+        book: "nelson",
+        text: "Louse-borne (epidemic) typhus: doxycycline 4 mg/kg/day divided every 12 h (maximum 200 mg/day) for at least 5 days and until afebrile for 3 days; a single 200 mg dose (4.4 mg/kg if under 45 kg) is also effective. Delousing interrupts transmission.",
+        ref: "Nelson 22nd ed. 2024, ch. 276 Typhus Group Rickettsioses, p. 1911"
+      },
+      {
+        book: "nelson",
+        text: "Relapsing fever: oral or parenteral tetracycline or doxycycline is the drug of choice for louse- and tick-borne disease; over 8 years, doxycycline 100 mg every 12 h for 10 days.",
+        ref: "Nelson 22nd ed. 2024, ch. 267 Relapsing Fever (Borrelia), p. 1880"
+      },
+      {
+        book: "nelson",
+        text: "Relapsing fever under 8 years: erythromycin is recommended, though doxycycline courses under 2 weeks appear safe over 2 years. The Jarisch–Herxheimer reaction is not prevented by steroids or antipyretics, and is much commoner in louse-borne (55.8 %) than tick-borne disease.",
+        ref: "Nelson 22nd ed. 2024, ch. 267 Relapsing Fever (Borrelia), p. 1881"
+      },
+      {
+        book: "nelson",
+        text: "Doxycycline is used safely under 8 years for ehrlichiosis because tooth discoloration is dose dependent and repeated courses are unlikely; harm from short courses is extremely rare.",
+        ref: "Nelson 22nd ed. 2024, ch. 277 Ehrlichiosis and Anaplasmosis, p. 1913"
+      },
+      {
+        book: "nelson",
+        text: "Cholera, children: single-dose doxycycline 2–4 mg/kg by mouth up to 300 mg (300 mg from 12 years), or azithromycin 20 mg/kg (max 1 g); tailor to local resistance.",
+        ref: "Nelson 22nd ed. 2024, ch. 247 Cholera, p. 1787"
+      },
+      {
+        book: "harrison",
+        text: "Cholera, where susceptible: doxycycline 300 mg single dose (non-pregnant adults); children over 8 a single 4–6 mg/kg dose. Resistance to tetracyclines is widespread.",
+        ref: "Harrison 22nd ed. 2025, ch. 173 Cholera and Other Vibrioses, p. 1329"
+      },
+      {
+        book: "harrison",
+        text: "Chlamydial infection (including when it cannot be excluded with gonorrhoea): doxycycline 100 mg twice daily for 7 days.",
+        ref: "Harrison 22nd ed. 2025, ch. 161 Gonococcal Infections, p. 1259"
+      },
+      {
+        book: "harrison",
+        text: "Brucellosis: streptomycin (or gentamicin) plus doxycycline 100 mg twice daily for 6 weeks, or rifampicin plus doxycycline for 6 weeks (WHO), which relapses more often, possibly because rifampicin lowers doxycycline levels. Children and pregnant women: high-dose co-trimoxazole.",
+        ref: "Harrison 22nd ed. 2025, ch. 174 Brucellosis, p. 1334"
+      },
+      {
+        book: "harrison",
+        text: "Leptospirosis: mild, doxycycline 100 mg twice daily for 7 days; severe, IV penicillin, ceftriaxone or cefotaxime (or IV doxycycline). Where rickettsial disease is also common, doxycycline or azithromycin is the drug of choice.",
+        ref: "Harrison 22nd ed. 2025, ch. 189 Leptospirosis, p. 1444"
+      },
+      {
+        book: "harrison",
+        text: "Malaria treatment: quinine or artesunate for 7 days plus doxycycline 3 mg/kg once daily for 7 days; not in pregnancy or under 8 years.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-6, p. 1770"
+      },
+      {
+        book: "nelson",
+        text: "Quinine plus doxycycline: adult 100 mg twice daily, child 2.2 mg/kg twice daily, for 7 days. Not recommended in pregnancy or under 8 unless there is no other option; clindamycin is the partner then.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.2, p. 2176"
+      },
+      {
+        book: "harrison",
+        text: "Malaria prophylaxis: doxycycline 100 mg daily (8 years and over 2 mg/kg, up to the adult dose), from 1–2 days before entering a malarious area until 4 weeks after leaving.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-8, p. 1774"
+      },
+      {
+        book: "harrison",
+        text: "Daily doxycycline prophylaxis is generally well tolerated but can cause vaginal thrush, diarrhoea and photosensitivity; not recommended for prophylaxis under 8 or in pregnancy, although evidence of harm in children is lacking.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1775"
+      },
+      {
+        book: "note",
+        text: "The CDC and the American Academy of Pediatrics also recommend doxycycline for suspected rickettsial disease at any age, as Nelson does. No dose change in kidney impairment is from the doxycycline product information and the BNF. Giving crushed tablets by nasogastric tube, making a child's dose from the 100 mg tablet, the antiemetic-first approach and the observation schedule for the first dose in relapsing fever are editorial guidance for district practice. Confirm outbreak regimens for relapsing fever, typhus and cholera with the Ethiopian national guidelines.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      { name: "Doxycycline (Vibramycin) product information" },
+      {
+        name: "BNF / BNF for Children: doxycycline (interactions: zinc, iron, antacids, coumarins, enzyme inducers, lithium)"
+      },
+      {
+        name: "CDC: Rocky Mountain spotted fever and other tickborne rickettsial diseases, treatment guidance (doxycycline at all ages)"
+      },
+      {
+        name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 149, 161, 173, 174, 189, 190, 192, 231, 334"
+      },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 247, 267, 274, 276, 277, 334" },
+      { name: "Gabbe's Obstetrics, 9th ed., ch. 7" },
+      { name: "Williams Obstetrics, 25th ed. 2018, ch. 64" },
+      { name: "Ethiopian national guidelines for malaria, cholera and outbreak response (confirm)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "nystatin",
+    name: "Nystatin",
+    aka: [
+      "Mycostatin",
+      "Nystan",
+      "Nystatin oral suspension",
+      "Nystatin drops",
+      "Nystatin pessary",
+      "Nystatin cream",
+      "Polyene antifungal"
+    ],
+    cls: "Polyene antifungal, not absorbed (Candida only: mouth, gut, vagina, skin)",
+    cat: "infection",
+    wards: ["neonatal", "paediatric", "maternity", "outpatient", "medical"],
+    tags: [
+      "oral thrush",
+      "oral candidiasis",
+      "neonatal thrush",
+      "infant thrush",
+      "breastfeeding",
+      "nipple thrush",
+      "vaginal candidiasis",
+      "vaginal thrush",
+      "pregnancy",
+      "nappy rash",
+      "candida",
+      "intertrigo",
+      "warfarin",
+      "miconazole alternative",
+      "HIV"
+    ],
+    presentation: [
+      "Oral suspension 100,000 units/mL, with a dropper or measuring syringe. Contains sugar.",
+      "Vaginal pessaries (vaginal tablets) 100,000 units; vaginal cream in some brands.",
+      "Cream or ointment 100,000 units/g. Also sold mixed with a steroid (for example triamcinolone): see Cautions.",
+      "Oral tablets 500,000 units act only inside the gut (Harrison).",
+      "Store as the label says, and discard opened suspension by the date on the label."
+    ],
+    indications: [
+      "Oral thrush in newborns, infants and children: the usual treatment (Nelson), and the one to use under 4 months instead of miconazole oral gel (see Miconazole)",
+      "Mild oral thrush in adults (Harrison), and oral thrush in ANY patient on warfarin, phenytoin or carbamazepine: it is not absorbed and does not change the INR",
+      "The breastfeeding mother's nipples when her baby has thrush (Nelson)",
+      "Vaginal candidiasis (pessaries), including in pregnancy: the alternative when no clotrimazole or miconazole pessary is stocked (Harrison, Gabbe; see Clotrimazole and Fluconazole)",
+      "Candida of the skin and Candida nappy rash (Harrison, Nelson)"
+    ],
+    standard: {
+      summary: "Nystatin kills Candida on contact. Almost none is absorbed from the mouth, gut, skin or vagina (Gabbe). So it has no systemic side effects and no drug interactions: it does NOT affect warfarin or the INR. It is safe in pregnancy, in breastfeeding and in newborns. The other side of that is that it only works where it touches. It treats Candida only, not ringworm (tinea) (Harrison, Nelson). It cannot treat oesophageal or invasive candidiasis, which need fluconazole (Harrison).",
+      items: [
+        {
+          label: "Oral thrush: newborn and infant",
+          text: "1 mL (100,000 units) four times daily after feeds, half into each cheek (BNF for Children). The US product information uses 2 mL four times daily for infants and 1 mL for preterm and low-birthweight babies. Continue for 48 h after the white patches have gone (product information): usually about 7 days. Mild thrush in a well baby may need no treatment (Nelson)."
+        },
+        {
+          label: "Oral thrush: child and adult",
+          text: "Formularies differ: 1 mL four times daily (BNF) to 4–6 mL four times daily (US product information); Nelson uses 2–5 mL four times daily in children with HIV. None is absorbed, so the larger volume is safe. Hold it in the mouth as long as possible, then swallow. Continue for 48 h after clearing. Moderate or severe thrush, pain on swallowing, or no response in a week: fluconazole (Harrison; see Fluconazole)."
+        },
+        {
+          label: "Breastfeeding mother",
+          text: "While the baby is treated, put nystatin suspension or cream on the nipples and areola after each feed (Nelson). It is safe for the baby; it does not need to be washed off."
+        },
+        {
+          label: "Vaginal candidiasis",
+          text: "One 100,000-unit pessary high in the vagina at night for 14 nights (product information; BNF: 1–2 pessaries nightly for at least 2 weeks). Nystatin pessaries need twice as many nights as a 7-night clotrimazole course (see Clotrimazole). Safe in pregnancy: insert with a clean finger rather than the applicator."
+        },
+        {
+          label: "Skin Candida and nappy rash",
+          text: "Cream 2–4 times daily on clean, dry skin, continued for 7 days after it has healed (BNF). Nappy rash present for more than 3 days: treat it as Candida, with frequent changes and time without a nappy (Nelson). Harrison prefers a topical azole for skin Candida, with nystatin as the alternative."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Making the drops stay on the thrush (babies)",
+        best_for: "Postnatal wards, neonatal units, and immunisation and child clinics.",
+        requires: [],
+        steps: [
+          "Give it after a feed, not before, so that milk does not wash it straight off (product information).",
+          "Use the dropper or a 1 mL or 2 mL syringe without a needle. Hold the baby semi-upright and put half the dose slowly inside each cheek.",
+          "Or paint it on: wrap clean gauze round a clean finger, or use a cotton bud, soak it in the dose and wipe it over the white patches, tongue, gums and the inside of the cheeks.",
+          "Where you can, wait a while before the next feed or drink so that the drug stays in contact.",
+          "If the mother breastfeeds, treat her nipples at the same time (Nelson). Boil or wash cups, spoons, teats and pacifiers every day.",
+          "Keep going for 48 hours after the patches have gone (product information). Stopping early is the usual reason it comes back."
+        ],
+        monitor: ["Feeding and weight", "White patches at review after 7 days"],
+        cautions: [
+          "Milk curds wipe off and leave a normal pink mouth. Thrush plaques scrape off to leave a red base with pinpoint bleeding (Nelson).",
+          "Thrush that does not clear in 1–2 weeks, keeps coming back without a reason such as antibiotics, or a baby who will not feed: offer HIV testing to mother and baby (Nelson) and consider fluconazole (see Fluconazole)."
+        ]
+      },
+      {
+        title: "Thrush in a patient on warfarin, phenytoin or carbamazepine",
+        best_for: "Medical wards, anticoagulation and epilepsy clinics, and pharmacies.",
+        requires: [],
+        steps: [
+          "Choose nystatin suspension for oral thrush. It is not absorbed and does not change the INR or antiepileptic levels (see Miconazole).",
+          "Never give miconazole oral gel with warfarin. It is sold over the counter, so ask whether the patient has already bought some (see Miconazole and Warfarin).",
+          "Vaginal thrush: a nystatin or clotrimazole pessary (see Clotrimazole), not miconazole.",
+          "Fluconazole also raises the INR steeply. If oesophageal thrush makes it unavoidable, follow the Warfarin–Fluconazole interaction rule.",
+          "Dentures: take them out before each dose and clean them every day. Thrush under a denture comes back if the denture is not cleaned."
+        ],
+        monitor: ["Nystatin itself needs no extra INR check; keep the patient's usual INR schedule"],
+        cautions: [
+          "Pain on swallowing means the thrush may reach the oesophagus, where nystatin does not work (Harrison)."
+        ]
+      },
+      {
+        title: "Candida or ringworm? Choosing nystatin, an azole or fluconazole",
+        best_for: "OPD, health centres and pharmacies without a microscope.",
+        requires: [],
+        steps: [
+          "Red, moist rash in skin folds or the nappy area, with small spots beyond the edge: Candida. Nystatin or an azole cream will work (Harrison, Nelson).",
+          "Ring-shaped rash with a scaly edge and a clearer centre, scaly patches with hair loss on the scalp, or thick crumbling nails: ringworm (tinea). Nystatin will NOT work (Harrison, Nelson). Use clotrimazole or miconazole cream; scalp and nails need oral treatment (see Clotrimazole).",
+          "Not sure which it is: an azole cream covers both (Nelson).",
+          "White plaques in the mouth with pain on swallowing, or extensive thrush in advanced HIV: think oesophageal candidiasis. Give fluconazole, not nystatin (Harrison).",
+          "Vaginal thrush: a clotrimazole or miconazole pessary for 7 nights is the usual first choice; nystatin pessaries for 14 nights are the alternative. Never oral fluconazole in pregnancy (see Fluconazole)."
+        ],
+        monitor: ["Review at 1–2 weeks; if no better, reconsider the diagnosis"],
+        cautions: [
+          "Do not use steroid–nystatin mixtures in the nappy area: the steroid is too strong for infant skin (Nelson). Never use them on ringworm.",
+          "Candida that keeps coming back: test for diabetes and HIV."
+        ]
+      }
+    ],
+    paediatric: [
+      "Newborn and infant: 1 mL four times daily after feeds, half into each cheek (BNF for Children); US product information 2 mL (preterm 1 mL). Continue 48 h after clearing.",
+      "Under 4 months, use nystatin, not miconazole oral gel, which can choke a young baby (see Miconazole).",
+      "Mild thrush in a healthy newborn may need no treatment (Nelson).",
+      "Thrush that persists or recurs without an obvious reason: test for HIV and immune problems (Nelson).",
+      "Candida nappy rash: cream, frequent changes and nappy-free time (Nelson)."
+    ],
+    cautions: [
+      "Candida only: it does not treat ringworm (tinea) (Harrison, Nelson).",
+      "Does not treat oesophageal or invasive candidiasis; oral tablets act only within the gut (Harrison).",
+      "No systemic drug interactions, because it is not absorbed. It does NOT affect warfarin or the INR. There is no interaction rule for nystatin.",
+      "The suspension contains sugar: long use can promote tooth decay, so clean the teeth or gums afterwards (product information).",
+      "Large oral doses can cause nausea or diarrhoea; local irritation and allergy are uncommon (product information).",
+      "Avoid steroid–nystatin combination creams on infants and on ringworm (Nelson)."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Mild oral thrush may be treated with topical agents such as nystatin suspension or clotrimazole troches; moderate or severe disease, or oesophageal involvement, needs systemic (mainly azole) treatment.",
+        ref: "Harrison 22nd ed. 2025, ch. 225 Superficial Fungal Infections, p. 1723"
+      },
+      {
+        book: "harrison",
+        text: "Table 222-3: cutaneous candidiasis — topical azole preferred, topical nystatin the alternative; vulvovaginal — nystatin suppository as an alternative; oral thrush — nystatin as an alternative; oesophageal — fluconazole.",
+        ref: "Harrison 22nd ed. 2025, ch. 222 Candidiasis, Table 222-3, p. 1710"
+      },
+      {
+        book: "harrison",
+        text: "Nystatin is not active against dermatophytes (tinea).",
+        ref: "Harrison 22nd ed. 2025, ch. 60 Eczema, Psoriasis, Cutaneous Infections, Acne, and Other Common Skin Disorders, p. 389"
+      },
+      {
+        book: "harrison",
+        text: "Cutaneous candidiasis: remove predisposing factors (antibiotics, chronic moisture) and use topical nystatin or an azole; a mild steroid cream can treat the inflammation. Oral nystatin is effective only for candidiasis of the gut.",
+        ref: "Harrison 22nd ed. 2025, ch. 60 Eczema, Psoriasis, Cutaneous Infections, Acne, and Other Common Skin Disorders, p. 390"
+      },
+      {
+        book: "harrison",
+        text: "The polyenes nystatin and amphotericin B have been used topically for oropharyngeal and vaginal candidiasis.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1692"
+      },
+      {
+        book: "nelson",
+        text: "Oral thrush affects 2–5 % of normal newborns. Mild cases may not need treatment; when treatment is warranted, topical nystatin is the most commonly prescribed agent. Persistent or recurrent thrush without a reason such as antibiotics warrants a search for HIV or another immune defect.",
+        ref: "Nelson 22nd ed. 2024, ch. 280 Candida, p. 1922"
+      },
+      {
+        book: "nelson",
+        text: "In breastfed infants, treating infant and mother at the same time with topical nystatin (or oral fluconazole) may be needed. Candida nappy rash present over 3 days: topical nystatin, clotrimazole or miconazole. Candida vulvovaginitis: vaginal nystatin, clotrimazole or miconazole.",
+        ref: "Nelson 22nd ed. 2024, ch. 280 Candida, p. 1923"
+      },
+      {
+        book: "nelson",
+        text: "Thrush is usually self-limited in a healthy newborn, but nystatin applied to the baby's mouth and to the breastfeeding mother's nipples hastens recovery.",
+        ref: "Nelson 22nd ed. 2024, ch. 361 Common Lesions of the Oral Soft Tissues, p. 2252"
+      },
+      {
+        book: "nelson",
+        text: "Oral candidiasis is the commonest fungal infection in children with HIV: oral nystatin suspension 2–5 mL four times daily is often effective; clotrimazole troches or fluconazole 3–6 mg/kg daily are alternatives.",
+        ref: "Nelson 22nd ed. 2024, ch. 322 Human Immunodeficiency Virus and Acquired Immunodeficiency Syndrome, p. 2093"
+      },
+      {
+        book: "nelson",
+        text: "Nystatin is specific for Candida and ineffective in other fungal infections; the topical azoles cover both dermatophytes and yeasts.",
+        ref: "Nelson 22nd ed. 2024, ch. 687 Principles of Dermatologic Therapy, p. 4039"
+      },
+      {
+        book: "nelson",
+        text: "Nappy dermatitis: treat secondary Candida with a topical anticandidal; triamcinolone–nystatin and betamethasone–clotrimazole mixtures are generally inappropriate for infants because the steroid is too potent.",
+        ref: "Nelson 22nd ed. 2024, ch. 696 Eczematous Disorders, p. 4088"
+      },
+      {
+        book: "note",
+        text: "None of the textbooks gives a neonatal or adult nystatin dose. The oral suspension doses (BNF for Children: 1 mL four times daily; US product information: 2 mL for infants, 1 mL for preterm and low-birthweight infants, and 4–6 mL for children and adults), the 48-hour continuation, giving it after feeds, the 14-night pessary course and the cream frequency are from the BNF and the nystatin product information. The improvised methods are editorial guidance for district practice. Nystatin's freedom from interactions follows from its lack of absorption (Gabbe, Harrison) and agrees with the Miconazole page.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      { name: "Nystatin (Mycostatin) oral suspension, pessary and cream product information" },
+      { name: "BNF / BNF for Children: nystatin" },
+      { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 60, 217, 222, 225" },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 280, 322, 361, 687" },
+      { name: "Gabbe's Obstetrics, 9th ed., ch. 7" }
     ],
     review: { status: "draft", by: null, date: null }
   }

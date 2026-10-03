@@ -1075,7 +1075,7 @@ window.SUBSTITUTES = {
     },
     {
       use: "Oral or oesophageal candidiasis",
-      with: "miconazole",
+      with: "nystatin",
       note: "Nystatin suspension or miconazole oral gel treat oral thrush; oesophageal candidiasis needs an azole (itraconazole) or referral."
     },
     {
@@ -1601,7 +1601,7 @@ window.SUBSTITUTES = {
     },
     {
       use: "Vaginal candidiasis in pregnancy when no topical azole is stocked",
-      none: true,
+      with: "nystatin",
       note: "Nystatin pessaries are the alternative. Do not give oral fluconazole instead; treatment can wait a day for a pessary or a referral (see Fluconazole)."
     },
     {
@@ -1633,7 +1633,7 @@ window.SUBSTITUTES = {
     },
     {
       use: "Oral thrush in an infant under 4 months, or in a patient on warfarin",
-      none: true,
+      with: "nystatin",
       note: "Nystatin oral suspension: it is not absorbed, does not affect the INR, and is the usual treatment in young infants (Nelson). Mild thrush in a well baby may need no treatment at all (Nelson)."
     }
   ],
@@ -1693,6 +1693,114 @@ window.SUBSTITUTES = {
       use: "Weekly relapse suppression in pregnancy or G6PD deficiency: chloroquine out of stock",
       none: true,
       note: "No equivalent in routine supply. Keep the patient under follow-up, ask her to return at the first fever, and treat each recurrence promptly with the blood-stage regimen."
+    }
+  ],
+
+  /* ---- clindamycin, doxycycline, nystatin ---- */
+  clindamycin: [
+    {
+      use: "Uncomplicated falciparum malaria (first line, including pregnancy where the national guideline allows)",
+      with: "artemether-lumefantrine",
+      note: "A full 6-dose course with fatty food. Quinine plus clindamycin is second line, or the first-trimester choice where the national guideline still prefers it (Gabbe)."
+    },
+    {
+      use: "Malaria partner with quinine, not pregnant and 8 years or over",
+      with: "doxycycline",
+      note: "100 mg every 12 h (child 2.2 mg/kg) for 7 days with oral quinine (Nelson). Not in pregnancy or under 8."
+    },
+    {
+      use: "Staphylococcal bone, joint, skin or soft-tissue infection (not MRSA)",
+      with: "cloxacillin",
+      note: "The usual antistaphylococcal drug. Plain amoxicillin and ampicillin do not cover Staphylococcus aureus."
+    },
+    {
+      use: "Possible MRSA skin infection",
+      with: "cotrimoxazole",
+      note: "Oral option where clindamycin is unavailable (see Cloxacillin). Drain any abscess."
+    },
+    {
+      use: "Postpartum endometritis or pelvic sepsis",
+      with: "metronidazole",
+      note: "Ampicillin plus gentamicin plus metronidazole covers the same organisms (Gabbe, SMFM regimen for genital tract sepsis)."
+    },
+    {
+      use: "Anaerobic cover (pelvis, abdomen, lung abscess, dental infection)",
+      with: "metronidazole",
+      note: "Covers anaerobes only, not staphylococci or streptococci."
+    },
+    {
+      use: "Necrotising fasciitis or toxic shock (toxin suppression)",
+      none: true,
+      note: "No usual-stock drug replaces clindamycin's toxin suppression; Harrison names linezolid, rarely stocked. Give high-dose benzylpenicillin and take the patient for urgent debridement. Surgery is what saves life, so never wait for clindamycin."
+    },
+    {
+      use: "Caesarean prophylaxis in a woman with significant penicillin allergy",
+      none: true,
+      note: "Ask the obstetrician and anaesthetist and follow the hospital protocol. Do not delay the operation for the antibiotic."
+    }
+  ],
+  doxycycline: [
+    {
+      use: "Malaria partner with quinine in pregnancy or under 8 years",
+      with: "clindamycin",
+      note: "20 mg/kg/day for 7 days with oral quinine; the preferred partner in pregnancy and young children (Nelson)."
+    },
+    {
+      use: "Cholera, single dose",
+      with: "azithromycin",
+      note: "Adult 1 g once; child 20 mg/kg (max 1 g) (Harrison, Nelson). Also the choice in pregnancy."
+    },
+    {
+      use: "Cholera where the strain is known to be susceptible",
+      with: "ciprofloxacin",
+      note: "Child 20 mg/kg (max 1 g) once (Nelson). Resistance is increasing: follow local susceptibility."
+    },
+    {
+      use: "Typhus or spotted fever when doxycycline cannot be given or swallowed",
+      with: "chloramphenicol",
+      note: "50–100 mg/kg/day in 4 doses, max 4 g/day (Nelson). Less effective and higher mortality than doxycycline (Harrison, Nelson): change to doxycycline as soon as possible."
+    },
+    {
+      use: "Chlamydia, including in pregnancy",
+      with: "azithromycin",
+      note: "1 g by mouth once; the preferred treatment in pregnancy."
+    },
+    {
+      use: "Louse-borne relapsing fever in pregnancy, a child under 8, or doxycycline allergy",
+      with: "erythromycin",
+      note: "Adult 500 mg; child 12.5 mg/kg (Harrison). Penicillin is the other option (see Benzylpenicillin). Observe for the Jarisch–Herxheimer reaction exactly as with doxycycline."
+    },
+    {
+      use: "Brucellosis in a child under 8 or in pregnancy",
+      with: "cotrimoxazole",
+      note: "High dose (Harrison): adults two or three standard tablets twice daily depending on weight. Long course; confirm with a senior."
+    },
+    {
+      use: "Severe leptospirosis",
+      with: "benzylpenicillin",
+      note: "1.5 million units IV or IM every 6 h for 7 days (Harrison). Ceftriaxone 2 g daily is the alternative."
+    }
+  ],
+  nystatin: [
+    {
+      use: "Oral thrush in an adult or child over 4 months, NOT on warfarin",
+      with: "miconazole",
+      note: "Oral gel four times daily after food. Never with warfarin, and not under 4 months (choking)."
+    },
+    {
+      use: "Moderate or severe oral thrush, pain on swallowing, or no response to nystatin",
+      with: "fluconazole",
+      note: "Adult 100–200 mg daily; child 3–6 mg/kg daily (Harrison, Nelson). Raises the INR on warfarin; never in pregnancy for thrush."
+    },
+    {
+      use: "Vaginal candidiasis, including pregnancy",
+      with: "clotrimazole",
+      note: "100 mg pessary at night for 7 nights. The usual first choice."
+    },
+    {
+      use: "Skin Candida or nappy rash, and any ringworm (tinea)",
+      with: "clotrimazole",
+      note: "1 % cream 2–3 times daily, continued for 1 week after the skin looks clear. Covers both Candida and ringworm, which nystatin does not."
     }
   ]
 };
