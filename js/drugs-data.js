@@ -15668,7 +15668,7 @@ window.DRUG_DB = [
     cautions: [
       "Bleeding is the main harm, and at least half of the bleeds happen when the INR is above range. Keep it in range, ask about bleeding at every visit, and treat high INRs promptly (see Standard: High INR).",
       "No aspirin or NSAIDs (diclofenac, ibuprofen) unless a specialist has decided the combination is needed. Aspirin with warfarin raises bleeding two- to threefold. Use paracetamol for pain (see Interactions).",
-      "Many drugs change the INR: see the Interactions tab. Not listed there because they are not drug entries in this app, but they also RAISE the INR: cotrimoxazole, fluconazole, ciprofloxacin and erythromycin. Antiretroviral regimens containing efavirenz, nevirapine or ritonavir-boosted protease inhibitors can move it either way, so check the INR when ART is started or changed.",
+      "Many drugs change the INR: see the Interactions tab. Antiretroviral regimens containing efavirenz, nevirapine or ritonavir-boosted protease inhibitors can move it either way, so check the INR when ART is started or changed.",
       "Skin necrosis on days 2–5 (thighs, breasts, buttocks) in protein C or S deficiency. If it happens, stop warfarin, give vitamin K and anticoagulate with heparin. In known deficiency, start warfarin at a low dose with a full heparin overlap.",
       "Pregnancy: contraindicated except in specialist-managed mechanical valves. See the Safety tab. Compatible with breastfeeding.",
       "Avoid IM injections where possible (risk of a large haematoma). Use the oral, IV or SC route. If an IM vaccine is needed, use a fine needle and press firmly for 2 minutes.",
@@ -15798,6 +15798,5025 @@ window.DRUG_DB = [
         name: "Otto CM et al. 2020 ACC/AHA Guideline for the Management of Patients With Valvular Heart Disease"
       },
       { name: "BNF and BNF for Children: warfarin monograph and interactions appendix" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- anaesthesia ---- */
+  {
+    id: "suxamethonium",
+    name: "Suxamethonium (succinylcholine)",
+    aka: ["Succinylcholine", "Scoline", "Anectine", "Sux"],
+    cls: "Depolarising neuromuscular blocker (short-acting muscle relaxant)",
+    cat: "analgesia",
+    wards: ["emergency", "maternity", "paediatric", "surgical", "icu"],
+    tags: [
+      "anaesthesia",
+      "rapid sequence induction",
+      "intubation",
+      "muscle relaxant",
+      "full stomach",
+      "caesarean",
+      "laryngospasm",
+      "malignant hyperthermia",
+      "hyperkalaemia"
+    ],
+    presentation: [
+      "50 mg/mL, 2 mL ampoule (100 mg) is the usual strength; 20 mg/mL and 100 mg/mL also exist — CHECK the strength every time.",
+      "Store in a fridge at 2–8 °C; do not freeze. It slowly loses potency at room temperature. Labels differ, but the usual allowance is up to 14 days at room temperature (not above 25 °C): write the date it left the fridge on the box and discard it after that. Ampoules kept warm on a theatre trolley for weeks may not work when you need them.",
+      "It stops breathing within a minute. Never draw it up until the airway kit has been checked, and label the syringe."
+    ],
+    indications: [
+      "Rapid-sequence intubation of a patient with a full stomach: emergency laparotomy, caesarean section under general anaesthesia, trauma",
+      "Laryngospasm that does not respond to airway manoeuvres, oxygen and deepening anaesthesia",
+      "Intubation when a short block is wanted, so that breathing returns quickly if intubation fails"
+    ],
+    standard: {
+      summary: "One IV dose paralyses in under a minute and wears off in 5–8 minutes (Schwartz). It is chosen at caesarean and for a full stomach because breathing comes back quickly if intubation fails (Williams), but only if you can keep the patient oxygenated by bag and mask until then. There is no drug that reverses it.",
+      items: [
+        {
+          label: "Adult intubation",
+          text: "1–1.5 mg/kg IV as a fast push immediately after the induction drug (Schwartz's table gives 1 mg/kg; 1.5 mg/kg is commonly used for rapid-sequence induction). 70 kg: 70–100 mg = 1.4–2 mL of 50 mg/mL. Confirm with the anaesthetist."
+        },
+        {
+          label: "Child",
+          text: "Infants and young children 2 mg/kg IV; older children and adolescents 1–1.5 mg/kg (BNF for Children — Nelson gives no dose). Atropine 0.02 mg/kg IV (minimum 0.1 mg) drawn up and, in many units, given first."
+        },
+        {
+          label: "No IV access (laryngospasm)",
+          text: "Child: up to 4 mg/kg IM (maximum 100 mg) into the thigh (BNF for Children). Onset is slower (2–4 min); keep ventilating with oxygen while it works."
+        },
+        {
+          label: "Onset and duration",
+          text: "Fasciculation, then complete relaxation within about 60 seconds; spontaneous breathing returns in 5–8 minutes (Schwartz). If it has not returned by 10 minutes, see 'Prolonged paralysis' below."
+        },
+        {
+          label: "Second dose",
+          text: "Avoid. Repeat doses cause bradycardia and asystole (worst in children) and prolonged 'phase II' block (Schwartz). If a second dose is unavoidable, give atropine first."
+        },
+        {
+          label: "Normal potassium rise",
+          text: "About 0.5 mmol/L in a healthy patient. In the patients listed below the rise can be large enough to stop the heart."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Rapid-sequence induction with minimal equipment — and the plan if intubation fails",
+        best_for: "Emergency laparotomy or caesarean section under general anaesthesia with a full stomach, often by a nurse anaesthetist working alone.",
+        requires: ["iv", "oxygen"],
+        steps: [
+          "BEFORE any drug, check: a working laryngoscope with a bright light and two blade sizes; two tube sizes with a stylet; suction working and switched on at the head; oral airways; a bag-valve-mask connected to oxygen; and an assistant for cricoid pressure. If any of this is missing, do NOT give suxamethonium — the same rule as the theatre packs (e.g. laparotomy for perforation). Resuscitate and get the kit.",
+          "Drawn up and labelled: the induction drug, suxamethonium, atropine, and a vasopressor (ephedrine 3 or 5 mg/mL, or push-dose adrenaline 10 mcg/mL). IV drip running fast.",
+          "Pre-oxygenate with a tight-fitting mask for 3–5 minutes (or 8 deep breaths).",
+          "Give the induction drug — ketamine in a shocked or septic patient, or a REDUCED dose of propofol or thiopental — then immediately suxamethonium 1–1.5 mg/kg as a fast push. Cricoid pressure as consciousness goes.",
+          "Wait for the fasciculations to stop (about 45–60 s), then intubate. Confirm: misting in the tube, both sides of the chest rising, breath sounds in both axillae, nothing over the stomach; capnography if you have it.",
+          "Only after the tube is confirmed, and only if neostigmine AND atropine are in the room, give vecuronium for the rest of the operation. Otherwise continue with spontaneous breathing under ketamine or a volatile agent once the suxamethonium wears off.",
+          "IF INTUBATION FAILS: do not give a second dose and keep trying. Keep cricoid pressure, insert an oral airway and ventilate with bag-mask and oxygen. The block wears off in 5–8 minutes and the patient will start breathing (Williams) — wake them up. At caesarean, continuing by face mask is a joint senior decision for a life-threatening emergency only."
+        ],
+        monitor: [
+          "SpO2 if available, lip colour and chest movement throughout",
+          "Pulse every minute from induction to intubation — slowing pulse is bradycardia from suxamethonium or hypoxia",
+          "BP every 2–3 min after induction"
+        ],
+        cautions: [
+          "Never give suxamethonium to a patient you cannot ventilate with a bag and mask, intubate and suction.",
+          "Never give it to an awake patient — always after the induction drug. Paralysis without sleep is torture and is remembered.",
+          "If the saturation falls below about 90 % or the patient goes blue during laryngoscopy, stop and ventilate with the bag before trying again."
+        ]
+      },
+      {
+        title: "Check for hyperkalaemia risk before you draw it up — who suxamethonium can kill",
+        best_for: "Every patient, but above all the burns, trauma and long-stay patients that district theatres see every week.",
+        requires: [],
+        steps: [
+          "Do NOT give suxamethonium to a patient with:",
+          "Burns — from about 24–48 hours after the burn until it has healed, and for months afterwards (Nelson). In the first 24 hours it is generally considered safe.",
+          "Major crush injury or extensive muscle damage — after the first day or two; also any patient with dark (myoglobin) urine.",
+          "Denervation — spinal cord injury, stroke with paralysis, Guillain–Barré syndrome, major nerve injury — from a few days after onset and for months.",
+          "Prolonged immobility or critical illness — bedbound or in ICU for days to weeks, disuse muscle wasting (Harrison).",
+          "Neuromuscular disease — muscular dystrophy (a boy with a waddling gait, big calves or a family history may have undiagnosed Duchenne), myotonia (Nelson).",
+          "A potassium already high, or kidney failure without a recent normal potassium (Nelson).",
+          "Use instead: a full intubating dose of vecuronium (0.15 mg/kg), with neostigmine and atropine available and a second airway plan out, exactly as the theatre packs advise — or a spinal or ketamine technique that avoids a relaxant altogether.",
+          "If the heart slows, the QRS widens, or the patient arrests after suxamethonium: treat as hyperkalaemia — calcium gluconate 10 mL of 10 % IV, insulin with glucose, salbutamol, and prolonged CPR."
+        ],
+        monitor: ["ECG if available for the first 10 minutes after the dose", "Pulse continuously"],
+        cautions: [
+          "Hyperkalaemic arrest after suxamethonium is often resistant to treatment. Prevention — asking the questions above — is the treatment."
+        ]
+      },
+      {
+        title: "Malignant hyperthermia when there is no dantrolene",
+        best_for: "Any theatre that uses suxamethonium or a volatile agent (halothane, isoflurane, sevoflurane). Most district hospitals have no dantrolene.",
+        requires: ["iv"],
+        steps: [
+          "Recognise it early — fever is LATE (Schwartz). Early signs: unexplained rising heart rate, rising end-tidal CO2 or fast breathing, a soda-lime canister that becomes hot, jaw rigidity after suxamethonium, generalised rigidity, sweating, mottled skin, dark urine.",
+          "Shout for help. Tell the surgeon to stop, pack and close as fast as possible.",
+          "Stop every trigger: turn off and if possible remove the vaporiser; no more suxamethonium. Ventilate with 100 % oxygen at high flow and 2–3 times the normal minute volume, through a clean circuit or a self-inflating bag.",
+          "Keep the patient asleep with drugs that do NOT trigger it: ketamine, propofol, thiopental or a benzodiazepine.",
+          "COOL HARD — without dantrolene this is your main treatment (Schwartz: ice packing). Ice packs to the neck, axillae and groins; give IV fluids cold from the fridge; strip, wet the skin and fan it; cold-water lavage through a nasogastric tube or urinary catheter if you can. Stop active cooling at about 38 °C so the patient does not overshoot into hypothermia.",
+          "Treat the hyperkalaemia: calcium gluconate 10 mL of 10 % IV, insulin with glucose. Severe metabolic acidosis: sodium bicarbonate 1 mmol/kg IV slowly while ventilating well.",
+          "Arrhythmias: correct potassium and acidosis first; then amiodarone or lidocaine as usual.",
+          "Urinary catheter. Keep urine flowing (at least 1 mL/kg/h) with IV fluid and, if needed, furosemide — dark urine is myoglobin and threatens the kidneys. Check glucose.",
+          "Phone the referral hospital at once for dantrolene and transfer: dantrolene 2.5 mg/kg IV, repeated until the signs settle (Schwartz).",
+          "Afterwards: observe for at least 24 hours for recurrence (Schwartz). Tell the patient and family in writing: it is inherited; every future anaesthetic must avoid volatile agents and suxamethonium. Ketamine, propofol, thiopental, spinal and local anaesthesia are safe."
+        ],
+        monitor: [
+          "Temperature every 5 min — rectal or oesophageal if possible",
+          "Pulse, BP, SpO2, breathing",
+          "Urine colour and volume hourly",
+          "Potassium and glucose if the laboratory can do them"
+        ],
+        cautions: [
+          "Without dantrolene the mortality is high. Act on the early signs — do not wait for a fever.",
+          "Paracetamol does not lower the temperature in malignant hyperthermia; only cooling and dantrolene do.",
+          "Jaw rigidity after suxamethonium can be the first sign. In an elective case, stop and wake the patient; in an emergency, continue with a trigger-free technique and watch closely."
+        ]
+      },
+      {
+        title: "Prolonged paralysis after a single dose (low cholinesterase)",
+        best_for: "A patient who is still not breathing adequately 10 minutes after one dose of suxamethonium.",
+        requires: ["oxygen"],
+        steps: [
+          "Normal recovery takes 5–8 minutes. Longer than 10 minutes means prolonged block until proven otherwise.",
+          "Causes: inherited cholinesterase deficiency (block lasts hours — Schwartz); recent organophosphate or carbamate pesticide exposure (Nelson); neostigmine given earlier; late pregnancy, severe liver disease or severe malnutrition (usually only a few extra minutes).",
+          "Keep ventilating by hand with oxygen through the tube. A named person at the bag, with a named relief.",
+          "Assume the patient is AWAKE but unable to move. Give sedation (ketamine, propofol or a benzodiazepine) and tell them you know and that it will wear off.",
+          "Do NOT give neostigmine to 'reverse' it — neostigmine blocks the same enzyme. Leave any reversal decision to an anaesthetist.",
+          "Ventilate until full strength is back: sustained head lift for 5 seconds, a strong grip that does not fade, a good cough. It may take hours.",
+          "Exclude other causes: low glucose, hypothermia, opioid or magnesium excess.",
+          "Afterwards tell the patient and write in the notes and on a card: 'suxamethonium apnoea — warn every anaesthetist'. Relatives may share it."
+        ],
+        monitor: ["Chest movement and SpO2", "Signs of awareness: tachycardia, sweating, tears, rising BP"],
+        cautions: [
+          "Some anaesthetists give fresh frozen plasma (it contains cholinesterase). It is not routine and carries transfusion risks — confirm with the anaesthetist."
+        ]
+      }
+    ],
+    paediatric: [
+      "Infants and young children 2 mg/kg IV; older children 1–1.5 mg/kg (BNF for Children). IM up to 4 mg/kg (maximum 100 mg) for laryngospasm when there is no IV.",
+      "Bradycardia, even asystole, can follow the first dose in a small child and is usual after a second (Schwartz). Have atropine 0.02 mg/kg (minimum 0.1 mg) drawn up; give it before any repeat dose.",
+      "Nelson describes suxamethonium as high-risk in children and now rarely used except to relieve laryngospasm quickly; an undiagnosed myopathy can cause hyperkalaemic cardiac arrest. Neonates: experienced anaesthetist only."
+    ],
+    cautions: [
+      "Contraindicated: burns after the first 24–48 h, crush injury, denervation, prolonged immobility, neuromuscular disease, high potassium, a personal or family history of malignant hyperthermia or of prolonged paralysis after an anaesthetic.",
+      "Organophosphate or carbamate poisoning: avoid — paralysis is prolonged (Nelson).",
+      "Transiently raises intraocular and intracranial pressure (Schwartz). In a penetrating eye injury use an alternative if you safely can.",
+      "Muscle pains for a day or two after surgery are common, especially in young adults who walk about early.",
+      "Magnesium sulfate and neostigmine prolong the block (see interactions); so does metoclopramide (see its page).",
+      "Never mix in the same syringe or line as thiopental: the alkaline solution inactivates it. Flush between drugs."
+    ],
+    antidote: "There is no reversal drug. Ventilate with bag and oxygen until it wears off (5–8 minutes, or hours with cholinesterase deficiency). Malignant hyperthermia: stop triggers, cool, and dantrolene 2.5 mg/kg IV where it exists. Hyperkalaemic arrhythmia: calcium gluconate 10 mL of 10 % IV.",
+    calc: {
+      type: "weight",
+      dosePerKg: 1,
+      doseUnit: "mg",
+      conc: 50,
+      concUnit: "mg/mL",
+      label: "Intubating dose (1 mg/kg; 1.5 mg/kg often used for rapid sequence) at 50 mg/mL"
+    },
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Suxamethonium (succinylcholine) is the only depolarising relaxant in use; onset under 60 seconds and offset in 5–8 minutes make it ideal for securing the airway.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031"
+      },
+      {
+        book: "schwartz",
+        text: "Intubating dose 1 mg/kg. Can cause severe hyperkalaemia; contraindicated in burns and denervating conditions; excessive or prolonged use can lead to phase II block.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032, Table 46-2"
+      },
+      {
+        book: "schwartz",
+        text: "Suxamethonium can cause bradycardia, which can be severe in children; it transiently raises intracranial and intraocular pressure, and fasciculations cause postoperative myalgia.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "schwartz",
+        text: "It is broken down by plasma (pseudo)cholinesterase; patients homozygous for pseudocholinesterase deficiency have prolonged neuromuscular block, typically lasting several hours.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "schwartz",
+        text: "Malignant hyperthermia: triggered by all volatile anaesthetics and suxamethonium; tachycardia and rising end-tidal CO2, acidosis, rhabdomyolysis, hyperkalaemia and arrest; fever comes late. Stop the volatile and give dantrolene 2.5 mg/kg IV.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2040"
+      },
+      {
+        book: "schwartz",
+        text: "Malignant hyperthermia follows suxamethonium and halothane-type agents; stop the drugs, give dantrolene, and cool aggressively, for example by packing in ice. Severe cases carry a mortality near 30%.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 12 Quality, Patient Safety, Assessments of Care, and Complications, p. 428"
+      },
+      {
+        book: "harrison",
+        text: "Suxamethonium is contraindicated after thermal trauma, neuromuscular injury, disuse atrophy, mucositis or prolonged immobilisation: upregulated acetylcholine receptors release an exaggerated burst of potassium.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 358"
+      },
+      {
+        book: "nelson",
+        text: "Burns: risk of rhabdomyolysis and hyperkalaemia from suxamethonium for many months. Neuromuscular disease: avoid depolarising relaxants. Renal disease: use only when potassium has recently been shown to be normal.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 666, Table 91.3"
+      },
+      {
+        book: "nelson",
+        text: "Organophosphate or carbamate poisoning: avoid suxamethonium for intubation, because the poisoned cholinesterases are the enzymes that break it down, so paralysis is prolonged.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, p. 719"
+      },
+      {
+        book: "nelson",
+        text: "In children suxamethonium has a high-risk profile (hyperkalaemia, raised pressures, malignant hyperthermia, myoglobinuria) and is rarely used except to relieve laryngospasm quickly.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 671"
+      },
+      {
+        book: "williams",
+        text: "At caesarean under general anaesthesia suxamethonium is the usual relaxant: intense relaxation for intubation, with rapid return of spontaneous breathing if intubation fails.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1095"
+      }
+    ],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003 (anaesthesia chapters)" },
+      { name: "BNF and BNF for Children — suxamethonium chloride" },
+      {
+        name: "Malignant Hyperthermia Association of the United States (MHAUS) — emergency treatment of an acute MH event"
+      },
+      { name: "Manufacturer storage instructions for suxamethonium (room-temperature allowance)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "neostigmine",
+    name: "Neostigmine",
+    aka: ["Prostigmin"],
+    cls: "Anticholinesterase (reversal of non-depolarising muscle relaxants)",
+    cat: "analgesia",
+    wards: ["emergency", "maternity", "paediatric", "surgical", "icu"],
+    tags: [
+      "anaesthesia",
+      "reversal",
+      "muscle relaxant",
+      "vecuronium",
+      "atropine",
+      "snakebite",
+      "pseudo-obstruction"
+    ],
+    presentation: [
+      "2.5 mg/mL 1 mL ampoule is the usual anaesthetic strength; 0.5 mg/mL also exists — CHECK every time.",
+      "Some countries supply a fixed mixture of neostigmine 2.5 mg with glycopyrrolate (glycopyrronium) 0.5 mg. Glycopyrrolate has no page in this app; atropine does the same job.",
+      "Room temperature; protect from light."
+    ],
+    indications: [
+      "Reversal of non-depolarising muscle relaxants (vecuronium, atracurium, rocuronium, pancuronium) at the end of surgery — ALWAYS with atropine",
+      "Neurotoxic snakebite with ptosis or weakness: a test dose after atropine (Harrison; see antivenom page)",
+      "Acute colonic pseudo-obstruction — only with cardiac monitoring and atropine at the bedside (Harrison, Schwartz)"
+    ],
+    standard: {
+      summary: "Neostigmine only speeds up a recovery that has already started — it does not reverse a deep block (Nelson). Give it with an antimuscarinic every time, wait 10 minutes, and judge the patient, not the clock.",
+      items: [
+        {
+          label: "Reversal — adult",
+          text: "Atropine 0.02 mg/kg IV (typically 1–1.2 mg), then neostigmine 0.05 mg/kg IV slowly over about 1 minute — 2.5 mg for an average adult. CEILING: 5 mg in total (about 0.07 mg/kg). More adds no reversal and can itself cause weakness."
+        },
+        {
+          label: "Reversal — child",
+          text: "Atropine 0.02 mg/kg (minimum 0.1 mg) with neostigmine 0.05 mg/kg, maximum 2.5 mg (BNF for Children)."
+        },
+        {
+          label: "When",
+          text: "Only once the block has started to wear off: the patient is making breathing efforts of their own, swallowing or moving — or, with a nerve stimulator, at least two twitches of the train-of-four. Not within 20–30 minutes of a full dose of vecuronium."
+        },
+        {
+          label: "Onset",
+          text: "Begins within 1–2 minutes, greatest effect at 7–10 minutes. Do not give more before 10 minutes have passed."
+        },
+        {
+          label: "Snakebite test dose",
+          text: "Atropine 0.6 mg IV first (child 0.02 mg/kg, minimum 0.1 mg), then neostigmine 0.02 mg/kg IV or IM (child 0.04 mg/kg); if clearly better after 30 min, 0.5 mg (child 0.01 mg/kg) hourly (Harrison). Never instead of antivenom or ventilation."
+        },
+        {
+          label: "Colonic pseudo-obstruction",
+          text: "2 mg IV once (Schwartz), only after mechanical obstruction is excluded, lying flat, with ECG monitoring and atropine drawn up. Refer if you cannot provide that."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Reversal without a nerve stimulator — is the block wearing off?",
+        best_for: "Every district theatre: almost none have a nerve stimulator.",
+        requires: ["iv"],
+        steps: [
+          "Wait for signs that the block is already wearing off: breathing efforts against the bag, swallowing or bucking on the tube, grimacing, moving a hand. Until you see them, keep ventilating and keep the patient asleep.",
+          "Then give atropine 0.02 mg/kg and neostigmine 0.05 mg/kg (maximum 5 mg; child maximum 2.5 mg) — see the next card for how.",
+          "Keep ventilating and wait a full 10 minutes.",
+          "Test, with the patient waking: lifts the head off the pillow and holds it for 5 seconds; strong hand grip that does not fade; pushes the tongue out; coughs strongly; breathes deeply and regularly.",
+          "If the tests fail, do NOT give more neostigmine beyond the ceiling. Keep the patient asleep and ventilated, and wait.",
+          "Extubate only when awake and passing the tests. If after extubation there is see-saw breathing, jerky uncoordinated movement, a weak cough or falling saturation, residual block is likely: re-ventilate with bag-mask and oxygen."
+        ],
+        monitor: [
+          "Breathing, chest movement, SpO2 and pulse for at least 30 minutes in recovery",
+          "Pulse during and after injection — bradycardia"
+        ],
+        cautions: [
+          "Neostigmine given to a deep block (no breathing, no movement) does not work and uses up your maximum dose.",
+          "Residual block is common even after reversal (Nelson). A drowsy, weak patient in recovery after a relaxant has residual block until proven otherwise."
+        ]
+      },
+      {
+        title: "Why the antimuscarinic, and how to give the two together",
+        best_for: "Every reversal. Atropine is the antimuscarinic in this app; glycopyrrolate (glycopyrronium) does the same job where stocked.",
+        requires: ["iv"],
+        steps: [
+          "Neostigmine raises acetylcholine everywhere, not just at the muscle: at the heart (bradycardia, heart block, asystole), lungs (bronchospasm, secretions), gut and salivary glands. Atropine blocks those muscarinic effects but not the muscle (nicotinic) effect you want (Schwartz, Nelson).",
+          "Method 1: atropine 0.02 mg/kg IV, wait 30–60 seconds until the heart rate rises, then neostigmine slowly over 1 minute.",
+          "Method 2: draw both into one syringe and give over 1–2 minutes. Atropine acts faster, so the pulse rises first and then settles.",
+          "If the pulse still slows: further atropine 0.5 mg in an adult, 0.02 mg/kg in a child.",
+          "NO ATROPINE ON THE SHELF? Do not give neostigmine. Ventilate until the block wears off on its own — and do not give a long-acting relaxant to the next patient until atropine is restocked."
+        ],
+        monitor: ["Pulse continuously for 5 minutes after the injection", "Wheeze, secretions"],
+        cautions: ["Extra care with beta-blockers, heart block, a slow pulse already, and asthma."]
+      },
+      {
+        title: "No neostigmine in the theatre",
+        best_for: "Stock-out of the reversal agent.",
+        requires: ["oxygen"],
+        steps: [
+          "Say it plainly, as the theatre packs do: no reversal agent, no long-acting non-depolarising relaxant.",
+          "Intubate with suxamethonium and maintain with ketamine and spontaneous breathing, or use a spinal or local technique.",
+          "If vecuronium has already been given: keep the patient asleep and ventilate by hand with oxygen — a named person at the bag with a named relief — until the clinical tests above show full recovery. A single intubating dose lasts 30–75 minutes (Nelson); top-ups add to that.",
+          "Sugammadex reverses vecuronium and rocuronium at any depth where it is available (Schwartz). It does not reverse atracurium."
+        ],
+        monitor: ["Chest movement and SpO2 throughout", "Signs of awareness"],
+        cautions: ["'It will wear off' is a plan only if someone is ventilating until it does."]
+      }
+    ],
+    paediatric: [
+      "Neostigmine 0.05 mg/kg (maximum 2.5 mg) with atropine 0.02 mg/kg (minimum 0.1 mg) (BNF for Children). Nelson: a vagolytic must be co-administered to prevent bradycardia.",
+      "Infants and small children are especially prone to bradycardia — atropine first, and watch the pulse."
+    ],
+    cautions: [
+      "NEVER give it to reverse suxamethonium: it blocks the enzyme that breaks suxamethonium down and prolongs paralysis.",
+      "Contraindicated in mechanical bowel or urinary obstruction.",
+      "Bradycardia, heart block, recent myocardial infarction, asthma: use with care and atropine.",
+      "Myasthenia gravis: excess causes cholinergic crisis (weakness that looks like myasthenia) — specialist only. Myotonia: use with caution (Nelson).",
+      "Weakness after the ceiling dose may be from neostigmine itself — ventilate, do not give more."
+    ],
+    antidote: "Atropine for excess muscarinic effects (bradycardia, salivation, bronchospasm): 0.5–1 mg IV in an adult, 0.02 mg/kg in a child. Excess neostigmine weakens muscles too — support breathing.",
+    calc: {
+      type: "weight",
+      dosePerKg: 0.05,
+      doseUnit: "mg",
+      conc: 2.5,
+      concUnit: "mg/mL",
+      maxDose: 5,
+      label: "Reversal dose (0.05 mg/kg, max 5 mg adult / 2.5 mg child) at 2.5 mg/mL — ALWAYS with atropine 0.02 mg/kg"
+    },
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Non-depolarising block is usually reversed; failure to reverse adequately raises the risk of postoperative respiratory failure and death. Anticholinesterases (neostigmine) are given together with an antimuscarinic, almost always atropine or glycopyrrolate.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "nelson",
+        text: "Neostigmine reverses non-depolarising relaxants by raising acetylcholine; a vagolytic (atropine or glycopyrrolate) must be co-administered to prevent bradycardia.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 673"
+      },
+      {
+        book: "nelson",
+        text: "How well neostigmine works depends on how deep the block is when it is given, and residual block is common despite reversal.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 673"
+      },
+      {
+        book: "harrison",
+        text: "Neurotoxic snakebite test dose: atropine 0.6 mg IV first (child 0.02 mg/kg, minimum 0.1 mg), then neostigmine 0.02 mg/kg IV or IM (child 0.04 mg/kg); if improved after 30 min, 0.5 mg (child 0.01 mg/kg) hourly.",
+        ref: "Harrison 22nd ed. 2025, ch. 471 Disorders Caused by Venomous Snakebites and Marine Animal Exposures, Table 471-2, p. 3721"
+      },
+      {
+        book: "harrison",
+        text: "Colonic pseudo-obstruction: neostigmine only when mechanical obstruction is excluded; cardiac monitoring is required and atropine must be immediately available.",
+        ref: "Harrison 22nd ed. 2025, ch. 341 Acute Intestinal Obstruction, p. 2593"
+      },
+      {
+        book: "schwartz",
+        text: "A single 2 mg IV dose of neostigmine decompresses colonic pseudo-obstruction, but may cause transient profound bradycardia.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 29 Colon, Rectum, and Anus, p. 1308"
+      },
+      {
+        book: "nelson",
+        text: "Myotonia: avoid suxamethonium, use reduced-dose non-depolarising relaxants, and use neostigmine with caution at recovery.",
+        ref: "Nelson 22nd ed. 2024, ch. 649, p. 3838"
+      }
+    ],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "BNF and BNF for Children — neostigmine" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "vecuronium",
+    name: "Vecuronium",
+    aka: ["Norcuron"],
+    cls: "Non-depolarising neuromuscular blocker (intermediate-acting muscle relaxant)",
+    cat: "analgesia",
+    wards: ["surgical", "maternity", "icu", "emergency"],
+    tags: ["anaesthesia", "muscle relaxant", "intubation", "laparotomy", "paralysis", "neostigmine"],
+    presentation: [
+      "10 mg freeze-dried powder vial. Some packs include water for injection; many do not.",
+      "The powder keeps at room temperature (follow the label, usually below 25–30 °C) — no fridge needed, unlike suxamethonium and rocuronium.",
+      "Reconstitute 10 mg with 10 mL water for injection = 1 mg/mL, so the dose in mL is 0.1 × weight in kg. (5 mL gives 2 mg/mL.) Use within 24 hours; discard if cloudy."
+    ],
+    indications: [
+      "Muscle relaxation for abdominal and other major surgery under general anaesthesia with a tube and controlled ventilation",
+      "Maintenance of relaxation after intubation with suxamethonium",
+      "Intubation when suxamethonium is contraindicated (high dose — see the theatre packs)"
+    ],
+    standard: {
+      summary: "Vecuronium paralyses for 30–75 minutes (Nelson) and does not wear off on cue. Give it only to a patient who is asleep and stays asleep, who is intubated or certain to be, and whom someone can ventilate until the block is reversed with neostigmine and atropine.",
+      items: [
+        {
+          label: "Intubating dose",
+          text: "0.1 mg/kg IV (Schwartz, Nelson); onset 1.5–3 minutes. 70 kg: 7 mg = 7 mL of 1 mg/mL."
+        },
+        {
+          label: "Rapid intubation when suxamethonium cannot be used",
+          text: "0.15 mg/kg IV — faster onset but a block that often lasts more than an hour. Only with a second airway plan on the trolley and a commitment to ventilate (theatre packs)."
+        },
+        {
+          label: "Top-ups",
+          text: "0.02–0.03 mg/kg (about 1–2 mg in an adult) when relaxation returns — the surgeon finds the abdomen tight or the patient breathes against the bag — usually every 20–30 minutes. Avoid a top-up in the last 20–30 minutes of the operation so that reversal will work."
+        },
+        {
+          label: "After suxamethonium",
+          text: "Give it once the tube is confirmed; confirm with the anaesthetist whether to wait for the suxamethonium to wear off first."
+        },
+        {
+          label: "Reversal",
+          text: "Neostigmine 0.05 mg/kg (maximum 5 mg) with atropine 0.02 mg/kg, once the block has started to wear off. A vecuronium block is always reversed (Nelson)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "The hard rule: no airway kit, no reversal, no one to ventilate — no vecuronium",
+        best_for: "Every decision to give a long-acting relaxant in a district theatre. This is the rule the theatre packs repeat for laparotomy, bowel obstruction and craniotomy.",
+        requires: ["iv", "oxygen"],
+        steps: [
+          "Before you draw it up, all five must be true:",
+          "1. A working laryngoscope, tubes, suction and a bag-valve-mask with oxygen — and you can intubate. Never paralyse a patient you cannot intubate AND ventilate.",
+          "2. Neostigmine AND atropine are in the room, not in the pharmacy.",
+          "3. A person to ventilate for as long as the block lasts — a ventilator, or a named person at the bag with a named relief.",
+          "4. Anaesthesia continues for as long as the paralysis does: paralysis does not stop awareness, so sedation and amnesia are mandatory (Harrison). Keep ketamine or the volatile agent going.",
+          "5. Every dose and its time written on the anaesthetic chart.",
+          "If any is missing: intubate with suxamethonium and keep the patient breathing spontaneously under ketamine with generous local infiltration, or use a spinal for lower abdominal surgery in a resuscitated patient (theatre packs)."
+        ],
+        monitor: [
+          "Chest movement, SpO2 and pulse continuously",
+          "Signs of awareness: tachycardia, rising BP, sweating, tears — deepen the anaesthetic"
+        ],
+        cautions: [
+          "A relaxant given before a failed intubation leaves a patient who can neither breathe nor be woken for an hour. There is no safe workaround for missing airway kit."
+        ]
+      },
+      {
+        title: "Reconstituting and dosing with no fridge and no pump",
+        best_for: "District theatres with powder vials, 10 mL syringes and no syringe driver.",
+        requires: ["iv"],
+        steps: [
+          "Add 10 mL water for injection to the 10 mg vial; swirl until clear. Label the syringe 'VECURONIUM 1 mg/mL' in large letters.",
+          "Dose in mL = 0.1 × weight in kg (60 kg = 6 mL). Top-ups: 1–2 mL in an adult.",
+          "No infusions without a pump — use intermittent top-ups as relaxation returns.",
+          "Never mix with thiopental in a syringe or give it through the same line without flushing: it precipitates.",
+          "Keep the unused powder at room temperature out of direct sun. Discard reconstituted drug after 24 hours."
+        ],
+        monitor: ["Time of each dose on the chart"],
+        cautions: [
+          "Paralysing drugs look like everything else in a 10 mL syringe. Keep it in a separate, labelled place on the trolley."
+        ]
+      },
+      {
+        title: "Hand ventilation through the whole block when there is no ventilator",
+        best_for: "Theatres and emergency rooms without a mechanical ventilator.",
+        requires: ["oxygen"],
+        steps: [
+          "Before the dose, name the person who will ventilate and the person who will relieve them. Write both names on the board.",
+          "Adult: about 10–12 breaths a minute, each enough to make the chest rise visibly; child: faster and smaller, watching the chest.",
+          "Keep the oxygen connected and the reservoir bag on the self-inflating bag.",
+          "Keep the patient anaesthetised throughout. Do not lighten the anaesthetic to 'help them breathe' while they are still paralysed.",
+          "Continue in recovery if needed. Reverse only when the block has started to wear off (see neostigmine)."
+        ],
+        monitor: ["Chest rise every breath, SpO2, colour", "Pulse and BP every 5 minutes"],
+        cautions: [
+          "One tired person squeezing a bag for two hours at night is how patients die after a long block. Plan the relief before you start."
+        ]
+      }
+    ],
+    paediatric: [
+      "0.1 mg/kg IV; onset 1.5–2 min, duration 30–75 min (Nelson, Table 86.11). Nelson lists vecuronium as suitable for procedures lasting more than 40 minutes.",
+      "Neonates and young infants are more sensitive and recover more slowly — experienced anaesthetist only.",
+      "Reverse with neostigmine 0.05 mg/kg (maximum 2.5 mg) and atropine 0.02 mg/kg."
+    ],
+    cautions: [
+      "Liver disease and biliary obstruction prolong the block (metabolised by the liver, excreted in bile — Nelson); kidney failure prolongs it too (Schwartz).",
+      "Myasthenia gravis: extremely sensitive — tiny doses, specialist anaesthetist only.",
+      "Magnesium sulfate and gentamicin deepen and prolong the block and weaken reversal — see interactions.",
+      "Prolonged paralysis in critical illness, especially with high-dose corticosteroids, causes myopathy and lasting weakness (Nelson).",
+      "Hypothermia prolongs the block — keep the patient warm."
+    ],
+    antidote: "Neostigmine 0.05 mg/kg IV (maximum 5 mg; child maximum 2.5 mg) WITH atropine 0.02 mg/kg, once the block has begun to wear off. Sugammadex, where available, reverses vecuronium at any depth (Schwartz). Until then: anaesthesia and ventilation.",
+    calc: {
+      type: "weight",
+      dosePerKg: 0.1,
+      doseUnit: "mg",
+      conc: 1,
+      concUnit: "mg/mL",
+      label: "Intubating dose (0.1 mg/kg) at 1 mg/mL (10 mg vial in 10 mL water)"
+    },
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Vecuronium: non-depolarising, intubating dose 0.1 mg/kg, mainly hepatic metabolism, reversible with an anticholinesterase.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032, Table 46-2"
+      },
+      {
+        book: "schwartz",
+        text: "Vecuronium is an intermediate-duration steroid relaxant metabolised by the liver and also cleared by the kidney.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "nelson",
+        text: "Vecuronium 0.1 mg/kg IV: onset 1.5–2 min, duration 30–75 min.",
+        ref: "Nelson 22nd ed. 2024, ch. 86, Table 86.11, p. 620"
+      },
+      {
+        book: "nelson",
+        text: "Vecuronium is metabolised by the liver and excreted in bile; prolonged ICU use can cause profound weakness.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 669, Table 91.8"
+      },
+      {
+        book: "nelson",
+        text: "A long-acting non-depolarising block (vecuronium) is always reversed at the end of the case.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 673"
+      },
+      {
+        book: "nelson",
+        text: "Prolonged non-depolarising block in critical illness contributes to myopathy, especially with high-dose corticosteroids.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 671"
+      },
+      {
+        book: "harrison",
+        text: "A paralysing drug removes movement without changing consciousness, so sedative-induced amnesia is mandatory whenever one is given.",
+        ref: "Harrison 22nd ed. 2025, ch. 311 Approach to the Patient with Critical Illness, p. 2295"
+      },
+      {
+        book: "gabbe",
+        text: "Aminoglycosides potentiate curare-like (non-depolarising) neuromuscular block.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 130"
+      }
+    ],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "BNF and BNF for Children — vecuronium bromide" },
+      { name: "Manufacturer reconstitution and storage instructions for vecuronium" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "ephedrine",
+    name: "Ephedrine",
+    aka: ["Ephedrine hydrochloride", "Ephedrine sulfate"],
+    cls: "Mixed-acting sympathomimetic vasopressor",
+    cat: "cardio",
+    wards: ["maternity", "surgical", "emergency"],
+    tags: ["spinal anaesthesia", "hypotension", "caesarean", "vasopressor", "anaesthesia"],
+    presentation: [
+      "30 mg/mL 1 mL ampoule (hydrochloride) or 50 mg/mL 1 mL ampoule (sulfate) — CHECK which one you have. Some places have prefilled 3 mg/mL 10 mL syringes.",
+      "Room temperature."
+    ],
+    indications: [
+      "Hypotension from spinal anaesthesia, above all at caesarean section",
+      "Hypotension after induction of general anaesthesia, especially with a slow pulse"
+    ],
+    standard: {
+      summary: "Small IV boluses, repeated. Ephedrine raises blood pressure mainly by raising heart rate and cardiac output (Williams), so it suits the patient whose pulse is slow or normal, and is less good when the pulse is already fast. First tilt and fluids, then the drug (Gabbe).",
+      items: [
+        {
+          label: "Bolus",
+          text: "5–10 mg IV, repeated after 2–3 minutes if the BP is still low. Use a diluted syringe (see below) so the dose is counted in mL."
+        },
+        {
+          label: "When to treat at caesarean",
+          text: "Treat a fall of more than about 20 % from her baseline systolic BP, or any symptoms — nausea, yawning, faintness, pallor — even before the cuff confirms it. Confirm targets with the national protocol."
+        },
+        {
+          label: "First, every time",
+          text: "Left uterine displacement (wedge under the right hip or tilt) and faster IV crystalloid (Gabbe, Williams)."
+        },
+        {
+          label: "Fast pulse",
+          text: "Where phenylephrine exists and the mother's pulse is fast, phenylephrine is preferred: ephedrine is associated with more fetal acidosis (Gabbe). Neither is in this app's stock list; push-dose adrenaline is the app's fallback."
+        },
+        {
+          label: "Routine prophylaxis",
+          text: "Do not give ephedrine to every spinal 'just in case': prophylactic ephedrine has been linked to fetal acidaemia (Williams). Have it drawn up and treat early instead."
+        },
+        {
+          label: "Tachyphylaxis",
+          text: "It works partly by releasing the patient's own noradrenaline, so repeated doses work less and less. If two or three doses have not worked, change drug and look for the cause."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Diluting to a countable strength in a 10 mL syringe",
+        best_for: "Every spinal and general anaesthetic. Draw it up BEFORE the spinal (bupivacaine page).",
+        requires: ["iv"],
+        steps: [
+          "30 mg/mL ampoule: 1 mL (30 mg) + 9 mL 0.9 % saline in a 10 mL syringe = 3 mg/mL. Dose: 2 mL = 6 mg, 3 mL = 9 mg.",
+          "50 mg/mL ampoule: 1 mL (50 mg) + 9 mL 0.9 % saline = 5 mg/mL. Dose: 1 mL = 5 mg, 2 mL = 10 mg.",
+          "Label in large letters with the strength: 'EPHEDRINE 3 mg/mL' or 'EPHEDRINE 5 mg/mL'. Choose ONE standard strength for your theatre and write it on the wall, so nobody has to work it out at 3 a.m.",
+          "Inject into the fast-running drip close to the cannula and flush.",
+          "Discard what is left at the end of the case."
+        ],
+        monitor: ["BP 1–2 minutes after each dose"],
+        cautions: [
+          "Two syringes of different strengths on one trolley is a classic error. Never leave an unlabelled syringe."
+        ]
+      },
+      {
+        title: "Spinal hypotension at caesarean with a manual BP cuff",
+        best_for: "District theatres with no automatic BP machine.",
+        requires: ["iv", "bp"],
+        steps: [
+          "Before the spinal: baseline BP and pulse; IV cannula running; 500–1000 mL Ringer's lactate co-load; ephedrine drawn up and diluted.",
+          "After the injection: lie her down with a left tilt or wedge at once.",
+          "BP every 1–2 minutes for the first 15 minutes, then every 5 minutes (as on the bupivacaine page). An assistant whose only job is the cuff and the pulse.",
+          "Nausea, yawning, faintness or pallor = hypotension until proven otherwise: fluids wide open, more tilt, and ephedrine 6–10 mg.",
+          "Repeat after 2–3 minutes if needed.",
+          "Pulse below about 50–60 with low BP: atropine 0.5–0.6 mg IV as well as ephedrine.",
+          "If two or three doses have not worked, or the pulse is fast: switch to push-dose adrenaline 5–20 mcg IV (10 mcg/mL, made in two steps as on the adrenaline page), and look for the cause — a high spinal (weak arms, difficulty breathing), concealed bleeding, or the uterus pressing on the great vessels.",
+          "After delivery the BP often recovers. Give oxytocin as a slow bolus or infusion — a large fast bolus drops the BP again."
+        ],
+        monitor: ["BP and pulse as above; the woman's speech and breathing", "Fetal heart until delivery"],
+        cautions: [
+          "A spinal without someone measuring the BP every 1–2 minutes is not safe — see the bupivacaine page."
+        ]
+      },
+      {
+        title: "No ephedrine on the shelf",
+        best_for: "Stock-out at the start of a list of spinals.",
+        requires: ["iv"],
+        steps: [
+          "Push-dose adrenaline is the app's standard alternative (caesarean case, appendicectomy theatre pack). Make it as on the adrenaline page: 1 mL of 1 mg/mL + 9 mL saline = 100 mcg/mL; then 1 mL of THAT + 9 mL saline in a new syringe = 10 mcg/mL. Give 0.5–2 mL (5–20 mcg) IV.",
+          "If the pulse is slow, atropine 0.5–0.6 mg IV may restore BP on its own.",
+          "Do not use undiluted adrenaline.",
+          "If neither adrenaline nor ephedrine is available, do not start an elective spinal."
+        ],
+        monitor: ["BP every 1–2 min, pulse"],
+        cautions: [
+          "Adrenaline doses are in micrograms, ephedrine doses in milligrams. Label each syringe with its strength and discard the 100 mcg/mL intermediate syringe."
+        ]
+      }
+    ],
+    paediatric: [
+      "Spinal hypotension is uncommon in young children, and children rarely need ephedrine. None of this app's textbooks gives a paediatric dose: dose only on the anaesthetist's instruction (BNF for Children lists weight-based bolus doses)."
+    ],
+    cautions: [
+      "Tachycardia and arrhythmias, more likely with halothane, in heart disease, and in hyperthyroidism.",
+      "Pre-eclampsia: hypotension after spinal is usually milder; use the low end of the dose (about 5 mg) and recheck — an overshoot can cause dangerous hypertension.",
+      "Never give with or just before ergometrine without checking the BP — see interactions.",
+      "MAO inhibitors: severe hypertension (preoperative tool).",
+      "Repeated doses become less effective (tachyphylaxis)."
+    ],
+    textbook: [
+      {
+        book: "williams",
+        text: "Ephedrine acts on alpha and beta receptors and indirectly releases noradrenaline; it raises blood pressure mainly by raising heart rate and cardiac output.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1079"
+      },
+      {
+        book: "williams",
+        text: "Spinal hypotension: left uterine displacement, IV crystalloid, and IV boluses of ephedrine or phenylephrine; their safety profiles are comparable.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1079"
+      },
+      {
+        book: "williams",
+        text: "Fetal acidaemia has been reported with prophylactic ephedrine, but not with prophylactic phenylephrine.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1079"
+      },
+      {
+        book: "gabbe",
+        text: "Treat spinal hypotension first with faster IV fluid and more left uterine displacement; if that fails, a vasopressor.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 350"
+      },
+      {
+        book: "gabbe",
+        text: "Compared with phenylephrine, ephedrine is associated with more fetal acidosis; its beta effect may raise fetal oxygen demand. Phenylephrine suits the tachycardic mother; ephedrine suits the mother with a slow pulse.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 350"
+      }
+    ],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "BNF and BNF for Children — ephedrine hydrochloride" },
+      {
+        name: "Ngan Kee WD et al. / Lee A et al. — ephedrine versus phenylephrine for spinal hypotension at caesarean (cited in Williams)"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "propofol",
+    name: "Propofol",
+    aka: ["Diprivan"],
+    cls: "IV anaesthetic induction agent (alkylphenol)",
+    cat: "analgesia",
+    wards: ["surgical", "maternity", "emergency", "icu", "paediatric"],
+    tags: [
+      "anaesthesia",
+      "induction",
+      "general anaesthesia",
+      "sedation",
+      "status epilepticus",
+      "hypotension"
+    ],
+    presentation: [
+      "1 % (10 mg/mL) white emulsion in 20 mL ampoules or vials (200 mg); 50 and 100 mL vials; 2 % (20 mg/mL) also exists — CHECK.",
+      "Store below 25 °C; do not freeze. Shake before use. Do not use if the emulsion has separated into an oily layer.",
+      "It is a lipid emulsion that grows bacteria: draw up with clean technique immediately before use, one ampoule for one patient, and discard drawn-up drug within 6 hours (manufacturer)."
+    ],
+    indications: [
+      "Induction of general anaesthesia — the agent of choice in a stable patient (Schwartz)",
+      "Short procedures in the hands of someone with airway skills",
+      "Refractory status epilepticus in a patient who is intubated and ventilated (Harrison)",
+      "Seizures from local anaesthetic toxicity when no benzodiazepine is available — small doses (Gabbe)"
+    ],
+    standard: {
+      summary: "Propofol gives the smoothest induction there is, and is the drug most likely to collapse the blood pressure of a shocked, septic, bleeding or elderly patient (Schwartz). Titrate it slowly to effect; never calculate a full dose and push it.",
+      items: [
+        {
+          label: "Fit adult",
+          text: "1.5–2.5 mg/kg IV, given 20–40 mg every 10 seconds until the patient stops responding to voice (BNF). 70 kg: usually 100–170 mg = 10–17 mL."
+        },
+        {
+          label: "Elderly (over 55), frail, heart disease",
+          text: "1–1.5 mg/kg or less, 20 mg every 10 seconds, waiting longer between doses (BNF). Have a vasopressor drawn up."
+        },
+        {
+          label: "Shocked, septic, bleeding",
+          text: "Resuscitate first. Ketamine is the safer induction drug (theatre packs). If propofol is all you have: tiny increments (10–20 mg), a long wait between each — the drug reaches the brain slowly when cardiac output is low — and stop at the first loss of response. The total is often well under half the fit-adult dose. Confirm with the anaesthetist."
+        },
+        {
+          label: "Child",
+          text: "Healthy children: 2–5 mg/kg (Nelson, ch. 91); a critically ill child for intubation: 1–3 mg/kg (Nelson, Table 86.11). Titrate."
+        },
+        {
+          label: "Pain on injection",
+          text: "Common (Schwartz). Use a large vein, or give lidocaine 1 % 2 mL (20 mg) IV first with the arm squeezed above the cannula, or mix 2 mL of 1 % lidocaine into 20 mL propofol just before use."
+        },
+        {
+          label: "Status epilepticus",
+          text: "Refractory, ventilated patient only: 2 mg/kg IV then 2–10 mg/kg/h by pump (Harrison). Not without intubation, a ventilator and a pump."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Induction in the shocked, septic, bleeding or elderly patient — where propofol kills",
+        best_for: "Emergency laparotomy, ruptured ectopic, septic patients, the elderly — at hospitals where propofol is the only induction drug on the shelf.",
+        requires: ["iv", "bp"],
+        steps: [
+          "Ask first: would ketamine be safer? In a hypovolaemic or septic patient it usually is (theatre packs). Use propofol only if ketamine is unavailable or contraindicated.",
+          "Resuscitate before induction: fluids and blood running through a large cannula.",
+          "Draw up a vasopressor BEFORE induction: ephedrine 3 or 5 mg/mL, or push-dose adrenaline 10 mcg/mL.",
+          "Pre-oxygenate.",
+          "Give 10–20 mg, then WAIT 30–60 seconds before the next increment. Stop as soon as the patient stops responding to voice.",
+          "Then the relaxant (suxamethonium for a full stomach) and intubation.",
+          "BP every 1–2 minutes for 10 minutes. The pressure also falls when you start positive-pressure ventilation and the stress of breathlessness is taken away (Harrison) — expect it and treat it."
+        ],
+        monitor: ["BP every 1–2 min after induction; pulse continuously; SpO2"],
+        cautions: [
+          "The patient who needs least propofol is the one in whom the standard dose is fatal.",
+          "A calculated mg/kg dose pushed in one go in a septic patient can cause cardiac arrest at induction."
+        ]
+      },
+      {
+        title: "Drawing up and keeping propofol safely with no fridge",
+        best_for: "Hot stores and busy lists.",
+        requires: [],
+        steps: [
+          "Store in the coolest place available, below 25 °C, away from direct sun; never freeze.",
+          "Shake. Wipe the ampoule neck or vial top with alcohol. Draw up immediately before use.",
+          "One ampoule, one patient. Never keep a half-used vial for the next patient: shared propofol has caused outbreaks of bloodstream infection.",
+          "Discard any drawn-up propofol within 6 hours.",
+          "Add nothing to it except lidocaine for injection pain."
+        ],
+        monitor: [],
+        cautions: ["Do not use if it looks separated or oily."]
+      },
+      {
+        title: "Choosing between propofol, thiopental and ketamine when stock is short",
+        best_for: "Deciding what to give with what is on the shelf.",
+        requires: [],
+        steps: [
+          "Shocked, bleeding, septic: ketamine 1–2 mg/kg IV (0.5–1 mg/kg if shocked).",
+          "Asthma: ketamine (a bronchodilator).",
+          "Head injury or craniotomy, stable BP: propofol or thiopental give the smooth induction without coughing that the brain wants (theatre pack, craniotomy).",
+          "Fit patient, elective case: propofol; thiopental 3–5 mg/kg is an acceptable swap (see its page for the arterial and extravasation dangers).",
+          "No one with airway skills present: none of them for anaesthesia. Ketamine at sub-dissociative doses is the safest analgesic option; refer or wait."
+        ],
+        monitor: [],
+        cautions: [
+          "Every induction agent stops breathing and lowers BP in some patients. The drug choice never replaces airway kit and a trained person."
+        ]
+      }
+    ],
+    paediatric: [
+      "2–5 mg/kg in healthy children (Nelson, ch. 91); 1–3 mg/kg for intubation of a critically ill child (Nelson, Table 86.11). Titrate to effect.",
+      "Burns and itches on injection — use a large vein or lidocaine first.",
+      "Prolonged infusion beyond 24–48 hours in children is not recommended: propofol infusion syndrome (bradycardia, acidosis, rhabdomyolysis, heart failure, death) (Nelson)."
+    ],
+    cautions: [
+      "Dose-dependent hypotension and apnoea in everyone — caution in heart disease and hypovolaemia (Schwartz).",
+      "No analgesic effect: give an opioid or local anaesthetic for pain.",
+      "Opioids and benzodiazepines add to the respiratory depression and hypotension — see interactions.",
+      "Severe obesity: dose on lean body weight, not total weight.",
+      "Not for maintenance by gravity drip: without a pump the dose cannot be controlled. Use intermittent small boluses only if you are an anaesthetist, or switch to ketamine."
+    ],
+    antidote: "No antagonist. Support: airway, ventilation with oxygen, fluids and a vasopressor (ephedrine or push-dose adrenaline) for hypotension.",
+    calc: {
+      type: "weight",
+      dosePerKg: 1.5,
+      doseUnit: "mg",
+      conc: 10,
+      concUnit: "mg/mL",
+      label: "FIT adult starting dose (1.5 mg/kg) at 10 mg/mL — titrate; far less if shocked, septic or elderly"
+    },
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Propofol is the induction agent of choice: short duration, rapid recovery, little nausea. It causes dose-dependent hypotension and must be used cautiously in cardiac disease or hypovolaemia; pain on injection is common.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2030"
+      },
+      {
+        book: "nelson",
+        text: "Children: 2–5 mg/kg produces unconsciousness rapidly; it may burn on injection; it depresses breathing and blood pressure; infusions beyond 24–48 h in children are not recommended (propofol infusion syndrome).",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 670"
+      },
+      {
+        book: "nelson",
+        text: "Intubation of a critically ill child: propofol 1–3 mg/kg IV, onset 0.5–2 min, duration 10–15 min; lowers BP, causes apnoea.",
+        ref: "Nelson 22nd ed. 2024, ch. 86, Table 86.11, p. 620"
+      },
+      {
+        book: "harrison",
+        text: "Hypotension after intubation comes partly from the induction drugs (propofol, opioids) and the loss of the stress response.",
+        ref: "Harrison 22nd ed. 2025, ch. 311 Approach to the Patient with Critical Illness, p. 2294"
+      },
+      {
+        book: "harrison",
+        text: "Refractory status epilepticus (ventilated patient): propofol 2 mg/kg IV then 2–10 mg/kg/h.",
+        ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, Fig. 436-5, p. 3426"
+      },
+      {
+        book: "williams",
+        text: "Propofol is now the main induction agent for general anaesthesia at caesarean; etomidate or ketamine for the haemodynamically unstable woman.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1095"
+      },
+      {
+        book: "gabbe",
+        text: "Propofol, etomidate and ketamine redistribute quickly in mother and fetus; an appropriate dose has little effect on the fetus.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 362"
+      },
+      {
+        book: "gabbe",
+        text: "Local anaesthetic toxicity with seizures: a benzodiazepine is preferred; if only propofol is available, use small 20 mg increments.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 351"
+      }
+    ],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "BNF and BNF for Children — propofol" },
+      { name: "Manufacturer instructions (aseptic handling, discard drawn-up drug within 6 h)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "thiopental",
+    name: "Thiopental (thiopentone)",
+    aka: ["Thiopentone", "Sodium thiopental", "Pentothal"],
+    cls: "Barbiturate IV anaesthetic induction agent",
+    cat: "analgesia",
+    wards: ["surgical", "maternity", "emergency", "icu"],
+    tags: [
+      "anaesthesia",
+      "induction",
+      "general anaesthesia",
+      "barbiturate",
+      "extravasation",
+      "intra-arterial"
+    ],
+    presentation: [
+      "500 mg or 1 g yellow powder vial to reconstitute.",
+      "Make a 2.5 % solution (25 mg/mL): 500 mg in 20 mL water for injection, or 1 g in 40 mL. Do not use stronger solutions IV — they do far more damage outside a vein.",
+      "Strongly alkaline. Use within 24 hours of mixing; discard if cloudy or if crystals form."
+    ],
+    indications: [
+      "Induction of general anaesthesia where propofol is not available",
+      "Induction for head injury or craniotomy in a patient with a stable BP (theatre pack)",
+      "Refractory status epilepticus in an intubated, ventilated patient (Harrison)"
+    ],
+    standard: {
+      summary: "A fast, smooth induction lasting 5–10 minutes (Nelson), with dose-dependent hypotension and myocardial depression (Schwartz). Two things make it dangerous: a full dose in a shocked patient, and injection outside the vein or into an artery.",
+      items: [
+        {
+          label: "Fit adult",
+          text: "Up to 4 mg/kg IV, maximum 500 mg (BNF). Give 50–100 mg (2–4 mL of 2.5 %), wait 30–60 seconds, then give more according to response."
+        },
+        {
+          label: "Elderly, frail, heart disease",
+          text: "Much less: 25–50 mg increments with a full minute between them."
+        },
+        {
+          label: "Shocked, septic, bleeding",
+          text: "Avoid — use ketamine. If it is the only drug: resuscitate first, vasopressor drawn up, 25 mg increments."
+        },
+        {
+          label: "Child",
+          text: "3–5 mg/kg (Nelson, ch. 91); 4–7 mg/kg is listed for intubating a critically ill child (Nelson, Table 86.11) — use the lower range unless an anaesthetist directs otherwise."
+        },
+        {
+          label: "Obesity",
+          text: "Calculate on lean body weight: the drug accumulates in fat and the effect is prolonged (Schwartz)."
+        },
+        {
+          label: "Not for maintenance",
+          text: "Repeated doses accumulate and the patient sleeps for hours (Nelson). Maintain with a volatile agent or ketamine."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Protecting the vein and the artery: where and how to inject",
+        best_for: "Every thiopental induction.",
+        requires: ["iv"],
+        steps: [
+          "Use a cannula in a vein on the back of the hand or forearm with a freely running drip. Avoid the inner side of the elbow crease (the brachial artery lies there) and the thumb side of the wrist (radial artery).",
+          "Check the cannula: the drip runs freely, a saline flush is painless, there is no swelling, and blood is dark and does not pulsate.",
+          "Inject 1–2 mL first and ask the patient what they feel. Pain shooting down into the hand or fingers, or blanching of the hand, means arterial injection — STOP and see the next card.",
+          "Inject the rest slowly into the running drip, watching the site."
+        ],
+        monitor: [
+          "The cannula site throughout injection",
+          "The patient's report of pain, while they can still speak"
+        ],
+        cautions: [
+          "Never inject thiopental through a cannula that is swollen, painful or 'positional'.",
+          "Never mix or run with suxamethonium, vecuronium or other drugs: flush the line between them."
+        ]
+      },
+      {
+        title: "Accidental intra-arterial injection — act at once",
+        best_for: "Burning pain down the arm into the hand, a white or blotchy hand, or weak pulses after injection.",
+        requires: ["iv"],
+        steps: [
+          "LEAVE the cannula or needle in the artery — it is your route for treatment.",
+          "Flush it with 0.9 % saline to dilute the drug.",
+          "Inject plain lidocaine 1 % through it (within the 5 mg/kg maximum, lidocaine page) to relieve spasm and pain.",
+          "Anticoagulate to prevent clotting in the damaged artery — heparin as for arterial thrombosis — and get surgical advice.",
+          "A brachial plexus block, if someone can do one, opens the vessels by blocking the sympathetic nerves.",
+          "Postpone elective surgery if you can. Keep the arm warm and watch it.",
+          "Refer urgently if the hand stays pale or cold: gangrene of fingers or hand is the outcome to prevent."
+        ],
+        monitor: ["Colour, warmth, capillary refill and pulses of the hand every 15 minutes for several hours"],
+        cautions: [
+          "Confirm drugs and doses with the anaesthetist and surgeon. Damage develops over hours — early action matters most."
+        ]
+      },
+      {
+        title: "Extravasation into the tissues",
+        best_for: "Swelling or pain at the site during injection.",
+        requires: [],
+        steps: [
+          "Stop injecting. Leave the cannula in and aspirate what you can.",
+          "Infiltrate the area with 0.9 % saline (and hyaluronidase where available) to dilute the drug; plain lidocaine 1 % for pain.",
+          "Elevate the limb. Mark the edge of the swelling with a pen.",
+          "Re-site the cannula in another limb before continuing the anaesthetic.",
+          "Review daily: blistering or dark skin means necrosis and needs surgical review."
+        ],
+        monitor: ["Skin colour and swelling at 1, 6 and 24 hours"],
+        cautions: ["2.5 % solution limits the damage; never use 5 % IV."]
+      }
+    ],
+    paediatric: [
+      "3–5 mg/kg IV produces unconsciousness within seconds, lasting 5–10 minutes; causes respiratory depression, apnoea and hypotension (Nelson). No analgesia; not for maintenance.",
+      "Nelson notes thiopental is now rarely used in children; propofol or ketamine are the usual alternatives."
+    ],
+    cautions: [
+      "ABSOLUTE contraindication: acute porphyria (barbiturates can precipitate a fatal attack).",
+      "Hypotension and myocardial depression in proportion to the dose (Schwartz): shock, sepsis, heart failure, the elderly.",
+      "Asthma: ketamine is preferred.",
+      "Severe liver disease: smaller doses, prolonged effect.",
+      "Benzodiazepines and opioids add to respiratory depression — see interactions."
+    ],
+    antidote: "No antagonist. Support airway, breathing and BP (fluids, ephedrine or push-dose adrenaline).",
+    calc: {
+      type: "weight",
+      dosePerKg: 3,
+      doseUnit: "mg",
+      conc: 25,
+      concUnit: "mg/mL",
+      maxDose: 500,
+      label: "FIT patient starting dose (3 mg/kg; adult up to 4 mg/kg, max 500 mg) at 2.5 % (25 mg/mL) — far less if shocked"
+    },
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Barbiturates (thiopental) give a rapid, smooth induction that wears off quickly, with dose-dependent hypotension and myocardial depression.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2030"
+      },
+      {
+        book: "nelson",
+        text: "Children: thiopental 3–5 mg/kg gives unconsciousness within seconds lasting 5–10 min; causes respiratory depression, apnoea and hypotension; not for maintenance; no analgesia.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 671"
+      },
+      {
+        book: "nelson",
+        text: "Intubation of a critically ill child: thiopental 4–7 mg/kg IV, onset 0.5–1 min, duration 5–10 min; lowers BP, apnoea.",
+        ref: "Nelson 22nd ed. 2024, ch. 86, Table 86.11, p. 620"
+      },
+      {
+        book: "schwartz",
+        text: "Severe obesity: thiopentone has a larger volume of distribution and a prolonged effect; calculate the dose on lean body weight.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 27 The Surgical Management of Obesity, p. 1179"
+      },
+      {
+        book: "gabbe",
+        text: "At caesarean, women induced with ketamine needed less analgesia in the first 24 hours than those given thiopental.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 362"
+      },
+      {
+        book: "harrison",
+        text: "Thiopental is one of the anaesthetic agents in Harrison's algorithm for refractory status epilepticus (with ventilation).",
+        ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, Fig. 436-5, p. 3426"
+      }
+    ],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "BNF and BNF for Children — thiopental sodium" },
+      {
+        name: "Standard anaesthesia texts on accidental intra-arterial thiopental injection (management confirmed by the anaesthetist)"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- pain and gut ---- */
+  {
+    id: "pethidine",
+    name: "Pethidine (meperidine)",
+    aka: ["Meperidine", "Demerol"],
+    cls: "Opioid analgesic (synthetic phenylpiperidine)",
+    cat: "analgesia",
+    wards: ["emergency", "maternity", "surgical", "icu"],
+    tags: [
+      "pain",
+      "labour analgesia",
+      "manual removal of placenta",
+      "uterine inversion",
+      "opioid",
+      "norpethidine",
+      "seizures"
+    ],
+    presentation: [
+      "50 mg/mL injection, 1 mL and 2 mL ampoules (50 mg and 100 mg). Controlled drug.",
+      "Tablets 50 mg exist but are poorly absorbed; oral pethidine has no place where morphine is available."
+    ],
+    indications: [
+      "Labour analgesia where no neuraxial block and no morphine are available, as a single dose or two",
+      "Short procedural analgesia (manual removal of placenta, replacement of an inverted uterus), with slow IV diazepam, as in the Ethiopian national PPH guideline",
+      "Intra-operative opioid where it is the only one on the theatre list (confirm with the anaesthetist)"
+    ],
+    standard: {
+      summary: "Pethidine is the opioid most used in Ethiopian labour wards, and one of the worst. Its metabolite norpethidine causes tremor, twitching and seizures that naloxone does not reverse; it builds up with repeated doses and in kidney failure; and in labour both drugs cross the placenta and depress the newborn's breathing. Use it for one episode only. Morphine is the better drug wherever it is stocked.",
+      items: [
+        {
+          label: "Labour, adult",
+          text: "50–100 mg IM (about 1 mg/kg), which may be repeated after 2–4 hours; or 25–50 mg IV slowly, which acts almost at once (Williams, Gabbe). Promethazine 25 mg IM may be given with it for vomiting (Williams)."
+        },
+        {
+          label: "Procedural analgesia, adult",
+          text: "1 mg/kg (never more than 100 mg) IV slowly in small increments, or IM, with diazepam slow IV in a separate syringe (WHO MCPC; Ethiopian PPH guideline pairing). Ketamine is the alternative and is safer in a shocked woman."
+        },
+        {
+          label: "Ceiling",
+          text: "Maximum 400 mg in 24 hours (BNF), and in practice far less: one or two doses in labour. Seizures from norpethidine typically appear above about 1 g/day (Harrison) but occur at much lower doses in kidney impairment. Do not continue beyond about 48 hours; change to morphine."
+        },
+        {
+          label: "Equivalence",
+          text: "Pethidine 100 mg ≈ morphine 10 mg (Gabbe). Equianalgesic doses of all opioids cause the same respiratory depression (Schwartz) — pethidine is not 'gentler'."
+        },
+        {
+          label: "Children",
+          text: "Not recommended. Use titrated morphine (see Morphine). Nelson notes that the pethidine metabolite is associated with seizures and accumulates in kidney failure."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Labour analgesia with IM pethidine: one dose, timed, with the baby's resuscitation ready",
+        best_for: "Labour ward with no epidural service and no morphine in stock.",
+        requires: ["im"],
+        steps: [
+          "First offer non-drug support (companion, mobility, warm compresses). Use pethidine only when the woman asks for more.",
+          "Give 50–100 mg (1–2 mL of 50 mg/mL) deep IM. About 1 mg/kg is a reasonable dose; 50 mg for a small woman.",
+          "If she vomits, add promethazine 25 mg IM in a separate syringe (Williams).",
+          "Peak analgesia is 30–45 minutes after IM injection, and the depressant effect on the fetus follows closely behind the maternal peak (Williams). Tell the midwife who will catch the baby that pethidine was given and at what time.",
+          "A second dose may be given after 2–4 hours if needed. Do not go beyond two doses in labour without a senior decision; never exceed 400 mg in 24 h.",
+          "Before birth, check that the neonatal bag-valve-mask works and that naloxone is in the room. Ventilating a floppy newborn is the treatment; naloxone is secondary (see Opioid overdose)."
+        ],
+        monitor: [
+          "Mother: breathing rate and sedation 30 minutes after each dose, then hourly; stop if RR is under 10/min or she cannot be roused to voice",
+          "Fetal heart rate: reduced variability, or a regular sinusoidal pattern at about 6 cycles per minute, can follow opioid doses (Williams); interpret with the clinical picture",
+          "Newborn: breathing at birth and for several hours. Norpethidine sedation and poor feeding can last into day 2–3 of life (Gabbe)"
+        ],
+        cautions: [
+          "Avoid in eclampsia or severe pre-eclampsia: norpethidine lowers the seizure threshold. Use morphine if an opioid is needed.",
+          "Avoid if the woman has kidney impairment or low urine output.",
+          "Pethidine slows gastric emptying; if a caesarean under general anaesthesia follows, aspiration risk is higher (Gabbe)."
+        ]
+      },
+      {
+        title: "Slow IV pethidine with diazepam for manual removal of placenta or uterine inversion",
+        best_for: "Delivery room procedure where there is no anaesthetist and the national guideline pairing is all that is stocked.",
+        requires: ["iv"],
+        steps: [
+          "Draw up 100 mg (2 mL) and dilute to 10 mL with 0.9 % saline: 10 mg/mL. Label the syringe.",
+          "Give 1 mg/kg (maximum 100 mg) slowly, 1–2 mL (10–20 mg) at a time every 1–2 minutes, watching her breathing between increments.",
+          "Give diazepam slow IV in a SEPARATE syringe and flush between drugs — diazepam precipitates in other solutions. Start with a small dose (2.5–5 mg) because the two drugs together stop breathing far more readily than either alone.",
+          "Draw up naloxone before you start. Have a working bag-valve-mask and someone whose only job is to watch her face and chest.",
+          "In a woman who is bleeding or shocked, reduce both doses and consider ketamine instead — it supports blood pressure and breathing."
+        ],
+        monitor: [
+          "Breathing rate, chest movement, lip colour and response to voice every 2–3 minutes during the procedure and for 1 hour after; pulse oximetry if any oximeter exists",
+          "Blood pressure"
+        ],
+        cautions: [
+          "Opioid plus benzodiazepine is the combination most likely to cause apnoea (Harrison).",
+          "Never mix pethidine and diazepam in one syringe."
+        ]
+      },
+      {
+        title: "Changing from pethidine to morphine",
+        best_for: "Any patient who will need an opioid for more than one episode: post-operative pain, sickle cell crisis, trauma, older people, kidney impairment.",
+        requires: [],
+        steps: [
+          "Pethidine 100 mg ≈ morphine 10 mg (Gabbe). Convert at roughly 10:1, then reduce the morphine dose by a quarter to a third at first and titrate to pain.",
+          "Morphine IM/SC every 4 h regularly, or titrated IV in 1–2 mg increments (see Morphine).",
+          "If morphine is not stocked and pethidine must continue: no more than 48 hours, no more than 400 mg/day, no regular doses in kidney impairment, and add regular paracetamol and (where safe) an NSAID to cut the opioid need.",
+          "Order morphine for the ward. Pethidine is not a substitute for a stocked morphine supply."
+        ],
+        monitor: [
+          "Tremor, twitching, myoclonus or agitation in anyone who has had repeated pethidine — stop it at once; these precede seizures"
+        ],
+        cautions: [
+          "Naloxone reverses the opioid effect of pethidine but NOT norpethidine seizures (Harrison). Treat seizures with a benzodiazepine.",
+          "Never give pethidine to a patient who has taken an MAO inhibitor in the last 2 weeks: the interaction causes hyperthermia and seizures (Nelson), and deaths have been reported."
+        ]
+      }
+    ],
+    paediatric: [
+      "Avoid in children. Nelson advises against pethidine in liver dysfunction because of its seizure-causing metabolite, and lists it among opioids whose metabolites accumulate in kidney failure. Use titrated morphine.",
+      "Newborn of a mother given pethidine in labour: watch breathing and feeding. Ventilate first; naloxone 0.1 mg/kg IM/IV if breathing remains depressed after ventilation (see Naloxone). Do not give naloxone to the baby of a mother on long-term opioids."
+    ],
+    cautions: [
+      "Norpethidine toxicity: tremor, myoclonus, agitation and seizures, not reversed by naloxone. Risk rises with repeated doses, high total dose, kidney impairment, older age and other seizure-threshold-lowering drugs (tramadol).",
+      "Renal impairment: avoid. Norpethidine is excreted by the kidney and accumulates (Harrison, Schwartz).",
+      "Neonatal respiratory depression when given in labour: both pethidine and norpethidine cross the placenta, and norpethidine has a much longer half-life (Williams).",
+      "Serotonin syndrome with SSRIs, tramadol and other serotonergic drugs; fatal reactions with MAO inhibitors.",
+      "Respiratory depression, sedation and hypotension like any opioid; much worse with benzodiazepines, phenobarbital and alcohol.",
+      "Pethidine is a cause of postoperative delirium in older patients (Schwartz) — stop it and use morphine (see Postoperative delirium).",
+      "Controlled drug: count ampoules, record every dose, and destroy unused drug with a witness."
+    ],
+    antidote: "Naloxone for opioid respiratory depression: 0.4 mg IV/IM in an adult, or titrate 40–100 mcg IV increments; 0.1 mg/kg in a child (see Naloxone). Naloxone does NOT stop norpethidine seizures — give diazepam or another benzodiazepine, and support breathing.",
+    textbook: [
+      {
+        book: "harrison",
+        text: "At higher doses (typically above 1 g/day) normeperidine accumulates and causes hyperexcitability and seizures that naloxone does not reverse; accumulation is increased in renal failure.",
+        ref: "Harrison 22nd ed. 2025, ch. 14 Pain: Pathophysiology and Management, p. 98"
+      },
+      {
+        book: "harrison",
+        text: "Pain table: meperidine 50–100 mg parenterally every 3–4 h; normeperidine is a toxic metabolite and routine use is not recommended.",
+        ref: "Harrison 22nd ed. 2025, ch. 14 Pain: Pathophysiology and Management, p. 97"
+      },
+      {
+        book: "harrison",
+        text: "Renal failure barely changes meperidine levels, but normeperidine accumulates and probably causes the irritability, twitching and seizures seen with repeated doses in renal disease.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, p. 488"
+      },
+      {
+        book: "schwartz",
+        text: "Morphine and meperidine have renally excreted active metabolites and should be used with caution or avoided in renal insufficiency.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031"
+      },
+      {
+        book: "schwartz",
+        text: "Persistent pain: there is no place for meperidine.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 48 Ethics, Palliative Care, and Care at the End of Life, Table 48-6, p. 2070"
+      },
+      {
+        book: "williams",
+        text: "Meperidine 50–100 mg with promethazine 25 mg IM every 2–4 h, or 25–50 mg IV every 1–2 h; it crosses the placenta and can have a prolonged half-life in the newborn.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, Table 25-3, pdf p. 1071"
+      },
+      {
+        book: "williams",
+        text: "The depressant effect in the fetus follows closely behind the peak maternal analgesic effect; normeperidine is a strong respiratory depressant with a much longer half-life and is likely responsible for the fetal effects.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1072"
+      },
+      {
+        book: "gabbe",
+        text: "Meperidine 100 mg is about equianalgesic to morphine 10 mg; 3.4 % of infants needed naloxone after meperidine PCA in labour, and normeperidine can cause neonatal sedation and neurobehavioural changes into days 2–3 of life.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 346"
+      },
+      {
+        book: "nelson",
+        text: "In hepatic dysfunction meperidine (metabolite associated with seizures) should not be used; in renal failure its metabolites accumulate.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, p. 685"
+      },
+      {
+        book: "nelson",
+        text: "Opioids associated with seizures include meperidine; serotonin syndrome occurs with meperidine, methadone and tramadol.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, Table 94.13, p. 713"
+      },
+      {
+        book: "nelson",
+        text: "Anaesthetic implications: a monoamine oxidase inhibitor may interact with meperidine, resulting in hyperthermia and seizures.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, Table 91.3, p. 666"
+      },
+      {
+        book: "schwartz",
+        text: "Meperidine is listed among the drugs that precipitate delirium in older surgical patients.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 47 Surgical Considerations in Older Adults, Figure 47-1, p. 2048"
+      },
+      {
+        book: "gabbe",
+        text: "Parenteral opioids in labour prolong gastric emptying, so aspiration risk is higher if general anaesthesia becomes necessary.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 346"
+      },
+      {
+        book: "note",
+        text: "Ethiopian practice: pethidine is often the only opioid on labour wards and theatre lists. This entry deliberately does not soften its risks; the ward should hold morphine.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO. Managing Complications in Pregnancy and Childbirth, 2nd ed. 2017 (analgesia for procedures)"
+      },
+      {
+        name: "Ministry of Health Ethiopia. National guideline on prevention and management of postpartum haemorrhage, 2022"
+      },
+      { name: "British National Formulary (BNF) — pethidine" },
+      {
+        name: "Harrison's Principles of Internal Medicine 22nd ed. 2025; Williams Obstetrics 25th ed.; Gabbe's Obstetrics 9th ed."
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "tramadol",
+    name: "Tramadol",
+    aka: ["Tramal", "Tramadol hydrochloride"],
+    cls: "Weak opioid with serotonin and noradrenaline reuptake inhibition",
+    cat: "analgesia",
+    wards: ["emergency", "medical", "surgical", "outpatient"],
+    tags: ["pain", "moderate pain", "post-operative", "serotonin syndrome", "seizures", "misuse"],
+    presentation: [
+      "Injection 50 mg/mL, 2 mL ampoule (100 mg).",
+      "Capsules or tablets 50 mg; modified-release tablets 100 mg and 200 mg (twice daily — do not crush)."
+    ],
+    indications: [
+      "Moderate pain not controlled by regular paracetamol and an NSAID (WHO step 2)",
+      "Short-term post-operative and trauma pain where morphine is not available or not needed"
+    ],
+    standard: {
+      summary: "A weak opioid. Part of its effect comes from serotonin and noradrenaline reuptake blockade, which is why it causes seizures and serotonin syndrome in a way morphine does not. Add it to regular paracetamol; do not use it instead of morphine for severe pain.",
+      items: [
+        {
+          label: "Adult",
+          text: "50–100 mg orally, IM or slow IV every 4–6 hours (Harrison). Maximum 400 mg in 24 hours."
+        },
+        {
+          label: "Older adults",
+          text: "Start low (Harrison's palliative table uses 25 mg every 6 h). Over 75 years, maximum 300 mg/day (product information)."
+        },
+        {
+          label: "Kidney or liver impairment",
+          text: "CrCl under 30 mL/min: every 12 hours, maximum 200 mg/day. Severe liver impairment: 50 mg every 12 hours (product information). Confirm with the national formulary."
+        },
+        {
+          label: "Children",
+          text: "Contraindicated under 12 years (US FDA, quoted in Nelson), and after tonsillectomy or adenoidectomy under 18. Use paracetamol, ibuprofen and titrated morphine. Some national formularies still list a child dose; confirm with the national protocol before using one."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Tramadol as the step-2 analgesic, added to regular paracetamol",
+        best_for: "Ward and outpatient moderate pain where morphine is unavailable or not justified.",
+        requires: ["oral"],
+        steps: [
+          "Before the first dose ask three questions: any epilepsy or previous seizure? Any antidepressant (fluoxetine, sertraline, escitalopram, amitriptyline, imipramine)? Any alcohol dependence or opioid misuse? If yes to any, choose another analgesic.",
+          "Give paracetamol 1 g every 6 h by the clock, plus an NSAID if safe.",
+          "Add tramadol 50 mg orally every 6 h; increase to 100 mg if needed. Maximum 400 mg/day (300 mg over 75 years; 200 mg if CrCl under 30).",
+          "Give an antiemetic for the first day if the patient is nauseated — nausea is the commonest reason patients refuse it.",
+          "Review daily and stop as pain settles. Do not discharge with a large supply."
+        ],
+        monitor: [
+          "Pain score, sedation, nausea",
+          "Tremor, agitation, sweating, clonus — early serotonin toxicity",
+          "Any twitching or seizure"
+        ],
+        cautions: [
+          "Seizures occur with high doses (Harrison) but also at normal doses in people with epilepsy, head injury, alcohol withdrawal or other seizure-lowering drugs.",
+          "Tramadol is a weak opioid. For severe pain, give morphine; stacking tramadol on top of morphine adds seizures and serotonin risk more than analgesia."
+        ]
+      },
+      {
+        title: "IV or IM tramadol without a pump",
+        best_for: "Post-operative patient who cannot swallow.",
+        requires: ["iv"],
+        steps: [
+          "IV: give 50–100 mg slowly over 2–3 minutes, or dilute in 100 mL 0.9 % saline and run by gravity over 15–30 minutes. A fast push causes nausea, vomiting, dizziness and sweating.",
+          "IM is an acceptable alternative where no IV access: 50–100 mg deep IM.",
+          "Repeat every 4–6 h within the 400 mg daily maximum; switch to oral as soon as the patient drinks."
+        ],
+        monitor: ["Breathing rate and sedation, especially in older people and with other sedatives"],
+        cautions: [
+          "The theatre packs often list tramadol together with pethidine and morphine. Three opioids in one anaesthetic is a lot: have naloxone at hand."
+        ]
+      },
+      {
+        title: "Recognising and handling tramadol misuse, diversion and overdose",
+        best_for: "Emergency departments, pharmacies and wards in a region where non-medical tramadol use is common.",
+        requires: [],
+        steps: [
+          "Keep injectable tramadol in a counted, locked cupboard and record each ampoule, as for other opioids. Prescribe small oral supplies.",
+          "Suspect misuse in a young person with a first unexplained seizure, unexplained constricted pupils or drowsiness, or repeated requests for 'injections for pain'.",
+          "Overdose: support breathing first. Naloxone reverses the opioid part (respiratory depression, drowsiness) — titrate 40–100 mcg IV, or 0.4 mg IM.",
+          "Treat seizures with diazepam or another benzodiazepine; naloxone does not treat them.",
+          "Look for serotonin toxicity (agitation, sweating, clonus worse in the legs, fever) and manage as in Serotonin syndrome.",
+          "Before discharge, offer non-judgemental help for dependence; abrupt stopping after long use causes opioid withdrawal and sometimes anxiety and panic."
+        ],
+        monitor: [
+          "Breathing, consciousness and temperature for at least 6 hours after an overdose (longer with modified-release tablets)"
+        ],
+        cautions: [
+          "Non-medical tramadol use and diversion are widely reported across Africa (UNODC); Ethiopian data are limited, so watch your own ward's stock and prescribing."
+        ]
+      }
+    ],
+    paediatric: [
+      "US FDA: tramadol is contraindicated for pain in children under 12 years and after tonsillectomy or adenoidectomy under 18; avoid in obese 12–18 year-olds or those with sleep apnoea or severe lung disease (Nelson, Table 93.13). Ultra-rapid CYP2D6 metabolisers form excess active metabolite and can stop breathing.",
+      "Use regular paracetamol and ibuprofen, and titrated morphine for severe pain."
+    ],
+    cautions: [
+      "Seizures: avoid in epilepsy, head injury, eclampsia and alcohol or benzodiazepine withdrawal (Harrison: contraindicated in seizure disorders).",
+      "Serotonin syndrome with SSRIs, tricyclics, pethidine, ondansetron (rarely) and lithium (Harrison, Nelson).",
+      "Respiratory depression and sedation, particularly with benzodiazepines, alcohol and in kidney failure.",
+      "Dependence, misuse and diversion.",
+      "Can lower blood glucose and sodium, especially in older people.",
+      "Breastfeeding: avoid (FDA, quoted in Nelson). Pregnancy: avoid regular use; use near term can cause neonatal withdrawal."
+    ],
+    antidote: "Naloxone reverses respiratory depression and sedation (0.4 mg IV/IM adult, or 40–100 mcg IV increments; child 0.1 mg/kg). Seizures need a benzodiazepine. Serotonin toxicity: stop all serotonergic drugs, benzodiazepines, cooling (see Serotonin syndrome).",
+    textbook: [
+      {
+        book: "harrison",
+        text: "Tramadol 50–100 mg orally every 4–6 h; mixed opioid and adrenergic action.",
+        ref: "Harrison 22nd ed. 2025, ch. 14 Pain: Pathophysiology and Management, p. 97"
+      },
+      {
+        book: "harrison",
+        text: "Tramadol is a relatively weak opioid but sometimes effective for pain unresponsive to non-opioid analgesics.",
+        ref: "Harrison 22nd ed. 2025, ch. 14 Pain: Pathophysiology and Management, p. 101"
+      },
+      {
+        book: "harrison",
+        text: "Palliative moderate pain: tramadol 25 mg orally every 6 h, maximum 400 mg/day, added to acetaminophen or NSAIDs.",
+        ref: "Harrison 22nd ed. 2025, ch. 13 Palliative and End-of-Life Care, p. 80"
+      },
+      {
+        book: "harrison",
+        text: "In older people tramadol can be very effective but is contraindicated in seizure disorders and must be used cautiously with SSRIs and SNRIs to prevent serotonergic toxicity.",
+        ref: "Harrison 22nd ed. 2025, ch. 489 Caring for the Geriatric Patient, p. 3883"
+      },
+      {
+        book: "harrison",
+        text: "Opioids generally do not cause seizures except meperidine in polydrug use, high doses of tramadol, or in the newborn.",
+        ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3690"
+      },
+      {
+        book: "harrison",
+        text: "Drugs that can cause seizures include meperidine, fentanyl and tramadol.",
+        ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, Table 436-5, p. 3414"
+      },
+      {
+        book: "harrison",
+        text: "Serotonin syndrome is caused by meperidine, SSRIs, tricyclic antidepressants and tramadol, among others.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3715"
+      },
+      {
+        book: "nelson",
+        text: "FDA: tramadol for pain is contraindicated under 12 years and after tonsillectomy or adenoidectomy under 18; codeine or tramadol should be avoided in breastfeeding women.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, Table 93.13, p. 688"
+      },
+      {
+        book: "note",
+        text: "Non-medical tramadol use and diversion are widely reported in the region; the books describe tramadol misuse as uncommon only in a US context.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO. Guidelines on the management of chronic pain in children, 2020 (tramadol not recommended)"
+      },
+      {
+        name: "US FDA Drug Safety Communication: codeine and tramadol in children and breastfeeding women, 2017"
+      },
+      {
+        name: "British National Formulary (BNF) — tramadol; tramadol product information (dose in renal and hepatic impairment, IV rate)"
+      },
+      { name: "UNODC World Drug Report — non-medical use of tramadol in Africa" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "diclofenac",
+    name: "Diclofenac",
+    aka: ["Voltaren", "Voltarol", "Diclofenac sodium"],
+    cls: "Non-steroidal anti-inflammatory drug (NSAID)",
+    cat: "analgesia",
+    wards: ["emergency", "maternity", "medical", "surgical", "outpatient"],
+    tags: [
+      "pain",
+      "NSAID",
+      "post-operative",
+      "renal colic",
+      "acute kidney injury",
+      "peptic ulcer",
+      "asthma"
+    ],
+    presentation: [
+      "Injection 25 mg/mL, 3 mL ampoule (75 mg) — for deep IM use.",
+      "Tablets 25 mg and 50 mg (enteric-coated); 75 mg and 100 mg modified-release.",
+      "Suppositories 12.5 mg, 25 mg, 50 mg, 100 mg."
+    ],
+    indications: [
+      "Post-operative pain, with regular paracetamol, to reduce opioid need",
+      "Renal and biliary colic",
+      "Musculoskeletal pain, gout and inflammatory arthritis"
+    ],
+    standard: {
+      summary: "Effective and cheap, and listed on almost every theatre pack — but it is the drug most likely to give a dehydrated or septic surgical patient acute kidney injury, and it causes bleeding ulcers, triggers asthma in NSAID-sensitive patients, and harms the fetus in late pregnancy. Check before every first dose.",
+      items: [
+        {
+          label: "Adult oral",
+          text: "50 mg every 8 hours with food. Maximum 150 mg/day by all routes combined."
+        },
+        {
+          label: "Adult IM",
+          text: "75 mg deep IM into the upper outer quadrant of the buttock, once daily (twice daily in severe pain) for no more than 2 days, then change to oral or rectal (BNF)."
+        },
+        {
+          label: "Adult rectal",
+          text: "75–150 mg/day in divided doses (e.g. 50 mg every 8 h or 100 mg once), within the 150 mg/day total."
+        },
+        {
+          label: "IV",
+          text: "Only as a diluted, buffered infusion exactly as the product leaflet says — never as an IV push from the IM ampoule."
+        },
+        {
+          label: "Children",
+          text: "2–3 mg/kg/day in 2–3 divided doses, maximum 150 mg/day (Nelson). Ibuprofen is the better-studied NSAID in children."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "The check before any NSAID dose on the surgical or maternity ward",
+        best_for: "Every patient, every first dose — especially when diclofenac is simply 'on the list'.",
+        requires: [],
+        steps: [
+          "Is the patient dry, bleeding or septic? Low BP, fast pulse, dry tongue, vomiting, NG losses, peritonitis, obstruction or sepsis — HOLD the NSAID. The kidney in hypovolaemia depends on prostaglandins to keep filtering (Harrison).",
+          "Is urine output low (under 0.5 mL/kg/h, or under 30 mL/h in an adult) or creatinine raised? HOLD.",
+          "Is the patient on gentamicin, amphotericin, furosemide or lithium? HOLD, or discuss.",
+          "Previous peptic ulcer, GI bleeding, coffee-ground vomit or melaena; on warfarin, heparin, steroids or an SSRI; age over 65? Avoid, or give with omeprazole for the shortest time.",
+          "Asthma that has worsened with aspirin or another NSAID, or asthma with nasal polyps? Do not give (Harrison).",
+          "Pregnant at 20 weeks or more? Do not give. Postpartum and breastfeeding are fine.",
+          "Platelets low, coagulopathy, or postpartum haemorrhage with an atonic uterus? Do not give (Gabbe).",
+          "If any answer means hold: paracetamol 1 g every 6 h regularly, wound infiltration with bupivacaine, and titrated morphine. That is not a loss."
+        ],
+        monitor: [
+          "Urine output and, where possible, creatinine on day 1–2 after surgery in anyone given an NSAID",
+          "Black stools, epigastric pain, wheeze"
+        ],
+        cautions: ["Re-check the next day: a patient who was well on day 0 may be septic or dry by day 2."]
+      },
+      {
+        title: "IM diclofenac without nerve injury or tissue necrosis",
+        best_for: "When the patient is nil by mouth and the IM ampoule is what is stocked.",
+        requires: ["im"],
+        steps: [
+          "Use the upper outer quadrant of the buttock (or the ventrogluteal site), deep IM with a needle long enough to reach muscle. Not the thigh or deltoid of a thin patient.",
+          "Aspirate, inject slowly, and alternate sides for a second dose.",
+          "Give 75 mg once daily (twice daily at most) for no more than 2 days, then change to oral or rectal.",
+          "Stop and record if the patient feels sudden severe pain shooting down the leg, or the skin over the site turns pale, livid or blistered."
+        ],
+        monitor: ["Injection site the next day for pain, swelling or skin colour change"],
+        cautions: [
+          "Severe local tissue necrosis after IM injection (Nicolau syndrome) and sciatic nerve injury are rare but disabling. IM is not more effective than oral or rectal."
+        ]
+      },
+      {
+        title: "Rectal diclofenac when the patient cannot swallow",
+        best_for: "Post-operative day 0–1, vomiting patients, renal colic.",
+        requires: ["rectal"],
+        steps: [
+          "Adult: 100 mg suppository once, or 50 mg every 8 h. The 150 mg daily maximum includes all routes.",
+          "Children: use the 12.5 mg or 25 mg suppository to approximate 1 mg/kg per dose, within 2–3 mg/kg/day (Nelson). Do not cut suppositories crosswise.",
+          "Change to oral when the patient drinks."
+        ],
+        monitor: ["Urine output in the post-operative patient"],
+        cautions: ["Avoid in proctitis, haemorrhoidal bleeding, and after anorectal surgery."]
+      }
+    ],
+    paediatric: [
+      "2–3 mg/kg/day divided into 2–3 doses, maximum 150 mg/day (Nelson). Ibuprofen is the first-choice NSAID in children.",
+      "NSAIDs are not generally recommended under 6 months because of immature kidney function (Nelson).",
+      "Do not give to a child who is dehydrated (diarrhoea, vomiting, not drinking)."
+    ],
+    cautions: [
+      "Acute kidney injury in hypovolaemia, sepsis, heart failure, cirrhosis, CKD, older age, and with gentamicin, diuretics or other nephrotoxins (Harrison, Schwartz).",
+      "Peptic ulcer, bleeding and perforation — often with no warning dyspepsia. Risk factors: age, previous ulcer, steroids, anticoagulants, SSRIs, high dose or two NSAIDs together (Harrison).",
+      "NSAID-exacerbated asthma: avoid in anyone whose asthma has worsened with aspirin or an NSAID (Harrison).",
+      "Pregnancy from 20 weeks: oligohydramnios and fetal ductus closure (Gabbe). Avoid.",
+      "Diclofenac has a higher risk of heart attack and stroke than ibuprofen at usual doses — avoid in ischaemic heart disease, heart failure and stroke, and in uncontrolled hypertension.",
+      "Liver: diclofenac can cause hepatitis; avoid in severe liver disease.",
+      "Never two NSAIDs together. Never with ibuprofen."
+    ],
+    antidote: "No antidote. Stop the drug, restore circulating volume, and treat GI bleeding (see Omeprazole) or kidney injury supportively.",
+    textbook: [
+      {
+        book: "harrison",
+        text: "Prerenal acute kidney injury is most often due to hypovolaemia, low cardiac output and drugs that interfere with renal autoregulation, such as NSAIDs.",
+        ref: "Harrison 22nd ed. 2025, ch. 321 Acute Kidney Injury, p. 2373"
+      },
+      {
+        book: "harrison",
+        text: "No dose of NSAID is completely safe; over 80 % of serious NSAID complications have no preceding dyspepsia. Risk factors: advanced age, ulcer history, glucocorticoids, high-dose or multiple NSAIDs, anticoagulants; SSRIs add to bleeding.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2521"
+      },
+      {
+        book: "harrison",
+        text: "Aspirin-exacerbated respiratory disease: avoid COX-1 inhibitors (aspirin and NSAIDs); COX-2 inhibitors and acetaminophen are generally tolerated.",
+        ref: "Harrison 22nd ed. 2025, ch. 298 Asthma, p. 2227"
+      },
+      {
+        book: "schwartz",
+        text: "NSAIDs reduce postoperative opioid need but can cause bleeding, platelet dysfunction and acute kidney injury; use cautiously in the elderly and in renal insufficiency.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031"
+      },
+      {
+        book: "nelson",
+        text: "Diclofenac 2–3 mg/kg/day in 2–3 doses, maximum 150 mg/day; lower risk of gastritis and ulceration than other NSAIDs.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, Table 93.6, p. 681"
+      },
+      {
+        book: "gabbe",
+        text: "Contraindications to NSAIDs after caesarean include renal insufficiency or low urine output, gentamicin or other renally toxic drugs, coagulopathy and uterine atony.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 365"
+      },
+      {
+        book: "gabbe",
+        text: "Third-trimester NSAID exposure may cause oligohydramnios and premature closure of the ductus arteriosus, especially beyond 48 hours.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 54 Neurologic Disorders in Pregnancy, p. 1034"
+      }
+    ],
+    sources: [
+      {
+        name: "British National Formulary (BNF) — diclofenac (IM route and duration, maximum daily dose)"
+      },
+      { name: "European Medicines Agency. Diclofenac: cardiovascular risk, 2013" },
+      {
+        name: "US FDA Drug Safety Communication: NSAIDs from 20 weeks of pregnancy (oligohydramnios), 2020"
+      },
+      { name: "Asella Referral and Teaching Hospital, list of OR materials for surgical cases, 2025" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "ibuprofen",
+    name: "Ibuprofen",
+    aka: ["Brufen", "Advil", "Nurofen", "Motrin"],
+    cls: "Non-steroidal anti-inflammatory drug (NSAID)",
+    cat: "analgesia",
+    wards: ["emergency", "maternity", "paediatric", "medical", "surgical", "outpatient"],
+    tags: [
+      "fever",
+      "pain",
+      "NSAID",
+      "children",
+      "antipyretic",
+      "post-operative",
+      "postpartum",
+      "dysmenorrhoea"
+    ],
+    presentation: ["Tablets 200 mg and 400 mg (some 600 mg).", "Oral suspension 100 mg/5 mL (20 mg/mL)."],
+    indications: [
+      "Fever and pain in children, as the alternative or addition to paracetamol",
+      "Mild to moderate pain in adults; post-operative and postpartum pain with regular paracetamol",
+      "Dysmenorrhoea, musculoskeletal pain, post-dural-puncture headache"
+    ],
+    standard: {
+      summary: "The safest NSAID and the one with the most paediatric experience. It shares every NSAID danger — kidney injury in the dehydrated, bleeding ulcers, NSAID-sensitive asthma, and harm to the fetus from 20 weeks — so check the patient before the first dose.",
+      items: [
+        {
+          label: "Child (3 months and over, 5 kg and over)",
+          text: "5–10 mg/kg per dose every 6–8 hours with food or milk. Conservative maximum 30 mg/kg/day (BNF for Children); Nelson allows 8–10 mg/kg every 6 h, up to 40 mg/kg/day. Never more than 400 mg per dose or 2.4 g/day."
+        },
+        {
+          label: "Adult",
+          text: "200–400 mg every 6–8 hours with food; 400 mg every 8 h is the usual post-operative and postpartum dose. Maximum 1.2 g/day without prescriber review; up to 2.4 g/day under supervision (Harrison, Nelson)."
+        },
+        {
+          label: "Fever",
+          text: "Treat discomfort, not the number on the thermometer (see Paracetamol). Do not alternate paracetamol and ibuprofen routinely."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Weight-based syrup dose for a child, checked before you give it",
+        best_for: "Paediatric ward, OPD and health post.",
+        requires: ["oral"],
+        steps: [
+          "Weigh the child. Do not dose by age.",
+          "Check: drinking and passing urine? Not vomiting or with diarrhoea? No chickenpox? No asthma that worsened with an NSAID? Age 3 months or more? If any check fails, give paracetamol instead.",
+          "Dose 10 mg/kg = 0.5 mL/kg of the 100 mg/5 mL syrup. Example: 12 kg → 120 mg = 6 mL.",
+          "Repeat every 6–8 hours only if still needed; no more than 3 doses in 24 h for routine fever.",
+          "Use an oral syringe or a marked cup, not a household spoon."
+        ],
+        monitor: ["Urine output and drinking", "Vomiting, abdominal pain, black stools"],
+        cautions: [
+          "Dehydration is the single biggest danger: a child with gastroenteritis who is given ibuprofen can develop acute kidney injury (Nelson).",
+          "Ibuprofen in chickenpox has been linked to severe skin and soft-tissue infection — use paracetamol."
+        ]
+      },
+      {
+        title: "Tablets only, no syrup: dosing a child by tablet fractions",
+        best_for: "Stock-out of suspension where 200 mg scored tablets are on the shelf.",
+        requires: ["oral"],
+        steps: [
+          "Under 10 kg: do not try to divide tablets. Use paracetamol syrup or suppositories instead.",
+          "10–14 kg: half a 200 mg tablet (100 mg) per dose.",
+          "15–19 kg: half a 200 mg tablet (100 mg) per dose (a whole tablet would exceed 10 mg/kg).",
+          "20–29 kg: one 200 mg tablet per dose.",
+          "30–39 kg: one and a half 200 mg tablets (300 mg) per dose.",
+          "40 kg and over: adult dose, 200–400 mg.",
+          "Split only scored tablets, with a clean blade or tablet cutter. The tablet can be crushed and mixed with a spoon of food just before giving."
+        ],
+        monitor: ["Same checks as the syrup method"],
+        cautions: ["Every band above stays at or below 10 mg/kg per dose; repeat no more often than every 6–8 h."]
+      },
+      {
+        title: "Regular ibuprofen with paracetamol after surgery or birth",
+        best_for: "Post-caesarean, post-operative and postpartum wards where opioids are scarce.",
+        requires: ["oral"],
+        steps: [
+          "Paracetamol 1 g every 6 h plus ibuprofen 400 mg every 8 h with food, both written at fixed times.",
+          "Before starting, apply the NSAID check (see Diclofenac): hypovolaemia, bleeding, low urine output, gentamicin, asthma with NSAID sensitivity.",
+          "After caesarean, NSAIDs added to spinal morphine improve pain and reduce opioid need (Gabbe). Breastfeeding is not a reason to withhold it.",
+          "In women with pre-eclampsia, Gabbe cites randomised trials of postpartum ibuprofen versus paracetamol and blood pressure; confirm local practice, but do not give it if urine output is low or creatinine is rising.",
+          "Stop after 3–5 days or when pain settles."
+        ],
+        monitor: ["Urine output and blood loss in the first 24 h", "Epigastric pain or dark stools"],
+        cautions: ["Do not give with diclofenac or any other NSAID."]
+      }
+    ],
+    paediatric: [
+      "5–10 mg/kg every 6–8 hours; conservative maximum 30 mg/kg/day (BNFc), Nelson up to 40 mg/kg/day; never more than 400 mg per dose.",
+      "Not generally recommended under 6 months; limited use from 3 months may be appropriate (Nelson). Do not use under 5 kg.",
+      "Kidney injury from short-term ibuprofen in a well-hydrated child is very rare; the risk rises with hypovolaemia or heart disease (Nelson).",
+      "Antipyretics do not prevent febrile convulsions."
+    ],
+    cautions: [
+      "Acute kidney injury in hypovolaemia, sepsis, heart failure, cirrhosis, CKD and with nephrotoxins.",
+      "Peptic ulcer and GI bleeding; risk higher with age, previous ulcer, steroids, anticoagulants, SSRIs (Harrison).",
+      "NSAID-exacerbated asthma (aspirin-sensitive asthma, often with nasal polyps): avoid. Most children with asthma tolerate ibuprofen; ask about previous reactions.",
+      "Pregnancy: avoid from 20 weeks (oligohydramnios, ductus arteriosus closure — Gabbe); avoid around conception and in the first trimester where possible. Paracetamol is the analgesic of choice in pregnancy.",
+      "Bleeding: inhibits platelets reversibly; avoid with low platelets, coagulopathy, dengue-like or haemorrhagic fevers, and postpartum haemorrhage.",
+      "Never with another NSAID."
+    ],
+    antidote: "No antidote. Overdose: mostly GI upset; large overdoses can cause metabolic acidosis, seizures and kidney injury — supportive care, fluids, and activated charcoal within 1 hour if available.",
+    calc: {
+      type: "weight",
+      dosePerKg: 10,
+      doseUnit: "mg",
+      conc: 20,
+      concUnit: "mg/mL",
+      maxDose: 400,
+      label: "Child oral dose (10 mg/kg) using 100 mg/5 mL suspension (20 mg/mL)"
+    },
+    textbook: [
+      {
+        book: "nelson",
+        text: "Ibuprofen orally every 6 h; maximum daily dose 2,400 mg; anti-inflammatory, transient antiplatelet effects, may cause gastritis, extensive paediatric safety experience.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, Table 93.6, p. 681"
+      },
+      {
+        book: "nelson",
+        text: "Renal injury from short-term ibuprofen in euvolaemic children is rare; risk increases with hypovolaemia or cardiac dysfunction. NSAIDs are not generally recommended under 6 months.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, p. 682"
+      },
+      {
+        book: "harrison",
+        text: "Mild pain: ibuprofen 400 mg every 6 h, maximum 2400 mg/day.",
+        ref: "Harrison 22nd ed. 2025, ch. 13 Palliative and End-of-Life Care, p. 80"
+      },
+      {
+        book: "harrison",
+        text: "NSAID ulcer risk factors: advanced age, previous ulcer, glucocorticoids, high-dose or multiple NSAIDs, anticoagulants; SSRIs add to bleeding risk.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2521"
+      },
+      {
+        book: "gabbe",
+        text: "No teratogenicity has been reported for ibuprofen and other NSAIDs, but chronic use may cause oligohydramnios and constriction of the fetal ductus arteriosus.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131"
+      },
+      {
+        book: "gabbe",
+        text: "After caesarean, IV ketorolac or oral ibuprofen with neuraxial morphine improves pain scores and reduces PCA opioid use.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 365"
+      },
+      {
+        book: "gabbe",
+        text: "NSAIDs may be considered for a short course (under 72 h) before 32 weeks in pregnant women without kidney impairment; acetaminophen is safe at any gestation.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 44 Kidney Disease in Pregnancy, p. 842"
+      }
+    ],
+    sources: [
+      { name: "BNF for Children — ibuprofen (maximum 30 mg/kg/day; minimum age and weight)" },
+      { name: "WHO Pocket Book of Hospital Care for Children, 2013" },
+      { name: "NICE CKS: Chickenpox — avoid NSAIDs" },
+      { name: "US FDA Drug Safety Communication: NSAIDs from 20 weeks of pregnancy, 2020" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "metoclopramide",
+    name: "Metoclopramide",
+    aka: ["Plasil", "Maxolon", "Reglan"],
+    cls: "Dopamine (D2) antagonist antiemetic and prokinetic",
+    cat: "emergency",
+    wards: ["emergency", "maternity", "medical", "surgical", "outpatient"],
+    tags: ["nausea", "vomiting", "antiemetic", "prokinetic", "migraine", "dystonia", "bowel obstruction"],
+    presentation: [
+      "Injection 5 mg/mL, 2 mL ampoule (10 mg).",
+      "Tablets 10 mg; oral solution 5 mg/5 mL in some markets."
+    ],
+    indications: [
+      "Nausea and vomiting (drug-induced, migraine, gastroparesis, some post-operative nausea)",
+      "Nausea and vomiting of pregnancy, as a second-line drug",
+      "Migraine with nausea"
+    ],
+    standard: {
+      summary: "A useful cheap antiemetic with two dangers that matter at the bedside: it must never be given when the bowel may be mechanically obstructed, and it causes acute dystonia, most often in children, teenagers and young adults. Short courses, low doses, given slowly.",
+      items: [
+        {
+          label: "Adult",
+          text: "10 mg orally, IM or slow IV, up to 3 times a day. Maximum 30 mg/day (0.5 mg/kg/day) and no longer than 5 days (EMA 2013)."
+        },
+        {
+          label: "Child 1 year and over",
+          text: "0.1–0.15 mg/kg per dose, up to 3 times a day, maximum 10 mg per dose (Nelson; EMA). Contraindicated under 1 year. Not first-line in children because of dystonia."
+        },
+        {
+          label: "IV rate",
+          text: "Slow IV over at least 3 minutes; Nelson gives migraine doses over 15 minutes. Rapid injection causes akathisia and anxiety."
+        },
+        {
+          label: "PONV",
+          text: "10 mg is a weak antiemetic for post-operative vomiting; dexamethasone, low-dose haloperidol or ondansetron are better (see Postoperative nausea & vomiting)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Rule out mechanical obstruction before the first dose",
+        best_for: "Any vomiting patient with abdominal symptoms, and every post-operative abdomen.",
+        requires: [],
+        steps: [
+          "Ask and look: colicky pain, distension, no flatus or stool, visible peristalsis, an irreducible hernia, a scar, loud tinkling bowel sounds? Think obstruction (see Intestinal obstruction).",
+          "If obstruction is possible, DO NOT give metoclopramide. Pass a nasogastric tube, start IV fluids and call the surgeon. Pushing a blocked bowel risks perforation.",
+          "Do not use it to 'treat' postoperative ileus — it does not shorten ileus and is dangerous if the cause is mechanical (see Postoperative ileus).",
+          "Avoid for 3–4 days after a gut anastomosis (BNF), and in GI bleeding or perforation.",
+          "When obstruction is excluded and the problem is nausea, choose an antiemetic by cause; ondansetron or dexamethasone may be better."
+        ],
+        monitor: ["Abdomen after any dose: worsening colic or distension means stop and reassess"],
+        cautions: ["Vomiting is a symptom, not a diagnosis."]
+      },
+      {
+        title: "Giving it slowly, at the lowest dose, for the shortest time",
+        best_for: "Ward use without a pump.",
+        requires: ["iv"],
+        steps: [
+          "Draw up 10 mg (2 mL). Inject IV over at least 3 minutes, or add to 50 mL 0.9 % saline and run by gravity over about 15 minutes.",
+          "Children: 0.1–0.15 mg/kg (max 10 mg) diluted, over 15 minutes.",
+          "No more than three doses in 24 hours; stop after 5 days at most.",
+          "IM is acceptable if there is no IV access."
+        ],
+        monitor: [
+          "Restlessness or inability to sit still (akathisia) within an hour — stop the infusion",
+          "Neck, jaw, tongue or eye spasm over the next 1–3 days"
+        ],
+        cautions: ["Avoid in Parkinson disease, epilepsy, phaeochromocytoma and with antipsychotics."]
+      },
+      {
+        title: "When dystonia happens: treat at once, stop for good",
+        best_for: "Young woman or child with a twisted neck, rolled-up eyes, locked jaw or protruding tongue after metoclopramide.",
+        requires: ["im"],
+        steps: [
+          "Recognise it: it is a drug reaction, not hysteria or tetanus. Ask what antiemetic was given.",
+          "Throat spasm or stridor: oxygen, call for help, treat immediately IV and be ready to support the airway.",
+          "Adult: biperiden 2 mg IM or slow IV (see Acute dystonia), or promethazine 25–50 mg deep IM, or diazepam 5–10 mg slowly IV.",
+          "Child: an anticholinergic or antihistamine at the child dose in the national formulary (Nelson gives diphenhydramine 25–50 mg IV for adolescents); promethazine is not for under 2 years.",
+          "Continue oral biperiden for 1–2 days because the reaction can return as the antidote wears off.",
+          "Record 'dystonia with metoclopramide' prominently in the notes and tell the patient. Do not give it again; use ondansetron or another class."
+        ],
+        monitor: ["Airway and swallowing until spasm has resolved", "Recurrence over the next 24–48 h"],
+        cautions: [
+          "Acute dystonia is more frequent in children than older people (Nelson) and is classically seen in young women; tardive dyskinesia after long use is more common in older patients and can be permanent (Harrison)."
+        ]
+      }
+    ],
+    paediatric: [
+      "Contraindicated under 1 year. In children 1–18 years, use only as second-line: 0.1–0.15 mg/kg per dose (max 10 mg), up to 3 times daily, for no more than 5 days.",
+      "Extrapyramidal reactions are more frequent in children (Nelson). A child who swallowed an adult's tablets may present with dystonia hours later.",
+      "Ondansetron is the usual alternative for a vomiting child."
+    ],
+    cautions: [
+      "Contraindicated in suspected mechanical bowel obstruction, perforation, GI haemorrhage, and within 3–4 days of GI surgery.",
+      "Acute dystonia (young people, women, children), akathisia, parkinsonism; tardive dyskinesia with long use, especially in older people (Harrison).",
+      "Neuroleptic malignant syndrome — rare; stop it with antipsychotics if fever, rigidity and confusion appear (see Neuroleptic malignant syndrome).",
+      "Avoid in Parkinson disease (blocks dopamine), epilepsy, phaeochromocytoma (hypertensive crisis).",
+      "Can cause depression and akathisia mistaken for anxiety (Harrison).",
+      "Kidney impairment: halve the dose if CrCl 15–60 mL/min; quarter the dose if CrCl under 15 (EMA)."
+    ],
+    antidote: "For acute dystonia: biperiden 2 mg IM or slow IV (adult), repeat after 30 minutes if needed; alternatives promethazine IM or diazepam slow IV (see Acute dystonia).",
+    textbook: [
+      {
+        book: "harrison",
+        text: "Metoclopramide causes irreversible movement disorders like tardive dyskinesia, particularly in older patients; dopamine antagonists that cross the blood-brain barrier cause movement disorders and hyperprolactinaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 48 Nausea, Vomiting, and Indigestion, p. 299"
+      },
+      {
+        book: "harrison",
+        text: "Akathisia from dopamine-blocking antiemetics such as metoclopramide can mimic depression.",
+        ref: "Harrison 22nd ed. 2025, ch. 13 Palliative and End-of-Life Care, p. 84"
+      },
+      {
+        book: "nelson",
+        text: "Extrapyramidal reactions to metoclopramide and prochlorperazine are more frequent in children than in older persons; an acute reaction can be controlled with IV diphenhydramine. Migraine dose maximum 10 mg IV over 15 minutes.",
+        ref: "Nelson 22nd ed. 2024, ch. 635 Headaches, p. 3648"
+      },
+      {
+        book: "nelson",
+        text: "Use the minimum effective dose and limit duration because extrapyramidal symptom risk rises with cumulative exposure; maximum 10 mg per dose.",
+        ref: "Nelson 22nd ed. 2024, ch. 352 Major Symptoms and Signs of Digestive Tract Disorders, Table 352.8, p. 2229"
+      },
+      {
+        book: "nelson",
+        text: "Opioid-induced nausea: metoclopramide 0.15 mg/kg IV up to 10 mg per dose.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, Table 93.8, p. 684"
+      },
+      {
+        book: "schwartz",
+        text: "Metoclopramide acts only on the stomach and duodenum and helps mainly gastroparesis, not ileus.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 12 Quality, Patient Safety, Assessments of Care, and Complications, p. 421"
+      },
+      {
+        book: "gabbe",
+        text: "Among 3458 infants exposed to metoclopramide in the first trimester there was no increased risk of malformations, low birth weight or preterm delivery.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 129"
+      },
+      {
+        book: "gabbe",
+        text: "Breastfeeding: metoclopramide has potential dopaminergic blocking effects in the infant, but no detrimental effects have been reported.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 134"
+      }
+    ],
+    sources: [
+      { name: "European Medicines Agency. Metoclopramide: restricted dose and duration, 2013" },
+      {
+        name: "British National Formulary (BNF) — metoclopramide (contraindications after GI surgery)"
+      },
+      {
+        name: "Gan TJ et al. Fourth consensus guidelines for the management of postoperative nausea and vomiting. Anesth Analg 2020"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "ondansetron",
+    name: "Ondansetron",
+    aka: ["Zofran"],
+    cls: "Serotonin 5-HT3 receptor antagonist antiemetic",
+    cat: "emergency",
+    wards: ["emergency", "maternity", "paediatric", "medical", "surgical"],
+    tags: [
+      "nausea",
+      "vomiting",
+      "PONV",
+      "antiemetic",
+      "QT prolongation",
+      "gastroenteritis",
+      "hyperemesis"
+    ],
+    presentation: [
+      "Injection 2 mg/mL, 2 mL (4 mg) and 4 mL (8 mg) ampoules.",
+      "Tablets 4 mg and 8 mg; orally disintegrating tablets 4 mg and 8 mg; syrup 4 mg/5 mL in some markets."
+    ],
+    indications: [
+      "Post-operative nausea and vomiting: prophylaxis and rescue",
+      "Chemotherapy- and radiotherapy-induced vomiting",
+      "Vomiting in a child with gastroenteritis, to allow oral rehydration",
+      "Severe nausea and vomiting of pregnancy when first-line drugs fail"
+    ],
+    standard: {
+      summary: "Effective, not sedating, no dystonia. Its one serious danger is QT prolongation and torsade de pointes, which matters most in patients with low potassium or magnesium from vomiting, heart disease, or other QT drugs. Small doses are enough for most nausea.",
+      items: [
+        {
+          label: "PONV, adult",
+          text: "4 mg IV at the end of surgery (prophylaxis) or for rescue. Repeating it within 6 hours adds little; switch class (see Postoperative nausea & vomiting)."
+        },
+        {
+          label: "Other nausea, adult",
+          text: "4–8 mg orally, IM or slow IV up to every 8 hours. A single IV dose must never exceed 16 mg (US FDA 2012, QT prolongation)."
+        },
+        {
+          label: "Child",
+          text: "PONV: 0.1 mg/kg IV, maximum 4 mg. Other nausea: 0.1–0.15 mg/kg per dose every 8 h, maximum 8 mg per dose (Nelson)."
+        },
+        { label: "Severe liver impairment", text: "Maximum 8 mg/day (product information)." }
+      ]
+    },
+    improvised: [
+      {
+        title: "Using ondansetron where nobody can measure the QT interval",
+        best_for: "District hospital without an ECG machine.",
+        requires: [],
+        steps: [
+          "Ask: fainting or palpitations? Known heart disease or a slow pulse? Family history of sudden death? On haloperidol, chlorpromazine, amiodarone, quinine, methadone, escitalopram, azithromycin, erythromycin, fluconazole or pentamidine? If yes, choose another antiemetic or use the smallest dose once.",
+          "Correct the cause of a long QT you cannot see: a patient vomiting for days or with diarrhoea is usually low in potassium and magnesium — replace potassium in the IV fluid once urine is flowing.",
+          "Keep to single 4 mg doses in adults (0.1 mg/kg in children). Do not escalate to high or repeated doses.",
+          "Feel the pulse after the dose: a new irregular or slow pulse, or a faint, is a reason to stop and get an ECG."
+        ],
+        monitor: ["Pulse rate and rhythm", "Potassium where measurable"],
+        cautions: [
+          "Avoid in congenital long QT syndrome and with severe bradycardia (Harrison: 5-HT3 antagonists increase arrhythmia and sudden death risk with QT prolongation)."
+        ]
+      },
+      {
+        title: "IV push or IM without a pump",
+        best_for: "Theatre, recovery and the ward.",
+        requires: ["iv"],
+        steps: [
+          "Adults: 4 mg (2 mL) undiluted, injected over at least 30 seconds — preferably 2–5 minutes.",
+          "Children: draw up 0.1 mg/kg in a 1 mL or 2 mL syringe; dilute to 5–10 mL with 0.9 % saline for easier measuring and give over 2–5 minutes.",
+          "No IV access: the same dose IM is acceptable."
+        ],
+        monitor: ["Nausea at 30 minutes", "Headache and constipation are common and harmless"],
+        cautions: ["Do not use as a drip of 32 mg; that dose was withdrawn for QT prolongation."]
+      },
+      {
+        title: "One oral dose so a vomiting child can take ORS",
+        best_for: "Child with gastroenteritis and some dehydration who vomits every attempt at oral rehydration.",
+        requires: ["oral"],
+        steps: [
+          "Use only for a child older than 2 years (Nelson) who is not severely dehydrated and not in shock — shock needs IV fluid now (see Severe dehydration).",
+          "Give ONE dose about 0.15 mg/kg orally: 8–15 kg → 2 mg; 15–30 kg → 4 mg; over 30 kg → 8 mg (orally disintegrating tablet if available).",
+          "Wait 15–30 minutes, then restart ORS in small frequent sips by spoon or syringe.",
+          "Do not continue ondansetron at home. It treats the vomiting, not the diarrhoea, and may make diarrhoea slightly worse."
+        ],
+        monitor: ["Whether ORS is now retained; signs of dehydration every hour"],
+        cautions: [
+          "Never give an antiemetic instead of looking for the cause: bowel obstruction, raised intracranial pressure, meningitis, DKA, malaria and urinary infection also cause vomiting."
+        ]
+      }
+    ],
+    paediatric: [
+      "PONV: 0.1 mg/kg (maximum 4 mg). Other nausea: 0.1–0.15 mg/kg every 8 h, maximum 8 mg per dose (Nelson).",
+      "Gastroenteritis: a single oral dose can help a child keep ORS down; Nelson mentions use in children older than 2 years (viral gastroenteritis) and older than 4 years (Salmonella gastroenteritis).",
+      "Ondansetron is listed among drugs that prolong the QT interval in children (Nelson)."
+    ],
+    cautions: [
+      "QT prolongation and torsade de pointes, especially with low potassium or magnesium, heart disease, bradycardia, and other QT-prolonging drugs (Harrison, Nelson). Single IV dose never above 16 mg.",
+      "Serotonin syndrome when combined with SSRIs, tramadol or other serotonergic drugs (Nelson lists ondansetron among serotonergic agents).",
+      "Constipation and headache are common.",
+      "It can mask the progressive vomiting of bowel obstruction or ileus; reassess the abdomen.",
+      "Pregnancy: no consistent increase in birth defects, but one large study found more heart defects after first-trimester exposure (Gabbe). Use after first-line antiemetics fail, especially before 10 weeks."
+    ],
+    antidote: "No specific antidote. Torsade de pointes: magnesium sulfate 2 g IV over 10–15 minutes, correct potassium, stop all QT-prolonging drugs (see Magnesium sulfate).",
+    textbook: [
+      {
+        book: "harrison",
+        text: "5-HT3 antagonists like ondansetron prevent postoperative vomiting, radiation-induced symptoms and chemotherapy-induced emesis.",
+        ref: "Harrison 22nd ed. 2025, ch. 48 Nausea, Vomiting, and Indigestion, p. 298"
+      },
+      {
+        book: "harrison",
+        text: "Domperidone, erythromycin, tricyclic antidepressants and 5-HT3 antagonists increase risks of cardiac arrhythmias and sudden cardiac death in those with QTc prolongation.",
+        ref: "Harrison 22nd ed. 2025, ch. 48 Nausea, Vomiting, and Indigestion, p. 299"
+      },
+      {
+        book: "nelson",
+        text: "Opioid-induced nausea: ondansetron 0.15 mg/kg up to 8 mg IV every 6–8 h, not to exceed 32 mg/day.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, Table 93.8, p. 684"
+      },
+      {
+        book: "nelson",
+        text: "Postoperative and chemotherapy vomiting: ondansetron; adverse effects include constipation, headache and QTc prolongation.",
+        ref: "Nelson 22nd ed. 2024, ch. 352 Major Symptoms and Signs of Digestive Tract Disorders, Table 352.8, p. 2230"
+      },
+      {
+        book: "nelson",
+        text: "Antiemetics such as ondansetron may help alleviate vomiting in children older than 2 years with viral gastroenteritis.",
+        ref: "Nelson 22nd ed. 2024, ch. 312 Rotaviruses, Caliciviruses, and Astroviruses, p. 2052"
+      },
+      {
+        book: "nelson",
+        text: "Ondansetron is among drugs causing acquired QT prolongation.",
+        ref: "Nelson 22nd ed. 2024, ch. 484 Disturbances of Rate and Rhythm of the Heart, p. 2858"
+      },
+      {
+        book: "gabbe",
+        text: "Ondansetron is no more effective than promethazine but less sedating; one study showed no increase in birth defects, while a larger study found a doubling of heart defects in exposed newborns.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 129"
+      }
+    ],
+    sources: [
+      {
+        name: "US FDA Drug Safety Communication: ondansetron 32 mg single IV dose withdrawn (QT prolongation), 2012"
+      },
+      {
+        name: "Gan TJ et al. Fourth consensus guidelines for the management of postoperative nausea and vomiting. Anesth Analg 2020"
+      },
+      {
+        name: "Freedman SB et al. Oral ondansetron for gastroenteritis in a pediatric emergency department. N Engl J Med 2006 (weight-band doses)"
+      },
+      { name: "British National Formulary (BNF) — ondansetron" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "omeprazole",
+    name: "Omeprazole",
+    aka: ["Losec", "Prilosec", "PPI"],
+    cls: "Proton pump inhibitor (PPI)",
+    cat: "emergency",
+    wards: ["emergency", "medical", "surgical", "icu", "outpatient"],
+    tags: [
+      "upper GI bleeding",
+      "peptic ulcer",
+      "stress ulcer prophylaxis",
+      "aspiration prophylaxis",
+      "GERD",
+      "H. pylori",
+      "acid suppression"
+    ],
+    presentation: [
+      "Capsules 20 mg and 40 mg (enteric-coated pellets) — do not crush the pellets.",
+      "Powder for injection or infusion 40 mg vial (reconstitute only with the solvent or fluid named on the leaflet).",
+      "Dispersible (MUPS) tablets 10, 20, 40 mg in some markets."
+    ],
+    indications: [
+      "Upper GI bleeding from peptic ulcer: high-dose after endoscopy, or empirically where endoscopy is far away",
+      "Peptic ulcer healing and H. pylori eradication (with antibiotics)",
+      "Stress-ulcer prophylaxis in selected ICU patients only",
+      "Acid aspiration prophylaxis before caesarean or emergency anaesthesia",
+      "Gastric protection for high-risk patients who must take an NSAID or steroid"
+    ],
+    standard: {
+      summary: "The most potent acid suppressant. Life-saving after a bleeding ulcer; over-used everywhere else, where long courses add pneumonia, C. difficile diarrhoea and low magnesium. Ranitidine is NOT an alternative: it was withdrawn worldwide in 2020.",
+      items: [
+        {
+          label: "Upper GI bleed (high-risk ulcer)",
+          text: "80 mg IV bolus then 8 mg/h infusion, OR intermittent doses of 40 mg 2–4 times a day IV or orally, for 3 days, then 40 mg orally daily. Intermittent and continuous high dose give comparable outcomes (Harrison)."
+        },
+        {
+          label: "Before endoscopy",
+          text: "A PPI may be considered at presentation; it reduces high-risk ulcer findings but not rebleeding or death (Harrison). Where no endoscopy is available, give the high-dose regimen and refer."
+        },
+        {
+          label: "Ulcer, GERD",
+          text: "20–40 mg orally once daily before breakfast, 4–8 weeks (Harrison table: 20 mg/day)."
+        },
+        {
+          label: "Aspiration prophylaxis",
+          text: "Oral 20–40 mg the night before and the morning of surgery, or 40 mg IV at least 30–60 minutes before induction; give 30 mL of 0.3 M sodium citrate just before induction where available (see the preoperative tool). Confirm the regimen with the anaesthetist."
+        },
+        { label: "Child", text: "1–2 mg/kg/day orally in 1–2 doses, maximum 40 mg per dose (Nelson)." }
+      ]
+    },
+    improvised: [
+      {
+        title: "Upper GI bleeding with no pump: intermittent high-dose IV",
+        best_for: "Ulcer bleeding in a hospital with no infusion pump (or no endoscopy).",
+        requires: ["iv"],
+        steps: [
+          "Resuscitate first: two large cannulae, fluids, blood; omeprazole is not resuscitation.",
+          "Reconstitute 40 mg as the leaflet says. Give 80 mg (two vials) IV slowly over at least 5 minutes as the first dose.",
+          "Then give 40 mg IV slowly every 6–12 hours for 72 hours. Harrison shows intermittent high dose is as effective as an 8 mg/h infusion — no pump needed.",
+          "As soon as she or he can swallow and is not vomiting blood, change to oral 40 mg twice daily to complete 72 hours, then 40 mg daily for 8 weeks.",
+          "Stop NSAIDs and aspirin. Test and treat H. pylori when possible.",
+          "Suspected varices (jaundice, ascites, alcohol, schistosomiasis with big spleen): omeprazole does not stop variceal bleeding. Give ceftriaxone, and a vasoactive drug if available, and refer for endoscopy (Harrison)."
+        ],
+        monitor: ["Pulse, BP, Hb, fresh haematemesis or melaena", "Urine output"],
+        cautions: ["Rebleeding after the PPI course is common without H. pylori treatment and NSAID avoidance."]
+      },
+      {
+        title: "Omeprazole down a nasogastric tube when there is no IV omeprazole",
+        best_for: "Patient with an NG tube, IV stock-out, or ICU with no IV PPI.",
+        requires: ["oral"],
+        steps: [
+          "Do not crush the enteric-coated pellets and push them dry down the tube: they clump and block it.",
+          "Option 1 (bicarbonate suspension): empty one 20 mg capsule into 10 mL of 8.4 % sodium bicarbonate in an oral syringe and shake until the pellets dissolve (about 30 minutes) = 2 mg/mL. Give the dose down the tube and flush with 10–20 mL water. Bicarbonate protects omeprazole from stomach acid (Harrison describes the same principle in commercial omeprazole–bicarbonate powder).",
+          "Option 2: dispersible MUPS tablets disperse in water and can go down a wide tube.",
+          "Clamp the tube, or stop free drainage, for 30–60 minutes after the dose.",
+          "Each 10 mL of 8.4 % bicarbonate carries 10 mmol of sodium — consider this in heart failure, neonates and hypernatraemia."
+        ],
+        monitor: ["Tube patency", "Signs of continued bleeding"],
+        cautions: ["Label the syringe 'NG use only — not for injection'."]
+      },
+      {
+        title: "Stress-ulcer prophylaxis: give it only to the patients who need it",
+        best_for: "Surgical and medical wards where every inpatient is started on IV omeprazole.",
+        requires: [],
+        steps: [
+          "Give prophylaxis for: mechanical ventilation for 48 hours or more; coagulopathy; or a history of gastritis or peptic ulcer (Schwartz). Consider also: major burns, severe head injury, shock on vasopressors.",
+          "Do NOT give it routinely to post-operative patients who are not ventilated and have no ulcer history: it raises pneumonia risk (Schwartz).",
+          "If the gut works, give 20–40 mg orally or by NG once daily; IV only when nothing can go by mouth or tube.",
+          "Stop it when the reason stops — at extubation, recovery of clotting, or discharge. Do not send the patient home on it without a reason written down.",
+          "Ranitidine is not an option: it was withdrawn in 2020 (Nelson). Famotidine or cimetidine are the remaining H2 blockers if no PPI is available."
+        ],
+        monitor: [
+          "Diarrhoea (C. difficile) and pneumonia in patients on long courses",
+          "Magnesium if used for months"
+        ],
+        cautions: ["A PPI does not replace early feeding and good perfusion, which protect the stomach most."]
+      }
+    ],
+    paediatric: [
+      "1–2 mg/kg/day orally in 1–2 divided doses; maximum 40 mg per dose; give 30 minutes before the first meal (Nelson).",
+      "Long courses: infections, bone problems, low magnesium and vitamin B12 deficiency; wean after more than 6 months to avoid rebound (Nelson).",
+      "For an infant or child unable to swallow capsules, the bicarbonate suspension (2 mg/mL) can be measured by oral syringe."
+    ],
+    cautions: [
+      "Long-term use: community-acquired pneumonia, C. difficile infection, hypomagnesaemia, B12 and iron deficiency, possibly fractures (Harrison). Review the indication at every discharge.",
+      "Drug interactions: omeprazole inhibits CYP2C19 — caution with warfarin, diazepam and phenytoin (Harrison); it reduces absorption of drugs needing acid (ketoconazole, iron, some antiretrovirals such as atazanavir and rilpivirine).",
+      "May reduce the antiplatelet effect of clopidogrel.",
+      "Acute interstitial nephritis is a rare cause of AKI with PPIs (Harrison).",
+      "Ranitidine was withdrawn in 2020 because of NDMA contamination and must not be used as an alternative (Nelson)."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "High-dose PPI after endoscopic therapy reduces rebleeding and mortality from high-risk ulcers; intermittent and continuous high-dose regimens give comparable outcomes. Regimen: IV bolus 80 mg then 8 mg/h, or intermittent oral or IV doses (e.g., 40 mg 2–4 times per day), for 3 days.",
+        ref: "Harrison 22nd ed. 2025, ch. 51 Gastrointestinal Bleeding, Figure 51-1, p. 317"
+      },
+      {
+        book: "harrison",
+        text: "A PPI infusion may be considered at presentation; it modestly reduces need for endoscopic therapy but does not improve rebleeding or death.",
+        ref: "Harrison 22nd ed. 2025, ch. 51 Gastrointestinal Bleeding, p. 319"
+      },
+      {
+        book: "harrison",
+        text: "Omeprazole is also available as non-enteric-coated granules with sodium bicarbonate that can be given orally or by gastric tube; caution with theophylline, warfarin, diazepam, atazanavir and phenytoin; long-term PPIs are associated with pneumonia and C. difficile.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2525"
+      },
+      {
+        book: "harrison",
+        text: "Peptic ulcer treatment table: omeprazole 20 mg/day.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, Table 335-3, p. 2524"
+      },
+      {
+        book: "schwartz",
+        text: "Keep gastric pH above 4 in patients ventilated for 48 hours or more and in coagulopathic patients; patients not ventilated and without gastritis or ulcer history should not receive postoperative prophylaxis because of pneumonia risk.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 12 Quality, Patient Safety, Assessments of Care, and Complications, p. 422"
+      },
+      {
+        book: "nelson",
+        text: "PPIs 1–2 mg/kg/day; maximum omeprazole 40 mg per dose. Ranitidine was withdrawn in 2020.",
+        ref: "Nelson 22nd ed. 2024, ch. 352 Major Symptoms and Signs of Digestive Tract Disorders, Table 352.8, p. 2229"
+      },
+      {
+        book: "gabbe",
+        text: "Omeprazole has not been associated with teratogenic risk in 2261 exposures.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 129"
+      }
+    ],
+    sources: [
+      { name: "Barkun AN et al. International consensus on non-variceal upper GI bleeding, 2019" },
+      { name: "US FDA. Request to withdraw all ranitidine products (NDMA), April 2020" },
+      {
+        name: "Quercia RA et al. Stability of omeprazole in an extemporaneously prepared oral liquid (8.4 % sodium bicarbonate). Am J Health Syst Pharm 1997"
+      },
+      { name: "British National Formulary (BNF) — omeprazole" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- anti-infectives ---- */
+  {
+    id: "ciprofloxacin",
+    name: "Ciprofloxacin (tablets / IV)",
+    aka: [
+      "Cipro",
+      "Ciprobay",
+      "Ciprofloxacin tablets",
+      "Ciprofloxacin IV infusion",
+      "Fluoroquinolone",
+      "Quinolone"
+    ],
+    cls: "Fluoroquinolone antibiotic, systemic (oral and IV)",
+    cat: "infection",
+    wards: ["emergency", "paediatric", "medical", "surgical", "icu", "outpatient"],
+    tags: [
+      "shigella",
+      "dysentery",
+      "bloody diarrhoea",
+      "typhoid",
+      "enteric fever",
+      "UTI",
+      "pyelonephritis",
+      "meningococcal prophylaxis",
+      "fluoroquinolone resistance",
+      "QT",
+      "tendon rupture"
+    ],
+    presentation: [
+      "Tablets 250 mg and 500 mg (750 mg in some supplies). Tablets can be split and crushed.",
+      "IV infusion 2 mg/mL, ready to use: 200 mg in 100 mL and 400 mg in 200 mL. Do not dilute further; protect from light.",
+      "Oral suspension (250 mg/5 mL) exists but is rarely stocked.",
+      "THIS IS NOT THE EYE DROP. Ciprofloxacin 0.3 % eye drops and ointment are a different product with their own entry: see 'Ciprofloxacin eye drops' (ciprofloxacin-eye). Never put the IV solution in an eye, and never treat a corneal ulcer with tablets alone."
+    ],
+    indications: [
+      "Shigella dysentery / bloody diarrhoea (WHO first line, all ages) — where local strains are still susceptible",
+      "Typhoid (enteric fever) ONLY where the strain or local data show susceptibility — not as blind first choice (see Standard)",
+      "Complicated urinary tract infection and pyelonephritis (oral)",
+      "Chemoprophylaxis for close contacts of meningococcal disease (single dose)",
+      "Gram-negative infections where a culture shows it is the best option",
+      "NOT for gonorrhoea (resistance is common) and not for simple cystitis, sinusitis or bronchitis"
+    ],
+    standard: {
+      summary: "Oral ciprofloxacin is absorbed well enough to treat almost everything the IV form treats; the IV bag is for the patient who is vomiting, shocked or nil by mouth. Resistance is the real problem: Shigella and Salmonella Typhi with reduced ciprofloxacin susceptibility are common in Africa, so reassess every patient at 48 hours and switch if they are not clearly better.",
+      items: [
+        {
+          label: "Adult",
+          text: "500 mg orally every 12 h, or 400 mg IV every 12 h (each 400 mg bag over 60 min). Change to oral as soon as the patient can swallow."
+        },
+        {
+          label: "Child",
+          text: "15 mg/kg orally every 12 h (maximum 500 mg per dose) — Nelson's range is 15–30 mg/kg/day in two doses. IV 10 mg/kg every 12 h (maximum 400 mg per dose) over 60 min."
+        },
+        {
+          label: "Neonate",
+          text: "10 mg/kg every 12 h orally or IV (Nelson). Specialist decision only, when no safer drug covers a proven organism."
+        },
+        {
+          label: "Shigella / bloody diarrhoea",
+          text: "Child 15 mg/kg twice daily for 3 days; adult 500 mg twice daily for 3 days (WHO). Give zinc to children as well, but at least 2 h after the ciprofloxacin or 6 h before it. Review at 48 h: no improvement means switch (ceftriaxone, or azithromycin) — see Improvised."
+        },
+        {
+          label: "Typhoid (susceptible strain only)",
+          text: "Adult 500 mg twice daily orally or 400 mg IV every 12 h for 5–7 days (Harrison). Child 15 mg/kg twice daily, duration as for adults — confirm with the national protocol. Where susceptibility is unknown, Harrison advises against fluoroquinolones as empirical typhoid treatment in parts of Africa: use azithromycin for uncomplicated and ceftriaxone for severe typhoid."
+        },
+        {
+          label: "Meningococcal contact prophylaxis",
+          text: "Adult: 500 mg as a single oral dose (Harrison). Child: dose by the national protocol."
+        },
+        {
+          label: "Ethiopia — resistance",
+          text: "Ciprofloxacin-resistant and reduced-susceptibility Shigella and S. Typhi have been reported from Ethiopian hospitals, and patterns differ between regions. Use your hospital's antibiogram, send a stool or blood culture when you can, and treat a 48-hour failure as resistance until shown otherwise."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Give it by mouth — the tablet is the treatment",
+        best_for: "Almost every patient, and every ward where IV bags are scarce or expensive.",
+        requires: ["oral"],
+        steps: [
+          "If the patient can swallow and is not vomiting repeatedly, give tablets from the first dose. 500 mg orally does the work of 400 mg IV.",
+          "Nasogastric tube: crush the tablet, mix with 10–20 mL of water and flush it down. Stop milk feeds for about 2 h before and after the dose if you can — calcium in milk binds the drug.",
+          "Do not give at the same time as zinc tablets, iron, calcium, antacids or ORS made with milk: give the ciprofloxacin 2 h before or 6 h after them (Harrison).",
+          "Reserve IV ciprofloxacin for the patient who is shocked, vomiting everything or has an ileus, and switch to tablets as soon as they drink.",
+          "Give plenty of fluid; ciprofloxacin can crystallise in a concentrated urine."
+        ],
+        monitor: [
+          "Stool frequency and blood, fever and feeding at 48 h",
+          "Vomiting within 30 min of a dose — repeat the dose once"
+        ],
+        cautions: [
+          "Oral therapy is not enough for a shocked or septic patient: start IV (ceftriaxone if ciprofloxacin IV is not stocked) and change later."
+        ]
+      },
+      {
+        title: "A child's dose from adult tablets (no suspension)",
+        best_for: "Health centres and paediatric wards with only 250 mg or 500 mg tablets.",
+        requires: ["oral"],
+        steps: [
+          "Work out 15 mg/kg. Round to the nearest quarter of a 250 mg tablet (a quarter is about 62 mg). Never exceed 500 mg per dose.",
+          "Example: an 8 kg child needs 120 mg — half a 250 mg tablet (125 mg). A 14 kg child needs 210 mg — three-quarters of a 250 mg tablet (about 190 mg) is the nearest quarter.",
+          "Crush the piece between two spoons, mix with a teaspoon of clean water, and give it all. Do not mix it in milk.",
+          "Give twice a day, 12 hours apart, for the full 3 days in shigella even if the blood stops after one day.",
+          "Give zinc too (10 mg under 6 months, 20 mg over 6 months, for 10–14 days), but separated from the ciprofloxacin by at least 2 h before or 6 h after."
+        ],
+        monitor: ["Blood and mucus in the stool, fever and appetite at 48 h"],
+        cautions: [
+          "Bitter taste: a child who spits half of it out has not had the dose. Give a little sugar water afterwards, not before."
+        ]
+      },
+      {
+        title: "When ciprofloxacin is not working: the 48-hour rule",
+        best_for: "Dysentery or suspected typhoid in a setting where resistance is common and cultures are rarely available.",
+        requires: [],
+        steps: [
+          "Shigella: if the child or adult is not clearly better after 48 h (less blood, fewer stools, no fever, eating), assume resistance. Switch to ceftriaxone (child 50–100 mg/kg once daily IM or IV for 3 days) or oral azithromycin. Do not just continue ciprofloxacin for longer.",
+          "Still not better after another 48 h on the second drug: think of amoebic dysentery and give metronidazole, and look for complications (perforation, HUS — pallor, little urine).",
+          "Typhoid: do not start ciprofloxacin on a Widal result alone — the test gives many false positives and false negatives. Take a blood culture first where one can be done.",
+          "Uncomplicated typhoid where susceptibility is unknown: azithromycin by mouth. Severe typhoid (confusion, shock, abdominal distension, vomiting, suspected perforation): ceftriaxone IV, and call the surgeon if the abdomen is acute.",
+          "Write the failure on the chart and tell the person who keeps the antibiogram: a run of failures on one ward is how local resistance is found."
+        ],
+        monitor: ["Temperature chart, stool chart, abdomen twice daily in typhoid"],
+        cautions: [
+          "Repeated short courses of ciprofloxacin for 'typhoid' diagnosed by Widal drive the resistance that makes it useless for real typhoid."
+        ]
+      },
+      {
+        title: "IV ciprofloxacin by gravity",
+        best_for: "The vomiting or septic patient on a ward without pumps.",
+        requires: ["iv", "macro_set"],
+        steps: [
+          "The bag is ready to use (2 mg/mL). Do not add anything to it.",
+          "Adult 400 mg = 200 mL over 60 min = 200 mL/h. With a 20 drops/mL set that is about 67 drops/min, or 17 drops in 15 seconds. 200 mg = 100 mL over 30–60 min.",
+          "Child: run the calculated volume (10 mg/kg = 5 mL/kg of the 2 mg/mL solution) into a burette and give it over 60 min; with a 60 drops/mL microdrip set, drops/min equals mL/h.",
+          "Run it slowly into a large vein; rapid infusion causes pain and phlebitis.",
+          "Change to tablets as soon as the patient can swallow."
+        ],
+        monitor: ["Drip rate at 15 min", "Infusion site"],
+        cautions: ["Do not add other drugs to the bag or line — it is incompatible with heparin, among others."]
+      }
+    ],
+    paediatric: [
+      "Ciprofloxacin is not licensed for children, but shigella dysentery is an accepted indication at any age, and Nelson notes the musculoskeletal risk in children is low and outweighed by the value of treatment. Use it when the benefit is clear; avoid it for minor infections where another oral drug will do.",
+      "Joint or tendon pain, or a limp, during treatment: stop and review.",
+      "Neonates: specialist use only, 10 mg/kg every 12 h.",
+      "Ciprofloxacin EYE DROPS (ciprofloxacin-eye) are a different matter: they are used at all ages including newborns and carry none of these systemic concerns."
+    ],
+    cautions: [
+      "Tendon damage and Achilles tendon rupture, especially in older people and anyone on corticosteroids (dexamethasone, hydrocortisone, prednisolone). Stop at the first tendon pain.",
+      "QT prolongation: avoid stacking with other QT-prolonging drugs (amiodarone, quinine, haloperidol, methadone and others — see Interactions); correct low potassium and magnesium first.",
+      "Seizures and confusion, especially in the elderly, in epilepsy and with high doses; peripheral neuropathy; worsening of myasthenia gravis.",
+      "Low or high blood glucose, mainly in diabetics on treatment — check glucose if the patient becomes drowsy or sweaty.",
+      "Haemolysis in G6PD deficiency is possible (low-to-moderate risk).",
+      "Raises theophylline/aminophylline and caffeine levels; raises the INR on warfarin; absorption is blocked by zinc, iron, calcium and antacids.",
+      "Not for gonorrhoea; not first choice for typhoid where resistance is common.",
+      "Sun sensitivity; diarrhoea including C. difficile."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 15,
+      doseUnit: "mg",
+      conc: 50,
+      concUnit: "mg/mL",
+      maxDose: 500,
+      label: "Child oral dose 15 mg/kg (max 500 mg) using 250 mg/5 mL suspension; for tablets see Improvised"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Typhoid: because strains with decreased ciprofloxacin susceptibility are highly prevalent on the Indian subcontinent and in some parts of Africa, fluoroquinolones should no longer be used for empirical treatment of enteric fever there.",
+        ref: "Harrison 22nd ed. 2025, ch. 171 Salmonellosis, p. 1317"
+      },
+      {
+        book: "harrison",
+        text: "Enteric fever (adults): ciprofloxacin 500 mg twice daily orally or 400 mg IV every 12 h for 5–7 days for susceptible strains; ceftriaxone and azithromycin remain effective against fluoroquinolone-resistant strains.",
+        ref: "Harrison 22nd ed. 2025, ch. 171 Salmonellosis, Table 171-1, p. 1318"
+      },
+      {
+        book: "harrison",
+        text: "Shigellosis (WHO): ciprofloxacin first line — child 15 mg/kg, adult 500 mg, twice daily for 3 days by mouth; ceftriaxone and azithromycin are second line.",
+        ref: "Harrison 22nd ed. 2025, ch. 172 Shigellosis, Table 172-1, p. 1324"
+      },
+      {
+        book: "harrison",
+        text: "There are few data on quinolones in children, but shigella dysentery is an accepted indication; the usual child dose is 30 mg/kg per day in two divided doses.",
+        ref: "Harrison 22nd ed. 2025, ch. 172 Shigellosis, p. 1325"
+      },
+      {
+        book: "harrison",
+        text: "Fluoroquinolones can cause seizures, peripheral neuropathy, glucose dysregulation and Achilles tendon rupture, particularly in older patients and those taking glucocorticoids; aluminium, magnesium or calcium compounds reduce their absorption.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1178"
+      },
+      {
+        book: "harrison",
+        text: "Fluoroquinolones cause theophylline toxicity, and zinc-, iron-, calcium-, magnesium- or aluminium-containing products reduce their absorption: give the fluoroquinolone 2 h before or 6 h after.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172"
+      },
+      {
+        book: "nelson",
+        text: "Fluoroquinolones are not licensed for children, but there is a reasonable body of evidence that they are generally safe and effective; reserve them for when no other oral alternative is feasible, and note tendonitis, arrhythmia and peripheral neuropathy warnings.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, p. 1689"
+      },
+      {
+        book: "nelson",
+        text: "Ciprofloxacin 20–30 mg/kg/day in two doses is the WHO drug of choice for bloody diarrhoea at any age; the musculoskeletal risks in children are low and outweighed by the value of treatment.",
+        ref: "Nelson 22nd ed. 2024, ch. 245 Shigella, p. 1779"
+      },
+      {
+        book: "nelson",
+        text: "Ciprofloxacin dosing: neonates 10 mg/kg every 12 h; children 15–30 mg/kg/day divided every 12 h; interactions include theophylline, antacids, and warfarin.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, Table 225.3, p. 1678"
+      },
+      {
+        book: "harrison",
+        text: "Close contacts of meningococcal disease: chemoprophylaxis with ciprofloxacin as a single 500 mg dose (or rifampicin).",
+        ref: "Harrison 22nd ed. 2025, ch. 127 Approach to the Acutely Ill Infected Febrile Patient, Table 127-1, p. 991"
+      },
+      {
+        book: "nelson",
+        text: "Typhoid is diagnosed by culture; the Widal test gives frequent false-negative and false-positive results, and susceptibility testing is now essential to choose treatment.",
+        ref: "Nelson 22nd ed. 2024, ch. 244 Salmonella, p. 1774"
+      },
+      {
+        book: "note",
+        text: "Fluoroquinolone resistance in Shigella and Salmonella Typhi has been reported from Ethiopian hospitals and varies by region; the textbooks give global patterns only. Use the local antibiogram and the 48-hour review.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO. Guidelines for the control of shigellosis, including epidemics due to Shigella dysenteriae type 1 (2005)"
+      },
+      { name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013" },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
+      { name: "Nelson Textbook of Pediatrics 22nd ed. 2024" },
+      { name: "BNF / BNF for Children — ciprofloxacin" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "azithromycin",
+    name: "Azithromycin",
+    aka: ["Zithromax", "Azithro", "Macrolide", "Trachoma MDA drug"],
+    cls: "Macrolide (azalide) antibiotic",
+    cat: "infection",
+    wards: ["outpatient", "paediatric", "neonatal", "maternity", "medical"],
+    tags: [
+      "trachoma",
+      "mass drug administration",
+      "MDA",
+      "SAFE",
+      "chlamydia",
+      "ophthalmia neonatorum",
+      "typhoid",
+      "shigella",
+      "cholera",
+      "pertussis",
+      "pneumonia",
+      "QT",
+      "pyloric stenosis"
+    ],
+    presentation: [
+      "Tablets or capsules 250 mg and 500 mg.",
+      "Oral suspension 200 mg/5 mL (40 mg/mL) after mixing the powder with the stated volume of clean water; keep and discard as the label says.",
+      "IV 500 mg vial — rarely stocked in district hospitals.",
+      "Trachoma programme stock (donated) is for mass drug administration and is distributed through the woreda health office."
+    ],
+    indications: [
+      "Trachoma: active disease (TF/TI) in an individual, and mass drug administration (MDA) in endemic districts",
+      "Chlamydial conjunctivitis (ophthalmia neonatorum) and chlamydial pneumonia in infants",
+      "Genital chlamydia, including in pregnancy, and treatment of partners",
+      "Uncomplicated typhoid, including fluoroquinolone-resistant strains",
+      "Shigella dysentery (second line) and moderate–severe cholera (single dose)",
+      "Pertussis treatment and post-exposure prophylaxis",
+      "Adults admitted with pneumonia: added to the beta-lactam for atypical cover",
+      "Caesarean section in labour or after ruptured membranes: added to the prophylactic antibiotic (where IV azithromycin is available)"
+    ],
+    standard: {
+      summary: "Once-daily oral dosing, a long half-life and very few drug interactions make azithromycin the easiest antibiotic to give correctly at health-post level. Most courses are 1–5 days. Its two real hazards are QT prolongation in people with heart disease or on other QT drugs, and pyloric stenosis in babies under 6 weeks.",
+      items: [
+        {
+          label: "Trachoma (TF or TI)",
+          text: "Single oral dose 20 mg/kg, maximum 1 g; adults 1 g. Infants under 6 months: tetracycline 1 % eye ointment twice daily to both eyes for 6 weeks instead. Confirm dose and eligibility with the national trachoma programme."
+        },
+        {
+          label: "Chlamydial conjunctivitis or pneumonia in an infant",
+          text: "20 mg/kg once daily by mouth for 3 days (Nelson). Erythromycin 50 mg/kg/day in 4 doses for 14 days is the alternative. Treat the mother and her partner(s) at the same visit."
+        },
+        {
+          label: "Genital chlamydia (including pregnancy)",
+          text: "1 g as a single oral dose, preferably watched (Gabbe; Harrison). Treat partners."
+        },
+        {
+          label: "Typhoid, uncomplicated",
+          text: "Adult 1 g once daily for 5 days (Harrison). Child 10–20 mg/kg once daily (maximum 1 g a day) for 7 days — sources differ within this range; confirm with the national protocol. Severe typhoid needs ceftriaxone IV."
+        },
+        {
+          label: "Shigella (second line)",
+          text: "Child 12 mg/kg on day 1, then 6 mg/kg once daily for the next 4 days (Nelson). Adult: a single 1 g dose is used (WHO allows 1–1.5 g once daily for 1–5 days) — confirm with the national protocol."
+        },
+        {
+          label: "Cholera (moderate or severe dehydration)",
+          text: "Single oral dose after rehydration: adult 1 g, child 20 mg/kg (Harrison)."
+        },
+        {
+          label: "Pertussis",
+          text: "Under 6 months: 10 mg/kg once daily for 5 days. From 6 months: 10 mg/kg (max 500 mg) on day 1, then 5 mg/kg (max 250 mg) on days 2–5. Adult: 500 mg on day 1, then 250 mg daily on days 2–5 (Nelson). Same for household contacts."
+        },
+        {
+          label: "Adult pneumonia (with a beta-lactam)",
+          text: "500 mg once daily, added to ceftriaxone or another beta-lactam (Harrison)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Single-dose trachoma treatment without suspension or scale",
+        best_for: "Health posts, school screening and trachoma outreach, where children arrive faster than they can be weighed.",
+        requires: ["oral"],
+        steps: [
+          "During a mass drug administration campaign, use the programme's own dosing tool (the height pole) and the programme's rules on who is eligible. Do not invent your own bands.",
+          "Outside a campaign, weigh the child. Dose = 20 mg/kg, maximum 1 g. With suspension (40 mg/mL) that is 0.5 mL per kg: a 10 kg child gets 5 mL (200 mg).",
+          "With tablets only: 20 mg/kg rounded to the nearest quarter of a 250 mg tablet. A 12–13 kg child gets one 250 mg tablet; a 25 kg child 500 mg; 50 kg and over 1 g. Crush the tablet for young children and give it in a spoon of water.",
+          "Watch the dose being swallowed. A single dose is the whole treatment — a dose taken home and forgotten is no treatment.",
+          "If the child vomits the dose straight away, follow the programme's rule on giving it again.",
+          "Infants under 6 months: tetracycline 1 % eye ointment twice daily to both eyes for 6 weeks, not azithromycin (programme practice).",
+          "Pregnant women can take azithromycin.",
+          "Treating the child is only the A of SAFE: wash faces, check the household, and look for trichiasis in the adults."
+        ],
+        monitor: [
+          "Vomiting, diarrhoea, abdominal pain (common, mild)",
+          "Record the treatment for the woreda programme"
+        ],
+        cautions: [
+          "Someone with known heart disease, a long QT, or on methadone, haloperidol, amiodarone or quinine: one dose is usually acceptable, but check with a clinician rather than giving it in the queue."
+        ]
+      },
+      {
+        title: "Three-day course at home for a newborn with chlamydial conjunctivitis",
+        best_for: "A baby aged 5–14 days with a sticky eye where gonococcus has been treated or excluded, and the family can come back.",
+        requires: ["oral"],
+        steps: [
+          "Dose 20 mg/kg once daily for 3 days. With suspension 40 mg/mL that is 0.5 mL per kg: a 3 kg baby gets 1.5 mL.",
+          "Draw it up with an oral or 2–5 mL syringe (needle removed), put it inside the cheek and let the baby swallow; then breastfeed.",
+          "Give the first dose in the clinic so the mother sees how. Mark the next two days on a card.",
+          "No suspension: crush one 250 mg tablet in exactly 5 mL of clean water (50 mg/mL), stir, and give 0.4 mL per kg at once (a 3 kg baby: 1.2 mL). Throw the rest away.",
+          "Eye toilet with clean, cooled boiled water or saline several times a day; topical antibiotic alone does not cure chlamydia.",
+          "Treat the mother (1 g single dose) and her partner at the same visit, or the baby is reinfected.",
+          "Tell the mother: forceful (projectile) vomiting after feeds in the coming weeks means come back the same day — pyloric stenosis has been linked to azithromycin and erythromycin in babies under 6 weeks."
+        ],
+        monitor: [
+          "Eye at day 3–7; cough or fast breathing at 2–12 weeks (chlamydial pneumonia)",
+          "Vomiting pattern"
+        ],
+        cautions: [
+          "Heavy pus in the first days of life is gonococcus until proved otherwise — that needs ceftriaxone or cefotaxime, not azithromycin."
+        ]
+      },
+      {
+        title: "Oral treatment of typhoid or dysentery when ciprofloxacin fails",
+        best_for: "Health centres and wards where ciprofloxacin resistance is suspected and IV drugs or beds are short.",
+        requires: ["oral"],
+        steps: [
+          "Typhoid that is uncomplicated (walking, drinking, no confusion, no distended or tender abdomen): azithromycin by mouth — adult 1 g once daily for 5 days; child 10–20 mg/kg once daily (maximum 1 g) for 7 days.",
+          "Dysentery not better after 48 h of ciprofloxacin: child 12 mg/kg on day 1, then 6 mg/kg daily for 4 more days; adult 1 g single dose (confirm with protocol).",
+          "Give the dose at the same time each day, with or without food.",
+          "Review at 48–72 h. Typhoid fever usually settles over 4–6 days on azithromycin; a patient who becomes more unwell, confused or develops abdominal pain needs IV ceftriaxone and surgical review.",
+          "Take a blood culture before the first dose wherever possible."
+        ],
+        monitor: ["Temperature chart; abdomen daily in typhoid", "Stool chart in dysentery"],
+        cautions: [
+          "Not for severe typhoid — use ceftriaxone IV.",
+          "Avoid giving with other QT-prolonging drugs where you can (see Interactions)."
+        ]
+      }
+    ],
+    paediatric: [
+      "Trachoma 20 mg/kg once (max 1 g); infant chlamydia 20 mg/kg daily for 3 days; pertussis 10 mg/kg daily for 5 days under 6 months.",
+      "Pyloric stenosis has been reported after azithromycin or erythromycin in infants under 6 weeks, highest under 2 weeks and lower with azithromycin than erythromycin. The benefit of treatment outweighs it; warn the mother about projectile vomiting.",
+      "Under 6 months, trachoma is treated with tetracycline eye ointment, not azithromycin (programme practice)."
+    ],
+    cautions: [
+      "QT prolongation and torsades de pointes; Harrison notes an increased risk of death in people with heart disease. Avoid combining with other QT-prolonging drugs where possible; correct low potassium and magnesium.",
+      "Very few metabolic drug interactions (it does not inhibit CYP3A4, unlike erythromycin).",
+      "Nausea, abdominal pain and diarrhoea are common; hearing loss with long high-dose courses.",
+      "Liver injury is rare; avoid in severe liver disease.",
+      "It does not treat gonorrhoea reliably on its own."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 20,
+      doseUnit: "mg",
+      conc: 40,
+      concUnit: "mg/mL",
+      maxDose: 1000,
+      label: "Single dose 20 mg/kg (trachoma; also the daily dose for infant chlamydia) using 200 mg/5 mL suspension"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Trachoma and adult inclusion conjunctivitis respond to azithromycin 1 g as a single oral dose; topical tetracycline 1 % twice daily for 6 weeks is an alternative, but adherence is poor.",
+        ref: "Harrison 22nd ed. 2025, ch. 194 Chlamydial Infections, p. 1475"
+      },
+      {
+        book: "nelson",
+        text: "Endemic trachoma is managed by mass drug administration of single-dose azithromycin to whole communities until active disease in children aged 1–9 years falls below 5 %.",
+        ref: "Nelson 22nd ed. 2024, ch. 272.1 Trachoma, p. 1895"
+      },
+      {
+        book: "nelson",
+        text: "Chlamydial conjunctivitis or pneumonia in infants: oral erythromycin 50 mg/kg/day in 4 doses for 14 days, or azithromycin 20 mg/kg once daily for 3 days. Topical treatment is not effective.",
+        ref: "Nelson 22nd ed. 2024, ch. 272.3, p. 1896"
+      },
+      {
+        book: "nelson",
+        text: "Oral erythromycin and oral azithromycin have both been associated with infantile hypertrophic pyloric stenosis in infants under 6 weeks of age.",
+        ref: "Nelson 22nd ed. 2024, ch. 272.3, p. 1897"
+      },
+      {
+        book: "harrison",
+        text: "Macrolides prolong the QTc interval; azithromycin has been associated with an increased risk of death, especially with underlying heart disease. Azithromycin does not inhibit CYP3A4.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177"
+      },
+      {
+        book: "harrison",
+        text: "Oral azithromycin (adult 1 g daily for 5 days) is recommended for uncomplicated enteric fever, including fluoroquinolone-resistant strains, with lower failure rates than fluoroquinolones against strains with decreased ciprofloxacin susceptibility.",
+        ref: "Harrison 22nd ed. 2025, ch. 171 Salmonellosis, p. 1318"
+      },
+      {
+        book: "nelson",
+        text: "Pertussis: azithromycin is the drug of choice at all ages. Pyloric stenosis risk with macrolides is highest under 14 days of age and higher with erythromycin than azithromycin; the benefit of treatment outweighs it.",
+        ref: "Nelson 22nd ed. 2024, ch. 243 Pertussis, p. 1763"
+      },
+      {
+        book: "gabbe",
+        text: "Chlamydia in pregnancy: the most appropriate regimen is a single 1 g oral dose of azithromycin; amoxicillin 500 mg three times daily for 7 days is the alternative.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1110"
+      },
+      {
+        book: "gabbe",
+        text: "Caesarean prophylaxis: in women in labour or with ruptured membranes, preoperative azithromycin should be added to cefazolin.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 427"
+      },
+      {
+        book: "harrison",
+        text: "Inpatient community-acquired pneumonia: a beta-lactam (e.g. ceftriaxone 1–2 g/day or cefotaxime 1–2 g every 8 h) combined with azithromycin 500 mg/day.",
+        ref: "Harrison 22nd ed. 2025, ch. 131 Pneumonia, Table 131-5, p. 1028"
+      },
+      {
+        book: "nelson",
+        text: "Pertussis treatment or post-exposure prophylaxis: under 6 months azithromycin 10 mg/kg once daily for 5 days; from 6 months 10 mg/kg (max 500 mg) on day 1 then 5 mg/kg (max 250 mg) on days 2–5; adults 500 mg then 250 mg daily on days 2–5.",
+        ref: "Nelson 22nd ed. 2024, ch. 243 Pertussis, Table 243.2, p. 1764"
+      },
+      {
+        book: "note",
+        text: "Mass drug administration doses, the height pole and eligibility rules are set by the Ethiopian trachoma programme and WHO; follow them during campaigns.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO. Trachoma control: a guide for programme managers; WHO Alliance for the Global Elimination of Trachoma (SAFE strategy)"
+      },
+      { name: "Nelson Textbook of Pediatrics 22nd ed. 2024" },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
+      { name: "Gabbe's Obstetrics 9th ed." },
+      { name: "BNF / BNF for Children — azithromycin" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "erythromycin",
+    name: "Erythromycin (oral / IV)",
+    aka: [
+      "Erythrocin",
+      "Erythromycin ethylsuccinate",
+      "Erythromycin stearate",
+      "Erythromycin base",
+      "EES",
+      "Macrolide"
+    ],
+    cls: "Macrolide antibiotic",
+    cat: "infection",
+    wards: ["neonatal", "maternity", "paediatric", "outpatient", "medical"],
+    tags: [
+      "chlamydia",
+      "ophthalmia neonatorum",
+      "infant pneumonia",
+      "PPROM",
+      "preterm rupture of membranes",
+      "pertussis",
+      "penicillin allergy",
+      "pyloric stenosis",
+      "CYP3A4",
+      "QT"
+    ],
+    presentation: [
+      "Tablets 250 mg and 500 mg (stearate or enteric-coated base). Do not crush enteric-coated tablets — stomach acid destroys the drug.",
+      "Oral suspension (ethylsuccinate) 125 mg/5 mL and 250 mg/5 mL. Check which strength is on the shelf before every dose.",
+      "IV erythromycin lactobionate vials (500 mg, 1 g) — rarely stocked; must be diluted and infused, never pushed.",
+      "Erythromycin 0.5 % eye ointment for newborn eye prophylaxis is a different product; it does NOT treat established chlamydial conjunctivitis."
+    ],
+    indications: [
+      "Chlamydial conjunctivitis (ophthalmia neonatorum) and chlamydial pneumonia in infants — systemic oral treatment",
+      "Preterm prelabour rupture of membranes (PPROM) — WHO's antibiotic of choice",
+      "Pertussis when azithromycin is not available (avoid in the first month if possible)",
+      "Genital chlamydia in pregnancy when azithromycin and amoxicillin are not available",
+      "Penicillin-allergic patients needing streptococcal cover",
+      "Campylobacter dysentery"
+    ],
+    standard: {
+      summary: "An old, cheap macrolide that works but is hard to take: four doses a day, often for 14 days, with cramps and vomiting. In babies under 2 weeks it carries a real risk of pyloric stenosis, and it blocks the liver enzyme CYP3A4, so it raises the levels of many other drugs. Where azithromycin is available it is usually the better choice; where it is not, erythromycin given properly still cures.",
+      items: [
+        {
+          label: "Infant chlamydial conjunctivitis or pneumonia",
+          text: "50 mg/kg/day divided into 4 doses (12.5 mg/kg every 6 h) by mouth for 14 days (Nelson; Harrison). About 1 in 5 relapse — review after the course; a second course may be needed. Treat the mother and partner."
+        },
+        {
+          label: "Child (general)",
+          text: "30–50 mg/kg/day in 3–4 divided doses by mouth; usual maximum 2 g/day (Nelson)."
+        },
+        { label: "Adult", text: "250–500 mg every 6 h by mouth (Nelson)." },
+        {
+          label: "PPROM (before 37 weeks)",
+          text: "WHO recommends erythromycin as the antibiotic of choice. The ORACLE regimen is 250 mg by mouth every 6 h for 10 days or until birth. Where IV drugs are available, the NICHD regimen is IV ampicillin 2 g plus erythromycin 250 mg every 6 h for 48 h, then oral amoxicillin 250 mg plus erythromycin base 333 mg every 8 h for 5 days (Gabbe). Never use amoxicillin-clavulanate here (necrotising enterocolitis)."
+        },
+        {
+          label: "Pertussis",
+          text: "40–50 mg/kg/day in 4 divided doses for 14 days (max 2 g/day); adults 2 g/day in 4 doses for 14 days. Under 1 month only if azithromycin is unavailable (Nelson)."
+        },
+        {
+          label: "Chlamydia in pregnancy (alternative)",
+          text: "Erythromycin base 250 mg four times daily for 14 days (Nelson) when azithromycin 1 g or amoxicillin are not available."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Four doses a day for 14 days — making the newborn course actually happen",
+        best_for: "A baby with chlamydial conjunctivitis or pneumonia, treated at home because azithromycin is not stocked.",
+        requires: ["oral"],
+        steps: [
+          "Dose 12.5 mg/kg four times a day. With 125 mg/5 mL suspension (25 mg/mL) that is 0.5 mL per kg per dose: a 3 kg baby gets 1.5 mL every 6 h. With 250 mg/5 mL it is 0.25 mL per kg — check the bottle.",
+          "Measure with an oral or 2 mL syringe, never a household spoon.",
+          "Tie the four doses to feeds the mother already gives — for example on waking, midday, evening and at the last night feed — rather than to clock times she cannot keep.",
+          "Give her a tally card with 14 rows of 4 boxes to tick. Count the bottles needed for the whole 14 days and give them at the first visit.",
+          "Give the dose before a feed; if the baby vomits within 15 minutes, repeat it once.",
+          "Treat the mother and her partner at the same visit (azithromycin 1 g single dose), or the baby is reinfected.",
+          "See the baby at the end of the course: relapse after erythromycin is common (it cures about 80 %). A second course may be needed."
+        ],
+        monitor: ["Eye discharge; cough, fast breathing", "Projectile vomiting after feeds — same-day review"],
+        cautions: [
+          "In the first 2 weeks of life, prefer azithromycin 20 mg/kg once daily for 3 days if you can get it: shorter, easier, and less linked to pyloric stenosis."
+        ]
+      },
+      {
+        title: "Oral erythromycin for preterm rupture of membranes when IV antibiotics are not available",
+        best_for: "Health centres and primary hospitals managing PPROM while arranging referral, or wards without IV ampicillin.",
+        requires: ["oral"],
+        steps: [
+          "Confirm the membranes have ruptured (pool of fluid on speculum, or a clear history with fluid seen). Do not do a digital vaginal examination.",
+          "Give erythromycin 250 mg by mouth every 6 h, for 10 days or until the birth.",
+          "Give dexamethasone for fetal lung maturity if the pregnancy is under 34 weeks and the national protocol allows.",
+          "Check temperature, maternal and fetal heart rate and the colour and smell of the fluid every 4–6 hours. Fever, a tender uterus, offensive fluid or fetal tachycardia means chorioamnionitis: this needs IV ampicillin plus gentamicin and delivery, not more erythromycin.",
+          "Do NOT substitute amoxicillin-clavulanate (co-amoxiclav): it increases necrotising enterocolitis in the baby. If erythromycin is out of stock, oral ampicillin or azithromycin are listed as acceptable alternatives during shortages (Gabbe).",
+          "Refer to a unit that can care for a preterm baby."
+        ],
+        monitor: [
+          "Maternal temperature and pulse 4–6 hourly",
+          "Fetal heart rate",
+          "Amniotic fluid colour and smell"
+        ],
+        cautions: [
+          "Erythromycin raises nifedipine levels — if nifedipine is used to delay labour, watch blood pressure (see Interactions)."
+        ]
+      },
+      {
+        title: "If only the IV vial exists: never push it",
+        best_for: "The rare ward that stocks erythromycin lactobionate and has a patient who cannot swallow.",
+        requires: ["iv", "macro_set"],
+        steps: [
+          "First ask whether IV erythromycin is really needed. Oral erythromycin, or a different IV antibiotic, is almost always possible.",
+          "Reconstitute with water for injection, then dilute exactly as the vial leaflet says (usually to 1–5 mg/mL in sodium chloride 0.9 %).",
+          "Infuse over at least 20–60 min as the leaflet states, by gravity: for example 500 mg in 250 mL over 60 min = 250 mL/h, about 83 drops/min with a 20 drops/mL set.",
+          "Never give it as an IV bolus: rapid injection causes arrhythmias and severe vein pain."
+        ],
+        monitor: ["Infusion site (phlebitis is common)", "Pulse during the infusion"],
+        cautions: ["Change to oral as soon as possible."]
+      },
+      {
+        title: "Choosing between erythromycin and azithromycin in a young baby",
+        best_for: "Any decision about a macrolide in the first 6 weeks of life.",
+        requires: [],
+        steps: [
+          "Both drugs have been linked with infantile hypertrophic pyloric stenosis in babies under 6 weeks; the risk is highest under 2 weeks and higher with erythromycin.",
+          "Azithromycin: 3 days once daily (chlamydia) or 5 days (pertussis). Erythromycin: 14 days four times a day. Adherence alone often decides the outcome.",
+          "Use whichever is in stock — the benefit of treating chlamydia or pertussis far outweighs the pyloric stenosis risk — but choose azithromycin if both are available.",
+          "Teach the mother the warning sign: forceful vomiting of feeds, a hungry baby losing weight, usually at 2–8 weeks. Same-day return; the treatment is surgery."
+        ],
+        monitor: ["Weight and vomiting at follow-up"],
+        cautions: []
+      }
+    ],
+    paediatric: [
+      "Infant chlamydia: 50 mg/kg/day in 4 doses for 14 days; pertussis 40–50 mg/kg/day in 4 doses for 14 days.",
+      "Pyloric stenosis: associated especially with erythromycin given in the first 2 weeks of life; also reported with maternal macrolides in late pregnancy and breastfeeding. Warn about projectile vomiting.",
+      "Neonatal doses in the first week depend on postnatal age and weight (Nelson Table 225.3) — use the newborn unit's protocol."
+    ],
+    cautions: [
+      "Strong CYP3A4 inhibitor (Harrison: 'potent'): raises carbamazepine, midazolam, methadone, quetiapine, aripiprazole, clozapine, nifedipine, bromocriptine, ergometrine, theophylline/aminophylline, digoxin and warfarin effect. Check the Interactions tab before every course.",
+      "QT prolongation and arrhythmia, especially IV and with other QT drugs or low potassium.",
+      "Cramps, nausea, vomiting and diarrhoea are common (it is a motilin agonist).",
+      "Cholestatic hepatitis, mainly with the estolate salt; avoid estolate in pregnancy.",
+      "Reversible hearing loss at high doses, especially in kidney or liver failure."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 12.5,
+      doseUnit: "mg",
+      conc: 25,
+      concUnit: "mg/mL",
+      maxDose: 500,
+      label: "Dose 12.5 mg/kg four times daily (= 50 mg/kg/day, infant chlamydia) using 125 mg/5 mL suspension"
+    },
+    textbook: [
+      {
+        book: "nelson",
+        text: "Chlamydial conjunctivitis or pneumonia in infants: erythromycin 50 mg/kg/day divided 4 times a day by mouth for 14 days. Oral treatment is needed because half of these infants also carry the organism in the nasopharynx; topical treatment is not effective.",
+        ref: "Nelson 22nd ed. 2024, ch. 272.3, p. 1896"
+      },
+      {
+        book: "harrison",
+        text: "Neonatal conjunctivitis or infant pneumonia: erythromycin 50 mg/kg/day in 4 divided doses for 2 weeks; efficacy is about 80 %, so follow up — a second course may be needed. Examine and treat both parents.",
+        ref: "Harrison 22nd ed. 2025, ch. 194 Chlamydial Infections, p. 1474"
+      },
+      {
+        book: "nelson",
+        text: "Pyloric stenosis has been associated with macrolides, particularly erythromycin given to neonates in the first 2 weeks of life, and possibly with maternal macrolide treatment in pregnancy and breastfeeding.",
+        ref: "Nelson 22nd ed. 2024, ch. 375.1 Hypertrophic Pyloric Stenosis, p. 2278"
+      },
+      {
+        book: "nelson",
+        text: "Pertussis under 1 month: azithromycin is the recommended agent; erythromycin is not preferred because it is substantially associated with pyloric stenosis — use 40–50 mg/kg/day in 4 doses for 14 days only if azithromycin is unavailable.",
+        ref: "Nelson 22nd ed. 2024, ch. 243 Pertussis, Table 243.2, p. 1764"
+      },
+      {
+        book: "harrison",
+        text: "Erythromycin and clarithromycin inhibit CYP3A4 and raise levels of benzodiazepines, statins, warfarin and others; azithromycin does not.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177"
+      },
+      {
+        book: "nelson",
+        text: "Erythromycin is a motilin agonist (cramps, vomiting, diarrhoea), is associated with pyloric stenosis in young infants, and inhibits hepatic CYP3A4 (carbamazepine, theophylline, digoxin and others). Neonatal doses depend on postnatal age and weight.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, Table 225.3, p. 1680"
+      },
+      {
+        book: "gabbe",
+        text: "Preterm PROM (NICHD regimen): 48 h IV ampicillin 2 g and erythromycin 250 mg every 6 h, then 5 days of oral amoxicillin 250 mg and erythromycin base 333 mg every 8 h; antibiotics doubled the chance of remaining undelivered at 7 days.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 37 Premature Rupture of the Membranes, p. 696"
+      },
+      {
+        book: "gabbe",
+        text: "Amoxicillin-clavulanate is not recommended after PROM because it may be harmful; oral ampicillin, erythromycin, azithromycin and clarithromycin are appropriate alternatives during shortages.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 37 Premature Rupture of the Membranes, p. 697"
+      },
+      {
+        book: "nelson",
+        text: "Chlamydia in pregnancy: azithromycin 1 g single dose or amoxicillin are first line; erythromycin base 250 mg four times daily for 14 days is an alternative.",
+        ref: "Nelson 22nd ed. 2024, ch. 272.3, p. 1897"
+      },
+      {
+        book: "note",
+        text: "WHO (2015) recommends erythromycin as the antibiotic of choice for prophylaxis in preterm prelabour rupture of membranes; the 250 mg every 6 h for 10 days regimen is the one used in the ORACLE trial. Confirm with the national obstetric protocol.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      { name: "WHO recommendations on interventions to improve preterm birth outcomes (2015)" },
+      { name: "Nelson Textbook of Pediatrics 22nd ed. 2024" },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
+      { name: "Gabbe's Obstetrics 9th ed." },
+      { name: "BNF / BNF for Children — erythromycin" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "cotrimoxazole",
+    name: "Cotrimoxazole (trimethoprim-sulfamethoxazole)",
+    aka: [
+      "Co-trimoxazole",
+      "Septrin",
+      "Bactrim",
+      "TMP-SMX",
+      "Trimethoprim-sulfamethoxazole",
+      "CPT",
+      "Cotrimoxazole preventive therapy"
+    ],
+    cls: "Sulfonamide plus diaminopyrimidine (folate antagonist) antibiotic",
+    cat: "infection",
+    wards: ["outpatient", "medical", "paediatric", "maternity"],
+    tags: [
+      "HIV",
+      "PCP",
+      "Pneumocystis",
+      "prophylaxis",
+      "CPT",
+      "HIV-exposed infant",
+      "toxoplasmosis",
+      "shigella",
+      "UTI",
+      "warfarin",
+      "hyperkalaemia",
+      "Stevens-Johnson"
+    ],
+    presentation: [
+      "Adult tablet 480 mg (sulfamethoxazole 400 mg + trimethoprim 80 mg) — 'single strength'.",
+      "Double-strength tablet 960 mg (800 mg + 160 mg).",
+      "Paediatric tablet 120 mg (100 mg + 20 mg).",
+      "Oral suspension 240 mg/5 mL (200 mg + 40 mg per 5 mL).",
+      "IV ampoule 480 mg/5 mL — rarely stocked; must be diluted before infusion.",
+      "Doses in this entry are given as the total (e.g. 960 mg) and, where it matters, as the trimethoprim (TMP) part."
+    ],
+    indications: [
+      "Prophylaxis against Pneumocystis pneumonia (PCP), toxoplasmosis and bacterial infections in people living with HIV — cotrimoxazole preventive therapy (CPT)",
+      "HIV-exposed infants from 6 weeks of age until HIV infection is excluded after breastfeeding ends",
+      "Treatment of Pneumocystis pneumonia (high dose)",
+      "Shigella or urinary infection only when the organism is known or expected to be susceptible",
+      "Pertussis in infants over 2 months who cannot take a macrolide"
+    ],
+    standard: {
+      summary: "In Ethiopia cotrimoxazole is above all the HIV prophylaxis drug: one dose a day prevents PCP, toxoplasmosis and many bacterial infections and diarrhoeas. Who starts and stops it is set by the national HIV guideline, which is broader than the CD4 under 200 rule in Harrison. As a treatment antibiotic it is now limited by widespread resistance.",
+      items: [
+        {
+          label: "Prophylaxis — adults and adolescents over 14 years",
+          text: "960 mg (one double-strength or two single-strength tablets) once daily. Harrison/IDSA also accept one single-strength tablet daily."
+        },
+        {
+          label: "Prophylaxis — children (WHO bands)",
+          text: "Under 6 months: 120 mg (100/20). 6 months–5 years: 240 mg (200/40). 6–14 years: 480 mg (400/80). Over 14 years: 960 mg. Once daily. See Improvised for tablet fractions."
+        },
+        {
+          label: "Who gets prophylaxis",
+          text: "Every HIV-exposed infant from 6 weeks (WHO: 4–6 weeks) until HIV is excluded after breastfeeding has stopped; children and adults with HIV according to the Ethiopian national HIV guideline (WHO recommends it for WHO stage 3–4 disease or CD4 350 or below, and in malaria and bacterial-infection settings continues it more widely). Harrison's US criteria — prior PCP, CD4 under 200 or under 15 %, oral thrush, unexplained fever over 2 weeks — are the minimum, not the Ethiopian rule. Follow the national guideline for stopping."
+        },
+        {
+          label: "PCP treatment",
+          text: "Trimethoprim 5 mg/kg (with sulfamethoxazole 25 mg/kg) every 6–8 h by mouth or IV, for 21 days in HIV — in an adult about 2 double-strength tablets three or four times a day (Harrison). Add a corticosteroid for moderate–severe disease (Harrison: prednisone 40 mg twice daily for 5 days, 40 mg daily for 5 days, then 20 mg daily for 11 days). Then continue prophylaxis."
+        },
+        {
+          label: "Shigella / UTI (susceptible only)",
+          text: "Child: trimethoprim 4 mg/kg + sulfamethoxazole 20 mg/kg twice daily for 5 days. Adult: 960 mg twice daily (Nelson). Do not use empirically for dysentery — resistance is common."
+        },
+        {
+          label: "Pertussis (infants over 2 months)",
+          text: "Trimethoprim 8 mg/kg/day with sulfamethoxazole 40 mg/kg/day in 2 divided doses for 14 days (Nelson). Contraindicated under 2 months."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Prophylaxis doses without the paediatric tablet or syrup",
+        best_for: "HIV clinics and health centres where only adult tablets are in stock.",
+        requires: ["oral"],
+        steps: [
+          "Under 6 months (120 mg): a quarter of a 480 mg adult tablet, or 2.5 mL of suspension, or one paediatric tablet.",
+          "6 months–5 years (240 mg): half of a 480 mg tablet, or 5 mL of suspension, or two paediatric tablets.",
+          "6–14 years (480 mg): one 480 mg tablet, or half a 960 mg tablet, or 10 mL of suspension.",
+          "Over 14 years (960 mg): one 960 mg tablet or two 480 mg tablets.",
+          "For an infant, crush the quarter tablet, mix it with a few drops of breast milk or clean water on a spoon, and give it all. A quarter does not need to be exact; it should not be a half.",
+          "Give it at the same time every day as the child's other medicines (for example with the morning ARV dose) so it is not forgotten.",
+          "Move the child up a band on their birthday — the bands are by age (weight bands are used in some national tables; follow the one your clinic uses)."
+        ],
+        monitor: ["Adherence at each visit (count tablets left)", "Rash, yellow eyes, pallor"],
+        cautions: [
+          "Under 2 months, cotrimoxazole is avoided for treatment because of the kernicterus risk; prophylaxis starts at 6 weeks in exposed infants per the WHO and national guideline."
+        ]
+      },
+      {
+        title: "Running the cotrimoxazole clinic: start, continue, stop",
+        best_for: "ART clinics, PMTCT and under-five clinics.",
+        requires: [],
+        steps: [
+          "Start it the same day you identify the person as eligible — do not wait for a CD4 result if the national guideline allows starting on clinical stage.",
+          "Ask at every visit: rash, mouth sores, yellow eyes, fever, sore throat. These are the warning signs of a serious reaction.",
+          "Pregnancy is not a reason to stop: WHO recommends continuing prophylaxis in pregnant women with HIV, because PCP and bacterial infection are more dangerous than the drug. A woman on cotrimoxazole should NOT also be given sulfadoxine-pyrimethamine (IPTp) for malaria.",
+          "Check for interacting drugs: warfarin, phenytoin, extra potassium. Check a full blood count where available if the patient is pale, bruising or has repeated infections.",
+          "Stop only by the national criteria (e.g. sustained immune recovery on ART, or HIV excluded in an exposed infant after breastfeeding ends). Stopping too early is a common cause of avoidable PCP and pneumonia.",
+          "Record start date, dose band and stop date on the HIV care card."
+        ],
+        monitor: [
+          "Rash and mucosa at every visit",
+          "Haemoglobin and white count when available",
+          "Potassium if also on high doses or with kidney disease"
+        ],
+        cautions: [
+          "If the prophylaxis supply runs out, do not stop silently — tell the clinician; the patient needs another source or an alternative."
+        ]
+      },
+      {
+        title: "A rash on cotrimoxazole: when there is no safe way to continue",
+        best_for: "Any patient who develops a rash, especially in HIV, where hypersensitivity is unusually common.",
+        requires: [],
+        steps: [
+          "Stop the drug at once and do not give another dose if there is ANY of: blistering or peeling skin, sores in the mouth, eyes or genitals, fever with the rash, yellow eyes, or a widespread rash. This may be Stevens-Johnson syndrome or toxic epidermal necrolysis — refer urgently.",
+          "After such a reaction, never give cotrimoxazole or any sulfonamide again (including sulfadoxine-pyrimethamine). Write 'SULFA ALLERGY — SEVERE' on the card and the file.",
+          "A mild, flat, itchy rash with no mucosal involvement and no fever: do not decide alone. Harrison allows rechallenge or a dose-escalation protocol after non-life-threatening reactions, but this must follow the national guideline and be supervised by a clinician.",
+          "While off cotrimoxazole, the patient still needs PCP protection: the alternatives (dapsone, atovaquone, aerosolised pentamidine) are not in this app and usually require referral."
+        ],
+        monitor: ["Mucous membranes, temperature, skin daily after a reaction"],
+        cautions: ["Never rechallenge after mucosal involvement, blistering or fever — it can kill."]
+      },
+      {
+        title: "High-dose PCP treatment by tablet count when IV is not available",
+        best_for: "Medical wards treating suspected Pneumocystis pneumonia in advanced HIV.",
+        requires: ["oral"],
+        steps: [
+          "Dose by trimethoprim (TMP): 5 mg/kg every 8 h (Harrison's range is every 6–8 h). One double-strength tablet contains 160 mg TMP.",
+          "Example: a 50 kg adult needs 250 mg TMP every 8 h — about 1½ double-strength tablets three times a day. A 64 kg adult needs 2 double-strength tablets three times a day.",
+          "Give for 21 days, then continue standard prophylaxis.",
+          "Moderate or severe disease (breathless at rest, low oxygen saturation): add the corticosteroid course and oxygen, and confirm with a senior.",
+          "Encourage fluids. Check potassium and creatinine at least twice weekly if you can: high-dose trimethoprim raises potassium and creatinine.",
+          "Do not add folinic or folic acid to PCP treatment unless a specialist advises."
+        ],
+        monitor: [
+          "Respiratory rate and SpO2 at least 4-hourly at first",
+          "Potassium, creatinine, full blood count",
+          "Rash (days 7–12 is typical)"
+        ],
+        cautions: [
+          "If the patient cannot take tablets and no IV cotrimoxazole exists, IV pentamidine is the alternative for severe PCP — with its own serious risks (see pentamidine)."
+        ]
+      }
+    ],
+    paediatric: [
+      "HIV-exposed infants: start at 6 weeks and continue until HIV is excluded after breastfeeding ends (national guideline).",
+      "Avoid treatment courses under 2 months (kernicterus risk); in jaundiced or premature babies use another antibiotic.",
+      "Child treatment dose: trimethoprim 4 mg/kg + sulfamethoxazole 20 mg/kg twice daily."
+    ],
+    cautions: [
+      "Severe skin reactions (Stevens-Johnson syndrome, toxic epidermal necrolysis) — far more common in people with HIV. Stop at the first sign of mucosal or blistering rash.",
+      "Bone marrow suppression with prolonged or high-dose use: leukopenia, thrombocytopenia, anaemia (folate antagonism).",
+      "Hyperkalaemia, hyponatraemia and a rise in creatinine, especially at high doses and in kidney disease.",
+      "Haemolysis in G6PD deficiency.",
+      "Raises the INR on warfarin and phenytoin levels (see Interactions).",
+      "Pregnancy: avoid for routine infections in the first trimester and near term; continue HIV prophylaxis (see Safety)."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 4,
+      doseUnit: "mg",
+      conc: 8,
+      concUnit: "mg/mL",
+      maxDose: 160,
+      label: "Child treatment dose, trimethoprim 4 mg/kg twice daily, using 240 mg/5 mL suspension (8 mg/mL trimethoprim) — dose is the TMP part"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "PCP prophylaxis in HIV is indicated after a prior episode, with CD4 below 200/µL or under 15 %, unexplained fever over 2 weeks, or recent oral candidiasis. TMP-SMX one double-strength tablet daily is preferred and also protects against toxoplasmosis and some bacterial respiratory pathogens.",
+        ref: "Harrison 22nd ed. 2025, ch. 208 Human Immunodeficiency Virus Disease: AIDS and Related Disorders, p. 1596"
+      },
+      {
+        book: "harrison",
+        text: "PCP prophylaxis: TMP-SMX 1 tablet (double- or single-strength) daily is first choice. The incidence of hypersensitivity is high; rechallenge is possible after non-life-threatening reactions.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, Table 227-2, p. 1734"
+      },
+      {
+        book: "harrison",
+        text: "Treatment of PCP: TMP-SMX (TMP 5 mg/kg plus SMX 25 mg/kg every 6–8 h, i.e. 2 double-strength tablets three or four times daily) for 21 days in people with HIV; patients with HIV have an unusually high incidence of hypersensitivity.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, p. 1733"
+      },
+      {
+        book: "harrison",
+        text: "TMP-SMX causes rash, and with prolonged use leukopenia, thrombocytopenia and granulocytopenia; it can cause nephrotoxicity, hyperkalaemia and hyponatraemia, more often at high doses.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177"
+      },
+      {
+        book: "nelson",
+        text: "TMP-SMX is contraindicated in infants under 2 months of age (risk of kernicterus).",
+        ref: "Nelson 22nd ed. 2024, ch. 243 Pertussis, Table 243.2, p. 1764"
+      },
+      {
+        book: "nelson",
+        text: "Shigellosis second line (only if susceptible): child trimethoprim 4 mg/kg + sulfamethoxazole 20 mg/kg twice daily for 5 days; adult 160/800 mg twice daily for 5 days. Resistance is common, so do not use it empirically.",
+        ref: "Nelson 22nd ed. 2024, ch. 245 Shigella, Fig. 245.1, p. 1780"
+      },
+      {
+        book: "harrison",
+        text: "NIH/CDC/IDSA: TMP-SMX 1 DS or 1 SS tablet daily for PCP prophylaxis; it may be stopped when the CD4 count has been above 200/µL for at least 3 months on ART.",
+        ref: "Harrison 22nd ed. 2025, ch. 208 Human Immunodeficiency Virus Disease: AIDS and Related Disorders, Table 208-11, p. 1593"
+      },
+      {
+        book: "note",
+        text: "WHO and the Ethiopian national HIV guideline use broader criteria for cotrimoxazole preventive therapy than the US thresholds quoted in Harrison (CD4 under 200), because malaria and severe bacterial infections are common. The WHO age bands for prophylaxis are from the WHO co-trimoxazole prophylaxis guidelines. Confirm start and stop rules with the current national guideline.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO. Guidelines on co-trimoxazole prophylaxis for HIV-related infections among children, adolescents and adults (2006) and 2014 supplement"
+      },
+      {
+        name: "FMOH Ethiopia. National Consolidated Guidelines for Comprehensive HIV Prevention, Care and Treatment (current edition)"
+      },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
+      { name: "Nelson Textbook of Pediatrics 22nd ed. 2024" },
+      { name: "BNF / BNF for Children — co-trimoxazole" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "cefotaxime",
+    name: "Cefotaxime",
+    aka: ["Claforan", "Third-generation cephalosporin"],
+    cls: "3rd-generation cephalosporin",
+    cat: "infection",
+    wards: ["neonatal", "paediatric", "emergency", "medical", "icu", "surgical"],
+    tags: [
+      "neonatal sepsis",
+      "neonatal meningitis",
+      "jaundice",
+      "preterm",
+      "gonococcal ophthalmia",
+      "meningitis",
+      "typhoid",
+      "ceftriaxone alternative",
+      "calcium"
+    ],
+    presentation: [
+      "Powder vials 500 mg, 1 g and 2 g. Reconstitute with water for injection just before use.",
+      "Use the solution promptly; keep reconstituted solution only as long as the leaflet allows, and discard it if it darkens.",
+      "Unlike ceftriaxone it does not form precipitates with calcium and does not displace bilirubin to the same degree — which is why it exists on a neonatal unit."
+    ],
+    indications: [
+      "Neonatal sepsis or meningitis when a cephalosporin is needed and ceftriaxone is unsuitable: jaundiced or preterm baby, under 41 weeks corrected age, or receiving calcium-containing IV fluids",
+      "Gonococcal ophthalmia neonatorum when ceftriaxone cannot be used",
+      "Bacterial meningitis, sepsis and severe pneumonia in children and adults where ceftriaxone is unavailable",
+      "Multidrug-resistant or fluoroquinolone-resistant typhoid"
+    ],
+    standard: {
+      summary: "The neonatal alternative to ceftriaxone. The first choice for newborn sepsis is still ampicillin plus gentamicin; when a third-generation cephalosporin is needed in the first weeks of life, Nelson notes ceftriaxone is typically not used because it precipitates with calcium and displaces bilirubin — cefotaxime is the drug. It needs dosing every 6–12 hours, not once daily.",
+      items: [
+        {
+          label: "Neonate",
+          text: "50 mg/kg per dose IV (or IM): first 7 days of life every 12 h; after 7 days every 8 h (every 12 h if under 1,200 g) — Nelson (100–150 mg/kg/day). For meningitis many neonatal protocols dose more often; confirm with the national neonatal protocol."
+        },
+        {
+          label: "Gonococcal ophthalmia neonatorum",
+          text: "100 mg/kg IV or IM as a single dose (Nelson) — for babies who cannot have ceftriaxone. Extend to 7 days if there is sepsis or another site (25–50 mg/kg every 8–12 h; meningitis 10–14 days). Irrigate the eye and treat both parents."
+        },
+        {
+          label: "Child",
+          text: "50 mg/kg every 6–8 h IV or IM (150 mg/kg/day; Nelson). Meningitis: 200 mg/kg/day (Nelson) to 225–300 mg/kg/day (Harrison) divided every 6 h; maximum 12 g/day."
+        },
+        {
+          label: "Adult",
+          text: "1–2 g every 8 h for sepsis or pneumonia (Harrison; Nelson 1–2 g every 8–12 h). Meningitis: 2 g every 4 h (12 g/day; Harrison)."
+        },
+        {
+          label: "Give with",
+          text: "Ampicillin in neonates and in meningitis in infants under 3 months (Listeria), as in the meningitis case."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Accurate newborn doses from a 500 mg vial",
+        best_for: "Every newborn unit — the volume of a 50 mg/kg dose must be measurable.",
+        requires: ["iv", "syringe_1ml"],
+        steps: [
+          "Dissolve the 500 mg vial in about 2 mL water for injection and shake until clear.",
+          "Draw it all into a 10 mL syringe and add water for injection to a TOTAL of 10 mL. Making up to a final volume avoids the error from the powder's own volume. You now have 50 mg/mL.",
+          "50 mg/kg is now 1 mL per kg: a 2.5 kg baby gets 2.5 mL. Use a 1 mL syringe for babies under 1 kg.",
+          "Give by slow IV injection over 3–5 minutes into a flushed cannula. Calcium-containing fluids in the same line are not the danger they are with ceftriaxone, but flush between drugs anyway.",
+          "Label the syringe (drug, strength, time). Discard what is left unless the leaflet allows storage.",
+          "Write the interval on the chart by postnatal age: every 12 h in the first week, every 8 h after that."
+        ],
+        monitor: ["Temperature, feeding, activity and jaundice at each dose", "Cannula site"],
+        cautions: [
+          "Check the vial strength: 1 g vials made up the same way to 10 mL give 100 mg/mL — half the volume."
+        ]
+      },
+      {
+        title: "IM cefotaxime when there is no IV access",
+        best_for: "A sick newborn or child before referral, or after failed cannulation.",
+        requires: ["im"],
+        steps: [
+          "For IM use the solution must be concentrated so the volume fits a small muscle: dissolve the 500 mg vial in water for injection and make up to a total of 2.5 mL = 200 mg/mL (check the leaflet's IM instructions).",
+          "50 mg/kg is then 0.25 mL per kg: a 3 kg baby gets 0.75 mL.",
+          "Inject into the anterolateral thigh. In a neonate do not put more than 1 mL in one site — split larger doses between both thighs.",
+          "Neonates: water for injection only — never lidocaine.",
+          "Write the time and dose on the referral note."
+        ],
+        monitor: ["Injection site", "Response at 24–48 h"],
+        cautions: ["Never give the concentrated IM solution IV."]
+      },
+      {
+        title: "Ceftriaxone or cefotaxime for this newborn?",
+        best_for: "The decision that comes up whenever a neonate needs a third-generation cephalosporin.",
+        requires: [],
+        steps: [
+          "First ask whether a cephalosporin is needed: ampicillin plus gentamicin remains first line for neonatal sepsis.",
+          "Use cefotaxime, not ceftriaxone, if the baby is jaundiced, preterm or under 41 weeks corrected age, or is receiving (or may need) any calcium-containing IV fluid or calcium gluconate.",
+          "If cefotaxime is not stocked and the baby is jaundiced or preterm: ampicillin plus gentamicin, and refer. Do not give ceftriaxone with calcium in a neonate — the precipitates have been fatal.",
+          "A term baby, not jaundiced, with no calcium-containing fluids: ceftriaxone once daily is acceptable when cefotaxime is unavailable (see ceftriaxone)."
+        ],
+        monitor: ["Serum bilirubin or visible jaundice"],
+        cautions: []
+      }
+    ],
+    paediatric: [
+      "Interval changes with postnatal age in the newborn: every 12 h in the first week, every 8 h after.",
+      "The cephalosporin of choice in jaundiced or preterm neonates and when calcium-containing fluids are running.",
+      "Does not cover Listeria or enterococci: give with ampicillin in young infants."
+    ],
+    cautions: [
+      "Cephalosporin allergy; cross-reactivity with a true penicillin anaphylaxis is uncommon but possible.",
+      "Rapid IV injection (under about 1 minute) through a central line has caused arrhythmias — give over 3–5 minutes.",
+      "Diarrhoea including C. difficile; rash; rarely neutropenia with long courses.",
+      "Needs repeated doses (6–12-hourly); once-daily dosing is not enough."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 50,
+      doseUnit: "mg",
+      conc: 50,
+      concUnit: "mg/mL",
+      maxDose: 2000,
+      label: "Dose 50 mg/kg using the 50 mg/mL dilution (1 mL per kg)"
+    },
+    textbook: [
+      {
+        book: "nelson",
+        text: "Neonatal sepsis: ampicillin plus cefotaxime (if available) may replace ampicillin plus gentamicin after discharge from the nursery or when resistant E. coli is suspected; ceftriaxone is typically not used in the neonatal period because of calcium precipitation and bilirubin displacement.",
+        ref: "Nelson 22nd ed. 2024, ch. 148 Epidemiology of Infections, p. 1149"
+      },
+      {
+        book: "nelson",
+        text: "Cefotaxime: neonates up to 7 days 100 mg/kg/day divided every 12 h; over 7 days 150 mg/kg/day divided every 8 h (100 mg/kg/day every 12 h if under 1,200 g); children 150 mg/kg/day divided every 6–8 h, meningitis 200 mg/kg/day; adults 1–2 g every 8–12 h, maximum 12 g/day.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, Table 225.3, p. 1676"
+      },
+      {
+        book: "nelson",
+        text: "Gonococcal ophthalmia neonatorum: ceftriaxone 25–50 mg/kg once, OR cefotaxime 100 mg/kg IV or IM once; cefotaxime is for neonates who cannot receive ceftriaxone (hyperbilirubinaemia, simultaneous IV calcium).",
+        ref: "Nelson 22nd ed. 2024, ch. 238 Neisseria gonorrhoeae, Table 238.1, p. 1751"
+      },
+      {
+        book: "nelson",
+        text: "Gonococcal conjunctivitis extended to 7 days when sepsis or other sites are involved: ceftriaxone 25–50 mg/kg/day, with cefotaxime 25 mg/kg every 12 h substituted if the baby has hyperbilirubinaemia.",
+        ref: "Nelson 22nd ed. 2024, ch. 666 Disorders of the Conjunctiva, p. 3939"
+      },
+      {
+        book: "harrison",
+        text: "Bacterial meningitis: preterm infants to 1 month — ampicillin plus cefotaxime; cefotaxime 225–300 mg/kg/day divided 6-hourly in children over 1 month, 12 g/day divided 4-hourly in adults.",
+        ref: "Harrison 22nd ed. 2025, ch. 143 Acute Meningitis, p. 1121"
+      },
+      {
+        book: "harrison",
+        text: "Inpatient community-acquired pneumonia: cefotaxime 1–2 g every 8 h is one of the beta-lactam options, given with a macrolide.",
+        ref: "Harrison 22nd ed. 2025, ch. 131 Pneumonia, Table 131-5, p. 1028"
+      },
+      {
+        book: "harrison",
+        text: "Ceftriaxone, cefotaxime and oral cefixime are effective for multidrug-resistant enteric fever, including fluoroquinolone-resistant strains.",
+        ref: "Harrison 22nd ed. 2025, ch. 171 Salmonellosis, p. 1318"
+      }
+    ],
+    sources: [
+      { name: "Nelson Textbook of Pediatrics 22nd ed. 2024" },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
+      { name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013" },
+      { name: "BNF for Children — cefotaxime" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "fluconazole",
+    name: "Fluconazole",
+    aka: ["Diflucan", "Azole antifungal", "Triazole"],
+    cls: "Triazole antifungal",
+    cat: "infection",
+    wards: ["medical", "outpatient", "paediatric", "neonatal", "icu"],
+    tags: [
+      "cryptococcal meningitis",
+      "CrAg",
+      "HIV",
+      "oral thrush",
+      "oesophageal candidiasis",
+      "vaginal candidiasis",
+      "candidaemia",
+      "advanced HIV disease",
+      "QT",
+      "warfarin"
+    ],
+    presentation: [
+      "Capsules or tablets 50 mg, 150 mg and 200 mg.",
+      "Oral suspension 50 mg/5 mL where stocked.",
+      "IV infusion 2 mg/mL (e.g. 200 mg in 100 mL), ready to use."
+    ],
+    indications: [
+      "Cryptococcal meningitis in HIV: part of induction, then consolidation and maintenance",
+      "Positive serum cryptococcal antigen (CrAg) without meningitis: pre-emptive treatment",
+      "Oral and oesophageal candidiasis",
+      "Vaginal candidiasis (not in pregnancy — see Safety)",
+      "Invasive Candida infection in neonates and children when the species is susceptible",
+      "Primary cryptococcal prophylaxis in advanced HIV where CrAg screening is not available"
+    ],
+    standard: {
+      summary: "Absorbed almost completely by mouth, so tablets are as good as the IV bag. It is fungistatic and does not cover moulds — it does nothing for fungal keratitis (that needs natamycin drops). It inhibits the enzymes that clear warfarin, phenytoin and many QT-prolonging drugs, and the dose is halved after loading in kidney impairment.",
+      items: [
+        {
+          label: "Oral thrush",
+          text: "Adult 100–200 mg once daily (Harrison) for 7–14 days. Child 3–6 mg/kg once daily."
+        },
+        {
+          label: "Oesophageal candidiasis (pain on swallowing)",
+          text: "Adult 100–200 mg once daily (Harrison; some guidelines up to 400 mg) for 14–21 days. Child 6 mg/kg once daily (up to 12 mg/kg in severe disease)."
+        },
+        {
+          label: "Vaginal candidiasis",
+          text: "150 mg as a single oral dose (not in pregnancy — use a topical azole)."
+        },
+        {
+          label: "Cryptococcal meningitis — induction (WHO, via Harrison)",
+          text: "Preferred: single dose liposomal amphotericin B 10 mg/kg + flucytosine 25 mg/kg four times daily + fluconazole 1200 mg daily for 14 days. No liposomal: amphotericin B deoxycholate 1 mg/kg/day for 7 days instead. No amphotericin: an all-oral 14-day regimen of fluconazole 1200 mg daily + flucytosine."
+        },
+        {
+          label: "Cryptococcal meningitis — consolidation and maintenance",
+          text: "Consolidation fluconazole 400–800 mg daily for 8 weeks (WHO uses 800 mg), then maintenance 200 mg daily (Harrison 200–400 mg) for at least a year and until immune recovery on ART by the national criteria. Children: consolidation 10–12 mg/kg/day, maintenance 6 mg/kg/day (Nelson)."
+        },
+        {
+          label: "CrAg positive, no meningitis",
+          text: "Fluconazole 800 mg daily for 2 weeks (up to 1200 mg when the antigen titre is high), then consolidation and maintenance. Start ART 2 weeks after starting fluconazole (Harrison). Do a lumbar puncture first if at all possible."
+        },
+        {
+          label: "Invasive candidiasis in children and neonates",
+          text: "12 mg/kg once daily after a 25 mg/kg loading dose (Nelson)."
+        },
+        {
+          label: "Kidney impairment",
+          text: "Give the normal first (loading) dose, then halve the daily dose if creatinine clearance is 50 mL/min or less. A single 150 mg dose needs no change."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Tablets work as well as the drip",
+        best_for: "Every ward: IV fluconazole is expensive and often out of stock.",
+        requires: ["oral"],
+        steps: [
+          "Give fluconazole by mouth whenever the patient can swallow — the same dose as IV, because almost all of it is absorbed.",
+          "Patient with a nasogastric tube: open the capsule (or crush the tablet), mix in 10–20 mL of water and flush it down.",
+          "A patient with severe oesophageal candidiasis who cannot swallow tablets usually can after 2–3 days of treatment; start with the dispersed capsule in water by mouth if there is no IV.",
+          "Keep the IV bags for the patient who is unconscious without a tube or vomiting everything."
+        ],
+        monitor: ["Swallowing and mouth lesions at day 3–7"],
+        cautions: ["Food and acid do not matter for fluconazole (unlike itraconazole)."]
+      },
+      {
+        title: "Cryptococcal meningitis when amphotericin is not available",
+        best_for: "District hospitals managing advanced HIV with headache, where amphotericin B and the CrAg-to-referral pathway are out of reach.",
+        requires: ["oral"],
+        steps: [
+          "Suspect it in anyone with HIV and headache, fever, confusion or a stiff neck; test serum or CSF with the CrAg lateral-flow test if available.",
+          "Refer if amphotericin can be reached. If not, start the all-oral induction: fluconazole 1200 mg once daily plus flucytosine 25 mg/kg four times daily for 14 days (Harrison/WHO). If flucytosine is also unavailable, fluconazole 1200 mg daily alone is the last-resort option — confirm with the national guideline and an HIV clinician.",
+          "Raised intracranial pressure kills more of these patients than the fungus. Repeat therapeutic lumbar punctures for persistent headache, vomiting or visual loss, following the WHO/national guidance on pressure and volume. Do NOT treat it with mannitol, acetazolamide or corticosteroids (WHO).",
+          "Do not start ART at once: in cryptococcal meningitis WHO advises delaying ART by 4–6 weeks after starting antifungal treatment. (For CrAg-positive patients without meningitis, start ART 2 weeks after fluconazole.)",
+          "After 2 weeks: consolidation 800 mg daily for 8 weeks, then maintenance 200 mg daily.",
+          "Check the drug list for interactions — fluconazole at 800–1200 mg strongly raises the effect of warfarin, phenytoin and several QT drugs."
+        ],
+        monitor: [
+          "Glasgow coma score, headache and vision daily",
+          "Potassium, creatinine and liver tests when available",
+          "Pulse and, if possible, ECG when on other QT drugs"
+        ],
+        cautions: [
+          "Fluconazole alone is fungistatic and less effective than amphotericin-based induction: refer whenever amphotericin is realistically reachable."
+        ]
+      },
+      {
+        title: "A child's thrush dose from capsules",
+        best_for: "Health centres with only 50 mg or 150 mg capsules and no suspension.",
+        requires: ["oral"],
+        steps: [
+          "Thrush dose is 3–6 mg/kg once daily, so a whole 50 mg capsule suits a child of about 9–16 kg, and 100 mg a child of about 17–33 kg.",
+          "Under about 8 kg: open a 50 mg capsule into exactly 10 mL of clean water (5 mg per mL), stir, and give at once 1 mL per kg (5 mg/kg). Throw the rest away.",
+          "Give once daily for 7–14 days; continue a few days after the white patches have gone.",
+          "A breastfed baby with thrush: check the mother's nipples too.",
+          "Thrush that keeps coming back in a child is a reason to test for HIV."
+        ],
+        monitor: ["Feeding and mouth at day 3–7"],
+        cautions: [
+          "The powder may not dissolve completely — stir and give straight away so the dose is not left in the cup."
+        ]
+      },
+      {
+        title: "Vaginal thrush in pregnancy: put the 150 mg capsule away",
+        best_for: "Antenatal clinics and health centres.",
+        requires: [],
+        steps: [
+          "Use a topical azole (clotrimazole or miconazole pessary or cream, usually for 7 days in pregnancy) instead of oral fluconazole.",
+          "Even low single doses of oral fluconazole in pregnancy have been linked to miscarriage and stillbirth in some studies, and high-dose first-trimester use to birth defects.",
+          "If no topical azole is stocked, nystatin pessaries are an alternative; treatment can wait a day for a referral rather than give fluconazole."
+        ],
+        monitor: [],
+        cautions: [
+          "Life-threatening fungal infection in pregnancy (cryptococcal meningitis) is different: the mother's life comes first — get specialist advice; amphotericin is preferred in the first trimester."
+        ]
+      }
+    ],
+    paediatric: [
+      "Children clear fluconazole faster than adults: invasive disease 12 mg/kg/day; neonates need a 25 mg/kg loading dose (Nelson). Thrush 3–6 mg/kg/day.",
+      "Cryptococcal consolidation 10–12 mg/kg/day for 8 weeks, maintenance 6 mg/kg/day.",
+      "Recurrent thrush outside the newborn period suggests HIV — test."
+    ],
+    cautions: [
+      "Inhibits CYP2C9 and CYP3A4: raises the INR on warfarin and levels of phenytoin, carbamazepine, midazolam, methadone, quetiapine, amitriptyline and others (see Interactions).",
+      "QT prolongation, especially at high doses, with other QT drugs or with low potassium — the electrolytes are often low in advanced HIV and during amphotericin treatment.",
+      "Hepatotoxicity (mostly mild; rarely severe) — stop if jaundice appears; take extra care with TB drugs, nevirapine and cotrimoxazole.",
+      "Rifampicin lowers fluconazole levels.",
+      "No activity against moulds: useless for fungal keratitis (use natamycin) and aspergillosis; less active against C. krusei and C. glabrata.",
+      "Pregnancy: avoid where possible (see Safety)."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 6,
+      doseUnit: "mg",
+      conc: 10,
+      concUnit: "mg/mL",
+      maxDose: 200,
+      label: "Child thrush / oesophageal dose 6 mg/kg once daily (max 200 mg) using 50 mg/5 mL suspension"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Fluconazole is oral or IV, long-acting, penetrates CSF and urine and has minimal toxicity; it is used for consolidation and maintenance in cryptococcal meningitis and for mucosal candidiasis. It has no activity against moulds.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1691"
+      },
+      {
+        book: "harrison",
+        text: "Cryptococcal meningitis in HIV (WHO): induction with single-dose liposomal AmB 10 mg/kg plus 14 days of flucytosine 25 mg/kg four times daily and fluconazole 1200 mg daily; if no AmB, an all-oral 14-day fluconazole 1200 mg plus flucytosine regimen. Consolidation fluconazole 400–800 mg daily for 8 weeks, then maintenance 200–400 mg daily.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705"
+      },
+      {
+        book: "harrison",
+        text: "Fluconazole can cause drug interactions, QT prolongation and liver dysfunction (especially at higher doses), and the dose must be adjusted for renal function.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705"
+      },
+      {
+        book: "harrison",
+        text: "Serum CrAg-positive without meningitis: pre-emptive fluconazole 800 mg daily (up to 1200 mg with high fungal burden) for 14 days, then consolidation and maintenance; start ART 2 weeks after antifungal therapy.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1706"
+      },
+      {
+        book: "harrison",
+        text: "Mucocutaneous candidiasis: oral thrush and oesophageal candidiasis — fluconazole 100–200 mg/day; vulvovaginal — a single oral 150 mg dose, or an azole cream or pessary.",
+        ref: "Harrison 22nd ed. 2025, ch. 222 Candidiasis, Table 222-3, p. 1710"
+      },
+      {
+        book: "nelson",
+        text: "Children clear fluconazole faster than adults, so paediatric doses are proportionately higher (generally 12 mg/kg/day for invasive disease); neonates need a 25 mg/kg loading dose.",
+        ref: "Nelson 22nd ed. 2024, ch. 279 Principles of Antifungal Therapy, p. 1918"
+      },
+      {
+        book: "nelson",
+        text: "Cryptococcal meningitis in children: after induction, consolidation with oral fluconazole 10–12 mg/kg/day (adult 400–800 mg/day) for 8 weeks, then maintenance (child 6 mg/kg/day) while immunosuppression continues.",
+        ref: "Nelson 22nd ed. 2024, ch. 281 Cryptococcus neoformans and Cryptococcus gattii, p. 1927"
+      },
+      {
+        book: "note",
+        text: "WHO cryptococcal guidance (2018, 2022): delay ART 4–6 weeks after starting treatment for cryptococcal meningitis; manage raised pressure with therapeutic lumbar puncture, not corticosteroids, mannitol or acetazolamide. Confirm with the national HIV guideline.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO. Guidelines for diagnosing, preventing and managing cryptococcal disease among adults, adolescents and children living with HIV (2022)"
+      },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
+      { name: "Nelson Textbook of Pediatrics 22nd ed. 2024" },
+      { name: "Williams Obstetrics 25th ed. 2018; Gabbe's Obstetrics 9th ed." },
+      { name: "BNF / BNF for Children — fluconazole" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "pentamidine",
+    name: "Pentamidine isethionate",
+    aka: ["Pentacarinat", "Pentam", "Diamidine"],
+    cls: "Aromatic diamidine antiprotozoal / anti-Pneumocystis agent",
+    cat: "infection",
+    wards: ["medical", "icu"],
+    tags: [
+      "visceral leishmaniasis",
+      "kala-azar",
+      "VL-HIV",
+      "secondary prophylaxis",
+      "Pneumocystis",
+      "PCP",
+      "hypoglycaemia",
+      "hypotension",
+      "QT",
+      "nephrotoxic",
+      "pancreatitis"
+    ],
+    presentation: [
+      "300 mg powder vial (pentamidine isethionate). Store as labelled, protected from light.",
+      "Reconstitute with water for injection (not saline), then dilute in 5 % glucose (or 0.9 % sodium chloride) for IV infusion — follow the vial leaflet.",
+      "Use the solution straight away; it does not keep."
+    ],
+    indications: [
+      "Secondary prophylaxis after a first episode of visceral leishmaniasis in people with HIV — WHO's East Africa regimen",
+      "Severe Pneumocystis pneumonia when cotrimoxazole cannot be used or is failing"
+    ],
+    standard: {
+      summary: "A toxic drug given by slow IV infusion with the patient lying down. Its dangers are predictable: a sudden fall in blood pressure if it runs fast, hypoglycaemia (sometimes days or weeks later, then diabetes), kidney injury, low or high potassium, pancreatitis, low white count and torsades de pointes. Every dose needs a glucose check, a blood pressure check and someone watching.",
+      items: [
+        {
+          label: "VL–HIV secondary prophylaxis (East Africa, WHO 2022)",
+          text: "4 mg/kg (300 mg for an adult) by IV infusion every 3–4 weeks, starting after a negative test of cure. Stop only when CD4 has stayed above 350 cells/mm3, or the viral load has been undetectable, for at least 6 months with no sign of relapse (see the VL–HIV case). Prefer a drug not used for the primary episode."
+        },
+        {
+          label: "Severe PCP (cotrimoxazole not possible)",
+          text: "3–4 mg/kg IV once daily (Harrison; 4 mg/kg is the usual dose) for 21 days in HIV, each dose over at least 60 minutes. Then secondary prophylaxis."
+        },
+        {
+          label: "Every dose",
+          text: "Infuse over at least 60 min (rapid infusion causes potentially lethal hypotension). Patient lying flat during and for a while after. Check glucose before and after; BP every 15 min during. Creatinine and potassium before each dose in a treatment course, and regularly during prophylaxis."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Giving the infusion safely by gravity",
+        best_for: "Medical wards and VL treatment centres without pumps or monitors.",
+        requires: ["iv", "macro_set", "bp", "glucometer"],
+        steps: [
+          "Weigh the patient. Dose 4 mg/kg; for VL prophylaxis WHO uses 300 mg in an adult.",
+          "Check blood glucose and BP before starting. Do not start if glucose is low or the systolic BP is low — correct and seek advice first.",
+          "Reconstitute the vial with water for injection as the leaflet says, then add the dose to 250 mL of 5 % glucose.",
+          "Run it over 60–120 minutes, never faster. 250 mL over 90 min = about 167 mL/h = about 56 drops/min with a 20 drops/mL set (about 14 drops in 15 seconds). Count the drops at 5 and 15 minutes.",
+          "The patient lies flat for the whole infusion. Check BP every 15 minutes; if it falls, stop the infusion, raise the legs, give a fluid bolus and call for help.",
+          "Have 10 % glucose at the bedside. Check glucose at the end of the infusion and before the patient leaves; teach them the signs of hypoglycaemia (sweating, shaking, confusion) and to eat.",
+          "Write down the date and set the next prophylaxis date 3–4 weeks ahead on the patient's card."
+        ],
+        monitor: [
+          "BP every 15 min during the infusion and 30 min after",
+          "Glucose before and after; again at any symptom in the following days",
+          "Creatinine, potassium and white count when available"
+        ],
+        cautions: [
+          "Hypoglycaemia can appear days or weeks after a dose, and diabetes later: check glucose at every visit, not only on infusion days."
+        ]
+      },
+      {
+        title: "The monthly prophylaxis visit — checklist",
+        best_for: "VL–HIV follow-up clinics giving pentamidine every 3–4 weeks.",
+        requires: [],
+        steps: [
+          "Ask about relapse symptoms: fever, weight loss, a growing spleen. Feel the spleen. Relapse needs parasitological confirmation and treatment, not just more prophylaxis.",
+          "Check ART adherence and the latest CD4 count and viral load — these decide when prophylaxis can stop.",
+          "Check the medicine list for QT-prolonging drugs (quinine, haloperidol, methadone, fluconazole, macrolides, ciprofloxacin, antimonials) and other kidney-damaging drugs (tenofovir, amphotericin, aminoglycosides). See Interactions.",
+          "Glucose, BP, weight; creatinine and potassium when available; ECG if on other QT drugs and a machine exists.",
+          "If the patient comes late, give the dose when they come and count the next interval from that day. Do not give two doses close together to catch up — confirm the plan with the VL treatment centre.",
+          "Record where the patient lives and the nearest centre, so a missed visit can be traced."
+        ],
+        monitor: ["Weight, spleen size, haemoglobin at each visit"],
+        cautions: []
+      },
+      {
+        title: "When pentamidine must not be given today",
+        best_for: "Any ward where the conditions for a safe infusion are missing.",
+        requires: [],
+        steps: [
+          "Do not give it as an IV push or a fast drip to save time — rapid infusion can cause cardiovascular collapse.",
+          "Do not give it if nobody can stay to check BP during the infusion, or if glucose cannot be checked and no glucose is available to treat a low.",
+          "Do not give it to a patient with hypotension, hypoglycaemia, signs of pancreatitis (severe upper abdominal pain, vomiting) or a rapidly rising creatinine until a senior has reviewed them.",
+          "For prophylaxis, a dose can be moved to a day when it can be given properly — agree the new date with the VL treatment centre. For severe PCP, transfer the patient to where it can be given."
+        ],
+        monitor: [],
+        cautions: ["There is no oral form of pentamidine and no safe shortcut."]
+      }
+    ],
+    paediatric: [
+      "Children are dosed by weight (4 mg/kg) with the same precautions; use a burette for the smaller volume and the same 60-minute minimum.",
+      "Check glucose more often in small children, whose glycogen reserve is small."
+    ],
+    cautions: [
+      "Hypotension, sometimes severe, with rapid infusion — always over at least 60 min, patient lying down.",
+      "Hypoglycaemia (can be delayed by days or weeks), later hyperglycaemia and diabetes from islet-cell damage.",
+      "Nephrotoxicity; hyperkalaemia (like trimethoprim) or other electrolyte disturbance; hypocalcaemia.",
+      "QT prolongation and torsades de pointes — avoid other QT drugs and correct potassium and magnesium.",
+      "Pancreatitis, neutropenia, hepatitis.",
+      "Accumulates in tissues (half-life about 12 days) — toxicity can outlast the last dose."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 4,
+      doseUnit: "mg",
+      conc: 60,
+      concUnit: "mg/mL",
+      label: "Dose 4 mg/kg (WHO VL prophylaxis: 300 mg adult) — 300 mg vial made up to 5 mL = 60 mg/mL, then add to 250 mL 5 % glucose"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Pentamidine must be given IV over at least 60 minutes to avoid potentially lethal hypotension. Adverse effects can be severe and irreversible: renal dysfunction, dysglycaemia (life-threatening hypoglycaemia days or weeks after the infusion, later hyperglycaemia), neutropenia and torsades de pointes.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, p. 1734"
+      },
+      {
+        book: "harrison",
+        text: "PCP treatment: pentamidine 3–4 mg/kg IV once daily; adverse effects hypotension, azotaemia, torsades de pointes, pancreatitis, dysglycaemia, hypocalcaemia, neutropenia, hepatitis.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, Table 227-1, p. 1734"
+      },
+      {
+        book: "harrison",
+        text: "Pentamidine accumulates in tissues (half-life about 12 days). Rapid (under 1 h) IV infusion often causes hypotension; electrolyte disturbances and nephrotoxicity are common, so use caution with other nephrotoxic drugs. Pancreatitis, QT prolongation, hypoglycaemia and later diabetes from islet-cell damage occur.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1751"
+      },
+      {
+        book: "harrison",
+        text: "IV pentamidine is the treatment of choice for severe PCP in a patient who cannot tolerate TMP-SMX.",
+        ref: "Harrison 22nd ed. 2025, ch. 208 Human Immunodeficiency Virus Disease: AIDS and Related Disorders, p. 1596"
+      },
+      {
+        book: "harrison",
+        text: "IV pentamidine given rapidly can cause hypotension from cardiovascular collapse.",
+        ref: "Harrison 22nd ed. 2025, ch. 208 Human Immunodeficiency Virus Disease: AIDS and Related Disorders, p. 1598"
+      },
+      {
+        book: "note",
+        text: "WHO 2022 (visceral leishmaniasis in HIV co-infected patients, East Africa): secondary prophylaxis with pentamidine isethionate 4 mg/kg (300 mg adult) every 3–4 weeks; stop when CD4 stays above 350 cells/mm3 or viral load is undetectable for at least 6 months without relapse. This matches the app's VL–HIV case.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia (2022)"
+      },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
+      { name: "BNF — pentamidine isethionate" },
+      { name: "Pentacarinat (pentamidine isethionate) product information" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "natamycin",
+    name: "Natamycin 5 % eye drops",
+    aka: ["Natacyn", "Pimaricin", "Natamycin ophthalmic suspension"],
+    cls: "Polyene antifungal, topical ocular",
+    cat: "eye",
+    wards: ["outpatient", "emergency"],
+    tags: [
+      "fungal keratitis",
+      "fungal corneal ulcer",
+      "Fusarium",
+      "Aspergillus",
+      "harvest injury",
+      "corneal ulcer",
+      "eye emergency",
+      "hourly drops"
+    ],
+    presentation: [
+      "5 % ophthalmic suspension (50 mg/mL), usually a 15 mL bottle. It is a suspension: SHAKE WELL before every drop.",
+      "Store as the label says; do not freeze. Discard 4 weeks after opening or as labelled.",
+      "Rarely stocked below referral level. Not interchangeable with any antibacterial drop."
+    ],
+    indications: [
+      "Fungal keratitis (fungal corneal ulcer) caused by filamentous fungi such as Fusarium and Aspergillus — the drug of choice",
+      "Fungal blepharitis and conjunctivitis"
+    ],
+    standard: {
+      summary: "Topical only — systemic absorption is negligible. A fungal ulcer after a scratch from grain, a stick or chaff at harvest is common in rural Ethiopia, is not touched by ciprofloxacin eye drops, and is made catastrophically worse by steroid drops. Natamycin is given as often as the antibacterial regimen and for longer, because fungi die slowly.",
+      items: [
+        {
+          label: "Fungal keratitis — start",
+          text: "1 drop every 1–2 hours, day and night, for the first 3–4 days (product label)."
+        },
+        {
+          label: "Then",
+          text: "1 drop 6–8 times a day, continued for 14–21 days or until the ulcer has healed — often longer; stop gradually, not suddenly, guided by the eye specialist."
+        },
+        {
+          label: "Not improving",
+          text: "If there is no improvement after 7–10 days, the organism may not be susceptible (product label): refer for a smear, culture and specialist treatment."
+        },
+        {
+          label: "Always with it",
+          text: "Atropine 1 % for pain and to rest the eye, oral analgesia, NO steroid drop, no eye pad. Refer the same day if the ulcer is central, large, deep, has a hypopyon, or the diagnosis is uncertain."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Hourly natamycin through the night",
+        best_for: "A health centre or hospital that has natamycin but cannot refer tonight.",
+        requires: [],
+        steps: [
+          "Admit the patient if hourly drops at home are not realistic. Write every dose time on a chart, including the night hours, and sign each one.",
+          "Shake the bottle every time — the drug settles to the bottom and an unshaken drop is mostly water.",
+          "One drop is enough; a second drop washes out the first and empties the bottle.",
+          "If other drops are due (atropine, an antibacterial when bacterial infection cannot be excluded), wait at least 5 minutes between them.",
+          "Teach a relative to give the night doses with the nurse checking, using a phone alarm and a tally card.",
+          "Measure the ulcer daily (fluorescein, a ruler or a phone photo against a ruler) and record vision. Fungal ulcers improve slowly; a stable ulcer at 48 h is not failure, a growing one is.",
+          "Refer if it is worse at 48–72 hours, or not better after 7–10 days."
+        ],
+        monitor: [
+          "Every dose signed",
+          "Ulcer size, hypopyon height, vision daily",
+          "Bottle level — order more before it runs out"
+        ],
+        cautions: [
+          "Natamycin penetrates deep corneal infection poorly: a deep ulcer or one with a large hypopyon needs a specialist, often with additional treatment."
+        ]
+      },
+      {
+        title: "Recognising a fungal ulcer at the health centre",
+        best_for: "Any red, painful eye with a white spot on the cornea, especially after a plant or grain injury.",
+        requires: [],
+        steps: [
+          "Ask about the injury: plant matter, grain, chaff, a stick, a cow's tail, and any traditional remedy put in the eye.",
+          "Look for: a dry, raised, grey-white ulcer with feathery or fluffy edges; small satellite spots around it; hypopyon; a slow course over days rather than hours.",
+          "If a laboratory can do it, a scraping from the ulcer edge examined with KOH or Gram stain may show fungal filaments — but do not delay treatment or referral for it.",
+          "Treat the same day: natamycin if you have it, atropine, analgesia. Do not use a steroid drop, and check the patient's own bottles for one.",
+          "If you cannot tell bacterial from fungal, and only ciprofloxacin eye drops are available, start them (bacterial infection is possible too) but refer urgently — they will not treat the fungus."
+        ],
+        monitor: ["Vision both eyes, written down"],
+        cautions: [
+          "A contact-lens wearer, a patient with diabetes or HIV, and any ulcer after corticosteroid drops are higher risk — refer."
+        ]
+      },
+      {
+        title: "No natamycin on the shelf: there is no safe ward substitute",
+        best_for: "The usual situation below referral level.",
+        requires: [],
+        steps: [
+          "Do not substitute an antibacterial drop for it, do not add a steroid, and do not make 'antifungal drops' from tablets, IV fluconazole, skin creams or vaginal preparations — they are not formulated for the eye and fluconazole does not cover the moulds that cause most of these ulcers.",
+          "Do not patch the eye.",
+          "Give atropine 1 %, oral analgesia, an antibacterial drop if bacterial infection cannot be excluded, and refer the same day to an eye unit that stocks natamycin.",
+          "Write on the referral note what has been put in the eye, the date of injury, and the ulcer size."
+        ],
+        monitor: [],
+        cautions: ["Every day of delay increases the risk of perforation and loss of the eye."]
+      }
+    ],
+    paediatric: [
+      "Used at all ages; systemic absorption from the eye is negligible.",
+      "A child with a corneal ulcer needs same-day referral; with measles or malnutrition also give vitamin A (see the corneal ulcer case)."
+    ],
+    cautions: [
+      "Never combine with a corticosteroid drop in suspected fungal keratitis.",
+      "Ineffective against bacterial keratitis and acanthamoeba on its own; less effective against yeast (Candida) ulcers than against moulds.",
+      "Local irritation, blurred vision and a white deposit in the ulcer from the suspension are common."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Natamycin 5 % eye drops are the optimal therapy for fungal keratitis, often with surgery; it can be difficult to diagnose early enough to save sight.",
+        ref: "Harrison 22nd ed. 2025, ch. 223 Aspergillosis, p. 1715"
+      },
+      {
+        book: "harrison",
+        text: "Fusarium — a soil and plant mould — causes keratitis in immunocompetent people; outbreaks have been traced to contaminated contact-lens solution and lens cases.",
+        ref: "Harrison 22nd ed. 2025, ch. 226 Uncommon Disseminated Fungal Infections, p. 1728"
+      },
+      {
+        book: "note",
+        text: "The dosing schedule (every 1–2 h for 3–4 days, then 6–8 times daily for 14–21 days; review at 7–10 days) is from the natamycin 5 % product information; the textbooks give no detailed regimen. Confirm with the national eye-care protocol.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      { name: "Natamycin 5 % ophthalmic suspension (Natacyn) product information" },
+      { name: "WHO Model List of Essential Medicines — natamycin eye drops" },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
+      { name: "AAO Preferred Practice Pattern: Bacterial Keratitis (fungal keratitis section)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- fluids and other ---- */
+  {
+    id: "normal-saline",
+    name: "Normal saline (0.9 % sodium chloride)",
+    aka: [
+      "0.9 % NaCl",
+      "NS",
+      "Sodium chloride 0.9 %",
+      "Physiological saline",
+      "Isotonic saline",
+      "Saline",
+      "DNS (with 5 % dextrose)",
+      "Dextrose-saline"
+    ],
+    cls: "Isotonic crystalloid",
+    cat: "electrolyte",
+    wards: ["emergency", "maternity", "neonatal", "paediatric", "medical", "surgical", "icu", "outpatient"],
+    tags: [
+      "IV fluid",
+      "shock",
+      "dehydration",
+      "bolus",
+      "maintenance fluid",
+      "DKA",
+      "hyponatraemia",
+      "vomiting",
+      "pyloric stenosis",
+      "diluent",
+      "flush",
+      "blood transfusion",
+      "irrigation",
+      "lavage"
+    ],
+    presentation: [
+      "0.9 % sodium chloride 500 mL and 1 L bags, or semi-rigid plastic or glass bottles. Sodium 154 mmol/L and chloride 154 mmol/L, about 308 mOsm/L. No potassium, calcium, glucose or buffer.",
+      "5 % dextrose in 0.9 % saline (DNS) 500 mL and 1 L, where stocked. If it is not, see 'Isotonic maintenance fluid when there is no premixed bag' below.",
+      "10 mL and 20 mL ampoules or plastic vials for flushes and as a drug diluent: single use, one patient. 100 mL bags for drug infusions.",
+      "READ THE LABEL. 0.45 % ('half-normal') and 0.18 % saline are hypotonic; 3 % is hypertonic; 10–23.4 % NaCl ampoules are concentrates that kill if given undiluted. Store the concentrates away from the 0.9 % ampoules and water for injection."
+    ],
+    indications: [
+      "Resuscitation of hypovolaemia and shock, when Ringer's lactate is not available or saline is the better fluid",
+      "Volume loss with a low sodium, a low chloride or a metabolic alkalosis: vomiting, gastric outlet obstruction, pyloric stenosis",
+      "First fluid in diabetic ketoacidosis (adults and children)",
+      "Base of isotonic maintenance fluid (with 5 % dextrose and potassium) for sick children and adults who cannot drink",
+      "The only fluid that may run in the same line as blood; the diluent or flush for drugs that must be given in saline",
+      "Irrigation of wounds, burns, eyes and body cavities (peritoneal lavage)"
+    ],
+    standard: {
+      summary: "The most-used IV fluid. Either saline or Ringer's lactate is acceptable for most resuscitation; choose by the patient's chloride, sodium and acid–base state, and by what will share the line. Give boluses by weight and reassess after each one.",
+      items: [
+        {
+          label: "Saline or Ringer's lactate?",
+          text: "Both are isotonic and either will resuscitate. PREFER RINGER'S LACTATE for large volumes (several litres in an adult, repeated boluses in a child), sepsis, burns, Plan C, and DKA once the first boluses are in: saline's 154 mmol/L of chloride causes a hyperchloraemic metabolic acidosis and, in sepsis, more kidney injury (Harrison, Schwartz). PREFER SALINE for vomiting and gastric outlet obstruction (hypochloraemic alkalosis), hypovolaemia with a low sodium, head injury and raised intracranial pressure (Ringer's lactate is slightly hypotonic), any line that also carries blood, and neonates who need ceftriaxone (Ringer's lactate contains calcium; see Never mix). If only saline is in stock, use it: see 'Only saline on the shelf' below."
+        },
+        {
+          label: "Boluses",
+          text: "Child with SHOCK (cold hands, capillary refill over 3 s, weak fast pulse): 10–20 mL/kg over 30–60 min, then reassess; no rapid boluses for a febrile child without shock (FEAST; see Ringer's lactate). Injured child with volume loss: 20 mL/kg, and blood 10 mL/kg if there is no response after three boluses (Schwartz). Child with DKA: 10–20 mL/kg over 1–2 h, more only if still haemodynamically unstable (Nelson). Neonate: 10 mL/kg. Adult: 500 mL–1 L, reassess; sepsis about 30 mL/kg in the first 3 h, guided by response. Severe acute malnutrition: NOT plain saline boluses — use the malnutrition shock protocol on the Ringer's lactate page."
+        },
+        {
+          label: "Maintenance in children",
+          text: "Volume (Holliday–Segar): 4 mL/kg/h for the first 10 kg, 2 mL/kg/h for the next 10 kg, 1 mL/kg/h for each kg above 20 — normally no more than 100 mL/h or 2.4 L/day. Fluid: ISOTONIC with 5 % dextrose (DNS), plus 10–20 mmol/L potassium chloride once the child is passing urine (Nelson). Give less (about two-thirds) when ADH is likely to be high: meningitis, pneumonia, after surgery, heart failure, nephrotic syndrome or liver disease. Check sodium at least daily in any child on more than half of maintenance IV. Not for neonates under 28 days or for severe acute malnutrition, which have their own protocols."
+        },
+        {
+          label: "Maintenance in adults",
+          text: "About 25–30 mL/kg/day of water, about 1 mmol/kg/day each of sodium and potassium, and 50–100 g/day of glucose (NICE CG174). One litre of saline already holds 154 mmol of sodium and no potassium, so several litres a day of saline alone gives too much sodium and chloride and no potassium. Review the fluid chart and electrolytes every day; stop IV fluids as soon as the patient can drink."
+        },
+        {
+          label: "Hyponatraemia",
+          text: "Low sodium with hypovolaemia (diarrhoea, vomiting, diuretics): isotonic saline is the right fluid (Harrison). Once the volume is restored, ADH switches off, a water diuresis starts and the sodium can rise fast: check sodium every 2–4 h at first where you can, watch for a sudden large urine output, and keep within the limits on the Hypertonic saline page (no more than 8–10 mmol/L in 24 h in chronic hyponatraemia). Low sodium WITHOUT hypovolaemia (SIADH: meningitis, pneumonia, after surgery, opioids, carbamazepine): saline does not correct it and can lower it further — restrict fluid; seizures or coma need 3 % saline."
+        },
+        {
+          label: "High sodium",
+          text: "Hypernatraemia without shock needs hypotonic fluid (5 % dextrose, or half-strength saline), not normal saline. Use saline only to treat shock first, or when hypernatraemia is very severe (Harrison)."
+        },
+        {
+          label: "Diluent, flush and blood",
+          text: "Flush with at least 10 mL of saline between drugs that must not meet. ONLY saline may run in the same line as blood. Drugs that need saline: phenytoin (crystallises in glucose), hydralazine dilution, added potassium chloride, ampicillin. Drugs that must NOT meet saline: liposomal and conventional amphotericin B (dilute and flush with 5 % dextrose only) and amiodarone infusions (5 % glucose). For oxytocin in large volumes use saline or Ringer's lactate, not dextrose (water intoxication — Williams). Always check the drug's own page and the Never mix tool."
+        },
+        {
+          label: "Irrigation",
+          text: "An unopened IV bag of saline is sterile and is the usual source for wound, burn and body-cavity irrigation; warm it for the abdomen (Schwartz). For chemical eye injury, irrigate at once with saline or clean water — do not wait for the right fluid."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Only saline on the shelf: resuscitation, Plan C and burns with saline",
+        best_for: "Ringer's lactate stock-out — common, and saline is usually the fluid that remains.",
+        requires: ["iv", "macro_set"],
+        steps: [
+          "Use the SAME volumes and rates you would use for Ringer's lactate (Plan C, the burns formula, shock boluses). WHO allows saline when Ringer's lactate is not available; do not under-resuscitate while waiting for the 'right' fluid.",
+          "Saline has no potassium and no base. Start ORS by mouth or nasogastric tube as soon as the patient can take it (ORS contains potassium and citrate), and add potassium chloride to the IV fluid once urine is flowing — see Potassium chloride.",
+          "After several litres in an adult, or repeated boluses in a child, expect a hyperchloraemic acidosis: deep, fast breathing can persist although the pulse, capillary refill and urine output have recovered. Judge the circulation by those signs, not by the breathing alone, and do not give more fluid just because the bicarbonate is low.",
+          "Switch to Ringer's lactate as soon as it arrives, especially in sepsis, burns and DKA.",
+          "Count drops exactly as on the Ringer's lactate page: drops/min = mL/h × drop factor ÷ 60 (20-drop set: mL/h ÷ 3). Time-tape the bag."
+        ],
+        monitor: [
+          "Pulse, capillary refill, conscious level and urine output every 15–30 min during resuscitation",
+          "Breathing rate and depth; crackles, liver edge and eyelid puffiness for overload",
+          "Sodium, potassium and, if available, chloride or bicarbonate after large volumes"
+        ],
+        cautions: [
+          "Severe acute malnutrition: never Plan C rates and never plain saline boluses — use the malnutrition protocol.",
+          "Pre-eclampsia, heart disease, severe anaemia and kidney failure: small boluses with reassessment after each one."
+        ]
+      },
+      {
+        title: "Isotonic maintenance fluid when there is no premixed bag",
+        best_for: "Paediatric and surgical wards that have 0.9 % saline and 50 % dextrose but no DNS — instead of reaching for hypotonic 0.18 % or 0.45 % saline.",
+        requires: ["iv", "burette", "micro_set"],
+        steps: [
+          "5 % dextrose in saline from a 500 mL bag: withdraw and discard 50 mL of saline, then add 50 mL of 50 % dextrose (25 g). Result: 500 mL of 5 % dextrose in about 0.8 % saline (sodium about 139 mmol/L) — still isotonic in practice. This matches the method on the Dextrose page.",
+          "Potassium, once the child passes urine: add 5–10 mmol of potassium chloride to the 500 mL (10–20 mmol/L, Nelson). With 15 % KCl (2 mmol/mL) that is 2.5–5 mL. Mix by inverting the bag 10 times OFF the drip stand — never inject potassium into a hanging bag.",
+          "Label the bag in ink: contents, added dextrose and potassium with amounts, date, time, initials of two checkers. Discard after 24 h.",
+          "Rate without a pump: work out mL/h (4/2/1 rule, or two-thirds of it when ADH is likely to be high), fill the burette with no more than 1–2 hours' volume, and use a 60-drop microdrip set, where drops/min = mL/h. Example: 12 kg child = 40 + 2 × 2 = 44 mL/h = 44 drops/min; two-thirds = about 29 drops/min.",
+          "Never make maintenance fluid by diluting saline with water for injection: that is how hypotonic fluid kills children."
+        ],
+        monitor: [
+          "Weight and fluid balance daily",
+          "Sodium and glucose at least daily while more than half the maintenance is IV (Nelson)",
+          "Burette level hourly"
+        ],
+        cautions: [
+          "Not for neonates under 28 days (use the neonatal fluid plan) or severe acute malnutrition.",
+          "Mixing 50 % dextrose into a FULL bag gives a weaker, slightly larger bag — remove the 50 mL first.",
+          "0.18 % or 0.2 % saline without dextrose is so dilute that it can haemolyse red cells if given peripherally (Nelson)."
+        ]
+      },
+      {
+        title: "Flushes and drug diluent when the small saline ampoules run out",
+        best_for: "Wards out of 10 mL saline ampoules, where staff are tempted to draw flushes from an open bag or bottle shared by several patients.",
+        requires: ["iv"],
+        steps: [
+          "Use a NEW unopened 100 mL or 500 mL bag for ONE patient. Clean the port with alcohol and let it dry before each draw; use a new sterile needle and syringe every time.",
+          "Label the bag with the patient's name, the date and the time it was first opened, and 'FOR FLUSHES ONLY'. Keep it with that patient, not on the trolley. Discard it within 24 h, or sooner if anything touches the port.",
+          "Never keep a 'ward saline bottle' for everyone's flushes or dilutions: shared multi-access saline is a recognised source of hospital outbreaks (Harrison).",
+          "Flush with at least 10 mL between drugs that must not meet, and before and after any drug that must be given alone.",
+          "Exceptions — not saline: flush amphotericin B lines with 5 % dextrose; dilute amiodarone infusions in 5 % glucose.",
+          "Reconstitute powders with the diluent named on the label: some must be made up with water for injection first and only then diluted in saline."
+        ],
+        monitor: [
+          "Cannula site: pain, swelling, redness",
+          "Fever or rigors after flushes — think of a contaminated bag or line"
+        ],
+        cautions: [
+          "Water for injection is a reconstitution diluent only: never give it as an IV flush or infusion in volume (it is hypotonic and haemolyses red cells).",
+          "Never pick up a concentrated NaCl ampoule (10 %, 20 %, 23.4 %) as 'saline'. Read the strength every time."
+        ]
+      },
+      {
+        title: "Running saline fast without a pressure bag, and warming it",
+        best_for: "Massive haemorrhage, trauma or theatre with no pressure infuser or fluid warmer.",
+        requires: ["iv", "macro_set", "bp"],
+        steps: [
+          "Two large cannulas (16–18 G). The cannula size and the height of the bag limit the flow more than the giving set.",
+          "COLLAPSIBLE BAGS only: squeeze the bag by hand, or wrap a manual blood-pressure cuff around it and inflate to about 300 mmHg. Squeeze all the air out of the bag before you pressurise it.",
+          "SEMI-RIGID OR GLASS BOTTLES (which need an air vent): never pressurise them by pumping air in, never connect a pressure cuff or bulb to the air inlet. When the fluid runs out, the pressurised air goes into the vein — fatal air embolism. Raise the bottle as high as you can instead and use more lines.",
+          "Stand someone at the drip whose only job is to change bags before they empty and to clamp the line when the last bag is nearly done.",
+          "Warming: stand bags in a basin of hand-hot water (about 40 °C, comfortable on the inside of your wrist) for 10–15 min. Never boil or heat bags over a flame. Warm saline for abdominal washouts too.",
+          "Remember the destination: in haemorrhage, crystalloid is a bridge to blood and to stopping the bleeding (see Trauma and Blood transfusion)."
+        ],
+        monitor: [
+          "Air in the line and bag levels, continuously while pressurised",
+          "Temperature; pulse, blood pressure and bleeding"
+        ],
+        cautions: [
+          "Hypothermia stops clotting — cold fluid given fast to a bleeding patient makes the bleeding worse.",
+          "Large volumes of crystalloid dilute clotting factors: call for blood early."
+        ]
+      }
+    ],
+    paediatric: [
+      "Maintenance: isotonic fluid with 5 % dextrose (Nelson) — never 0.18 % or 0.45 % saline for a sick child; hypotonic IV fluid plus ADH is a frequent cause of hospital hyponatraemia, seizures and death. A child on IV fluids who becomes drowsy, vomits, has a headache or seizes: check sodium and glucose.",
+      "Boluses: 10–20 mL/kg only for true shock; 20 mL/kg up to three times for an injured child before blood (Schwartz); 10 mL/kg in neonates.",
+      "DKA: 10–20 mL/kg over 1–2 h, then replace the deficit over 24–48 h with 0.45–0.9 % saline (Nelson); watch for headache, slowing pulse or falling consciousness (cerebral oedema).",
+      "Neonates under 28 days and severe acute malnutrition: their own fluid plans (neonatal fluid calculator; SAM protocol)."
+    ],
+    cautions: [
+      "Hyperchloraemic metabolic acidosis and, in sepsis, more kidney injury with large volumes (Harrison, Schwartz): switch to Ringer's lactate when large volumes are needed and it is available.",
+      "Fluid overload: pulmonary oedema in heart failure, rheumatic valve disease, severe anaemia, kidney failure, pre-eclampsia and the elderly. FEAST: boluses increased deaths in febrile African children without shock.",
+      "Cirrhosis with ascites, nephrotic syndrome and heart failure: every litre adds 154 mmol of sodium; ascites and oedema worsen.",
+      "No potassium: days of saline-only fluid cause hypokalaemia. Add potassium once urine is flowing.",
+      "Hyponatraemia correction: once a hypovolaemic patient is refilled, the sodium can rise faster than is safe — check it.",
+      "Lithium: a patient with lithium-induced diabetes insipidus who is given saline can become hypernatraemic — see the Lithium page before giving large volumes.",
+      "Look-alike: 0.9 % saline, water for injection and concentrated NaCl ampoules sit side by side. Read the strength.",
+      "Bottles that need an air vent must never be pressurised (air embolism)."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 10,
+      doseUnit: "mL",
+      conc: 1,
+      concUnit: "mL/mL",
+      maxDose: 1000,
+      label: "Bolus 10 mL/kg (shock: 10–20 mL/kg; reassess after each). Adult single bolus 500–1000 mL"
+    },
+    sources: [
+      {
+        name: "WHO Pocket Book of Hospital Care for Children, 2nd ed. 2013 (shock, Plan C, maintenance fluids)"
+      },
+      { name: "WHO. Updated guideline: paediatric emergency triage, assessment and treatment, 2016" },
+      {
+        name: "Maitland K et al. Mortality after fluid bolus in African children with severe infection (FEAST). N Engl J Med 2011;364:2483–2495"
+      },
+      {
+        name: "NICE NG29. Intravenous fluid therapy in children and young people in hospital, 2015 (updated 2020)"
+      },
+      { name: "NICE CG174. Intravenous fluid therapy in adults in hospital, 2013 (updated 2017)" },
+      { name: "WHO. The Clinical Use of Blood, 2001 (only 0.9 % saline with blood)" },
+      {
+        name: "Product information: liposomal amphotericin B, amiodarone, phenytoin (diluent requirements)"
+      }
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Normal saline (0.9% NaCl, 154 mmol/L sodium) is the most appropriate resuscitation fluid for severe hypovolaemia with a normal or low sodium; albumin is not better.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 347"
+      },
+      {
+        book: "harrison",
+        text: "Hypovolaemic hyponatraemia with urine sodium below 20 mmol/L: saline switches off ADH and produces a water diuresis, so plasma sodium can rise rapidly.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 347"
+      },
+      {
+        book: "harrison",
+        text: "Hypernatraemia: give hypotonic fluid; normal saline is usually inappropriate unless hypernatraemia is very severe or the patient is frankly hypotensive.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 353"
+      },
+      {
+        book: "harrison",
+        text: "0.9% saline is the most commonly used crystalloid. It can cause or worsen hyperchloraemic metabolic acidosis and suits metabolic alkalosis; buffered crystalloids such as Ringer's lactate are the alternative.",
+        ref: "Harrison 22nd ed. 2025, ch. 321 Acute Kidney Injury, p. 2383"
+      },
+      {
+        book: "harrison",
+        text: "Septic shock: Ringer's lactate may be preferable to 0.9% saline, which more often causes hyperchloraemic acidosis with renal vasoconstriction and kidney injury.",
+        ref: "Harrison 22nd ed. 2025, ch. 315 Sepsis and Septic Shock, p. 2322"
+      },
+      {
+        book: "harrison",
+        text: "DKA needs isotonic saline, but aggressive saline can cause volume overload and hyperchloraemic acidosis during or after treatment.",
+        ref: "Harrison 22nd ed. 2025, ch. 58 Acidosis and Alkalosis, p. 370"
+      },
+      {
+        book: "harrison",
+        text: "Multiple-access vials, including saline, are a recognised hospital reservoir of Gram-negative infection (Serratia).",
+        ref: "Harrison 22nd ed. 2025, ch. 166 Diseases Caused by Gram-Negative Enteric Bacilli, p. 1292"
+      },
+      {
+        book: "schwartz",
+        text: "0.9% sodium chloride has 154 mmol/L each of sodium and chloride; the chloride load may cause hyperchloraemic metabolic acidosis, but it is ideal for volume deficits with hyponatraemia, hypochloraemia and metabolic alkalosis.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 93"
+      },
+      {
+        book: "schwartz",
+        text: "Vomiting from gastric outlet obstruction causes hypochloraemic alkalosis: replace the volume with isotonic saline, then potassium once urine output is adequate.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 3 Fluid and Electrolyte Management of the Surgical Patient, p. 93"
+      },
+      {
+        book: "schwartz",
+        text: "Injured child with volume depletion: 20 mL/kg of saline or Ringer's lactate; no response after three boluses, transfuse blood 10 mL/kg. Use warmed fluids.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 39 Pediatric Surgery, p. 1752"
+      },
+      {
+        book: "schwartz",
+        text: "After trauma laparotomy the abdomen is irrigated with warm saline before closure.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 213"
+      },
+      {
+        book: "nelson",
+        text: "Hypotonic maintenance fluids increase the risk of hyponatraemia in sick children; isotonic fluid with 5% dextrose is the standard maintenance fluid except in neonates under 28 days.",
+        ref: "Nelson 22nd ed. 2024, ch. 74 Maintenance and Replacement Therapy, p. 526"
+      },
+      {
+        book: "nelson",
+        text: "Maintenance: isotonic fluid with 5% dextrose and 10–20 mmol/L KCl; hourly rate 4/2/1 mL/kg/h, normally no more than 100 mL/h; measure electrolytes at least daily if more than half of maintenance is IV.",
+        ref: "Nelson 22nd ed. 2024, ch. 74 Maintenance and Replacement Therapy, p. 526"
+      },
+      {
+        book: "nelson",
+        text: "Hyponatraemia in hospitalised children is frequently caused by ADH together with hypotonic IV fluids.",
+        ref: "Nelson 22nd ed. 2024, ch. 73 Electrolyte and Acid-Base Disorders, p. 493"
+      },
+      {
+        book: "nelson",
+        text: "Paediatric DKA: initial 10–20 mL/kg of glucose-free isotonic fluid (Ringer's lactate or 0.9% saline) over 1–2 h; further boluses only for haemodynamic instability.",
+        ref: "Nelson 22nd ed. 2024, ch. 629 Diabetes Mellitus, p. 3524"
+      },
+      {
+        book: "nelson",
+        text: "Electrical burns: Ringer's lactate 10–20 mL/kg/h initially; normal saline may be used if Ringer's lactate is not available.",
+        ref: "Nelson 22nd ed. 2024, ch. 89 Burn Injuries, p. 647"
+      },
+      {
+        book: "williams",
+        text: "Oxytocin is antidiuretic at 20 mU/min or more; large volumes of aqueous fluid with it can cause water intoxication, so use normal saline or Ringer's lactate.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 26 Induction and Augmentation of Labor, pdf p. 1120"
+      },
+      {
+        book: "note",
+        text: "Only 0.9% saline may share a line with blood: this follows WHO The Clinical Use of Blood and the app's Never mix rules; the five textbooks do not state it directly.",
+        ref: "Editorial note"
+      },
+      {
+        book: "note",
+        text: "Preferring saline to Ringer's lactate in head injury rests on Ringer's lactate being slightly hypotonic (sodium 130 versus 154 mmol/L, Nelson Table 74.4) and on brain-trauma guidance; the textbooks consulted do not compare the two for head injury.",
+        ref: "Editorial note"
+      },
+      {
+        book: "note",
+        text: "Adult maintenance requirements (25–30 mL/kg/day water, about 1 mmol/kg/day sodium and potassium, 50–100 g glucose) follow NICE CG174; the improvised methods (making dextrose-saline, single-patient flush bags, bottles that must not be pressurised, warming bags) are practice notes, not textbook statements.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "protamine",
+    name: "Protamine sulfate",
+    aka: ["Protamine", "Protamine sulphate", "Heparin antidote", "Heparin reversal"],
+    cls: "Heparin antagonist (basic protein from fish sperm)",
+    cat: "haem",
+    wards: ["surgical", "icu", "medical", "emergency", "maternity"],
+    tags: [
+      "heparin reversal",
+      "bleeding",
+      "enoxaparin",
+      "LMWH",
+      "antidote",
+      "anticoagulant reversal",
+      "heparin overdose"
+    ],
+    presentation: [
+      "10 mg/mL injection, commonly 5 mL ampoules (50 mg). Check the strength on your box.",
+      "Storage differs between brands — many must be kept at 2–8 °C. Read the label; do not freeze.",
+      "Often stocked only in theatres, ICU and referral hospitals. Find out now whether your hospital has it, and where."
+    ],
+    indications: [
+      "Serious or life-threatening bleeding in a patient on unfractionated heparin (UFH), or a heparin overdose",
+      "Bleeding on enoxaparin or other LMWH — PARTIAL reversal only",
+      "Emergency surgery or a procedure on full-dose heparin when waiting for it to wear off is not possible"
+    ],
+    standard: {
+      summary: "Stop the heparin first. The protamine dose depends on how much heparin is still active — how much was given and how long ago — not on body weight. Maximum 50 mg per dose, no faster than 5 mg per minute. It does NOT reverse warfarin, fondaparinux or the oral anticoagulants.",
+      items: [
+        {
+          label: "First, stop the heparin and decide",
+          text: "Unfractionated heparin has a half-life of about 30–90 minutes: after an infusion is stopped its effect has largely gone in 2–3 hours (Nelson). Minor oozing often needs only pressure and time. Give protamine for serious bleeding, a large overdose, or urgent surgery. It is rarely needed in labour and is not indicated after a prophylactic dose (Williams)."
+        },
+        {
+          label: "UFH by IV infusion",
+          text: "1 mg of protamine for every 100 units of heparin given in the last 2–3 hours (Harrison: 1 mg neutralises about 100 units; Schwartz: 90–115 units). Example: 1,000 units/h for the past 2.5 h = 2,500 units = 25 mg. Maximum 50 mg."
+        },
+        {
+          label: "UFH by IV bolus",
+          text: "Less protamine is needed as time passes after the bolus (CHEST guidance): within 30 min, 1 mg per 100 units; 30–60 min, 0.5–0.75 mg per 100 units; 60–120 min, 0.375–0.5 mg per 100 units; over 2 h, 0.25–0.375 mg per 100 units. Maximum 50 mg. If a bolus and an infusion were both given, add the bolus portion that is still active to the infusion amount."
+        },
+        {
+          label: "UFH by subcutaneous injection",
+          text: "Subcutaneous heparin keeps being absorbed for hours, so one dose of protamine may not be enough and the aPTT can rise again. Follow the product information (part of the dose by slow IV injection and the rest as an infusion over several hours), recheck the aPTT, and confirm the plan with a senior."
+        },
+        {
+          label: "Enoxaparin (LMWH) — partial reversal",
+          text: "Last dose within 8 h: 1 mg protamine per 1 mg enoxaparin (maximum 50 mg). If bleeding continues, or the aPTT is still prolonged 2–4 h later, a second dose of 0.5 mg per 1 mg enoxaparin. More than 8 h since the dose: 0.5 mg per 1 mg. Protamine reverses only about 60 % of enoxaparin's effect (Schwartz) — anti-factor-Xa activity stays (Harrison). Kidney failure prolongs enoxaparin's effect."
+        },
+        {
+          label: "How to give it",
+          text: "Slow IV, no faster than 5 mg per minute — 50 mg over at least 10 minutes (Schwartz). Fast injection causes hypotension, bradycardia and flushing. Never more than 50 mg in one dose: protamine is itself an anticoagulant in excess (Schwartz) — more is not better."
+        },
+        {
+          label: "After the dose",
+          text: "If a laboratory is available: aPTT 5–15 min after the dose, and again 2–8 h later because heparin can rebound (especially after subcutaneous heparin or LMWH). Without a laboratory, watch the bleeding itself."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Working out the dose with no aPTT and no pharmacist",
+        best_for: "Night shift, bleeding patient, only the drug chart to go on.",
+        requires: [],
+        steps: [
+          "Write down from the chart: the heparin type (UFH or enoxaparin), route, every dose with its TIME, and any infusion rate changes. Ask the nurse what actually ran — a stopped or tissued drip changes the sum.",
+          "UFH infusion: add up the units given in the last 2–3 h. 18 units/kg/h for a 60 kg patient = 1,080 units/h; over 2.5 h = 2,700 units → 27 mg protamine.",
+          "UFH bolus: 5,000 units given 45 minutes ago → 0.5–0.75 mg per 100 units → 25–37.5 mg; give 25 mg and reassess.",
+          "Enoxaparin: 80 mg given 4 h ago → 80 mg of protamine would be needed, but the maximum single dose is 50 mg; give 50 mg slowly and reassess for a second dose (0.5 mg per mg) at 2–4 h if still bleeding.",
+          "Prophylactic doses (UFH 5,000 units SC, enoxaparin 40 mg): reversal is rarely needed — local measures and time.",
+          "Two people check the sum and the ampoule strength. Write the calculation in the notes."
+        ],
+        monitor: [
+          "Bleeding from wounds, drains, cannula sites, urine, gums",
+          "Blood pressure and pulse every 5 min during and for 30 min after the dose"
+        ],
+        cautions: [
+          "If you cannot tell how much heparin is still active, give the smaller dose and reassess: overdose of protamine causes bleeding too.",
+          "Never give protamine for warfarin (use vitamin K) or for fondaparinux (it has no effect — Harrison)."
+        ]
+      },
+      {
+        title: "Giving 50 mg slowly without a pump",
+        best_for: "Any ward without a syringe driver.",
+        requires: ["iv"],
+        steps: [
+          "Option A, syringe by the clock: draw 5 mL (50 mg) of 10 mg/mL protamine and add 5 mL of 0.9 % saline = 10 mL of 5 mg/mL. Give 1 mL every minute over 10 minutes (= 5 mg/min). For 25 mg: 2.5 mL + 2.5 mL saline, 1 mL every minute over 5 minutes.",
+          "Option B, small bag: add the dose to 50 mL of 0.9 % saline and run it over 15–20 minutes. 50 mL over 15 min with a 20-drop set = 67 drops/min; over 20 min = 50 drops/min.",
+          "Use a dedicated line or flush before and after with saline.",
+          "Stop at once if the patient flushes, becomes breathless, wheezes, or the blood pressure falls; restart more slowly only once the reaction has settled and only if the bleeding still requires it."
+        ],
+        monitor: [
+          "Blood pressure and pulse every 2–3 min during the injection",
+          "Breathing and skin (flushing, urticaria)"
+        ],
+        cautions: ["Faster than 5 mg/min causes hypotension, bradycardia and pulmonary hypertension."]
+      },
+      {
+        title: "High risk of reaction and no ICU",
+        best_for: "Fish allergy, previous protamine, protamine-containing insulin, or vasectomy — and the patient must still be reversed.",
+        requires: ["iv", "bp"],
+        steps: [
+          "Ask before you give: fish allergy; previous protamine (cardiac surgery, catheterisation); NPH or other 'cloudy' protamine-containing insulin; vasectomy or male infertility. Each raises the risk of anaphylaxis (Schwartz; product information).",
+          "If the bleeding is life-threatening, still give it — the risk factors call for preparation, not refusal.",
+          "Before starting: a running IV line with saline, adrenaline drawn up and labelled (anaphylaxis dose 0.5 mg IM in adults, 0.01 mg/kg IM in children, maximum 0.5 mg), oxygen, and a bag-valve-mask at the bedside.",
+          "Give the dose more slowly than usual — over 20–30 minutes — watching the patient, not the syringe.",
+          "Reaction: stop the protamine, give IM adrenaline, raise the legs, fluid bolus, oxygen; treat as anaphylaxis."
+        ],
+        monitor: [
+          "Blood pressure and pulse every 2–3 min, then every 15 min for an hour",
+          "Wheeze, stridor, urticaria"
+        ],
+        cautions: [
+          "There is no reliable test dose. A first small amount that is tolerated does not exclude a reaction to the rest."
+        ]
+      },
+      {
+        title: "No protamine in stock",
+        best_for: "Most health centres and many district hospitals.",
+        requires: [],
+        steps: [
+          "Stop the heparin and keep it stopped. UFH effect is mostly gone 2–3 h after an infusion stops (Nelson); enoxaparin lasts much longer, especially in kidney failure.",
+          "Local measures: firm pressure, packing, sutures; tranexamic acid as on its own page for surgical or mucosal bleeding.",
+          "Replace what is lost: crystalloid as a bridge, then blood.",
+          "Fresh frozen plasma does NOT reverse heparin (it supplies antithrombin, which heparin needs to work). Vitamin K does nothing for heparin.",
+          "Delay any non-urgent surgery until the heparin has worn off: about 4–6 h after a UFH infusion stops, and 24 h after a therapeutic enoxaparin dose (longer in kidney failure); confirm with the anaesthetist, especially before a spinal.",
+          "Transfer if bleeding continues and a facility with protamine and blood is reachable."
+        ],
+        monitor: ["Haemoglobin, pulse and blood pressure", "Drain and wound output"],
+        cautions: [
+          "Do not restart heparin until the bleeding source is controlled and a senior has weighed the clot risk."
+        ]
+      }
+    ],
+    paediatric: [
+      "Same dose as adults: 1 mg per 100 units of heparin still active (bolus timing table as above), maximum 50 mg, as a 10 mg/mL solution no faster than 5 mg per minute (CHEST paediatric guidance).",
+      "Heparin lock flushes (a few units) almost never need reversal.",
+      "Children's heparin effect wears off about 2–3 h after the infusion stops (Nelson) — often faster than protamine can be found."
+    ],
+    cautions: [
+      "Anaphylaxis and severe hypotension: risk is higher with fish allergy, previous protamine, protamine-containing insulin, and vasectomy or male infertility (Schwartz; product information). Give slowly with adrenaline ready.",
+      "Pulmonary oedema and pulmonary hypertension can follow rapid injection (Schwartz).",
+      "Excess protamine prolongs the aPTT and causes bleeding itself (Schwartz). Never exceed 50 mg per dose.",
+      "Heparin rebound hours later, especially after subcutaneous heparin and LMWH: watch for renewed bleeding.",
+      "Reverses enoxaparin only partly (about 60 %) and fondaparinux not at all (Harrison, Schwartz). It is not an antidote for warfarin (vitamin K) or oral anticoagulants."
+    ],
+    antidote: "Protamine is itself the antidote. A reaction is treated as anaphylaxis: stop the injection, adrenaline IM, fluids, oxygen.",
+    sources: [
+      {
+        name: "Garcia DA et al. Parenteral anticoagulants: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed. ACCP. CHEST 2012;141(2 Suppl):e24S–e43S"
+      },
+      {
+        name: "Monagle P et al. Antithrombotic therapy in neonates and children: ACCP. CHEST 2012;141(2 Suppl):e737S–e801S (protamine reversal table)"
+      },
+      { name: "Protamine sulfate injection, product information (dose, rate, risk factors)" },
+      { name: "Enoxaparin sodium (Lovenox/Clexane) product information: overdose and reversal" }
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Protamine sulfate (from salmon sperm) neutralises heparin, typically 1 mg per 100 units, maximum 50 mg per dose, by slow IV infusion because anaphylactoid reactions occur.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 948"
+      },
+      {
+        book: "harrison",
+        text: "Protamine incompletely neutralises LMWH: anti-IIa activity is reversed but anti-Xa activity only partly.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 949"
+      },
+      {
+        book: "harrison",
+        text: "Protamine has no effect on fondaparinux.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 950"
+      },
+      {
+        book: "harrison",
+        text: "Life-threatening or intracranial bleeding on heparin or LMWH: give protamine.",
+        ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, p. 2163"
+      },
+      {
+        book: "schwartz",
+        text: "Each mg neutralises 90–115 units of heparin; no more than 50 mg IV in any 10 minutes. Side effects: hypotension, pulmonary oedema, anaphylaxis; prior protamine-containing insulin and fish allergy may raise the risk.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 24 Venous and Lymphatic Disease, p. 988"
+      },
+      {
+        book: "schwartz",
+        text: "LMWH is only partly reversed by protamine, about 60 %.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 24 Venous and Lymphatic Disease, p. 988"
+      },
+      {
+        book: "schwartz",
+        text: "Reactions are commoner with severe fish allergy; a prolonged aPTT after neutralisation may be the anticoagulant effect of protamine itself.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 113"
+      },
+      {
+        book: "nelson",
+        text: "Children: protamine neutralises heparin when immediate reversal is needed; heparin's effect wears off about 2–3 hours after an infusion is stopped.",
+        ref: "Nelson 22nd ed. 2024, ch. 528, p. 3042"
+      },
+      {
+        book: "williams",
+        text: "In labour on UFH, reversal with protamine is rarely required and is not indicated for a prophylactic dose.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 52 Thromboembolic Disorders, pdf p. 2247"
+      },
+      {
+        book: "note",
+        text: "The time-since-bolus table, the 5 mg/min rate and the paediatric dosing follow ACCP CHEST 2012 (Garcia; Monagle); the enoxaparin doses (1 mg per mg within 8 h, 0.5 mg per mg later or for a second dose) follow the enoxaparin product information. Vasectomy as a risk factor comes from the protamine product information. The books give only the 1 mg per 100 units rule and the 50 mg maximum.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "tetanus-toxoid",
+    name: "Tetanus toxoid (TT / Td) and tetanus immunoglobulin — wound prophylaxis",
+    aka: [
+      "TT",
+      "Td",
+      "Tetanus vaccine",
+      "Tetanus booster",
+      "Tetanus-diphtheria vaccine",
+      "TIG",
+      "HTIG",
+      "Tetanus immunoglobulin",
+      "Anti-tetanus serum",
+      "ATS",
+      "TAT",
+      "Tetanus antitoxin"
+    ],
+    cls: "Vaccine (adsorbed toxoid), with passive antitoxin (immunoglobulin)",
+    cat: "infection",
+    wards: ["emergency", "surgical", "maternity", "outpatient", "paediatric", "medical"],
+    tags: [
+      "tetanus",
+      "wound",
+      "laceration",
+      "bite",
+      "burn",
+      "trauma",
+      "open fracture",
+      "booster",
+      "immunoglobulin",
+      "antitoxin",
+      "pregnancy",
+      "unclean delivery",
+      "vaccination"
+    ],
+    presentation: [
+      "Td (tetanus with reduced diphtheria) or TT (tetanus toxoid), adsorbed: 0.5 mL per dose, usually 10- or 20-dose vials. WHO recommends Td in place of TT; for tetanus they are interchangeable. Store at 2–8 °C. NEVER FREEZE — freezing destroys adsorbed toxoid.",
+      "Children under 7 years get tetanus toxoid inside the DTP-containing vaccines of the national schedule (pentavalent).",
+      "Human tetanus immunoglobulin (TIG, HTIG): 250 IU for IM use. Expensive, often not stocked.",
+      "Equine tetanus antitoxin (TAT, 'anti-tetanus serum'), commonly 1,500 IU per ampoule. A horse serum: anaphylaxis and serum sickness are possible."
+    ],
+    indications: [
+      "Every wound, burn or bite, according to the wound type and the vaccination history (table below)",
+      "Open fractures, crush injuries, contaminated surgery, animal bites, snakebite",
+      "Obstetric: unclean birth or anything put into the vagina (cow dung, mud, herbs), septic or unsafe abortion, when her vaccination is uncertain",
+      "After recovery from tetanus — the disease leaves no immunity",
+      "Routine Td in pregnancy and childhood: see the Vaccines tool (this page covers the wound decision)"
+    ],
+    standard: {
+      summary: "Two questions decide it: is the wound tetanus-prone, and has the patient had at least 3 documented doses? Toxoid (active) protects against the next wound; TIG or antitoxin (passive) protects against THIS wound in someone who is not immune. Give them together when both are needed, in separate syringes and separate limbs.",
+      items: [
+        {
+          label: "1. Classify the wound",
+          text: "CLEAN, MINOR: a recent, clean, superficial cut. TETANUS-PRONE (all other wounds): soil, dung, faeces or saliva contamination; puncture wounds; crush and avulsion injuries; missile and gunshot wounds; open (compound) fractures; burns; frostbite (Nelson); animal bites; unclean delivery or instrumentation; dead tissue or a foreign body; a wound left untreated for many hours."
+        },
+        {
+          label: "2. Count the doses",
+          text: "Count only DOCUMENTED doses: infant DTP or pentavalent doses on the child's card, Td or TT doses on the antenatal card, earlier booster records. 'I had an injection once' is unknown. Many adult men in Ethiopia had, at most, the three infant doses decades ago — count them as 3 or more doses with the last dose more than 10 years ago."
+        },
+        {
+          label: "3. Decide (Nelson, Table 257.1)",
+          text: "Unknown or fewer than 3 doses: clean minor wound — toxoid, no TIG; tetanus-prone wound — toxoid AND TIG. Three or more doses: clean minor wound — toxoid only if 10 or more years since the last dose; tetanus-prone wound — toxoid only if 5 or more years since the last dose; no TIG. More frequent boosters are not needed and cause more reactions."
+        },
+        {
+          label: "Where the sources differ — give TIG more readily",
+          text: "Schwartz advises TIG for a non-clean wound if more than 5 years have passed since the last dose, and Harrison advises passive immunisation if the last booster was more than 10 years ago — both wider than Nelson's table. If human TIG is available, give it in that situation too, especially for a heavily contaminated wound. Patients with HIV or severe immune deficiency and a contaminated wound need TIG whatever their vaccination history (CDC ACIP)."
+        },
+        {
+          label: "Doses",
+          text: "Toxoid: Td or TT 0.5 mL deep IM into the deltoid (anterolateral thigh in infants), any age from 7 years; under 7 years, the DTP-containing vaccine of the national schedule. TIG: 250 IU IM, whatever the age or weight (Nelson); UK guidance gives 500 IU if the wound is more than 24 h old, heavily contaminated, or a burn. Equine antitoxin (TAT) where TIG is not available: Nelson gives 3,000–5,000 units IM after a sensitivity test; many product labels and older WHO field guidance use 1,500 IU — follow the national protocol and the product insert."
+        },
+        {
+          label: "Giving them together",
+          text: "Separate syringes and separate sites — toxoid in one arm, immunoglobulin in the other limb (Nelson). Clean and debride the wound thoroughly; immunisation does not replace surgery. If the patient comes late, start the toxoid at once (Nelson)."
+        },
+        {
+          label: "Finish the course",
+          text: "If this was the patient's first or an unknown dose, it is dose 1 of a course: give the next dose 4 weeks later and another 6 months after that, then boosters a year apart up to 5 doses in all (the Ethiopian Td schedule for women; see Vaccines). Write the dose and the next date on a card the patient keeps."
+        },
+        {
+          label: "Established tetanus (see the Tetanus case)",
+          text: "TIG 500 IU IM once is considered sufficient (Nelson; Harrison gives 500–5,000 IU). Equine antitoxin 10,000–20,000 units IM after hypersensitivity testing (Harrison; Nelson gives 1,500–3,000 units — the sources differ, follow the national protocol). Give it before debridement. Start the toxoid course in another limb: the disease gives no immunity."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "No card and no memory: deciding the history honestly",
+        best_for: "Emergency rooms and health centres, where most adults have no record.",
+        requires: [],
+        steps: [
+          "No written record = UNKNOWN. Treat as fewer than 3 doses. A history of 'injections in school' or 'a tetanus shot after an old injury' is not a course.",
+          "Women: look for the antenatal or Td card (Td1–Td5). Five documented doses = fully immunised. Ask to see a previous child's card — the mother's Td doses are often written there.",
+          "Children: the immunisation card. Three pentavalent (DTP) doses count as 3 doses; check the date of the last one.",
+          "Adult men: almost never documented. Treat as unknown unless a card is produced.",
+          "Then use the table: for an unknown history every wound gets toxoid, and every tetanus-prone wound also gets TIG (or antitoxin).",
+          "Write what you gave on the patient's card or a slip they keep, with the date of the next dose. Unrecorded doses are lost doses."
+        ],
+        monitor: [],
+        cautions: [
+          "When in doubt, give the toxoid: a needless booster causes a sore arm; a missed course can mean tetanus."
+        ]
+      },
+      {
+        title: "TIG not available: equine antitoxin safely — or managing without either",
+        best_for: "Most district hospitals and health centres, where human TIG is rarely stocked.",
+        requires: ["im"],
+        steps: [
+          "If human TIG is out, IVIG can be used where it exists (Nelson) — rarely available. Otherwise equine antitoxin (TAT).",
+          "Before TAT: ask about previous horse serum (earlier TAT, some antivenoms), asthma and allergy. Do the sensitivity test the product insert describes. A negative test does NOT exclude anaphylaxis.",
+          "Have ready before you inject: adrenaline drawn up (0.5 mg IM adult, 0.01 mg/kg IM child, maximum 0.5 mg), a running IV line if the patient is at high risk, oxygen and a bag-valve-mask.",
+          "Give the TAT IM in a different limb from the toxoid. Observe the patient for at least 30 minutes; anaphylaxis is treated with IM adrenaline at once.",
+          "Warn about serum sickness 7–14 days later (fever, rash, joint pains; up to 15 % of patients — Nelson): come back; it is treated with antihistamine and, if severe, a short course of steroid.",
+          "If neither TIG nor antitoxin is available: give the toxoid, debride and clean the wound thoroughly (remove all soil and dead tissue), and tell the patient and family the early signs of tetanus — jaw stiffness, difficulty swallowing, neck or back stiffness — and to come back immediately. Antibiotics do not replace antitoxin."
+        ],
+        monitor: [
+          "Pulse, blood pressure, breathing and skin for 30 minutes after TAT",
+          "Wound at review; early tetanus signs for 3 weeks"
+        ],
+        cautions: [
+          "Never give TAT IV in this setting, and never in the same syringe or limb as the toxoid.",
+          "A previous severe reaction to horse serum: do not give TAT; refer for human TIG if the wound is high risk."
+        ]
+      },
+      {
+        title: "Doubtful cold chain: the shake test and opened vials",
+        best_for: "Health posts and wards where the fridge failed or vials may have frozen in a cold box.",
+        requires: [],
+        steps: [
+          "Freezing is the danger, not warmth: adsorbed toxoid that has frozen loses potency and causes more sterile abscesses, and it may look normal.",
+          "WHO SHAKE TEST: take a vial of the same vaccine, batch and manufacturer and freeze it solid on purpose (the 'frozen control'); let it thaw. Shake the control and the suspect vial together for 10–15 seconds and stand them side by side. If the suspect vial settles as fast as the frozen control (clear liquid above a heavy sediment within minutes), it has been frozen — DO NOT USE IT. If it settles much more slowly, it can be used.",
+          "Check the vial label: expiry date, and the vaccine vial monitor (VVM) if present — discard once the inner square matches or is darker than the outer ring.",
+          "Opened multi-dose Td vials may be kept for further sessions only as the national EPI policy allows (WHO's multi-dose vial policy: within expiry, kept at 2–8 °C, never submerged in water, drawn with aseptic technique, VVM not at discard point, date of opening written on the vial). If any condition is not met, discard at the end of the session.",
+          "Record what you discarded and why, and report it to the EPI focal person."
+        ],
+        monitor: ["Fridge temperature twice daily where there is a thermometer"],
+        cautions: [
+          "Never keep vaccine in the freezer compartment or against the ice packs; separate frozen ice packs from vials in a cold box (condition the ice packs first)."
+        ]
+      }
+    ],
+    paediatric: [
+      "Children under 7 years: the DTP-containing vaccine of the national schedule, not TT or Td, unless the EPI focal person advises otherwise. Count pentavalent doses as tetanus doses.",
+      "TIG 250 IU IM for a tetanus-prone wound in an under-immunised child, whatever the weight (Nelson).",
+      "Always after an animal bite (Nelson).",
+      "Neonatal tetanus is prevented by the mother's Td doses and clean cord care; an unimmunised mother who delivered unhygienically should start her own Td course."
+    ],
+    cautions: [
+      "Contraindication: a severe allergic reaction (anaphylaxis) to a previous dose. Minor illness, pregnancy and breastfeeding are NOT contraindications — Td is given routinely in pregnancy.",
+      "Arthus reaction (large painful swelling) after a previous dose: no Td more often than every 10 years, even for wounds (Nelson).",
+      "Do not over-boost: more frequent boosters than the table requires increase local reactions (Nelson).",
+      "A first dose of toxoid does not protect in time for the current wound — that is why TIG is added for tetanus-prone wounds in the non-immune.",
+      "IM only, never IV. Patients on warfarin or heparin or with low platelets: use a fine needle and press firmly for 2 minutes.",
+      "Equine antitoxin: anaphylaxis and serum sickness. Human TIG is much safer when it is available."
+    ],
+    sources: [
+      {
+        name: "WHO. Tetanus vaccines: WHO position paper, February 2017. Wkly Epidemiol Rec 2017;92:53–76"
+      },
+      { name: "WHO. The immunological basis for immunization series, Module 3: Tetanus, update 2018" },
+      {
+        name: "CDC/ACIP. Prevention of pertussis, tetanus, and diphtheria with vaccines in the United States. MMWR Recomm Rep 2018;67(2) (wound management; TIG in HIV and severe immunodeficiency)"
+      },
+      {
+        name: "UK Health Security Agency. Immunisation against infectious disease (Green Book), ch. 30 Tetanus (TIG 250 IU or 500 IU)"
+      },
+      {
+        name: "WHO. Temperature sensitivity of vaccines (2006) and Shake test guidance; WHO Policy statement: multi-dose vial policy, revision 2014"
+      },
+      {
+        name: "Ethiopian MoH routine immunization catch-up vaccination guidelines (2022): Td schedule for women"
+      }
+    ],
+    textbook: [
+      {
+        book: "nelson",
+        text: "Uncertain or fewer than 3 doses: toxoid for every wound, plus TIG for all but clean minor wounds. Three or more doses: toxoid if 10 years (clean minor) or 5 years (other wounds) have passed since the last dose; no TIG.",
+        ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, Table 257.1, p. 1824"
+      },
+      {
+        book: "nelson",
+        text: "Tetanus-prone wounds (crush, puncture, missile, soil, faeces or saliva, avulsion, compound fracture, burns, frostbite) in a patient not fully immunised: TIG 250 units IM regardless of age or weight.",
+        ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1824"
+      },
+      {
+        book: "nelson",
+        text: "Toxoid and TIG (or equine antitoxin) may be given at the same visit, in separate syringes and separate sites; in delayed wound care start active immunisation at once.",
+        ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1824"
+      },
+      {
+        book: "nelson",
+        text: "If TIG is unavailable, IVIG may be considered; if neither, equine antitoxin 3,000–5,000 units IM after hypersensitivity testing. Serum sickness may occur.",
+        ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1824"
+      },
+      {
+        book: "nelson",
+        text: "After an Arthus reaction to a tetanus-containing vaccine, do not give Td more often than every 10 years, even for wounds.",
+        ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1824"
+      },
+      {
+        book: "nelson",
+        text: "Tetanus does not leave immunity: give toxoid during convalescence or at discharge and complete the series.",
+        ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1824"
+      },
+      {
+        book: "nelson",
+        text: "Treating established tetanus: a single IM injection of 500 units of TIG is considered sufficient.",
+        ref: "Nelson 22nd ed. 2024, ch. 257 Tetanus, p. 1823"
+      },
+      {
+        book: "harrison",
+        text: "Established tetanus: human TIG 500–5,000 IU IM once; equine antitoxin 10,000–20,000 U IM after hypersensitivity testing.",
+        ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231"
+      },
+      {
+        book: "harrison",
+        text: "People with wounds should receive passive immunisation if vaccination is incomplete or unknown, or if the last booster was more than 10 years ago.",
+        ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1232"
+      },
+      {
+        book: "harrison",
+        text: "WHO: unvaccinated pregnant women need at least two doses 4 weeks apart, the second at least 2 weeks before delivery; five doses give long-term immunity.",
+        ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1232"
+      },
+      {
+        book: "schwartz",
+        text: "Non-clean hand wounds with fewer than 3 prior doses, more than 5 years since the last dose, or an unknown history should get tetanus immunoglobulin as well as vaccine.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 44 Surgery of the Hand and Wrist, p. 1934"
+      },
+      {
+        book: "schwartz",
+        text: "Burns: give a tetanus booster in the emergency department according to immunisation status.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 8 Burns, p. 252"
+      },
+      {
+        book: "schwartz",
+        text: "Trauma: tetanus prophylaxis for all patients according to published guidelines.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 7 Trauma, p. 208"
+      },
+      {
+        book: "williams",
+        text: "Pregnant trauma patient: confirm tetanus immunisation status and vaccinate when indicated.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 47 Critical Care and Trauma, pdf p. 2061"
+      },
+      {
+        book: "note",
+        text: "Why one page covers toxoid AND immunoglobulin: the wound decision is a single table that decides both at once, and TIG and equine antitoxin have no page of their own, so splitting them would leave 'and TIG if needed' as a dead end. Routine schedules stay in the Vaccines tool. The TIG doses differ between sources (Nelson 250 units; UK Green Book 250 or 500 IU; equine antitoxin 1,500 IU on many labels, 3,000–5,000 units in Nelson); the shake test and multi-dose vial rules are WHO EPI procedures, not textbook statements.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "glyceryl-trinitrate",
+    name: "Glyceryl trinitrate (GTN, nitroglycerin)",
+    aka: [
+      "GTN",
+      "Nitroglycerin",
+      "Nitroglycerine",
+      "NTG",
+      "Nitrostat",
+      "Nitrolingual",
+      "Trinitrin",
+      "Nitrate"
+    ],
+    cls: "Organic nitrate: venodilator and smooth-muscle relaxant (nitric oxide donor)",
+    cat: "cardio",
+    wards: ["emergency", "medical", "icu", "maternity", "surgical"],
+    tags: [
+      "angina",
+      "chest pain",
+      "acute coronary syndrome",
+      "pulmonary oedema",
+      "uterine inversion",
+      "retained placenta",
+      "uterine relaxation",
+      "head entrapment",
+      "breech",
+      "hypertension"
+    ],
+    presentation: [
+      "Sublingual tablets, usually 0.5 mg (500 micrograms); 0.3, 0.4 and 0.6 mg brands exist. Keep in the original glass bottle, cap tightly closed, no cotton wool; some brands must be thrown away 8 weeks after opening — read the label.",
+      "Sublingual spray 400 micrograms per puff (stable; lasts until the expiry date).",
+      "Injection concentrate 5 mg/mL (or 1 mg/mL): MUST be diluted. Not stocked in many district hospitals.",
+      "Patches and long-acting oral nitrates (isosorbide) for angina prevention."
+    ],
+    indications: [
+      "Angina: relief of an attack and prevention before exertion",
+      "Ongoing ischaemic chest pain (acute coronary syndrome) if the blood pressure allows",
+      "Acute cardiogenic pulmonary oedema with an adequate blood pressure",
+      "Uterine relaxation: replacing an inverted uterus; head entrapment at breech or caesarean birth; selected cases of a trapped placenta — with the obstetrician and anaesthetist",
+      "Pre-eclampsia with pulmonary oedema, and the pressor response to intubation — anaesthetist use"
+    ],
+    standard: {
+      summary: "Acts in 1–2 minutes and wears off in minutes. The danger is hypotension: never in a patient who is hypotensive or still bleeding without volume replacement, and never within 24–48 h of sildenafil or tadalafil. Check the blood pressure before every dose.",
+      items: [
+        {
+          label: "Angina attack",
+          text: "Sit the patient down. One 0.5 mg tablet (0.3–0.6 mg) or 1–2 puffs under the tongue; repeat every 5 min up to 3 doses (Harrison). If the pain persists after 3 doses (15 min), treat as an acute coronary syndrome: ECG, aspirin, refer. Patients with angina should also take a dose about 5 min before exertion that usually brings it on (Harrison)."
+        },
+        {
+          label: "Acute coronary syndrome — IV",
+          text: "If pain persists after 3 sublingual doses: IV 5–10 micrograms/min by pump, through non-PVC (non-absorbing) tubing, increased by 10 micrograms/min every 3–5 min until the pain settles, the systolic falls below 90 mmHg, or the dose reaches 200 micrograms/min (Harrison). Without a pump, see the improvised methods."
+        },
+        {
+          label: "Acute pulmonary oedema",
+          text: "Sit up, oxygen, furosemide — and sublingual GTN 0.4–0.5 mg every 5 min for up to 3 doses if the systolic is at least 100 mmHg (Harrison: first-line). If oedema persists without hypotension, IV from 5–10 micrograms/min by pump."
+        },
+        {
+          label: "Uterine inversion",
+          text: "Call for help, two large IV lines, fluids and blood, stop any oxytocin, and try to replace the uterus at once. If a tight cervical ring stops you: GTN to relax it (Williams; Gabbe) — 50 micrograms IV, repeated as 50–100 micrograms after 1–2 min if needed; most women need no more than 200 micrograms (Gabbe gives a range up to 500 micrograms). Give it only once the systolic is at least 90–100 mmHg with a fluid bolus running, and with the anaesthetist if one is available. Replace the fundus, keep your fist inside, and start oxytocin as soon as it is back — GTN leaves the uterus relaxed and atonic (Gabbe). If GTN fails or is unavailable: general anaesthesia with a halogenated agent where possible (Williams), or magnesium sulfate."
+        },
+        {
+          label: "Retained or trapped placenta",
+          text: "NOT routine. The treatment is manual removal under analgesia (see the Retained placenta case). Trials of GTN to avoid manual removal have not shown a clear benefit. Its place is a SEPARATED placenta trapped behind a cervix that has closed, where 50–100 micrograms IV (or sublingual GTN) can open the cervix enough to deliver it — decided by the obstetrician or anaesthetist, with the blood pressure checked first. It does not help an adherent placenta."
+        },
+        {
+          label: "Head entrapment (breech, caesarean)",
+          text: "50–200 micrograms IV, one of the fastest-acting uterine relaxants (Gabbe). Usually given by the anaesthetist."
+        },
+        {
+          label: "Do not give",
+          text: "Systolic below 90 mmHg, or haemorrhage or hypovolaemia not yet corrected. Sildenafil or vardenafil in the last 24 h, tadalafil in the last 48 h (Harrison) — ask, including women with pulmonary hypertension treated with sildenafil. Hypertrophic obstructive cardiomyopathy (Harrison). Product information also lists severe aortic or mitral stenosis, cardiac tamponade, constrictive pericarditis and raised intracranial pressure. Right ventricular infarction (inferior MI with low BP and clear lungs): avoid."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "No IV GTN or no anaesthetist: sublingual GTN for uterine relaxation",
+        best_for: "Labour ward replacing an inverted uterus when there is no injectable GTN, no halogenated anaesthetic and the cervix has clamped down.",
+        requires: ["iv", "bp"],
+        steps: [
+          "Conditions first: two IV lines running, systolic at least 90–100 mmHg after fluids or blood, someone ready to measure the BP every minute. No sildenafil in the past 24–48 h.",
+          "Give 400 micrograms (1 puff) or one 0.5 mg tablet under the tongue. If the tablet is slow to dissolve in a dry mouth, wet the tongue first. Relaxation starts within 1–3 minutes.",
+          "If the cervix is still too tight and the BP holds, give one more puff or tablet after 3–5 minutes.",
+          "Replace the uterus as soon as you feel the ring soften. Keep the fist inside while oxytocin starts, then massage.",
+          "If the systolic falls below 90: legs up, fluid bolus fast, and a vasopressor if it does not recover (ephedrine where stocked)."
+        ],
+        monitor: [
+          "BP and pulse every minute until 15 min after the last dose",
+          "Uterine tone and bleeding once replaced"
+        ],
+        cautions: [
+          "Evidence for sublingual GTN in obstetrics comes from small studies; it is slower and less controllable than IV. Confirm with the obstetrician or anaesthetist where you can.",
+          "Expect a headache and flushing. Expect an atonic uterus afterwards: oxytocin and the PPH bundle must be ready before you give GTN."
+        ]
+      },
+      {
+        title: "Making a 100 microgram/mL bolus syringe from an ampoule",
+        best_for: "Theatre or labour ward with GTN ampoules but no pre-made dilution.",
+        requires: ["iv", "bp"],
+        steps: [
+          "From 5 mg/mL: draw 1 mL (5 mg) and add 0.9 % saline to 50 mL in a 50 mL syringe = 100 micrograms/mL. From 1 mg/mL: 1 mL (1 mg) + 9 mL saline = 10 mL of 100 micrograms/mL.",
+          "Label the syringe at once: 'GTN 100 micrograms/mL', time, initials.",
+          "For each bolus draw the dose into a separate 1 mL or 2 mL syringe: 0.5 mL = 50 micrograms, 1 mL = 100 micrograms. Inject into a running saline line and flush with 5 mL.",
+          "Second person checks the ampoule strength and the dilution before the first dose.",
+          "Discard the remainder at the end of the case. Never leave an unlabelled GTN syringe on the trolley."
+        ],
+        monitor: ["BP before each bolus and every 1–2 min after"],
+        cautions: [
+          "An undiluted 1 mL of 5 mg/mL is 5,000 micrograms — 100 times the starting dose.",
+          "Plastic (PVC) syringes and lines absorb some GTN; with bolus doses this matters little, but it is why infusions need non-PVC tubing."
+        ]
+      },
+      {
+        title: "Chest pain or pulmonary oedema with no pump and no monitor",
+        best_for: "Medical wards and health centres.",
+        requires: ["bp"],
+        steps: [
+          "Use repeated SUBLINGUAL doses instead of an IV infusion: 0.4–0.5 mg (one tablet or one puff) every 5 min up to 3 doses, checking the BP before each.",
+          "Pulmonary oedema: patient sitting upright with legs down; give GTN only if the systolic is at least 100 mmHg; stop if it falls below 90.",
+          "Lasting effect after the acute phase: if available, a long-acting nitrate (isosorbide dinitrate tablets) or a patch, with a 10–12 h nitrate-free gap each day (Harrison).",
+          "Do not run IV GTN by gravity from an ordinary giving set: PVC tubing absorbs the drug unpredictably at first and then lets it through, and without a pump and frequent BP checks the dose cannot be titrated. If IV GTN is truly needed, refer or transfer."
+        ],
+        monitor: [
+          "BP and pulse before each dose",
+          "Pain score; breathing rate and oxygen saturation in pulmonary oedema"
+        ],
+        cautions: [
+          "If pain is not relieved by GTN, it is not 'just angina': treat as an acute coronary syndrome.",
+          "Tablets kept hot or in an open bottle lose strength. If an old bottle fails, try a fresh bottle or the spray before concluding the pain is not cardiac."
+        ]
+      }
+    ],
+    paediatric: [
+      "Not used for angina in children. IV GTN in children (heart failure, hypertension) is a paediatric-cardiology or ICU treatment: no dose is given here.",
+      "Adolescent obstetric patients: as for adults."
+    ],
+    cautions: [
+      "Hypotension, dizziness and fainting, worse when standing or after alcohol: give it sitting or lying.",
+      "Headache is very common (71 % of women given it as a tocolytic — Gabbe) and flushing; reflex tachycardia.",
+      "After uterine relaxation the uterus may stay atonic: oxytocin and the PPH bundle ready beforehand (Gabbe lists nitroglycerin among causes of atony).",
+      "Phosphodiesterase-5 inhibitors (sildenafil, tadalafil): profound hypotension (Harrison). Ask every patient.",
+      "Tolerance with continuous use: patches and long-acting nitrates need a 10–12 h nitrate-free interval each day (Harrison).",
+      "Methaemoglobinaemia with high doses (Harrison).",
+      "IV infusions need a pump and non-absorbing (non-PVC) tubing (Harrison)."
+    ],
+    antidote: "No specific antidote; the effect wears off in minutes. Hypotension: stop GTN, lie flat with legs raised, fast IV fluid bolus, and a vasopressor if it persists. Methaemoglobinaemia (rare, high doses): methylene blue where available.",
+    sources: [
+      {
+        name: "Glyceryl trinitrate tablets, spray and injection: product information (SmPC) — contraindications, storage"
+      },
+      {
+        name: "Abdel-Aleem H et al. Nitroglycerin for management of retained placenta. Cochrane Database Syst Rev 2015"
+      },
+      {
+        name: "WHO. Managing Complications in Pregnancy and Childbirth (MCPC), 2nd ed. 2017: inverted uterus"
+      },
+      {
+        name: "Amsterdam EA et al. 2014 AHA/ACC guideline for non-ST-elevation acute coronary syndromes (nitrates)"
+      }
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Ischaemic pain: sublingual or buccal spray 0.3–0.6 mg up to three doses 5 min apart; then IV 5–10 micrograms/min through non-absorbing tubing, increased by 10 micrograms/min every 3–5 min until relief, systolic below 90 mmHg, or 200 micrograms/min.",
+        ref: "Harrison 22nd ed. 2025, ch. 285 Non-ST-Segment Elevation Acute Coronary Syndrome, p. 2109"
+      },
+      {
+        book: "harrison",
+        text: "The only absolute contraindications to nitrates are hypotension and recent sildenafil or vardenafil (24 h) or tadalafil (48 h).",
+        ref: "Harrison 22nd ed. 2025, ch. 285 Non-ST-Segment Elevation Acute Coronary Syndrome, p. 2109"
+      },
+      {
+        book: "harrison",
+        text: "Sublingual tablets 0.3–0.6 mg as needed, up to three doses 5 min apart; long-acting nitrates need a 10–12 h nitrate-free interval.",
+        ref: "Harrison 22nd ed. 2025, ch. 284 Ischemic Heart Disease, Table 284-4, p. 2100"
+      },
+      {
+        book: "harrison",
+        text: "Patients with angina should take sublingual nitroglycerin both to relieve angina and about 5 min before activities likely to bring it on.",
+        ref: "Harrison 22nd ed. 2025, ch. 284 Ischemic Heart Disease, p. 2101"
+      },
+      {
+        book: "harrison",
+        text: "Nitrates: headache, flushing, hypotension, syncope, reflex tachycardia, methaemoglobinaemia; contraindicated in hypertrophic obstructive cardiomyopathy; interact with PDE-5 inhibitors, beta-blockers and calcium-channel blockers.",
+        ref: "Harrison 22nd ed. 2025, ch. 284 Ischemic Heart Disease, Table 284-7, p. 2102"
+      },
+      {
+        book: "harrison",
+        text: "Acute cardiogenic pulmonary oedema: sublingual nitroglycerin 0.4 mg every 5 min for 3 doses is first line, then IV from 5–10 micrograms/min if not hypotensive.",
+        ref: "Harrison 22nd ed. 2025, ch. 316 Cardiogenic Shock and Pulmonary Edema, p. 2331"
+      },
+      {
+        book: "williams",
+        text: "Uterine inversion with the placenta attached: many recommend an IV tocolytic — terbutaline, magnesium sulfate or nitroglycerin — to relax the uterus for replacement; halogenated anaesthesia if these fail.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1684"
+      },
+      {
+        book: "williams",
+        text: "Unless the woman is already under general anaesthesia, IV nitroglycerin is preferred by many for uterine relaxation, such as replacing an acutely inverted uterus.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1096"
+      },
+      {
+        book: "williams",
+        text: "IV or sublingual nitroglycerin can relax the uterus without general anaesthesia; these agents are best given by the anaesthesia team.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 45 Multifetal Pregnancy, pdf p. 1973"
+      },
+      {
+        book: "gabbe",
+        text: "Uterine inversion: relax the uterus and cervix with IV nitroglycerin, a beta-mimetic or an inhaled anaesthetic, replace the fundus, then give a uterotonic to prevent recurrence.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 416"
+      },
+      {
+        book: "gabbe",
+        text: "Uterine-relaxing agents, including nitroglycerin, are a risk factor for uterine atony.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 405"
+      },
+      {
+        book: "gabbe",
+        text: "Head entrapment from uterine tone: IV nitroglycerin 50–200 micrograms is one of the fastest-acting, safest relaxants in selected patients.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 19 Malpresentations, p. 385"
+      },
+      {
+        book: "gabbe",
+        text: "In pre-eclampsia, nitroglycerin infusion is the drug of choice with pulmonary oedema and for the pressor response to intubation; side effects include headache, tachycardia and methaemoglobinaemia.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertension, p. 741"
+      },
+      {
+        book: "gabbe",
+        text: "As a tocolytic its side effects come from vasodilation; 71 % report headache.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 678"
+      },
+      {
+        book: "note",
+        text: "Gabbe's extracted text prints the inversion and head-entrapment doses in 'mg'; in context and in practice these are micrograms (50–500 and 50–200 micrograms). The stepwise 50 microgram starting bolus, the BP thresholds (start at systolic 90–100 or more; stop below 90), the sublingual route for uterine relaxation and the dilution method are practice notes, not textbook statements. Contraindications beyond Harrison's (aortic or mitral stenosis, tamponade, raised intracranial pressure) come from the product information.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "tamsulosin",
+    name: "Tamsulosin",
+    aka: ["Flomax", "Omnic", "Tamsulosin hydrochloride", "Alpha-blocker", "Alpha-1 blocker"],
+    cls: "Alpha-1A adrenoceptor antagonist (uroselective alpha-blocker)",
+    cat: "cardio",
+    wards: ["surgical", "medical", "outpatient", "emergency"],
+    tags: [
+      "urinary retention",
+      "BPH",
+      "prostate",
+      "LUTS",
+      "trial without catheter",
+      "kidney stone",
+      "ureteric colic",
+      "medical expulsive therapy",
+      "floppy iris",
+      "cataract"
+    ],
+    presentation: [
+      "Modified-release capsules or tablets, 400 micrograms (0.4 mg). Swallow whole — do not open, crush or chew.",
+      "Combined tamsulosin–dutasteride capsules exist; not covered here."
+    ],
+    indications: [
+      "Acute urinary retention in a man with prostatic enlargement: to improve the chance of a successful trial without catheter (Schwartz)",
+      "Postoperative urinary retention in older men when it recurs (see the case)",
+      "Lower urinary tract symptoms from benign prostatic hyperplasia",
+      "Distal ureteric stone of 10 mm or less: medical expulsive therapy, adults and children (Schwartz; Nelson)"
+    ],
+    standard: {
+      summary: "400 micrograms once a day. It relaxes the prostate, bladder neck and lower ureter within days; it does not shrink the prostate and never replaces a catheter for a full bladder. The common harms are postural dizziness and falls; the rare one that matters is floppy iris at cataract surgery.",
+      items: [
+        {
+          label: "Dose",
+          text: "400 micrograms once daily, about 30 minutes after the same meal each day (product information) — or at bedtime (Nelson), which reduces the effect of dizziness. No dose titration."
+        },
+        {
+          label: "Acute urinary retention",
+          text: "Drain the bladder first (catheter). Start tamsulosin the same day. Trial without catheter after at least 2–3 days of treatment; alpha-blockers increase the chance that it succeeds (Schwartz). If it fails, recatheterise and refer for prostate assessment. Look for and treat constipation, and stop anticholinergic drugs. Practice on timing varies — confirm with your surgical department."
+        },
+        {
+          label: "Ureteric stone (medical expulsive therapy)",
+          text: "Distal ureteric stone 10 mm or less with pain controlled, no infection and normal kidney function: 400 micrograms daily until the stone passes, usually for up to 4 weeks. It raises the passage rate from 54 % to 77 % with fewer colic episodes (Schwartz). Stones under 5 mm mostly pass anyway. Use with an NSAID for pain. STOP and refer the same day for fever or rigors (an obstructed infected kidney needs drainage), a single kidney, rising creatinine, uncontrolled pain or vomiting."
+        },
+        {
+          label: "Benign prostatic hyperplasia",
+          text: "400 micrograms daily; the effect is seen within days (Schwartz). It relieves symptoms but does not change the course of the disease; large glands may need a 5-alpha-reductase inhibitor or surgery."
+        },
+        {
+          label: "Before cataract surgery",
+          text: "Tamsulosin (now or ever) causes intraoperative floppy iris syndrome (Harrison). Tell the eye surgeon so the operation can be planned for it. Stopping the drug beforehand does not reliably prevent it — do not stop it just for this."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Trial without catheter where there is no bladder scanner",
+        best_for: "District surgical wards and health centres managing men after acute or postoperative retention.",
+        requires: ["oral"],
+        steps: [
+          "Give tamsulosin daily for at least 2–3 days with the catheter in place. Treat constipation, mobilise, reduce opioids, stop anticholinergics (promethazine, amitriptyline).",
+          "Remove the catheter EARLY in the morning so the trial runs while staff are present. Encourage normal drinking — not forced litres.",
+          "Ask the patient to pass urine into a measuring jug every time and record each volume and time.",
+          "At 4–6 hours, and whenever he feels he cannot empty: palpate and percuss above the pubis. A bladder that is dull to percussion above the pubis or palpable after voiding means retention. If any ultrasound is available, length × width × height (cm) × 0.52 ≈ mL residual.",
+          "Success: several voids of reasonable volume, comfortable, no palpable bladder. Continue tamsulosin and arrange follow-up.",
+          "Failure: recatheterise, keep the tamsulosin going, and refer for urological assessment."
+        ],
+        monitor: ["Void volumes and times", "Suprapubic dullness at 4–6 h", "Postural dizziness and falls"],
+        cautions: [
+          "Frequent tiny voids or dribbling are overflow from a full bladder, not success.",
+          "Older men on tamsulosin get up at night to pass urine: dizziness and falls — teach them to sit on the edge of the bed before standing."
+        ]
+      },
+      {
+        title: "Ureteric colic at home or at the health centre without imaging",
+        best_for: "Patients sent home with a probable distal stone where follow-up imaging is far away.",
+        requires: ["oral"],
+        steps: [
+          "Only for a patient whose pain is controlled with oral analgesia, who has no fever, can drink, and has two working kidneys.",
+          "Tamsulosin 400 micrograms daily plus an NSAID for pain (if kidney function and the stomach allow).",
+          "Strain all urine through a tea strainer or a gauze swab over a jug, to catch the stone — it shows the stone has passed and can be analysed.",
+          "Give clear return rules, written down: come back the SAME DAY with fever or shivering, vomiting and unable to drink, pain not controlled, or little urine.",
+          "Review at 2 weeks and at 4 weeks. If the stone has not passed by 4 weeks, or pain recurs, arrange imaging and urology."
+        ],
+        monitor: ["Temperature", "Pain and urine output", "Dizziness on standing"],
+        cautions: [
+          "Fever with an obstructed kidney is an emergency: antibiotics are not enough, it needs drainage (stent or nephrostomy).",
+          "Pregnancy: data are limited (Gabbe) — discuss with the obstetrician and urologist before using it."
+        ]
+      },
+      {
+        title: "Patient cannot swallow the capsule, or tamsulosin is out of stock",
+        best_for: "NG-fed patients; pharmacy stock-outs.",
+        requires: [],
+        steps: [
+          "Do NOT open, crush or chew the capsule: it is a modified-release product, and crushing releases the whole dose at once (dizziness, fainting). There is no safe crushed form.",
+          "Another alpha-blocker on your formulary (doxazosin, terazosin, prazosin, alfuzosin) can be used instead for retention or BPH: start at the lowest dose on its label at BEDTIME, because the first dose of these older drugs can cause fainting.",
+          "No alpha-blocker at all: keep the catheter for longer and refer for urological assessment. For stones, analgesia and the return rules above; most small stones still pass.",
+          "Restart tamsulosin as soon as the patient can swallow or stock returns."
+        ],
+        monitor: ["Postural blood pressure after the first dose of any alpha-blocker"],
+        cautions: ["Never give two alpha-blockers together."]
+      }
+    ],
+    paediatric: [
+      "Off-label. Nelson gives tamsulosin 0.4 mg at bedtime to help a child pass a ureteric stone (medical expulsive therapy). Use only with the surgeon or paediatrician's agreement; seek specialist advice for small children.",
+      "Urinary retention in a child is never 'prostatic': look for constipation, a urethral cause, a neurological cause or a pelvic mass."
+    ],
+    cautions: [
+      "Postural hypotension, dizziness and fainting, most often after the first doses and in older men: falls and fractures. Warn the patient to stand up slowly.",
+      "Phosphodiesterase-5 inhibitors (sildenafil, tadalafil): take at different times — hypotension (Harrison).",
+      "Floppy iris syndrome at cataract surgery, even after stopping (Harrison): always tell the eye surgeon.",
+      "Retrograde or reduced ejaculation: common and harmless, but warn him.",
+      "Rarely priapism (an erection lasting over 4 hours): an emergency (product information).",
+      "It never replaces catheterisation of a full bladder, and urinary retention in a woman needs a cause found, not an alpha-blocker.",
+      "Severe liver disease: avoid (not studied)."
+    ],
+    sources: [
+      {
+        name: "Tamsulosin modified-release capsules: product information (SmPC and US label) — dose timing, interactions, IFIS, priapism, hepatic impairment"
+      },
+      {
+        name: "Assimos D et al. Surgical management of stones: AUA/Endourological Society guideline, 2016 (medical expulsive therapy)"
+      },
+      {
+        name: "European Association of Urology. Guidelines on non-neurogenic male LUTS and urolithiasis"
+      },
+      {
+        name: "Fisher E et al. Alpha-adrenergic blockers for trial without catheter after acute urinary retention. Cochrane Database Syst Rev 2014"
+      }
+    ],
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Acute urinary retention: after draining the bladder, start an alpha-blocker such as tamsulosin in men with suspected BPH; it increases the chance of a successful trial without catheter.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 40 Urology, p. 1768"
+      },
+      {
+        book: "schwartz",
+        text: "Distal ureteric stones 10 mm or less: alpha-blockers raise the passage rate from 54 % to 77 %, with faster expulsion and fewer colic episodes.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 40 Urology, p. 1762"
+      },
+      {
+        book: "schwartz",
+        text: "All alpha-blockers are equally effective for BPH; side effects include orthostatic hypotension, dizziness, asthenia, headache, nasal congestion and retrograde ejaculation; the effect is seen within days.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 40 Urology, p. 1763"
+      },
+      {
+        book: "harrison",
+        text: "Be aware of intraoperative floppy iris syndrome at cataract surgery in patients taking alpha-blockers; alpha-blockers may also help an obstructing ureteric stone.",
+        ref: "Harrison 22nd ed. 2025, ch. 331 Urinary Tract Obstruction, p. 2456"
+      },
+      {
+        book: "harrison",
+        text: "Selective alpha-blockers are first-line for BPH symptoms; side effects include hypotension, dizziness, nasal congestion, ejaculatory change and, rarely, floppy iris syndrome.",
+        ref: "Harrison 22nd ed. 2025, ch. 411 Men's Health, p. 3175"
+      },
+      {
+        book: "harrison",
+        text: "Short-acting PDE-5 inhibitors such as sildenafil must be dosed separately from tamsulosin because of hypotension.",
+        ref: "Harrison 22nd ed. 2025, ch. 92 Benign and Malignant Diseases of the Prostate, p. 704"
+      },
+      {
+        book: "nelson",
+        text: "Children with ureteric stones: tamsulosin 0.4 mg at bedtime may help stone passage (medical expulsive therapy).",
+        ref: "Nelson 22nd ed. 2024, ch. 584 Urinary Lithiasis, p. 3315"
+      },
+      {
+        book: "gabbe",
+        text: "Pregnancy: only limited case series of tamsulosin for stones; unknown safety and efficacy have discouraged its use.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 31 Surgery During Pregnancy, p. 593"
+      },
+      {
+        book: "gabbe",
+        text: "Limited data suggest tamsulosin may be used as medical expulsive therapy for symptomatic stones in pregnancy.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 44 Kidney Disease in Pregnancy, p. 842"
+      },
+      {
+        book: "note",
+        text: "The 2–3 days of treatment before a trial without catheter, the 4-week limit for medical expulsive therapy and the after-meal timing come from urology guidelines and the product information, not from the textbooks. There is no urology category in this app; tamsulosin is filed under cardiovascular as an alpha-blocker whose main hazard is postural hypotension.",
+        ref: "Editorial note"
+      }
     ],
     review: { status: "draft", by: null, date: null }
   }

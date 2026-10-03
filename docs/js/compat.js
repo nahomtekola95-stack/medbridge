@@ -24,7 +24,7 @@ window.COMPAT = [
     what: "Catecholamines are inactivated in alkaline solutions.",
     do: "Separate line for any vasopressor; never flush a vasopressor line.",
     ref: "Product information; drug entries" },
-  { a: ["amiodarone"], b: ["ringers-lactate"], severity: "caution",
+  { a: ["amiodarone"], b: ["ringers-lactate", "normal-saline"], severity: "caution",
     what: "Amiodarone infusions are prepared in 5 % glucose; it is unstable in saline-based infusion and leaches plasticiser from PVC.",
     do: "Dilute infusions in 5 % glucose only; use a large vein (phlebitis).",
     ref: "Amiodarone product information; drug entry" },
@@ -84,7 +84,7 @@ window.COMPAT = [
   /* ---- amphotericin B ---- */
   {
     a: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
-    b: ["ringers-lactate", "hypertonic-saline"],
+    b: ["ringers-lactate", "hypertonic-saline", "normal-saline"],
     severity: "never",
     what: "Amphotericin B products are incompatible with saline and with any electrolyte solution. Liposomal amphotericin B must be reconstituted with water for injection and diluted only in 5 % dextrose — saline makes the liposomes aggregate. Amphotericin B deoxycholate precipitates outright in saline and in Ringer's lactate. Either way the patient gets little drug and the line blocks.",
     do: "Dilute in 5 % dextrose only. Never use 0.9 % saline, Ringer's lactate or any electrolyte-containing fluid to reconstitute, dilute or flush an amphotericin line. If the same cannula must carry saline for something else, finish the saline, flush with 5 % dextrose, then start the amphotericin. If the infusion has to be slowed or paused, keep the line open with dextrose.",

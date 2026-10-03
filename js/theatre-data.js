@@ -38,12 +38,14 @@ window.THEATRE_PACKS = [
           {
             item: "Vecuronium",
             qty: "1",
-            note: "Non-depolarising relaxant for maintenance. No MedBridge drug entry yet."
+            note: "Non-depolarising relaxant for maintenance. No MedBridge drug entry yet.",
+            drugId: "vecuronium"
           },
           {
             item: "Suxamethonium (succinylcholine)",
             qty: "1",
-            note: "For rapid-sequence intubation of a full stomach. No MedBridge drug entry yet."
+            note: "For rapid-sequence intubation of a full stomach. No MedBridge drug entry yet.",
+            drugId: "suxamethonium"
           },
           {
             item: "Atropine",
@@ -54,7 +56,8 @@ window.THEATRE_PACKS = [
           {
             item: "Neostigmine",
             qty: "1",
-            note: "Reversal of the non-depolarising relaxant, given with atropine. No MedBridge drug entry yet."
+            note: "Reversal of the non-depolarising relaxant, given with atropine. No MedBridge drug entry yet.",
+            drugId: "neostigmine"
           },
           {
             item: "Dexamethasone",
@@ -71,12 +74,14 @@ window.THEATRE_PACKS = [
           {
             item: "Tramadol",
             qty: "2",
-            note: "Listed for this operation specifically, in addition to the strong opioid. No MedBridge drug entry yet."
+            note: "Listed for this operation specifically, in addition to the strong opioid. No MedBridge drug entry yet.",
+            drugId: "tramadol"
           },
           {
             item: "Omeprazole IV",
             qty: "2",
-            note: "Listed for this operation specifically — acid suppression for the ulcer. No MedBridge drug entry yet."
+            note: "Listed for this operation specifically — acid suppression for the ulcer. No MedBridge drug entry yet.",
+            drugId: "omeprazole"
           },
           {
             item: "40 % dextrose",
@@ -127,7 +132,8 @@ window.THEATRE_PACKS = [
           {
             item: "Normal saline",
             qty: "5 bags, plus 4 more for lavage",
-            note: "The four extra bags are listed explicitly for peritoneal lavage."
+            note: "The four extra bags are listed explicitly for peritoneal lavage.",
+            drugId: "normal-saline"
           },
           { item: "IV cannula 18/20G", qty: "2", note: "" },
           { item: "Surgical gloves", qty: "20", note: "" },
@@ -328,14 +334,20 @@ window.THEATRE_PACKS = [
             note: "Induction. For small bowel volvulus the list names ketamine alone.",
             drugId: "ketamine"
           },
-          { item: "Vecuronium", qty: "1", note: "No MedBridge drug entry yet." },
+          { item: "Vecuronium", qty: "1", note: "No MedBridge drug entry yet.", drugId: "vecuronium" },
           {
             item: "Suxamethonium (succinylcholine)",
             qty: "1",
-            note: "For rapid-sequence intubation. No MedBridge drug entry yet."
+            note: "For rapid-sequence intubation. No MedBridge drug entry yet.",
+            drugId: "suxamethonium"
           },
           { item: "Atropine", qty: "2", note: "", drugId: "atropine" },
-          { item: "Neostigmine", qty: "1", note: "Reversal, with atropine. No MedBridge drug entry yet." },
+          {
+            item: "Neostigmine",
+            qty: "1",
+            note: "Reversal, with atropine. No MedBridge drug entry yet.",
+            drugId: "neostigmine"
+          },
           { item: "Dexamethasone", qty: "1", note: "", drugId: "dexamethasone" },
           {
             item: "Pethidine OR morphine",
@@ -346,7 +358,8 @@ window.THEATRE_PACKS = [
           {
             item: "Diclofenac IM",
             qty: "2",
-            note: "Listed. No MedBridge drug entry yet — and see the checks below before you give it to a dehydrated obstructed patient."
+            note: "Listed. No MedBridge drug entry yet — and see the checks below before you give it to a dehydrated obstructed patient.",
+            drugId: "diclofenac"
           },
           { item: "40 % dextrose", qty: "3", note: "", drugId: "dextrose" }
         ]
@@ -388,7 +401,7 @@ window.THEATRE_PACKS = [
             note: "",
             drugId: "metronidazole"
           },
-          { item: "Normal saline", qty: "5", note: "" },
+          { item: "Normal saline", qty: "5", note: "", drugId: "normal-saline" },
           { item: "IV cannula 18G (20G for small bowel volvulus)", qty: "2", note: "" },
           { item: "Surgical gloves", qty: "20", note: "" },
           { item: "Disposable gloves", qty: "10 pairs", note: "" },
@@ -555,16 +568,22 @@ window.THEATRE_PACKS = [
             note: "Induction in a patient who is usually elderly, dehydrated and septic — ketamine is the kinder choice here.",
             drugId: "ketamine"
           },
-          { item: "Vecuronium", qty: "1", note: "No MedBridge drug entry yet." },
-          { item: "Suxamethonium (succinylcholine)", qty: "1", note: "No MedBridge drug entry yet." },
+          { item: "Vecuronium", qty: "1", note: "No MedBridge drug entry yet.", drugId: "vecuronium" },
+          {
+            item: "Suxamethonium (succinylcholine)",
+            qty: "1",
+            note: "No MedBridge drug entry yet.",
+            drugId: "suxamethonium"
+          },
           { item: "Atropine", qty: "2", note: "", drugId: "atropine" },
-          { item: "Neostigmine", qty: "1", note: "No MedBridge drug entry yet." },
+          { item: "Neostigmine", qty: "1", note: "No MedBridge drug entry yet.", drugId: "neostigmine" },
           { item: "Dexamethasone", qty: "1", note: "", drugId: "dexamethasone" },
           { item: "Pethidine OR morphine", qty: "1", note: "", drugId: "morphine" },
           {
             item: "Diclofenac IM",
             qty: "2",
-            note: "Listed. See checks — this is the patient in whom an NSAID does most harm."
+            note: "Listed. See checks — this is the patient in whom an NSAID does most harm.",
+            drugId: "diclofenac"
           },
           { item: "40 % dextrose", qty: "3", note: "", drugId: "dextrose" }
         ]
@@ -598,7 +617,12 @@ window.THEATRE_PACKS = [
         items: [
           { item: "Ceftriaxone", qty: "2", note: "", drugId: "ceftriaxone" },
           { item: "Metronidazole IV", qty: "2", note: "", drugId: "metronidazole" },
-          { item: "Normal saline", qty: "5 bags, plus 4 more for lavage", note: "" },
+          {
+            item: "Normal saline",
+            qty: "5 bags, plus 4 more for lavage",
+            note: "",
+            drugId: "normal-saline"
+          },
           { item: "IV cannula 18/20G", qty: "2", note: "" },
           { item: "Surgical gloves", qty: "20", note: "" },
           { item: "Disposable gloves", qty: "10 pairs", note: "" },
@@ -748,7 +772,12 @@ window.THEATRE_PACKS = [
             note: "The hospital lists a spinal for a simple appendicectomy. Heavy 0.5 % is what is used intrathecally.",
             drugId: "bupivacaine"
           },
-          { item: "Diclofenac IM", qty: "2", note: "Listed. No MedBridge drug entry yet." },
+          {
+            item: "Diclofenac IM",
+            qty: "2",
+            note: "Listed. No MedBridge drug entry yet.",
+            drugId: "diclofenac"
+          },
           { item: "40 % dextrose", qty: "2", note: "", drugId: "dextrose" }
         ]
       },
@@ -785,7 +814,7 @@ window.THEATRE_PACKS = [
           { item: "Ceftriaxone", qty: "2", note: "", drugId: "ceftriaxone" },
           { item: "Metronidazole", qty: "2", note: "", drugId: "metronidazole" },
           { item: "IV cannula 18/20G", qty: "2", note: "" },
-          { item: "Normal saline", qty: "4", note: "" },
+          { item: "Normal saline", qty: "4", note: "", drugId: "normal-saline" },
           { item: "Surgical gloves", qty: "20", note: "" },
           { item: "Disposable gloves", qty: "5 pairs", note: "" },
           { item: "Syringe 10 cc and 5 cc", qty: "6 each", note: "" }
@@ -935,7 +964,12 @@ window.THEATRE_PACKS = [
         title: "Anaesthesia drugs",
         items: [
           { item: "Bupivacaine (spinal)", qty: "1", note: "", drugId: "bupivacaine" },
-          { item: "Diclofenac IM", qty: "2", note: "Listed. No MedBridge drug entry yet." },
+          {
+            item: "Diclofenac IM",
+            qty: "2",
+            note: "Listed. No MedBridge drug entry yet.",
+            drugId: "diclofenac"
+          },
           { item: "40 % dextrose", qty: "3", note: "", drugId: "dextrose" }
         ]
       },
@@ -964,7 +998,7 @@ window.THEATRE_PACKS = [
         items: [
           { item: "Ceftriaxone", qty: "2", note: "", drugId: "ceftriaxone" },
           { item: "IV cannula 18/20G", qty: "2", note: "" },
-          { item: "Normal saline", qty: "4", note: "" },
+          { item: "Normal saline", qty: "4", note: "", drugId: "normal-saline" },
           { item: "Surgical gloves", qty: "20", note: "" },
           { item: "Disposable gloves", qty: "5 pairs", note: "" },
           { item: "Syringe 10 cc and 5 cc", qty: "6 each", note: "" }
@@ -1108,7 +1142,12 @@ window.THEATRE_PACKS = [
         title: "Anaesthesia drugs",
         items: [
           { item: "Bupivacaine (spinal)", qty: "1", note: "", drugId: "bupivacaine" },
-          { item: "Diclofenac IM", qty: "2", note: "Listed. No MedBridge drug entry yet." },
+          {
+            item: "Diclofenac IM",
+            qty: "2",
+            note: "Listed. No MedBridge drug entry yet.",
+            drugId: "diclofenac"
+          },
           {
             item: "40 % dextrose",
             qty: "1",
@@ -1146,7 +1185,7 @@ window.THEATRE_PACKS = [
             note: "Listed for washing out the cavity. No MedBridge drug entry — and see the substitutions below."
           },
           { item: "IV cannula 18/20G", qty: "2", note: "" },
-          { item: "Normal saline", qty: "4", note: "" },
+          { item: "Normal saline", qty: "4", note: "", drugId: "normal-saline" },
           { item: "Surgical gloves", qty: "20", note: "" },
           { item: "Disposable gloves", qty: "5 pairs", note: "" },
           { item: "Syringe 10 cc and 5 cc", qty: "4 each", note: "" }
@@ -1300,7 +1339,8 @@ window.THEATRE_PACKS = [
           {
             item: "Pethidine IV",
             qty: "1",
-            note: "Analgesia. No MedBridge drug entry for pethidine — morphine is the available equivalent."
+            note: "Analgesia. No MedBridge drug entry for pethidine — morphine is the available equivalent.",
+            drugId: "pethidine"
           },
           { item: "40 % dextrose", qty: "3", note: "", drugId: "dextrose" }
         ]
@@ -1334,7 +1374,8 @@ window.THEATRE_PACKS = [
           {
             item: "Normal saline",
             qty: "5",
-            note: "Also what the subdural space is irrigated with — it must be warm and sterile."
+            note: "Also what the subdural space is irrigated with — it must be warm and sterile.",
+            drugId: "normal-saline"
           },
           { item: "Surgical gloves", qty: "20", note: "" },
           { item: "Syringe 10 cc and 5 cc", qty: "6 each", note: "" }
@@ -1486,12 +1527,18 @@ window.THEATRE_PACKS = [
           {
             item: "Propofol",
             qty: "1",
-            note: "The list names propofol specifically here, not ketamine. No MedBridge drug entry yet."
+            note: "The list names propofol specifically here, not ketamine. No MedBridge drug entry yet.",
+            drugId: "propofol"
           },
-          { item: "Vecuronium", qty: "1", note: "No MedBridge drug entry yet." },
-          { item: "Suxamethonium (succinylcholine)", qty: "1", note: "No MedBridge drug entry yet." },
+          { item: "Vecuronium", qty: "1", note: "No MedBridge drug entry yet.", drugId: "vecuronium" },
+          {
+            item: "Suxamethonium (succinylcholine)",
+            qty: "1",
+            note: "No MedBridge drug entry yet.",
+            drugId: "suxamethonium"
+          },
           { item: "Atropine", qty: "2", note: "", drugId: "atropine" },
-          { item: "Neostigmine", qty: "1", note: "No MedBridge drug entry yet." },
+          { item: "Neostigmine", qty: "1", note: "No MedBridge drug entry yet.", drugId: "neostigmine" },
           {
             item: "Dexamethasone",
             qty: "1",
@@ -1537,7 +1584,7 @@ window.THEATRE_PACKS = [
             note: "The largest allocation in the document. No MedBridge drug entry."
           },
           { item: "IV cannula 18/20G", qty: "2", note: "" },
-          { item: "Normal saline", qty: "5", note: "" },
+          { item: "Normal saline", qty: "5", note: "", drugId: "normal-saline" },
           { item: "Surgical gloves", qty: "20", note: "" },
           { item: "Disposable gloves", qty: "10 pairs", note: "" },
           { item: "Syringe 10 cc and 5 cc", qty: "6 each", note: "" }
@@ -1775,7 +1822,8 @@ window.THEATRE_PACKS = [
           {
             item: "Sterile water or normal saline for the seal",
             qty: "500 mL",
-            note: "Enough to cover the end of the long tube by about 2 cm, and no more."
+            note: "Enough to cover the end of the long tube by about 2 cm, and no more.",
+            drugId: "normal-saline"
           },
           { item: "Antiseptic — chlorhexidine or povidone-iodine", qty: "1", note: "" },
           { item: "Syringe 10 cc and 20 cc, with 21G and 23G needles", qty: "2 each", note: "" },

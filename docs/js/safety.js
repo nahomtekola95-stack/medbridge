@@ -2866,5 +2866,980 @@ window.SAFETY = {
       "Otto CM et al. 2020 ACC/AHA Valvular Heart Disease Guideline (anticoagulation in pregnancy)",
       "LactMed (NIH): warfarin"
     ]
+  },
+
+  /* ---- anaesthesia ---- */
+  suxamethonium: {
+    pregnancy: {
+      level: "caution",
+      text: "The usual relaxant for general anaesthesia at caesarean section. Highly ionised, so very little crosses the placenta and the baby is not paralysed (Gabbe). Use the normal dose; plasma cholinesterase is lower in pregnancy but this rarely matters. The risks are the mother's airway and aspiration, not the drug."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "A single dose is broken down within minutes. Breastfeed as soon as the mother is awake."
+    },
+    renal: {
+      level: "adjust",
+      text: "Dose unchanged, but potassium rises by about 0.5 mmol/L: use only when the potassium has recently been shown to be normal (Nelson), and avoid if it is high."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Severe liver disease lowers plasma cholinesterase, so the block may last longer. Dose unchanged; watch recovery and be ready to ventilate."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Highly ionised muscle relaxants such as suxamethonium cross the placenta very little, so general anaesthesia for caesarean does not paralyse the baby.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 347",
+        pdf_page: 438,
+        quote: "The limited transfer of muscle relaxants such as succinylcholine enables"
+      },
+      {
+        book: "nelson",
+        text: "Burns: risk of rhabdomyolysis and hyperkalaemia from suxamethonium for many months. Neuromuscular disease: avoid depolarising relaxants. Renal disease: use only when potassium has recently been shown to be normal.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 666, Table 91.3",
+        pdf_page: 712,
+        quote: "Risk of rhabdomyolysis and hyperkalemia from succinylcholine after burns for many months"
+      }
+    ],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+  neostigmine: {
+    pregnancy: {
+      level: "caution",
+      text: "Used for reversal at caesarean under general anaesthesia, always with atropine. A quaternary drug that crosses the placenta poorly. Avoid other uses in pregnancy unless clearly needed."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Single reversal doses are compatible with breastfeeding once the mother is awake."
+    },
+    renal: {
+      level: "adjust",
+      text: "Excreted largely by the kidney, so the effect lasts longer in kidney failure. The single reversal dose is unchanged; repeated doses (myasthenia, snakebite) need longer intervals — confirm with a specialist."
+    },
+    hepatic: { level: "none", text: "No dose change." },
+    refs: [],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+  vecuronium: {
+    pregnancy: {
+      level: "caution",
+      text: "Used at caesarean under general anaesthesia after the baby is delivered or for maintenance; muscle relaxants cross the placenta very little (Gabbe). Magnesium for pre-eclampsia greatly prolongs its effect — see interactions."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Not absorbed from milk by the baby's gut. Breastfeed once the mother is awake and strong."
+    },
+    renal: {
+      level: "adjust",
+      text: "Partly cleared by the kidney (Schwartz): the block lasts longer in kidney failure. Smaller and less frequent top-ups; check full recovery before extubation."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Metabolised by the liver and excreted in bile (Nelson): cirrhosis and biliary obstruction prolong the block. Smaller and less frequent doses."
+    },
+    refs: [
+      {
+        book: "nelson",
+        text: "Vecuronium is metabolised by the liver and excreted in bile; prolonged ICU use can cause profound weakness.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 669, Table 91.8",
+        pdf_page: 715,
+        quote: "Vecuronium and rocuronium are metabolized by the liver and excreted in bile"
+      },
+      {
+        book: "schwartz",
+        text: "Vecuronium is an intermediate-duration steroid relaxant metabolised by the liver and also cleared by the kidney.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032",
+        pdf_page: 2059,
+        quote: "Intermediate-duration neuromuscular blockers include the steroid-based drugs"
+      }
+    ],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+  ephedrine: {
+    pregnancy: {
+      level: "caution",
+      text: "The traditional drug for spinal hypotension at caesarean and safe to use for that. Compared with phenylephrine it causes more fetal acidosis (Gabbe), and prophylactic use has been linked to fetal acidaemia (Williams): treat hypotension early rather than giving it routinely, and prefer phenylephrine where available and the pulse is fast."
+    },
+    breastfeeding: { level: "safe", text: "Single anaesthetic doses are compatible with breastfeeding." },
+    renal: {
+      level: "none",
+      text: "No change for single bolus doses. It is excreted largely unchanged by the kidney, so effects of repeated doses last longer in kidney failure."
+    },
+    hepatic: { level: "none", text: "No dose change." },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Compared with phenylephrine, ephedrine is associated with more fetal acidosis; its beta effect may raise fetal oxygen demand. Phenylephrine suits the tachycardic mother; ephedrine suits the mother with a slow pulse.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 350",
+        pdf_page: 441,
+        quote: "ephedrine is associated with higher degrees of fetal acidosis"
+      },
+      {
+        book: "williams",
+        text: "Fetal acidaemia has been reported with prophylactic ephedrine, but not with prophylactic phenylephrine.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1079",
+        pdf_page: 1079,
+        quote: "Although fetal acidemia has been reported with prophylactic ephedrine use"
+      }
+    ],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+  propofol: {
+    pregnancy: {
+      level: "caution",
+      text: "Now the main induction drug for caesarean under general anaesthesia (Williams). It crosses the placenta but redistributes quickly; an appropriate dose has little effect on the baby (Gabbe). Be ready to resuscitate the newborn."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Very little reaches the milk and it is not absorbed well by the baby. Breastfeed as soon as the mother is awake and alert."
+    },
+    renal: { level: "none", text: "No dose change; titrate to effect." },
+    hepatic: {
+      level: "none",
+      text: "No dose change for induction; titrate to effect. Patients with liver failure may be more sensitive and hypotensive."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Propofol, etomidate and ketamine redistribute quickly in mother and fetus; an appropriate dose has little effect on the fetus.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 362",
+        pdf_page: 453,
+        quote: "An appropriate dose of any of these agents has little effect on the fetus"
+      },
+      {
+        book: "williams",
+        text: "Propofol is now the main induction agent for general anaesthesia at caesarean; etomidate or ketamine for the haemodynamically unstable woman.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1095",
+        pdf_page: 1095,
+        quote: "propofol is used as the primary agent for induction of general"
+      }
+    ],
+    sources: ["BNF", "WHO Model Formulary 2008", "LactMed (NIH)"]
+  },
+  thiopental: {
+    pregnancy: {
+      level: "caution",
+      text: "Long used for induction at caesarean. It crosses the placenta; with a normal induction dose the baby may be sleepy but usually breathes well. Have neonatal resuscitation ready."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "After a single induction dose, breastfeed once the mother is awake and alert."
+    },
+    renal: {
+      level: "adjust",
+      text: "More free drug circulates in kidney failure: use smaller doses and titrate."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Metabolised by the liver: in severe liver disease use smaller doses; the effect lasts longer."
+    },
+    refs: [],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+
+  /* ---- pain and gut ---- */
+  pethidine: {
+    pregnancy: {
+      level: "caution",
+      text: "Used in labour where nothing better exists, but pethidine and its metabolite norpethidine cross the placenta; the depressant effect on the fetus follows the maternal peak, and norpethidine (long half-life) causes neonatal breathing depression, sedation and poor feeding for 2–3 days. Have neonatal bag-mask ventilation and naloxone ready. Avoid in eclampsia and severe pre-eclampsia (seizure threshold). Morphine is preferred when available."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "A single dose is compatible (about 1–2 % of the maternal dose reaches the baby). Repeated doses let norpethidine accumulate in the infant, causing sleepiness and poor feeding — use morphine for ongoing postnatal pain."
+    },
+    renal: {
+      level: "avoid",
+      text: "Avoid. Norpethidine is excreted by the kidney and accumulates, causing tremor, myoclonus and seizures that naloxone does not reverse — even after a few doses. Use small titrated morphine doses with longer intervals instead (see Morphine)."
+    },
+    hepatic: {
+      level: "avoid",
+      text: "Avoid in significant liver disease: clearance falls, sedation is prolonged, and opioids can precipitate encephalopathy. Nelson advises against pethidine in hepatic dysfunction."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "Normeperidine accumulates in renal failure and probably causes irritability, twitching and seizures with repeated doses.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, p. 488",
+        pdf_page: 531,
+        quote: "accumulates in renal failure, and probably accounts for the signs of CNS excitation"
+      },
+      {
+        book: "schwartz",
+        text: "Morphine and meperidine have renally excreted active metabolites.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031",
+        pdf_page: 2058,
+        quote: "Morphine and meperidine have active metabolites that are renally excreted"
+      },
+      {
+        book: "williams",
+        text: "Normeperidine is a strong respiratory depressant with a longer half-life and likely causes the fetal side effects.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1072",
+        pdf_page: 1072,
+        quote: "Normeperidine is a strong respiratory depressant that has a significantly longer half-life than meperidine"
+      },
+      {
+        book: "gabbe",
+        text: "Normeperidine accumulation in the fetus can prolong neonatal sedation.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 346",
+        pdf_page: 437,
+        quote: "Normeperidine accumulation in the fetus can result in"
+      },
+      {
+        book: "gabbe",
+        text: "Codeine, morphine and meperidine reach breast milk at about 1–2 % of the maternal dose.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "the dose detectable in breast milk is approximately 1% to 2% of the mother"
+      },
+      {
+        book: "nelson",
+        text: "In hepatic dysfunction meperidine (metabolite associated with seizures) should not be used.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, p. 685",
+        pdf_page: 731,
+        quote: "Meperidine (inactive metabolite associated with seizures)"
+      }
+    ],
+    sources: ["WHO Model Formulary 2008", "BNF", "LactMed (NIH): meperidine", "The Renal Drug Handbook"]
+  },
+  tramadol: {
+    pregnancy: {
+      level: "caution",
+      text: "Avoid regular use. Use near term can cause neonatal opioid withdrawal and breathing depression; it lowers the seizure threshold (avoid in eclampsia). For a short course of moderate pain, paracetamol first; if an opioid is needed, a few doses of tramadol or morphine with the newborn team informed."
+    },
+    breastfeeding: {
+      level: "avoid",
+      text: "The US FDA advises avoiding tramadol in breastfeeding women because infants of ultra-rapid metaboliser mothers can receive enough active metabolite to depress breathing (Nelson, Table 93.13). Use paracetamol and ibuprofen; short-course morphine with infant observation if an opioid is needed."
+    },
+    renal: {
+      level: "adjust",
+      text: "Tramadol and its active metabolite are excreted by the kidney. Lengthen the interval when CrCl is under 30 mL/min.",
+      bands: [
+        {
+          below: 30,
+          text: "CrCl under 30: give every 12 hours, maximum 200 mg/day. Avoid modified-release tablets. Watch for sedation and seizures."
+        },
+        {
+          below: 10,
+          text: "CrCl under 10 or on dialysis: not recommended (product information). Use paracetamol and small titrated morphine doses with naloxone at hand, or seek specialist advice."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Severe liver impairment (cirrhosis): 50 mg every 12 hours; avoid modified-release tablets. Avoid in hepatic encephalopathy."
+    },
+    refs: [
+      {
+        book: "nelson",
+        text: "FDA: codeine or tramadol should be avoided in breastfeeding women.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, Table 93.13, p. 688",
+        pdf_page: 734,
+        quote: "Use of codeine or tramadol in breastfeeding women should be"
+      }
+    ],
+    sources: [
+      "Tramadol product information (renal and hepatic dosing)",
+      "BNF",
+      "LactMed (NIH): tramadol",
+      "US FDA Drug Safety Communication 2017"
+    ]
+  },
+  diclofenac: {
+    pregnancy: {
+      level: "avoid",
+      text: "Avoid from 20 weeks: NSAIDs reduce fetal urine output (oligohydramnios) and in the third trimester can close the ductus arteriosus. Avoid around conception and in the first trimester where possible (miscarriage signal). Use paracetamol. Postpartum use is fine."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible: very little enters milk. Ibuprofen is the best-studied NSAID in breastfeeding, but diclofenac for a few days after birth or caesarean is acceptable."
+    },
+    renal: {
+      level: "avoid",
+      text: "Avoid in kidney impairment, oliguria, and in anyone hypovolaemic, septic or bleeding: loss of prostaglandin-mediated afferent dilatation drops the filtration rate.",
+      bands: [
+        {
+          below: 60,
+          text: "CrCl 30 to 60: avoid if possible; if essential, lowest dose for no more than 1–2 days with daily creatinine and urine output."
+        },
+        { below: 30, text: "CrCl under 30: do not use." }
+      ]
+    },
+    hepatic: {
+      level: "avoid",
+      text: "Avoid in severe liver disease and cirrhosis (kidney failure, variceal bleeding). Diclofenac itself can cause hepatitis — stop if transaminases rise."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "NSAIDs interfere with renal autoregulation and cause prerenal AKI, especially with hypovolaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 321 Acute Kidney Injury, p. 2373",
+        pdf_page: 2416,
+        quote: "lar responses such as nonsteroidal anti-inflammatory drugs (NSAIDs)"
+      },
+      {
+        book: "gabbe",
+        text: "Third-trimester NSAID exposure may cause oligohydramnios and premature closure of the ductus arteriosus.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 54 Neurologic Disorders in Pregnancy, p. 1034",
+        pdf_page: 1272,
+        quote: "Third-trimester NSAID exposure may cause oligohydramnios and premature closure of the ductus arteriosus"
+      },
+      {
+        book: "gabbe",
+        text: "Chronic NSAID use (including diclofenac) may lead to oligohydramnios and constriction of the fetal ductus arteriosus.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131",
+        pdf_page: 164,
+        quote: "may lead to oligohydramnios, and constriction of the fetal ductus"
+      }
+    ],
+    sources: [
+      "BNF",
+      "US FDA Drug Safety Communication: NSAIDs at 20 weeks or later in pregnancy, 2020",
+      "LactMed (NIH): diclofenac",
+      "The Renal Drug Handbook"
+    ]
+  },
+  ibuprofen: {
+    pregnancy: {
+      level: "avoid",
+      text: "Avoid from 20 weeks (oligohydramnios; ductus arteriosus closure in the third trimester). Avoid around conception and in the first trimester where possible (miscarriage signal). Before 32 weeks a short course under 72 hours may be considered for a specific indication when kidney function is normal (Gabbe). Paracetamol is the analgesic of choice. Postpartum use is fine, including in pre-eclampsia if urine output and creatinine are normal."
+    },
+    breastfeeding: { level: "safe", text: "The preferred NSAID in breastfeeding: very little enters milk." },
+    renal: {
+      level: "avoid",
+      text: "Avoid in kidney impairment and in anyone dehydrated, septic or bleeding. In a well-hydrated child or adult, short courses rarely harm the kidney.",
+      bands: [
+        {
+          below: 60,
+          text: "CrCl 30 to 60: avoid if possible; if needed, lowest dose for the shortest time with creatinine and urine output checked."
+        },
+        { below: 30, text: "CrCl under 30: do not use." }
+      ]
+    },
+    hepatic: {
+      level: "avoid",
+      text: "Avoid in cirrhosis and severe liver disease: NSAIDs precipitate kidney failure, fluid retention and variceal or ulcer bleeding. Paracetamol at a reduced dose (2 g/day) is the alternative."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "NSAIDs may be considered for a short course (<72 h) before 32 weeks without kidney impairment.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 44 Kidney Disease in Pregnancy, p. 842",
+        pdf_page: 1036,
+        quote: "may be considered for a short course (<72 hours) in pregnant"
+      },
+      {
+        book: "gabbe",
+        text: "No teratogenicity reported for ibuprofen; chronic use may cause oligohydramnios and ductal constriction.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131",
+        pdf_page: 164,
+        quote: "No evidence of teratogenicity has been reported for other nonsteroidal"
+      },
+      {
+        book: "nelson",
+        text: "Renal injury from short-term ibuprofen in euvolaemic children is rare; hypovolaemia increases the risk.",
+        ref: "Nelson 22nd ed. 2024, ch. 93 Pediatric Pain Management, p. 682",
+        pdf_page: 728,
+        quote: "ibuprofen in euvolemic children is quite rare; the risk is increased by hypovolemia or cardiac dysfunction"
+      }
+    ],
+    sources: [
+      "BNF and BNF for Children",
+      "US FDA Drug Safety Communication 2020",
+      "LactMed (NIH): ibuprofen",
+      "The Renal Drug Handbook"
+    ]
+  },
+  metoclopramide: {
+    pregnancy: {
+      level: "safe",
+      text: "No increased risk of malformations, low birth weight or preterm birth after first-trimester exposure (Gabbe). A second-line drug for nausea and vomiting of pregnancy and hyperemesis. Watch for dystonia, which is common in young women."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Enters milk; theoretical dopamine blockade in the infant but no harmful effects reported (Gabbe). Short courses are acceptable. It raises prolactin and is sometimes used to boost milk supply — that is not a reason to give it routinely."
+    },
+    renal: {
+      level: "adjust",
+      text: "Cleared partly by the kidney; reduce the dose in moderate to severe impairment (EMA).",
+      bands: [
+        { below: 60, text: "CrCl 15 to 60: halve the dose (e.g. 5 mg up to three times daily)." },
+        {
+          below: 15,
+          text: "CrCl under 15 or end-stage kidney disease: reduce the daily dose by 75 % (e.g. 2.5 mg up to three times daily)."
+        }
+      ]
+    },
+    hepatic: { level: "adjust", text: "Severe liver impairment: halve the dose (EMA)." },
+    refs: [
+      {
+        book: "gabbe",
+        text: "First-trimester metoclopramide exposure was not associated with malformations, low birth weight or preterm delivery.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 129",
+        pdf_page: 162,
+        quote: "there was no increased risk of malformations, low birth weight, or"
+      },
+      {
+        book: "gabbe",
+        text: "Breastfeeding: potential dopaminergic blocking but no reported detrimental effects.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 134",
+        pdf_page: 167,
+        quote: "tential dopaminergic blocking, but no reported detrimental effects"
+      }
+    ],
+    sources: [
+      "European Medicines Agency 2013 (dose, renal and hepatic adjustment)",
+      "BNF",
+      "LactMed (NIH): metoclopramide"
+    ]
+  },
+  ondansetron: {
+    pregnancy: {
+      level: "caution",
+      text: "Studies conflict: no consistent increase in birth defects, but one large study found more heart defects after first-trimester exposure (Gabbe), and others a small increase in oral clefts. Use after first-line antiemetics (promethazine, metoclopramide, pyridoxine–doxylamine) have failed, especially before 10 weeks; do not withhold it from a woman who is dehydrated and cannot keep fluids down."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. It is given directly to newborns and infants in larger doses than milk could deliver."
+    },
+    renal: { level: "none", text: "No dose change." },
+    hepatic: {
+      level: "adjust",
+      text: "Severe liver impairment: maximum 8 mg in 24 hours (product information)."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "A larger study found a doubling in the prevalence of heart defects in exposed newborns.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 129",
+        pdf_page: 162,
+        quote: "found a doubling in the prevalence of heart defects in newborns who had been exposed"
+      }
+    ],
+    sources: [
+      "Ondansetron product information",
+      "RCOG Green-top Guideline 69, 2016",
+      "LactMed (NIH): ondansetron"
+    ]
+  },
+  omeprazole: {
+    pregnancy: {
+      level: "safe",
+      text: "No teratogenic risk found in large exposure series (Gabbe). Usable for reflux not controlled by antacids, for ulcer bleeding, and for aspiration prophylaxis before caesarean."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible: very little enters milk, and it is destroyed by acid in the infant's stomach."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change. Rarely causes acute interstitial nephritis — think of it in unexplained AKI on a PPI."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Severe liver impairment: maximum 20 mg/day orally (clearance is reduced). For variceal bleeding a PPI does not replace ceftriaxone and vasoactive treatment."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Omeprazole has not been associated with teratogenic risk in 2261 exposures.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 129",
+        pdf_page: 162,
+        quote: "The use of omeprazole and ranitidine has not been found to be"
+      }
+    ],
+    sources: ["BNF", "Omeprazole product information (hepatic impairment)", "LactMed (NIH): omeprazole"]
+  },
+
+  /* ---- anti-infectives ---- */
+  ciprofloxacin: {
+    pregnancy: {
+      level: "caution",
+      text: "Avoid when a safer antibiotic will do (azithromycin, ceftriaxone, amoxicillin). Several hundred first-trimester exposures showed no malformations or musculoskeletal problems, so do not withhold it from a pregnant woman with a serious infection for which it is the best drug, and do not advise termination after an accidental exposure. Not for chlamydia or gonorrhoea in pregnancy."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Probably compatible (limited data). A short course is acceptable; prefer an alternative for long courses. Watch the baby for diarrhoea or thrush."
+    },
+    renal: {
+      level: "adjust",
+      text: "Usual dose if creatinine clearance is above 60 mL/min. Keep the patient well hydrated (crystalluria).",
+      bands: [
+        { below: 60, text: "CrCl 30–60: maximum 500 mg orally (400 mg IV) every 12 h." },
+        {
+          below: 30,
+          text: "CrCl under 30: give the usual single dose (250–500 mg orally, 200–400 mg IV) once every 24 h (BNF; some labels allow every 18 h). Confirm with the pharmacist."
+        }
+      ]
+    },
+    hepatic: { level: "none", text: "No dose change. Rare cases of hepatitis — stop if jaundice develops." },
+    refs: [
+      {
+        book: "gabbe",
+        text: "No malformations or musculoskeletal problems were found in several hundred first-trimester ciprofloxacin/norfloxacin exposures.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 130",
+        pdf_page: 163,
+        quote: "Michigan Medicaid data, or in 200 other"
+      },
+      {
+        book: "harrison",
+        text: "Fluoroquinolones in pregnancy: human data suggest low risk; breastfeeding: limited human data, probably compatible.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-1, p. 1169",
+        pdf_page: 1212,
+        quote: "Fluoroquinolones Human data suggest low risk. Limited human data; probably compatible"
+      }
+    ],
+    sources: [
+      "BNF",
+      "Gabbe's Obstetrics 9th ed., ch. 7",
+      "Harrison 22nd ed. 2025, Table 149-1",
+      "LactMed (NIH)"
+    ]
+  },
+  azithromycin: {
+    pregnancy: {
+      level: "safe",
+      text: "The preferred treatment for chlamydia in pregnancy (1 g single dose), and pregnant women are included in trachoma mass treatment. Animal data suggest low risk."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible: low concentrations in milk. Rarely, macrolides have been linked to pyloric stenosis in young breastfed babies — tell the mother to return if the baby has projectile vomiting."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change. Use with caution if creatinine clearance is under 10 mL/min."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Avoid in severe liver disease (rare hepatotoxicity); single doses (trachoma, chlamydia) are acceptable in mild disease."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Azithromycin appears in breast milk in low concentrations.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "in breast milk in low concentrations"
+      },
+      {
+        book: "harrison",
+        text: "Azithromycin in pregnancy: limited human data, animal data suggest low risk; breastfeeding probably compatible.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-1, p. 1169",
+        pdf_page: 1212,
+        quote: "Azithromycin Limited human data. Animal data suggest low risk."
+      },
+      {
+        book: "gabbe",
+        text: "Chlamydia in pregnancy: the most appropriate regimen is a single 1 g oral dose of azithromycin; amoxicillin 500 mg three times daily for 7 days is the alternative.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1110",
+        pdf_page: 1362,
+        quote: "single 1 g oral dose of azithromycin"
+      }
+    ],
+    sources: ["BNF", "Harrison 22nd ed. 2025, Table 149-1", "Gabbe's Obstetrics 9th ed.", "LactMed (NIH)"]
+  },
+  erythromycin: {
+    pregnancy: {
+      level: "safe",
+      text: "No teratogenic risk reported; WHO's antibiotic of choice for preterm rupture of membranes. Avoid the ESTOLATE salt in pregnancy (maternal cholestatic hepatitis) — use base, stearate or ethylsuccinate."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Small amounts in milk and no adverse effects reported in breastfed infants. Maternal macrolides have been linked with pyloric stenosis in young breastfed babies — warn about projectile vomiting."
+    },
+    renal: {
+      level: "adjust",
+      text: "Usual dose in mild to moderate impairment.",
+      bands: [
+        {
+          below: 30,
+          text: "Severe impairment: maximum 1.5 g a day in adults (BNF) — the risk of hearing loss rises."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Can cause cholestatic hepatitis (mostly the estolate salt). Avoid estolate; use with caution and monitor in liver disease; stop if jaundice appears."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "Erythromycin in pregnancy: compatible except the estolate salt; breastfeeding compatible.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-1, p. 1169",
+        pdf_page: 1212,
+        quote: "Compatible (except for estolate salt)"
+      },
+      {
+        book: "gabbe",
+        text: "No teratogenic risk of erythromycin has been reported.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 130",
+        pdf_page: 163,
+        quote: "No teratogenic risk of erythromycin"
+      },
+      {
+        book: "gabbe",
+        text: "Erythromycin is excreted into breast milk in small amounts with no reported adverse effects in infants.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "Erythromycin is excreted into breast milk in small amounts"
+      },
+      {
+        book: "nelson",
+        text: "Pyloric stenosis has been associated with macrolides, particularly erythromycin given to neonates in the first 2 weeks of life, and possibly with maternal macrolide treatment in pregnancy and breastfeeding.",
+        ref: "Nelson 22nd ed. 2024, ch. 375.1 Hypertrophic Pyloric Stenosis, p. 2278",
+        pdf_page: 2290,
+        quote: "particularly erythromycin in neonates, if given within the first 2 weeks of life"
+      }
+    ],
+    sources: [
+      "BNF",
+      "WHO recommendations on interventions to improve preterm birth outcomes 2015",
+      "Harrison 22nd ed. 2025, Table 149-1",
+      "Gabbe's Obstetrics 9th ed., ch. 7"
+    ]
+  },
+  cotrimoxazole: {
+    pregnancy: {
+      level: "caution",
+      text: "For ROUTINE infections, avoid in the first trimester (folate antagonist; some studies show more neural tube and heart defects) and near term (sulfonamides displace bilirubin — a theoretical risk of newborn jaundice). Use it only if no suitable alternative exists. HIV PROPHYLAXIS IS DIFFERENT: WHO recommends continuing cotrimoxazole preventive therapy throughout pregnancy in women with HIV, because PCP and bacterial infection are the bigger danger. Do not give sulfadoxine-pyrimethamine (IPTp) to a woman on cotrimoxazole."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Small amounts in milk; usually compatible with a healthy term baby, and HIV prophylaxis continues during breastfeeding. Avoid if the breastfed baby is premature, ill, jaundiced, under 2 months with jaundice risk, or G6PD deficient."
+    },
+    renal: {
+      level: "adjust",
+      text: "Raises potassium and creatinine, especially at high doses. Check potassium in kidney disease.",
+      bands: [
+        { below: 30, text: "CrCl 15–30: give half the normal dose (BNF). Monitor potassium." },
+        {
+          below: 15,
+          text: "CrCl under 15: avoid unless dialysis is available and a specialist advises."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Avoid in severe liver disease or jaundice; it can itself cause hepatitis. Take care alongside TB drugs and nevirapine."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Trimethoprim/sulfamethoxazole should be avoided in the first trimester because of its antifolate effect.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 130",
+        pdf_page: 163,
+        quote: "Trimethoprim/sulfamethoxazole should be avoided in the"
+      },
+      {
+        book: "williams",
+        text: "ACOG considers sulfonamides appropriate in the first trimester if suitable alternatives are lacking; sulfonamides displace bilirubin, so near preterm delivery they might theoretically worsen neonatal jaundice.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 12 Teratology, Teratogens, and Fetotoxic Agents, pdf p. 535",
+        pdf_page: 535,
+        quote: "Sulfonamides displace bilirubin from protein-binding sites"
+      },
+      {
+        book: "gabbe",
+        text: "Sulfonamides pass into milk in small amounts and are usually compatible, but are best avoided in premature, ill or stressed infants with jaundice.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "best avoided in premature, ill, or stressed infants"
+      }
+    ],
+    sources: [
+      "WHO guidelines on co-trimoxazole prophylaxis 2006 and 2014",
+      "BNF",
+      "Gabbe's Obstetrics 9th ed., ch. 7",
+      "Williams Obstetrics 25th ed., ch. 12"
+    ]
+  },
+  cefotaxime: {
+    pregnancy: { level: "safe", text: "Cephalosporins are compatible with pregnancy." },
+    breastfeeding: { level: "safe", text: "Compatible." },
+    renal: {
+      level: "adjust",
+      text: "No change in mild to moderate impairment. In neonates the interval is already set by postnatal age.",
+      bands: [
+        {
+          below: 5,
+          text: "CrCl under 5 mL/min: give the normal first dose, then halve the maintenance dose (BNF)."
+        }
+      ]
+    },
+    hepatic: { level: "none", text: "No dose change." },
+    refs: [
+      {
+        book: "harrison",
+        text: "Cephalosporins including cefotaxime are compatible in pregnancy and breastfeeding.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-1, p. 1169",
+        pdf_page: 1212,
+        quote: "cefotaxime, ceftriaxone)"
+      }
+    ],
+    sources: ["BNF", "Harrison 22nd ed. 2025, Table 149-1"]
+  },
+  fluconazole: {
+    pregnancy: {
+      level: "avoid",
+      text: "Avoid where there is an alternative. Chronic high-dose (400–800 mg/day) first-trimester use has caused a pattern of skull, face, limb and heart defects; even low single doses for vaginal thrush have been linked to miscarriage and stillbirth, and a small rise in heart defects cannot be excluded. Use a topical azole for vaginal thrush. Life-threatening infection (cryptococcal meningitis) is the exception — the mother's life comes first; amphotericin B is preferred in the first trimester; get specialist advice."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible: the amount in milk is well below the doses given directly to newborns."
+    },
+    renal: {
+      level: "adjust",
+      text: "Give the normal loading (first) dose. A single 150 mg dose needs no change.",
+      bands: [
+        { below: 50, text: "CrCl 50 or less: halve the daily dose after the loading dose." }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Can cause hepatitis, more at high doses. Monitor liver tests where possible (especially with TB drugs or nevirapine) and stop if hepatitis develops."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "Even low doses of fluconazole given to pregnant women for vaginal candidiasis have been linked to miscarriage and stillbirth.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1691",
+        pdf_page: 1734,
+        quote: "linked to miscarriage and stillbirth"
+      },
+      {
+        book: "williams",
+        text: "Fluconazole: a pattern of malformations resembling Antley-Bixler syndrome has been reported only with chronic, first-trimester, high-dose treatment (400–800 mg daily); low single doses carry little or no overall risk, though a small rise in cardiac defects cannot be excluded.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 12 Teratology, Teratogens, and Fetotoxic Agents, pdf p. 532",
+        pdf_page: 532,
+        quote: "chronic, first-trimester, high-dose treatment at doses of 400 to 800 mg daily"
+      },
+      {
+        book: "gabbe",
+        text: "Limb deformities were reported in infants exposed to 400–800 mg/day of fluconazole in the first trimester; 460 single 150 mg exposures showed no increased risk of defects.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131",
+        pdf_page: 164,
+        quote: "Limb deformities were reported in three infants"
+      }
+    ],
+    sources: [
+      "BNF",
+      "Williams Obstetrics 25th ed., ch. 12",
+      "Gabbe's Obstetrics 9th ed., ch. 7",
+      "Harrison 22nd ed. 2025",
+      "LactMed (NIH)"
+    ]
+  },
+  pentamidine: {
+    pregnancy: {
+      level: "caution",
+      text: "Little human data. Use only when the benefit is clear — VL–HIV secondary prophylaxis and severe PCP are life-threatening situations; discuss with the treating centre. Hypoglycaemia and hypotension are more dangerous in pregnancy: monitor closely."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No data on transfer into milk. Discuss with the treating centre; if breastfeeding continues, watch the baby for poor feeding or lethargy."
+    },
+    renal: {
+      level: "adjust",
+      text: "Nephrotoxic. Check creatinine before each dose and during a treatment course; avoid other kidney-damaging drugs where possible.",
+      bands: [
+        {
+          below: 10,
+          text: "CrCl under 10: BNF reduces the dosing frequency for PCP treatment — get pharmacist or specialist advice before each dose."
+        }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change described, but it can cause hepatitis — check liver tests if jaundice develops."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "Pentamidine accumulates in liver, kidney, adrenal and spleen and is excreted slowly over weeks.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1751",
+        pdf_page: 1794,
+        quote: "with an elimination half-life of 12 days"
+      }
+    ],
+    sources: ["BNF", "Harrison 22nd ed. 2025", "WHO VL–HIV guideline 2022"]
+  },
+  natamycin: {
+    pregnancy: {
+      level: "safe",
+      text: "Topical eye use: systemic absorption is negligible. Do not withhold treatment of a fungal ulcer in pregnancy."
+    },
+    breastfeeding: { level: "safe", text: "Compatible: negligible absorption from the eye." },
+    renal: { level: "none", text: "No dose change (topical)." },
+    hepatic: { level: "none", text: "No dose change (topical)." },
+    refs: [],
+    sources: ["Natamycin 5 % ophthalmic suspension product information"]
+  },
+
+  /* ---- fluids and other ---- */
+  "normal-saline": {
+    pregnancy: {
+      level: "safe",
+      text: "Safe. In pre-eclampsia restrict total fluid and reassess after every bolus — pulmonary oedema comes easily. With large oxytocin doses, saline or Ringer's lactate is preferred to dextrose to avoid water intoxication (Williams)."
+    },
+    breastfeeding: { level: "safe", text: "Compatible." },
+    renal: {
+      level: "adjust",
+      text: "The right fluid for a dry (prerenal) kidney, but in oliguric or anuric kidney failure give only what corrects hypovolaemia, reassess after each bolus, and avoid large maintenance volumes: 154 mmol of sodium and chloride per litre, no way to excrete it, and a hyperchloraemic acidosis that worsens kidney injury (Harrison)."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Cirrhosis with ascites: each litre adds 154 mmol of sodium and excess volume worsens ascites and breathing (Harrison). Give only what is needed for hypovolaemia; in a patient with chronic hyponatraemia from liver disease, raise the sodium slowly (see Hypertonic saline)."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "Excess IV volume in cirrhosis worsens ascites and breathing.",
+        ref: "Harrison 22nd ed. 2025, ch. 321 Acute Kidney Injury, p. 2383",
+        pdf_page: 2426,
+        quote: "administration may, however, result in worsening ascites"
+      },
+      {
+        book: "harrison",
+        text: "0.9% saline can cause or worsen hyperchloraemic metabolic acidosis.",
+        ref: "Harrison 22nd ed. 2025, ch. 321 Acute Kidney Injury, p. 2383",
+        pdf_page: 2426,
+        quote: "0.9% saline can cause or exacerbate hyperchloremic metabolic acidosis"
+      },
+      {
+        book: "williams",
+        text: "With high-dose oxytocin use normal saline or Ringer's lactate.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 26 Induction and Augmentation of Labor, pdf p. 1120",
+        pdf_page: 1120,
+        quote: "either normal saline or lactated Ringer solution"
+      }
+    ],
+    sources: ["WHO Model Formulary 2008", "NICE CG174 and NG29 (IV fluids)", "BNF"]
+  },
+  protamine: {
+    pregnancy: {
+      level: "caution",
+      text: "No known fetal harm, but not formally studied. Never withhold it from a woman with life-threatening bleeding on heparin. In labour on heparin it is rarely needed and is not indicated after a prophylactic dose (Williams)."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. A single emergency dose is not expected to affect the baby; it is a protein that would be digested if it reached the milk."
+    },
+    renal: {
+      level: "none",
+      text: "No change to the protamine dose. Kidney failure prolongs enoxaparin, so a second protamine dose is more often needed after LMWH."
+    },
+    hepatic: { level: "none", text: "No dose change." },
+    refs: [
+      {
+        book: "williams",
+        text: "In labour, protamine reversal of heparin is rarely required and is not indicated with a prophylactic dose.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 52 Thromboembolic Disorders, pdf p. 2247",
+        pdf_page: 2247,
+        quote: "Reversal of heparin with protamine sulfate is rarely required"
+      }
+    ],
+    sources: ["Protamine sulfate product information", "BNF", "LactMed (NIH)"]
+  },
+  "tetanus-toxoid": {
+    pregnancy: {
+      level: "safe",
+      text: "Safe and recommended: Td protects the mother and, through her antibodies, prevents neonatal tetanus. An unvaccinated pregnant woman needs at least two doses 4 weeks apart, the second at least 2 weeks before delivery (WHO, in Harrison). Human TIG may be given in pregnancy when the wound needs it; equine antitoxin carries the same anaphylaxis risk as in anyone."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. Give Td after delivery to a mother whose course is incomplete."
+    },
+    renal: { level: "none", text: "No change." },
+    hepatic: {
+      level: "none",
+      text: "No change. Low platelets or a clotting problem from liver disease: fine needle and firm pressure for 2 minutes after the IM injection."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "WHO: unvaccinated pregnant women should receive at least two doses 4 weeks apart.",
+        ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1232",
+        pdf_page: 1275,
+        quote: "receive at least two doses, with an interval of 4 weeks between doses"
+      },
+      {
+        book: "gabbe",
+        text: "A systematic review found no harm from tetanus-containing (Tdap) vaccine in pregnancy.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131",
+        pdf_page: 164,
+        quote: "A recent systematic review of the safety of vaccines frequently"
+      },
+      {
+        book: "williams",
+        text: "Confirm tetanus immunisation status in the pregnant trauma patient.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 47 Critical Care and Trauma, pdf p. 2061",
+        pdf_page: 2061,
+        quote: "confirmation of current tetanus immunization status is pertinent"
+      }
+    ],
+    sources: [
+      "WHO Tetanus vaccines position paper 2017",
+      "Ethiopian MoH immunization guidelines 2022",
+      "CDC ACIP 2018"
+    ]
+  },
+  "glyceryl-trinitrate": {
+    pregnancy: {
+      level: "caution",
+      text: "Used in obstetric emergencies (uterine inversion, head entrapment, pre-eclampsia with pulmonary oedema) where the benefit is clear. The risk is maternal hypotension, which reduces placental blood flow: check BP before each dose, keep a fluid bolus running, and give oxytocin promptly after uterine relaxation for a delivered baby."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No data on regular use. Single sublingual doses for angina, or doses given around delivery, are short-acting and not expected to affect the baby."
+    },
+    renal: { level: "none", text: "No dose change; titrate to blood pressure." },
+    hepatic: {
+      level: "none",
+      text: "No dose change; titrate to blood pressure. Product information advises caution in severe liver disease."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Nitroglycerin and other uterine-relaxing agents are a risk factor for uterine atony.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 405",
+        pdf_page: 503,
+        quote: "agents (tocolytic therapy, halogenated anesthetics, nitroglycerin)"
+      }
+    ],
+    sources: ["Glyceryl trinitrate product information (SmPC)", "BNF", "LactMed (NIH)"]
+  },
+  tamsulosin: {
+    pregnancy: {
+      level: "caution",
+      text: "Not a pregnancy drug. For a ureteric stone in pregnancy there are only small case series; its safety and benefit are unknown and many specialists do not use it (Gabbe). Decide with the obstetrician and urologist."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No data. Rarely relevant (used mainly in men); if a breastfeeding woman needs it for a stone, prefer a short course and watch the baby for drowsiness or poor feeding."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change down to a creatinine clearance of about 10 mL/min; not studied below that."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "No change in mild or moderate liver disease. Avoid in severe liver disease (not studied; contraindicated in the UK product information)."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Only limited case series of tamsulosin in pregnancy; unknown safety and efficacy have discouraged its use.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 31 Surgery During Pregnancy, p. 593",
+        pdf_page: 727,
+        quote: "limited case series documenting successful use of tamsulosin"
+      },
+      {
+        book: "gabbe",
+        text: "Limited data suggest tamsulosin may be used as medical expulsive therapy in pregnancy.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 44 Kidney Disease in Pregnancy, p. 842",
+        pdf_page: 1036,
+        quote: "There are limited data that tamsulosin"
+      }
+    ],
+    sources: ["Tamsulosin product information (SmPC and US label)", "BNF"]
   }
 };

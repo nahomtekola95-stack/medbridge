@@ -235,7 +235,7 @@ window.SUBSTITUTES = {
     {use: "Sedation in rapid tranquillisation",with: "diazepam",note: "10 mg orally or 5–10 mg slowly IV. Never IM."},
     {use: "Anaphylaxis",with: "adrenaline",note: "Adrenaline IM is the essential treatment; an antihistamine is only for skin symptoms afterwards."},
     {use: "Allergic itch or urticaria",none: true,note: "Use chlorphenamine, cetirizine or loratadine if stocked (not in this app)."},
-    {use: "Nausea and vomiting",none: true,note: "Use metoclopramide or ondansetron if stocked (not in this app). Chlorpromazine is a last-line antiemetic because of hypotension."}
+    {use: "Nausea and vomiting",none: true,note: "Use metoclopramide or ondansetron if stocked. Chlorpromazine is a last-line antiemetic because of hypotension."}
   ],
   "lorazepam": [
     {use: "Acute agitation",with: "diazepam",note: "10 mg orally, or 5–10 mg slowly IV over 2 minutes. Never IM (erratic absorption)."},
@@ -409,7 +409,7 @@ window.SUBSTITUTES = {
     {
       use: "Secondary prophylaxis after a first VL episode",
       with: "amphotericin-b-deoxycholate",
-      note: "1 mg/kg every 3–4 weeks is the South-East Asia option. WHO's East Africa recommendation is pentamidine isethionate 4 mg/kg (300 mg adult) every 3–4 weeks — pentamidine is not yet in this app."
+      note: "1 mg/kg every 3–4 weeks is the South-East Asia option. WHO's East Africa recommendation is pentamidine isethionate 4 mg/kg (300 mg adult) every 3–4 weeks."
     }
   ],
   "amphotericin-b-deoxycholate": [
@@ -496,12 +496,12 @@ window.SUBSTITUTES = {
     {
       use: "Trachoma (active disease)",
       none: true,
-      note: "Azithromycin 20 mg/kg orally as a single dose (maximum 1 g; adults 1 g) is the preferred antibiotic and the one used for mass treatment — it is not in this app's drug list. Chloramphenicol 1 % eye ointment is a local alternative where it is stocked. If none of these exists, treat facial cleanliness and environment, epilate trichiatic lashes, and report the case to the woreda health office: individual antibiotics do not control trachoma."
+      note: "Azithromycin 20 mg/kg orally as a single dose (maximum 1 g; adults 1 g) is the preferred antibiotic and the one used for mass treatment. Chloramphenicol 1 % eye ointment is a local alternative where it is stocked. If none of these exists, treat facial cleanliness and environment, epilate trichiatic lashes, and report the case to the woreda health office: individual antibiotics do not control trachoma."
     },
     {
       use: "Established gonococcal or chlamydial ophthalmia neonatorum",
       none: true,
-      note: "There is NO topical substitute. This needs systemic treatment: ceftriaxone 50 mg/kg IM once (maximum 150 mg) for gonococcus, oral erythromycin 50 mg/kg/day in 4 doses for 14 days for chlamydia, plus hourly saline irrigation and treatment of the mother and her partner."
+      note: "There is NO topical substitute. This needs systemic treatment: ceftriaxone 25–50 mg/kg IM once (maximum 125 mg) for gonococcus, oral erythromycin 50 mg/kg/day in 4 doses for 14 days for chlamydia, plus hourly saline irrigation and treatment of the mother and her partner."
     }
   ],
   "ciprofloxacin-eye": [
@@ -517,14 +517,15 @@ window.SUBSTITUTES = {
     },
     {
       use: "Fungal keratitis",
-      none: true,
+      with: "natamycin",
       note: "Ciprofloxacin does nothing here and neither does any other antibacterial. The drug is natamycin 5 % suspension, which is rarely stocked. Suspect fungus after injury with plant or grain material, in a slow ulcer with feathery edges and satellite lesions. Refer urgently and do not give a steroid."
     },
     {
       use: "Prophylaxis after foreign-body removal or a corneal abrasion",
       with: "tetracycline-eye",
       note: "1 % ointment 3 times daily for 3–5 days is entirely adequate for this indication and is usually the cheaper item on the shelf."
-    }
+    },
+    { use: "Systemic infection — typhoid, dysentery, urinary infection", with: "ciprofloxacin", note: "The eye drops treat the eye only and give no useful blood level. A systemic infection needs oral or IV ciprofloxacin, which is a different preparation with its own page." }
   ],
   "atropine-eye": [
     {
@@ -745,6 +746,443 @@ window.SUBSTITUTES = {
       use: "Atrial fibrillation without a mechanical valve or mitral stenosis, when warfarin cannot be monitored",
       none: true,
       note: "A direct oral anticoagulant (apixaban, rivaroxaban, dabigatran, edoxaban) is the alternative if the patient can obtain and afford one; none is in this app. Aspirin is NOT an adequate substitute: it prevents fewer strokes than warfarin and is no safer for bleeding. Long-term enoxaparin is not a standard AF treatment. Refer to a centre with INR testing."
+    }
+  ],
+
+  /* ---- anaesthesia ---- */
+  suxamethonium: [
+    {
+      use: "Rapid-sequence intubation (full stomach)",
+      with: "vecuronium",
+      note: "0.15 mg/kg IV — slower onset and a block lasting more than an hour. Only with neostigmine and atropine in the room, a second airway plan on the trolley and someone to ventilate (theatre packs)."
+    },
+    {
+      use: "Patient at risk of hyperkalaemia or malignant hyperthermia",
+      with: "vecuronium",
+      note: "Same conditions as above. Or avoid a relaxant: ketamine with spontaneous breathing and local infiltration, or a spinal in a resuscitated patient."
+    },
+    {
+      use: "Any relaxant where the airway kit or a trained person is missing",
+      none: true,
+      note: "No substitute and nothing to improvise. Do not paralyse a patient you cannot intubate, ventilate and suction."
+    }
+  ],
+  neostigmine: [
+    {
+      use: "Reversal of vecuronium or another non-depolarising relaxant",
+      none: true,
+      note: "No substitute in this app. Sugammadex reverses vecuronium and rocuronium where available. Otherwise do not give a long-acting relaxant, or ventilate until it wears off with a named person at the bag."
+    }
+  ],
+  vecuronium: [
+    {
+      use: "Relaxation for abdominal surgery",
+      none: true,
+      note: "Atracurium, rocuronium or pancuronium at equivalent dose (not in this app) are a straight swap; pancuronium lasts longer. With no relaxant: ketamine with spontaneous breathing and local infiltration, or a spinal for lower abdominal surgery."
+    },
+    {
+      use: "Intubation only",
+      with: "suxamethonium",
+      note: "1–1.5 mg/kg IV; then let the patient breathe spontaneously under ketamine or a volatile agent."
+    }
+  ],
+  ephedrine: [
+    {
+      use: "Spinal or post-induction hypotension",
+      with: "adrenaline",
+      note: "Push-dose 10 mcg/mL (made in two dilution steps), 5–20 mcg IV — the app's caesarean case uses this."
+    },
+    {
+      use: "Hypotension with a slow pulse",
+      with: "atropine",
+      note: "0.5–0.6 mg IV restores rate; it does not treat vasodilatation, so fluids and a vasopressor may still be needed."
+    }
+  ],
+  propofol: [
+    {
+      use: "Induction of anaesthesia",
+      with: "ketamine",
+      note: "1–2 mg/kg IV (0.5–1 mg/kg if shocked). Better than propofol in the shocked or septic patient; expect secretions (atropine) and emergence reactions."
+    },
+    {
+      use: "Induction of anaesthesia",
+      with: "thiopental",
+      note: "Up to 4 mg/kg IV of 2.5 % (max 500 mg), titrated. Same hypotension risk; dangerous outside the vein or in an artery; not for maintenance."
+    },
+    {
+      use: "Refractory status epilepticus (ventilated)",
+      with: "midazolam",
+      note: "0.2 mg/kg IV then infusion (Harrison) — intubated, ventilated patient."
+    }
+  ],
+  thiopental: [
+    {
+      use: "Induction of anaesthesia",
+      with: "propofol",
+      note: "1.5–2.5 mg/kg in a fit adult, titrated; much less if elderly or shocked."
+    },
+    {
+      use: "Induction in shock, sepsis or asthma",
+      with: "ketamine",
+      note: "1–2 mg/kg IV (0.5–1 mg/kg if shocked)."
+    }
+  ],
+
+  /* ---- pain and gut ---- */
+  pethidine: [
+    {
+      use: "Severe pain, labour analgesia, intra-operative opioid",
+      with: "morphine",
+      note: "The better drug in almost every respect: no seizure-causing metabolite. Pethidine 100 mg ≈ morphine 10 mg. Labour: 2.5–5 mg IV titrated or 5–10 mg IM; reduce doses in kidney impairment."
+    },
+    {
+      use: "Analgesia for manual removal of placenta or uterine inversion",
+      with: "ketamine",
+      note: "The alternative the Ethiopian PPH guideline names. Preserves blood pressure and breathing in a bleeding woman; give with atropine or have suction ready."
+    },
+    {
+      use: "Background analgesia so less opioid is needed",
+      with: "paracetamol",
+      note: "1 g every 6 h by the clock."
+    }
+  ],
+  tramadol: [
+    {
+      use: "Moderate to severe pain",
+      with: "morphine",
+      note: "Low-dose oral or IM morphine (2.5–5 mg every 4 h in adults) is often safer than tramadol in patients on antidepressants or with seizure risk."
+    },
+    {
+      use: "Mild to moderate pain (step 1)",
+      with: "paracetamol",
+      note: "Regular 1 g every 6 h is the base for any step-2 drug."
+    },
+    {
+      use: "Mild to moderate pain (step 1)",
+      with: "ibuprofen",
+      note: "400 mg every 8 h with food if the NSAID check is passed (hydration, kidneys, ulcer, asthma, pregnancy)."
+    }
+  ],
+  diclofenac: [
+    {
+      use: "NSAID analgesia",
+      with: "ibuprofen",
+      note: "Oral 400 mg every 8 h. Same kidney, ulcer, asthma and pregnancy cautions, but lower cardiovascular risk."
+    },
+    {
+      use: "Analgesia when an NSAID is unsafe (hypovolaemia, sepsis, AKI, ulcer, late pregnancy)",
+      with: "paracetamol",
+      note: "1 g every 6 h regularly, plus wound infiltration with bupivacaine and titrated morphine. Not a loss."
+    }
+  ],
+  ibuprofen: [
+    {
+      use: "Fever and pain in children",
+      with: "paracetamol",
+      note: "15 mg/kg every 6 h; safer when the child is dehydrated, has chickenpox, or has NSAID-sensitive asthma."
+    },
+    {
+      use: "Adult NSAID analgesia",
+      with: "diclofenac",
+      note: "50 mg every 8 h orally, or 100 mg rectally; maximum 150 mg/day. Same cautions; avoid in heart disease."
+    }
+  ],
+  metoclopramide: [
+    {
+      use: "Post-operative nausea and vomiting",
+      with: "ondansetron",
+      note: "4 mg IV; better antiemetic for PONV, no dystonia. Watch QT drugs and low potassium."
+    },
+    {
+      use: "PONV prophylaxis",
+      with: "dexamethasone",
+      note: "4–8 mg IV at induction. Too slow for rescue."
+    },
+    {
+      use: "PONV rescue or drug-induced nausea",
+      with: "haloperidol",
+      note: "0.5–1 mg IV slowly or IM. Also a dopamine blocker, so do not give with metoclopramide."
+    },
+    {
+      use: "Nausea and vomiting of pregnancy",
+      with: "promethazine",
+      note: "25 mg orally or deep IM. Sedating; never under 2 years."
+    }
+  ],
+  ondansetron: [
+    { use: "PONV prophylaxis", with: "dexamethasone", note: "4–8 mg IV at induction." },
+    {
+      use: "PONV rescue",
+      with: "haloperidol",
+      note: "0.5–1 mg IV slowly or IM. Also prolongs QT at higher doses."
+    },
+    {
+      use: "Nausea when obstruction is excluded",
+      with: "metoclopramide",
+      note: "10 mg slowly IV; never in possible bowel obstruction; dystonia risk in young people."
+    },
+    {
+      use: "Nausea and vomiting of pregnancy",
+      with: "promethazine",
+      note: "First-line; 25 mg orally or deep IM."
+    }
+  ],
+  omeprazole: [
+    {
+      use: "IV omeprazole stock-out",
+      none: true,
+      note: "Give omeprazole orally (40 mg twice daily for a bleed) or by NG tube as a 2 mg/mL suspension in 8.4 % sodium bicarbonate — the same drug, a different route. See the Omeprazole page."
+    },
+    {
+      use: "Acid suppression with no PPI at all",
+      none: true,
+      note: "Famotidine or cimetidine (not in this app) are the remaining H2 blockers. Ranitidine was withdrawn in 2020 and must not be used. An H2 blocker is weaker than a PPI for a bleeding ulcer."
+    },
+    {
+      use: "Immediate acid neutralisation before emergency anaesthesia",
+      none: true,
+      note: "30 mL of 0.3 M sodium citrate by mouth just before induction (not in this app). A PPI takes 30–60 minutes or longer to act."
+    }
+  ],
+
+  /* ---- anti-infectives ---- */
+  ciprofloxacin: [
+    {
+      use: "Shigella / bloody diarrhoea",
+      with: "azithromycin",
+      note: "Child 12 mg/kg on day 1, then 6 mg/kg daily for 4 more days; adult 1 g (confirm with protocol). Also the drug to switch to when ciprofloxacin has not worked after 48 h."
+    },
+    {
+      use: "Shigella / bloody diarrhoea in a sick or vomiting child",
+      with: "ceftriaxone",
+      note: "50–100 mg/kg once daily IM or IV for 3 days."
+    },
+    {
+      use: "Typhoid (uncomplicated)",
+      with: "azithromycin",
+      note: "Adult 1 g daily for 5 days; child 10–20 mg/kg daily (max 1 g) for 7 days. Works against fluoroquinolone-resistant strains."
+    },
+    {
+      use: "Typhoid (severe)",
+      with: "ceftriaxone",
+      note: "2 g IV daily in adults for 10–14 days (Harrison); child 50–80 mg/kg daily. Cefotaxime is an alternative."
+    },
+    {
+      use: "Corneal ulcer or bacterial conjunctivitis",
+      with: "ciprofloxacin-eye",
+      note: "The eye needs the 0.3 % EYE DROP, a different product. Tablets do not treat a corneal ulcer, and the IV solution must never go in the eye."
+    }
+  ],
+  azithromycin: [
+    {
+      use: "Trachoma (active TF/TI)",
+      with: "tetracycline-eye",
+      note: "1 % ointment twice daily to both eyes for 6 weeks. Effective but few families complete it; also the treatment for infants under 6 months."
+    },
+    {
+      use: "Chlamydial conjunctivitis or pneumonia in an infant",
+      with: "erythromycin",
+      note: "50 mg/kg/day in 4 doses for 14 days. More pyloric stenosis risk in the first 2 weeks, and adherence is harder."
+    },
+    {
+      use: "Typhoid",
+      with: "ceftriaxone",
+      note: "IV or IM; the choice for severe typhoid in any case."
+    },
+    {
+      use: "Typhoid where the strain is known to be susceptible",
+      with: "ciprofloxacin",
+      note: "500 mg twice daily for 5–7 days (adult). Do not use blind where fluoroquinolone resistance is common."
+    },
+    {
+      use: "Pertussis (infant over 2 months, macrolide not possible)",
+      with: "cotrimoxazole",
+      note: "Trimethoprim 8 mg/kg/day + sulfamethoxazole 40 mg/kg/day in 2 doses for 14 days. Never under 2 months."
+    },
+    {
+      use: "Chlamydia in pregnancy",
+      with: "ampicillin",
+      note: "Oral amoxicillin 500 mg three times daily for 7 days is the recommended alternative (amoxicillin is the oral form in the ampicillin entry)."
+    }
+  ],
+  erythromycin: [
+    {
+      use: "Chlamydial conjunctivitis or pneumonia in an infant",
+      with: "azithromycin",
+      note: "20 mg/kg once daily for 3 days — preferred if available: shorter and less linked to pyloric stenosis."
+    },
+    { use: "Pertussis", with: "azithromycin", note: "The drug of choice at all ages (Nelson)." },
+    {
+      use: "Preterm prelabour rupture of membranes",
+      with: "azithromycin",
+      note: "Listed by Gabbe as an acceptable alternative during shortages; oral ampicillin/amoxicillin is another. Never amoxicillin-clavulanate (necrotising enterocolitis)."
+    },
+    {
+      use: "Preterm prelabour rupture of membranes",
+      with: "ampicillin",
+      note: "IV ampicillin, or oral amoxicillin — the other arm of the NICHD regimen."
+    }
+  ],
+  cotrimoxazole: [
+    {
+      use: "PCP / HIV prophylaxis (cotrimoxazole preventive therapy)",
+      none: true,
+      note: "No substitute in this app. The alternatives — dapsone 100 mg daily (check G6PD), atovaquone, or monthly aerosolised pentamidine with a special nebuliser — need referral or the HIV programme. Do not leave the patient unprotected: report the stock-out the same day."
+    },
+    {
+      use: "Severe PCP treatment when cotrimoxazole cannot be used",
+      with: "pentamidine",
+      note: "4 mg/kg IV once daily over at least 60 min for 21 days — toxic (hypotension, hypoglycaemia, kidney injury, arrhythmia)."
+    },
+    {
+      use: "Shigella / dysentery",
+      with: "ciprofloxacin",
+      note: "WHO first line: 15 mg/kg twice daily for 3 days (adult 500 mg). Cotrimoxazole should not be used empirically anyway."
+    }
+  ],
+  cefotaxime: [
+    {
+      use: "Neonatal sepsis",
+      with: "ampicillin",
+      note: "Ampicillin plus gentamicin remains the first-line regimen; use it if cefotaxime is unavailable."
+    },
+    {
+      use: "Neonatal or child sepsis/meningitis — term baby, not jaundiced, no calcium-containing IV fluids",
+      with: "ceftriaxone",
+      note: "50 mg/kg once daily (meningitis 100 mg/kg/day). Never with calcium in a neonate; avoid in jaundice and under 41 weeks corrected age."
+    },
+    {
+      use: "Gonococcal ophthalmia neonatorum",
+      with: "ceftriaxone",
+      note: "25–50 mg/kg IM or IV once, maximum 125 mg — only if the baby is not jaundiced or preterm and no calcium is running."
+    },
+    {
+      use: "Meningitis or sepsis in a child or adult",
+      with: "ceftriaxone",
+      note: "The usual choice outside the neonatal period; once or twice daily."
+    }
+  ],
+  fluconazole: [
+    {
+      use: "Cryptococcal meningitis (induction)",
+      with: "liposomal-amphotericin-b",
+      note: "Single 10 mg/kg dose with flucytosine and fluconazole is the WHO preferred induction — fluconazole is part of it, not replaced by it."
+    },
+    {
+      use: "Cryptococcal meningitis (induction) without liposomal amphotericin",
+      with: "amphotericin-b-deoxycholate",
+      note: "1 mg/kg/day for 7 days (WHO via Harrison), with fluconazole and flucytosine. Watch potassium and creatinine."
+    },
+    {
+      use: "Oral or oesophageal candidiasis",
+      none: true,
+      note: "No drug substitute in this app. Nystatin suspension or miconazole oral gel treat oral thrush; oesophageal candidiasis needs an azole (itraconazole) or referral."
+    },
+    {
+      use: "Vaginal candidiasis (and always in pregnancy)",
+      none: true,
+      note: "Use a topical azole (clotrimazole or miconazole pessary/cream) — not in this app's list; preferred to fluconazole in pregnancy."
+    },
+    {
+      use: "Fungal keratitis",
+      with: "natamycin",
+      note: "Fluconazole does not cover the moulds that cause most fungal corneal ulcers. Natamycin 5 % drops are the treatment."
+    }
+  ],
+  pentamidine: [
+    {
+      use: "VL–HIV secondary prophylaxis",
+      with: "amphotericin-b-deoxycholate",
+      note: "1 mg/kg every 3–4 weeks is the South-East Asia option; WHO prefers pentamidine in East Africa and a drug different from the one used for the primary episode."
+    },
+    {
+      use: "VL–HIV secondary prophylaxis",
+      with: "liposomal-amphotericin-b",
+      note: "An alternative where pentamidine is unavailable; agree the dose and interval with the VL treatment centre."
+    },
+    {
+      use: "PCP treatment",
+      with: "cotrimoxazole",
+      note: "The first-choice treatment: trimethoprim 5 mg/kg every 6–8 h for 21 days. Pentamidine is only for when cotrimoxazole cannot be used."
+    }
+  ],
+  natamycin: [
+    {
+      use: "Fungal keratitis",
+      none: true,
+      note: "No safe substitute at ward level: not ciprofloxacin or other antibacterial drops, not fluconazole (does not cover the moulds), never a steroid, and no home-made drops. Give atropine 1 % and analgesia, do not pad, and refer the same day to an eye unit with natamycin or another antifungal drop."
+    }
+  ],
+
+  /* ---- fluids and other ---- */
+  "normal-saline": [
+    {
+      use: "Resuscitation, dehydration (Plan C), burns",
+      with: "ringers-lactate",
+      note: "Same volumes and rates. Ringer's lactate is the better fluid for large volumes, sepsis and burns. Do not run it in a line with blood, or with ceftriaxone in neonates (contains calcium)."
+    },
+    {
+      use: "Vomiting with low chloride and alkalosis (gastric outlet obstruction, pyloric stenosis)",
+      with: "ringers-lactate",
+      note: "Acceptable to restore the circulation if saline has run out, but it contains less chloride and its lactate becomes bicarbonate, so it corrects the alkalosis poorly. Return to saline, with potassium, as soon as it is available."
+    },
+    {
+      use: "Line with blood; diluent for phenytoin",
+      none: true,
+      note: "Nothing else may share a line with blood, and phenytoin crystallises in glucose. Use a fresh unopened saline bag or ampoule for one patient only. If there is truly no saline: run blood through its own cannula with nothing else in it, and do not dilute phenytoin in any glucose-containing fluid — ask the pharmacist, or use another anticonvulsant from the seizure protocol (phenobarbital)."
+    },
+    {
+      use: "Flushes and drug dilution",
+      none: true,
+      note: "Use a single-patient 100 or 500 mL saline bag, labelled and discarded within 24 h (see method). Never a shared ward bottle. Water for injection only to reconstitute powders, never as a flush in volume. 5 % dextrose only for drugs labelled as compatible with it."
+    }
+  ],
+  protamine: [
+    {
+      use: "Bleeding on unfractionated heparin or enoxaparin",
+      none: true,
+      note: "No substitute. Stop the heparin (UFH effect is largely gone 2–3 h after an infusion stops; enoxaparin lasts much longer, especially in kidney failure), local pressure and packing, tranexamic acid for surgical or mucosal bleeding, and blood for losses. Fresh frozen plasma and vitamin K do NOT reverse heparin. Transfer if bleeding continues."
+    }
+  ],
+  "tetanus-toxoid": [
+    {
+      use: "Active immunisation after a wound",
+      none: true,
+      note: "TT and Td are interchangeable for tetanus (WHO prefers Td). Children under 7: the DTP-containing vaccine of the national schedule. If no tetanus-containing vaccine is in stock, give the TIG or antitoxin if needed, and send the patient with a written note to the nearest EPI site within days — the first dose cannot wait for the next routine session."
+    },
+    {
+      use: "Passive immunisation (tetanus-prone wound, non-immune patient)",
+      none: true,
+      note: "Human TIG 250 IU first choice; if unavailable, IVIG where it exists, or equine tetanus antitoxin after a sensitivity test with adrenaline ready. If none: thorough debridement, the toxoid, and a clear warning about early tetanus signs. Antibiotics are not a substitute."
+    }
+  ],
+  "glyceryl-trinitrate": [
+    {
+      use: "Uterine relaxation to replace an inverted uterus",
+      with: "magnesium-sulfate",
+      note: "Williams lists IV magnesium sulfate (and terbutaline, not in this app) as an alternative relaxant. It acts more slowly than GTN. Use the loading dose on the Magnesium sulfate page with calcium gluconate at hand; general anaesthesia with a halogenated agent is the other option. Oxytocin as soon as the uterus is replaced."
+    },
+    {
+      use: "Acute cardiogenic pulmonary oedema",
+      with: "furosemide",
+      note: "Sit upright, oxygen and IV furosemide are the backbone anyway; without GTN the preload reduction is slower. Morphine in small doses only, if at all."
+    },
+    {
+      use: "Angina attack",
+      none: true,
+      note: "No nitrate substitute in this app. Stop and rest; if pain lasts more than 15–20 minutes treat as an acute coronary syndrome: aspirin, ECG, oxygen if hypoxic, refer."
+    }
+  ],
+  tamsulosin: [
+    {
+      use: "Acute urinary retention or BPH symptoms",
+      none: true,
+      note: "Another alpha-blocker on your formulary (doxazosin, terazosin, prazosin, alfuzosin) at its lowest starting dose at bedtime (first-dose fainting). None available: keep the catheter in longer and refer for urology."
+    },
+    {
+      use: "Distal ureteric stone",
+      none: true,
+      note: "No expulsive-therapy substitute in this app. Analgesia (an NSAID if kidney function allows), strain the urine, and the same-day return rules for fever, vomiting or uncontrolled pain. Most stones under 5 mm pass anyway."
     }
   ]
 };

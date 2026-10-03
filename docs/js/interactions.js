@@ -1056,5 +1056,1176 @@ window.INTERACTIONS = [
         quote: "3.5 and 10, warfarin should be withheld until the INR returns to the"
       }
     ]
+  },
+
+  /* ---- anaesthesia ---- */
+  {
+    a: ["neostigmine"],
+    b: ["suxamethonium"],
+    severity: "major",
+    effect: "Neostigmine inhibits plasma cholinesterase, the enzyme that breaks suxamethonium down. Suxamethonium given after neostigmine paralyses for much longer than 5–8 minutes, and neostigmine given to 'reverse' suxamethonium deepens and prolongs the block.",
+    action: "Never give neostigmine to reverse suxamethonium. If suxamethonium is needed after neostigmine has been given (re-intubation in recovery), expect a long block and keep ventilating with sedation until breathing returns. Once neostigmine has worn off (allow at least 1–2 hours), suxamethonium behaves normally again.",
+    ref: "BNF interactions (parasympathomimetics–muscle relaxants: neostigmine enhances the effect of suxamethonium)"
+  },
+  {
+    a: ["suxamethonium", "vecuronium"],
+    b: ["magnesium-sulfate"],
+    severity: "major",
+    effect: "Magnesium reduces acetylcholine release and muscle excitability: it deepens and prolongs neuromuscular block, especially from non-depolarising relaxants such as vecuronium. Reversal is weaker and residual paralysis after extubation more likely — a real risk at caesarean in pre-eclampsia.",
+    action: "When magnesium is running (or was given in the last few hours): use the normal suxamethonium dose for intubation, but give vecuronium only if it is really needed and at a reduced dose, with no top-ups late in the operation; confirm full recovery before extubation and watch breathing closely in recovery. Do not stop magnesium for eclampsia to make anaesthesia easier. Calcium gluconate 10 mL of 10 % IV reverses dangerous magnesium weakness. When magnesium is stopped, the effect fades over hours as the level falls — longer in kidney impairment.",
+    ref: "BNF interactions (magnesium salts, parenteral–muscle relaxants: effect of non-depolarising and depolarising relaxants enhanced)"
+  },
+  {
+    a: ["vecuronium"],
+    b: ["gentamicin"],
+    severity: "moderate",
+    effect: "Aminoglycosides potentiate non-depolarising neuromuscular block and make neostigmine reversal less effective; prolonged weakness or apnoea after surgery can follow, especially with magnesium as well.",
+    action: "When gentamicin is started during or shortly before a vecuronium anaesthetic (e.g. prophylaxis at induction): use the smallest effective vecuronium doses, confirm full recovery with clinical tests before extubation, and watch breathing in recovery. Calcium gluconate may partly help. When gentamicin is stopped, its effect on the block fades as levels fall over hours (longer in kidney impairment).",
+    ref: "Gabbe 9th ed. 2025, ch. 7, p. 130; BNF interactions (aminoglycosides–non-depolarising muscle relaxants)",
+    refs: [
+      {
+        book: "gabbe",
+        text: "Aminoglycosides potentiate curare-like (non-depolarising) neuromuscular block.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 130",
+        pdf_page: 163,
+        quote: "Neuromuscular blockade may be potentiated by the combined use of aminoglycosides and curariform drugs"
+      }
+    ]
+  },
+  {
+    a: ["vecuronium"],
+    b: ["dexamethasone", "hydrocortisone"],
+    severity: "moderate",
+    effect: "Prolonged neuromuscular block in critical illness combined with high-dose corticosteroids contributes to myopathy and weakness lasting weeks. A single anaesthetic dose of dexamethasone (as listed in the theatre packs) does not matter.",
+    action: "No action for single theatre doses. When high-dose steroids are started in a patient who is being kept paralysed in ICU, avoid continuous paralysis where possible, stop the relaxant daily to check, and use the lowest effective dose. When either is stopped, expect recovery of strength over days to weeks; physiotherapy.",
+    ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, p. 671",
+    refs: [
+      {
+        book: "nelson",
+        text: "Prolonged non-depolarising block in critical illness contributes to myopathy, especially with high-dose corticosteroids.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 671",
+        pdf_page: 717,
+        quote: "critical illness may contribute to myopathy, especially when combined"
+      }
+    ]
+  },
+  {
+    a: ["vecuronium"],
+    b: ["phenytoin", "carbamazepine"],
+    severity: "moderate",
+    effect: "Long-term phenytoin or carbamazepine makes vecuronium work less well and wear off sooner (resistance). Acute IV phenytoin given during an anaesthetic can instead enhance the block.",
+    action: "In a patient taking either drug long-term, expect to need more frequent top-ups; titrate to clinical relaxation, not to the usual schedule. After acute IV phenytoin, check recovery carefully before extubation. When the anticonvulsant has been stopped for some weeks, doses return to normal. Do not stop an anticonvulsant before surgery to avoid this.",
+    ref: "BNF interactions (antiepileptics–non-depolarising muscle relaxants)"
+  },
+  {
+    a: ["propofol", "thiopental"],
+    b: ["morphine", "midazolam", "diazepam", "lorazepam", "phenobarbital"],
+    severity: "major",
+    effect: "Additive and often synergistic respiratory depression, apnoea and hypotension. Expected and used deliberately in theatre, but the induction dose needed is lower, and outside theatre (status epilepticus after benzodiazepines, ward sedation) the combination can stop breathing.",
+    action: "When an opioid or benzodiazepine has been given (premedication, seizure treatment, analgesia): reduce the induction dose and give it more slowly; have bag-valve-mask, oxygen and suction ready; monitor breathing and SpO2 until fully awake. Never use propofol or thiopental for seizures after benzodiazepines unless the patient will be intubated and ventilated. When the opioid or benzodiazepine has worn off, the usual induction dose applies.",
+    ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, pp. 670–671; BNF",
+    refs: [
+      {
+        book: "nelson",
+        text: "Other IV anaesthetics potentiate opioid-induced respiratory depression.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 670",
+        pdf_page: 716,
+        quote: "Other inhalational or IV anesthetics generally potentiate opioid-­induced"
+      },
+      {
+        book: "nelson",
+        text: "Benzodiazepines are synergistic with opioids and barbiturates in respiratory depression.",
+        ref: "Nelson 22nd ed. 2024, ch. 91, p. 671",
+        pdf_page: 717,
+        quote: "In high doses, benzodiazepines cause respiratory depression and are synergistic with opioids"
+      }
+    ]
+  },
+  {
+    a: ["propofol", "thiopental"],
+    b: ["labetalol", "hydralazine", "nifedipine", "propranolol"],
+    severity: "moderate",
+    effect: "General anaesthetics enhance the hypotensive effect of antihypertensives; beta-blockers also blunt the heart-rate response to the fall in BP.",
+    action: "Do not stop the antihypertensive before surgery (rebound hypertension, especially after propranolol). When the patient is taking one: smaller, slower induction doses, IV fluid running, ephedrine or push-dose adrenaline drawn up, BP every 1–2 minutes after induction. In severe pre-eclampsia the opposite problem — a surge of BP at intubation — also needs planning with the anaesthetist.",
+    ref: "BNF interactions (anaesthetics, general–antihypertensives: enhanced hypotensive effect)"
+  },
+  {
+    a: ["ephedrine"],
+    b: ["ergometrine"],
+    severity: "major",
+    effect: "Additive vasoconstriction and BP rise: severe hypertension, stroke and ischaemia — the same risk the app lists for ergometrine with adrenaline, noradrenaline and dopamine. The combination occurs naturally at caesarean under spinal: ephedrine for hypotension, then ergometrine for bleeding.",
+    action: "When ephedrine has been given in the last 30–60 minutes, check the BP before giving ergometrine and prefer oxytocin, misoprostol or tranexamic acid for haemorrhage. If ergometrine has already been given, use the smallest ephedrine dose that works and recheck the BP after 2 minutes. Once neither has been given for several hours, there is no interaction.",
+    ref: "BNF interactions (ergometrine–sympathomimetics); consistent with this app's ergometrine–vasopressor rule"
+  },
+  {
+    a: ["suxamethonium"],
+    b: ["digoxin"],
+    severity: "moderate",
+    effect: "Suxamethonium in a patient taking digoxin can cause ventricular arrhythmias, made worse by the potassium shift it causes.",
+    action: "In a patient on digoxin: prefer an alternative relaxant if one is safe; if suxamethonium is needed, ECG monitoring if available, correct potassium first, atropine ready. Stopping digoxin before an emergency is not practical; after it has been stopped for about a week, the risk falls.",
+    ref: "BNF interactions (cardiac glycosides–suxamethonium: risk of ventricular arrhythmias)"
+  },
+  {
+    a: ["neostigmine"],
+    b: ["propranolol", "labetalol"],
+    severity: "moderate",
+    effect: "Beta-blockers add to the bradycardia that neostigmine causes and blunt the heart's response to atropine; propranolol may also oppose neostigmine's effect in myasthenia.",
+    action: "In a patient on a beta-blocker: always give atropine before neostigmine and watch the pulse for 5 minutes; have more atropine ready. Do not stop the beta-blocker before surgery. Once the beta-blocker has been stopped for a few days, neostigmine behaves normally.",
+    ref: "BNF interactions (beta-blockers–parasympathomimetics)"
+  },
+
+  /* ---- pain and gut ---- */
+  {
+    a: ["pethidine"],
+    b: ["diazepam", "midazolam", "lorazepam", "chlordiazepoxide", "phenobarbital"],
+    severity: "major",
+    effect: "Synergistic respiratory depression, sedation and hypotension; apnoea can occur at doses safe for either drug alone. Pethidine with slow IV diazepam is nevertheless the pairing the Ethiopian PPH guideline gives for manual removal and uterine inversion.",
+    action: "When the sedative is STARTED in a patient who has had pethidine (or the reverse): give one drug at a time in small slow increments, start the benzodiazepine low (diazepam 2.5–5 mg), keep a bag-valve-mask and drawn-up naloxone at the bedside, and watch breathing continuously for at least an hour. When either is STOPPED, sedation from the other may persist for hours (diazepam, phenobarbital and norpethidine are long-acting) — keep observing until the patient is fully awake.",
+    ref: "Harrison 22nd ed. 2025, ch. 14 Pain, p. 98; BNF interactions (opioids–benzodiazepines)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Co-administration of benzodiazepines with opioids is particularly likely to produce respiratory depression.",
+        ref: "Harrison 22nd ed. 2025, ch. 14 Pain: Pathophysiology and Management, p. 98",
+        pdf_page: 141,
+        quote: "Co-administration of benzodiazepines is particularly likely to"
+      }
+    ]
+  },
+  {
+    a: ["pethidine"],
+    b: ["tramadol"],
+    severity: "major",
+    effect: "Two opioids that both lower the seizure threshold and both have serotonergic actions: additive respiratory depression, seizures (norpethidine plus tramadol) and serotonin toxicity. Theatre lists that name pethidine, tramadol and morphine for one case invite this.",
+    action: "Do not give both. When tramadol is STARTED after pethidine (or the reverse), choose one opioid — preferably morphine — and stop the other. If both have already been given, watch for twitching, agitation, clonus and slow breathing for 6–12 hours with naloxone and diazepam available. When one is STOPPED, the remaining one is dosed alone; no change is needed beyond normal titration.",
+    ref: "Harrison 22nd ed. 2025, ch. 436 Table 436-5, p. 3414 (meperidine and tramadol cause seizures); ch. 470 Table 470-4, p. 3715",
+    refs: [
+      {
+        book: "harrison",
+        text: "Drugs that can cause seizures include meperidine, fentanyl and tramadol.",
+        ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, Table 436-5, p. 3414",
+        pdf_page: 3457,
+        quote: "Meperidine Fentanyl Tramadol Local anesthetics"
+      }
+    ]
+  },
+  {
+    a: ["pethidine"],
+    b: ["fluoxetine", "sertraline", "escitalopram"],
+    severity: "moderate",
+    effect: "Pethidine has serotonergic activity; with an SSRI it can precipitate serotonin syndrome (agitation, tremor, sweating, clonus, fever). It is not a reason to stop the antidepressant.",
+    action: "When pethidine would be STARTED in a patient taking an SSRI, use morphine instead — it has no serotonergic action. If pethidine has already been given, watch for clonus, sweating and agitation for 12 hours (see Serotonin syndrome). When the SSRI has been STOPPED recently, the risk persists for about 5 weeks after fluoxetine and about 1–2 weeks after sertraline or escitalopram.",
+    ref: "Harrison 22nd ed. 2025, ch. 470 Table 470-4, p. 3715; preoperative medicines guidance (UKCPA)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Serotonin syndrome agents include meperidine and SSRIs.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3715",
+        pdf_page: 3758,
+        quote: "meperidine, MAO inhibitors, selective serotonin (5-HT) reuptake inhibitors"
+      }
+    ]
+  },
+  {
+    a: ["pethidine"],
+    b: ["promethazine", "chlorpromazine", "haloperidol"],
+    severity: "moderate",
+    effect: "Additive sedation, respiratory depression and hypotension. Pethidine with promethazine 25 mg is a standard labour combination (Williams), so the combination is acceptable when doses are kept low and the patient is watched.",
+    action: "When the phenothiazine or haloperidol is STARTED with pethidine: use the lowest dose (promethazine 25 mg, haloperidol 0.5–1 mg), give each by its own syringe, and check breathing rate and sedation 30 minutes after each dose. When it is STOPPED, no pethidine change is needed. Avoid adding a third sedative.",
+    ref: "Williams Obstetrics 25th ed. 2018, ch. 25, Table 25-3, pdf p. 1071; BNF interactions",
+    refs: [
+      {
+        book: "williams",
+        text: "Meperidine 50–100 mg with promethazine 25 mg may be given IM every 2–4 hours in labour.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, Table 25-3, pdf p. 1071",
+        pdf_page: 1071,
+        quote: "Meperidine, 50 to 100 mg, with promethazine, 25 mg, may be administered"
+      }
+    ]
+  },
+  {
+    a: ["pethidine", "tramadol"],
+    b: ["methadone"],
+    severity: "major",
+    effect: "Additive opioid respiratory depression on top of methadone's long, accumulating action; serotonergic and seizure-threshold effects add to methadone's own QT and serotonin risks.",
+    action: "In a patient on methadone maintenance needing acute pain relief: continue the usual methadone dose, add regular paracetamol and an NSAID if safe, and if an opioid is needed use titrated morphine with close observation rather than pethidine or tramadol. When either is STARTED, monitor breathing and sedation for 24 hours. When it is STOPPED, keep the methadone dose unchanged; confirm with the methadone programme.",
+    ref: "BNF interactions (opioids); Harrison 22nd ed. 2025, ch. 470 Table 470-4, p. 3715"
+  },
+  {
+    a: ["pethidine", "tramadol"],
+    b: ["naltrexone"],
+    severity: "major",
+    effect: "Naltrexone blocks opioid receptors for 24–72 hours: pethidine and tramadol give little analgesia, and attempts to overcome the block with large doses can cause sudden respiratory depression when it wears off. Giving naltrexone to someone still taking an opioid precipitates withdrawal.",
+    action: "When an opioid is needed in a patient on naltrexone: use paracetamol, NSAIDs, regional or local anaesthesia, and ketamine; do not escalate the opioid. When naltrexone is STOPPED, opioid sensitivity returns within 72 hours — use normal (not escalated) doses. Do not START naltrexone until 7–10 days after the last opioid dose.",
+    ref: "BNF interactions (naltrexone–opioid analgesics); naltrexone product information"
+  },
+  {
+    a: ["pethidine", "tramadol"],
+    b: ["morphine"],
+    severity: "moderate",
+    effect: "Stacking opioids: equianalgesic doses of all opioids cause the same respiratory depression, and adding a second opioid adds pethidine's norpethidine or tramadol's seizure and serotonin risks with little extra analgesia.",
+    action: "Use ONE opioid, preferably morphine, titrated to effect. When morphine is STARTED in a patient who has had pethidine or tramadol, start at the low end and wait for the previous dose to wear off (pethidine 2–4 h, tramadol 4–6 h). When the other opioid is STOPPED, re-titrate morphine; pain may need a slightly higher morphine dose.",
+    ref: "Schwartz's Principles of Surgery 11th ed., ch. 46, p. 2031",
+    refs: [
+      {
+        book: "schwartz",
+        text: "Equianalgesic doses of all opioids cause equal respiratory depression.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2031",
+        pdf_page: 2058,
+        quote: "analgesic doses of opioids result in equal degrees of respiratory depression"
+      }
+    ]
+  },
+  {
+    a: ["tramadol"],
+    b: ["fluoxetine", "sertraline", "escitalopram", "amitriptyline", "imipramine"],
+    severity: "major",
+    effect: "Serotonin syndrome (tramadol blocks serotonin reuptake), and a higher seizure risk — tricyclics and SSRIs also lower the seizure threshold. Fluoxetine and, less so, other SSRIs inhibit CYP2D6, so tramadol is converted less to its active opioid metabolite: less pain relief and more serotonergic parent drug.",
+    action: "Avoid: use paracetamol, an NSAID if safe, or morphine. When tramadol must be STARTED in a patient on one of these, use 50 mg doses, a maximum of 200 mg/day, and teach the patient and nurse the early signs (tremor, sweating, agitation, diarrhoea, clonus). When the antidepressant is STARTED in a patient already on tramadol, stop the tramadol. When the antidepressant has been STOPPED, wait 5 weeks after fluoxetine (2 weeks after the others) before regarding the pair as safe.",
+    ref: "Harrison 22nd ed. 2025, ch. 489 Caring for the Geriatric Patient, p. 3883; ch. 470 Table 470-4, p. 3715",
+    refs: [
+      {
+        book: "harrison",
+        text: "Tramadol must be used cautiously with SSRIs and SNRIs to prevent serotonergic toxicity.",
+        ref: "Harrison 22nd ed. 2025, ch. 489 Caring for the Geriatric Patient, p. 3883",
+        pdf_page: 3926,
+        quote: "must be used cautiously with selective serotonin reuptake"
+      },
+      {
+        book: "harrison",
+        text: "Serotonin syndrome is caused by SSRIs, tricyclic antidepressants and tramadol, among others.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3715",
+        pdf_page: 3758,
+        quote: "reuptake inhibitors, tricyclic antidepressants, tramadol"
+      }
+    ]
+  },
+  {
+    a: ["tramadol"],
+    b: ["diazepam", "midazolam", "lorazepam", "chlordiazepoxide", "phenobarbital"],
+    severity: "major",
+    effect: "Additive respiratory depression and sedation (opioid plus sedative). During alcohol or benzodiazepine withdrawal, tramadol also lowers the seizure threshold.",
+    action: "When the sedative is STARTED in a patient on tramadol (or the reverse): reduce both doses, avoid in alcohol withdrawal, and check breathing and sedation 30–60 minutes after each dose; keep naloxone at hand. When the sedative is STOPPED abruptly after regular use (withdrawal), stop tramadol too because withdrawal plus tramadol raises seizure risk.",
+    ref: "Harrison 22nd ed. 2025, ch. 14 Pain, p. 98; US FDA boxed warning (opioids with benzodiazepines), 2016",
+    refs: [
+      {
+        book: "harrison",
+        text: "Co-administration of benzodiazepines with opioids is particularly likely to produce respiratory depression.",
+        ref: "Harrison 22nd ed. 2025, ch. 14 Pain: Pathophysiology and Management, p. 98",
+        pdf_page: 141,
+        quote: "produce respiratory depression and should be avoided"
+      }
+    ]
+  },
+  {
+    a: ["tramadol"],
+    b: ["carbamazepine"],
+    severity: "moderate",
+    effect: "Carbamazepine induces tramadol metabolism and markedly reduces its analgesic effect; tramadol lowers the seizure threshold in a patient whose epilepsy needs carbamazepine.",
+    action: "Avoid: use paracetamol, an NSAID if safe, or morphine. When carbamazepine is STARTED in a patient on tramadol, expect pain to return within 1–2 weeks. When carbamazepine is STOPPED, induction fades over 2–4 weeks and tramadol levels rise — do not keep an escalated tramadol dose.",
+    ref: "BNF interactions (carbamazepine–tramadol); tramadol product information"
+  },
+  {
+    a: ["tramadol"],
+    b: ["warfarin"],
+    severity: "moderate",
+    effect: "Tramadol can raise the INR and cause bleeding in patients on warfarin.",
+    action: "Prefer paracetamol for pain in patients on warfarin. When tramadol is STARTED for more than a few days, check the INR within 3–7 days. When tramadol is STOPPED after regular use, recheck the INR within a week, as it may fall.",
+    ref: "BNF interactions (tramadol–coumarins)"
+  },
+  {
+    a: ["diclofenac"],
+    b: ["ibuprofen"],
+    severity: "major",
+    effect: "Two NSAIDs together give no extra pain relief and add ulcer, bleeding and kidney risk; multiple NSAIDs are an established risk factor for NSAID ulcer complications.",
+    action: "Never prescribe both. When one is STARTED, stop the other first — check the theatre and ward charts, where diclofenac IM and oral ibuprofen are often written separately. When one is STOPPED, the other may be started at the next due time; no wash-out is needed.",
+    ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease, p. 2521",
+    refs: [
+      {
+        book: "harrison",
+        text: "Established risk factors include high-dose NSAIDs and multiple NSAIDs.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2521",
+        pdf_page: 2564,
+        quote: "dose NSAIDs, multiple NSAIDs, concomitant use of anticoagulants or"
+      }
+    ]
+  },
+  {
+    a: ["diclofenac", "ibuprofen"],
+    b: ["warfarin", "heparin"],
+    severity: "major",
+    effect: "NSAIDs inhibit platelets and injure the gastric mucosa; with an anticoagulant the risk of serious GI bleeding is much higher. Some NSAIDs also raise the INR.",
+    action: "Avoid: use paracetamol. When an NSAID must be STARTED in an anticoagulated patient, give the shortest course with omeprazole, check the INR within 3–5 days on warfarin, and look for melaena. When the anticoagulant is STARTED (for example post-operative heparin), stop the NSAID. When either is STOPPED, no dose change is needed in the other.",
+    ref: "Harrison 22nd ed. 2025, ch. 335, p. 2521; BNF interactions (NSAIDs–anticoagulants)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Concomitant anticoagulants are an established risk factor for NSAID ulcer complications.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2521",
+        pdf_page: 2564,
+        quote: "concomitant use of anticoagulants or"
+      }
+    ]
+  },
+  {
+    a: ["diclofenac", "ibuprofen"],
+    b: ["fluoxetine", "sertraline", "escitalopram"],
+    severity: "moderate",
+    effect: "SSRIs deplete platelet serotonin; with an NSAID the risk of upper GI bleeding rises more than with either alone.",
+    action: "When an NSAID is STARTED in a patient on an SSRI: shortest course, lowest dose, consider omeprazole if over 65 or with an ulcer history, and ask about black stools. Prefer paracetamol for ongoing pain. When the SSRI is STARTED in someone on a regular NSAID, review whether the NSAID is still needed. When either is STOPPED, no change is needed.",
+    ref: "Harrison 22nd ed. 2025, ch. 335, p. 2521",
+    refs: [
+      {
+        book: "harrison",
+        text: "SSRIs have a synergistic effect on the induction of GI bleeding with NSAIDs.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2521",
+        pdf_page: 2564,
+        quote: "SSRIs have a synergistic effect on the induction of"
+      }
+    ]
+  },
+  {
+    a: ["diclofenac", "ibuprofen"],
+    b: ["dexamethasone", "hydrocortisone"],
+    severity: "moderate",
+    effect: "Glucocorticoids added to NSAIDs increase the risk of peptic ulcer and GI bleeding.",
+    action: "A single dose of dexamethasone for PONV with a short NSAID course needs no action. When a course of steroids lasting days is STARTED with an NSAID, give omeprazole and keep the NSAID course short. When the steroid is STOPPED, gastric protection may be stopped with the NSAID.",
+    ref: "Harrison 22nd ed. 2025, ch. 335, p. 2521",
+    refs: [
+      {
+        book: "harrison",
+        text: "Concomitant glucocorticoids are an established NSAID ulcer risk factor.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2521",
+        pdf_page: 2564,
+        quote: "advanced age, history of ulcer, concomitant use of glucocorticoids"
+      }
+    ]
+  },
+  {
+    a: ["diclofenac", "ibuprofen"],
+    b: ["lithium"],
+    severity: "major",
+    effect: "NSAIDs reduce lithium excretion by the kidney; lithium levels rise by a quarter or more within days, causing toxicity (tremor, vomiting, confusion, seizures).",
+    action: "Avoid: use paracetamol. When an NSAID must be STARTED, use it for no more than a few days, check a lithium level after 4–5 days if possible, and stop both at the first sign of toxicity. When a regular NSAID is STOPPED, lithium levels fall — recheck the level in a week. Dehydration makes this worse.",
+    ref: "BNF interactions (lithium–NSAIDs); see Lithium toxicity"
+  },
+  {
+    a: ["diclofenac", "ibuprofen"],
+    b: ["furosemide"],
+    severity: "moderate",
+    effect: "NSAIDs blunt the diuretic and natriuretic effect of furosemide, worsening heart failure, and the pair together with any volume loss raises the risk of acute kidney injury.",
+    action: "When an NSAID is STARTED in a patient on furosemide: avoid in heart failure; otherwise watch weight, urine output and creatinine. When furosemide is STARTED for fluid overload in someone on an NSAID, stop the NSAID. When the NSAID is STOPPED, furosemide may work more strongly — check for dehydration.",
+    ref: "BNF interactions (NSAIDs–loop diuretics); Harrison 22nd ed. 2025, ch. 321, p. 2373"
+  },
+  {
+    a: ["diclofenac", "ibuprofen"],
+    b: ["gentamicin", "liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    severity: "major",
+    effect: "Additive nephrotoxicity: the NSAID reduces renal blood flow while the aminoglycoside or amphotericin injures the tubules. This is a common route to post-operative and post-caesarean acute kidney injury.",
+    action: "Avoid: use paracetamol. When gentamicin or amphotericin is STARTED, stop the NSAID. If both must be given, check creatinine before and after 48 hours and urine output every shift, and keep the patient well hydrated. When the nephrotoxin is STOPPED, wait until creatinine is back to baseline before an NSAID.",
+    ref: "Gabbe's Obstetrics 9th ed., ch. 18, p. 365",
+    refs: [
+      {
+        book: "gabbe",
+        text: "Contraindications to NSAIDs include low urine output and use of gentamicin or other renally toxic drugs.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 365",
+        pdf_page: 456,
+        quote: "use of gentamicin or other drugs with renal toxicity"
+      }
+    ]
+  },
+  {
+    a: ["metoclopramide"],
+    b: [
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "risperidone",
+      "olanzapine"
+    ],
+    severity: "major",
+    effect: "Both block dopamine receptors: higher risk of acute dystonia, akathisia, parkinsonism and neuroleptic malignant syndrome.",
+    action: "Use a different antiemetic (ondansetron, or the antipsychotic itself at low dose — haloperidol is an antiemetic). When metoclopramide is STARTED in someone on an antipsychotic or depot, avoid it; if already given, watch for dystonia for 72 hours with biperiden available. When the antipsychotic is STOPPED, wait at least a week (several weeks after a depot) before treating the pair as safe.",
+    ref: "BNF interactions (metoclopramide–antipsychotics); Harrison 22nd ed. 2025, ch. 48, p. 299",
+    refs: [
+      {
+        book: "harrison",
+        text: "Dopamine antagonists that cross the blood-brain barrier cause movement disorders.",
+        ref: "Harrison 22nd ed. 2025, ch. 48 Nausea, Vomiting, and Indigestion, p. 299",
+        pdf_page: 342,
+        quote: "Metoclopramide causes irreversible movement disorders like"
+      }
+    ]
+  },
+  {
+    a: ["metoclopramide"],
+    b: ["bromocriptine"],
+    severity: "moderate",
+    effect: "Opposing actions on dopamine receptors: metoclopramide reverses bromocriptine's prolactin-lowering effect, and bromocriptine reduces metoclopramide's antiemetic action. In neuroleptic malignant syndrome, metoclopramide worsens the condition bromocriptine is treating.",
+    action: "Do not give metoclopramide to a patient on bromocriptine; use ondansetron. When bromocriptine is STARTED for NMS, stop metoclopramide. When metoclopramide is STOPPED, bromocriptine's effect returns over a day.",
+    ref: "BNF interactions (bromocriptine–metoclopramide)"
+  },
+  {
+    a: ["metoclopramide"],
+    b: ["suxamethonium"],
+    severity: "moderate",
+    effect: "Metoclopramide inhibits plasma cholinesterase and can prolong the neuromuscular block from suxamethonium.",
+    action: "When metoclopramide has been STARTED or given before an anaesthetic using suxamethonium, tell the anaesthetist and expect the block to last longer; keep ventilating until a peripheral nerve stimulator or clinical signs (head lift, hand grip) show recovery. Confirm with the anaesthetist. When metoclopramide is STOPPED, the effect fades within hours.",
+    ref: "BNF interactions (metoclopramide–suxamethonium)"
+  },
+  {
+    a: ["ondansetron"],
+    b: [
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "escitalopram"
+    ],
+    severity: "moderate",
+    effect: "Both prolong the QT interval; together the torsade de pointes risk adds up, especially with low potassium or magnesium from vomiting or diarrhoea. Escitalopram adds a small serotonergic interaction.",
+    action: "A single 4 mg ondansetron dose with low-dose haloperidol (0.5–1 mg) for PONV is acceptable in a patient with normal potassium and no heart disease. When ondansetron is STARTED for repeated dosing in someone on one of these, correct potassium and magnesium, keep to 4 mg doses, and get an ECG if available. When the other drug is STOPPED, no ondansetron change is needed.",
+    ref: "Harrison 22nd ed. 2025, ch. 48, p. 299; ondansetron product information",
+    refs: [
+      {
+        book: "harrison",
+        text: "5-HT3 antagonists increase risks of arrhythmia and sudden death in patients with QTc prolongation.",
+        ref: "Harrison 22nd ed. 2025, ch. 48 Nausea, Vomiting, and Indigestion, p. 299",
+        pdf_page: 342,
+        quote: "5-HT3 antagonists increase risks of cardiac arrhythmias and sudden cardiac death"
+      }
+    ]
+  },
+  {
+    a: ["ondansetron"],
+    b: ["amiodarone", "quinine", "methadone", "pentamidine", "sodium-stibogluconate"],
+    severity: "major",
+    effect: "These drugs prolong the QT interval strongly; ondansetron adds to it. Torsade de pointes and sudden death are possible, especially with low potassium or magnesium.",
+    action: "Use a different antiemetic where possible (low-dose metoclopramide if no obstruction, or promethazine). When ondansetron must be STARTED, give single 4 mg doses only, correct potassium and magnesium first, and get an ECG before and after if any machine exists. During IV quinine, IV pentamidine or IV amiodarone, avoid ondansetron. When the QT drug is STOPPED, its effect lasts days (quinine) to weeks (amiodarone, stibogluconate course) — remain cautious.",
+    ref: "Harrison 22nd ed. 2025, ch. 48, p. 299; Nelson 22nd ed. 2024, ch. 484, p. 2858",
+    refs: [
+      {
+        book: "nelson",
+        text: "Ondansetron is among drugs causing acquired QT prolongation.",
+        ref: "Nelson 22nd ed. 2024, ch. 484 Disturbances of Rate and Rhythm of the Heart, p. 2858",
+        pdf_page: 2879,
+        quote: "Other drugs—ondansetron, HIV protease inhibitors"
+      }
+    ]
+  },
+  {
+    a: ["ondansetron"],
+    b: ["tramadol"],
+    severity: "moderate",
+    effect: "Ondansetron blocks the 5-HT3 receptors that contribute to tramadol's analgesia, so patients need more tramadol; both are serotonergic, so serotonin toxicity is possible.",
+    action: "When ondansetron is STARTED in a patient on tramadol, expect less pain relief: use a different antiemetic or change the analgesic to morphine rather than raising the tramadol dose. When ondansetron is STOPPED, tramadol works better again — do not keep an escalated dose.",
+    ref: "Nelson 22nd ed. 2024, ch. 94, p. 717 (serotonergic drugs); tramadol product information",
+    refs: [
+      {
+        book: "nelson",
+        text: "Serotonergic drugs include tramadol and the antiemetics ondansetron, granisetron and metoclopramide.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, p. 717",
+        pdf_page: 763,
+        quote: "Ondansetron, granisetron, metoclopramide"
+      }
+    ]
+  },
+  {
+    a: ["omeprazole"],
+    b: ["warfarin", "phenytoin", "diazepam"],
+    severity: "moderate",
+    effect: "Omeprazole inhibits CYP2C19 and can raise warfarin (INR), phenytoin and diazepam levels. The effect is usually small but matters for drugs with a narrow range.",
+    action: "When omeprazole is STARTED: check the INR within a week on warfarin; watch for phenytoin toxicity (unsteadiness, nystagmus) and check a level if possible; expect diazepam sedation to last longer. When omeprazole is STOPPED, levels fall back — recheck the INR and seizure control.",
+    ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease, p. 2525",
+    refs: [
+      {
+        book: "harrison",
+        text: "Caution with theophylline, warfarin, diazepam, atazanavir and phenytoin with PPIs.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2525",
+        pdf_page: 2568,
+        quote: "when using theophylline, warfarin, diazepam"
+      }
+    ]
+  },
+
+  /* ---- anti-infectives ---- */
+  {
+    a: ["warfarin"],
+    b: ["cotrimoxazole", "fluconazole"],
+    severity: "major",
+    effect: "Both block the breakdown of warfarin (fluconazole strongly inhibits CYP2C9, the main warfarin enzyme; sulfamethoxazole inhibits it and displaces warfarin from albumin). The INR can rise steeply within a few days and serious bleeding follows. With long-term cotrimoxazole prophylaxis the danger moments are STARTING it and STOPPING it.",
+    action: "Use an alternative where one exists: a topical azole instead of a fluconazole capsule for thrush; another antibiotic instead of a treatment course of cotrimoxazole. If it must be STARTED, check the INR within 3–5 days and weekly until stable, and adjust the warfarin dose to the INR — expect to need less. When it is STOPPED (end of a cryptococcal course, cotrimoxazole prophylaxis stopped), expect the INR to fall over 1–2 weeks: check it weekly and raise the warfarin dose as needed. Without INR testing, avoid the combination; if it is unavoidable, warn the patient of bleeding signs and refer for INR monitoring.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172 (TMP-SMX: increased effect of warfarin); ch. 71, Table 71-1, p. 485 (fluconazole inhibits CYP2C9); BNF interactions",
+    refs: [
+      {
+        book: "harrison",
+        text: "TMP-SMX increases the effect of warfarin and the levels of phenytoin; monitor closely if given together.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "Increased levels of phenytoin. Monitor levels closely"
+      },
+      {
+        book: "harrison",
+        text: "Fluconazole inhibits CYP2C9, the enzyme that clears warfarin and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-1, p. 485",
+        pdf_page: 528,
+        quote: "Warfarin Amiodarone Phenytoin Fluconazole"
+      }
+    ]
+  },
+  {
+    a: ["warfarin"],
+    b: ["ciprofloxacin", "erythromycin"],
+    severity: "moderate",
+    effect: "Ciprofloxacin and erythromycin (a potent CYP3A4 inhibitor) slow warfarin clearance and can raise the INR; the infection itself (fever, poor eating, diarrhoea) adds to the rise. Bleeding has been reported, often a few days into the course.",
+    action: "When the antibiotic is STARTED, check the INR 3–5 days later (sooner if the INR was already high or the patient is elderly) and ask about bleeding. When it is STOPPED, recheck within a week, as the INR can fall back. Azithromycin is the macrolide with the least effect on warfarin. Without INR testing, keep the usual dose, keep the course short, and teach the danger signs.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, p. 1177 (erythromycin raises warfarin levels); Nelson 22nd ed. 2024, Table 225.3, p. 1678 (ciprofloxacin–warfarin); BNF interactions",
+    refs: [
+      {
+        book: "harrison",
+        text: "Erythromycin and clarithromycin inhibit CYP3A4 and raise levels of benzodiazepines, statins, warfarin and others; azithromycin does not.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177",
+        pdf_page: 1220,
+        quote: "Erythromycin, clarithromycin, and telithromycin inhibit the CYP3A4"
+      },
+      {
+        book: "nelson",
+        text: "Ciprofloxacin dosing: neonates 10 mg/kg every 12 h; children 15–30 mg/kg/day divided every 12 h; interactions include theophylline, antacids, and warfarin.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, Table 225.3, p. 1678",
+        pdf_page: 1684,
+        quote: "Neonates: 10 mg/kg q12h PO or IV"
+      }
+    ]
+  },
+  {
+    a: ["warfarin"],
+    b: ["cefotaxime", "azithromycin"],
+    severity: "moderate",
+    effect: "No important metabolic interaction (azithromycin does not inhibit CYP3A4), but the INR often moves during an infection — fever, poor food intake and antibiotics that reduce gut vitamin K tend to raise it — and rises have been reported with both drugs. The direction cannot be predicted for an individual patient.",
+    action: "No routine dose change. A single azithromycin dose (trachoma, chlamydia) needs no action. For a course: check the INR 3–5 days after STARTING and within a week of STOPPING, and ask about bleeding. Without INR testing, keep the usual dose, make sure the patient eats, and watch for bleeding.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, p. 1177; BNF interactions (cephalosporins and macrolides–coumarins)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Macrolides prolong the QTc interval; azithromycin has been associated with an increased risk of death, especially with underlying heart disease. Azithromycin does not inhibit CYP3A4.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177",
+        pdf_page: 1220,
+        quote: "Azithromycin does not inhibit CYP3A4"
+      }
+    ]
+  },
+  {
+    a: ["azithromycin"],
+    b: [
+      "amiodarone",
+      "quinine",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "methadone",
+      "quetiapine",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine",
+      "sodium-stibogluconate",
+      "ondansetron",
+      "ciprofloxacin",
+      "fluconazole"
+    ],
+    severity: "moderate",
+    effect: "Additive QT prolongation with a risk of torsades de pointes. Azithromycin's own effect is modest and it does not raise the levels of these drugs, but Harrison notes an increased risk of death with azithromycin in people with heart disease; the risk is higher with low potassium or magnesium, bradycardia, or several QT drugs together.",
+    action: "A single dose (trachoma, chlamydia, cholera) is usually acceptable. For a multi-day course, use another antibiotic if a safe one exists; if not, Correct potassium and magnesium first. Get an ECG before and during the course where a machine exists, and stop the drug that is less essential if the QTc goes above 500 ms or palpitations, fainting or a fit occur. When the azithromycin course STOPS, its effect fades over several days (long half-life).",
+    ref: "Harrison 22nd ed. 2025, ch. 149, p. 1177 and Table 149-3, p. 1172; Nelson 22nd ed. 2024, ch. 243, p. 1763 (FDA QT warning)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Macrolides prolong the QTc interval; azithromycin has been associated with an increased risk of death, especially with underlying heart disease. Azithromycin does not inhibit CYP3A4.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177",
+        pdf_page: 1220,
+        quote: "Azithromycin does not inhibit CYP3A4"
+      },
+      {
+        book: "nelson",
+        text: "Pertussis: azithromycin is the drug of choice at all ages. Pyloric stenosis risk with macrolides is highest under 14 days of age and higher with erythromycin than azithromycin; the benefit of treatment outweighs it.",
+        ref: "Nelson 22nd ed. 2024, ch. 243 Pertussis, p. 1763",
+        pdf_page: 1769,
+        quote: "especially in those <14 days old"
+      }
+    ]
+  },
+  {
+    a: ["ciprofloxacin"],
+    b: [
+      "amiodarone",
+      "quinine",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "methadone",
+      "quetiapine",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine",
+      "sodium-stibogluconate",
+      "ondansetron",
+      "erythromycin",
+      "fluconazole"
+    ],
+    severity: "moderate",
+    effect: "Additive QT prolongation; ciprofloxacin's own effect is small, but torsades has been reported when it is combined with other QT drugs, low potassium or heart disease. Fluconazole and erythromycin add a further QT effect of their own.",
+    action: "Prefer an alternative antibiotic when the patient is on several QT drugs. If needed, Correct potassium and magnesium first. Get an ECG before and during the course where a machine exists, and stop the drug that is less essential if the QTc goes above 500 ms or palpitations, fainting or a fit occur. Nothing special is needed when ciprofloxacin is STOPPED.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172 (fluoroquinolones with QTc-prolonging drugs: monitor QTc)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Fluoroquinolones with QTc-prolonging drugs (e.g. azoles, amiodarone, fluoxetine): increased risk of cardiotoxicity and arrhythmias; monitor the QTc.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "QTc-prolonging drugs (e.g. azoles, sotalol, amiodarone"
+      }
+    ]
+  },
+  {
+    a: ["ciprofloxacin"],
+    b: ["aminophylline", "caffeine-citrate"],
+    severity: "major",
+    effect: "Ciprofloxacin blocks CYP1A2, which clears theophylline and caffeine. Levels rise over 2–3 days: vomiting, tachycardia, arrhythmia and seizures (theophylline toxicity); in a preterm baby on caffeine, tachycardia, jitteriness and feeding intolerance.",
+    action: "Use another antibiotic if possible. If ciprofloxacin is STARTED, reduce the aminophylline dose and measure levels where possible (BNF), and watch pulse, vomiting and fits; for caffeine citrate watch the heart rate and hold a dose if it is persistently fast. When ciprofloxacin is STOPPED, levels fall over 2–3 days — return to the usual dose.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172 (fluoroquinolones–theophylline toxicity); BNF interactions",
+    refs: [
+      {
+        book: "harrison",
+        text: "Fluoroquinolones cause theophylline toxicity, and zinc-, iron-, calcium-, magnesium- or aluminium-containing products reduce their absorption: give the fluoroquinolone 2 h before or 6 h after.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "Administer fluoroquinolone 2 h before or 6 h after interacting drug."
+      }
+    ]
+  },
+  {
+    a: ["ciprofloxacin"],
+    b: ["zinc-ors"],
+    severity: "moderate",
+    effect: "Zinc (and iron, calcium, magnesium and aluminium) binds ciprofloxacin in the gut and can cut its absorption enough to cause treatment failure — a real problem in children with dysentery, who should receive both.",
+    action: "Give both, but separate them: ciprofloxacin at least 2 h before or 6 h after the zinc tablet (Harrison). ORS itself is fine. When ciprofloxacin STOPS, give zinc as usual to complete 10–14 days.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172",
+    refs: [
+      {
+        book: "harrison",
+        text: "Fluoroquinolones cause theophylline toxicity, and zinc-, iron-, calcium-, magnesium- or aluminium-containing products reduce their absorption: give the fluoroquinolone 2 h before or 6 h after.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "Administer fluoroquinolone 2 h before or 6 h after interacting drug."
+      }
+    ]
+  },
+  {
+    a: ["ciprofloxacin"],
+    b: ["clozapine"],
+    severity: "major",
+    effect: "Ciprofloxacin inhibits CYP1A2, the main route of clozapine clearance; clozapine levels can rise sharply, with sedation, hypotension, hypersalivation and seizures.",
+    action: "Prefer another antibiotic. If ciprofloxacin must be STARTED, consider reducing the clozapine dose (seek psychiatric advice) and watch for sedation, low BP and fits; measure levels where available. When it is STOPPED, clozapine levels fall back over a few days — restore the usual dose to avoid relapse.",
+    ref: "BNF interactions (ciprofloxacin–clozapine)"
+  },
+  {
+    a: ["ciprofloxacin"],
+    b: ["olanzapine"],
+    severity: "moderate",
+    effect: "Ciprofloxacin inhibits CYP1A2 and can raise olanzapine levels: more sedation and postural hypotension.",
+    action: "When ciprofloxacin is STARTED, watch for over-sedation and falls; a short course rarely needs a dose change. When it is STOPPED, no action unless the olanzapine dose was reduced.",
+    ref: "BNF interactions (ciprofloxacin–olanzapine)"
+  },
+  {
+    a: ["ciprofloxacin"],
+    b: ["dexamethasone", "hydrocortisone"],
+    severity: "moderate",
+    effect: "Corticosteroids add to the fluoroquinolone risk of tendinopathy and Achilles tendon rupture, especially in older people.",
+    action: "Avoid the combination where another antibiotic will do. If both are needed, warn the patient to stop and report any heel or tendon pain at once, and avoid strenuous exercise. A single dose of dexamethasone (e.g. antenatal or antiemetic) is of little concern. The risk persists for some weeks after STOPPING ciprofloxacin.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, p. 1178",
+    refs: [
+      {
+        book: "harrison",
+        text: "Fluoroquinolones can cause seizures, peripheral neuropathy, glucose dysregulation and Achilles tendon rupture, particularly in older patients and those taking glucocorticoids; aluminium, magnesium or calcium compounds reduce their absorption.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1178",
+        pdf_page: 1221,
+        quote: "particularly in older patients, organ transplant recipients"
+      }
+    ]
+  },
+  {
+    a: ["ciprofloxacin"],
+    b: ["phenytoin"],
+    severity: "moderate",
+    effect: "Ciprofloxacin can raise or lower phenytoin levels, and fluoroquinolones lower the seizure threshold.",
+    action: "When ciprofloxacin is STARTED, watch for both toxicity (nystagmus, ataxia) and breakthrough seizures; measure a level if available. When it is STOPPED, watch again over the next week.",
+    ref: "BNF interactions (ciprofloxacin–phenytoin); Harrison 22nd ed. 2025, ch. 149, p. 1178 (seizures)"
+  },
+  {
+    a: ["cotrimoxazole"],
+    b: ["phenytoin"],
+    severity: "moderate",
+    effect: "Trimethoprim-sulfamethoxazole raises phenytoin levels (it slows phenytoin breakdown): nystagmus, ataxia, drowsiness.",
+    action: "When cotrimoxazole is STARTED (including lifelong prophylaxis), watch for phenytoin toxicity over 1–2 weeks and measure a level if possible; reduce the phenytoin dose if toxic. When cotrimoxazole is STOPPED, levels fall — watch for seizures.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172",
+    refs: [
+      {
+        book: "harrison",
+        text: "TMP-SMX increases the effect of warfarin and the levels of phenytoin; monitor closely if given together.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "Increased levels of phenytoin. Monitor levels closely"
+      }
+    ]
+  },
+  {
+    a: ["cotrimoxazole"],
+    b: ["potassium-chloride"],
+    severity: "moderate",
+    effect: "Trimethoprim blocks potassium excretion in the kidney like amiloride: hyperkalaemia, more likely with high (PCP-treatment) doses, kidney impairment and added potassium.",
+    action: "During high-dose cotrimoxazole, give potassium supplements only for a measured low potassium, and check potassium at least twice weekly. When cotrimoxazole is STOPPED, reassess the potassium supplement.",
+    ref: "Harrison 22nd ed. 2025, ch. 56, p. 359",
+    refs: [
+      {
+        book: "harrison",
+        text: "Trimethoprim and pentamidine block the distal-tubule sodium channel like amiloride and cause hyperkalaemia; risk rises with the trimethoprim dose and with renal insufficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 359",
+        pdf_page: 402,
+        quote: "Amiloride is structurally similar to the antibiotics"
+      }
+    ]
+  },
+  {
+    a: ["cotrimoxazole"],
+    b: ["clozapine"],
+    severity: "major",
+    effect: "Cotrimoxazole can itself depress the bone marrow (neutropenia, agranulocytosis); with clozapine the risk of dangerous neutropenia adds up.",
+    action: "Avoid where possible; choose another antibiotic for a treatment course. If cotrimoxazole prophylaxis is essential in a patient on clozapine (HIV), check the white cell and neutrophil count before STARTING, then weekly at first, and stop the drug that is easier to replace if neutrophils fall. Any fever or sore throat means an urgent blood count.",
+    ref: "BNF interactions (avoid clozapine with drugs that can cause agranulocytosis); Harrison 22nd ed. 2025, ch. 149, p. 1177",
+    refs: [
+      {
+        book: "harrison",
+        text: "TMP-SMX causes rash, and with prolonged use leukopenia, thrombocytopenia and granulocytopenia; it can cause nephrotoxicity, hyperkalaemia and hyponatraemia, more often at high doses.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177",
+        pdf_page: 1220,
+        quote: "can also cause nephrotoxicity, hyperkalemia, and hyponatremia"
+      }
+    ]
+  },
+  {
+    a: ["cotrimoxazole"],
+    b: ["pentamidine"],
+    severity: "moderate",
+    effect: "Both raise potassium (they block the same kidney sodium channel), both can injure the kidney and both can lower the white count. Pentamidine is often given when cotrimoxazole has failed or caused a reaction, so they may overlap.",
+    action: "If both are given (or one directly after the other), check potassium, creatinine and full blood count before and twice weekly; stop potassium supplements unless potassium is low.",
+    ref: "Harrison 22nd ed. 2025, ch. 56, p. 359",
+    refs: [
+      {
+        book: "harrison",
+        text: "Trimethoprim and pentamidine block the distal-tubule sodium channel like amiloride and cause hyperkalaemia; risk rises with the trimethoprim dose and with renal insufficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 359",
+        pdf_page: 402,
+        quote: "Amiloride is structurally similar to the antibiotics"
+      }
+    ]
+  },
+  {
+    a: ["erythromycin"],
+    b: [
+      "amiodarone",
+      "quinine",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "methadone",
+      "quetiapine",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine",
+      "sodium-stibogluconate",
+      "ondansetron",
+      "fluconazole"
+    ],
+    severity: "major",
+    effect: "Additive QT prolongation, made worse because erythromycin (a potent CYP3A4 inhibitor) also RAISES the levels of several of these drugs — quinine, amiodarone, methadone, quetiapine, haloperidol — and fluconazole in turn raises erythromycin. Torsades de pointes and sudden death have been reported, especially with IV erythromycin.",
+    action: "Avoid: use azithromycin (fewer interactions) or a non-macrolide. If erythromycin must be STARTED, Correct potassium and magnesium first. Get an ECG before and during the course where a machine exists, and stop the drug that is less essential if the QTc goes above 500 ms or palpitations, fainting or a fit occur. Watch also for excess sedation from methadone, quetiapine and haloperidol. When erythromycin is STOPPED, the partner drug's level falls over 2–3 days — watch for opioid withdrawal on methadone.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172 and p. 1177",
+    refs: [
+      {
+        book: "harrison",
+        text: "Clarithromycin and erythromycin are potent CYP3A4 inhibitors; avoid giving macrolides with CYP3A4 substrates where possible, and monitor the QTc with other QT-prolonging drugs.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "Clarithromycin and erythromycin are potent CYP3A4 inhibitors"
+      },
+      {
+        book: "harrison",
+        text: "Erythromycin and clarithromycin inhibit CYP3A4 and raise levels of benzodiazepines, statins, warfarin and others; azithromycin does not.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177",
+        pdf_page: 1220,
+        quote: "Erythromycin, clarithromycin, and telithromycin inhibit the CYP3A4"
+      }
+    ]
+  },
+  {
+    a: ["erythromycin"],
+    b: ["carbamazepine"],
+    severity: "major",
+    effect: "Erythromycin blocks carbamazepine breakdown (CYP3A4): levels can double within days, with dizziness, ataxia, double vision, vomiting and drowsiness.",
+    action: "Use azithromycin or a non-macrolide instead. If erythromycin is STARTED, reduce carbamazepine or measure levels and watch for toxicity; when it is STOPPED, levels fall over several days — return to the usual dose to avoid seizures.",
+    ref: "Nelson 22nd ed. 2024, ch. 225, Table 225.3, p. 1680",
+    refs: [
+      {
+        book: "nelson",
+        text: "Erythromycin is a motilin agonist (cramps, vomiting, diarrhoea), is associated with pyloric stenosis in young infants, and inhibits hepatic CYP3A4 (carbamazepine, theophylline, digoxin and others). Neonatal doses depend on postnatal age and weight.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, Table 225.3, p. 1680",
+        pdf_page: 1686,
+        quote: "Antagonizes hepatic CYP 3A4 activity"
+      }
+    ]
+  },
+  {
+    a: ["erythromycin"],
+    b: ["midazolam"],
+    severity: "major",
+    effect: "Erythromycin inhibits midazolam metabolism: sedation and respiratory depression are deeper and last much longer, especially with oral or repeated doses.",
+    action: "Avoid repeated or oral midazolam during erythromycin; use a smaller IV dose titrated to effect with oxygen and a bag-valve-mask ready, and observe longer. The effect lasts for a few days after erythromycin is STOPPED.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, p. 1177 (macrolides raise benzodiazepine levels); BNF interactions",
+    refs: [
+      {
+        book: "harrison",
+        text: "Erythromycin and clarithromycin inhibit CYP3A4 and raise levels of benzodiazepines, statins, warfarin and others; azithromycin does not.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, p. 1177",
+        pdf_page: 1220,
+        quote: "Erythromycin, clarithromycin, and telithromycin inhibit the CYP3A4"
+      }
+    ]
+  },
+  {
+    a: ["erythromycin"],
+    b: ["ergometrine"],
+    severity: "major",
+    effect: "Ergometrine is cleared by CYP3A4; macrolides such as erythromycin raise its levels and the risk of ergotism — severe vasospasm, hypertension, limb or coronary ischaemia. This combination can arise on a maternity ward (erythromycin for ruptured membranes, ergometrine for postpartum haemorrhage).",
+    action: "In a woman taking erythromycin, use oxytocin, misoprostol or carbetocin for PPH. If ergometrine is the only uterotonic available in a life-threatening haemorrhage, give the single dose — the bleeding is the greater danger — and watch BP, chest pain and limb perfusion. Do not give repeated ergometrine doses. The effect lasts a few days after erythromycin is STOPPED.",
+    ref: "BNF interactions (macrolides–ergometrine: avoid); ergometrine/methylergometrine product information"
+  },
+  {
+    a: ["erythromycin"],
+    b: ["digoxin"],
+    severity: "moderate",
+    effect: "Erythromycin raises digoxin levels (P-glycoprotein inhibition and changes in gut flora): nausea, vomiting, bradycardia, arrhythmia.",
+    action: "When erythromycin is STARTED, check the pulse daily and a digoxin level where possible; consider reducing digoxin. When it is STOPPED, levels return to baseline over about a week.",
+    ref: "Nelson 22nd ed. 2024, ch. 225, Table 225.3, p. 1680 (digoxin among erythromycin interactions)",
+    refs: [
+      {
+        book: "nelson",
+        text: "Erythromycin is a motilin agonist (cramps, vomiting, diarrhoea), is associated with pyloric stenosis in young infants, and inhibits hepatic CYP3A4 (carbamazepine, theophylline, digoxin and others). Neonatal doses depend on postnatal age and weight.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, Table 225.3, p. 1680",
+        pdf_page: 1686,
+        quote: "Antagonizes hepatic CYP 3A4 activity"
+      }
+    ]
+  },
+  {
+    a: ["erythromycin"],
+    b: ["aminophylline"],
+    severity: "moderate",
+    effect: "Erythromycin slows theophylline clearance (levels rise after a few days) and theophylline lowers erythromycin levels.",
+    action: "When erythromycin is STARTED, reduce aminophylline or measure levels and watch for vomiting, tachycardia and seizures; return to the usual dose when it is STOPPED. Azithromycin avoids the problem.",
+    ref: "Nelson 22nd ed. 2024, ch. 225, Table 225.3, p. 1680",
+    refs: [
+      {
+        book: "nelson",
+        text: "Erythromycin is a motilin agonist (cramps, vomiting, diarrhoea), is associated with pyloric stenosis in young infants, and inhibits hepatic CYP3A4 (carbamazepine, theophylline, digoxin and others). Neonatal doses depend on postnatal age and weight.",
+        ref: "Nelson 22nd ed. 2024, ch. 225 Principles of Antibacterial Therapy, Table 225.3, p. 1680",
+        pdf_page: 1686,
+        quote: "Antagonizes hepatic CYP 3A4 activity"
+      }
+    ]
+  },
+  {
+    a: ["erythromycin"],
+    b: ["clozapine", "aripiprazole", "bromocriptine", "nifedipine"],
+    severity: "moderate",
+    effect: "Erythromycin inhibits CYP3A4 and raises the levels of these drugs: clozapine (sedation, hypotension, seizures), aripiprazole (restlessness, movement effects), bromocriptine (nausea, hypotension, ergot effects) and nifedipine (headache, flushing, low blood pressure — relevant when nifedipine is used to delay labour while erythromycin is given for ruptured membranes).",
+    action: "Prefer azithromycin. If erythromycin is STARTED, watch for the effects above, check BP when nifedipine is used, and consider a dose reduction for clozapine or aripiprazole with specialist advice. When it is STOPPED, levels fall over a few days — restore usual doses.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-3, p. 1172; BNF interactions",
+    refs: [
+      {
+        book: "harrison",
+        text: "Clarithromycin and erythromycin are potent CYP3A4 inhibitors; avoid giving macrolides with CYP3A4 substrates where possible, and monitor the QTc with other QT-prolonging drugs.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-3, p. 1172",
+        pdf_page: 1215,
+        quote: "Clarithromycin and erythromycin are potent CYP3A4 inhibitors"
+      }
+    ]
+  },
+  {
+    a: ["fluconazole"],
+    b: [
+      "amiodarone",
+      "quinine",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "methadone",
+      "quetiapine",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine",
+      "sodium-stibogluconate"
+    ],
+    severity: "major",
+    effect: "Fluconazole prolongs the QT interval itself (more at the 800–1200 mg doses used for cryptococcal disease) and inhibits the metabolism of several of these drugs — methadone, quetiapine, amitriptyline, escitalopram, haloperidol and quinine — raising their levels. Low potassium and magnesium from amphotericin, diarrhoea or antimonials make torsades more likely.",
+    action: "Do not withhold fluconazole for cryptococcal disease, but review every other QT drug: stop or replace those that are not essential. Correct potassium and magnesium first. Get an ECG before and during the course where a machine exists, and stop the drug that is less essential if the QTc goes above 500 ms or palpitations, fainting or a fit occur. Watch for sedation on methadone and quetiapine. When fluconazole is STOPPED or the dose reduced, partner levels fall over about a week (long half-life) — watch for methadone withdrawal.",
+    ref: "Harrison 22nd ed. 2025, ch. 221, p. 1705 (fluconazole QT prolongation and interactions); ch. 149, Table 149-3, p. 1172",
+    refs: [
+      {
+        book: "harrison",
+        text: "Fluconazole can cause drug interactions, QT prolongation and liver dysfunction (especially at higher doses), and the dose must be adjusted for renal function.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705",
+        pdf_page: 1748,
+        quote: "Fluconazole can cause drug interactions, QT interval prolongation, and liver dysfunction"
+      }
+    ]
+  },
+  {
+    a: ["fluconazole"],
+    b: ["phenytoin"],
+    severity: "major",
+    effect: "Fluconazole inhibits CYP2C9, which clears phenytoin: levels rise over days to toxic (nystagmus, ataxia, confusion), especially at cryptococcal doses.",
+    action: "When fluconazole is STARTED, measure phenytoin levels if possible and watch for toxicity; reduce the dose if toxic. Prefer an antiepileptic without this interaction (e.g. sodium valproate or lamotrigine, if appropriate). When fluconazole is STOPPED or the dose is cut (consolidation to maintenance), levels fall — watch for seizures.",
+    ref: "Harrison 22nd ed. 2025, ch. 71, Table 71-1, p. 485 (fluconazole inhibits CYP2C9; phenytoin is a substrate)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Fluconazole inhibits CYP2C9, the enzyme that clears warfarin and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-1, p. 485",
+        pdf_page: 528,
+        quote: "Warfarin Amiodarone Phenytoin Fluconazole"
+      }
+    ]
+  },
+  {
+    a: ["fluconazole"],
+    b: ["carbamazepine", "midazolam"],
+    severity: "moderate",
+    effect: "Fluconazole inhibits CYP3A4 and raises carbamazepine levels (dizziness, ataxia, double vision) and midazolam levels (deeper, longer sedation, especially oral midazolam).",
+    action: "When fluconazole is STARTED, watch for carbamazepine toxicity and measure levels if possible; use smaller, titrated IV midazolam doses with airway support ready. When fluconazole is STOPPED, carbamazepine levels fall over about a week — watch for seizures.",
+    ref: "BNF interactions; Harrison 22nd ed. 2025, ch. 221, p. 1705",
+    refs: [
+      {
+        book: "harrison",
+        text: "Fluconazole can cause drug interactions, QT prolongation and liver dysfunction (especially at higher doses), and the dose must be adjusted for renal function.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705",
+        pdf_page: 1748,
+        quote: "Fluconazole can cause drug interactions, QT interval prolongation, and liver dysfunction"
+      }
+    ]
+  },
+  {
+    a: ["fluconazole"],
+    b: ["tb-rhze"],
+    severity: "moderate",
+    effect: "Rifampicin speeds fluconazole breakdown and lowers its levels, which matters in HIV with TB and cryptococcal disease. Isoniazid, rifampicin, pyrazinamide and fluconazole can all injure the liver.",
+    action: "Do not stop either: both infections kill. Monitor the clinical response to fluconazole closely; some guidelines increase the fluconazole dose while rifampicin is given — confirm with the HIV clinician and national guideline. Check liver tests where possible and stop drugs for clinical hepatitis. When rifampicin is STOPPED, fluconazole levels rise again over about 2 weeks.",
+    ref: "BNF interactions (rifampicin–fluconazole); Harrison 22nd ed. 2025, ch. 221, p. 1705",
+    refs: [
+      {
+        book: "harrison",
+        text: "Fluconazole can cause drug interactions, QT prolongation and liver dysfunction (especially at higher doses), and the dose must be adjusted for renal function.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705",
+        pdf_page: 1748,
+        quote: "Fluconazole can cause drug interactions, QT interval prolongation, and liver dysfunction"
+      }
+    ]
+  },
+  {
+    a: ["pentamidine"],
+    b: [
+      "amiodarone",
+      "quinine",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "methadone",
+      "quetiapine",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine",
+      "sodium-stibogluconate",
+      "azithromycin",
+      "ciprofloxacin",
+      "erythromycin",
+      "fluconazole"
+    ],
+    severity: "major",
+    effect: "Pentamidine causes QT prolongation and torsades de pointes, and its electrolyte disturbances make it worse; with another QT drug the risk adds up. With sodium stibogluconate, both are cardiotoxic and both cause pancreatitis. Pentamidine lingers in the tissues for weeks (half-life about 12 days), so the overlap continues after the infusion.",
+    action: "Review every other QT drug before each pentamidine dose; stop or replace those that are not essential (e.g. azithromycin instead of erythromycin). Do not give pentamidine on the same day as an antimonial; allow recovery between them and check amylase if there is abdominal pain. Correct potassium and magnesium first. Get an ECG before and during the course where a machine exists, and stop the drug that is less essential if the QTc goes above 500 ms or palpitations, fainting or a fit occur.",
+    ref: "Harrison 22nd ed. 2025, ch. 227, p. 1734; ch. 229, p. 1751",
+    refs: [
+      {
+        book: "harrison",
+        text: "Pentamidine must be given IV over at least 60 minutes to avoid potentially lethal hypotension. Adverse effects can be severe and irreversible: renal dysfunction, dysglycaemia (life-threatening hypoglycaemia days or weeks after the infusion, later hyperglycaemia), neutropenia and torsades de pointes.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, p. 1734",
+        pdf_page: 1777,
+        quote: "over at least 60 min to avoid potentially lethal hypotension"
+      },
+      {
+        book: "harrison",
+        text: "Pentamidine accumulates in tissues (half-life about 12 days). Rapid (under 1 h) IV infusion often causes hypotension; electrolyte disturbances and nephrotoxicity are common, so use caution with other nephrotoxic drugs. Pancreatitis, QT prolongation, hypoglycaemia and later diabetes from islet-cell damage occur.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1751",
+        pdf_page: 1794,
+        quote: "Rapid (<1-h) infusion of intravenous pentamidine often results in hypotension"
+      }
+    ]
+  },
+  {
+    a: ["pentamidine"],
+    b: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate", "gentamicin", "paromomycin"],
+    severity: "major",
+    effect: "Additive kidney injury. Amphotericin B also wastes potassium and magnesium, which increases pentamidine's risk of torsades. These drugs meet in VL–HIV (amphotericin for treatment, pentamidine for prophylaxis afterwards; paromomycin for rescue).",
+    action: "Avoid overlapping courses. Before the first pentamidine dose after amphotericin or an aminoglycoside, check creatinine, potassium and magnesium and allow kidney function to recover. Keep the patient well hydrated. If creatinine rises during a course, get specialist advice before the next dose.",
+    ref: "Harrison 22nd ed. 2025, ch. 208, p. 1601; ch. 229, p. 1751",
+    refs: [
+      {
+        book: "harrison",
+        text: "In HIV, pentamidine, amphotericin and tenofovir are among the drugs commonly associated with kidney damage.",
+        ref: "Harrison 22nd ed. 2025, ch. 208 Human Immunodeficiency Virus Disease: AIDS and Related Disorders, p. 1601",
+        pdf_page: 1644,
+        quote: "patients with HIV disease are pentamidine, amphotericin, adefovir"
+      },
+      {
+        book: "harrison",
+        text: "Pentamidine accumulates in tissues (half-life about 12 days). Rapid (under 1 h) IV infusion often causes hypotension; electrolyte disturbances and nephrotoxicity are common, so use caution with other nephrotoxic drugs. Pancreatitis, QT prolongation, hypoglycaemia and later diabetes from islet-cell damage occur.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1751",
+        pdf_page: 1794,
+        quote: "Rapid (<1-h) infusion of intravenous pentamidine often results in hypotension"
+      }
+    ]
+  },
+  {
+    a: ["pentamidine"],
+    b: ["arv-prophylaxis"],
+    severity: "moderate",
+    effect: "Tenofovir (TDF, in the TLD regimen) and pentamidine are both kidney-toxic; patients with VL–HIV often take both for many months.",
+    action: "Check creatinine (and urine protein where available) before starting monthly pentamidine and at least every 3 months; if kidney function falls, review with the HIV clinician whether the ART backbone should change. Do not stop ART.",
+    ref: "Harrison 22nd ed. 2025, ch. 208, p. 1601",
+    refs: [
+      {
+        book: "harrison",
+        text: "In HIV, pentamidine, amphotericin and tenofovir are among the drugs commonly associated with kidney damage.",
+        ref: "Harrison 22nd ed. 2025, ch. 208 Human Immunodeficiency Virus Disease: AIDS and Related Disorders, p. 1601",
+        pdf_page: 1644,
+        quote: "patients with HIV disease are pentamidine, amphotericin, adefovir"
+      }
+    ]
+  },
+  {
+    a: ["pentamidine"],
+    b: ["insulin-soluble"],
+    severity: "moderate",
+    effect: "Pentamidine damages pancreatic islet cells: first insulin release and hypoglycaemia (sometimes days or weeks later), later diabetes. Insulin therapy makes the early hypoglycaemia more dangerous; later, insulin needs may rise.",
+    action: "On the day of an infusion and for the following days, check glucose more often (at least before meals) and be ready to reduce the insulin dose; keep 10 % glucose available. Over the weeks after a course, expect glucose to rise and reassess the insulin dose.",
+    ref: "Harrison 22nd ed. 2025, ch. 227, p. 1734; ch. 229, p. 1751",
+    refs: [
+      {
+        book: "harrison",
+        text: "Pentamidine must be given IV over at least 60 minutes to avoid potentially lethal hypotension. Adverse effects can be severe and irreversible: renal dysfunction, dysglycaemia (life-threatening hypoglycaemia days or weeks after the infusion, later hyperglycaemia), neutropenia and torsades de pointes.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, p. 1734",
+        pdf_page: 1777,
+        quote: "over at least 60 min to avoid potentially lethal hypotension"
+      }
+    ]
+  },
+
+  /* ---- fluids and other ---- */
+  {
+    a: ["glyceryl-trinitrate"],
+    b: ["hydralazine", "labetalol", "nifedipine", "propranolol", "tamsulosin"],
+    severity: "moderate",
+    effect: "Additive lowering of blood pressure: GTN dilates the veins, these drugs lower the arterial pressure or block the reflex response. Fainting and falls; in a woman with pre-eclampsia or haemorrhage, a sudden fall in placental blood flow.",
+    action: "STARTING GTN in a patient on one of these: sit or lie the patient down, check BP before each GTN dose and give it only if the systolic is at least 100 mmHg (90 for a single relaxation bolus with fluids running); start with the lowest dose (one tablet or puff, or a 50 microgram IV bolus). STARTING one of these in a patient using GTN: warn about dizziness on standing; first doses at bedtime. STOPPING either: no change needed for the other; the effect wears off within minutes for GTN and within a day for the others.",
+    ref: "Harrison 22nd ed. 2025, ch. 284 Ischemic Heart Disease, Table 284-7, p. 2102 (nitrates interact with beta-blockers and calcium-channel blockers); BNF interactions (nitrates — antihypertensives, alpha-blockers: enhanced hypotensive effect)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Nitrate drug interactions include beta-blockers and calcium-channel blockers.",
+        ref: "Harrison 22nd ed. 2025, ch. 284 Ischemic Heart Disease, Table 284-7, p. 2102",
+        pdf_page: 2145,
+        quote: "adrenergic blockers, calcium channel"
+      }
+    ]
+  },
+  {
+    a: ["glyceryl-trinitrate"],
+    b: ["propofol", "thiopental", "bupivacaine"],
+    severity: "moderate",
+    effect: "Induction of general anaesthesia and spinal anaesthesia both lower blood pressure; GTN given for uterine relaxation (inversion, head entrapment at caesarean) or for the pressor response at intubation adds venodilation, so the fall can be abrupt and deep.",
+    action: "STARTING GTN under spinal or general anaesthesia: give it only after the BP has been restored, in 50 microgram IV boluses, with a vasopressor (ephedrine or phenylephrine) drawn up and a fluid bolus running; measure BP every 1–2 min. STARTING anaesthesia shortly after GTN: the anaesthetist should know the dose and time — reduce the induction dose and expect hypotension. STOPPING: GTN wears off within minutes; no further action.",
+    ref: "BNF interactions (nitrates — general anaesthetics: enhanced hypotensive effect); Williams Obstetrics 25th ed. 2018, ch. 45, pdf p. 1973 (uterine relaxants best given by the anaesthesia team)",
+    refs: [
+      {
+        book: "williams",
+        text: "IV or sublingual nitroglycerin for uterine relaxation is best given by the anaesthesia team.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 45 Multifetal Pregnancy, pdf p. 1973",
+        pdf_page: 1973,
+        quote: "or sublingual nitroglycerin or intravenous terbutaline to achieve uterine relaxation"
+      }
+    ]
+  },
+  {
+    a: ["tamsulosin"],
+    b: ["hydralazine", "labetalol", "nifedipine", "propranolol"],
+    severity: "moderate",
+    effect: "Additive blood-pressure lowering: postural hypotension, dizziness and falls, mostly in the first days of the combination and in older men.",
+    action: "STARTING tamsulosin in a patient on one of these: give it at bedtime, check lying and standing BP after the first doses, teach him to sit on the edge of the bed before standing. STARTING one of these in a man on tamsulosin: start at the usual low dose and check standing BP. STOPPING the antihypertensive: no change to tamsulosin. STOPPING tamsulosin: no change, but recheck BP control.",
+    ref: "Schwartz's Principles of Surgery 11th ed., ch. 40 Urology, p. 1763 (orthostatic hypotension with alpha-blockers); BNF interactions (alpha-blockers — antihypertensives)",
+    refs: [
+      {
+        book: "schwartz",
+        text: "Alpha-blocker side effects include orthostatic hypotension and dizziness.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 40 Urology, p. 1763",
+        pdf_page: 1790,
+        quote: "Their effect is usually seen within days."
+      }
+    ]
+  },
+  {
+    a: ["tamsulosin"],
+    b: ["fluoxetine"],
+    severity: "moderate",
+    effect: "Tamsulosin is broken down partly by CYP2D6, which fluoxetine strongly inhibits: tamsulosin levels rise, with more dizziness and postural hypotension.",
+    action: "STARTING tamsulosin in a patient on fluoxetine: 400 micrograms at bedtime, check standing BP in the first week; do not increase the dose. STARTING fluoxetine in a man on tamsulosin: warn about dizziness. STOPPING fluoxetine: its inhibition lasts several weeks (long half-life), so the effect fades slowly; no tamsulosin change is needed.",
+    ref: "Tamsulosin product information (CYP2D6 inhibitors: caution); BNF interactions"
+  },
+  {
+    a: ["protamine"],
+    b: ["heparin"],
+    severity: "moderate",
+    effect: "Intended: protamine neutralises unfractionated heparin and partly reverses enoxaparin. Two traps. Too much protamine is itself an anticoagulant and causes bleeding. And heparin can rebound hours later — subcutaneous heparin and enoxaparin keep being absorbed after the protamine has gone.",
+    action: "When protamine is GIVEN: calculate it from the heparin still active (1 mg per 100 units UFH given in the last 2–3 h; enoxaparin 1 mg per mg within 8 h), never more than 50 mg per dose, no faster than 5 mg/min; recheck bleeding and the aPTT (if available) at 5–15 min and again at 2–8 h. When heparin is RESTARTED after reversal: only once the bleeding is controlled and a senior has weighed the clot risk; protamine already given does not need to be 'covered'.",
+    ref: "Harrison 22nd ed. 2025, ch. 123, pp. 948–949; Schwartz's Principles of Surgery 11th ed., ch. 24, p. 988 and ch. 4, p. 113",
+    refs: [
+      {
+        book: "harrison",
+        text: "Protamine neutralises heparin, maximum 50 mg per dose; LMWH only partly.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 949",
+        pdf_page: 992,
+        quote: "protamine sulfate incompletely neutralizes the anticoagulant activity"
+      },
+      {
+        book: "schwartz",
+        text: "Prolonged aPTT after neutralisation may be the anticoagulant effect of protamine itself.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 113",
+        pdf_page: 140,
+        quote: "a result of the anticoagulant effect of protamine"
+      }
+    ]
   }
 ];

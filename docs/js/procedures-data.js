@@ -76,7 +76,7 @@ window.PROCEDURES = [
         item: "Sterile water or normal saline for the seal",
         qty: "500 mL",
         note: "Enough to cover the end of the long tube by about 2 cm and no more. Deeper makes the patient work harder to drain; shallower lets air be sucked back.",
-        drugId: null
+        drugId: "normal-saline"
       },
       {
         item: "Lidocaine 1 % or 2 %",
@@ -569,7 +569,7 @@ window.PROCEDURES = [
         item: "Normal saline for irrigation",
         qty: "3 L",
         note: "For a three-way catheter. Warm it if you can; cold irrigation causes bladder spasm.",
-        drugId: null
+        drugId: "normal-saline"
       }
     ],
     steps: [
@@ -1852,7 +1852,7 @@ window.PROCEDURES = [
         item: "Normal saline for lavage",
         qty: "4 L",
         note: "Asella's gangrenous sigmoid volvulus list adds 4 extra bags of saline specifically for lavage.",
-        drugId: null
+        drugId: "normal-saline"
       },
       {
         item: "Ringer's lactate",
@@ -2289,7 +2289,7 @@ window.PROCEDURES = [
         item: "Normal saline for lavage",
         qty: "4 L",
         note: "Faecal peritonitis from an ileal perforation needs thorough lavage.",
-        drugId: null
+        drugId: "normal-saline"
       }
     ],
     steps: [

@@ -3082,7 +3082,7 @@ window.CONDITIONS = [
     "Benzodiazepine for agitation, tremor and muscle activity. Avoid physical restraint, which increases heat production.",
     "Cool the patient and give IV fluids; paracetamol does not lower this temperature.",
     "Differentiate from NMS (slow onset, antipsychotic, bradykinesia and lead-pipe rigidity), anticholinergic toxicity (dry skin, absent bowel sounds), malignant hyperthermia, sepsis, meningitis, malaria and alcohol withdrawal.",
-    "Cyproheptadine (not in this app) where available: 12 mg orally or by NG tube, then 2 mg every 2 hours while symptoms continue.",
+    "Cyproheptadine where available: 12 mg orally or by NG tube, then 2 mg every 2 hours while symptoms continue.",
     "Temperature above 40 °C or rising rigidity: refer urgently for intensive care; sedation, paralysis and ventilation may be needed.",
     "Most cases resolve within 24 hours of stopping the drugs. Review all prescriptions before restarting; avoid the combination in future."
   ],
@@ -4712,7 +4712,7 @@ window.CONDITIONS = [
       "Gonococcal: give a SINGLE dose of ceftriaxone 25–50 mg/kg IM or IV, maximum 125 mg. Do not give it with calcium-containing IV fluids such as Ringer's lactate, and avoid it in a significantly jaundiced or preterm baby — use cefotaxime 100 mg/kg where it is stocked. Confirm the dose with the national protocol.",
       "Irrigate the eye with warm saline every 1–2 hours at first, until no more pus forms, and continue several times a day. Washing the pus out matters as much as the antibiotic.",
       "Topical antibiotic alone NEVER treats gonococcal ophthalmia. It is an addition, not a substitute.",
-      "Chlamydial: treat systemically by mouth — erythromycin 50 mg/kg/day in four divided doses for 14 days, or azithromycin 20 mg/kg once daily for 3 days. Topical treatment does not clear the nasopharynx and does not prevent the pneumonia. Neither drug has an entry in this app yet — check stock and confirm with the national protocol.",
+      "Chlamydial: treat systemically by mouth — erythromycin 50 mg/kg/day in four divided doses for 14 days, or azithromycin 20 mg/kg once daily for 3 days. Topical treatment does not clear the nasopharynx and does not prevent the pneumonia. Check stock and confirm with the national protocol.",
       "Warn the mother about forceful vomiting in a baby under 6 weeks given erythromycin or azithromycin: infantile hypertrophic pyloric stenosis has been linked to both. It is uncommon, but she should come back.",
       "Treat the mother AND her partner or partners for gonorrhoea and chlamydia at the same visit, with the national STI regimen. If you do not, the baby is reinfected and the mother keeps the infection. Offer HIV and syphilis testing at the same time.",
       "Admit any baby with corneal involvement, systemic signs, or where hourly eye toilet at home is not realistic.",
@@ -4807,7 +4807,7 @@ window.CONDITIONS = [
       {
         id: "tetracycline-eye",
         role: "first",
-        note: "1 % ointment twice daily to both eyes for six weeks, for active TF or TI where azithromycin is not available and for infants under 6 months. Note: single-dose oral azithromycin 20 mg/kg (max 1 g) is the programme drug of choice but has no entry in this app yet — confirm stock and the national protocol."
+        note: "1 % ointment twice daily to both eyes for six weeks, for active TF or TI where azithromycin is not available and for infants under 6 months. Note: single-dose oral azithromycin 20 mg/kg (max 1 g) is the programme drug of choice — confirm stock and the national protocol."
       },
       {
         id: "fluorescein",
