@@ -959,8 +959,8 @@ window.DRUG_DB = [
     { book: "harrison", text: "Artesunate is given IV but is also rapidly absorbed IM; oily IM artemether is erratically absorbed and less effective.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
     { book: "harrison", text: "Switch to oral therapy as soon as fluids are tolerated and give a full 3-day ACT course; avoid mefloquine as follow-on.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
     { book: "harrison", text: "In non-immune patients with hyperparasitaemia, sudden haemolysis can occur many days after artesunate treatment.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1765" },
-    { book: "nelson", text: "Severe malaria (all species): artesunate 2.4 mg/kg/dose IV at 0, 12 and 24 h, then daily (3 days), followed by artemether–lumefantrine (preferred), atovaquone–proguanil, or quinine plus doxycycline/clindamycin.", ref: "Nelson 22nd ed. 2024, ch. 336 Malaria, Table (treatment), p. 2136" },
-    { book: "nelson", text: "Interim treatment while awaiting IV artesunate: oral artemether–lumefantrine, atovaquone–proguanil or quinine.", ref: "Nelson 22nd ed. 2024, ch. 336, Fig. (management algorithm)" }
+    { book: "nelson", text: "Severe malaria (all species): artesunate 2.4 mg/kg/dose IV at 0, 12 and 24 h, then daily (3 days), followed by artemether–lumefantrine (preferred), atovaquone–proguanil, or quinine plus doxycycline/clindamycin.", ref: "Nelson 22nd ed. 2024, ch. 325, Table 325.1 Drugs for Parasitic Infections, p. 2136" },
+    { book: "nelson", text: "Interim treatment while awaiting IV artesunate: oral artemether–lumefantrine, atovaquone–proguanil or quinine.", ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), p. 2176" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -25190,6 +25190,701 @@ window.DRUG_DB = [
       { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 60, 141, 217" },
       { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 280, 687" },
       { name: "Gabbe's Obstetrics, 9th ed., ch. 7" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- malaria ---- */
+  {
+    id: "artemether-lumefantrine",
+    name: "Artemether–lumefantrine (Coartem)",
+    aka: [
+      "Coartem",
+      "Coartem Dispersible",
+      "AL",
+      "ACT",
+      "Artemether/lumefantrine",
+      "Artemether-lumefantrine",
+      "Lumefantrine",
+      "Artemether tablets"
+    ],
+    cls: "Artemisinin-based combination therapy (ACT): artemether, a fast-acting artemisinin, with lumefantrine, a slowly eliminated partner drug",
+    cat: "infection",
+    wards: ["outpatient", "medical", "paediatric", "maternity", "emergency"],
+    tags: [
+      "malaria",
+      "uncomplicated malaria",
+      "falciparum",
+      "vivax",
+      "mixed infection",
+      "ACT",
+      "first-line",
+      "take with fat",
+      "follow-on after artesunate",
+      "Coartem"
+    ],
+    presentation: [
+      "Tablet 20 mg artemether + 120 mg lumefantrine. Every tablet in every pack is the same strength; the colour-coded packs differ only in the number of tablets: 6, 12, 18 or 24 for one full course.",
+      "Dispersible tablet 20/120 mg for young children (Coartem Dispersible): disperse in a little clean water. Same number of tablets per dose as the ordinary tablet.",
+      "Keep in the blister, dry, below 30 °C (product information). No fridge needed. There is no injection: a patient who cannot swallow needs artesunate (see Artesunate)."
+    ],
+    indications: [
+      "Uncomplicated P. falciparum malaria: the first-line ACT in Ethiopia (confirm with the Ethiopian National Malaria Guidelines). WHO recommends an ACT first line in all endemic areas (Harrison).",
+      "Mixed falciparum and vivax infection, and malaria where the species is unknown: treat as falciparum (Harrison), then add primaquine radical cure for vivax (see Primaquine).",
+      "P. vivax and P. ovale blood stage: an ACT or chloroquine (Harrison; WHO). Whether Ethiopia uses artemether–lumefantrine or chloroquine for vivax is set by the national guideline: confirm it. Either way, add primaquine for the liver stage.",
+      "Oral follow-on after parenteral artesunate for severe malaria: a full 3-day course once the patient can swallow (Harrison, Nelson).",
+      "Uncomplicated malaria in pregnancy, including the first trimester (WHO, as given in Harrison). Gabbe and the US CDC still prefer other drugs in the first trimester: see Safety."
+    ],
+    standard: {
+      summary: "Six doses over 3 days, the number of tablets set by weight band, and every dose taken with fat. Lumefantrine is absorbed poorly and unpredictably on an empty stomach and much better with fat (Harrison), so a dose swallowed without food or milk is a smaller dose. Poor absorption, an incomplete course and vomited doses are avoidable reasons for treatment to fail. Never use it for severe malaria: any danger sign, or a patient who cannot swallow or keeps vomiting, needs artesunate first (Severe malaria case).",
+      items: [
+        {
+          label: "Dose by weight (WHO and Nelson bands; tablets of 20/120 mg)",
+          text: "5 to under 15 kg: 1 tablet per dose (6 tablets for the course). 15 to under 25 kg: 2 tablets per dose (12). 25 to under 35 kg: 3 tablets per dose (18). 35 kg and over, including adults and pregnant women: 4 tablets per dose (24). The target is 1.5/9 mg/kg twice daily for 3 days (Harrison). Weigh the patient: the age guide printed on packs is only for when there is no scale."
+        },
+        {
+          label: "Timing: six doses",
+          text: "Dose 1 at once (hour 0); dose 2 eight hours later; then one dose every 12 hours on days 2 and 3, which is hours 24, 36, 48 and 60 (Nelson). Write the six clock times on the pack or envelope before the patient leaves."
+        },
+        {
+          label: "Take every dose with fat",
+          text: "A cup of milk, breast milk (breastfeed with or just after the dose), or a meal containing oil, butter, egg, peanuts or avocado (Harrison: absorption is related to fat intake). A sick patient who cannot eat should at least take milk or a fatty drink with each dose."
+        },
+        {
+          label: "Vomiting",
+          text: "Watch for 1 hour after the dose; if vomited, repeat it (Harrison). WHO practice: vomited within 30 minutes, repeat the full dose; at 30–60 minutes, repeat half the dose. A patient who vomits the repeat dose, or vomits everything, cannot be treated by mouth: give artesunate (pre-referral rectal artesunate for a young child, or IM/IV) and manage as severe malaria."
+        },
+        {
+          label: "Missed dose",
+          text: "Give it as soon as remembered, then continue so that all six doses are taken (product information). Do not stop when the fever goes: stopping early leaves surviving parasites."
+        },
+        {
+          label: "Add-ons",
+          text: "Vivax, ovale or mixed infection: add primaquine for radical cure (see Primaquine). Falciparum: a single low dose of primaquine (0.25 mg base/kg) to block transmission is recommended where transmission is low, except in pregnancy and in infants (Harrison); use it where the Ethiopian National Malaria Guidelines say to. Fever: paracetamol, which also reduces vomiting (Harrison)."
+        },
+        {
+          label: "After severe malaria",
+          text: "Once the patient can drink and swallow after at least 24 hours of parenteral artesunate, give a FULL 6-dose course, not just the 'remaining days' (Harrison: a full 3-day ACT course)."
+        },
+        {
+          label: "Kidneys and liver",
+          text: "No dose change for kidney or mild to moderate liver impairment (product information). Severe liver or kidney disease: little data; give the standard course and watch closely."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Getting the fat in with every dose",
+        best_for: "Every patient, at the health post, OPD or ward: the cheapest way to make the course work.",
+        requires: ["oral"],
+        steps: [
+          "Give dose 1 in front of you, at the facility, with a cup of milk (tea with plenty of milk will do) or food the family has brought.",
+          "Explain why: 'this medicine only works when it goes down with milk or food that has oil or butter in it.' Ask the patient to repeat it back.",
+          "Good fat at home: milk, yoghurt, egg, injera with wot or shiro cooked in oil or niter kibbeh, peanuts, avocado. A baby: breastfeed with or straight after the dose.",
+          "During an Orthodox fast (no milk, egg or meat), use foods that are allowed: shiro or lentils cooked in oil, peanuts, avocado, sesame or soya. During Ramadan, give the doses with the evening and pre-dawn meals but keep the six doses on time as nearly as possible: never skip one.",
+          "Write the six clock times on the pack, e.g. 10:00 today, 18:00 today, then 10:00 and 22:00 tomorrow and the day after. Tick each one off.",
+          "A patient too sick to eat or drink anything is often not 'uncomplicated'. Check the danger signs again before sending them home."
+        ],
+        monitor: [
+          "Vomiting in the first hour after each supervised dose",
+          "At follow-up: ask HOW each dose was taken, not just whether"
+        ],
+        cautions: [
+          "Fasting is not a reason to delay or skip doses. If the patient is unsure, suggest they ask their priest or imam; most allow a sick person to eat and take medicine."
+        ]
+      },
+      {
+        title: "Young children and the child who vomits",
+        best_for: "Children 5 kg and over who can swallow, at OPD or health post, including a child who vomited a dose.",
+        requires: ["oral"],
+        steps: [
+          "Weigh the child; pick the band (5 to under 15 kg = 1 tablet a dose; 15 to under 25 kg = 2).",
+          "If the child is hot and miserable, give paracetamol first and let the fever come down a little: it reduces vomiting (Harrison).",
+          "Dispersible tablet: put it in a cup with a small amount of clean water, swirl until it breaks up, give it all, then rinse the cup with a little more water or milk and give that too.",
+          "No dispersible tablets: crush the ordinary tablet between two spoons, mix with a little breast milk, milk or water, and give all of it, followed by a breastfeed or milk.",
+          "Keep the child at the facility for an hour after dose 1. Vomited within 30 minutes: repeat the full dose; at 30–60 minutes: half the dose (WHO). Vomited after an hour: no repeat.",
+          "Vomits again, cannot drink, is very sleepy or convulses: this is severe malaria. Give pre-referral rectal artesunate (children under 6 years) or IM artesunate and refer (see Artesunate and the Severe malaria case)."
+        ],
+        monitor: [
+          "Vomiting and alertness during the first hour",
+          "Temperature, feeding and danger signs; the caregiver returns at once if any appear"
+        ],
+        cautions: [
+          "Under 5 kg there is no standard band: Nelson (US CDC) does not use artemether–lumefantrine below 5 kg; WHO advises treating infants under 5 kg with an ACT at the same mg/kg target dose as for a 5 kg child. This is a senior decision: admit the infant and confirm the dose with the national guideline."
+        ]
+      },
+      {
+        title: "Wrong pack, broken packs or a short supply",
+        best_for: "Stores holding only some weight-band packs, loose tablets from opened packs, or too few tablets for everyone.",
+        requires: ["oral"],
+        steps: [
+          "Every tablet is the same 20/120 mg strength, whatever the pack colour. A child's course can be counted out from an adult pack: tablets per dose × 6 = the course (e.g. 15–24 kg: 2 × 6 = 12 tablets).",
+          "Put the counted course in a clean envelope labelled with the name, the number of tablets per dose and the six clock times. Keep the blister foil on each tablet until it is taken.",
+          "Only start a course you can finish. Never give a partial course, never split one course between two patients or family members, and never 'save' tablets for next time: an incomplete course fails and breeds resistance.",
+          "Too few tablets for a full course: do not start it. Use another full regimen the guideline allows (see Substitutes), or refer, and report the stock-out the same day.",
+          "Patient arrives with a pack bought at a private pharmacy: check the strength (20/120 mg), the expiry date and that it looks like the genuine product. Harrison warns that falsified antimalarials circulate in Africa and cause treatment failure. If in doubt, give a course from the facility."
+        ],
+        monitor: ["Count the tablets left at follow-up if adherence is in doubt"],
+        cautions: [
+          "Never give artemether alone or lumefantrine alone, and never give the artemisinin as monotherapy."
+        ]
+      },
+      {
+        title: "When artemether–lumefantrine is the wrong drug",
+        best_for: "Recognising the patients who must not simply be handed a pack.",
+        requires: [],
+        steps: [
+          "Any danger sign (cannot sit or stand, cannot drink, repeated vomiting, convulsions, confusion or drowsiness, deep or fast breathing, very pale, jaundice with illness, dark urine, bleeding, shock), or pregnancy with a high fever and vomiting: give parenteral artesunate first and follow the Severe malaria case. Artemether–lumefantrine comes later, as the follow-on.",
+          "On rifampicin TB treatment, carbamazepine, phenytoin or phenobarbital: these drugs lower artemether and lumefantrine levels and the course may fail (see Interactions). Do not withhold malaria treatment; give the full course with fat, ask a senior or the national guideline about an alternative, and check the response closely.",
+          "Long QT, a family history of sudden death, or already on a strongly QT-prolonging drug: ask a senior; correct low potassium or magnesium; avoid adding other QT drugs during the 3 days where you can.",
+          "Malaria returning within 4 weeks of a full course: suspect treatment failure. Confirm parasites by microscopy or a pLDH (Pf) test, because an HRP2 test can stay positive for weeks after treatment (Harrison). Treat with a different ACT or the second-line regimen of the national guideline (Harrison: a different ACT; or artesunate or quinine with doxycycline, tetracycline or clindamycin for 7 days)."
+        ],
+        monitor: [],
+        cautions: ["Not for prophylaxis: the artemether is gone within hours (Harrison)."]
+      }
+    ],
+    paediatric: [
+      "Weight bands: 5 to under 15 kg 1 tablet; 15 to under 25 kg 2; 25 to under 35 kg 3; 35 kg and over 4 tablets per dose, six doses over 3 days (Nelson; WHO).",
+      "Dispersible tablets for young children; otherwise crush the ordinary tablet in milk or breast milk.",
+      "Under 5 kg: Nelson (CDC) says not for infants under 5 kg; WHO advises an ACT at the same mg/kg target as for a 5 kg child. Senior decision, admit, and confirm with the national guideline.",
+      "Children vomit easily: paracetamol first, observe for an hour, repeat vomited doses (WHO rule above).",
+      "Primaquine (single low dose or radical cure) is not given to infants: see Primaquine for the age limit."
+    ],
+    cautions: [
+      "Not for severe malaria, and not for a patient who cannot swallow or keep tablets down: use artesunate.",
+      "Must be taken with fat: absorption depends on fat intake (Harrison).",
+      "Side effects (Harrison Table 229-1): occasional nausea, vomiting, diarrhoea, abdominal pain, loss of appetite, headache and dizziness. Many of these are also symptoms of malaria.",
+      "QT: lumefantrine is chemically related to quinine (Harrison). The product information advises against use with other QT-prolonging drugs and in people with long QT or a family history of sudden death. Check the Interactions tab before adding antipsychotics, antiarrhythmics, macrolides or other antimalarials.",
+      "Enzyme inducers (rifampicin, carbamazepine, phenytoin, phenobarbital) lower its levels (product information); nevirapine raises lumefantrine and lowers artemether (Harrison). See Interactions.",
+      "Hormonal contraception may be less effective during and shortly after the course; advise an additional non-hormonal method (product information).",
+      "Pregnancy: WHO recommends it in all trimesters (Harrison); Gabbe and the US CDC prefer other drugs in the first trimester. Confirm with the Ethiopian National Malaria Guidelines. See Safety.",
+      "Hypersensitivity to either component: do not use."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Uncomplicated falciparum malaria: artemether–lumefantrine 1.5/9 mg/kg twice daily for 3 days, with food. WHO recommends an artemisinin combination (ACT) as first-line treatment in all endemic areas.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-6, p. 1770"
+      },
+      {
+        book: "harrison",
+        text: "Lumefantrine has variable oral bioavailability that is considerably increased by fat taken with it; its terminal half-life is about 4–5 days in malaria. Artemether and lumefantrine act synergistically.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1749"
+      },
+      {
+        book: "harrison",
+        text: "Lumefantrine: highly variable absorption related to fat intake; half-life 3–4 days. Artemisinins are eliminated very rapidly (half-life under 1 hour) and have no action on liver stages.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-7, p. 1771"
+      },
+      {
+        book: "harrison",
+        text: "The recommended ACT regimens are safe and effective in adults, children and pregnant women in all trimesters; WHO recommends artemether–lumefantrine preferentially in the first trimester, where there is most experience.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      },
+      {
+        book: "harrison",
+        text: "Watch patients for vomiting for 1 hour after any oral antimalarial and repeat the dose if they vomit; paracetamol lowers fever and so reduces vomiting.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      },
+      {
+        book: "harrison",
+        text: "Artemisinin-resistant P. falciparum has spread in Southeast Asia and East Africa; for recrudescence after first-line treatment a different ACT may be given.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      },
+      {
+        book: "harrison",
+        text: "Lumefantrine levels are raised by nevirapine and darunavir and lowered by etravirine; artemether levels are lowered by darunavir, etravirine and nevirapine. Pregnancy class not assigned; no information on breast milk.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741"
+      },
+      {
+        book: "nelson",
+        text: "Artemether–lumefantrine (20/120 mg tablets) by weight: 5 to under 15 kg 1 tablet; 15 to under 25 kg 2; 25 to under 35 kg 3; 35 kg and over 4 tablets per dose. Day 1: first dose and a second dose 8 hours later; days 2 and 3: one dose twice daily.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.2, p. 2176"
+      },
+      {
+        book: "nelson",
+        text: "US (CDC) caution: artemether–lumefantrine can be used in the second and third trimesters and in the first trimester only if there is no other option; not for infants under 5 kg or for women breastfeeding infants under 5 kg.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.2, p. 2176"
+      },
+      {
+        book: "nelson",
+        text: "For chloroquine-resistant falciparum malaria artemether–lumefantrine is the preferred option if readily available; it is also the preferred oral follow-on after IV artesunate.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), p. 2175"
+      },
+      {
+        book: "williams",
+        text: "WHO recommends an artemisinin-based regimen for uncomplicated falciparum malaria; a study of four artemisinin-based drugs in 3428 pregnant women reported no serious maternal or perinatal adverse effects.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2722"
+      },
+      {
+        book: "gabbe",
+        text: "Gabbe differs: for uncomplicated malaria in the first trimester it gives quinine plus clindamycin as first line, with ACT usable but not preferred for lack of first-trimester safety data; ACT is first line in the second and third trimesters.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1133"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO Guidelines for malaria (current edition)",
+        url: "https://www.who.int/publications/i/item/guidelines-for-malaria"
+      },
+      {
+        name: "Federal Ministry of Health Ethiopia. National Malaria Guidelines (current edition) — confirm the vivax regimen, weight bands, single low-dose primaquine and first-trimester use"
+      },
+      { name: "Coartem and Coartem Dispersible summary of product characteristics" },
+      { name: "Harrison 22nd ed. 2025, ch. 229 and 231" },
+      { name: "Nelson 22nd ed. 2024, ch. 334" },
+      { name: "Williams Obstetrics 25th ed. 2018, ch. 64; Gabbe's Obstetrics 9th ed., ch. 58" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "primaquine",
+    name: "Primaquine",
+    aka: ["Primaquine phosphate", "PQ", "Radical cure", "8-aminoquinoline", "Anti-relapse treatment"],
+    cls: "8-aminoquinoline antimalarial: kills the dormant liver stages (hypnozoites) of P. vivax and P. ovale, and the gametocytes of P. falciparum",
+    cat: "infection",
+    wards: ["outpatient", "medical", "paediatric"],
+    tags: [
+      "malaria",
+      "vivax",
+      "ovale",
+      "radical cure",
+      "relapse",
+      "hypnozoites",
+      "gametocytes",
+      "transmission blocking",
+      "G6PD",
+      "haemolysis",
+      "dark urine"
+    ],
+    presentation: [
+      "Tablets of 15 mg base (as about 26.3 mg primaquine phosphate) and 7.5 mg base. Doses are always written as BASE: check whether your label states base or salt (Harrison: antimalarials are prescribed as base equivalents).",
+      "Oral only. There is no injection: given parenterally primaquine causes marked hypotension (Harrison).",
+      "Store dry at room temperature; keep out of reach of children."
+    ],
+    indications: [
+      "Radical cure of P. vivax and P. ovale: given after or with the blood-stage treatment (chloroquine or an ACT) to kill the dormant liver forms and prevent relapse (Harrison, Nelson). Without it, many vivax patients come back with malaria again weeks or months later.",
+      "Mixed falciparum–vivax infection: radical cure after the ACT course.",
+      "Single low dose with falciparum treatment to stop transmission to mosquitoes, where transmission is low or elimination is the aim (Harrison; WHO). Use it where the Ethiopian National Malaria Guidelines say to."
+    ],
+    standard: {
+      summary: "Two different jobs at two different doses. The 14-day radical-cure course protects the patient from vivax relapse; the single low dose protects the community from falciparum transmission. The danger is haemolysis in G6PD deficiency, which is dose-related: the single low dose is safe even in G6PD deficiency (Harrison), but the 14-day course can cause serious haemolytic anaemia in severe deficiency. G6PD testing is usually not available: see the first No-pump method for what to do. Never in pregnancy, never in young infants.",
+      items: [
+        {
+          label: "Radical cure, P. vivax or P. ovale (WHO standard outside Southeast Asia and Oceania)",
+          text: "0.25 mg base/kg once daily for 14 days, with food (Harrison). Adult 60 kg: 15 mg daily. The same total dose can be condensed into 7 days (0.5 mg/kg daily) (Harrison). Nelson (US CDC) uses 0.5 mg base/kg, maximum 30 mg, daily for 14 days. Use the dose your national guideline sets: confirm with the Ethiopian National Malaria Guidelines."
+        },
+        {
+          label: "When to start",
+          text: "With the blood-stage treatment or straight after it: chloroquine 3 days or artemether–lumefantrine 3 days. Only after pregnancy has been excluded. Complete all 14 days: relapse prevention depends on the total dose."
+        },
+        {
+          label: "Single low dose, P. falciparum (transmission blocking)",
+          text: "0.25 mg base/kg ONCE, with the ACT (Harrison). No G6PD test is needed at this dose (Harrison). Not for pregnant women or infants (Harrison). Give it where the national guideline uses it."
+        },
+        {
+          label: "Known mild or intermediate G6PD deficiency",
+          text: "Instead of the daily course: 0.75 mg base/kg (maximum 45 mg) once WEEKLY for 8 weeks, under supervision with a haemoglobin check (Harrison, Nelson)."
+        },
+        {
+          label: "Known severe G6PD deficiency, pregnancy, or an infant too young",
+          text: "No primaquine course. Prevent relapses with weekly chloroquine instead: in pregnancy 5 mg base/kg weekly until 1 month after delivery (Harrison; Nelson gives 300 mg base weekly for the rest of the pregnancy), then radical cure if allowed; in G6PD deficiency 300 mg base weekly for 1 year in adults (Nelson). See Chloroquine."
+        },
+        {
+          label: "Stop at once if",
+          text: "Urine turns dark (red, brown, black, like strong tea or cola), the eyes go yellow, the patient becomes pale, weak, breathless, or has back or belly pain, or the lips turn grey-blue. These are signs of haemolysis (Harrison) or methaemoglobinaemia. Do not restart."
+        },
+        {
+          label: "Kidneys and liver",
+          text: "No dose change is described. Primaquine is rapidly and almost completely absorbed and extensively metabolised (Harrison)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Radical cure when there is no G6PD test (the usual situation)",
+        best_for: "Health centres and hospitals treating vivax without a G6PD test, which is most of Ethiopia.",
+        requires: ["oral"],
+        steps: [
+          "First check the national rule. Harrison and Nelson give primaquine only after a G6PD test is normal; WHO leaves the decision without a test to a weighing of benefit and risk, and many national programmes give the 14-day course without testing, with careful warning. Do what the Ethiopian National Malaria Guidelines say.",
+          "Exclude pregnancy (ask; test if in doubt) and check the age (see Paediatric). Do not give if breastfeeding a young infant whose G6PD is unknown (Nelson).",
+          "Ask about earlier dark urine or jaundice after medicines, after eating fava beans (baqela), or in the newborn period, in the patient or close family. A yes means probable G6PD deficiency: do not give the daily course; see Standard for the weekly or chloroquine alternatives.",
+          "If the patient is already very pale or has a low haemoglobin, a haemolytic episode is more dangerous. Discuss with a senior before starting.",
+          "Give the first dose at the facility with food. Explain the warning signs in plain words and show them: urine turning dark like strong tea or cola, yellow eyes, unusual paleness, weakness, breathlessness, back or belly pain. If any appear: STOP the tablets and come back the same day.",
+          "Haemolysis usually shows in the first days of the course; once it starts, jaundice and dark urine follow within hours to 2–3 days (Harrison). Review on day 3: ask about urine colour, look at the conjunctivae and palms, and check haemoglobin if possible. If all is well, supply the rest of the course.",
+          "Write on the patient's card: 'PRIMAQUINE — G6PD unknown, day 1 = (date)'. This warns the next clinician not to add another oxidant drug such as dapsone."
+        ],
+        monitor: [
+          "Urine colour every day (the patient watches it)",
+          "Pallor, breathlessness, jaundice; haemoglobin on day 3 and day 7 if a test is available"
+        ],
+        cautions: [
+          "Dark urine during malaria treatment is either severe malaria or haemolysis from an oxidant drug such as primaquine (Harrison). Either way the patient needs to be seen the same day.",
+          "Never restart primaquine after a haemolytic reaction. Write it on the card as probable G6PD deficiency."
+        ]
+      },
+      {
+        title: "If haemolysis or methaemoglobinaemia happens",
+        best_for: "A patient on primaquine who returns with dark urine, jaundice, pallor, breathlessness or blue-grey lips.",
+        requires: ["iv"],
+        steps: [
+          "Stop primaquine immediately and permanently.",
+          "Assess airway, breathing and circulation; check haemoglobin, pulse, blood pressure, urine colour and output.",
+          "Protect the kidneys: in adults the most serious threat from this haemolysis is acute kidney failure (Harrison). Encourage oral fluids; if the patient cannot drink or the urine is dark and scanty, give IV fluids and measure urine output.",
+          "Transfuse for severe anaemia with distress (see Blood transfusion). Without other illness, full recovery is the rule once the drug is stopped (Harrison).",
+          "Grey-blue lips or skin with a low pulse-oximeter reading that does not improve with oxygen suggests methaemoglobinaemia, which primaquine can cause whatever the G6PD status (Harrison). Give oxygen and refer. Methylene blue is the usual antidote at referral level, but it can itself cause haemolysis in G6PD deficiency (Harrison Table 105-6): leave that decision to the referral team.",
+          "Refer if the haemoglobin is falling fast, urine output falls, or the patient is breathless at rest or confused.",
+          "Afterwards, protect against vivax relapse with weekly chloroquine as the national guideline allows (Nelson), not with more primaquine."
+        ],
+        monitor: ["Haemoglobin daily until stable", "Urine output and colour; creatinine if available"],
+        cautions: []
+      },
+      {
+        title: "Children and small adults with only 15 mg tablets",
+        best_for: "Health centres with only 15 mg base tablets and no paediatric strength.",
+        requires: ["oral"],
+        steps: [
+          "Weigh the child. Work out the dose: 0.25 mg/kg × weight (or the national dose). For example 12 kg × 0.25 = 3 mg; 20 kg × 0.25 = 5 mg; 30 kg × 0.25 = 7.5 mg.",
+          "A quarter of a 15 mg tablet is 3.75 mg; a half is 7.5 mg. Round to the nearest quarter-tablet. If a 7.5 mg tablet is available, a half of it (3.75 mg) is easier to split accurately.",
+          "Cut with a tablet cutter or a clean blade on a clean surface; crush the piece between two spoons and mix with a little food. It is bitter.",
+          "For a 14-day course, cut and package the pieces for the week at the facility, so the caregiver does not have to.",
+          "Give with food to reduce stomach upset."
+        ],
+        monitor: ["Urine colour and pallor, as for adults"],
+        cautions: [
+          "Do not round UP generously in a child of unknown G6PD status: if in doubt, choose the lower quarter-tablet and complete all 14 days."
+        ]
+      }
+    ],
+    paediatric: [
+      "Radical cure: 0.25 mg base/kg once daily for 14 days (Harrison; WHO); Nelson (US CDC) uses 0.5 mg base/kg, maximum 30 mg, daily for 14 days. Confirm with the national guideline.",
+      "Single low dose for falciparum: 0.25 mg base/kg once (Harrison).",
+      "Not for infants (Harrison). WHO has set the lower limit at 6 months of age; the textbooks searched give no exact age. Confirm with the Ethiopian National Malaria Guidelines. Young infants with vivax get the blood-stage treatment, and radical cure later.",
+      "Breastfeeding: give primaquine to the mother only if the infant's G6PD is known to be normal (Nelson); otherwise protect her with weekly chloroquine and give radical cure later."
+    ],
+    cautions: [
+      "G6PD deficiency: dose-related haemolysis, serious with the 14-day course in severe deficiency (Harrison); the single low dose is safe even in G6PD deficiency (Harrison).",
+      "Pregnancy: contraindicated (Harrison, Williams, Nelson): the fetus's G6PD status is unknown. Give weekly chloroquine until after delivery instead.",
+      "Breastfeeding: only if the infant's G6PD is known to be normal (Nelson). See Safety.",
+      "Methaemoglobinaemia can occur whatever the G6PD status (Harrison).",
+      "Common: nausea, vomiting, abdominal pain, diarrhoea (Harrison): take with food.",
+      "Activated by the liver enzyme CYP2D6 (Harrison); so people with low CYP2D6 activity may get less benefit and relapse despite a full course (published studies).",
+      "Avoid with other oxidant drugs, especially dapsone (see Interactions). Quinacrine increases primaquine toxicity (Harrison).",
+      "Oral only: hypotension if given by injection (Harrison)."
+    ],
+    antidote: "No antidote for haemolysis: stop primaquine, give fluids, and transfuse for severe anaemia. Methaemoglobinaemia: oxygen, and methylene blue at referral level, which is risky in G6PD deficiency.",
+    calc: {
+      type: "weight",
+      dosePerKg: 0.25,
+      doseUnit: "mg",
+      label: "Daily dose 0.25 mg BASE/kg (radical cure for 14 days, or ONE dose with an ACT for falciparum). Confirm the national dose; tablets are 15 mg or 7.5 mg base"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Radical cure of P. vivax or P. ovale: in addition to chloroquine or an ACT, primaquine 0.25 mg base/kg daily for 14 days (0.5 mg/kg in Southeast Asia and Oceania); the same total dose can be condensed into 7 days. Mild G6PD deficiency: 0.75 mg base/kg once weekly for 8 weeks. Not in severe G6PD deficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-6, p. 1770"
+      },
+      {
+        book: "harrison",
+        text: "Where transmission is low, a single dose of primaquine 0.25 mg base/kg should be added to falciparum treatment as a gametocytocide to prevent transmission, except in pregnant women and infants; this dose is safe even in G6PD deficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-6, p. 1770"
+      },
+      {
+        book: "harrison",
+        text: "Primaquine for radical cure is given once daily for 14 days after laboratory tests for G6PD deficiency have proved negative. Pregnant women should not be given primaquine.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      },
+      {
+        book: "harrison",
+        text: "Mild G6PD variant: 0.75 mg base/kg (maximum 45 mg) once weekly for 8 weeks. Pregnant women with vivax or ovale malaria get weekly chloroquine (5 mg base/kg) until 1 month after delivery, then radical treatment.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1773"
+      },
+      {
+        book: "harrison",
+        text: "Primaquine: complete oral absorption, activated mainly via CYP2D6, half-life 5–7 hours. Kills liver stages (radical cure) and falciparum gametocytes. Side effects: nausea, vomiting, abdominal pain, haemolysis, methaemoglobinaemia; serious haemolytic anaemia in severe G6PD deficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-7, p. 1771"
+      },
+      {
+        book: "harrison",
+        text: "Primaquine causes marked hypotension if given parenterally, so it is oral only. Test for G6PD deficiency before giving it. It can cause methaemoglobinaemia whatever the G6PD status.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1751"
+      },
+      {
+        book: "harrison",
+        text: "Drug-induced acute haemolysis in G6PD deficiency starts with malaise, weakness and abdominal or back (lumbar) pain; within hours to 2–3 days jaundice and often dark urine follow.",
+        ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, p. 798"
+      },
+      {
+        book: "harrison",
+        text: "The single low dose (0.25 mg/kg) to block falciparum transmission is safe for G6PD-deficient people; a 14-day course is the standard treatment to remove vivax hypnozoites and prevent relapse.",
+        ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, p. 799"
+      },
+      {
+        book: "harrison",
+        text: "Table of antiparasitic agents: primaquine is contraindicated in pregnancy; haemolysis in G6PD deficiency is frequent, methaemoglobinaemia and GI upset occasional.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741"
+      },
+      {
+        book: "nelson",
+        text: "US (CDC) dose: 0.5 mg base/kg (adult 30 mg) once daily for 14 days, after quantitative G6PD testing shows normal activity; 70 kg or more: total 6 mg/kg given as 30 mg a day. Intermediate deficiency: 45 mg weekly for 8 weeks with close monitoring. G6PD deficient: weekly chloroquine 300 mg base for 1 year instead.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.3, p. 2177"
+      },
+      {
+        book: "nelson",
+        text: "Primaquine must not be used in pregnancy (give weekly chloroquine for the rest of the pregnancy instead). It can be used during breastfeeding if the infant also has normal G6PD activity.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.3, p. 2177"
+      },
+      {
+        book: "williams",
+        text: "Primaquine is contraindicated in pregnancy; chloroquine-sensitive vivax or ovale malaria is treated with chloroquine through pregnancy and primaquine after delivery.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2723"
+      },
+      {
+        book: "harrison",
+        text: "Dark (black, brown or red) urine is a sign of severe malaria, but haemoglobinuria also occurs in G6PD deficiency, particularly with oxidant drugs such as primaquine.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-2, p. 1764"
+      },
+      {
+        book: "harrison",
+        text: "In adults the most serious threat from drug-induced haemolysis in G6PD deficiency is acute kidney failure (exceedingly rare in children); without other illness, full recovery is the rule.",
+        ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, p. 799"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO Guidelines for malaria (current edition)",
+        url: "https://www.who.int/publications/i/item/guidelines-for-malaria"
+      },
+      {
+        name: "Federal Ministry of Health Ethiopia. National Malaria Guidelines (current edition) — confirm the radical-cure dose, the rule when G6PD cannot be tested, single low-dose use and the age limit"
+      },
+      { name: "Primaquine phosphate product information" },
+      { name: "Harrison 22nd ed. 2025, ch. 105, 229 and 231" },
+      { name: "Nelson 22nd ed. 2024, ch. 334" },
+      { name: "Williams Obstetrics 25th ed. 2018, ch. 64" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "chloroquine",
+    name: "Chloroquine (phosphate)",
+    aka: ["Chloroquine phosphate", "Aralen", "CQ", "4-aminoquinoline"],
+    cls: "4-aminoquinoline antimalarial: kills blood-stage parasites; no action on the dormant liver stages",
+    cat: "infection",
+    wards: ["outpatient", "medical", "paediatric", "maternity"],
+    tags: [
+      "malaria",
+      "vivax",
+      "ovale",
+      "malariae",
+      "relapse prevention",
+      "pregnancy",
+      "weekly chloroquine",
+      "overdose",
+      "poisoning",
+      "QT"
+    ],
+    presentation: [
+      "Tablet 250 mg chloroquine phosphate = about 150–155 mg chloroquine BASE (Harrison: 250 mg salt contains 155 mg base). Every dose in this entry is in mg of BASE: read the label, because some packs state the salt.",
+      "Syrup in some supplies (often 50 mg base per 5 mL): check the label for base or salt and the strength before every child's dose.",
+      "Injection: avoid. Too-rapid parenteral chloroquine can cause seizures and death from cardiovascular collapse (Harrison). Oral is the route."
+    ],
+    indications: [
+      "P. vivax blood-stage infection where chloroquine still works, if the Ethiopian National Malaria Guidelines use it for vivax: always followed by primaquine radical cure (Harrison, Nelson). Confirm the national vivax regimen: an ACT is the alternative (Harrison).",
+      "P. ovale and P. malariae (Harrison; Nelson).",
+      "Weekly suppression of vivax relapse when primaquine cannot be given: pregnancy (until after delivery), G6PD deficiency, young infants (Harrison, Nelson).",
+      "NOT for P. falciparum or mixed infection: very few areas now have chloroquine-sensitive falciparum (Harrison), and Ethiopia is not one of them."
+    ],
+    standard: {
+      summary: "Chloroquine is for vivax, not falciparum. Falciparum resistance makes it useless for falciparum and for mixed infections, so a falciparum band on the rapid test, falciparum on the film, or an unknown species means an ACT (artemether–lumefantrine), never chloroquine. It kills vivax in the blood but not the dormant liver forms, so radical cure with primaquine must follow. It is well tolerated at treatment doses, but in overdose it is one of the most dangerous drugs in the pharmacy: dispense exactly one course and warn families to keep it away from children.",
+      items: [
+        {
+          label: "Vivax, ovale or malariae: total 25 mg base/kg over 3 days",
+          text: "Day 1: 10 mg base/kg. Day 2 (24 h): 10 mg base/kg. Day 3 (48 h): 5 mg base/kg (Harrison Table 231-6; total 25 mg/kg). Adults: 600 mg, 600 mg, 300 mg base = 4, 4 and 2 tablets of 150 mg base. Never more than the adult dose (Nelson). Harrison's other schedule (10 mg/kg, then 5 mg/kg at 12, 24 and 36 h) and the US CDC schedule in Nelson (10 mg/kg, then 5 mg/kg at 6, 24 and 48 h) give a similar total. Use the schedule of the Ethiopian National Malaria Guidelines."
+        },
+        {
+          label: "Then radical cure",
+          text: "Primaquine for 14 days, starting with or straight after chloroquine, if not pregnant, not a young infant, and not known G6PD deficient (see Primaquine)."
+        },
+        {
+          label: "Weekly relapse prevention instead of primaquine",
+          text: "Pregnancy: 5 mg base/kg once weekly until 1 month after delivery, then radical cure (Harrison); Nelson gives 300 mg base weekly for the rest of the pregnancy. Known G6PD deficiency: 300 mg base weekly for 1 year from the infection in adults (Nelson); children 5 mg base/kg weekly, not more than the adult dose."
+        },
+        {
+          label: "Vomiting and food",
+          text: "Give with food to lessen nausea; it tastes bitter. Watch for an hour and repeat a vomited dose (Harrison). Repeated vomiting: treat as unable to take oral drugs and use artesunate."
+        },
+        {
+          label: "Kidneys and liver",
+          text: "About half is excreted in the urine, but do not reduce the dose in acute malaria with kidney impairment (Harrison). Liver disease: give the standard 3-day course with care."
+        },
+        {
+          label: "Response",
+          text: "Fever and parasites should fall within 2–3 days. If symptoms persist or worsen, or the parasite count does not fall, change to a regimen for chloroquine-resistant vivax (Nelson): artemether–lumefantrine, plus primaquine."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Make sure it is vivax only before you give chloroquine",
+        best_for: "Any health post or OPD treating malaria with rapid tests or microscopy.",
+        requires: [],
+        steps: [
+          "Read the test carefully. A combined Pf/Pv rapid test with only the vivax (or pan) line positive, or a film showing only P. vivax, allows chloroquine if the national guideline uses it.",
+          "Falciparum line positive, alone or with the vivax line, or a film showing falciparum or a mixed infection: give artemether–lumefantrine, not chloroquine (chloroquine does not work against falciparum here). Add primaquine for the vivax part.",
+          "No test available, the species is unclear, or a Pf/Pan test shows only the pan line (usually vivax, but an HRP2-negative falciparum is possible): give artemether–lumefantrine, which treats both in the blood (Harrison: if any doubt about the species, treat as falciparum), and radical cure as for vivax if the film or history supports vivax.",
+          "Any danger sign: this is severe malaria whatever the species (Harrison: severe vivax is treated as severe falciparum). Give artesunate.",
+          "Ask the patient to come back if not better by day 3, or at once if worse; vivax that does not respond to chloroquine needs artemether–lumefantrine (Nelson)."
+        ],
+        monitor: [
+          "Temperature and symptoms on day 3",
+          "Recurrent fever within weeks: relapse or failure — test again"
+        ],
+        cautions: [
+          "A chloroquine course given for falciparum is a course of nothing: the patient can progress to severe malaria."
+        ]
+      },
+      {
+        title: "Child doses from 150 mg base tablets",
+        best_for: "Clinics with adult tablets only, or a syrup of uncertain strength.",
+        requires: ["oral"],
+        steps: [
+          "Weigh the child. Day 1 and day 2 dose = 10 mg base × kg; day 3 = 5 mg base × kg. Use the calculator, then turn it into tablets of 150 mg base.",
+          "Examples: 15 kg: 150, 150, 75 mg = 1, 1 and ½ tablet. 20 kg: 200, 200, 100 mg = about 1¼, 1¼ and ¾ tablet. 30 kg: 300, 300, 150 mg = 2, 2 and 1 tablet.",
+          "Round each dose to the nearest quarter-tablet. Under about 12 kg, quarter-tablet steps are too coarse (a quarter is about 37 mg): use a syrup of known strength, or ask the pharmacist to prepare the doses.",
+          "Crush the piece between two spoons and mix with a little food or sugar water; it is bitter. Watch for an hour; repeat a vomited dose.",
+          "Syrup: confirm the label states mg BASE per 5 mL before you calculate. If the label is unclear, use tablets."
+        ],
+        monitor: [
+          "Vomiting in the first hour",
+          "Drowsiness or unusual behaviour (possible overdose): stop and review"
+        ],
+        cautions: ["Never dispense extra tablets 'for next time'. Give the exact course, in a labelled envelope."]
+      },
+      {
+        title: "Suspected chloroquine overdose",
+        best_for: "A child who swallowed tablets, or an adult self-poisoning, at a district hospital without an ICU.",
+        requires: ["iv", "oxygen", "ecg"],
+        steps: [
+          "Treat every ingestion as dangerous even if the patient looks well: chloroquine poisoning can progress to collapse quickly. Ask what, how many and when; count the tablets left.",
+          "Airway, breathing, oxygen; IV access; check glucose; connect an ECG if you have one and repeat it.",
+          "Chloroquine is a membrane-active poison: it widens the QRS and lengthens the QT, causing low blood pressure, ventricular arrhythmias, drowsiness and seizures (Harrison Table 470-4).",
+          "Wide QRS or ventricular tachycardia: hypertonic sodium bicarbonate (Harrison; see Sodium bicarbonate). Torsades: magnesium (Harrison; see Magnesium sulfate). Seizures: diazepam (see Diazepam).",
+          "Low blood pressure: careful IV fluid and a vasopressor such as adrenaline by infusion if available (see Adrenaline); call the referral ICU and the poison information service early.",
+          "Transfer anyone with symptoms, ECG changes, or a dose that may be large, with an escort who can manage the airway."
+        ],
+        monitor: [
+          "Pulse, blood pressure, consciousness and ECG continuously if possible",
+          "Glucose and potassium"
+        ],
+        cautions: [
+          "A few adult tablets can be dangerous to a small child: dispense in small labelled packs and teach families to lock antimalarials away (editorial note; confirm with poison-centre guidance)."
+        ]
+      }
+    ],
+    paediatric: [
+      "Treatment: 10 mg base/kg on days 1 and 2 and 5 mg base/kg on day 3 (Harrison), never more than the adult dose (Nelson). Calculate from weight.",
+      "Better tolerated by children than by adults (Harrison), but children are the most at risk from accidental overdose.",
+      "Infants with vivax who are too young for primaquine: give the chloroquine course; then weekly chloroquine relapse prevention (5 mg base/kg) as the national guideline allows, with radical cure when old enough."
+    ],
+    cautions: [
+      "Useless for falciparum and mixed infections (Harrison: very few areas have chloroquine-sensitive falciparum).",
+      "Overdose is life-threatening: wide QRS, long QT, hypotension, arrhythmias, seizures (Harrison). Never give by fast injection.",
+      "QT prolongation: present at treatment doses but not proarrhythmic at recommended doses (Harrison). Care with other QT drugs: see Interactions.",
+      "Common: nausea, dysphoria, itching in dark-skinned patients, postural hypotension (Harrison). The itching is harmless and is not an allergy.",
+      "Long-term or high cumulative doses (over 100 g): retinal damage and cardiac or skeletal myopathy (Harrison). Not relevant to a 3-day course; relevant to long weekly use or rheumatology use.",
+      "May worsen epilepsy, psoriasis and myasthenia gravis (product information).",
+      "Antacids and kaolin reduce its absorption: give 4 hours apart (Harrison; product information). It reduces ampicillin absorption; cimetidine raises chloroquine levels (Harrison).",
+      "Write the dose as mg BASE: salt and base differ by 40 % (Harrison)."
+    ],
+    antidote: "No specific antidote. Supportive care: hypertonic sodium bicarbonate for a wide QRS and ventricular tachycardia, magnesium for torsades, benzodiazepine for seizures (Harrison Table 470-4), vasopressor support, and early referral to an ICU.",
+    calc: {
+      type: "weight",
+      dosePerKg: 10,
+      maxDose: 600,
+      doseUnit: "mg",
+      label: "Day 1 and day 2 dose: 10 mg BASE/kg (max 600 mg base). Day 3 = HALF this. Tablets are about 150 mg base — check base vs salt"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Chloroquine-sensitive malaria: 10 mg base/kg at once, then 5 mg/kg at 12, 24 and 36 hours, OR 10 mg/kg at 24 hours and 5 mg/kg at 48 hours. Very few areas now have chloroquine-sensitive P. falciparum.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-6, p. 1770"
+      },
+      {
+        book: "harrison",
+        text: "Sensitive P. vivax, P. malariae and P. ovale are treated with an ACT or oral chloroquine, total dose 25 mg base/kg.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      },
+      {
+        book: "harrison",
+        text: "Chloroquine-resistant P. vivax is reported from parts of Indonesia, Oceania, eastern and southern Asia and Central and South America, but chloroquine remains effective for vivax in many areas.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1768"
+      },
+      {
+        book: "harrison",
+        text: "Common: nausea, dysphoria, itching in dark-skinned patients, postural hypotension, QT prolongation. Acute serious: hypotensive shock (parenteral), arrhythmias, neuropsychiatric reactions. Chloroquine phosphate 250 mg salt contains 155 mg base: always check that the dose is written as base.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-7, p. 1771"
+      },
+      {
+        book: "harrison",
+        text: "Chloroquine, amodiaquine and piperaquine prolong the QT interval but are not proarrhythmic at recommended doses; all quinoline antimalarials worsen the postural hypotension of malaria and are tolerated better by children than adults.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      },
+      {
+        book: "harrison",
+        text: "Chloroquine does not act on liver stages of vivax or ovale. It is well absorbed by mouth (the preferred route); too-rapid parenteral injection can cause seizures and death from cardiovascular collapse. Do not reduce the dose in acute malaria with renal impairment.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1747"
+      },
+      {
+        book: "harrison",
+        text: "Interactions: antacids and kaolin reduce chloroquine absorption; chloroquine reduces ampicillin bioavailability; cimetidine raises chloroquine levels; chloroquine raises ciclosporin levels. Rare: irreversible retinal injury, blood dyscrasias.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741"
+      },
+      {
+        book: "harrison",
+        text: "In overdose, quinoline antimalarials (chloroquine, hydroxychloroquine, quinine) are membrane-active poisons: QRS and JT prolongation with hypotension, ventricular arrhythmias, CNS depression and seizures. Hypertonic sodium bicarbonate is used for conduction delay.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3715"
+      },
+      {
+        book: "nelson",
+        text: "Chloroquine remains effective for P. vivax and P. ovale except vivax from Papua New Guinea or Indonesia. If the response is inadequate (symptoms persist or worsen, parasite density does not fall), change to a regimen for chloroquine-resistant vivax.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), p. 2175"
+      },
+      {
+        book: "nelson",
+        text: "Child dose (CDC): 10 mg base/kg, then 5 mg base/kg at 6, 24 and 48 hours (adult 600 mg base then 300 mg base), not exceeding the adult dose; with primaquine for antirelapse treatment.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.3, p. 2177"
+      },
+      {
+        book: "williams",
+        text: "Chloroquine and hydroxychloroquine are safe and well tolerated in pregnancy; chloroquine-sensitive vivax is treated with chloroquine through pregnancy and primaquine postpartum.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2722"
+      },
+      {
+        book: "nelson",
+        text: "In pregnancy, chloroquine prophylaxis has been used extensively and safely.",
+        ref: "Nelson 22nd ed. 2024, ch. 325 Principles of Antiparasitic Therapy, Table 325.1, p. 2137"
+      },
+      {
+        book: "harrison",
+        text: "Severe vivax malaria is uncommon outside New Guinea but occurs; it is treated as severe falciparum malaria.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO Guidelines for malaria (current edition)",
+        url: "https://www.who.int/publications/i/item/guidelines-for-malaria"
+      },
+      {
+        name: "Federal Ministry of Health Ethiopia. National Malaria Guidelines (current edition) — confirm whether chloroquine or artemether–lumefantrine is first line for P. vivax, and the dosing schedule"
+      },
+      { name: "Chloroquine phosphate product information" },
+      { name: "Harrison 22nd ed. 2025, ch. 229, 231 and 470" },
+      { name: "Nelson 22nd ed. 2024, ch. 325 and 334" },
+      { name: "Williams Obstetrics 25th ed. 2018, ch. 64" }
     ],
     review: { status: "draft", by: null, date: null }
   }

@@ -983,9 +983,11 @@ window.CONDITIONS = [
     { id: "paracetamol", role: "supportive", note: "For fever." },
     { id: "furosemide", role: "adjunct", note: "1 mg/kg at the start of transfusion if there is heart failure." },
     { id: "mannitol", role: "avoid", note: "Mannitol has not improved outcomes in cerebral malaria and is not recommended (Nelson, Harrison, WHO)." },
-    { id: "oxygen", role: "supportive", note: "For respiratory distress, severe anaemia or SpO2 under 90 %." }
-  ],
-  sources: [{ name: "WHO Guidelines for malaria, 2023" }, { name: "Nelson 22nd ed. 2024, ch. 336, p. 2136" }],
+    { id: "oxygen", role: "supportive", note: "For respiratory distress, severe anaemia or SpO2 under 90 %." },
+      { id: "artemether-lumefantrine", role: "adjunct", note: "The oral course that completes treatment once the patient can swallow — a full 3-day course after at least 24 hours of IV artesunate, taken with milk or fatty food. Never stop at the injections alone." },
+      { id: "primaquine", role: "adjunct", note: "For P. vivax or P. ovale only, after recovery: the 14-day course to stop relapse. Check G6PD first where possible, and never in pregnancy or young infants — see Uncomplicated malaria for the vivax pathway." }
+    ],
+  sources: [{ name: "WHO Guidelines for malaria, 2023" }, { name: "Nelson 22nd ed. 2024, ch. 325, Table 325.1 Drugs for Parasitic Infections, p. 2136" }],
   textbook: [
     { book: "harrison", text: "Artesunate is the drug of choice (35% lower mortality in Asia, 22.5% in Africa vs quinine): 2.4 mg/kg at 0, 12, 24 h then daily.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
     { book: "harrison", text: "If unconscious, check blood glucose every 6 h for at least 24 h; give all patients a continuous dextrose infusion; treat glucose below 2.2 mmol/L with a bolus.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
@@ -6865,6 +6867,157 @@ window.CONDITIONS = [
         name: "Shalhoub J et al. Graduated compression stockings as adjuvant to pharmaco-thromboprophylaxis in elective surgical patients (GAPS). BMJ 2020"
       },
       { name: "Konstantinides SV et al. ESC guidelines for acute pulmonary embolism, 2019" }
+    ],
+    review: { status: "draft" }
+  },
+
+  /* ---- malaria ---- */
+  {
+    id: "uncomplicated-malaria",
+    name: "Uncomplicated malaria (falciparum, vivax or mixed)",
+    group: "medical",
+    aka: [
+      "malaria",
+      "uncomplicated malaria",
+      "falciparum",
+      "vivax",
+      "P. vivax",
+      "mixed malaria",
+      "Coartem",
+      "fever",
+      "RDT positive",
+      "relapse",
+      "radical cure"
+    ],
+    summary: "Test, look for danger signs, name the species, then treat: artemether–lumefantrine for falciparum, mixed or unknown species; for vivax a blood-stage drug (artemether–lumefantrine or chloroquine, as the national guideline says) PLUS primaquine to stop relapses. Every artemether–lumefantrine dose goes down with milk or fatty food. Any danger sign turns this into severe malaria: go to the Severe malaria case now. Ethiopia has both falciparum and vivax in large numbers, so the species changes the treatment. Confirm all regimens with the Ethiopian National Malaria Guidelines.",
+    redflags: [
+      "Cannot sit or stand unaided (prostration), or a child who cannot sit who normally could",
+      "Cannot drink or breastfeed, or vomits everything",
+      "Confusion, drowsiness, coma, or more than one convulsion",
+      "Fast or deep (acidotic) breathing, or breathless",
+      "Very pale (severe anaemia); jaundice with illness; dark (cola-coloured) urine; passing little urine",
+      "Bleeding from gums, nose or gut; cold hands with a weak pulse (shock); low glucose",
+      "Pregnancy with high fever, vomiting or any of the above: low threshold to treat as severe"
+    ],
+    steps: [
+      "DANGER SIGNS FIRST. If any red flag is present, or the patient cannot take tablets, this is SEVERE malaria whatever the species: open the Severe malaria case now and give parenteral artesunate (or pre-referral rectal artesunate for a young child at health-post level). Do not give artemether–lumefantrine first and wait. Uncomplicated means the patient can sit or stand and can swallow medicine and food (Harrison).",
+      "CONFIRM BEFORE TREATING. Do a rapid diagnostic test (RDT) or a blood film on everyone with fever or a history of fever. Treat only a positive result, and look for another cause of fever in a negative one. In endemic areas a parasite-positive patient's fever may still have another cause, such as pneumonia, typhoid, meningitis, urinary infection or relapsing fever (Harrison).",
+      "NO TEST AVAILABLE. Malaria cannot be diagnosed accurately on symptoms (Harrison), but do not let a sick patient go untreated: if a test is not available or will be delayed, treat on clinical grounds with artemether–lumefantrine (it covers both species in the blood) and record 'presumptive, no test' (Harrison). Test at the next opportunity, and report the test stock-out the same day.",
+      "NEGATIVE TEST, STILL UNWELL. One negative result does not rule malaria out: repeat the film or RDT after 12–24 hours, up to three times (Nelson; Harrison). Look hard for other causes. Note that an HRP2 test can stay positive for weeks after a treated infection and can miss parasites that lack the HRP2 gene (Harrison); microscopy settles doubt.",
+      "NAME THE SPECIES. A combined Pf/Pv RDT or a film tells you: falciparum only; vivax only; or both (mixed). Regular paroxysms of fever and chills every second day suggest vivax or ovale, often a relapse (Harrison). A pan (all-species) line without a falciparum line usually means vivax here, but can be a falciparum parasite missed by the HRP2 line: if a film cannot settle it, give artemether–lumefantrine (it treats both in the blood) plus radical cure as for vivax. If the species is uncertain, treat as falciparum (Harrison).",
+      "FALCIPARUM. Artemether–lumefantrine by weight band, six doses over 3 days, each with milk or fatty food, first dose supervised at the facility (see Artemether–lumefantrine). Where the national guideline uses it, add a single low dose of primaquine 0.25 mg base/kg on day 1 to stop transmission; not in pregnancy or infants (Harrison). Never chloroquine for falciparum.",
+      "VIVAX (or ovale). Blood stage: chloroquine 25 mg base/kg over 3 days, or artemether–lumefantrine, as the Ethiopian National Malaria Guidelines direct (WHO allows either where vivax is chloroquine-sensitive; Harrison). Then radical cure: primaquine 0.25 mg base/kg daily for 14 days (Harrison; WHO), after excluding pregnancy, young infants and known G6PD deficiency, and with the haemolysis warning (see Primaquine). Confirm the regimen and the dose with the national guideline.",
+      "MIXED falciparum + vivax. Treat as falciparum with artemether–lumefantrine (chloroquine does not cover falciparum), then give the 14-day primaquine radical cure for the vivax.",
+      "CHILDREN. Weigh every child; dose by weight band (artemether–lumefantrine) or mg/kg (chloroquine, primaquine). Give paracetamol for fever before the first dose, observe for an hour, repeat vomited doses. A child who vomits repeatedly, cannot drink, is very sleepy or convulses has severe malaria. Infants under 5 kg and infants too young for primaquine: senior decision, and confirm with the national guideline.",
+      "PREGNANCY. Malaria harms mother and baby even when mild (Williams), and pregnant women progress to severe malaria and hypoglycaemia more easily (Gabbe): admit if in doubt, check glucose and haemoglobin. Treat falciparum with artemether–lumefantrine in any trimester (WHO, as given in Harrison); Gabbe and the US CDC still prefer quinine with clindamycin in the first trimester, so confirm with the national guideline. NO primaquine in pregnancy: for vivax give the blood-stage treatment, then weekly chloroquine until after delivery, and radical cure after delivery when allowed (Harrison, Nelson).",
+      "FEVER AND FLUIDS. Paracetamol for fever (it also reduces vomiting of antimalarials, Harrison); oral fluids; tepid sponging. Avoid aspirin in children.",
+      "BEFORE THE PATIENT LEAVES. Write the dose times on the pack; explain fat with every dose, finishing all doses, and the danger signs. For primaquine: dark urine, yellow eyes, pallor or breathlessness means stop and come back the same day. Use a bed net.",
+      "FOLLOW-UP. Review on day 3 if fever persists or at once if worse; a patient still febrile on day 3 needs a repeat film and a check for another cause. On primaquine, review on about day 3 for haemolysis. Return if fever comes back within weeks.",
+      "SUSPECT TREATMENT FAILURE if parasites are still present on day 3 with worsening illness, have not cleared by day 7 (Harrison), or malaria returns within 28 days of a full course. First check the simple causes: doses vomited, taken without fat, missed, a wrong-weight band, or a substandard or falsified pack (Harrison). Confirm parasites by microscopy (HRP2 may still be positive from the first episode). Treat with the national second-line regimen (Harrison: a different ACT). Vivax returning weeks to months later is usually a relapse from liver stages (Harrison): check whether primaquine was given and completed.",
+      "REPORT. Record the species, the test used and the treatment in the register, and include the case in the facility's routine malaria surveillance report."
+    ],
+    drugs: [
+      {
+        id: "artemether-lumefantrine",
+        role: "first",
+        note: "Falciparum, mixed or unknown species (and vivax where the national guideline uses it). Weight bands: 5–14 kg 1 tablet, 15–24 kg 2, 25–34 kg 3, 35 kg+ 4 tablets per dose; doses at 0, 8, 24, 36, 48, 60 h; each with milk or fatty food."
+      },
+      {
+        id: "primaquine",
+        role: "first",
+        note: "Vivax/ovale radical cure: 0.25 mg base/kg daily for 14 days (confirm national dose). Falciparum: a single 0.25 mg/kg dose where the guideline uses it. Never in pregnancy or young infants; warn about dark urine."
+      },
+      {
+        id: "chloroquine",
+        role: "alternative",
+        note: "Vivax (blood stage) only, where the national guideline uses it: 10, 10, 5 mg base/kg over 3 days, then primaquine. Useless for falciparum or mixed infection. Weekly chloroquine prevents vivax relapse in pregnancy."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "For fever and aches; lowering the fever also reduces vomiting of antimalarial doses (Harrison)."
+      },
+      {
+        id: "artesunate",
+        role: "alternative",
+        note: "Not for uncomplicated malaria: only if the patient cannot swallow or keep tablets down, or develops a danger sign — then this is severe malaria (rectal pre-referral for young children, or IM/IV)."
+      },
+      {
+        id: "quinine",
+        role: "alternative",
+        note: "Second line, or first-trimester treatment where the national guideline still prefers it (Gabbe: oral quinine with clindamycin); oral quinine 10 mg salt/kg 8-hourly for 7 days with a partner drug (Harrison). Causes hypoglycaemia."
+      },
+      {
+        id: "atovaquone",
+        role: "alternative",
+        note: "Atovaquone–proguanil: when artemether–lumefantrine cannot be used (allergy, treatment failure, stock-out). Expensive and often unavailable; not in pregnancy."
+      }
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Uncomplicated malaria means the patient can sit or stand unaided and can swallow medicines and food; promptly treated, mortality is under 0.1 %. Once vital-organ dysfunction appears, or more than 2 % of red cells are infected, mortality rises steeply.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1763"
+      },
+      {
+        book: "harrison",
+        text: "Signs of severe malaria include coma, more than two convulsions in 24 h, acidotic breathing, severe anaemia, hypoglycaemia, shock, significant bleeding, pulmonary oedema, kidney failure, dark urine, prostration (cannot sit unaided), jaundice and hyperparasitaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-2, p. 1764"
+      },
+      {
+        book: "harrison",
+        text: "Malaria cannot be diagnosed clinically with accuracy, but treatment should start on clinical grounds if laboratory confirmation is likely to be delayed. In endemic areas a parasitaemic patient's fever may have another cause.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-5, p. 1769"
+      },
+      {
+        book: "harrison",
+        text: "HRP2 rapid tests detect only P. falciparum, stay positive for weeks after an infection, and can miss parasites with HRP2/3 gene deletions; pLDH tests have a falciparum band and a pan-species or vivax band but may miss low vivax and ovale parasitaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-5, p. 1769"
+      },
+      {
+        book: "harrison",
+        text: "If there is any doubt about the species, treat for falciparum malaria. A negative smear makes malaria unlikely but does not rule it out: repeat thick films 1 and 2 days later. If asexual parasites have not cleared by day 7 (with adherence assured), give second-line treatment.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      },
+      {
+        book: "harrison",
+        text: "Falsified or substandard antimalarial drugs are sold in many Asian and African countries and may cause treatment failure.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1768"
+      },
+      {
+        book: "harrison",
+        text: "Classic regular paroxysms of fever, chills and rigors are unusual and suggest P. vivax or P. ovale (often a relapse). Generalised seizures point to falciparum and may herald cerebral malaria.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1763"
+      },
+      {
+        book: "harrison",
+        text: "In P. vivax and P. ovale some liver forms stay dormant (hypnozoites) for 2 weeks to a year or more and cause relapses.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1760"
+      },
+      {
+        book: "nelson",
+        text: "If smears are negative, repeat them every 12 hours until three are negative; if the patient is severely ill, start antimalarials immediately.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), p. 2175"
+      },
+      {
+        book: "gabbe",
+        text: "In pregnancy, danger signs include altered consciousness, inability to eat or drink, seizures, vomiting and acidotic breathing; hypoglycaemia occurs in 58 % of pregnant women with severe malaria, and mortality of severe malaria in pregnancy approaches 50 %. Placental sequestration can make blood tests falsely negative.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1133"
+      },
+      {
+        book: "williams",
+        text: "Malaria in pregnancy, symptomatic or not, raises rates of stillbirth, preterm birth, low birthweight and maternal anaemia; falciparum is worst and early infection raises the risk of abortion.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2720"
+      }
+    ],
+    sources: [
+      { name: "WHO Guidelines for malaria (current edition)" },
+      {
+        name: "Federal Ministry of Health Ethiopia. National Malaria Guidelines (current edition) — confirm the vivax regimen, primaquine use without G6PD testing, single low-dose primaquine, first-trimester treatment and second-line treatment"
+      },
+      { name: "Harrison 22nd ed. 2025, ch. 231 Malaria" },
+      { name: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium)" },
+      { name: "Williams Obstetrics 25th ed. 2018, ch. 64; Gabbe's Obstetrics 9th ed., ch. 58" }
     ],
     review: { status: "draft" }
   }

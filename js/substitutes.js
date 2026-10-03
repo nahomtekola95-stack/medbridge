@@ -1636,5 +1636,63 @@ window.SUBSTITUTES = {
       none: true,
       note: "Nystatin oral suspension: it is not absorbed, does not affect the INR, and is the usual treatment in young infants (Nelson). Mild thrush in a well baby may need no treatment at all (Nelson)."
     }
+  ],
+
+  /* ---- malaria ---- */
+  "artemether-lumefantrine": [
+    {
+      use: "Patient cannot swallow, vomits every dose, or has any danger sign",
+      with: "artesunate",
+      note: "This is severe malaria: parenteral artesunate (or pre-referral rectal artesunate for a young child), then a full artemether–lumefantrine course once the patient can swallow."
+    },
+    {
+      use: "Uncomplicated falciparum malaria: artemether–lumefantrine out of stock, allergy, or treatment failure",
+      with: "atovaquone",
+      note: "Atovaquone–proguanil once daily for 3 days by weight, with food; not under 5 kg, not in pregnancy, not with creatinine clearance under 30 mL/min. Expensive and rarely stocked."
+    },
+    {
+      use: "Uncomplicated falciparum malaria: second line, or first trimester where the national guideline prefers it",
+      with: "quinine",
+      note: "Oral quinine 10 mg salt/kg 8-hourly for 7 days with doxycycline, tetracycline or clindamycin (Harrison); clindamycin in pregnancy and under 8 years. Hypoglycaemia and cinchonism; adherence over 7 days is poor. Confirm the regimen with the national guideline."
+    },
+    {
+      use: "P. vivax blood stage only (never falciparum or mixed)",
+      with: "chloroquine",
+      note: "10, 10 and 5 mg base/kg over 3 days where the national guideline uses chloroquine for vivax; then primaquine radical cure."
+    },
+    {
+      use: "Another ACT",
+      none: true,
+      note: "WHO recommends six ACTs (Harrison), e.g. artesunate–amodiaquine and dihydroartemisinin–piperaquine. They are not in routine public supply in Ethiopia; use one only if the national guideline and your stock allow."
+    }
+  ],
+  primaquine: [
+    {
+      use: "Relapse prevention when primaquine cannot be given (pregnancy, known G6PD deficiency, infant too young, breastfeeding an infant of unknown G6PD)",
+      with: "chloroquine",
+      note: "Weekly chloroquine: 5 mg base/kg (adult 300 mg base) — in pregnancy until 1 month after delivery (Harrison), in G6PD deficiency for 1 year (Nelson). It suppresses relapses but does not cure the liver stage."
+    },
+    {
+      use: "Radical cure of vivax or ovale: primaquine out of stock",
+      none: true,
+      note: "No equivalent drug in Ethiopian public supply (tafenoquine needs a quantitative G6PD test and is not in routine use). Give the full blood-stage treatment, record 'radical cure pending', report the stock-out, and recall the patient to start primaquine when it arrives. Treat any relapse promptly."
+    },
+    {
+      use: "Single low dose to block falciparum transmission: out of stock",
+      none: true,
+      note: "No substitute. Omitting it does not affect the patient's own cure; give the ACT course and report the stock-out."
+    }
+  ],
+  chloroquine: [
+    {
+      use: "P. vivax blood stage: chloroquine out of stock, or vivax not responding to chloroquine",
+      with: "artemether-lumefantrine",
+      note: "An ACT treats vivax blood stages as well (Harrison; Nelson). Then primaquine radical cure."
+    },
+    {
+      use: "Weekly relapse suppression in pregnancy or G6PD deficiency: chloroquine out of stock",
+      none: true,
+      note: "No equivalent in routine supply. Keep the patient under follow-up, ask her to return at the first fever, and treat each recurrence promptly with the blood-stage regimen."
+    }
   ]
 };

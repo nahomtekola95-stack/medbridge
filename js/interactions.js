@@ -3131,5 +3131,204 @@ window.INTERACTIONS = [
     effect: "Absorbed miconazole (mainly from the oral gel) inhibits CYP3A4, which clears midazolam. Sedation is deeper and longer, with a risk of breathing depression, especially with oral or buccal midazolam.",
     action: "When midazolam is STARTED in a patient using miconazole oral gel: avoid oral and buccal midazolam where possible (the product information contraindicates oral midazolam); for IV doses give smaller increments, watch breathing and SpO2, and expect longer recovery. A single dose for a seizure must not be withheld: give it and monitor. When miconazole is STOPPED, normal midazolam handling returns within about a week.",
     ref: "Miconazole oral gel product information (oral midazolam contraindicated; IV midazolam with caution); BNF interactions"
+  },
+
+  /* ---- malaria ---- */
+  {
+    a: ["artemether-lumefantrine"],
+    b: ["tb-rhze", "carbamazepine", "phenytoin", "phenobarbital"],
+    severity: "major",
+    effect: "Rifampicin (in TB treatment), carbamazepine, phenytoin and phenobarbital induce the liver enzymes (CYP3A4) that clear artemether and lumefantrine. Levels of both fall sharply, and the malaria may not be cured or may come back within weeks. The product information lists strong inducers as contraindicated.",
+    action: "Do not leave malaria untreated. When malaria is diagnosed in a patient already on one of these, give the full 6-dose course with fat, check the response on day 3 and test again for any fever in the next 4 weeks, and ask a senior or the national guideline whether another regimen is better. The inducing effect persists for about 2 weeks after the inducer is STOPPED, so the same care applies then. Do not stop TB or epilepsy treatment to treat malaria.",
+    ref: "Coartem summary of product characteristics (interactions: strong CYP3A4 inducers); BNF interactions (artemether with lumefantrine)",
+    refs: []
+  },
+  {
+    a: ["artemether-lumefantrine"],
+    b: ["arv-prophylaxis"],
+    severity: "moderate",
+    effect: "Nevirapine (used for infant HIV prophylaxis and in some older regimens) raises lumefantrine levels and lowers artemether levels (Harrison). Efavirenz in older regimens lowers both. Dolutegravir-based PEP has no important interaction.",
+    action: "Give the standard artemether–lumefantrine course; do not change the dose and do not interrupt HIV prophylaxis. In an infant on nevirapine, watch the response and re-test if fever persists at day 3 or returns within 4 weeks. Nothing extra is needed when either drug is STOPPED.",
+    ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741; Coartem summary of product characteristics",
+    refs: [
+      {
+        book: "harrison",
+        text: "Lumefantrine levels are raised by nevirapine; artemether levels are lowered by nevirapine.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741",
+        pdf_page: 1784,
+        quote: "Artemether levels decreased"
+      }
+    ]
+  },
+  {
+    a: ["artemether-lumefantrine"],
+    b: ["quinine"],
+    severity: "moderate",
+    effect: "Both prolong the QT interval; lumefantrine is chemically related to quinine (Harrison). The product information reports that IV quinine given soon after artemether–lumefantrine caused more QT prolongation than quinine alone.",
+    action: "The usual sequence after severe malaria is parenteral artesunate, then artemether–lumefantrine: prefer artesunate so that quinine is not needed. If the patient had IV quinine and is STARTED on artemether–lumefantrine as follow-on, give it (completing treatment comes first), correct potassium and magnesium, and get an ECG if one is available. Avoid STARTING IV quinine in a patient who has just taken artemether–lumefantrine unless there is no alternative for severe malaria; then monitor the pulse and ECG.",
+    ref: "Coartem summary of product characteristics (quinine); Harrison 22nd ed. 2025, ch. 229, p. 1749",
+    refs: [
+      {
+        book: "harrison",
+        text: "Lumefantrine is an arylaminoalcohol, structurally and in mode of action like quinine (which prolongs the QT interval).",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1749",
+        pdf_page: 1792,
+        quote: "turally and in mode of action to other arylaminoalcohols (quinine"
+      }
+    ]
+  },
+  {
+    a: ["artemether-lumefantrine"],
+    b: [
+      "amiodarone",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "methadone",
+      "quetiapine",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine",
+      "erythromycin",
+      "fluconazole"
+    ],
+    severity: "moderate",
+    effect: "Additive QT prolongation, with a risk of torsades de pointes that is higher with low potassium or magnesium from vomiting and diarrhoea. Lumefantrine also inhibits CYP2D6, which clears amitriptyline and imipramine, and erythromycin and fluconazole inhibit the CYP3A4 that clears lumefantrine. The product information advises against these combinations.",
+    action: "Do not withhold malaria treatment: the course is only 3 days. When artemether–lumefantrine is STARTED, hold the partner drug for those 3 days if it can safely be held (e.g. a PRN antipsychotic, a tricyclic, erythromycin that can be switched), correct potassium and magnesium, and get an ECG where possible. Never stop methadone or an essential antiarrhythmic abruptly: ask a senior. Lumefantrine lasts several days (half-life 3–4 days), so stay cautious for about a week after the course is STOPPED.",
+    ref: "Coartem summary of product characteristics (QT-prolonging drugs, CYP2D6 substrates); BNF interactions; Harrison 22nd ed. 2025, ch. 231, Table 231-7, p. 1771",
+    refs: []
+  },
+  {
+    a: ["artemether-lumefantrine", "chloroquine"],
+    b: ["sodium-stibogluconate", "pentamidine"],
+    severity: "major",
+    effect: "Sodium stibogluconate and pentamidine are strongly cardiotoxic and prolong the QT interval; fatal arrhythmias are recognised with both. Adding an antimalarial that also prolongs the QT (lumefantrine, chloroquine) adds to the risk. Malaria and visceral leishmaniasis occur together in parts of Ethiopia.",
+    action: "Malaria must still be treated. When malaria is found during an antimonial or pentamidine course, a senior decides whether to pause the antimonial for the 3 days of antimalarial treatment; correct potassium and magnesium, get an ECG before and during, and take a 60-second pulse before each injection. For a vivax infection, prefer artemether–lumefantrine over chloroquine only if the national guideline allows; both carry this risk. After the antimalarial course is STOPPED, lumefantrine and chloroquine persist for days to weeks: keep monitoring when the antimonial is restarted.",
+    ref: "BNF interactions (QT-prolonging drugs); Harrison 22nd ed. 2025, ch. 231, p. 1772",
+    refs: []
+  },
+  {
+    a: ["chloroquine"],
+    b: ["amiodarone"],
+    severity: "major",
+    effect: "Both prolong the QT interval; amiodarone's effect lasts for weeks to months. Together they raise the risk of ventricular arrhythmia.",
+    action: "Avoid. For vivax in a patient on amiodarone, use artemether–lumefantrine only after senior review, or chloroquine with an ECG before and during the course and normal potassium and magnesium. Amiodarone's effect lasts weeks after it is STOPPED, so the caution continues.",
+    ref: "BNF interactions (chloroquine–amiodarone); Harrison 22nd ed. 2025, ch. 231, Table 231-7, p. 1771",
+    refs: [
+      {
+        book: "harrison",
+        text: "Chloroquine prolongs the QT interval but at recommended doses is not proarrhythmic.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772",
+        pdf_page: 1815,
+        quote: "are not proarrhythmic"
+      }
+    ]
+  },
+  {
+    a: ["chloroquine"],
+    b: [
+      "quinine",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "methadone",
+      "quetiapine",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine",
+      "erythromycin",
+      "fluconazole",
+      "ondansetron"
+    ],
+    severity: "moderate",
+    effect: "Additive QT prolongation. Chloroquine prolongs the QT but at recommended doses is not proarrhythmic on its own (Harrison); the risk rises with a second QT drug, low potassium or magnesium, or an overdose.",
+    action: "A standard 3-day course is usually acceptable. When chloroquine is STARTED, correct potassium and magnesium, avoid adding further QT drugs, hold a non-essential one for the 3 days, and get an ECG if the patient has heart disease or palpitations. Chloroquine has a very long half-life (1–2 months, Harrison), so after it is STOPPED some caution continues; weekly chloroquine prophylaxis needs a review of these drugs.",
+    ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772; BNF interactions",
+    refs: [
+      {
+        book: "harrison",
+        text: "Chloroquine prolongs the QT interval but at recommended doses is not proarrhythmic.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772",
+        pdf_page: 1815,
+        quote: "are not proarrhythmic"
+      }
+    ]
+  },
+  {
+    a: ["chloroquine"],
+    b: ["ampicillin"],
+    severity: "moderate",
+    effect: "Chloroquine reduces the bioavailability of oral ampicillin (Harrison).",
+    action: "Give oral ampicillin at least 2 hours apart from chloroquine. IV ampicillin is not affected. Nothing is needed when chloroquine is STOPPED.",
+    ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741; chloroquine product information",
+    refs: [
+      {
+        book: "harrison",
+        text: "Chloroquine reduces the bioavailability of ampicillin.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741",
+        pdf_page: 1784,
+        quote: "Ampicillin: bioavailability reduced"
+      }
+    ]
+  },
+  {
+    a: ["chloroquine"],
+    b: ["cimetidine"],
+    severity: "moderate",
+    effect: "Cimetidine raises serum chloroquine levels (Harrison), adding to chloroquine's side effects and QT effect.",
+    action: "Use famotidine or omeprazole instead of cimetidine during a chloroquine course. If cimetidine is STARTED during weekly chloroquine, watch for nausea, dizziness and visual or cardiac symptoms. Levels fall back after cimetidine is STOPPED.",
+    ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741",
+    refs: [
+      {
+        book: "harrison",
+        text: "Cimetidine increases serum levels of chloroquine.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1741",
+        pdf_page: 1784,
+        quote: "Cimetidine: increased serum"
+      }
+    ]
+  },
+  {
+    a: ["primaquine"],
+    b: ["dapsone"],
+    severity: "major",
+    effect: "Both are oxidant drugs: together they add up the risk of haemolysis, which is severe in G6PD deficiency, and of methaemoglobinaemia, which primaquine can cause whatever the G6PD status (Harrison).",
+    action: "Do not give a second oxidant drug alongside dapsone without a G6PD result. When primaquine radical cure is needed in a patient on dapsone (PCP prophylaxis or leprosy MDT): if G6PD is unknown, defer the 14-day primaquine course and protect against relapse with weekly chloroquine until dapsone stops or G6PD is tested, or discuss with a senior. If both are given, check haemoglobin before and at about day 3 and day 7, and teach the dark-urine and blue-lips warning. When dapsone is STOPPED, primaquine can then be given with the usual G6PD precautions. Write 'G6PD unknown' on the card.",
+    ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, Table 105-6, p. 799; ch. 229, p. 1751",
+    refs: [
+      {
+        book: "harrison",
+        text: "Primaquine and dapsone are both on the list of drugs that cause haemolysis in G6PD deficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, Table 105-6, p. 799",
+        pdf_page: 842,
+        quote: "Drugs That Carry Risk of Clinical Hemolysis"
+      },
+      {
+        book: "harrison",
+        text: "Primaquine causes methaemoglobinaemia whatever the G6PD status.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1751",
+        pdf_page: 1794,
+        quote: "regardless of the G6PD status of the patient"
+      }
+    ]
+  },
+  {
+    a: ["primaquine"],
+    b: ["cotrimoxazole"],
+    severity: "moderate",
+    effect: "Cotrimoxazole (sulfamethoxazole) is also on the list of drugs that can cause haemolysis in G6PD deficiency (Harrison), so the risk from a 14-day primaquine course adds up in a G6PD-deficient patient. No formal interaction study exists.",
+    action: "Do NOT stop cotrimoxazole preventive therapy in a person with HIV. Give primaquine radical cure with the usual G6PD precautions, review at about day 3 for dark urine, jaundice or pallor, and check haemoglobin if possible. Nothing extra is needed when either drug is STOPPED.",
+    ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, Table 105-6, p. 799",
+    refs: [
+      {
+        book: "harrison",
+        text: "Cotrimoxazole (sulfamethoxazole) and primaquine are both on the list of drugs that cause haemolysis in G6PD deficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, Table 105-6, p. 799",
+        pdf_page: 842,
+        quote: "Sulfamethoxazole"
+      }
+    ]
   }
 ];

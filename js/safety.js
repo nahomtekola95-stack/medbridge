@@ -4708,5 +4708,152 @@ window.SAFETY = {
       "Gabbe's Obstetrics 9th ed., ch. 7",
       "LactMed (NIH)"
     ]
+  },
+
+  /* ---- malaria ---- */
+  "artemether-lumefantrine": {
+    pregnancy: {
+      level: "caution",
+      text: "Treat malaria in pregnancy promptly: it causes maternal anaemia, low birthweight, stillbirth and maternal death. Second and third trimesters: artemether–lumefantrine is recommended by all sources. First trimester: WHO now recommends it, preferentially among ACTs (Harrison: ACTs are safe in all trimesters); Gabbe still gives quinine plus clindamycin as first line in the first trimester, and the US CDC (Nelson) uses it there only if there is no other option. Confirm with the Ethiopian National Malaria Guidelines; do not delay treatment while deciding."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No information on milk transfer (Harrison Table 229-1). WHO allows ACTs during breastfeeding; Nelson (US CDC) advises against it for women breastfeeding an infant under 5 kg. Do not leave the mother's malaria untreated: treat her and watch the baby; continue breastfeeding."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change in kidney impairment (product information). Severe kidney disease: little data; give the standard course and monitor."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change in mild to moderate liver impairment (product information). Severe liver disease: little data; give the standard course with caution."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "WHO recommends artemether-lumefantrine preferentially in the first trimester; ACTs are safe and effective in pregnant women in all trimesters.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772",
+        pdf_page: 1815,
+        quote: "and pregnant women (all trimesters)"
+      },
+      {
+        book: "gabbe",
+        text: "First trimester: quinine plus clindamycin first line; ACT usable but not preferred for lack of first-trimester safety data. Second and third trimesters: ACT first line.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1133",
+        pdf_page: 1385,
+        quote: "In the second and third trimesters artemisinin combination therapy is the"
+      },
+      {
+        book: "nelson",
+        text: "US (CDC): not for women breastfeeding infants under 5 kg.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.2, p. 2176",
+        pdf_page: 2184,
+        quote: "Not for infants <5 kg or women breastfeeding infants <5 kg"
+      }
+    ],
+    sources: [
+      "WHO Guidelines for malaria (current edition)",
+      "Coartem summary of product characteristics",
+      "Harrison 22nd ed. ch. 229, 231",
+      "Nelson 22nd ed. ch. 334",
+      "Gabbe's Obstetrics 9th ed. ch. 58",
+      "Ethiopian National Malaria Guidelines (confirm)"
+    ]
+  },
+  chloroquine: {
+    pregnancy: {
+      level: "safe",
+      text: "Safe and well tolerated in pregnancy (Williams; Harrison: regarded as safe; Nelson: used extensively and safely). It is the drug used weekly through pregnancy to suppress vivax relapse when primaquine cannot be given (Harrison, Nelson). It does not treat falciparum."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible with breastfeeding (WHO; LactMed). The amount in milk is too small to treat or protect the baby."
+    },
+    renal: {
+      level: "none",
+      text: "Acute malaria: do not reduce the dose even with kidney impairment (Harrison). Long-term weekly use in severe kidney disease: the dose may need reducing (product information)."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change for a 3-day course; use with care in liver disease, and avoid combining with other liver-toxic drugs where possible (product information)."
+    },
+    refs: [
+      {
+        book: "williams",
+        text: "Chloroquine and hydroxychloroquine prophylaxis is safe and well tolerated in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2723",
+        pdf_page: 2722,
+        quote: "Chloroquine and hydroxychloroquine prophylaxis is safe and well tolerated in pregnancy"
+      },
+      {
+        book: "harrison",
+        text: "Chloroquine and proguanil are regarded as safe in pregnancy.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1773",
+        pdf_page: 1816,
+        quote: "Chloroquine and proguanil are regarded as safe"
+      },
+      {
+        book: "harrison",
+        text: "About half of chloroquine is excreted in urine, but the dose should not be reduced in acute malaria with renal insufficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1747",
+        pdf_page: 1790,
+        quote: "the dose should not be reduced for"
+      }
+    ],
+    sources: [
+      "Harrison 22nd ed. ch. 229, 231",
+      "Williams Obstetrics 25th ed. ch. 64",
+      "Nelson 22nd ed. ch. 325, 334",
+      "Chloroquine phosphate product information",
+      "LactMed (NIH)"
+    ]
+  },
+  primaquine: {
+    pregnancy: {
+      level: "avoid",
+      text: "Contraindicated in pregnancy (Williams; Harrison; Nelson): the fetus may be G6PD deficient and cannot be tested. Exclude pregnancy before every course. For vivax, give the blood-stage treatment, then weekly chloroquine until after delivery, then radical cure (Harrison, Nelson). The single low dose for falciparum is also not given in pregnancy (Harrison)."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Give only if the breastfed infant's G6PD activity is known to be normal (Nelson). Where infant G6PD cannot be tested, defer radical cure (WHO has advised against it while breastfeeding an infant under 6 months) and protect the mother with weekly chloroquine. Confirm with the Ethiopian National Malaria Guidelines."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change described. If haemolysis occurs, the kidneys are at risk (Harrison): stop the drug and keep the patient well hydrated."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change described; extensively metabolised in the liver (Harrison)."
+    },
+    refs: [
+      {
+        book: "williams",
+        text: "Primaquine is contraindicated in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2723",
+        pdf_page: 2723,
+        quote: "Primaquine and doxycycline are contraindicated in pregnancy"
+      },
+      {
+        book: "harrison",
+        text: "Pregnant women should not be given primaquine.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772",
+        pdf_page: 1815,
+        quote: "Pregnant women should not be given primaquine"
+      },
+      {
+        book: "nelson",
+        text: "Primaquine can be used during breastfeeding if the infant also has normal G6PD activity.",
+        ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.3, p. 2177",
+        pdf_page: 2185,
+        quote: "Primaquine can be used during breastfeeding if infant found to also have normal G6PD activity"
+      }
+    ],
+    sources: [
+      "Harrison 22nd ed. ch. 105, 229, 231",
+      "Williams Obstetrics 25th ed. ch. 64",
+      "Nelson 22nd ed. ch. 334",
+      "WHO Guidelines for malaria (current edition)",
+      "Ethiopian National Malaria Guidelines (confirm)"
+    ]
   }
 };

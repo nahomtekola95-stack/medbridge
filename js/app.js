@@ -73,7 +73,8 @@
      reader who lands on one finds the other. */
   const RELATED = {
     "postoperative-dvt-pe": ["vte"], "vte": ["postoperative-dvt-pe"],
-    "postoperative-delirium": ["delirium"], "delirium": ["postoperative-delirium"]
+    "postoperative-delirium": ["delirium"], "delirium": ["postoperative-delirium"],
+    "uncomplicated-malaria": ["severe-malaria"], "severe-malaria": ["uncomplicated-malaria"]
   };
   const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", pph: "tools", vaccines: "tools", theatre: "tools", procedures: "tools", procedure: "tools", preop: "tools", handover: "ward" };
   function render() {
