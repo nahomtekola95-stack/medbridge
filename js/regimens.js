@@ -162,7 +162,7 @@ window.REGIMENS = [
       "No new confusion, seizure, jaundice or head injury since the last review (these need medical review, not just another dose)",
       "Thiamine has been given"
     ],
-    ifFail: "Drowsy, respiratory rate under 12 or low saturation: withhold, lie on side, support the airway; flumazenil is not in this app. If withdrawal is still severe after about 60 mg in total, or confusion, hallucinations or seizures develop: urgent medical review for delirium tremens, infection, hypoglycaemia, head injury or Wernicke encephalopathy. In liver failure, older age or lung disease use lorazepam instead. Never give diazepam IM.",
+    ifFail: "Drowsy, respiratory rate under 12 or low saturation: withhold, lie on side, support the airway. Do not give flumazenil: in alcohol withdrawal and in a patient on regular benzodiazepines it can provoke seizures. If withdrawal is still severe after about 60 mg in total, or confusion, hallucinations or seizures develop: urgent medical review for delirium tremens, infection, hypoglycaemia, head injury or Wernicke encephalopathy. In liver failure, older age or lung disease use lorazepam instead. Never give diazepam IM.",
     ref: "WHO mhGAP Intervention Guide 2.0 (2016), Table 1 medication chart: diazepam 10–20 mg every 2 h for observable alcohol withdrawal until features resolve or the person is lightly sedated (lower doses, up to 10 mg four times daily, as outpatient); Kaplan & Sadock's Synopsis 12th ed. 2022, ch. 4.2, pdf pp. 908–909 (titrate from a high dose, omit doses if sleepy, taper ~20%/day, no IM diazepam)"
   },
 

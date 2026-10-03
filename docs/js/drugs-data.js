@@ -4260,7 +4260,7 @@ window.DRUG_DB = [
     "Asthma and severe COPD: can cause bronchospasm; avoid if another option exists, and have salbutamol ready.",
     "Contraindicated in second- or third-degree AV block and sick sinus syndrome (unless paced), long QT, and after heart transplantation (Harrison).",
     "Aminophylline, theophylline and caffeine block adenosine — larger doses may be needed. Dipyridamole and carbamazepine increase its effect — start at 3 mg (adult).",
-    "Verapamil is NOT in this app. Adults only, if in your formulary and adenosine is unavailable or has failed: verapamil 5 mg IV over 2 min (not in infants, broad-complex tachycardia, WPW, heart failure, hypotension, or with a β-blocker) — check your formulary."
+    "Adults only, if in your formulary and adenosine is unavailable or has failed: verapamil 5 mg IV over 2 min (not in infants, broad-complex tachycardia, WPW, heart failure, hypotension, or with a β-blocker) — check your formulary."
   ],
   calc: {
     type: "weight",
@@ -7009,7 +7009,7 @@ window.DRUG_DB = [
     "Dependence after more than 1–2 weeks of regular use; stop by tapering (Kaplan).",
     "Injection stored outside a fridge loses potency."
   ],
-  antidote: "Support breathing first (bag-valve-mask). Flumazenil 0.2 mg IV over 30 seconds, then 0.3 mg, then 0.5 mg at 1-minute intervals up to 3 mg total (Kaplan). It can cause seizures in dependent patients and in mixed overdoses with tricyclics, and sedation can return.",
+  antidote: "Support breathing first (bag-valve-mask) — that is the treatment for a benzodiazepine overdose, and most patients need nothing more. Flumazenil is NOT routine here: it can cause seizures in dependent patients and in mixed overdoses, especially with a tricyclic, which in practice you often cannot rule out, and sedation returns as it wears off. If it is used at all, follow the Flumazenil page.",
   calc: {
     type: "weight",
     dosePerKg: 0.1,
@@ -7052,7 +7052,7 @@ window.DRUG_DB = [
     },
     {
       book: "kaplan",
-      text: "Flumazenil reverses benzodiazepine sedation: 0.2 mg IV over 30 seconds, then 0.3 mg, then 0.5 mg at 1-minute intervals to a total of 3 mg; it can precipitate seizures in dependent patients or mixed overdoses.",
+      text: "Flumazenil reverses benzodiazepine sedation, but it is reserved for over-sedation after a procedure, not for overdose: it can precipitate seizures in dependent patients or mixed overdoses. See the Flumazenil page for the dose (maximum 1 mg).",
       ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2118"
     }
   ],
@@ -16060,7 +16060,7 @@ window.DRUG_DB = [
     ],
     presentation: [
       "2.5 mg/mL 1 mL ampoule is the usual anaesthetic strength; 0.5 mg/mL also exists — CHECK every time.",
-      "Some countries supply a fixed mixture of neostigmine 2.5 mg with glycopyrrolate (glycopyrronium) 0.5 mg. Glycopyrrolate has no page in this app; atropine does the same job.",
+      "Some countries supply a fixed mixture of neostigmine 2.5 mg with glycopyrrolate (glycopyrronium) 0.5 mg. Atropine does the same job as glycopyrrolate (which has its own page).",
       "Room temperature; protect from light."
     ],
     indications: [
@@ -18842,7 +18842,7 @@ window.DRUG_DB = [
           "Stop the drug at once and do not give another dose if there is ANY of: blistering or peeling skin, sores in the mouth, eyes or genitals, fever with the rash, yellow eyes, or a widespread rash. This may be Stevens-Johnson syndrome or toxic epidermal necrolysis — refer urgently.",
           "After such a reaction, never give cotrimoxazole or any sulfonamide again (including sulfadoxine-pyrimethamine). Write 'SULFA ALLERGY — SEVERE' on the card and the file.",
           "A mild, flat, itchy rash with no mucosal involvement and no fever: do not decide alone. Harrison allows rechallenge or a dose-escalation protocol after non-life-threatening reactions, but this must follow the national guideline and be supervised by a clinician.",
-          "While off cotrimoxazole, the patient still needs PCP protection: the alternatives (dapsone, atovaquone, aerosolised pentamidine) are not in this app and usually require referral."
+          "While off cotrimoxazole, the patient still needs PCP protection: the alternatives — dapsone, atovaquone or aerosolised pentamidine — usually require referral."
         ],
         monitor: ["Mucous membranes, temperature, skin daily after a reaction"],
         cautions: ["Never rechallenge after mucosal involvement, blistering or fever — it can kill."]
@@ -20816,6 +20816,1639 @@ window.DRUG_DB = [
         book: "note",
         text: "The 2–3 days of treatment before a trial without catheter, the 4-week limit for medical expulsive therapy and the after-meal timing come from urology guidelines and the product information, not from the textbooks. There is no urology category in this app; tamsulosin is filed under cardiovascular as an alpha-blocker whose main hazard is postural hypotension.",
         ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- cardio and reversal ---- */
+  {
+    id: "verapamil",
+    name: "Verapamil",
+    aka: ["Isoptin", "Calan", "Securon", "Cordilox", "Class IV antiarrhythmic"],
+    cls: "Calcium-channel blocker, non-dihydropyridine (class IV antiarrhythmic)",
+    cat: "cardio",
+    wards: ["emergency", "medical", "icu", "outpatient", "maternity"],
+    tags: [
+      "SVT",
+      "supraventricular tachycardia",
+      "narrow complex tachycardia",
+      "palpitations",
+      "atrial fibrillation",
+      "atrial flutter",
+      "rate control",
+      "calcium channel blocker",
+      "arrhythmia",
+      "angina",
+      "hypertension",
+      "mitral stenosis"
+    ],
+    presentation: [
+      "Injection 2.5 mg/mL, 2 mL ampoule (5 mg). Room temperature, protect from light. Do not use if cloudy or if there are crystals.",
+      "Tablets 40 mg, 80 mg and 120 mg (plain); modified-release 120 mg, 180 mg and 240 mg. Swallow modified-release tablets whole. They are not interchangeable mg for mg with plain tablets.",
+      "Verapamil precipitates in alkaline solutions. Never give it through the same line as sodium bicarbonate or aminophylline without flushing before and after."
+    ],
+    indications: [
+      "Regular NARROW-complex tachycardia (SVT) in a stable ADULT after vagal manoeuvres, when adenosine has failed, cannot be used (for example severe asthma) or is not available",
+      "Rate control of atrial fibrillation or flutter WITHOUT pre-excitation (WPW), heart failure or low blood pressure. This includes new AF in rheumatic mitral stenosis, also in pregnancy (Williams)",
+      "Oral: prevention of recurrent SVT; long-term rate control in AF; angina or hypertension when a β-blocker cannot be used"
+    ],
+    standard: {
+      summary: "Verapamil is a slow IV push over at least 2 minutes, with the ECG running and the blood pressure checked. Give it only after you have shown four things: the rhythm is a regular NARROW-complex tachycardia, the patient is not an infant, the blood pressure is normal, and no IV β-blocker has been given. Adenosine blocks the AV node for seconds; verapamil blocks it for hours. A wrong diagnosis is not forgiven: in an infant, in ventricular tachycardia or in WPW with atrial fibrillation, verapamil can cause cardiac arrest.",
+      items: [
+        {
+          label: "Before EVERY IV dose: stop if any of these",
+          text: "1. Infant under 1 year: verapamil causes hypotension and cardiac arrest in infants (Nelson). 2. Broad QRS (3 small squares, 0.12 s or more), or an irregular, very fast, broad or changing QRS: treat as ventricular tachycardia or pre-excited AF (Harrison). 3. An IV β-blocker given in the last few hours, or a regular oral β-blocker (including timolol eye drops). 4. Systolic BP under 90 mmHg, shock, heart failure or known poor heart function. 5. Known WPW or pre-excitation on an old ECG, sick sinus syndrome, or second- or third-degree AV block. If any one applies: no verapamil. Use vagal manoeuvres, adenosine, or synchronised cardioversion if unstable (see SVT)."
+        },
+        {
+          label: "Adult SVT (after vagal manoeuvres and adenosine)",
+          text: "5 mg (2 mL) IV slowly over at least 2 minutes (3 minutes in older patients), with the ECG recording. If the tachycardia continues and the BP has held, give a further 5 mg after 5–10 minutes. The BNF allows 5–10 mg as the first dose and AHA ACLS starts at 2.5–5 mg; this app uses 5 mg. Without senior advice, stop at 10 mg in total. Higher totals (BNF up to 15 mg, ACLS up to 20 mg) are for a senior."
+        },
+        {
+          label: "Atrial fibrillation or flutter: rate control",
+          text: "Only with a normal-width QRS, no pre-excitation, no heart failure and a normal BP. Give 5 mg IV over 2–3 minutes as above, and repeat once after 5–10 minutes if needed. Then oral plain tablets 40–120 mg three times daily (BNF). In heart failure or low BP use digoxin instead (Harrison; see Digoxin). Anticoagulation is a separate decision (see Warfarin, Apixaban)."
+        },
+        {
+          label: "Oral maintenance",
+          text: "SVT prevention or AF rate control: 40–120 mg three times daily (BNF). Angina: plain tablets 80–160 mg three times daily, or modified-release 120–480 mg once daily (Harrison). Hypertension: modified-release 120–240 mg once daily, up to 480 mg. Start at the low end in older patients and in liver disease."
+        },
+        {
+          label: "Pregnancy",
+          text: "Williams: IV verapamil for SVT when adenosine and β-blockers are ineffective or contraindicated, and 5–10 mg IV for new AF in mitral stenosis. Give it with the woman tilted to the left. Low maternal BP reduces placental blood flow, so check BP every 2–5 minutes and listen to the fetal heart."
+        },
+        {
+          label: "Low BP or slow pulse after a dose",
+          text: "Lie the patient flat with the legs raised. Give 0.9 % saline 250–500 mL. Give calcium gluconate 10 % 10 mL (1 g) IV over 5–10 minutes and repeat once if needed (child 0.5 mL/kg, maximum 20 mL; see Calcium gluconate). Calcium chloride 10 % is about three times stronger: give about one third of the volume, into a large vein. For bradycardia, atropine 0.5–1 mg IV. If still shocked, adrenaline. If asystole, CPR. Verapamil's AV-node effect lasts hours, so keep monitoring."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Slow push by hand, with no pump and a watch",
+        best_for: "Every IV dose. A pump is never needed: verapamil is a 2–3 minute push, and the danger is pushing it fast.",
+        requires: ["iv", "ecg", "bp"],
+        steps: [
+          "Go through the five stops (Standard) out loud with a second person. Record a 12-lead ECG first and keep it.",
+          "Have at the bedside before you start: calcium gluconate 10 % 10 mL drawn up and labelled, atropine, a bag-valve-mask, oxygen, and the defibrillator.",
+          "Draw 5 mg (2 mL) and dilute to 10 mL with 0.9 % saline (0.5 mg/mL). Label the syringe.",
+          "Give 1 mL every 12 seconds by the watch: 10 mL over 2 minutes. For an older patient, 1 mL every 18 seconds (3 minutes). Run an ECG rhythm strip during the push.",
+          "Stop pushing at once if the rhythm converts, the pulse falls below 50/min, the QRS widens, or the systolic BP falls below 90 mmHg.",
+          "Check BP every 2–3 minutes during the push and for 15 minutes after, then every 15 minutes for an hour."
+        ],
+        monitor: [
+          "ECG strip before, during and after; repeat a 12-lead ECG after conversion and look for WPW (short PR, delta wave)",
+          "BP and pulse every 2–3 min during the push and for 15 min after, then every 15 min for 1 h",
+          "Dizziness, sweating, breathlessness or new crackles (heart failure)"
+        ],
+        cautions: [
+          "A 2 mL undiluted push 'over 2 minutes' is hard to time and is usually given too fast. Diluting to 10 mL makes the timing possible.",
+          "A pause of a few seconds on conversion can happen, but verapamil's effect does not wear off in seconds the way adenosine's does. A slow rhythm after verapamil needs treatment, not waiting (see Low BP or slow pulse)."
+        ]
+      },
+      {
+        title: "No ECG, or an ECG you cannot read: do not give verapamil",
+        best_for: "Health centres and wards with no ECG machine or monitor, or no one who can read the tracing.",
+        requires: [],
+        steps: [
+          "Verapamil is only safe once a regular NARROW-complex tachycardia has been seen on an ECG. A fast regular pulse alone could be sinus tachycardia, atrial flutter, ventricular tachycardia or pre-excited AF. In VT and in WPW with AF, verapamil can kill.",
+          "Use vagal manoeuvres: modified Valsalva for adults (see Adenosine).",
+          "If the patient is shocked, confused, has chest pain or heart failure, or is a child or infant: oxygen, IV access, and urgent referral or cardioversion where available.",
+          "If you can send an ECG image to a senior by phone, do so, but give verapamil only if a clinician who has seen the tracing confirms a narrow regular rhythm and none of the five stops applies.",
+          "Refer a stable patient with recurrent palpitations for an ECG during an episode."
+        ],
+        monitor: ["Pulse rate, BP, consciousness and breathing every 15 minutes while awaiting transfer"],
+        cautions: [
+          "Never give verapamil 'to see if it works' in an unknown tachycardia. The adenosine trial can be used as a diagnostic test because adenosine lasts seconds. Verapamil lasts hours, so it cannot."
+        ]
+      },
+      {
+        title: "Adenosine has run out: making verapamil the safe second choice",
+        best_for: "District hospitals where adenosine is out of stock but verapamil is on the shelf, and the patient is a stable adult with SVT.",
+        requires: ["iv", "ecg", "bp"],
+        steps: [
+          "Repeat the modified Valsalva properly (blow against a 10 mL syringe for 15 s, then lie flat with the legs raised to 45°). It converts about 4 in 10 adults and costs nothing.",
+          "Confirm all of the following: adult; regular narrow-complex tachycardia; systolic BP 90 mmHg or above; no β-blocker (oral or IV, including timolol eye drops); no heart failure; no known WPW. Ask specifically about the medicines the patient takes.",
+          "Pregnant: Williams places verapamil after adenosine and an IV β-blocker. Give it with left tilt and fetal heart monitoring.",
+          "Give 5 mg over 2–3 minutes, diluted, as in the first card. Repeat once after 5–10 minutes if the BP has held.",
+          "If two doses fail, do not add a β-blocker. Refer, or use amiodarone or synchronised cardioversion with a senior (see SVT)."
+        ],
+        monitor: ["Same as the first card; also keep the patient lying down for 30 minutes after conversion"],
+        cautions: [
+          "Infants and young children with SVT never get verapamil as the 'second choice'. If adenosine is not available, use ice-water to the face, and synchronised cardioversion 0.5–2 J/kg if they are in heart failure (Nelson)."
+        ]
+      },
+      {
+        title: "Tablets swallowed in overdose, or a toddler found with the strip",
+        best_for: "Emergency rooms receiving a deliberate overdose of verapamil, or a child who has swallowed one or two tablets. Modified-release tablets are the most dangerous.",
+        requires: ["iv", "bp"],
+        steps: [
+          "Treat even 1–2 tablets in a toddler as dangerous. Toxicity can be delayed, especially with modified-release tablets, so admit and monitor for 12–24 hours (Nelson).",
+          "Airway, breathing, IV access. Check blood glucose: high glucose is a sign of significant calcium-channel-blocker poisoning (Nelson).",
+          "Give activated charcoal if the patient presents early with a safe airway (Nelson). Do not induce vomiting.",
+          "Low BP or slow pulse: give a fluid bolus, then calcium. Give calcium gluconate 10 % through a peripheral line, or calcium chloride through a central or large vein (Nelson), and repeat as needed. Give atropine for bradycardia.",
+          "Still shocked: high-dose insulin with glucose is the antidote of choice (Nelson: insulin 1 unit/kg bolus, then 1–10 units/kg/h). It needs glucose every 15–30 minutes and potassium checks. Start it only with a senior or ICU, and add adrenaline or noradrenaline. Lipid emulsion, if stocked, may help (Nelson).",
+          "Phone the national poison centre or a senior early."
+        ],
+        monitor: [
+          "BP, pulse, ECG (PR interval, heart block) and consciousness every 15–30 minutes",
+          "Blood glucose hourly; potassium if insulin is given"
+        ],
+        cautions: [
+          "Sending a child home after a 'normal' first few hours is the classic mistake. Modified-release verapamil can cause collapse many hours later."
+        ]
+      }
+    ],
+    paediatric: [
+      "NEVER under 1 year. Verapamil can reduce cardiac output and cause hypotension and cardiac arrest in infants (Nelson). An infant with SVT gets ice-water to the face, adenosine, and synchronised cardioversion if in heart failure (see SVT, Adenosine).",
+      "Over 1 year: only on specialist (paediatric or cardiology) advice, and only after adenosine. Nelson gives 0.1–0.3 mg/kg IV per dose (maximum 5–10 mg). BNF for Children gives 0.1–0.3 mg/kg (maximum 5 mg) over 2–3 minutes, repeated after 30 minutes if needed. Use the lower values: 0.1 mg/kg, maximum 5 mg. Dilute 5 mg (2 mL) to 10 mL with saline (0.5 mg/mL) so that small doses can be measured.",
+      "There is deliberately no dose calculator on this page: a calculated dose would also appear for an infant's weight.",
+      "A child on oral propranolol must not be given IV verapamil, and the reverse."
+    ],
+    cautions: [
+      "Broad-complex tachycardia: NEVER. Treat a regular broad-complex tachycardia as ventricular tachycardia until proven otherwise (Harrison). IV verapamil given in VT can cause collapse and cardiac arrest.",
+      "WPW with atrial fibrillation (irregular, very fast, broad or varying QRS): NEVER. AV-node blockers, including verapamil, are contraindicated in pre-excited AF because they can speed conduction down the accessory pathway (Harrison). Use synchronised cardioversion.",
+      "β-blockers: IV verapamil given with or within a few hours of an IV β-blocker (in either order) can cause profound bradycardia, AV block, asystole and heart failure. Harrison: do not combine. A patient on a regular oral β-blocker or timolol eye drops needs specialist advice before IV verapamil.",
+      "Heart failure, known poor heart function, cardiogenic shock, systolic BP under 90 mmHg: verapamil weakens the heart muscle and worsens failure (Harrison). Use digoxin for rate control instead.",
+      "Second- or third-degree AV block, sick sinus syndrome (unless paced), marked bradycardia: contraindicated (Harrison Table 288-4).",
+      "Digoxin: verapamil raises the digoxin level and adds AV block (Nelson). Reduce the digoxin and watch the pulse (see Interactions). Avoid IV verapamil if digoxin toxicity is possible.",
+      "Common oral side effects: constipation, ankle swelling, flushing, headache, slow pulse.",
+      "Overdose, especially of modified-release tablets, is among the most dangerous cardiac poisonings. See the overdose card and the antidote."
+    ],
+    antidote: "No specific antidote. For low BP or a slow pulse after a dose: calcium gluconate 10 % 10 mL (1 g) IV over 5–10 minutes, repeated if needed (child 0.5 mL/kg, maximum 20 mL), or calcium chloride 10 % (about a third of the volume, into a large vein). Add atropine for bradycardia, and fluids and adrenaline or noradrenaline for hypotension. In overdose, high-dose insulin with glucose is the antidote of choice (Nelson). Use it with a senior or ICU.",
+    sources: [
+      {
+        name: "Resuscitation Council UK. Adult and Paediatric Advanced Life Support guidelines, 2021 (tachycardia algorithms)"
+      },
+      {
+        name: "American Heart Association. ACLS and PALS guidelines 2020, focused updates 2023 (verapamil 2.5–5 mg IV, repeat 5–10 mg, maximum 20 mg)"
+      },
+      {
+        name: "BNF and BNF for Children: verapamil hydrochloride monograph and interactions appendix"
+      },
+      {
+        name: "Verapamil hydrochloride injection (Isoptin), product information: contraindications (ventricular tachycardia, WPW with AF/flutter, IV β-blockers within a few hours, infants)"
+      },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 484 and ch. 94" },
+      { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 256, 284, 288" }
+    ],
+    textbook: [
+      {
+        book: "nelson",
+        text: "Verapamil has been used for SVT in older children, but it may reduce cardiac output and cause hypotension and cardiac arrest in infants under 1 year, so it is contraindicated in that age group. Adenosine is the treatment of choice; DC cardioversion if in heart failure.",
+        ref: "Nelson 22nd ed. 2024, ch. 484 Disturbances of Rate and Rhythm of the Heart, p. 2850"
+      },
+      {
+        book: "nelson",
+        text: "Verapamil (SVT, not WPW): IV 0.1–0.3 mg/kg per dose, maximum 5–10 mg per dose; oral 2–8 mg/kg/day in 3 divided doses (maximum 480 mg/day). Side effects: bradycardia, asystole, high-degree AV block, hypotension, heart failure. With a β-blocker it worsens heart failure; it raises digoxin levels and toxicity.",
+        ref: "Nelson 22nd ed. 2024, ch. 484, Table 484.1, p. 2846"
+      },
+      {
+        book: "harrison",
+        text: "In pre-excited atrial fibrillation (WPW), AV nodal blockers (oral or IV verapamil, diltiazem, β-blockers, IV adenosine and IV amiodarone) are contraindicated, because slowing the AV node can speed conduction down the accessory pathway. Use electrical cardioversion.",
+        ref: "Harrison 22nd ed. 2025, ch. 256 Paroxysmal Supraventricular Tachycardias, p. 1941"
+      },
+      {
+        book: "harrison",
+        text: "IV verapamil or diltiazem terminate PSVT but can cause hypotension before and after termination, and act longer than adenosine. A wide-complex tachycardia should be managed as ventricular tachycardia until proven otherwise.",
+        ref: "Harrison 22nd ed. 2025, ch. 256 Paroxysmal Supraventricular Tachycardias, p. 1943"
+      },
+      {
+        book: "harrison",
+        text: "Verapamil and diltiazem can cause conduction disturbances and bradyarrhythmias. Because they weaken heart contraction, they are more likely to worsen left ventricular failure, especially with LV dysfunction and with β-blockers.",
+        ref: "Harrison 22nd ed. 2025, ch. 284 Ischemic Heart Disease, p. 2101"
+      },
+      {
+        book: "harrison",
+        text: "Non-dihydropyridine calcium-channel blockers (verapamil, diltiazem): do not combine with β-blockers; do not use in heart failure with reduced ejection fraction or in high-grade AV or SA block.",
+        ref: "Harrison 22nd ed. 2025, ch. 288 Hypertension, Table 288-4, p. 2144"
+      },
+      {
+        book: "williams",
+        text: "SVT in pregnancy: IV verapamil when adenosine and β-blockers are ineffective or contraindicated.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2143"
+      },
+      {
+        book: "williams",
+        text: "New-onset atrial fibrillation in a pregnant woman with mitral stenosis: IV verapamil 5–10 mg, or electrical cardioversion.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2121"
+      },
+      {
+        book: "nelson",
+        text: "Calcium-channel blocker poisoning: verapamil and diltiazem are the most dangerous in overdose. Calcium salts (gluconate peripherally, chloride centrally) help overcome the block; high-dose insulin euglycaemia therapy is the antidote of choice.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, p. 713"
+      },
+      {
+        book: "nelson",
+        text: "Toddlers can deteriorate late after swallowing one or two CCB tablets: admit and monitor for 12–24 hours. Lipid emulsion may help with verapamil and diltiazem.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, p. 714"
+      },
+      {
+        book: "note",
+        text: "The textbooks do not give the adult IV dose. The adult doses (5 mg over 2–3 minutes, repeat 5 mg after 5–10 minutes) follow the BNF, and the ranges quoted follow AHA ACLS. The 10 mg stop without senior advice is an editorial safety limit. The prohibitions on IV verapamil in ventricular tachycardia and within a few hours of an IV β-blocker are in the product information and resuscitation guidelines; the textbooks support them (Harrison: manage broad-complex tachycardia as VT; do not combine with β-blockers).",
+        ref: "Editorial note"
+      },
+      {
+        book: "note",
+        text: "The Adenosine page and the SVT case describe verapamil as 'adults only'. Nelson and BNF for Children allow it over 1 year on specialist advice. This page keeps adults as the normal use and children over 1 year as specialist only; there is no contradiction. The improvised methods (hand-timed dilute push, no-ECG rule, stock-out use, overdose handling) are editorial guidance for district practice.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "apixaban",
+    name: "Apixaban",
+    aka: ["Eliquis", "DOAC", "NOAC", "Direct oral anticoagulant", "Factor Xa inhibitor", "Xa inhibitor"],
+    cls: "Oral anticoagulant (direct factor Xa inhibitor, DOAC)",
+    cat: "haem",
+    wards: ["medical", "outpatient", "surgical", "emergency"],
+    tags: [
+      "anticoagulation",
+      "DOAC",
+      "atrial fibrillation",
+      "stroke prevention",
+      "DVT",
+      "PE",
+      "VTE",
+      "bleeding",
+      "reversal",
+      "perioperative",
+      "surgery",
+      "spinal",
+      "blood thinner"
+    ],
+    presentation: [
+      "Tablets 2.5 mg and 5 mg. Room temperature.",
+      "Tablets may be crushed and mixed with water or apple juice, or given down a nasogastric tube (product information). Taken with or without food (Harrison).",
+      "Rarely stocked in Ethiopian public hospitals. Most patients you meet on apixaban were started at a referral or private hospital, or abroad. Ask to see the box."
+    ],
+    indications: [
+      "Stroke prevention in atrial fibrillation WITHOUT a mechanical heart valve or moderate–severe rheumatic mitral stenosis (Harrison)",
+      "Treatment of DVT and pulmonary embolism, and prevention of recurrence",
+      "Prevention of VTE after hip or knee replacement",
+      "In district practice, mostly the patient who ARRIVES on apixaban: you need to know how to stop and restart it, how to operate safely, and how to manage bleeding"
+    ],
+    standard: {
+      summary: "Fixed doses twice daily, with no INR. The effect starts within a few hours and, with normal kidneys, wears off over 24–48 hours (half-life about 12 h). It hardly moves the INR, so there is no routine test that shows it, and its specific antidote (andexanet) is essentially unavailable in Ethiopia. What you work with is the dose, the kidney function and the time of the last tablet.",
+      items: [
+        {
+          label: "Atrial fibrillation (non-valvular)",
+          text: "5 mg twice daily. Give 2.5 mg twice daily only if at least TWO of these apply: age 80 or over, weight 60 kg or less, serum creatinine 133 µmol/L (1.5 mg/dL) or more (Harrison). European labelling also uses 2.5 mg twice daily when creatinine clearance is 15–29 mL/min. Do not 'reduce to be safe' outside these criteria: doses that are too low let strokes through."
+        },
+        {
+          label: "DVT or PE: treatment",
+          text: "10 mg twice daily for 7 days, then 5 mg twice daily (Harrison), for at least 3 months. No heparin lead-in is needed. After 6 months, if anticoagulation continues to prevent recurrence, the dose can be lowered to 2.5 mg twice daily (Harrison)."
+        },
+        {
+          label: "After hip or knee replacement",
+          text: "2.5 mg twice daily, first dose 12–24 h after surgery (Harrison Table 290-7). Usually about 30 days after hip and 10–14 days after knee replacement (Harrison)."
+        },
+        {
+          label: "Kidney function: calculate it before starting and every year",
+          text: "Creatinine clearance (Cockcroft–Gault), mL/min = (140 − age) × weight in kg × 1.23 for men or 1.04 for women ÷ creatinine in µmol/L. 30 or more: usual dose. 15–29: use with caution (AF dose 2.5 mg twice daily); for VTE ask a physician. Under 15, or on dialysis: do not use (Nelson); use warfarin with INR monitoring or heparin. Recheck the creatinine at least once a year and in any illness with vomiting, diarrhoea or dehydration."
+        },
+        {
+          label: "Missed dose",
+          text: "Take it as soon as remembered on the same day, then continue twice daily. Never take two doses at once to catch up."
+        },
+        {
+          label: "Switching",
+          text: "Warfarin to apixaban: stop warfarin and start apixaban when the INR is below 2.0. Apixaban to warfarin: give both together, check the INR just before an apixaban dose from day 3, and stop apixaban when the INR is 2.0 or above. Heparin or enoxaparin to apixaban: give the first apixaban tablet when the next heparin dose would have been due (or when an infusion is stopped). Apixaban to enoxaparin: give the first injection when the next tablet would have been due. Never overlap two full anticoagulants except while switching to warfarin."
+        },
+        {
+          label: "Surgery, spinal or epidural (same as the Pre-op tool)",
+          text: "Normal kidney function. Low-bleeding-risk surgery: last dose 2 days before (skip 1 day). High-bleeding-risk surgery: last dose 3 days before (skip 2 days). Spinal or epidural: at least 72 hours since the last dose (ASRA). Restart 24 hours after low-risk and 48–72 hours after high-risk surgery, once bleeding is controlled. No heparin bridging. Reduced kidney function: stop longer before, and ask the anaesthetist."
+        },
+        {
+          label: "Bleeding",
+          text: "Minor bleeding: withhold one or two doses (Harrison). Serious bleeding: see the bleeding card below and the antidote line. Vitamin K and fresh frozen plasma do not reverse apixaban."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "The patient who arrives on apixaban: what to find out in five minutes",
+        best_for: "Casualty, admissions, the pre-op clinic and the theatre list: any patient who says they take a 'blood thinner' that is not warfarin.",
+        requires: [],
+        steps: [
+          "Read the box: name (apixaban, Eliquis), strength (2.5 or 5 mg), and how often (twice daily). Rivaroxaban, edoxaban and dabigatran are different drugs with different rules. Do not assume.",
+          "WHEN was the last tablet? Write the date and the clock time in the notes. This is your most important number. With normal kidneys, more than 24 hours since the last dose means apixaban is unlikely to be the cause of bleeding (Harrison).",
+          "WHY is the patient on it: AF, a clot, or after joint surgery? Do they have a mechanical heart valve or rheumatic mitral stenosis? If so, they are on the wrong drug and need warfarin. Refer.",
+          "Kidneys: send a creatinine and work out the clearance (Standard). Poor kidney function means apixaban stays in the body longer.",
+          "Other drugs: aspirin, clopidogrel, NSAIDs (diclofenac, ibuprofen), SSRIs, TB treatment, carbamazepine, phenytoin (see Interactions). Is the patient pregnant?",
+          "Do NOT use the INR or aPTT to decide whether apixaban is 'active'. A normal INR does not rule it out (Harrison: apixaban has very little effect on the prothrombin time). Only a calibrated anti-Xa assay measures it, and few hospitals have one."
+        ],
+        monitor: ["Haemoglobin and signs of bleeding if there is any doubt", "Creatinine on admission"],
+        cautions: [
+          "Do not stop apixaban 'just in case' in a patient with AF or a recent clot without a plan to restart it. Stopping without cover raises the risk of stroke and new clots."
+        ]
+      },
+      {
+        title: "Major bleeding on apixaban with no andexanet",
+        best_for: "GI bleeding, intracranial bleeding, trauma or postpartum haemorrhage in a patient on apixaban, in a hospital without andexanet (which is almost every hospital in Ethiopia).",
+        requires: ["iv"],
+        steps: [
+          "Stop apixaban. Note the time of the last dose and check the creatinine. Time is the real antidote: with normal kidneys about half the drug is gone by 12 hours, and most of it by 24–48 hours.",
+          "Treat the bleeding itself: pressure, packing, suturing, endoscopy or surgery as for any patient (Harrison). Resuscitate with fluids and blood. Do not wait for reversal before stopping the bleeding surgically.",
+          "Tranexamic acid 1 g IV over 10 minutes (as for trauma; see Tranexamic acid). Evidence in DOAC bleeding is limited, but it is cheap and available.",
+          "If the overdose or last dose was within the last few hours and the airway is safe, activated charcoal (Harrison: may help if the drug was taken in the last 4 h).",
+          "Four-factor prothrombin complex concentrate (PCC) 25–50 units/kg, if your blood bank or a referral hospital has it (Harrison). This is the best available substitute for andexanet.",
+          "Do NOT expect vitamin K, fresh frozen plasma or protamine to reverse apixaban. Give plasma, platelets and cryoprecipitate only as part of a massive transfusion, for loss and dilution. Dialysis does not remove apixaban.",
+          "Life-threatening or intracranial bleeding: senior and referral early. Do not delay the transfer for tests."
+        ],
+        monitor: [
+          "Pulse, BP and urine output every 15–30 minutes; haemoglobin after resuscitation",
+          "Creatinine (estimates how long the drug will last)",
+          "Neurological observations if there is any head injury or headache"
+        ],
+        cautions: [
+          "A normal INR in a bleeding patient on apixaban is not reassuring and not a reason to restart. Restart only when bleeding is controlled and a senior has weighed the clot risk, usually after 2–3 days or longer after an intracranial bleed.",
+          "Minor bleeding (nose, gums, bruising): withhold one or two doses (Harrison), use local pressure or tranexamic acid mouthwash, and look for a cause."
+        ]
+      },
+      {
+        title: "Emergency surgery, caesarean or a spinal in a patient on apixaban",
+        best_for: "The patient on the emergency list who took apixaban today or yesterday.",
+        requires: [],
+        steps: [
+          "Find the time of the last dose. If the condition allows, delay surgery by 12–24 hours (Pre-op tool). Each 12 hours removes about half the drug if the kidneys are normal.",
+          "Spinal or epidural only if at least 72 hours have passed since the last dose (ASRA, as in the Pre-op tool). Otherwise use general anaesthesia. This applies to a caesarean too.",
+          "If you cannot wait: have blood cross-matched, give tranexamic acid, and have PCC available if it exists (Pre-op tool). Most operations can go ahead without reversal and with careful surgical haemostasis (Harrison).",
+          "Never remove an epidural catheter within the stopping interval either. If apixaban was restarted, time the removal and the next dose with the anaesthetist.",
+          "Write the restart plan in the operation note: when, what dose, and who decides."
+        ],
+        monitor: ["Wound and drain losses, haemoglobin; leg power and sensation after any neuraxial block"],
+        cautions: ["Practice varies. Confirm with the anaesthetist, especially with reduced kidney function."]
+      },
+      {
+        title: "The tablets run out, or the patient cannot afford the next box",
+        best_for: "Outpatients and discharges where apixaban was started elsewhere and supply is uncertain.",
+        requires: [],
+        steps: [
+          "Do not stretch supply by halving tablets or taking them once daily. Twice-daily dosing is what protects the patient. A half dose lets clots and strokes through.",
+          "DVT or PE still within its course: change to enoxaparin 1 mg/kg SC every 12 hours (once daily if creatinine clearance is under 30 mL/min) for the rest of the course. Start it when the next tablet would have been due (see Heparin).",
+          "AF: change to warfarin with INR monitoring (see Warfarin and the switching rule above) if the patient can attend for INR checks. Aspirin is not a substitute for stroke prevention.",
+          "If the patient will run out on the way home, give enough enoxaparin or arrange warfarin before discharge. Never leave a gap with no plan.",
+          "Write the switch and its date on the patient's card. Two anticoagulants taken together by mistake cause serious bleeding."
+        ],
+        monitor: ["INR if switched to warfarin; platelets once at day 5–7 on enoxaparin if possible"],
+        cautions: [
+          "A mechanical valve or rheumatic mitral stenosis means warfarin, not apixaban, whatever the supply."
+        ]
+      }
+    ],
+    paediatric: [
+      "Specialist use only. Some paediatric centres use DOACs, mainly in adolescents (Nelson). In district practice, a child who needs anticoagulation gets heparin or enoxaparin, or warfarin with INR monitoring (see Heparin, Warfarin).",
+      "A child who has swallowed someone's apixaban: phone the poison centre or a senior. Give activated charcoal if the child presents early and the airway is safe. Watch for bleeding, and check haemoglobin and the creatinine."
+    ],
+    cautions: [
+      "Contraindicated with ANY mechanical heart valve and with moderate–severe rheumatic mitral stenosis. Warfarin is required (Harrison). Rheumatic heart disease is common in Ethiopia, so ask every patient on apixaban about valve disease.",
+      "Creatinine clearance under 15 mL/min or dialysis: do not use (Nelson). Severe liver disease, or liver disease with a coagulopathy: do not use.",
+      "Pregnancy: contraindicated. DOACs cross the placenta (Harrison). Change to enoxaparin as soon as pregnancy is known. Women who could become pregnant need contraception. Avoid while breastfeeding (Harrison).",
+      "Antiphospholipid syndrome with thrombosis: DOACs have caused more clots than warfarin. Use warfarin.",
+      "Active major bleeding, recent intracranial bleeding, or a recent spinal or eye operation: do not start without senior advice.",
+      "Bleeding risk is higher with aspirin, clopidogrel, NSAIDs and SSRIs (see Interactions). Rifampicin (TB treatment), carbamazepine, phenytoin and phenobarbital lower apixaban levels and leave the patient unprotected. Ritonavir-boosted HIV protease inhibitors and azole antifungals such as ketoconazole raise them.",
+      "INR and aPTT do not measure apixaban (Harrison). A normal result does not mean the drug has gone.",
+      "Stopping early without cover raises the risk of stroke and clots. Every stop needs a written restart plan."
+    ],
+    antidote: "The specific reversal agent, andexanet alfa, is expensive and not available in most hospitals (Harrison), essentially none in Ethiopia. Instead: stop apixaban, control the bleeding, resuscitate, give tranexamic acid, and give four-factor prothrombin complex concentrate 25–50 units/kg where available (Harrison). Activated charcoal helps if the dose was taken in the last few hours. Vitamin K, fresh frozen plasma and protamine do NOT reverse apixaban, and dialysis does not remove it. Time is the main antidote: the half-life is about 12 h.",
+    sources: [
+      {
+        name: "Apixaban (Eliquis) summary of product characteristics / prescribing information: dosing, renal criteria, switching, missed dose, crushing"
+      },
+      {
+        name: "Douketis JD et al. Perioperative management of patients with atrial fibrillation receiving a direct oral anticoagulant (PAUSE). JAMA Intern Med 2019;179:1469–1478"
+      },
+      {
+        name: "ASRA evidence-based guidelines: Regional anesthesia in the patient receiving antithrombotic or thrombolytic therapy, 4th ed. 2018"
+      },
+      {
+        name: "Steffel J et al. European Heart Rhythm Association practical guide on the use of non-vitamin K antagonist oral anticoagulants in patients with atrial fibrillation, 2021"
+      },
+      { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 123, 258, 275, 290" }
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "DOACs are licensed for stroke prevention in atrial fibrillation except with mechanical heart valves or severe rheumatic mitral valve disease, and for VTE treatment. AF: apixaban 5 mg twice daily; 2.5 mg twice daily with at least two of age over 80, weight under 60 kg, creatinine over 1.5 mg/dL.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952"
+      },
+      {
+        book: "harrison",
+        text: "VTE: apixaban can be used without heparin, at 10 mg twice daily for 7 days, then 5 mg twice daily; after 6 months of full-dose treatment it can be lowered to 2.5 mg twice daily. Hip or knee replacement prophylaxis: 2.5 mg twice daily. It can be taken with or without food.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "Apixaban has so little effect on the prothrombin time that an anti-factor Xa assay is needed to assess its activity. Half-life about 12 h; 25 % renal excretion; interactions through CYP3A4 and P-glycoprotein.",
+        ref: "Harrison 22nd ed. 2025, ch. 123, Table 123-9, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "Bleeding: minor bleeding, withhold one or two doses. Serious bleeding is managed like warfarin bleeding except that vitamin K is of no benefit: stop the anticoagulant and antiplatelets, resuscitate with fluids and blood products, and find and manage the bleeding source. Charcoal may help if the drug was taken in the last 4 h. If more than 24 h have passed since the last dose, the DOAC is unlikely to be responsible unless renal function is markedly impaired.",
+        ref: "Harrison 22nd ed. 2025, ch. 123, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "Periprocedural: DOACs are held for 1–2 days before procedures with moderate or high bleeding risk, longer if renal function is impaired.",
+        ref: "Harrison 22nd ed. 2025, ch. 123, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "Andexanet alfa reverses apixaban but is expensive and not available in all hospitals. If it is unavailable, four-factor prothrombin complex concentrate 25–50 units/kg is also effective at restoring haemostasis. Most surgery can be done without reversal.",
+        ref: "Harrison 22nd ed. 2025, ch. 123, p. 954"
+      },
+      {
+        book: "harrison",
+        text: "DOACs cross the placenta and are contraindicated in pregnancy; women who could become pregnant need contraception; avoid in nursing mothers because small amounts are found in breast milk.",
+        ref: "Harrison 22nd ed. 2025, ch. 123, p. 954"
+      },
+      {
+        book: "harrison",
+        text: "Warfarin is required for rheumatic mitral stenosis and mechanical heart valves.",
+        ref: "Harrison 22nd ed. 2025, ch. 258 Atrial Fibrillation, p. 1950"
+      },
+      {
+        book: "harrison",
+        text: "Direct oral anticoagulants should not be used if moderate or severe rheumatic mitral stenosis is present, and are not approved for mechanical prosthetic heart valves.",
+        ref: "Harrison 22nd ed. 2025, ch. 275 Mitral Regurgitation, p. 2054"
+      },
+      {
+        book: "nelson",
+        text: "Apixaban, edoxaban and rivaroxaban are contraindicated with a creatinine clearance below 15 mL/min. Apixaban for VTE: 10 mg twice daily for 1 week, then 5 mg twice daily. Some paediatric centres use DOACs, mainly in adolescents.",
+        ref: "Nelson 22nd ed. 2024, ch. 458 Pulmonary Embolism, Infarction, and Hemorrhage, Table 458.3, p. 2697"
+      },
+      {
+        book: "schwartz",
+        text: "Factor Xa inhibitors such as rivaroxaban, apixaban and edoxaban were described as lacking a specific antidote, which makes reversal difficult in surgical bleeding. Andexanet has since been licensed but is rarely available.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 113"
+      },
+      {
+        book: "gabbe",
+        text: "DOACs such as apixaban and rivaroxaban are not recommended in pregnancy; heparin and enoxaparin, which do not cross the placenta, are the alternatives.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 126"
+      },
+      {
+        book: "note",
+        text: "Harrison ch. 290 (Table 290-4) applies the AF dose-reduction criteria (two of age over 80, weight under 60 kg, creatinine over 1.5 mg/dL) to VTE treatment as well. The product licence does not reduce the VTE dose for these criteria. This page follows the licence and asks for a physician's decision. The stopping and restarting times are copied from the app's Pre-op tool (PAUSE, ASRA) so that the two never disagree. Switching, missed-dose and creatinine-clearance rules follow the product information. The antiphospholipid warning follows the TRAPS trial (Pengo 2018) and the EMA 2019 safety advice. The improvised methods are editorial guidance for district practice.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "flumazenil",
+    name: "Flumazenil",
+    aka: ["Anexate", "Romazicon", "Benzodiazepine antagonist", "Benzodiazepine reversal"],
+    cls: "Benzodiazepine receptor antagonist (reversal agent)",
+    cat: "emergency",
+    wards: ["emergency", "surgical", "icu", "medical", "paediatric"],
+    tags: [
+      "benzodiazepine reversal",
+      "midazolam",
+      "diazepam",
+      "lorazepam",
+      "oversedation",
+      "procedural sedation",
+      "overdose",
+      "poisoning",
+      "antidote",
+      "respiratory depression"
+    ],
+    presentation: [
+      "Injection 0.1 mg/mL: 5 mL ampoule (0.5 mg) and 10 mL ampoule (1 mg). Room temperature.",
+      "Expensive and often not stocked. It is not needed to treat a benzodiazepine overdose: airway and breathing support is."
+    ],
+    indications: [
+      "Oversedation or slow breathing caused by a benzodiazepine (midazolam, diazepam) given in hospital for a procedure or sedation. The patient must not take benzodiazepines regularly and must have had nothing else that lowers the seizure threshold.",
+      "NOT for routine use in overdose. Benzodiazepine overdose is treated by supporting the airway and breathing until the drug wears off.",
+      "NEVER in a mixed or unknown overdose, a tricyclic overdose, or a patient who is dependent on benzodiazepines or alcohol (see Cautions)"
+    ],
+    standard: {
+      summary: "Flumazenil reverses a benzodiazepine within 1–2 minutes but wears off in about an hour, before most benzodiazepines do (Harrison). In the wrong patient it causes seizures, and benzodiazepines then struggle to stop them (Harrison, Nelson). Its real job is narrow: the patient you over-sedated with midazolam or diazepam for a procedure. For almost every benzodiazepine overdose the treatment is airway, breathing and time. A benzodiazepine taken alone rarely kills a patient whose airway is protected.",
+      items: [
+        {
+          label: "Adult: oversedation after a procedure",
+          text: "0.2 mg IV over 15 seconds. If not rousable after 60 seconds, give 0.1 mg every 60 seconds as needed, to a total of 1 mg (usual total 0.3–0.6 mg) (BNF). The aim is a patient who breathes well and wakes to voice. A wide-awake, frightened patient in pain means you gave too much."
+        },
+        {
+          label: "Child (1 month and over): oversedation after a procedure",
+          text: "0.01 mg/kg (10 micrograms/kg; maximum 0.2 mg) IV over 15 seconds. Repeat every 60 seconds if needed, to a total of 0.05 mg/kg or 1 mg, whichever is less (BNF for Children). This matches the antidote line on the Midazolam page."
+        },
+        {
+          label: "Resedation: watch for at least 2 hours",
+          text: "Flumazenil lasts about an hour. Midazolam lasts longer, and diazepam, lorazepam and chlordiazepoxide much longer (Harrison). Observe for at least 2 hours after the last dose, and longer after diazepam, lorazepam or a large dose. If drowsiness returns, support breathing first. A further dose may be given only if the patient still meets the criteria. Do not send the patient to an unobserved bed."
+        },
+        {
+          label: "Suspected overdose",
+          text: "Do not give it routinely. Nelson's antidote table lists 0.2 mg over 30 seconds, repeated each minute to 1 mg, and calls flumazenil relatively contraindicated for unknown or multi-drug ingestions. US labelling allows up to 3 mg in overdose (as on the Lorazepam page). If 1 mg has not woken the patient, a benzodiazepine is probably not the main problem. Look for hypoglycaemia, an opioid, alcohol, a head injury, hypoxia or a tricyclic."
+        },
+        {
+          label: "What it does not do",
+          text: "It does not reverse opioids (use naloxone), alcohol, ketamine, propofol, thiopental or phenobarbital. It does not reliably reverse slow breathing, so keep ventilating until breathing is adequate."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Benzodiazepine overdose: the treatment is airway, breathing and time",
+        best_for: "Every health centre and casualty, with or without flumazenil on the shelf. This is the main treatment, not a fallback.",
+        requires: [],
+        steps: [
+          "Recovery position. Open the airway (head tilt, jaw thrust) and clear the mouth. Most deaths come from a lost airway, vomit, or other drugs taken with it (alcohol, opioids, tricyclics).",
+          "Count the breathing rate for a full minute. If it is under 8–10/min, the breathing is shallow, or the lips are blue: bag-valve-mask with oxygen at about 1 breath every 6 seconds, until the patient breathes adequately alone.",
+          "Check blood glucose and treat a low result.",
+          "Pinpoint pupils or a known opioid: give naloxone (see Naloxone). It is safe to give in a mixed overdose; flumazenil is not.",
+          "Ask what tablets are in the house, especially amitriptyline or imipramine. Do an ECG if you can. A QRS over 100 ms means a tricyclic: follow the Tricyclic overdose case.",
+          "Activated charcoal is rarely useful in a pure benzodiazepine overdose, and a drowsy patient may inhale it. Do not induce vomiting.",
+          "Keep the patient on their side, under observation, until they are awake, talking and able to walk. Then assess suicide risk."
+        ],
+        monitor: [
+          "Breathing rate, colour, oxygen saturation if available, and response to voice every 15 minutes",
+          "Blood glucose; ECG (QRS width) if a tricyclic is possible"
+        ],
+        cautions: [
+          "Reaching for flumazenil because the patient is 'deeply asleep' is the classic mistake. If the airway and breathing are supported, the patient will wake as the drug wears off."
+        ]
+      },
+      {
+        title: "Over-sedated after procedural midazolam or diazepam: giving flumazenil safely",
+        best_for: "Endoscopy, fracture reduction, cardioversion, wound care or burns dressings where a benzodiazepine (often with an opioid) was given and the patient will not wake or breathes poorly.",
+        requires: ["iv"],
+        steps: [
+          "First, support the airway and ventilate with bag-valve-mask and oxygen. Flumazenil is never a reason to stop ventilating.",
+          "If an opioid was also given (morphine, pethidine, tramadol) and breathing is slow, give naloxone first (see Naloxone).",
+          "Before giving flumazenil, check ALL of these: no regular benzodiazepine use (sleeping tablets, diazepam for anxiety, an alcohol-withdrawal regimen); no alcohol dependence; no epilepsy controlled by a benzodiazepine; no tricyclic or unknown tablets; no head injury or raised intracranial pressure. If any one is present, keep ventilating and do not give it.",
+          "Draw up 0.5 mg (5 mL of 0.1 mg/mL). Adult: give 2 mL (0.2 mg) over 15 seconds, then 1 mL (0.1 mg) each minute until breathing is adequate and the patient wakes to voice. Stop at 1 mg in total. Child: 0.01 mg/kg per step (0.1 mL/kg), maximum 0.2 mg per step.",
+          "Stop as soon as breathing is adequate. The patient does not need to be fully awake."
+        ],
+        monitor: [
+          "Breathing rate and depth, colour, oxygen saturation if available, every 5 minutes for 30 minutes, then every 15 minutes for at least 2 hours",
+          "Seizures, agitation, vomiting"
+        ],
+        cautions: [
+          "Seizures after flumazenil are hard to stop because the benzodiazepine receptor is blocked. Larger doses of a benzodiazepine, or phenobarbital, may be needed (see the antidote line). Avoid phenytoin if a tricyclic is possible.",
+          "Resedation is expected after midazolam and especially after diazepam. Do not discharge a day-case patient within 2 hours of the last dose, and never without an escort."
+        ]
+      },
+      {
+        title: "Watching for resedation with no monitor",
+        best_for: "Wards and recovery areas without pulse oximetry or a monitor, after any dose of flumazenil.",
+        requires: [],
+        steps: [
+          "Name one person to watch the patient for 2 hours. Keep the bed within sight of the nurses' station.",
+          "Every 15 minutes: count breathing for a full minute, look at lip colour, and call the patient's name. Wakes to voice: continue. Wakes only to a shake, or breathing under 10/min: call the doctor and start bag-valve-mask support.",
+          "Keep the patient on their side, with suction and a bag-valve-mask at the bed.",
+          "Write on the chart in large letters: 'Flumazenil given at [time]. Sedation may return until [time + 2 h or longer].'",
+          "If the benzodiazepine was diazepam, lorazepam or chlordiazepoxide, extend the observation to the next morning."
+        ],
+        monitor: [
+          "Breathing rate, colour and rousability every 15 minutes for 2 hours, then hourly until the next morning after a long-acting benzodiazepine"
+        ],
+        cautions: [
+          "The danger period is when the flumazenil wears off and the ward is quiet: the patient looks well at 30 minutes and is found apnoeic at 90."
+        ]
+      }
+    ],
+    paediatric: [
+      "0.01 mg/kg (maximum 0.2 mg) IV over 15 seconds, repeated each minute to a total of 0.05 mg/kg or 1 mg, whichever is less (BNF for Children). Only for oversedation after a procedure, in a child who is not on a regular benzodiazepine.",
+      "A child who swallowed someone's tablets: support breathing and observe. Nelson calls flumazenil relatively contraindicated in unknown or multi-drug ingestions. Never give it if amitriptyline or imipramine could be in the house.",
+      "A child with epilepsy on a regular benzodiazepine (clobazam, clonazepam, diazepam), or in status epilepticus just controlled by one: never. It can restart seizures.",
+      "Neonates: not established. Ventilate."
+    ],
+    cautions: [
+      "Tricyclic or any mixed or unknown overdose: DO NOT GIVE. The benzodiazepine may be what is holding back the tricyclic's seizures. Removing it unmasks seizures and arrhythmias, and the seizures then respond poorly to benzodiazepines. Nelson lists flumazenil as relatively contraindicated for unknown or multi-drug ingestions. This is why the Tricyclic overdose case says never.",
+      "Regular benzodiazepine use or alcohol dependence: flumazenil causes acute withdrawal with seizures (Harrison Table 436-5; Nelson Table 94.3). This includes patients on a chlordiazepoxide or diazepam alcohol-withdrawal regimen.",
+      "Epilepsy treated with a benzodiazepine, or a benzodiazepine given to control status epilepticus or raised intracranial pressure: never.",
+      "Head injury or raised intracranial pressure: flumazenil can raise intracranial pressure (Harrison).",
+      "Resedation: it wears off in about an hour, before most benzodiazepines (Harrison). Observe for at least 2 hours.",
+      "Rapid reversal causes anxiety, agitation, vomiting and sometimes arrhythmias. Give small steps slowly.",
+      "It does not reverse opioids, alcohol or other sedatives, and it does not replace ventilation."
+    ],
+    antidote: "Seizures after flumazenil: support the airway and give a benzodiazepine at the status epilepticus dose (diazepam, midazolam or lorazepam). Larger doses may be needed while flumazenil occupies the receptor. Then give phenobarbital if seizures continue (see Status epilepticus). Avoid phenytoin if a tricyclic may have been taken.",
+    calc: {
+      type: "weight",
+      dosePerKg: 0.01,
+      doseUnit: "mg",
+      conc: 0.1,
+      concUnit: "mg/mL",
+      maxDose: 0.2,
+      label: "Child step dose (0.01 mg/kg, max 0.2 mg) at 0.1 mg/mL; repeat each minute to 0.05 mg/kg or 1 mg in total"
+    },
+    sources: [
+      {
+        name: "BNF and BNF for Children: flumazenil monograph (dose, maximum 1 mg per course, resedation)"
+      },
+      {
+        name: "Flumazenil injection (Anexate / Romazicon) product information: contraindications (benzodiazepine for a life-threatening condition, serious cyclic antidepressant overdose), seizure risk, resedation monitoring"
+      },
+      { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 436 and ch. 467" },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 91 and ch. 94" }
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Flumazenil 0.2 mg/min can rapidly reverse a benzodiazepine overdose but may precipitate seizures and raise intracranial pressure. Most benzodiazepines stay active much longer than flumazenil, so prolonged administration is usually required.",
+        ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3691"
+      },
+      {
+        book: "harrison",
+        text: "Flumazenil is listed among drugs that can cause seizures in benzodiazepine-dependent patients.",
+        ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, Table 436-5, p. 3414"
+      },
+      {
+        book: "nelson",
+        text: "Antidote table: flumazenil 0.2 mg IV over 30 s, repeated every minute if needed to 1 mg. Adverse effects: agitation and seizures from precipitated withdrawal. Relatively contraindicated for unknown or multi-drug ingestions.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, Table 94.8, p. 707"
+      },
+      {
+        book: "nelson",
+        text: "Excessive use of flumazenil can produce the sedative-hypnotic withdrawal toxidrome: tachycardia, agitation, tremor, seizures and delirium.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, Table 94.3, p. 703"
+      },
+      {
+        book: "nelson",
+        text: "Benzodiazepines used in anaesthesia (diazepam, midazolam, lorazepam) depress breathing, especially with opioids, and are reversed with flumazenil.",
+        ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, Table 91.8, p. 669"
+      },
+      {
+        book: "note",
+        text: "Doses follow the BNF (adult 0.2 mg then 0.1 mg each minute, maximum 1 mg) and BNF for Children (0.01 mg/kg, maximum 0.2 mg per dose, total 0.05 mg/kg or 1 mg). The Lorazepam page quotes the US overdose schedule up to 3 mg (Kaplan). This page keeps 1 mg as the ceiling for its narrow legitimate use and does not recommend flumazenil in overdose. The tricyclic contraindication is in the product information. Nelson's 'relatively contraindicated for unknown or polypharmacy ingestions' covers it, and it agrees with the Tricyclic overdose case. The 2-hour resedation watch follows the product information.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "glycopyrrolate",
+    name: "Glycopyrrolate (glycopyrronium bromide)",
+    aka: ["Glycopyrronium", "Glycopyrronium bromide", "Robinul", "Robinul-Neostigmine", "Glyco"],
+    cls: "Antimuscarinic (quaternary ammonium, acts outside the brain)",
+    cat: "analgesia",
+    wards: ["surgical", "icu", "paediatric", "maternity", "medical"],
+    tags: [
+      "neostigmine",
+      "reversal",
+      "neuromuscular block",
+      "antisialagogue",
+      "secretions",
+      "drooling",
+      "sialorrhoea",
+      "cerebral palsy",
+      "ketamine",
+      "bradycardia",
+      "anaesthesia",
+      "end of life",
+      "death rattle",
+      "anticholinergic"
+    ],
+    presentation: [
+      "Injection 0.2 mg/mL: 1 mL (0.2 mg) and 3 mL (0.6 mg) ampoules.",
+      "Premixed ampoule: neostigmine 2.5 mg + glycopyrronium bromide 0.5 mg in 1 mL. This is the same mixture named on the Neostigmine page.",
+      "Tablets 1 mg and 2 mg; oral solution where available. Check whether the label gives the dose as glycopyrronium bromide or as glycopyrronium: 400 micrograms of the bromide = 320 micrograms of glycopyrronium.",
+      "Room temperature."
+    ],
+    indications: [
+      "Given with neostigmine during reversal of non-depolarising relaxants (vecuronium), to block neostigmine's slowing of the heart and its secretions (Schwartz)",
+      "Drying saliva and airway secretions before or during anaesthesia, especially with ketamine (Nelson)",
+      "Slow heart rate during anaesthesia (vagal reflexes)",
+      "Chronic drooling in children and adults with neurological disability such as cerebral palsy (oral)",
+      "Noisy airway secretions at the end of life (palliative care)"
+    ],
+    standard: {
+      summary: "Glycopyrrolate does what atropine does at the heart and salivary glands, so for reversal atropine does the same job (see Neostigmine). The differences are practical. Glycopyrrolate does not cross the blood–brain barrier (Nelson), so it causes no confusion or delirium. It causes less tachycardia. It starts more slowly than atropine, so its timing matches neostigmine better, and it lasts longer. Very little crosses the placenta. Where it is stocked it is the better partner for neostigmine; where it is not, atropine is a full substitute.",
+      items: [
+        {
+          label: "Reversal with neostigmine: adult",
+          text: "Glycopyrrolate 0.01–0.015 mg/kg (10–15 micrograms/kg) with neostigmine 0.05 mg/kg, or 0.2 mg of glycopyrrolate for every 1 mg of neostigmine. For example, 0.5 mg with neostigmine 2.5 mg (BNF). Give both together in one syringe (or 1–2 mL of the premixed ampoule) over about 1 minute. Same ceiling as on the Neostigmine page: neostigmine 5 mg (with glycopyrrolate 1 mg) in total. Same timing rule: only once the block is already wearing off."
+        },
+        {
+          label: "Reversal with neostigmine: child",
+          text: "Glycopyrrolate 0.01 mg/kg (10 micrograms/kg) with neostigmine 0.05 mg/kg, maximum neostigmine 2.5 mg (BNF for Children). Premixed ampoule: 0.02 mL/kg, maximum 1 mL (= neostigmine 2.5 mg). Infants slow their heart easily, so watch the pulse throughout."
+        },
+        {
+          label: "Drying secretions (premedication, ketamine)",
+          text: "Adult 0.2–0.4 mg IV at induction, or IM 30–60 minutes before. Child 4–8 micrograms/kg (maximum 0.2 mg) IV or IM (BNF for Children). Ketamine causes heavy salivation, and an antisialagogue should be considered (Nelson). Atropine 0.01–0.02 mg/kg is the alternative (see Atropine)."
+        },
+        {
+          label: "Slow heart rate during anaesthesia",
+          text: "Adult 0.2–0.4 mg IV, repeated if needed. Child 4–8 micrograms/kg (maximum 0.2 mg) IV. It is slower than atropine. For bradycardia with poor perfusion, or in a cardiac arrest, use atropine or adrenaline: glycopyrrolate is not a resuscitation drug."
+        },
+        {
+          label: "Drooling (oral)",
+          text: "Child 1 month–17 years: start 0.04 mg/kg (40 micrograms/kg) by mouth 2–3 times daily and increase slowly, no more often than once a week, according to response. Maximum 0.1 mg/kg per dose and 2 mg per dose (BNF for Children; Nelson gives 0.04–0.1 mg/kg every 4–8 h). Adults: typically 1–2 mg two or three times daily (confirm with the specialist). Little of an oral dose is absorbed, so oral doses are about ten times the injected dose. NEVER give an oral dose by injection."
+        },
+        {
+          label: "Noisy secretions at the end of life (adult)",
+          text: "0.2 mg SC (or IV) every 4–6 hours as needed, or 0.6–1.2 mg over 24 h by syringe driver where one exists (BNF, palliative care). Start early: it reduces new secretions but does not dry those already in the airway. Children: dose with a palliative care specialist."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Neostigmine and glycopyrrolate in one syringe",
+        best_for: "Every reversal where glycopyrrolate is stocked as a separate ampoule rather than the premixed one.",
+        requires: ["iv"],
+        steps: [
+          "First confirm that the block is already wearing off: breathing efforts, swallowing, movement (see the Neostigmine page). Reversal given into a deep block does not work.",
+          "CHECK the neostigmine strength: 2.5 mg/mL is usual but 0.5 mg/mL exists. Glycopyrrolate is 0.2 mg/mL.",
+          "Adult example: neostigmine 2.5 mg (1 mL of 2.5 mg/mL) + glycopyrrolate 0.5 mg (2.5 mL) = 3.5 mL in one syringe. Label it 'NEOSTIGMINE 2.5 mg + GLYCOPYRROLATE 0.5 mg'.",
+          "Child example, 10 kg: neostigmine 0.5 mg (0.2 mL of 2.5 mg/mL) + glycopyrrolate 0.1 mg (0.5 mL). Dilute to 5 mL with 0.9 % saline so that it can be given slowly and measured accurately.",
+          "Give over about 1 minute while feeling the pulse or watching the monitor. Keep ventilating and wait 10 minutes before judging the effect.",
+          "If the pulse falls despite the mixture: atropine 0.5 mg IV (child 0.02 mg/kg). Atropine acts faster than giving more glycopyrrolate."
+        ],
+        monitor: [
+          "Pulse throughout and for 10 minutes after",
+          "Signs of recovery from the block (Neostigmine page)"
+        ],
+        cautions: [
+          "The 1:5 ratio (0.2 mg glycopyrrolate per 1 mg neostigmine) is what prevents bradycardia. Do not draw the neostigmine by volume from a different strength without recalculating."
+        ]
+      },
+      {
+        title: "No glycopyrrolate: atropine instead, and the patients in whom the difference matters",
+        best_for: "Most district theatres, where atropine is the only antimuscarinic on the shelf.",
+        requires: ["iv"],
+        steps: [
+          "Atropine 0.02 mg/kg (adult usually 1–1.2 mg) with neostigmine 0.05 mg/kg does the same job (see Neostigmine). Give the atropine first and the neostigmine 30–60 seconds later, or both in one syringe over 1–2 minutes.",
+          "Expect a faster pulse at first. Atropine acts before neostigmine does, then the rate settles.",
+          "Tight mitral stenosis (common with rheumatic heart disease), ischaemic heart disease, thyrotoxicosis, or a pulse already over 100: tachycardia can cause pulmonary oedema or ischaemia. Use the lower dose of atropine, give it in steps against the pulse, and have the anaesthetist decide. This is where glycopyrrolate is worth ordering.",
+          "Older patients: atropine crosses into the brain and can cause confusion after surgery. Do not mistake it for a stroke or for residual anaesthesia. It settles as the atropine wears off.",
+          "Before delivery at caesarean (for example to dry secretions before ketamine), atropine crosses the placenta and glycopyrrolate hardly does. If only atropine is available, give the usual dose; a raised fetal heart rate is expected."
+        ],
+        monitor: ["Pulse every minute for 10 minutes; listen for crackles in patients with mitral stenosis"],
+        cautions: [
+          "Never give neostigmine without one of the two. With no atropine and no glycopyrrolate, do not reverse: ventilate until the block wears off (Neostigmine page)."
+        ]
+      },
+      {
+        title: "Drooling in a child with cerebral palsy, using tablets or the injection by mouth",
+        best_for: "Neurology, paediatric and rehabilitation clinics where drooling soaks clothes and skin or causes chest infections, and no oral solution is available.",
+        requires: ["oral", "syringe_1ml"],
+        steps: [
+          "Try the non-drug measures first: head and trunk positioning, lip-closure and swallowing practice, treating constipation and dental problems, and a cloth wristband to wipe the chin.",
+          "Work out the starting dose: 0.04 mg/kg, 2–3 times daily. Example, 15 kg: 0.6 mg per dose.",
+          "Using a 1 mg tablet: crush it and mix in exactly 10 mL of water (0.1 mg/mL). Draw up the dose (15 kg: 6 mL), give it, and discard the rest. Make it fresh each time.",
+          "Using the injection: the 0.2 mg/mL injection can be given by mouth (BNF for Children; confirm with your pharmacist). For 15 kg, 0.6 mg = 3 mL. It tastes bitter, so follow it with juice.",
+          "If drooling is still a problem, increase the dose in small steps, no more often than once a week, according to response. Maximum 0.1 mg/kg per dose and 2 mg per dose.",
+          "Review after a month. Is the chin drier? Are there new side effects? Stop if there is no benefit."
+        ],
+        monitor: [
+          "Constipation, urinary retention, flushing, fever in hot weather (sweating is blocked), behaviour change",
+          "Thick secretions and chest infections. Over-drying can cause mucus plugging, especially in children with poor swallowing or a gastrostomy (Nelson)"
+        ],
+        cautions: [
+          "Nelson notes that these drugs are widely used but of limited effectiveness. Agree the goal with the family.",
+          "The oral dose is about ten times the IV dose. Label the bottle 'BY MOUTH ONLY' and never draw an oral dose into a syringe that could be connected to a cannula.",
+          "Keep the child cool and well hydrated in hot weather."
+        ]
+      },
+      {
+        title: "Noisy secretions at the end of life",
+        best_for: "Palliative care on the ward or at home, with no syringe driver.",
+        requires: ["syringe_1ml"],
+        steps: [
+          "Explain to the family that the noise comes from saliva pooling in the throat of a deeply unconscious person, and that it is usually not distressing to the patient (Nelson).",
+          "Turn the patient on to the side, with the head slightly down, and wipe or gently suction the mouth only. Do not suction deep in the throat.",
+          "Adult: glycopyrrolate 0.2 mg (1 mL) SC every 4–6 hours as needed, through a small butterfly needle left under the skin. This avoids repeated needle sticks.",
+          "Reduce or stop IV or SC fluids if they are adding to the secretions, after discussion with the family.",
+          "Children: an anticholinergic such as glycopyrrolate may help (Nelson). Agree the dose with a palliative care specialist."
+        ],
+        monitor: ["Noise, comfort, and the family's distress, every few hours"],
+        cautions: [
+          "Glycopyrrolate does not cross into the brain, so unlike atropine and hyoscine hydrobromide it will not cause agitation or confusion in a patient who is still aware."
+        ]
+      }
+    ],
+    paediatric: [
+      "Reversal: glycopyrrolate 0.01 mg/kg with neostigmine 0.05 mg/kg (maximum 2.5 mg) (BNF for Children).",
+      "Drying secretions or bradycardia during anaesthesia: 4–8 micrograms/kg (maximum 0.2 mg) IV or IM.",
+      "Drooling: 0.04 mg/kg by mouth 2–3 times daily, increased slowly to a maximum of 0.1 mg/kg per dose (2 mg per dose).",
+      "Hot climate: antimuscarinics stop sweating. Watch for overheating and fever, dress the child lightly and keep up fluids.",
+      "Children with poor swallowing or a gastrostomy: over-drying thickens secretions and can cause mucus plugging (Nelson). Stop it if chest infections increase."
+    ],
+    cautions: [
+      "Do not use in angle-closure glaucoma, urinary retention or an enlarged prostate, paralytic ileus, pyloric stenosis, severe ulcerative colitis, or a fast arrhythmia.",
+      "Conditions where tachycardia is dangerous (tight mitral stenosis, ischaemic heart disease, thyrotoxicosis, fever): use the smallest effective dose.",
+      "Antimuscarinics block sweating, which risks heat illness, especially in children.",
+      "Oral and injected doses differ about tenfold. Never give an oral dose by injection.",
+      "Thick secretions: avoid as premedication in cystic fibrosis and similar lung disease (Gabbe).",
+      "Additive antimuscarinic effects with tricyclics, antipsychotics, trihexyphenidyl, biperiden and promethazine: constipation, urinary retention, fast pulse (see Interactions).",
+      "Kidney failure: glycopyrrolate is excreted by the kidney. Single anaesthetic doses are unchanged; reduce repeated oral or SC doses.",
+      "It is not a resuscitation drug. For bradycardia with poor perfusion, or in a cardiac arrest, use atropine or adrenaline."
+    ],
+    antidote: "Excess antimuscarinic effects (hot dry skin, fast pulse, urinary retention, ileus): stop it, cool the patient, and catheterise if needed. The product information gives neostigmine 0.25 mg IV in adults, repeated every 5–10 minutes to a maximum of 2.5 mg, to reverse peripheral effects. Physostigmine is not needed, because glycopyrrolate does not enter the brain.",
+    calc: {
+      type: "weight",
+      dosePerKg: 0.01,
+      doseUnit: "mg",
+      conc: 0.2,
+      concUnit: "mg/mL",
+      maxDose: 0.5,
+      label: "Reversal dose with neostigmine (0.01 mg/kg, max 0.5 mg with neostigmine 2.5 mg) at 0.2 mg/mL. Adult with more neostigmine: 0.2 mg per 1 mg neostigmine, maximum 1 mg"
+    },
+    sources: [
+      {
+        name: "BNF and BNF for Children: glycopyrronium bromide monograph (reversal, premedication, intra-operative bradycardia, drooling, palliative care)"
+      },
+      {
+        name: "Glycopyrrolate injection (Robinul) product information: overdose management with neostigmine"
+      },
+      { name: "Schwartz's Principles of Surgery, 11th ed., ch. 46" },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 8, 91 and 447" }
+    ],
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Non-depolarising block is usually reversed with an anticholinesterase (neostigmine) given with an antimuscarinic, almost always atropine or glycopyrrolate. Inadequate reversal raises the risk of respiratory failure and death.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "nelson",
+        text: "Glycopyrrolate is a powerful antisialagogue (oral 0.04–0.1 mg/kg every 4–8 h for secretions). Its quaternary structure limits passage across the blood–brain barrier, unlike atropine and hyoscine, so it has fewer central effects. Over-drying can cause mucus plugging.",
+        ref: "Nelson 22nd ed. 2024, ch. 8 Pediatric Palliative Care, Table 8.4, p. 66"
+      },
+      {
+        book: "nelson",
+        text: "Noisy breathing from pooled secretions at the end of life distresses families more than the unconscious child. Reposition first; an anticholinergic such as glycopyrrolate may reduce secretions.",
+        ref: "Nelson 22nd ed. 2024, ch. 8 Pediatric Palliative Care, p. 70"
+      },
+      {
+        book: "nelson",
+        text: "Drooling with impaired swallowing: glycopyrrolate and scopolamine are widely used but of limited effectiveness. Given through a gastrostomy they can dry the lower airway and promote mucus plugging.",
+        ref: "Nelson 22nd ed. 2024, ch. 447 Chronic Recurrent Aspiration, p. 2611"
+      },
+      {
+        book: "nelson",
+        text: "Ketamine causes heavy salivation and may be given with an antisialagogue such as atropine or glycopyrrolate.",
+        ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, Table 91.8, p. 669"
+      },
+      {
+        book: "gabbe",
+        text: "In a pregnant woman with cystic fibrosis who must have general anaesthesia, do not give preoperative anticholinergics such as glycopyrrolate: they dry and thicken airway secretions.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 43 Respiratory Disease in Pregnancy, p. 838"
+      },
+      {
+        book: "note",
+        text: "The textbooks do not give glycopyrrolate doses for reversal, premedication or bradycardia, or describe its limited placental transfer, its slower onset and smaller effect on heart rate compared with atropine, or giving the injection by mouth. These follow the BNF and BNF for Children and standard anaesthetic pharmacology. The overdose advice follows the Robinul product information. The Neostigmine page says that atropine does the same job, and this page agrees: the differences are central effects, heart rate, timing and placental transfer, not effectiveness.",
+        ref: "Editorial note"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- other ---- */
+  {
+    id: "dapsone",
+    name: "Dapsone",
+    aka: ["DDS", "Diaminodiphenyl sulfone", "Diaphenylsulfone", "Leprosy MDT (dapsone component)"],
+    cls: "Sulfone antibacterial (folate antagonist)",
+    cat: "infection",
+    wards: ["outpatient", "medical", "paediatric"],
+    tags: [
+      "PCP prophylaxis",
+      "Pneumocystis",
+      "HIV",
+      "sulfa allergy",
+      "leprosy",
+      "Hansen disease",
+      "multidrug therapy",
+      "MDT",
+      "G6PD",
+      "haemolysis",
+      "methaemoglobinaemia",
+      "DDS syndrome",
+      "hypersensitivity"
+    ],
+    presentation: [
+      "Tablets 50 mg and 100 mg (25 mg in some supplies). Oral only — there is no injection.",
+      "For leprosy, dapsone comes inside the WHO multidrug therapy (MDT) blister packs — adult and child packs, multibacillary and paucibacillary — supplied free through the national leprosy programme. Each pack is one month.",
+      "An oral suspension (2 mg/mL) exists but is rarely stocked; children are usually dosed with part-tablets."
+    ],
+    indications: [
+      "Prophylaxis of Pneumocystis pneumonia (PCP) in people with HIV who cannot take cotrimoxazole (a non-severe allergy, or bone-marrow suppression)",
+      "Leprosy (Hansen disease) — only as part of WHO multidrug therapy with rifampicin, with or without clofazimine, never alone",
+      "Specialist dermatology uses (for example dermatitis herpetiformis) — not covered here"
+    ],
+    standard: {
+      summary: "Two real jobs in Ethiopia: PCP prophylaxis when cotrimoxazole cannot be used, and leprosy as part of WHO multidrug therapy. It is a cheap tablet with three dangerous harms — haemolysis (worst in G6PD deficiency), methaemoglobinaemia (blue patient, oxygen does not help) and the dapsone hypersensitivity syndrome (fever, rash, hepatitis around week 6; about 1 in 10 die). Teach the warning signs before the first dose.",
+      items: [
+        {
+          label: "PCP prophylaxis, adult",
+          text: "100 mg once daily by mouth (or 50 mg twice daily) (Harrison). Start and stop by the same national HIV-guideline rules as cotrimoxazole preventive therapy. Dapsone alone does NOT give the extra protection cotrimoxazole gives against toxoplasmosis (that needs dapsone plus pyrimethamine and leucovorin), malaria, bacterial pneumonia and diarrhoea — so go back to cotrimoxazole if a clinician decides that is safe."
+        },
+        {
+          label: "PCP prophylaxis, child (1 month and over)",
+          text: "2 mg/kg once daily, maximum 100 mg; or 4 mg/kg once a WEEK, maximum 200 mg (Nelson). Round to a practical part of a 25, 50 or 100 mg tablet. Confirm with the national paediatric HIV guideline."
+        },
+        {
+          label: "After a cotrimoxazole reaction — who can have dapsone?",
+          text: "Dapsone is a sulfone and cross-reacts with sulfonamides in a substantial fraction of patients (Harrison). After a mild rash on cotrimoxazole it is a reasonable alternative, with close watch. After a SEVERE reaction — Stevens-Johnson syndrome, toxic epidermal necrolysis, blistering, mucosal sores, fever with rash, hepatitis — do not give dapsone without specialist advice: refer for atovaquone or aerosolised pentamidine, and push on with ART, which is the real long-term protection."
+        },
+        {
+          label: "Leprosy — WHO multidrug therapy",
+          text: "Dapsone 100 mg daily (child 10–14 years 50 mg daily; under 10 years by body weight) with rifampicin 600 mg once a month (child 10–14 years 450 mg), plus clofazimine for multibacillary disease. Paucibacillary: 6 monthly packs; multibacillary: 12 monthly packs (Harrison, WHO). Since 2018 WHO advises clofazimine for paucibacillary disease too. Diagnosis, classification, the pack, supervised monthly doses and the management of reactions all go through the national leprosy programme — use the regimen it supplies."
+        },
+        {
+          label: "Before the first dose",
+          text: "Ask about any reaction to cotrimoxazole or other 'sulfa' drugs. Check haemoglobin. Test G6PD where the test exists (for PCP prophylaxis especially); leprosy programmes do not test routinely, because haemolysis at 100 mg is usually mild (Harrison). Record a baseline: colour of lips and conjunctivae, any jaundice, skin."
+        },
+        {
+          label: "Monitoring",
+          text: "Nelson advises a blood count weekly in the first month and then regularly, with liver and kidney tests. Where that is not possible, see the patient at 2, 4, 6 and 8 weeks and then monthly, and check by eye and history every time (see Improvised). Most patients run a slightly lower haemoglobin on dapsone; a fall with dark urine, jaundice or breathlessness is not 'expected' — stop and investigate."
+        },
+        {
+          label: "Stop at once, and refer",
+          text: "Fever with a rash, jaundice, or swollen lymph nodes — especially in weeks 3–8 (dapsone hypersensitivity syndrome). Blue or grey lips not improving with oxygen (methaemoglobinaemia). Dark ('cola') urine, rapid pallor or breathlessness (haemolysis). Sore throat with fever (agranulocytosis, rare). Never restart dapsone after a hypersensitivity syndrome."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Dapsone safety at a health centre with no laboratory",
+        best_for: "HIV clinics and leprosy follow-up at health centres where there is no blood count, no liver tests and no G6PD test.",
+        requires: ["oral"],
+        steps: [
+          "Before the first tablet, explain three warnings to the patient AND a family member, in plain words: 'fever with a new rash or yellow eyes', 'lips or fingers turning blue or grey, or breathless', 'urine dark like tea or cola'. Any one of them: stop the tablets and come back the same day.",
+          "Tell them the danger window: the hypersensitivity syndrome usually starts about 6 weeks after starting (Harrison), so the second month is when to be most watchful.",
+          "Record a baseline in the notes: conjunctival and palm pallor (none / mild / marked), lip colour, eye colour, any rash, weight.",
+          "Book visits at 2, 4, 6 and 8 weeks, then monthly. At each: ask the three questions; look at conjunctivae, palms, lips, tongue and nail beds; look for jaundice and rash; feel for lymph nodes in neck, axilla and groin; ask about urine colour.",
+          "If a haemoglobin meter or a referral lab is reachable, check haemoglobin at 2–4 weeks. A small fall is common on dapsone (mild haemolysis, Harrison); a large or continuing fall, or any fall with dark urine, jaundice or breathlessness, means stop and refer.",
+          "In someone with HIV on dapsone, a new fever is NOT automatically 'just an infection': ask when dapsone was started, look for rash, jaundice and lymph nodes, and think of the hypersensitivity syndrome.",
+          "Write 'DAPSONE — G6PD unknown' (or the result) on the card, so the next clinician avoids adding other oxidant drugs such as primaquine."
+        ],
+        monitor: [
+          "Pallor, jaundice, urine colour and lip colour at every visit",
+          "Fever, rash and lymph nodes — especially weeks 3–8",
+          "Haemoglobin whenever it can be measured"
+        ],
+        cautions: [
+          "This watch replaces laboratory monitoring only because there is none. If you cannot see the patient again within 2–4 weeks, or the patient cannot get back quickly when warning signs appear, discuss with the HIV or leprosy programme before starting.",
+          "Do not give a second oxidant drug (primaquine, nitrofurantoin) alongside dapsone without a G6PD result."
+        ]
+      },
+      {
+        title: "Blue lips on dapsone: recognising methaemoglobinaemia without a co-oximeter",
+        best_for: "Any ward or clinic where a patient on dapsone (or after a dapsone overdose) looks cyanosed. Co-oximetry and methylene blue are usually not available.",
+        requires: ["oxygen"],
+        steps: [
+          "Suspect it when the patient looks grey-blue or slate-coloured but is less breathless than the colour suggests, the chest is clear, and the colour does not improve with oxygen (Harrison, Nelson).",
+          "Do not trust the pulse oximeter. In methaemoglobinaemia it reads falsely — often a moderately low figure that does not rise with oxygen — and the arterial PO2, if measured, is normal (Harrison, Nelson).",
+          "Bedside blood test: put a drop of the patient's blood on white filter paper or gauze next to a drop of normal blood, or shake a sample in a tube with air. Normal blood turns bright red; blood with a high methaemoglobin stays chocolate-brown (Nelson).",
+          "Stop dapsone. Give oxygen anyway — it helps the haemoglobin that still works.",
+          "A patient with only mild cyanosis, no breathlessness, no confusion and no chest pain usually recovers over days once dapsone is stopped. Dapsone has a long half-life (about 28 h, Harrison), so the colour can persist or get worse for a day or two: observe, do not discharge the same day.",
+          "Refer urgently if there is breathlessness at rest, confusion, chest pain, low blood pressure or worsening colour. The antidote, IV methylene blue 1–2 mg/kg (Harrison), is usually only at referral level, and it must NOT be given in G6PD deficiency — it is ineffective and causes severe haemolysis (Nelson).",
+          "Also look for haemolysis (pallor, jaundice, dark urine) — the same oxidant damage causes both.",
+          "In an overdose, repeated doses of activated charcoal are one of the few situations where multiple-dose charcoal is recommended (Harrison) — give it only if the airway is protected and the gut is working; seek poisons advice."
+        ],
+        monitor: [
+          "Lip and nail colour, breathing rate and mental state every 1–2 hours until improving",
+          "Haemoglobin and urine colour for haemolysis",
+          "Pulse oximeter as a trend only — not as a measure of oxygenation"
+        ],
+        cautions: [
+          "Ascorbic acid is not a treatment for acute toxic methaemoglobinaemia (Nelson).",
+          "Benzocaine and prilocaine (EMLA) local anaesthetics also cause methaemoglobinaemia — avoid them in a patient on dapsone."
+        ]
+      },
+      {
+        title: "Leprosy on MDT: telling a leprosy reaction from dapsone hypersensitivity",
+        best_for: "Health centres and hospitals following up leprosy patients on WHO multidrug therapy, where the specialist leprosy service is far away.",
+        requires: [],
+        steps: [
+          "Never give dapsone alone for leprosy, and never 'make up' a regimen from loose tablets. Leprosy is treated only with the complete MDT blister pack from the national programme; single-drug treatment breeds resistance.",
+          "Supervise the monthly dose (rifampicin, and clofazimine in multibacillary packs) at the clinic, record it on the leprosy card, and send the daily tablets home for the month.",
+          "Leprosy REACTION: existing skin patches become red, swollen and tender, nerves become painful or tender, new weakness or numbness of hands, feet or eye closure; or (type 2) crops of painful red nodules with fever. Continue MDT and treat the reaction — usually with prednisolone through the programme protocol (Nelson). Nerve damage is the urgency: refer the same week.",
+          "Dapsone HYPERSENSITIVITY syndrome: usually around 6 weeks after starting; fever, a widespread rash (not confined to the leprosy patches), enlarged lymph nodes, jaundice or a large tender liver, sometimes confusion (Harrison). STOP dapsone permanently and refer urgently; most patients need systemic steroids, and about 1 in 10 die (Harrison). The programme will provide MDT without dapsone.",
+          "If you cannot tell which it is — fever, rash and a new sick patient on MDT in the first 2 months — stop dapsone, keep the rest of the pack aside, and refer. Missing a few days of dapsone is harmless; continuing it through a hypersensitivity syndrome can be fatal.",
+          "Clofazimine darkens the skin red-brown and lesions can look more prominent (Harrison); this is expected and is not a reaction."
+        ],
+        monitor: [
+          "Skin patches, nerve tenderness and voluntary muscle and sensory testing of hands, feet and eyes at each monthly visit",
+          "Fever, rash outside the patches, jaundice and lymph nodes in the first 2 months"
+        ],
+        cautions: [
+          "Treatment doses for children under 10 are weight-based and are set by the national leprosy programme — do not improvise them from the adult pack.",
+          "A pregnant or breastfeeding woman continues MDT (Williams; WHO)."
+        ]
+      }
+    ],
+    paediatric: [
+      "PCP prophylaxis from 1 month: 2 mg/kg once daily (maximum 100 mg) or 4 mg/kg once weekly (maximum 200 mg) (Nelson).",
+      "Leprosy: child MDT packs; dapsone 50 mg daily for 10–14 years, weight-based under 10 years (Harrison) — use the national leprosy programme's dosing.",
+      "Newborns and young infants with G6PD deficiency are especially vulnerable to haemolysis and methaemoglobinaemia; dapsone prophylaxis is not used under 1 month.",
+      "Children cannot report the warning signs — teach the caregiver to watch for pallor, yellow eyes, dark urine, blue lips, fever and rash."
+    ],
+    cautions: [
+      "Haemolysis: dose-related in everyone (Harrison, Nelson) and severe in G6PD deficiency. Test G6PD where possible before PCP prophylaxis.",
+      "Methaemoglobinaemia: cyanosis that does not improve with oxygen; the pulse oximeter is unreliable. Dapsone is one of the commonest causes (Harrison).",
+      "Dapsone hypersensitivity (DDS) syndrome: fever, rash, lymph nodes, hepatitis, about 6 weeks into treatment; around 10 % die. Stop permanently (Harrison).",
+      "Severe skin reactions (Stevens-Johnson syndrome, toxic epidermal necrolysis), agranulocytosis, hepatitis, peripheral neuropathy and psychosis occur rarely.",
+      "Cross-sensitivity with sulfonamides (cotrimoxazole): avoid after a severe sulfa reaction unless a specialist advises (Harrison).",
+      "Rifampicin lowers dapsone levels (Harrison) — matters for daily rifampicin in TB, not for the monthly dose in leprosy MDT.",
+      "Anaemia, cardiac or lung disease make haemolysis and methaemoglobinaemia more dangerous; use the lowest effective dose and watch closely."
+    ],
+    antidote: "No specific antidote for the hypersensitivity syndrome or haemolysis: stop dapsone, support, transfuse for severe anaemia, systemic steroids for DDS syndrome (specialist). Methaemoglobinaemia: oxygen; IV methylene blue 1–2 mg/kg at referral level for severe or symptomatic cases — NOT in G6PD deficiency. Overdose: multiple-dose activated charcoal if the airway is safe.",
+    calc: {
+      type: "weight",
+      dosePerKg: 2,
+      doseUnit: "mg",
+      maxDose: 100,
+      label: "Child PCP prophylaxis 2 mg/kg once daily (max 100 mg) — tablets 25/50/100 mg; round to a practical part-tablet"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "PCP prophylaxis alternative to TMP-SMX: dapsone 50 mg twice daily or 100 mg once daily by mouth; haemolysis is associated with G6PD deficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, Table 227-2, p. 1734"
+      },
+      {
+        book: "harrison",
+        text: "NIH/CDC/IDSA: dapsone alone (50 mg twice daily or 100 mg daily) is an alternative for PCP prophylaxis; for toxoplasma prophylaxis dapsone must be combined with pyrimethamine and leucovorin.",
+        ref: "Harrison 22nd ed. 2025, ch. 208 Human Immunodeficiency Virus Disease: AIDS and Related Disorders, Table 208-11, p. 1593"
+      },
+      {
+        book: "harrison",
+        text: "Dapsone cross-reacts with sulfonamides in a substantial fraction of patients and is rarely useful after a life-threatening reaction to TMP-SMX.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, p. 1735"
+      },
+      {
+        book: "nelson",
+        text: "HIV PCP prophylaxis in children from 1 month: dapsone 2 mg/kg (max 100 mg) once daily, or 4 mg/kg (max 200 mg) once weekly.",
+        ref: "Nelson 22nd ed. 2024, ch. 322 Human Immunodeficiency Virus and Acquired Immunodeficiency Syndrome, Table 322.6, p. 2111"
+      },
+      {
+        book: "harrison",
+        text: "WHO multidrug therapy for leprosy: dapsone 100 mg daily for adults and 50 mg daily for children 10–14 years (younger children by body weight), with monthly rifampicin; clofazimine is added for multibacillary disease. Paucibacillary = 6 monthly blister packs, multibacillary = 12.",
+        ref: "Harrison 22nd ed. 2025, ch. 184 Leprosy, Table 184-1, p. 1411"
+      },
+      {
+        book: "harrison",
+        text: "WHO recommends a single multidrug regimen for leprosy: monthly rifampicin with daily dapsone (plus daily and monthly clofazimine for multibacillary disease), for 6 months (paucibacillary) or 12 months (multibacillary).",
+        ref: "Harrison 22nd ed. 2025, ch. 184 Leprosy, p. 1410"
+      },
+      {
+        book: "nelson",
+        text: "WHO durations: 6 months for paucibacillary and 12 months for multibacillary leprosy; since 2018 WHO has advised a three-drug regimen (adding clofazimine) for all forms.",
+        ref: "Nelson 22nd ed. 2024, ch. 262 Hansen Disease (Mycobacterium leprae), p. 1858"
+      },
+      {
+        book: "harrison",
+        text: "At leprosy doses dapsone causes mild haemolysis and can cause anaemia or, rarely, psychosis. In leprosy programmes G6PD is not routinely tested before multidrug therapy.",
+        ref: "Harrison 22nd ed. 2025, ch. 184 Leprosy, p. 1411"
+      },
+      {
+        book: "harrison",
+        text: "Dapsone hypersensitivity (DDS) syndrome usually starts about 6 weeks into treatment with fever, rash, eosinophilia, lymph nodes, hepatitis and encephalopathy; about 10 % die (liver failure, sepsis, marrow failure). Dapsone must always be stopped; most patients need systemic steroids.",
+        ref: "Harrison 22nd ed. 2025, ch. 184 Leprosy, p. 1411"
+      },
+      {
+        book: "harrison",
+        text: "Oxidant drugs, dapsone among them, can cause haemolysis even in people who are not G6PD deficient.",
+        ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, p. 803"
+      },
+      {
+        book: "harrison",
+        text: "Dapsone is one of the commonest causes of acquired methaemoglobinaemia; the usual IV methylene blue dose is 1–2 mg/kg.",
+        ref: "Harrison 22nd ed. 2025, ch. 103 Disorders of Hemoglobin, p. 780"
+      },
+      {
+        book: "harrison",
+        text: "Methaemoglobinaemia: grey-brown cyanosis that does not respond to oxygen, a normal PO2, and a pulse-oximeter reading that is unreliable. Treat with high-dose oxygen and IV methylene blue for a level above 30 % or symptomatic hypoxia — methylene blue is contraindicated in G6PD deficiency.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3714"
+      },
+      {
+        book: "nelson",
+        text: "Methaemoglobinaemia: the patient is cyanosed and does not respond to 100 % oxygen; arterial PO2 is normal and the pulse-oximeter saturation is misleading.",
+        ref: "Nelson 22nd ed. 2024, ch. 511 Hemoglobinopathies, p. 2979"
+      },
+      {
+        book: "nelson",
+        text: "Bedside test: blood with a high methaemoglobin stays chocolate-brown when exposed to oxygen and shaken, while normal blood turns bright red.",
+        ref: "Nelson 22nd ed. 2024, ch. 511 Hemoglobinopathies, Fig. 511.6, p. 2980"
+      },
+      {
+        book: "nelson",
+        text: "Child dose 1–2 mg/kg once daily, not more than 100 mg/day; dose-related haemolytic anaemia (worse in G6PD deficiency) and a hypersensitivity syndrome with fever, rash and liver damage; adjust the dose in renal impairment; check the blood count weekly in the first month.",
+        ref: "Nelson 22nd ed. 2024, ch. 260 Principles of Antimycobacterial Therapy, p. 1833"
+      },
+      {
+        book: "harrison",
+        text: "Dapsone side effects: frequent rash and anorexia; occasional haemolysis, methaemoglobinaemia, neuropathy, hepatitis and psychosis; rare agranulocytosis. Rifampicin lowers dapsone levels.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1743"
+      },
+      {
+        book: "williams",
+        text: "Multidrug therapy for leprosy with dapsone, rifampicin and clofazimine is generally safe in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2716"
+      },
+      {
+        book: "note",
+        text: "Ethiopia: PCP-prophylaxis start and stop rules follow the national HIV guideline (as for cotrimoxazole); leprosy MDT regimens, packs and reaction management follow the national leprosy programme (WHO MDT). The 2-, 4-, 6- and 8-week clinical review without a laboratory is an editorial low-resource adaptation, not a textbook schedule.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      { name: "WHO Guidelines for the diagnosis, treatment and prevention of leprosy, 2018" },
+      {
+        name: "WHO Leprosy/Hansen disease: management of reactions and prevention of disabilities — technical guidance, 2020"
+      },
+      {
+        name: "WHO consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring (cotrimoxazole and alternatives)"
+      },
+      {
+        name: "Ethiopian national comprehensive HIV care guideline and national leprosy programme guideline (Ministry of Health)"
+      },
+      { name: "British National Formulary (BNF) and BNF for Children — dapsone" },
+      { name: "WHO Model List of Essential Medicines (current list) — dapsone" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "chlorhexidine",
+    name: "Chlorhexidine (antiseptic — cord care, skin, mouth)",
+    aka: [
+      "CHX",
+      "Chlorhexidine digluconate",
+      "Chlorhexidine gluconate (CHG)",
+      "Chlorhexidine 7.1 % cord gel",
+      "Hibiscrub",
+      "Savlon (with cetrimide)"
+    ],
+    cls: "Biguanide antiseptic (topical only)",
+    cat: "infection",
+    wards: ["neonatal", "maternity", "surgical", "icu", "outpatient", "emergency", "paediatric"],
+    tags: [
+      "umbilical cord care",
+      "omphalitis",
+      "newborn",
+      "antisepsis",
+      "skin preparation",
+      "caesarean",
+      "central line",
+      "oral care",
+      "ventilator-associated pneumonia",
+      "strength confusion",
+      "anaphylaxis",
+      "ototoxic",
+      "corneal injury"
+    ],
+    presentation: [
+      "7.1 % chlorhexidine DIGLUCONATE aqueous gel or solution, which delivers 4 % chlorhexidine — FOR THE UMBILICAL CORD ONLY. This is the WHO cord-care product.",
+      "2 % chlorhexidine gluconate in 70 % isopropyl alcohol (also 0.5 % in alcohol) — skin preparation before surgery, IV and central lines, and procedures. Flammable. Never on mucosa, eye or ear.",
+      "4 % chlorhexidine gluconate surgical scrub (with detergent) — surgical hand scrub and pre-operative body wash. Despite the '4 %', it is NOT the cord-care product.",
+      "0.12–0.2 % mouthwash or oral gel — oral care.",
+      "0.05 % AQUEOUS solution — wound and mucosal cleansing; also the alternative for the conjunctival sac when povidone-iodine cannot be used (see povidone-iodine). Only this weak aqueous strength ever goes near the eye.",
+      "Concentrates (for example 5 % or 20 % chlorhexidine digluconate) and chlorhexidine–cetrimide mixtures (Savlon type) must be diluted exactly as the label says before use. Never apply a concentrate undiluted.",
+      "Store closed, away from heat and flame (alcoholic preparations). Write the opening date on bulk bottles; never top up a bottle."
+    ],
+    indications: [
+      "Umbilical cord care in the first week of life (7.1 % digluconate gel or solution) — the use that saves newborn lives in Ethiopia",
+      "Skin antisepsis before surgery (including caesarean), central and peripheral lines, and procedures (2 % in 70 % alcohol)",
+      "Vaginal cleansing immediately before caesarean section (an aqueous, low-alcohol preparation)",
+      "Surgical hand scrub and pre-operative washing (4 % scrub)",
+      "Oral care in unconscious, ventilated or neutropenic patients (0.12–0.2 %)",
+      "Conjunctival-sac antisepsis when povidone-iodine is contraindicated (0.05 % aqueous only; eye specialist use)"
+    ],
+    standard: {
+      summary: "One name, many strengths, and they are NOT interchangeable. 7.1 % digluconate gel (= 4 % chlorhexidine) on the newborn cord; 2 % in alcohol on intact skin; 0.12–0.2 % in the mouth; 0.05 % aqueous is the only strength that may touch the eye. Skin-prep or scrub strength in the eye damages the cornea, and in an ear with a perforated drum it can cause deafness. It is an antiseptic, not a systemic drug: there is no weight-based dose.",
+      items: [
+        {
+          label: "Umbilical cord care (newborn)",
+          text: "WHO recommends daily application of 7.1 % chlorhexidine digluconate gel or solution (delivering 4 % chlorhexidine) to the cord stump during the first week of life for babies born at home in settings with high neonatal mortality; in other births clean, dry cord care is advised, with chlorhexidine used where it replaces harmful traditional applications (WHO). Ethiopia adopted chlorhexidine cord care nationally: follow the national newborn-care guideline on which babies receive it and whether it is applied once at birth or daily for 7 days. Trials in South Asia showed fewer cord infections and fewer newborn deaths (Williams, Nelson)."
+        },
+        {
+          label: "Skin antisepsis before surgery and lines",
+          text: "2 % chlorhexidine gluconate in 70 % alcohol is preferred for surgical sites and central-line insertion (Harrison, Nelson); at caesarean it gives fewer wound infections than povidone-iodine (Gabbe, Williams). Apply with friction over and beyond the site, and let it dry COMPLETELY in the air before incision, needle or diathermy — wet alcohol is a fire risk (Schwartz). Povidone-iodine is the alternative if chlorhexidine is unavailable or the patient is allergic."
+        },
+        {
+          label: "Vaginal cleansing before caesarean",
+          text: "Cleansing the vagina immediately before caesarean with chlorhexidine (or povidone-iodine if chlorhexidine is not available) reduces post-caesarean endometritis, especially in labour or after ruptured membranes (Gabbe). Use only an aqueous, low-alcohol preparation according to the theatre protocol — never the 70 % alcohol skin preparation on mucosa."
+        },
+        {
+          label: "Oral care",
+          text: "0.12–0.2 % mouthwash or gel, swabbed over teeth, gums and tongue, usually twice daily, in unconscious, intubated or neutropenic patients (Nelson). For ventilated patients the trial evidence is conflicting (Harrison) — it does not replace tooth-brushing, suction and nursing head-up."
+        },
+        {
+          label: "Eye",
+          text: "Only 0.05 % aqueous chlorhexidine, and only when povidone-iodine is contraindicated for conjunctival antisepsis before eye surgery. Never any alcoholic, detergent or stronger preparation."
+        },
+        {
+          label: "Never",
+          text: "Never into the eye at skin-prep or scrub strength (serious and permanent corneal injury). Never into the ear canal when the drum may be perforated, or into the middle ear (ototoxic — deafness). Never in contact with the brain, meninges or the spinal canal. Never inject or swallow it. Never use the alcoholic preparation on the newborn cord or on mucosa."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Cord care with 7.1 % chlorhexidine at a health post or at home",
+        best_for: "Every delivery at a health post or health centre, and home births reached by health extension workers — where cord infection still kills newborns.",
+        requires: [],
+        steps: [
+          "Check the product: it must say chlorhexidine DIGLUCONATE 7.1 % (or 'delivers 4 % chlorhexidine'), for umbilical cord care. Not the scrub, not the alcoholic skin prep, not a mouthwash, not Savlon.",
+          "Wash and dry your hands (or the mother's hands if she will apply it at home). Clean hands matter more than anything else here.",
+          "After the cord is cut and tied, apply the gel or solution to the cut tip, the whole stump and the base where it meets the skin. Use enough to cover; do not rub hard.",
+          "Leave the cord uncovered and dry. No dressing, no bandage, nothing else on it — no butter, oil, ash, dung, herbs or powder. Fold the nappy below the cord.",
+          "Apply as the national guideline says — once at birth, or once a day for 7 days. If daily, show the mother how, and give her the tube.",
+          "Tell the family: the cord may take a day or two longer to fall off with chlorhexidine. That is expected and harmless. Do not pull it off.",
+          "Keep it away from the eyes and ears. If any gets in the eye, rinse gently with plenty of clean water.",
+          "Danger signs, and what to do: redness or pus at the base only — local infection, treat per the national newborn (IMNCI) guideline and review in 2 days; redness spreading onto the belly skin, a hard swollen umbilical area, or a baby who is not feeding, is hot or cold, or is lethargic — possible serious bacterial infection: give the first dose of antibiotics per the guideline and refer at once."
+        ],
+        monitor: [
+          "The cord and surrounding skin at every postnatal contact (day 1, day 3, day 7)",
+          "Feeding, temperature and activity — the general danger signs"
+        ],
+        cautions: [
+          "Only the 7.1 % digluconate cord product. Never the 70 % alcohol skin preparation (it stings and can burn a newborn's skin) and never the detergent scrub.",
+          "Do not substitute iodine for daily cord care — repeated iodine can suppress the thyroid, especially in preterm babies (see povidone-iodine).",
+          "If there is no chlorhexidine, clean dry cord care is safe — do not improvise with other antiseptics."
+        ]
+      },
+      {
+        title: "Right bottle, right place: chlorhexidine strengths on a crowded shelf",
+        best_for: "Wards, theatres and delivery rooms where several chlorhexidine products sit side by side, or only one is in stock.",
+        requires: [],
+        steps: [
+          "Read three things on the label every time: the STRENGTH, the SALT (gluconate or digluconate), and whether it is in ALCOHOL or contains DETERGENT ('scrub', 'surgical hand wash', 'skin cleanser').",
+          "Cord: 7.1 % digluconate gel or solution only.",
+          "Intact skin before surgery, lines, injections, spinal or epidural: 2 % (or 0.5 %) in 70 % alcohol, allowed to dry fully.",
+          "Hands and pre-operative body wash: 4 % scrub (contains detergent) — rinse off.",
+          "Mouth: 0.12–0.2 % mouthwash or gel.",
+          "Wounds and mucosa: weak aqueous 0.05 % (or a correctly diluted chlorhexidine–cetrimide solution for wounds).",
+          "Eye: 0.05 % aqueous only, and only if povidone-iodine cannot be used. Ear: avoid chlorhexidine in the ear canal unless the drum is known to be intact.",
+          "If the right product is missing, use the right alternative, not the wrong strength: povidone-iodine 10 % for skin, clean dry care for the cord, toothbrushing and saline swabs for the mouth.",
+          "Dilution of concentrates (5 % or 20 %) is done in the pharmacy, to a written recipe and labelled. Ward staff should not make cord or eye solutions from concentrates.",
+          "Decant from bulk bottles into a clean, labelled container for single use; discard the remainder; never top up. Contaminated antiseptic solutions have caused hospital outbreaks."
+        ],
+        monitor: [
+          "A strength chart taped to the shelf and the theatre wall",
+          "Any eye pain, redness or blurred vision after a procedure near the face — think antiseptic injury, irrigate with saline, refer"
+        ],
+        cautions: [
+          "Corneal injury from scrub or skin-prep strength in the eye can be permanent: if it happens, irrigate the eye with saline or clean water for at least 15 minutes and refer to eye services the same day.",
+          "Chlorhexidine is inactivated by soaps and some other anionic agents — do not mix products in the same container."
+        ]
+      },
+      {
+        title: "Skin preparation in theatre without single-use applicators",
+        best_for: "District theatres and labour wards using bulk 2 % chlorhexidine in alcohol, swabs and sponge-holders, often with monopolar diathermy.",
+        requires: [],
+        steps: [
+          "Ask about a previous reaction to chlorhexidine (including to a urinary catheter gel, a line or a mouthwash). If there was one, use povidone-iodine and record why.",
+          "Pour the solution into a sterile gallipot just before use; label it if anything else is on the trolley. Do not leave antiseptic in an unlabelled pot next to injectable drugs or local anaesthetic.",
+          "Apply with a soaked swab on a holder, with friction, from the incision site outwards, covering well beyond the planned incision and drain sites. Use a fresh swab for each pass.",
+          "Do not let it pool: in the umbilicus, the groins, under the buttocks or on the sheets. Pooled alcohol under drapes ignites with diathermy, and pooled chlorhexidine can burn the skin.",
+          "Wait until it is visibly dry before draping and before using diathermy (Schwartz) — product labels say at least 3 minutes on hairless skin and much longer where there is hair. Do not blot or fan it dry with a towel.",
+          "Very preterm babies: alcoholic chlorhexidine has caused chemical skin burns. Use the smallest effective amount, let it dry, then remove the excess with sterile water or saline; follow the neonatal unit's protocol.",
+          "For spinal or epidural anaesthesia, keep the antiseptic and its pot well away from the drugs and the needle tray, and let the skin dry completely before the needle goes in — confirm the preparation with the anaesthetist."
+        ],
+        monitor: [
+          "Skin under the drapes at the end of surgery (burns, blisters)",
+          "Signs of anaphylaxis after induction: unexplained low blood pressure, wheeze, rash — chlorhexidine is one possible cause"
+        ],
+        cautions: [
+          "Never on the eye, inside the ear, on the meninges or on mucosa.",
+          "Anaphylaxis to chlorhexidine is rare but real (Nelson). Treat with adrenaline per the anaphylaxis protocol, record the allergy, and avoid all chlorhexidine products afterwards — including lidocaine–chlorhexidine catheter gel and chlorhexidine-coated lines."
+        ]
+      },
+      {
+        title: "Mouth care for the unconscious or intubated patient",
+        best_for: "ICU, high-dependency and medical wards with unconscious, intubated, tracheostomised or neutropenic patients.",
+        requires: [],
+        steps: [
+          "Nurse the patient head-up 30–45° unless contraindicated, and suction the mouth before cleaning.",
+          "Brush teeth and gums gently with a soft toothbrush or gauze on a gloved finger, twice daily.",
+          "Then swab teeth, gums and tongue with 0.12–0.2 % chlorhexidine mouthwash or gel, using a swab that is wet, not dripping. Suction the excess — do not let fluid pool in the pharynx.",
+          "Moisten the lips (petroleum jelly or water-based gel).",
+          "Do not use chlorhexidine mouthwash in neonates, and do not pour it into the mouth of an unconscious patient."
+        ],
+        monitor: [
+          "Mouth every shift: ulcers, thrush, bleeding gums, dryness",
+          "Brown staining of teeth and tongue is a harmless, expected effect"
+        ],
+        cautions: [
+          "For preventing ventilator-associated pneumonia the evidence for chlorhexidine is conflicting (Harrison); tooth-brushing, suction, head-up nursing and early extubation matter more. Follow the unit protocol.",
+          "Stop and review if mucosal irritation or a reaction occurs."
+        ]
+      }
+    ],
+    paediatric: [
+      "Newborn cord care: 7.1 % chlorhexidine digluconate (= 4 % chlorhexidine) to the cord stump, per the national newborn-care guideline (once at birth or daily for the first 7 days).",
+      "Do not use alcoholic chlorhexidine on the cord. In very preterm babies, alcoholic skin preparation for procedures can cause chemical burns — minimal amount, let dry, remove excess with sterile water.",
+      "No routine whole-body chlorhexidine bathing of newborns outside a unit protocol.",
+      "Chlorhexidine mouthwash is not for babies and young children who cannot spit out."
+    ],
+    cautions: [
+      "Strength confusion is the main danger. Cord: 7.1 % digluconate. Skin: 2 % in alcohol. Mouth: 0.12–0.2 %. Eye: 0.05 % aqueous only.",
+      "Eye: scrub or skin-prep strength causes serious, sometimes permanent corneal injury. Irrigate at once for at least 15 minutes and refer.",
+      "Ear: ototoxic if it reaches the middle ear through a perforated drum — permanent deafness. Do not use in the ear canal unless the drum is known to be intact.",
+      "Never in contact with brain, meninges or the spinal canal.",
+      "Alcoholic preparations are flammable — let them dry fully before diathermy, and do not let them pool.",
+      "Anaphylaxis is rare but can be severe, including from catheter gels and coated lines (Nelson). Ask about previous reactions.",
+      "Chemical burns in very preterm infants (alcoholic preparations).",
+      "For external use only. Swallowed concentrates are corrosive — seek poisons advice."
+    ],
+    antidote: "No antidote. Eye exposure: irrigate with saline or clean water for at least 15 minutes and refer to eye services. Anaphylaxis: treat with adrenaline per the anaphylaxis protocol.",
+    textbook: [
+      {
+        book: "williams",
+        text: "In resource-poor countries antimicrobial cord care is reasonable; in a Nepalese study, cleaning the cord stump with 4 % chlorhexidine cut severe infection by 75 % compared with soap and water.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 32 The Newborn, pdf p. 1350"
+      },
+      {
+        book: "williams",
+        text: "The World Health Organization (2014) recommends cleansing the cord with chlorhexidine.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 32 The Newborn, pdf p. 1351"
+      },
+      {
+        book: "nelson",
+        text: "In community and primary-care settings in developing countries, chlorhexidine applied to the cord reduces omphalitis and neonatal mortality; in hospital births in high-income settings it is no better than dry cord care.",
+        ref: "Nelson 22nd ed. 2024, ch. 144 The Umbilicus, p. 1131"
+      },
+      {
+        book: "harrison",
+        text: "Surgical-site and central-line antisepsis: use chlorhexidine–alcohol whenever possible; daily 2 % chlorhexidine gluconate baths reduce line infections in ICU.",
+        ref: "Harrison 22nd ed. 2025, ch. 147 Infections Acquired in Health Care Facilities, Table 147-1, p. 1148"
+      },
+      {
+        book: "nelson",
+        text: "Central-line insertion bundles use 2 % chlorhexidine gluconate skin preparation.",
+        ref: "Nelson 22nd ed. 2024, ch. 224 Infection Associated with Medical Devices, p. 1668"
+      },
+      {
+        book: "gabbe",
+        text: "At caesarean, chlorhexidine–alcohol skin preparation gives fewer wound infections than povidone-iodine.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 428"
+      },
+      {
+        book: "williams",
+        text: "Either chlorhexidine or povidone-iodine is suitable for abdominal skin preparation at caesarean; where trials differ, chlorhexidine is favoured.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 30 Cesarean Delivery and Peripartum Hysterectomy, pdf p. 1256"
+      },
+      {
+        book: "gabbe",
+        text: "Vaginal preparation with povidone-iodine or chlorhexidine just before caesarean reduces post-caesarean endometritis, especially in labour or after membrane rupture.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 427"
+      },
+      {
+        book: "schwartz",
+        text: "Alcohol skin preparation is flammable and hazardous with electrocautery; chlorhexidine gluconate in isopropyl alcohol remains the preferred formula.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 12 Quality, Patient Safety, Assessments of Care, and Complications, p. 424"
+      },
+      {
+        book: "nelson",
+        text: "Oral care with chlorhexidine gluconate has been included in several ventilator-associated pneumonia prevention bundles.",
+        ref: "Nelson 22nd ed. 2024, ch. 224 Infection Associated with Medical Devices, p. 1669"
+      },
+      {
+        book: "harrison",
+        text: "Oral chlorhexidine for ventilated patients is listed among VAP-prevention strategies whose randomized trials are negative or conflicting.",
+        ref: "Harrison 22nd ed. 2025, ch. 131 Pneumonia, Table 131-7, p. 1030"
+      },
+      {
+        book: "nelson",
+        text: "0.2 % chlorhexidine gluconate mouth rinses, with systemic antifungals, may help prevent oral candidiasis during myelosuppressive therapy.",
+        ref: "Nelson 22nd ed. 2024, ch. 361 Common Lesions of the Oral Soft Tissues, p. 2252"
+      },
+      {
+        book: "nelson",
+        text: "Chlorhexidine is among the recognised causes of perioperative anaphylaxis.",
+        ref: "Nelson 22nd ed. 2024, ch. 193 Adverse and Allergic Reactions to Drugs, p. 1459"
+      },
+      {
+        book: "note",
+        text: "The 7.1 % digluconate (4 % chlorhexidine) strength and the 'first week of life, high neonatal-mortality settings' wording are from the WHO recommendations on newborn health / postnatal care, not the textbooks. The eye and middle-ear hazards are from product information (chlorhexidine scrub and skin-preparation labels), and the preterm skin-burn warning from regulatory safety alerts. Confirm the cord-care schedule with the Ethiopian national newborn-care guideline.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "WHO recommendations on newborn health (2017) and WHO recommendations on maternal and newborn care for a positive postnatal experience (2022) — chlorhexidine cord care"
+      },
+      {
+        name: "WHO Model List of Essential Medicines (current list) — chlorhexidine 7.1 % digluconate for umbilical cord care; 5 % and 20 % concentrates"
+      },
+      {
+        name: "Ethiopian Ministry of Health — national newborn care / IMNCI guidelines (chlorhexidine cord care)"
+      },
+      {
+        name: "WHO Global guidelines for the prevention of surgical site infection, 2nd ed. 2018 — alcohol-based chlorhexidine skin preparation"
+      },
+      {
+        name: "Chlorhexidine gluconate 4 % scrub and 2 % in 70 % isopropyl alcohol — product information (eye, ear, meninges warnings)"
+      },
+      {
+        name: "MHRA / FDA safety communications: chlorhexidine — anaphylaxis risk; chemical burns in premature infants"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "amantadine",
+    name: "Amantadine",
+    aka: ["Amantadine hydrochloride", "Symmetrel"],
+    cls: "Dopaminergic antiparkinsonian agent and NMDA-receptor antagonist (adamantane)",
+    cat: "psychiatry",
+    wards: ["psychiatric", "outpatient", "medical"],
+    tags: [
+      "drug-induced parkinsonism",
+      "extrapyramidal side effects",
+      "EPS",
+      "antipsychotic side effects",
+      "older adults",
+      "not anticholinergic",
+      "neuroleptic malignant syndrome",
+      "Parkinson disease",
+      "livedo reticularis",
+      "renal dosing",
+      "influenza (obsolete)"
+    ],
+    presentation: [
+      "Capsules or tablets 100 mg. Oral only — there is no injection.",
+      "Syrup 50 mg/5 mL in some countries.",
+      "Often not stocked in Ethiopian public facilities; check before planning around it."
+    ],
+    indications: [
+      "Drug-induced parkinsonism from antipsychotics (stiffness, slowness, tremor), especially when an anticholinergic such as trihexyphenidyl causes confusion, constipation or urinary retention, or should be avoided (older adults, dementia, glaucoma, prostatic enlargement)",
+      "Adjunct in neuroleptic malignant syndrome when bromocriptine is not available (with stopping the antipsychotic, cooling, fluids and benzodiazepines)",
+      "Parkinson disease, mainly for dyskinesia in advanced disease (neurology use)",
+      "NOT for influenza: resistance is near-universal (Harrison)"
+    ],
+    standard: {
+      summary: "The alternative to trihexyphenidyl for antipsychotic-induced parkinsonism. It is not an antimuscarinic drug — it acts through dopamine release and NMDA blockade — so it causes far less of the dry mouth, constipation, urine retention and confusion that make trihexyphenidyl dangerous in older people. But it is cleared almost entirely by the kidneys, it can itself cause confusion and hallucinations when it accumulates, and it can make psychosis worse. Low dose, adjust for the kidneys, taper to stop.",
+      items: [
+        {
+          label: "First, before any drug",
+          text: "Confirm it is parkinsonism (stiffness, slowness, tremor — see trihexyphenidyl), not akathisia or tardive dyskinesia. Then try lowering the antipsychotic dose or switching to one with fewer movement effects (quetiapine, olanzapine, aripiprazole)."
+        },
+        {
+          label: "Drug-induced parkinsonism, adult",
+          text: "100 mg once daily in the morning; if needed after about a week, 100 mg twice daily with the second dose by early afternoon (later doses cause insomnia). Maximum 300 mg a day in divided doses for drug-induced parkinsonism (product information). Review at 4–8 weeks and taper off if the antipsychotic has been reduced or changed. Confirm with local protocol."
+        },
+        {
+          label: "Older adults (over 65)",
+          text: "100 mg once daily, and assume the kidneys are weaker than the creatinine suggests. Increase only if needed and if creatinine clearance is above 50 mL/min."
+        },
+        {
+          label: "Kidney impairment",
+          text: "About 90 % is excreted unchanged in the urine (Nelson), so it accumulates. Creatinine clearance 30–50 mL/min: maximum 100 mg once daily. 15–29: 100 mg every other day. Under 15 or on dialysis: avoid (BNF); the US label allows 200 mg once a week — specialist only. Dehydration, an NSAID or any acute kidney injury can push a stable patient into toxicity."
+        },
+        {
+          label: "Switching from trihexyphenidyl",
+          text: "Start amantadine, then taper trihexyphenidyl over 1–2 weeks rather than stopping it suddenly — abrupt withdrawal of either drug causes rebound stiffness. Do not leave the patient on both long term without a reason."
+        },
+        {
+          label: "Neuroleptic malignant syndrome",
+          text: "Adjunct only, when bromocriptine is not available: the app's NMS guidance (bromocriptine entry, Kaplan) gives 200–400 mg a day by mouth or nasogastric tube in divided doses. Start at the low end (100 mg twice daily) — NMS often damages the kidneys — and halve or hold the dose if urine output falls or creatinine rises. Stopping the antipsychotic, cooling, fluids and benzodiazepines remain the main treatment."
+        },
+        {
+          label: "Influenza",
+          text: "Do not use. Widespread resistance has made amantadine and rimantadine historical for influenza; neuraminidase inhibitors are the treatment (Harrison)."
+        },
+        {
+          label: "Stopping",
+          text: "Always taper (Harrison), for example by 100 mg every 1–2 weeks. Sudden withdrawal can cause rebound parkinsonism and a neuroleptic malignant-like state with fever and rigidity."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "The older patient confused on trihexyphenidyl: switching to amantadine safely",
+        best_for: "Psychiatric and medical outpatient clinics where an older patient on an antipsychotic needs treatment for parkinsonism but trihexyphenidyl has caused confusion, falls, constipation or urinary retention.",
+        requires: ["oral"],
+        steps: [
+          "Check whether a drug is needed at all: lower the antipsychotic dose or switch first (quetiapine is the usual choice in an older person).",
+          "Estimate kidney function. If a creatinine result exists, calculate creatinine clearance (Cockcroft-Gault). If there is none, treat any patient over 65, any patient who is small, frail or dehydrated, and anyone with diabetes or hypertension as having reduced clearance: 100 mg once daily and no more.",
+          "Start 100 mg each morning. Taper trihexyphenidyl over 1–2 weeks — for example halve the dose for a week, then stop.",
+          "Review at 1–2 weeks: stiffness and walking, confusion, sleep, hallucinations, ankle swelling, skin of the legs. Ask the family about confusion — the patient may not notice it.",
+          "Increase to 100 mg twice daily (second dose by early afternoon) only if parkinsonism persists and kidney function allows.",
+          "Give a 2–4 week supply at a time. Overdose causes dangerous heart rhythm problems (Harrison), so give small amounts to anyone at risk of self-harm.",
+          "Review at 4–8 weeks: if the antipsychotic has been lowered or changed, taper amantadine off and see whether it is still needed."
+        ],
+        monitor: [
+          "Orientation and attention at every visit — new confusion means accumulation until proved otherwise",
+          "Hallucinations or worsening psychosis",
+          "Ankle oedema and a mottled purple net-like pattern on the legs (livedo reticularis)",
+          "Urine output and fluid intake in hot weather or with vomiting and diarrhoea"
+        ],
+        cautions: [
+          "Amantadine can itself cause confusion and hallucinations, especially at higher doses and when the kidneys are poor (Harrison). It is safer than trihexyphenidyl in the elderly, not harmless.",
+          "It can worsen psychosis: if the psychotic symptoms flare after starting it, reduce or stop it and review the antipsychotic.",
+          "Avoid in epilepsy if possible (it lowers the seizure threshold) and in severe kidney failure."
+        ]
+      },
+      {
+        title: "Amantadine toxicity: recognising it and what to do without a lab",
+        best_for: "Any ward or clinic seeing a patient on amantadine who becomes confused, agitated or unwell — especially after dehydration, a new NSAID, or an overdose.",
+        requires: [],
+        steps: [
+          "Suspect accumulation when a patient on amantadine develops confusion, visual hallucinations, agitation, jerks (myoclonus), slurred speech, dilated pupils, urinary retention or a fast pulse — particularly after vomiting, diarrhoea, poor intake or a new NSAID.",
+          "Stop amantadine. Rehydrate by mouth if possible, or IV saline or Ringer's lactate if not drinking. Check creatinine if any laboratory can do it.",
+          "Look for a full anticholinergic picture (hot dry skin, big pupils, retention) and stop any other anticholinergic drugs at the same time.",
+          "Overdose is dangerous: amantadine blocks cardiac sodium channels as well as having anticholinergic effects, causing a wide QRS, low blood pressure, ventricular arrhythmias and seizures (Harrison). Get an ECG if one exists, keep the patient on a monitor or count the pulse frequently, and refer urgently.",
+          "A wide QRS or ventricular tachycardia from sodium-channel blockade is treated with hypertonic sodium bicarbonate (Harrison) — see the sodium bicarbonate entry; seizures with a benzodiazepine.",
+          "Do not restart until the patient is back to baseline and kidney function is known; then restart at a lower dose or not at all."
+        ],
+        monitor: [
+          "Consciousness and orientation hourly until improving",
+          "Pulse, blood pressure and ECG (QRS width) where available",
+          "Urine output and bladder (retention)"
+        ],
+        cautions: [
+          "Dialysis removes very little amantadine; recovery depends on the kidneys clearing it.",
+          "Do not treat the agitation with an antipsychotic loaded with anticholinergic effects (chlorpromazine) — prefer a benzodiazepine."
+        ]
+      }
+    ],
+    paediatric: [
+      "Drug-induced parkinsonism in children and adolescents: specialist advice; first reduce or change the antipsychotic.",
+      "Not used for influenza in children (resistance).",
+      "Accidental ingestion by a child can cause seizures and arrhythmias — store out of reach."
+    ],
+    cautions: [
+      "Renally cleared (about 90 % unchanged): reduce the dose in kidney impairment and in older adults; avoid if creatinine clearance is under 15.",
+      "Confusion, hallucinations and worsening psychosis, especially at higher doses, in older people and in kidney impairment (Harrison).",
+      "Livedo reticularis (purple mottling of the legs) and ankle oedema: common, harmless and reversible on stopping (Harrison).",
+      "Do not stop suddenly: rebound parkinsonism and a neuroleptic malignant-like syndrome (Harrison: always discontinue gradually).",
+      "Lowers the seizure threshold — caution in epilepsy.",
+      "Weak anticholinergic-type effects still occur (dry mouth, constipation, urinary retention, blurred vision); caution in angle-closure glaucoma and prostatic enlargement.",
+      "Overdose: sodium-channel blockade with wide QRS, arrhythmia and seizures plus anticholinergic toxicity (Harrison). Dispense small quantities.",
+      "Insomnia if taken late in the day; dizziness and falls from orthostatic hypotension."
+    ],
+    antidote: "No specific antidote. Stop it, rehydrate, support. Wide-QRS arrhythmia from overdose: hypertonic sodium bicarbonate (Harrison); seizures: benzodiazepine. Anticholinergic delirium: supportive care; physostigmine only where cardiac monitoring and resuscitation are available, and not with a wide QRS.",
+    textbook: [
+      {
+        book: "harrison",
+        text: "Amantadine (an NMDA-receptor antagonist) has mild antiparkinsonian effects; cognitive impairment is a major concern, especially at high doses. Other side effects include livedo reticularis and weight gain. Always stop it gradually — withdrawal-like symptoms occur.",
+        ref: "Harrison 22nd ed. 2025, ch. 446 Parkinson's Disease, p. 3503"
+      },
+      {
+        book: "harrison",
+        text: "Anticholinergics such as trihexyphenidyl are limited in the elderly by their side effects.",
+        ref: "Harrison 22nd ed. 2025, ch. 446 Parkinson's Disease, p. 3503"
+      },
+      {
+        book: "harrison",
+        text: "When psychosis appears in a patient on antiparkinsonian drugs, the first step is to withdraw the less effective drugs — anticholinergics, amantadine and dopamine agonists.",
+        ref: "Harrison 22nd ed. 2025, ch. 446 Parkinson's Disease, p. 3506"
+      },
+      {
+        book: "nelson",
+        text: "About 90 % of amantadine is excreted unchanged by the kidneys, so the dose must be reduced in renal impairment; CNS side effects include anxiety, poor concentration and light-headedness.",
+        ref: "Nelson 22nd ed. 2024, ch. 292 Principles of Antiviral Therapy, p. 1956"
+      },
+      {
+        book: "harrison",
+        text: "At high doses amantadine has anticholinergic and additional non-anticholinergic toxicity.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3711"
+      },
+      {
+        book: "harrison",
+        text: "In overdose amantadine causes anticholinergic toxicity plus sodium-channel (membrane-active) effects: QRS widening, hypotension, ventricular arrhythmias, seizures.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3715"
+      },
+      {
+        book: "harrison",
+        text: "Sodium-channel (membrane-active) toxicity with a wide QRS — including amantadine overdose — is treated with hypertonic sodium bicarbonate (or hypertonic saline); quinine and other quinoline antimalarials share the same membrane-active effect.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3715"
+      },
+      {
+        book: "harrison",
+        text: "Widespread resistance has relegated amantadine and rimantadine to historical interest for influenza; neuraminidase inhibitors are the mainstay.",
+        ref: "Harrison 22nd ed. 2025, ch. 206 Influenza, p. 1549"
+      },
+      {
+        book: "harrison",
+        text: "Most influenza strains are resistant to amantadine; use only if the virus is known to be sensitive.",
+        ref: "Harrison 22nd ed. 2025, ch. 196 Antiviral Chemotherapy, Excluding Antiretroviral Drugs, Table 196-2, p. 1488"
+      },
+      {
+        book: "note",
+        text: "Dosing for drug-induced parkinsonism (100 mg once to twice daily, maximum 300 mg a day) and the kidney bands are from the amantadine product information and the BNF, not from the textbooks searched (Harrison and Nelson describe amantadine for Parkinson disease and influenza). The NMS dose range is the one already used in this app's bromocriptine entry (Kaplan). Amantadine is not on every Ethiopian facility list — confirm availability.",
+        ref: "Editorial note"
+      },
+      {
+        book: "kaplan",
+        text: "Usual starting dose 100 mg twice daily by mouth, increased cautiously to 200 mg twice daily if needed — that is, 200–400 mg a day.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2228"
+      },
+      {
+        book: "kaplan",
+        text: "Should not be given with anticholinergic drugs: confusion, hallucinations, nightmares, dry mouth and blurred vision may be worsened.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2228"
+      }
+    ],
+    sources: [
+      {
+        name: "Amantadine hydrochloride — product information (drug-induced extrapyramidal reactions; renal dose table; abrupt-withdrawal warning)"
+      },
+      { name: "British National Formulary (BNF) — amantadine hydrochloride" },
+      {
+        name: "Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry, 14th ed. 2021 (antipsychotic-induced parkinsonism)"
+      },
+      { name: "WHO mhGAP Intervention Guide 2.0, 2016 (management of antipsychotic side effects)" },
+      {
+        name: "WHO Guidelines for the clinical management of severe illness from influenza virus infections, 2022 (adamantanes not recommended)"
       }
     ],
     review: { status: "draft", by: null, date: null }

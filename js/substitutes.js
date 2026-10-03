@@ -318,7 +318,7 @@ window.SUBSTITUTES = {
     {use: "Acute dystonia",with: "biperiden",note: "2–5 mg IM or slowly IV; faster than oral trihexyphenidyl."},
     {use: "Acute dystonia",with: "promethazine",note: "25–50 mg deep IM. Not under 2 years."},
     {use: "Acute dystonia",with: "diazepam",note: "5–10 mg slowly IV. Never IM. Watch breathing."},
-    {use: "Drug-induced parkinsonism (no anticholinergic in stock)",none: true,note: "Lower the antipsychotic dose or switch to a drug with fewer movement effects (quetiapine, olanzapine, aripiprazole). Amantadine if stocked (not in this app)."},
+    {use: "Drug-induced parkinsonism (no anticholinergic in stock)",none: true,note: "Lower the antipsychotic dose or switch to a drug with fewer movement effects (quetiapine, olanzapine, aripiprazole). Amantadine if stocked."},
     {use: "Akathisia",with: "propranolol",note: "Anticholinergics are not the drug of choice for akathisia (Kaplan). First reduce the antipsychotic dose."}
   ],
   "propranolol": [
@@ -682,7 +682,7 @@ window.SUBSTITUTES = {
     {
       use: "Conjunctival antisepsis before surgery in a patient with a documented severe reaction to povidone-iodine",
       none: true,
-      note: "Chlorhexidine 0.05 % aqueous (NOT the alcoholic or detergent preparations, and not higher strengths) is the accepted alternative for the conjunctival sac — it is not in this app's drug list. Record why iodine was avoided. Note that a reaction to intravenous radiographic contrast or to shellfish is NOT an iodine allergy and is not a reason to omit antisepsis."
+      note: "Chlorhexidine 0.05 % aqueous (NOT the alcoholic or detergent preparations, and not higher strengths) is the accepted alternative for the conjunctival sac. Record why iodine was avoided. Note that a reaction to intravenous radiographic contrast or to shellfish is NOT an iodine allergy and is not a reason to omit antisepsis."
     },
     {
       use: "Preventing endophthalmitis",
@@ -720,7 +720,7 @@ window.SUBSTITUTES = {
     {
       use: "DVT or PE treatment (not pregnant), when there is no INR testing or warfarin is out of stock",
       with: "heparin",
-      note: "Enoxaparin 1 mg/kg SC every 12 h (or 1.5 mg/kg once daily) for the WHOLE course, at least 3 months. No INR is needed; check platelets once at day 5–7 if possible. If CrCl is under 30 mL/min, give 1 mg/kg once daily. If there is no enoxaparin: SC unfractionated heparin 333 IU/kg, then 250 IU/kg every 12 h (unmonitored, FIDO regimen). Cost and daily injections are the barriers. A direct oral anticoagulant (rivaroxaban, apixaban) also replaces warfarin here, if the patient can obtain one (not in this app)."
+      note: "Enoxaparin 1 mg/kg SC every 12 h (or 1.5 mg/kg once daily) for the WHOLE course, at least 3 months. No INR is needed; check platelets once at day 5–7 if possible. If CrCl is under 30 mL/min, give 1 mg/kg once daily. If there is no enoxaparin: SC unfractionated heparin 333 IU/kg, then 250 IU/kg every 12 h (unmonitored, FIDO regimen). Cost and daily injections are the barriers. A direct oral anticoagulant (rivaroxaban, apixaban) also replaces warfarin here, if the patient can obtain one."
     },
     {
       use: "VTE in pregnancy",
@@ -1183,6 +1183,159 @@ window.SUBSTITUTES = {
       use: "Distal ureteric stone",
       none: true,
       note: "No expulsive-therapy substitute in this app. Analgesia (an NSAID if kidney function allows), strain the urine, and the same-day return rules for fever, vomiting or uncontrolled pain. Most stones under 5 mm pass anyway."
+    }
+  ],
+
+  /* ---- cardio and reversal ---- */
+  verapamil: [
+    {
+      use: "Stable regular narrow-complex SVT after vagal manoeuvres",
+      with: "adenosine",
+      note: "Adenosine is the first choice, not just a substitute: a rapid push with an instant flush (see Adenosine). It is the drug for infants, children and pregnancy. Verapamil is the adult second line."
+    },
+    {
+      use: "SVT when adenosine and verapamil have failed or cannot be used",
+      with: "amiodarone",
+      note: "Specialist option (see the SVT case). It causes hypotension if given fast. If the patient is unstable, use synchronised cardioversion, not more drugs."
+    },
+    {
+      use: "Rate control of atrial fibrillation with heart failure or low blood pressure",
+      with: "digoxin",
+      note: "Use digoxin when heart failure or low BP rules verapamil out; it does not weaken heart contraction (Harrison). Onset is slower. Never in pre-excited AF (WPW)."
+    },
+    {
+      use: "Oral rate control or prevention of recurrent SVT when verapamil is not available",
+      with: "propranolol",
+      note: "A β-blocker does the same job by mouth. Never combine the two, and when switching let a specialist decide the timing. Avoid in asthma."
+    }
+  ],
+  apixaban: [
+    {
+      use: "Stroke prevention in atrial fibrillation (no mechanical valve, no rheumatic mitral stenosis)",
+      with: "warfarin",
+      note: "Needs INR monitoring (target 2.0–3.0). Switch by giving both until the INR is 2.0 or more, then stop apixaban (see Apixaban: switching). Aspirin is not an adequate substitute."
+    },
+    {
+      use: "DVT or PE treatment",
+      with: "heparin",
+      note: "Enoxaparin 1 mg/kg SC every 12 hours for the whole course (once daily if creatinine clearance is under 30 mL/min), starting when the next tablet would have been due. Warfarin overlapped with heparin is the other option where INR testing exists."
+    },
+    {
+      use: "Mechanical heart valve or moderate–severe rheumatic mitral stenosis",
+      with: "warfarin",
+      note: "Apixaban is the wrong drug here (Harrison). Change to warfarin at the valve target INR with heparin cover until it is in range (see Warfarin). Refer if you cannot measure the INR."
+    },
+    {
+      use: "Pregnancy, or a woman planning pregnancy",
+      with: "heparin",
+      note: "Stop apixaban and change to enoxaparin (or unfractionated heparin) as soon as pregnancy is known. DOACs cross the placenta (Harrison)."
+    }
+  ],
+  flumazenil: [
+    {
+      use: "Benzodiazepine overdose or oversedation",
+      none: true,
+      note: "No drug substitute, and none is needed: support the airway and breathing (recovery position, jaw thrust, bag-valve-mask with oxygen) until the benzodiazepine wears off. This is the treatment for almost every benzodiazepine overdose."
+    },
+    {
+      use: "Oversedation when an opioid was also given (for example midazolam with morphine or pethidine)",
+      with: "naloxone",
+      note: "Naloxone reverses the opioid part only. Ventilate for the rest. Give it first when breathing is slow and the pupils are pinpoint."
+    }
+  ],
+  glycopyrrolate: [
+    {
+      use: "With neostigmine for reversal of a non-depolarising relaxant",
+      with: "atropine",
+      note: "Atropine 0.02 mg/kg does the same job (see Neostigmine). It causes more tachycardia (use care in mitral stenosis), and it crosses the blood–brain barrier (confusion in older patients) and the placenta."
+    },
+    {
+      use: "Drying secretions before ketamine, or bradycardia during anaesthesia",
+      with: "atropine",
+      note: "Atropine 0.01–0.02 mg/kg IV or IM, maximum 0.5 mg (see Atropine). It acts faster, so it is the better choice for bradycardia with poor perfusion."
+    },
+    {
+      use: "Chronic drooling in neurological disability",
+      none: true,
+      note: "No substitute in this app. Use positioning, swallowing therapy, and a hyoscine patch where stocked. Do not put atropine eye drops under a child's tongue without specialist advice: one drop of 1 % contains about 0.5 mg of atropine."
+    },
+    {
+      use: "Noisy secretions at the end of life",
+      none: true,
+      note: "No substitute in this app. Hyoscine butylbromide SC where stocked. Reposition the patient and reassure the family. Atropine works but can cause agitation in a patient who is still aware."
+    }
+  ],
+
+  /* ---- other ---- */
+  dapsone: [
+    {
+      use: "PCP prophylaxis (first choice)",
+      with: "cotrimoxazole",
+      note: "Cotrimoxazole is always first: it also prevents toxoplasmosis, malaria, bacterial pneumonia and diarrhoea, which dapsone does not. After a mild, non-mucosal rash a supervised rechallenge or dose-escalation may be possible (national guideline); never after Stevens-Johnson syndrome, blistering, mucosal sores or fever with rash."
+    },
+    {
+      use: "Severe PCP treatment",
+      with: "pentamidine",
+      note: "Dapsone is for prophylaxis here, not for treating severe PCP. IV pentamidine 4 mg/kg daily for 21 days when cotrimoxazole cannot be used. Monthly aerosolised pentamidine 300 mg is a prophylaxis alternative but needs a special nebuliser (referral level)."
+    },
+    {
+      use: "PCP prophylaxis when neither cotrimoxazole nor dapsone can be used",
+      none: true,
+      note: "Atovaquone 1500 mg daily with food, or monthly aerosolised pentamidine — referral or HIV programme. Do not leave the patient unprotected; effective ART is the long-term protection."
+    },
+    {
+      use: "Leprosy (dapsone intolerance or hypersensitivity)",
+      none: true,
+      note: "Do not improvise. The national leprosy programme supplies an MDT regimen without dapsone (rifampicin and clofazimine, with second-line drugs as WHO advises). Never treat leprosy with a single drug."
+    }
+  ],
+  chlorhexidine: [
+    {
+      use: "Skin antisepsis before surgery, lines or procedures",
+      with: "povidone-iodine",
+      note: "10 % povidone-iodine on intact skin, allowed to dry for at least 2 minutes. Use it when chlorhexidine is out of stock or the patient is allergic to chlorhexidine. Alcoholic preparations of either are flammable — dry before diathermy."
+    },
+    {
+      use: "Conjunctival-sac antisepsis before eye surgery",
+      with: "povidone-iodine",
+      note: "5 % povidone-iodine for 3 minutes is the first choice. Chlorhexidine is the alternative only as 0.05 % AQUEOUS solution, and only when iodine is contraindicated. Never alcoholic, scrub or skin-prep chlorhexidine in the eye."
+    },
+    {
+      use: "Umbilical cord care when 7.1 % chlorhexidine is out of stock",
+      none: true,
+      note: "Clean, dry cord care: wash hands, keep the stump clean, dry and uncovered, nothing applied. Do not substitute the alcoholic skin prep, the 4 % scrub, iodine or any traditional substance."
+    },
+    {
+      use: "Mouth care without chlorhexidine mouthwash",
+      none: true,
+      note: "Tooth-brushing twice daily, swabs moistened with clean water or saline, suction, head-up nursing. These matter more than the antiseptic for preventing ventilator-associated pneumonia."
+    }
+  ],
+  amantadine: [
+    {
+      use: "Drug-induced parkinsonism (younger adult, no confusion)",
+      with: "trihexyphenidyl",
+      note: "Widely stocked: start 1 mg daily and increase slowly. Avoid in older or confused patients, glaucoma or prostatic enlargement — that is when amantadine is preferred."
+    },
+    {
+      use: "Drug-induced parkinsonism",
+      with: "biperiden",
+      note: "1 mg twice daily orally, increasing gradually (WHO mhGAP). Same anticholinergic cautions as trihexyphenidyl."
+    },
+    {
+      use: "Drug-induced parkinsonism (first step)",
+      none: true,
+      note: "Before any antiparkinsonian drug, lower the antipsychotic dose or switch to one with fewer movement effects (quetiapine, olanzapine, aripiprazole)."
+    },
+    {
+      use: "Neuroleptic malignant syndrome",
+      with: "bromocriptine",
+      note: "The preferred dopamine-acting adjunct, with stopping the antipsychotic, cooling, fluids and benzodiazepines (see bromocriptine)."
+    },
+    {
+      use: "Influenza",
+      none: true,
+      note: "Amantadine must not be used — resistance is near-universal. Neuraminidase inhibitors (oseltamivir) are the treatment; they are not in this app."
     }
   ]
 };

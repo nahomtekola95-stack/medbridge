@@ -3841,5 +3841,258 @@ window.SAFETY = {
       }
     ],
     sources: ["Tamsulosin product information (SmPC and US label)", "BNF"]
+  },
+
+  /* ---- cardio and reversal ---- */
+  verapamil: {
+    pregnancy: {
+      level: "caution",
+      text: "Used when needed. Williams lists IV verapamil for SVT after adenosine and β-blockers, and 5–10 mg IV for new atrial fibrillation in mitral stenosis. A fall in the mother's BP reduces placental blood flow: give it slowly with left tilt, and monitor BP and the fetal heart. Calcium-channel blockers may in theory enhance magnesium sulfate (Williams). For hypertension in pregnancy, use labetalol, nifedipine or methyldopa instead."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Verapamil passes into breast milk at an even lower level than nifedipine, and neither has caused harm in breastfed infants (Gabbe). Continue breastfeeding."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change; it is cleared by the liver. Not removed by dialysis (BNF)."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Mostly broken down by the liver. In cirrhosis more of an oral dose reaches the blood and it lasts longer: start at a low oral dose and increase slowly (BNF). Give IV doses at the lower end, slowly."
+    },
+    refs: [
+      {
+        book: "williams",
+        text: "IV verapamil for SVT in pregnancy when adenosine and β-blockers are ineffective or contraindicated.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 49 Cardiovascular Disorders, pdf p. 2143",
+        pdf_page: 2143,
+        quote: "Intravenous verapamil when adenosine and β-blocking agents are ineffective"
+      },
+      {
+        book: "williams",
+        text: "Calcium-channel blockers can worsen ventricular dysfunction and theoretically potentiate magnesium sulfate.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 50 Chronic Hypertension, pdf p. 2174",
+        pdf_page: 2174,
+        quote: "potentiate the vasoactive actions of magnesium sulfate"
+      },
+      {
+        book: "gabbe",
+        text: "Verapamil passes into breast milk at a lower level than nifedipine; no adverse infant effects.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "verapamil at an even lower level"
+      }
+    ],
+    sources: [
+      "BNF: verapamil (renal and hepatic impairment)",
+      "Williams Obstetrics 25th ed.",
+      "Gabbe's Obstetrics 9th ed."
+    ]
+  },
+  apixaban: {
+    pregnancy: {
+      level: "avoid",
+      text: "Contraindicated. DOACs cross the placenta (Harrison) and are not recommended in pregnancy (Gabbe); the risks to the fetus are essentially unknown (Williams). Change to enoxaparin or unfractionated heparin as soon as pregnancy is known, and give women who could become pregnant reliable contraception."
+    },
+    breastfeeding: {
+      level: "avoid",
+      text: "Avoid. Small amounts are found in breast milk (Harrison), and the risk to the baby is unknown (Williams). Use enoxaparin or warfarin, which are compatible with breastfeeding."
+    },
+    renal: {
+      level: "adjust",
+      text: "About a quarter is cleared by the kidney (Harrison). Calculate creatinine clearance. 30 mL/min or more: usual dose (AF: 2.5 mg twice daily only if two of age 80 or over, weight 60 kg or less, creatinine 133 µmol/L or more). 15–29 mL/min: use with caution, AF 2.5 mg twice daily. Under 15 mL/min or on dialysis: do not use (Nelson). Stop for longer before surgery when kidney function is reduced."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Mild liver disease: usual dose. Moderate: use with caution. Severe liver disease, or liver disease with a coagulopathy: do not use (product information)."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "DOACs cross the placenta, are contraindicated in pregnancy, and should be avoided in nursing mothers.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 954",
+        pdf_page: 997,
+        quote: "these agents are contraindicated in pregnancy"
+      },
+      {
+        book: "gabbe",
+        text: "DOACs such as apixaban are not recommended in pregnancy.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 126",
+        pdf_page: 159,
+        quote: "are not recommended in pregnancy"
+      },
+      {
+        book: "williams",
+        text: "Reproductive risks of the newer oral anticoagulants are essentially unknown.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 52 Thromboembolic Disorders, pdf p. 2247",
+        pdf_page: 2247,
+        quote: "the human reproductive risks are essentially unknown"
+      },
+      {
+        book: "nelson",
+        text: "Apixaban is contraindicated with creatinine clearance below 15 mL/min.",
+        ref: "Nelson 22nd ed. 2024, ch. 458, Table 458.3, p. 2697",
+        pdf_page: 2717,
+        quote: "contraindicated in patients with a creatinine clearance below 15 mL/min"
+      }
+    ],
+    sources: [
+      "Apixaban (Eliquis) summary of product characteristics",
+      "Harrison 22nd ed. ch. 123",
+      "Gabbe's Obstetrics 9th ed.",
+      "Williams Obstetrics 25th ed."
+    ]
+  },
+  flumazenil: {
+    pregnancy: {
+      level: "caution",
+      text: "Little information. Use only for clear benzodiazepine oversedation with poor breathing, when the benefit is obvious. Supporting the mother's airway and oxygenation protects the baby more than any reversal drug. A pregnant woman with a benzodiazepine overdose is treated like anyone else: airway, breathing and time."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No data. A single dose is short-acting (about an hour), so harm to the baby is unlikely. Breastfeed once the mother is awake, and remember that the benzodiazepine itself also passes into milk."
+    },
+    renal: { level: "none", text: "No dose change." },
+    hepatic: {
+      level: "adjust",
+      text: "It is cleared by the liver and lasts longer in liver disease. Give the first dose as usual, then smaller steps with longer gaps (product information). Hepatic encephalopathy is not an indication."
+    },
+    refs: [],
+    sources: ["BNF: flumazenil", "Flumazenil product information"]
+  },
+  glycopyrrolate: {
+    pregnancy: {
+      level: "caution",
+      text: "Single anaesthetic doses (with neostigmine at caesarean, or to dry secretions) are standard practice. As a quaternary drug very little crosses the placenta, so it changes the fetal heart rate less than atropine does. Avoid long-term oral use in pregnancy unless clearly needed. Do not give it as premedication in cystic fibrosis because it thickens secretions (Gabbe)."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Single anaesthetic doses are compatible: breastfeed once the mother is awake. There are no data on long-term oral use. Antimuscarinics may reduce milk supply, so watch the baby's feeding and weight."
+    },
+    renal: {
+      level: "adjust",
+      text: "Excreted mainly by the kidney. Single anaesthetic doses are unchanged. Reduce repeated oral or SC doses and lengthen the interval in kidney failure (BNF), and watch for urinary retention."
+    },
+    hepatic: { level: "none", text: "No dose change." },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Do not give preoperative anticholinergics such as glycopyrrolate to a pregnant woman with cystic fibrosis: they dry and thicken secretions.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 43 Respiratory Disease in Pregnancy, p. 838",
+        pdf_page: 1028,
+        quote: "preoperative anticholinergic agents (e.g., glycopyrrolate) should not be administered"
+      }
+    ],
+    sources: ["BNF: glycopyrronium bromide", "Gabbe's Obstetrics 9th ed."]
+  },
+
+  /* ---- other ---- */
+  dapsone: {
+    pregnancy: {
+      level: "caution",
+      text: "Leprosy multidrug therapy (dapsone, rifampicin, clofazimine) is generally safe in pregnancy and should be continued (Williams; WHO). For PCP prophylaxis use it when cotrimoxazole cannot be given and the benefit is clear. Near term it can cause haemolysis and jaundice in a G6PD-deficient newborn: tell the delivery team, and watch the baby for early jaundice and pallor."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Passes into milk. Generally compatible (Harrison lists it as usable in breastfeeding) and leprosy MDT continues while breastfeeding, but haemolysis has been reported in G6PD-deficient infants. Watch a newborn or preterm baby for jaundice, pallor and blue lips; if the baby is known to be G6PD deficient, seek advice."
+    },
+    renal: {
+      level: "adjust",
+      text: "Nelson advises adjusting the dose in renal insufficiency, but there is no agreed scheme. In moderate to severe impairment use the lowest effective dose, check haemoglobin more often and watch for methaemoglobinaemia; seek specialist advice if creatinine clearance is under 30."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Dapsone can cause hepatitis and cholestatic jaundice, and jaundice is part of the hypersensitivity syndrome (Harrison). Use with caution in liver disease; stop if jaundice or a large tender liver develops."
+    },
+    refs: [
+      {
+        book: "williams",
+        text: "Multidrug therapy for leprosy with dapsone, rifampicin and clofazimine is generally safe in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2716",
+        pdf_page: 2716,
+        quote: "safe during pregnancy (Gimovsky, 2013; Ozturk, 2017)"
+      },
+      {
+        book: "nelson",
+        text: "Child dose 1–2 mg/kg once daily, not more than 100 mg/day; dose-related haemolytic anaemia (worse in G6PD deficiency) and a hypersensitivity syndrome with fever, rash and liver damage; adjust the dose in renal impairment; check the blood count weekly in the first month.",
+        ref: "Nelson 22nd ed. 2024, ch. 260 Principles of Antimycobacterial Therapy, p. 1833",
+        pdf_page: 1839,
+        quote: "hemolytic anemia, especially in patients with"
+      }
+    ],
+    sources: [
+      "BNF",
+      "LactMed (NIH)",
+      "WHO Guidelines for the diagnosis, treatment and prevention of leprosy, 2018"
+    ]
+  },
+  chlorhexidine: {
+    pregnancy: {
+      level: "safe",
+      text: "Topical use for skin preparation, vaginal cleansing before caesarean and hand hygiene is safe in pregnancy; negligible absorption. Preferred to repeated iodine antisepsis, which can affect the fetal thyroid."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Safe for maternal skin preparation and mouthwash. If it has been applied to the breast or nipple, wash it off before the baby feeds."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change — topical antiseptic, negligible absorption through intact skin."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change — topical antiseptic, negligible absorption through intact skin."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Vaginal preparation with povidone-iodine or chlorhexidine just before caesarean reduces post-caesarean endometritis, especially in labour or after membrane rupture.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 21 Cesarean Delivery, p. 427",
+        pdf_page: 528,
+        quote: "Vaginal preparation immediately before CD with povidone-iodine or"
+      }
+    ],
+    sources: [
+      "WHO recommendations on newborn health / postnatal care",
+      "Chlorhexidine product information",
+      "LactMed (NIH)"
+    ]
+  },
+  amantadine: {
+    pregnancy: {
+      level: "avoid",
+      text: "Avoid. Animal studies show harm and there are human case reports of malformations; it is not needed for any pregnancy emergency. For drug-induced parkinsonism in pregnancy, lower or switch the antipsychotic first; if a drug is unavoidable, discuss with a specialist."
+    },
+    breastfeeding: {
+      level: "avoid",
+      text: "Avoid. It passes into milk, adverse effects have been reported in infants, and as a dopaminergic drug it may lower prolactin and reduce milk supply."
+    },
+    renal: {
+      level: "adjust",
+      text: "About 90 % is excreted unchanged by the kidneys (Nelson). Usual dose if creatinine clearance is above 50 mL/min; older adults start at 100 mg once daily. Dehydration or an acute kidney injury can cause toxicity (confusion, hallucinations, myoclonus, arrhythmia).",
+      bands: [
+        { below: 50, text: "CrCl 30–50: maximum 100 mg once daily." },
+        { below: 30, text: "CrCl 15–29: 100 mg every other day." },
+        {
+          below: 15,
+          text: "CrCl under 15 or on dialysis: avoid (BNF). The US label allows 200 mg once every 7 days — specialist only. Dialysis removes very little."
+        }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change; it is not metabolised by the liver. Confusion on amantadine in liver disease should not be assumed to be encephalopathy — check the kidneys and the dose."
+    },
+    refs: [
+      {
+        book: "nelson",
+        text: "About 90 % of amantadine is excreted unchanged by the kidneys, so the dose must be reduced in renal impairment; CNS side effects include anxiety, poor concentration and light-headedness.",
+        ref: "Nelson 22nd ed. 2024, ch. 292 Principles of Antiviral Therapy, p. 1956",
+        pdf_page: 1963,
+        quote: "are eliminated via the kidneys (90% of the dose is unchanged)"
+      }
+    ],
+    sources: ["Amantadine product information", "BNF", "LactMed (NIH)", "The Renal Drug Handbook"]
   }
 };

@@ -1582,7 +1582,7 @@ window.CONDITIONS = [
     "Stable: modified Valsalva in adults and older children; ice-cold water bag to the face for 15–30 s in infants. Never press on the eyes.",
     "Adenosine rapid IV push with a 3-way tap and flush while the ECG runs: child 0.1 mg/kg then 0.2 mg/kg; adult 6 mg then 12 mg.",
     "Unstable, or adenosine fails: synchronised cardioversion (child 0.5–1 J/kg then 2 J/kg) with sedation; oxygen and bag-valve-mask ready.",
-    "After conversion, repeat the ECG (look for Wolff-Parkinson-White) and refer for long-term management. Verapamil is not in this app — never in infants."
+    "After conversion, repeat the ECG (look for Wolff-Parkinson-White) and refer for long-term management. Verapamil is never given to infants."
   ],
   drugs: [
     {
@@ -3711,7 +3711,7 @@ window.CONDITIONS = [
     "Seizures: diazepam IV or rectally, or midazolam IM. Do not use phenytoin (it worsens sodium-channel toxicity).",
     "Sodium bicarbonate 8.4% 1–2 mmol/kg (1–2 mL/kg) IV over a few minutes for QRS over 100 ms, arrhythmia, hypotension or seizures; repeat until the QRS narrows and BP improves. Watch potassium and sodium. Confirm local protocol.",
     "Hypotension: IV fluid bolus, then bicarbonate, then noradrenaline if still low.",
-    "Do not give flumazenil (not in app) or physostigmine: both can cause seizures or cardiac arrest in tricyclic poisoning. Avoid haloperidol and chlorpromazine for agitation; use a benzodiazepine.",
+    "Do not give flumazenil or physostigmine: both can cause seizures or cardiac arrest in tricyclic poisoning. Avoid haloperidol and chlorpromazine for agitation; use a benzodiazepine.",
     "Observe for at least 6 hours; anyone with symptoms or ECG changes needs admission and monitoring, as arrhythmias can occur for days (Kaplan).",
     "Urinary retention: catheterise. Cool if hyperthermic.",
     "Once medically fit: full suicide risk assessment (see Severe depression with suicide risk). Switch to fluoxetine; never restart amitriptyline in a person who overdosed; limit supplies for the household."

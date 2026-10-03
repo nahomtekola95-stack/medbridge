@@ -2227,5 +2227,342 @@ window.INTERACTIONS = [
         quote: "a result of the anticoagulant effect of protamine"
       }
     ]
+  },
+
+  /* ---- cardio and reversal ---- */
+  {
+    a: ["verapamil"],
+    b: ["propranolol", "labetalol", "timolol-eye"],
+    severity: "major",
+    effect: "Both slow the AV node and weaken heart contraction. IV verapamil given with, or within a few hours of, an IV β-blocker (in either order) can cause profound bradycardia, complete heart block, asystole and acute heart failure. Oral combinations cause bradycardia and heart failure, especially with poor heart function. Timolol eye drops are absorbed enough to add to the effect.",
+    action: "Never give IV verapamil to a patient who has had an IV β-blocker in the last few hours, and never give an IV β-blocker after IV verapamil. For SVT in a patient on a regular β-blocker, use vagal manoeuvres, adenosine or cardioversion. When a β-blocker is STARTED in a patient on oral verapamil (or the reverse): specialist decision only; check pulse and BP and look for heart failure at each visit; stop if the pulse is under 50/min or there is heart block. When either is STOPPED: no dose change in the other, but rate or BP control may be lost, so recheck within a week.",
+    ref: "Harrison 22nd ed. 2025, ch. 288, Table 288-4, p. 2144; Nelson 22nd ed. 2024, ch. 484, Table 484.1, p. 2846; BNF interactions (verapamil–β-blockers); verapamil injection product information",
+    refs: [
+      {
+        book: "harrison",
+        text: "Non-dihydropyridine calcium-channel blockers: do not use in combination with β-blockers.",
+        ref: "Harrison 22nd ed. 2025, ch. 288 Hypertension, Table 288-4, p. 2144",
+        pdf_page: 2187,
+        quote: "Do not use in combination with β-blockers"
+      },
+      {
+        book: "nelson",
+        text: "Verapamil used with a β-blocker exacerbates heart failure.",
+        ref: "Nelson 22nd ed. 2024, ch. 484, Table 484.1, p. 2846",
+        pdf_page: 2867,
+        quote: "Use with β blocker or disopyramide exacerbates CHF"
+      }
+    ]
+  },
+  {
+    a: ["verapamil"],
+    b: ["digoxin"],
+    severity: "major",
+    effect: "Verapamil raises the digoxin level and adds its own AV-node block: bradycardia, heart block and digoxin toxicity (nausea, vomiting, visual changes, arrhythmias).",
+    action: "When verapamil is STARTED in a patient on digoxin: reduce the digoxin dose (many halve it, as with amiodarone). Check the pulse daily for the first week and an ECG, and a digoxin level after about a week where available. Avoid IV verapamil if digoxin toxicity is possible. When verapamil is STOPPED: the digoxin level falls over about a week, so return to the previous digoxin dose and recheck the pulse and symptoms.",
+    ref: "Nelson 22nd ed. 2024, ch. 484, Table 484.1, p. 2846 and ch. 94, p. 714; BNF interactions (digoxin–verapamil)",
+    refs: [
+      {
+        book: "nelson",
+        text: "Verapamil increases digoxin level and toxicity.",
+        ref: "Nelson 22nd ed. 2024, ch. 484, Table 484.1, p. 2846",
+        pdf_page: 2867,
+        quote: "Use with β blocker or disopyramide exacerbates CHF"
+      },
+      {
+        book: "nelson",
+        text: "Drugs that raise serum digoxin include verapamil and amiodarone.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, p. 714",
+        pdf_page: 760,
+        quote: "spironolactone, verapamil, amiodarone, and itraconazole"
+      }
+    ]
+  },
+  {
+    a: ["verapamil"],
+    b: ["amiodarone"],
+    severity: "major",
+    effect: "Additive slowing of the sinus node and AV node, and weaker heart contraction: bradycardia, AV block and hypotension. Amiodarone also blocks the breakdown of verapamil.",
+    action: "Avoid giving IV verapamil and IV amiodarone in the same episode. If oral use together is unavoidable, it is a specialist decision. When amiodarone is STARTED in a patient on verapamil: lower the verapamil dose and check pulse, BP and ECG (PR interval) weekly at first. When amiodarone is STOPPED: its effect lasts weeks to months, so do not raise the verapamil dose quickly.",
+    ref: "BNF interactions (amiodarone–verapamil); amiodarone and verapamil product information"
+  },
+  {
+    a: ["verapamil"],
+    b: ["erythromycin"],
+    severity: "major",
+    effect: "Erythromycin blocks the breakdown of verapamil (CYP3A4), so verapamil levels rise: hypotension, bradycardia and heart block have been reported. Verapamil may also raise erythromycin levels.",
+    action: "Avoid if possible (Harrison): for a patient on verapamil, choose azithromycin or a non-macrolide antibiotic. If erythromycin must be STARTED: check pulse and BP daily and lower the verapamil if the pulse is under 55/min or the BP falls. When erythromycin is STOPPED: verapamil levels return to baseline within a few days; restore the usual dose if it was reduced.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-4, p. 1172; BNF interactions (macrolides–verapamil)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Macrolides raise levels of CYP3A4 substrates including verapamil; avoid concomitant administration if possible.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-4, p. 1172",
+        pdf_page: 1215,
+        quote: "cyclosporine, diazepam, verapamil, amiodarone"
+      }
+    ]
+  },
+  {
+    a: ["verapamil"],
+    b: ["tb-rhze", "phenytoin", "phenobarbital"],
+    severity: "moderate",
+    effect: "Rifampicin, phenytoin and phenobarbital speed up the breakdown of verapamil. Oral verapamil can become almost ineffective, with loss of rate control, angina control or BP control.",
+    action: "When the inducer is STARTED: expect oral verapamil to stop working within 1–2 weeks. Check pulse and BP, and change to another drug (for AF rate control, digoxin; for BP, a drug not affected) rather than escalating verapamil blindly. When the inducer is STOPPED: verapamil levels rise again over about 2 weeks. If the dose was increased, reduce it and watch for bradycardia and hypotension.",
+    ref: "Harrison 22nd ed. 2025, ch. 149, Table 149-4, p. 1172; BNF interactions (verapamil–rifampicin, phenytoin, phenobarbital)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Rifampicin lowers levels of CYP3A4 substrates including verapamil; avoid concomitant use if possible.",
+        ref: "Harrison 22nd ed. 2025, ch. 149 Treatment and Prophylaxis of Bacterial Infections, Table 149-4, p. 1172",
+        pdf_page: 1215,
+        quote: "cyclosporine, diazepam, verapamil, protease"
+      }
+    ]
+  },
+  {
+    a: ["verapamil"],
+    b: ["carbamazepine"],
+    severity: "moderate",
+    effect: "Verapamil blocks the breakdown of carbamazepine, so carbamazepine levels rise: dizziness, unsteadiness, double vision, drowsiness and nausea. Carbamazepine in turn can lower verapamil levels.",
+    action: "When verapamil is STARTED: warn the patient about carbamazepine toxicity. Check a level within 1–2 weeks where available, and reduce the carbamazepine if symptoms appear. When verapamil is STOPPED: the carbamazepine level falls, so return to the previous dose and watch for breakthrough seizures or mood relapse.",
+    ref: "BNF interactions (carbamazepine–verapamil)"
+  },
+  {
+    a: ["verapamil"],
+    b: ["lithium"],
+    severity: "moderate",
+    effect: "Neurotoxicity (ataxia, tremor, confusion) has been reported when verapamil is combined with lithium, sometimes without a change in the lithium level. Lithium levels can move in either direction.",
+    action: "Prefer another drug where possible. When verapamil is STARTED: check the lithium level within a week and watch for tremor, unsteadiness and confusion even if the level is normal. When verapamil is STOPPED: recheck the lithium level within 1–2 weeks.",
+    ref: "BNF interactions (lithium–verapamil); see also the lithium–nifedipine rule"
+  },
+  {
+    a: ["verapamil"],
+    b: ["magnesium-sulfate"],
+    severity: "moderate",
+    effect: "Calcium-channel blockers may in theory potentiate the effects of magnesium sulfate on blood vessels (Williams): hypotension. They also weaken heart contraction, which matters in pre-eclampsia with heart disease.",
+    action: "In pre-eclampsia, use labetalol or hydralazine for BP rather than verapamil. When magnesium is STARTED in a woman already on oral verapamil, continue the verapamil and check BP every 15 minutes for the first hour. If IV verapamil is needed for an arrhythmia while magnesium is running, give it slowly as a diluted push. Check BP every 5 minutes for 30 minutes and check reflexes, and keep calcium gluconate at the bedside. It is the antidote for both. When the magnesium is STOPPED: no change in verapamil is needed.",
+    ref: "Williams Obstetrics 25th ed. 2018, ch. 50 Chronic Hypertension, pdf p. 2174",
+    refs: [
+      {
+        book: "williams",
+        text: "Calcium-channel blockers theoretically may potentiate magnesium sulfate.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 50 Chronic Hypertension, pdf p. 2174",
+        pdf_page: 2174,
+        quote: "potentiate the vasoactive actions of magnesium sulfate"
+      }
+    ]
+  },
+  {
+    a: ["verapamil"],
+    b: ["propofol", "thiopental"],
+    severity: "moderate",
+    effect: "Additive fall in blood pressure, and weaker heart contraction and AV conduction at induction of anaesthesia.",
+    action: "Continue oral verapamil on the day of surgery (Pre-op tool). Induce slowly with a reduced dose, and have ephedrine and atropine drawn up. IV verapamil during anaesthesia only by the anaesthetist, with the ECG running. When verapamil has been STOPPED before surgery: watch for loss of rate control or rebound angina and restart it promptly.",
+    ref: "BNF interactions (general anaesthetics–verapamil); app Pre-op tool (calcium-channel blockers)"
+  },
+  {
+    a: ["apixaban"],
+    b: ["diclofenac", "ibuprofen"],
+    severity: "major",
+    effect: "NSAIDs inhibit platelets and injure the stomach lining. With an anticoagulant, the risk of serious GI bleeding is much higher (Harrison).",
+    action: "Avoid: use paracetamol for pain. If an NSAID must be STARTED, give the shortest possible course with omeprazole, and teach the patient to look for black stools. When apixaban is STARTED, stop any regular NSAID. When either is STOPPED, no dose change is needed in the other.",
+    ref: "Harrison 22nd ed. 2025, ch. 335, p. 2521; BNF interactions (apixaban–NSAIDs)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Concomitant anticoagulants are an established risk factor for NSAID ulcer complications.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2521",
+        pdf_page: 2564,
+        quote: "concomitant use of anticoagulants or"
+      }
+    ]
+  },
+  {
+    a: ["apixaban"],
+    b: ["heparin"],
+    severity: "major",
+    effect: "Two anticoagulants together: bleeding. Unfractionated heparin and enoxaparin should overlap with apixaban only at the moment of switching.",
+    action: "When apixaban is STARTED in place of heparin or enoxaparin: give the first tablet when the next injection would have been due, or when an infusion is STOPPED. When apixaban is STOPPED and replaced by heparin (for example a stock-out, surgery or pregnancy): give the first injection when the next tablet would have been due. Small heparin flushes to keep a line open are acceptable. Never prescribe both as treatment doses.",
+    ref: "Apixaban product information (switching); BNF interactions (apixaban–heparins)"
+  },
+  {
+    a: ["apixaban"],
+    b: ["warfarin"],
+    severity: "major",
+    effect: "Two anticoagulants: bleeding if both continue. Apixaban also raises the INR slightly, so the INR reads higher while both are being taken.",
+    action: "Warfarin to apixaban: STOP warfarin and START apixaban once the INR is below 2.0. Apixaban to warfarin: START warfarin and continue apixaban alongside it. From day 3, check the INR just before an apixaban dose, and STOP apixaban when the INR is 2.0 or more. Never continue both once the INR is in range.",
+    ref: "Apixaban product information (switching to and from vitamin K antagonists)"
+  },
+  {
+    a: ["apixaban"],
+    b: ["tb-rhze", "carbamazepine", "phenytoin", "phenobarbital"],
+    severity: "major",
+    effect: "Rifampicin, carbamazepine, phenytoin and phenobarbital induce both CYP3A4 and P-glycoprotein (Harrison Table 123-9). They lower apixaban levels enough to leave the patient unprotected against stroke or new clots.",
+    action: "Avoid. When TB treatment or one of these antiepileptics is STARTED in a patient on apixaban, change to enoxaparin for VTE, or to warfarin with close INR checks (warfarin is also affected by these drugs; see Warfarin). When the inducer is STOPPED: its effect lasts about 2 weeks, after which apixaban can be used again at the normal dose.",
+    ref: "Harrison 22nd ed. 2025, ch. 123, Table 123-9, p. 953; apixaban product information (strong CYP3A4 and P-gp inducers)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Apixaban interactions are through CYP3A4 and P-glycoprotein.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, Table 123-9, p. 953",
+        pdf_page: 996,
+        quote: "Interactions 3A4/P-gp 3A4/P-gp"
+      }
+    ]
+  },
+  {
+    a: ["apixaban"],
+    b: ["fluoxetine", "sertraline", "escitalopram"],
+    severity: "moderate",
+    effect: "SSRIs reduce platelet function. Together with an anticoagulant there is more bleeding, especially from the gut.",
+    action: "The combination is often necessary, so do not stop the antidepressant for this reason alone. When an SSRI is STARTED: ask about bleeding at each visit, avoid adding NSAIDs, and consider omeprazole if there is a history of ulcer. When the SSRI is STOPPED: no dose change in apixaban.",
+    ref: "BNF interactions (apixaban–SSRIs)"
+  },
+  {
+    a: ["flumazenil"],
+    b: ["amitriptyline", "imipramine"],
+    severity: "major",
+    effect: "In a tricyclic or mixed overdose, the benzodiazepine may be what is holding back the tricyclic's seizures. Flumazenil removes that protection: seizures and ventricular arrhythmias follow, and the seizures respond poorly to benzodiazepines.",
+    action: "Do not give flumazenil when a tricyclic may have been taken, in an unknown or mixed ingestion, or when the ECG shows a QRS over 100 ms. Support breathing instead, and follow the Tricyclic overdose case (sodium bicarbonate). For a patient on a therapeutic tricyclic who is over-sedated after procedural midazolam: ventilate rather than reverse. Starting or stopping the tricyclic needs no change; the danger is at the moment flumazenil is given.",
+    ref: "Nelson 22nd ed. 2024, ch. 94, Table 94.8, p. 707; flumazenil product information (contraindicated in serious cyclic antidepressant overdose)",
+    refs: [
+      {
+        book: "nelson",
+        text: "Flumazenil is relatively contraindicated for unknown or polypharmacy ingestions.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, Table 94.8, p. 707",
+        pdf_page: 753,
+        quote: "Relatively contraindicated for unknown or polypharmacy ingestions"
+      }
+    ]
+  },
+  {
+    a: ["flumazenil"],
+    b: ["diazepam", "midazolam", "lorazepam", "chlordiazepoxide"],
+    severity: "major",
+    effect: "Intended antagonism, with two traps. In a patient who takes a benzodiazepine regularly (including an alcohol-withdrawal regimen), flumazenil causes acute withdrawal with seizures. And flumazenil wears off in about an hour, before these benzodiazepines, so sedation and slow breathing return.",
+    action: "Use flumazenil only for oversedation after a procedure in a patient who is not dependent, in small steps (adult 0.2 mg then 0.1 mg each minute, maximum 1 mg). Observe for at least 2 hours, and longer after diazepam, lorazepam or chlordiazepoxide. If a benzodiazepine is needed AFTER flumazenil (for example for a seizure), larger doses may be needed while flumazenil is still active. When the benzodiazepine is STOPPED or STARTED, no flumazenil dose change is relevant: it is a one-off rescue drug.",
+    ref: "Harrison 22nd ed. 2025, ch. 467, p. 3691 and ch. 436, Table 436-5, p. 3414; BNF (flumazenil)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Flumazenil may precipitate seizures; most benzodiazepines remain active longer than flumazenil.",
+        ref: "Harrison 22nd ed. 2025, ch. 467 Opioid-Related Disorders, p. 3691",
+        pdf_page: 3734,
+        quote: "it may precipitate seizures and increase intracranial pressure"
+      },
+      {
+        book: "harrison",
+        text: "Flumazenil can cause seizures in benzodiazepine-dependent patients.",
+        ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, Table 436-5, p. 3414",
+        pdf_page: 3457,
+        quote: "In benzodiazepine-dependent patients"
+      }
+    ]
+  },
+  {
+    a: ["glycopyrrolate"],
+    b: ["neostigmine"],
+    severity: "moderate",
+    effect: "Intended combination. Glycopyrrolate blocks neostigmine's effects on the heart and glands (bradycardia, heart block, secretions, bronchospasm) but not its useful effect at the muscle. Too little glycopyrrolate, or giving it after the neostigmine, leaves bradycardia. Too much causes tachycardia.",
+    action: "Give them together in a fixed ratio: 0.2 mg glycopyrrolate per 1 mg neostigmine (or the premixed ampoule), over about 1 minute. Never give neostigmine without an antimuscarinic. If glycopyrrolate is unavailable, atropine 0.02 mg/kg does the same job (see Neostigmine). Stopping or starting is not relevant: both are single doses.",
+    ref: "Schwartz's Principles of Surgery 11th ed., ch. 46, p. 2032; BNF (glycopyrronium with neostigmine)",
+    refs: [
+      {
+        book: "schwartz",
+        text: "Anticholinesterases are given with an antimuscarinic, almost always atropine or glycopyrrolate.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032",
+        pdf_page: 2059,
+        quote: "almost always atropine or glycopyrrolate"
+      }
+    ]
+  },
+  {
+    a: ["glycopyrrolate"],
+    b: [
+      "atropine",
+      "trihexyphenidyl",
+      "biperiden",
+      "amitriptyline",
+      "imipramine",
+      "chlorpromazine",
+      "promethazine",
+      "olanzapine",
+      "clozapine",
+      "cyproheptadine"
+    ],
+    severity: "moderate",
+    effect: "Additive antimuscarinic effects outside the brain: dry mouth, constipation and ileus, urinary retention, fast pulse, blurred vision, and reduced sweating with overheating. Glycopyrrolate does not enter the brain, so it adds little to confusion.",
+    action: "In anaesthesia, single doses are fine; do not give both glycopyrrolate and atropine for the same purpose. When oral glycopyrrolate is STARTED for drooling or clozapine hypersalivation in a patient on one of these drugs, use the lowest dose. Ask about bowels and passing urine at every visit. With clozapine, treat constipation early, because clozapine ileus can be fatal. When either is STOPPED: no dose change is needed in the other.",
+    ref: "BNF interactions (antimuscarinics–antimuscarinics)"
+  },
+  {
+    a: ["glycopyrrolate"],
+    b: ["metoclopramide"],
+    severity: "moderate",
+    effect: "Antimuscarinics oppose metoclopramide's effect on gut movement. Each partly cancels the other.",
+    action: "Avoid giving them together for the same patient's gut symptoms. When glycopyrrolate is STARTED in a patient on metoclopramide for gastric emptying or vomiting, expect less effect and consider another antiemetic (ondansetron). When either is STOPPED: no dose change in the other.",
+    ref: "BNF interactions (metoclopramide–antimuscarinics)"
+  },
+  {
+    a: ["glycopyrrolate"],
+    b: ["potassium-chloride"],
+    severity: "moderate",
+    effect: "Antimuscarinics slow the passage of tablets through the gut. Solid potassium chloride tablets can then ulcerate or narrow the oesophagus or bowel. This applies only to oral solid potassium, not to IV potassium or potassium syrup.",
+    action: "When oral glycopyrrolate is STARTED in a patient taking potassium chloride tablets: change to potassium syrup or effervescent potassium, or give the tablets upright with a full glass of water. Stop them if there is pain on swallowing or abdominal pain. When glycopyrrolate is STOPPED: tablets can be used again.",
+    ref: "BNF interactions (potassium chloride–antimuscarinics)"
+  },
+
+  /* ---- other ---- */
+  {
+    a: ["dapsone"],
+    b: ["tb-rhze"],
+    severity: "moderate",
+    effect: "Daily rifampicin (in TB treatment) induces dapsone metabolism and lowers dapsone levels markedly (Harrison), so dapsone PCP prophylaxis may fail in a patient with HIV and TB. The once-monthly rifampicin dose in leprosy multidrug therapy does not matter — that combination is intended.",
+    action: "In HIV with TB, cotrimoxazole is the prophylaxis of choice and should be used if at all possible. If cotrimoxazole cannot be used and daily rifampicin is STARTED, discuss PCP prophylaxis with the HIV/TB clinician — dapsone may not protect; an alternative (atovaquone, aerosolised pentamidine) may be needed at referral level — and do not stop prophylaxis while the decision is made. When daily rifampicin is STOPPED at the end of TB treatment, dapsone levels rise over about 2 weeks: watch more closely for haemolysis and blue lips. No action needed for monthly rifampicin in leprosy MDT.",
+    ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1743; BNF interactions (rifampicin–dapsone)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Rifampicin lowers dapsone plasma levels.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1743",
+        pdf_page: 1786,
+        quote: "Rifampin: lowered plasma levels"
+      }
+    ]
+  },
+  {
+    a: ["amantadine"],
+    b: ["quinine", "cotrimoxazole"],
+    severity: "moderate",
+    effect: "Both reduce the kidney's excretion of amantadine (quinine by about 30 %; trimethoprim competes for tubular secretion), so amantadine accumulates: confusion, hallucinations, myoclonus. Quinine and amantadine are also both sodium-channel (membrane-active) drugs, adding to the risk of QRS widening and arrhythmia (Harrison).",
+    action: "When quinine or a treatment course of cotrimoxazole is STARTED, consider pausing amantadine for the course (rebound stiffness for a week is safer than delirium), or at least halve the dose and check daily for confusion; in severe malaria, artesunate avoids the problem. When the partner is STOPPED, restart or return amantadine to its previous dose. Daily low-dose cotrimoxazole prophylaxis: keep amantadine at the lowest effective dose and watch for confusion, especially if kidney function is reduced.",
+    ref: "Amantadine product information (quinine reduces renal clearance); BNF interactions (amantadine–trimethoprim); Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3715",
+    refs: [
+      {
+        book: "harrison",
+        text: "Amantadine and quinine are both membrane-active (sodium-channel-blocking) agents: QRS prolongation, ventricular arrhythmias, seizures.",
+        ref: "Harrison 22nd ed. 2025, ch. 470 Poisoning and Drug Overdose, Table 470-4, p. 3715",
+        pdf_page: 3758,
+        quote: "Amantadine, antiarrhythmics"
+      }
+    ]
+  },
+  {
+    a: ["amantadine"],
+    b: ["trihexyphenidyl", "biperiden"],
+    severity: "moderate",
+    effect: "Amantadine adds anticholinergic-type and central effects to these anticholinergic antiparkinsonian drugs: confusion, hallucinations, dry mouth, constipation, urinary retention, blurred vision — mainly in older people and when the kidneys are poor (product information).",
+    action: "Usually one drug is enough: when amantadine is STARTED for an older or confused patient, taper the anticholinergic over 1–2 weeks rather than adding amantadine on top. If both are needed, lowest doses, and watch confusion, urine and bowels. When either is STOPPED, taper it — sudden withdrawal causes rebound parkinsonism.",
+    ref: "Amantadine product information (anticholinergic drugs); Harrison 22nd ed. 2025, ch. 446 Parkinson's Disease, p. 3503",
+    refs: [
+      {
+        book: "harrison",
+        text: "Amantadine (an NMDA-receptor antagonist) has mild antiparkinsonian effects; cognitive impairment is a major concern, especially at high doses. Other side effects include livedo reticularis and weight gain. Always stop it gradually — withdrawal-like symptoms occur.",
+        ref: "Harrison 22nd ed. 2025, ch. 446 Parkinson's Disease, p. 3503",
+        pdf_page: 3546,
+        quote: "include livedo reticularis and weight gain"
+      }
+    ]
   }
 ];

@@ -1825,7 +1825,12 @@ window.THEATRE_PACKS = [
             note: "Enough to cover the end of the long tube by about 2 cm, and no more.",
             drugId: "normal-saline"
           },
-          { item: "Antiseptic — chlorhexidine or povidone-iodine", qty: "1", note: "" },
+          {
+            item: "Antiseptic — chlorhexidine or povidone-iodine",
+            qty: "1",
+            note: "",
+            drugId: "chlorhexidine"
+          },
           { item: "Syringe 10 cc and 20 cc, with 21G and 23G needles", qty: "2 each", note: "" },
           { item: "Sterile gauze and adhesive plaster", qty: "—", note: "" },
           {
