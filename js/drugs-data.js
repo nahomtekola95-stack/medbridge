@@ -124,7 +124,7 @@ window.DRUG_DB = [
         "Multigravida and previous caesarean: do not exceed 5 IU in 500 mL. Primigravida may go to 10 IU in 500 mL."
       ],
       monitor: ["Contractions and fetal heart every 30 min", "Stop the infusion if >4 contractions per 10 min, contractions >60 s, or fetal distress"],
-      cautions: ["Hyperstimulation → stop infusion, left lateral, oxygen, consider terbutaline 0.25 mg SC (verify)."]
+      cautions: ["Hyperstimulation → stop infusion, left lateral, oxygen, consider terbutaline 0.25 mg SC (Williams)."]
     }
   ],
   cautions: ["Water intoxication with large volumes (use NS/RL, monitor urine output).", "Hypotension/tachycardia with rapid IV.", "Uterine rupture risk with hyperstimulation, especially grand multiparity or previous scar."],
@@ -145,8 +145,9 @@ window.DRUG_DB = [
   { book: "whopph", text: "For treatment, 10 IU of oxytocin is usually given intravenously first — diluted and slow, never a rapid injection — followed where needed by 10–20 IU diluted in crystalloid over the next four hours, titrated to the uterus; re-dosing is safe in a woman who already had oxytocin for prophylaxis.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 24 remarks, pdf p. 60" },
   { book: "whopph", text: "Treat on measured loss: 300 mL or more with any abnormal haemodynamic sign — pulse over 100, shock index above 1, systolic below 100 mmHg or diastolic below 60 mmHg — or 500 mL or more, whichever comes first within 24 hours of birth.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 22, pdf p. 14" },
   { book: "whopph", text: "If IV oxytocin is not available or the bleeding does not respond to it, use intravenous ergometrine, the oxytocin–ergometrine fixed-dose combination, or a prostaglandin such as 800 micrograms of sublingual misoprostol.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 25, pdf p. 61" },
-  { book: "whopph", text: "The 2025 consolidated guideline replaces the earlier WHO PPH recommendations, updating the uterotonic recommendations that had stood since 2012 and 2018.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 11 remarks, pdf p. 47" }
-],
+  { book: "whopph", text: "The 2025 consolidated guideline replaces the earlier WHO PPH recommendations, updating the uterotonic recommendations that had stood since 2012 and 2018.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 11 remarks, pdf p. 47" },
+    { book: "williams", text: "For uterine tachysystole, terbutaline 0.25 mg subcutaneously is the commonly used acute dose.", ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1830" }
+  ],
   review: { status: "draft", by: null, date: null }
 },
 /* ---------------------------------------------------------- */
@@ -15645,7 +15646,7 @@ window.DRUG_DB = [
           "Find the nearest facility with INR testing to the patient's HOME, not to the hospital. Arrange for the test to be done there and the result phoned or texted to your clinic. Write the clinic phone number on the card and phone back the dose.",
           "Once stable (several INRs in range on the same dose, with no new medicines or illness), test every 4 weeks. For a very stable patient for whom travel is the main barrier, some guidelines allow up to 12 weeks between tests. Do not stretch the interval for a mechanical valve in the first months, or after any change.",
           "Supply tablets of ONE strength to last until the next INR, plus about a week's reserve for delays (rain, transport, stock-outs). Do not give a store of mixed strengths.",
-          "Give a warfarin card listing: the reason for treatment, the target INR, the dose in mg and tablets, the last INR and its date, and the next test date. Add: 'Show this card to every health worker and pharmacy'. Also list the medicines to avoid: TB drugs, metronidazole, cotrimoxazole, fluconazole, antiepileptics, aspirin, diclofenac, ibuprofen, and herbal remedies.",
+          "Give a warfarin card listing: the reason for treatment, the target INR, the dose in mg and tablets, the last INR and its date, and the next test date. Add: 'Show this card to every health worker and pharmacy'. Also list the medicines to avoid: TB drugs, metronidazole, cotrimoxazole, fluconazole, miconazole oral gel (it is swallowed and absorbed — a common cause of dangerous bleeding), antiepileptics, aspirin, diclofenac, ibuprofen, and herbal remedies.",
           "Teach the patient AND a family member the danger signs and what to do: STOP warfarin and come the same day for black stools, vomiting blood, red or brown urine, a nosebleed that will not stop, heavy periods, large bruises, a severe headache, or any fall with a head injury.",
           "If a long gap without testing is unavoidable, keep the same dose, avoid new medicines, keep the diet steady, and test at the first chance.",
           "Women who could become pregnant need reliable contraception: an IUD or DMPA injection, because enzyme-inducing drugs weaken pills and implants. Tell them to do a pregnancy test as soon as a period is late and to come at once if it is positive. Warfarin must be changed to heparin before the 6th week (see Safety)."
@@ -22450,6 +22451,2745 @@ window.DRUG_DB = [
       {
         name: "WHO Guidelines for the clinical management of severe illness from influenza virus infections, 2022 (adamantanes not recommended)"
       }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- allergy and stomach ---- */
+  {
+    id: "chlorphenamine",
+    name: "Chlorphenamine",
+    aka: ["Chlorpheniramine", "Piriton", "Chlor-Trimeton"],
+    cls: "Sedating antihistamine (first-generation H1 antagonist)",
+    cat: "emergency",
+    wards: ["emergency", "paediatric", "medical", "surgical", "maternity", "outpatient"],
+    tags: [
+      "antihistamine",
+      "allergy",
+      "anaphylaxis adjunct",
+      "urticaria",
+      "itch",
+      "angio-oedema",
+      "transfusion reaction",
+      "antivenom reaction",
+      "hay fever"
+    ],
+    presentation: [
+      "Injection 10 mg/mL, 1 mL ampoule (IM or slow IV).",
+      "Tablets 4 mg.",
+      "Oral solution (syrup) 2 mg/5 mL."
+    ],
+    indications: [
+      "Anaphylaxis: an ADJUNCT only, given AFTER adrenaline once breathing and circulation are restored, for itch, hives and skin swelling. It is never a substitute for adrenaline and must never delay it.",
+      "Acute allergic reactions with no airway, breathing or circulation problem: urticaria, itch, skin angio-oedema, reactions to drugs, stings and bites",
+      "Mild allergic transfusion reactions (itch and hives only, normal observations)",
+      "Skin reactions to antivenom or other infusions — after adrenaline if there is any sign of anaphylaxis",
+      "Itch of allergic rhinitis, insect bites, chickenpox or eczema, especially at night (a non-sedating antihistamine is better by day)"
+    ],
+    standard: {
+      summary: "ANAPHYLAXIS: ADRENALINE IM FIRST. Chlorphenamine does nothing for airway swelling, wheeze or shock; it is an adjunct for skin symptoms once the patient is stable (Harrison: ancillary; Nelson: secondary role). Otherwise a cheap, useful injectable antihistamine for hives, itch and mild transfusion reactions. It sedates: warn about driving and add it carefully to opioids or benzodiazepines.",
+      items: [
+        {
+          label: "Anaphylaxis — only after adrenaline",
+          text: "Adrenaline 1 mg/mL IM into the thigh first, repeated every 5 minutes as needed, with oxygen and fluids (see Adrenaline and the Anaphylaxis case). Once breathing and circulation are restored, for remaining hives or itch: 12 years and over 10 mg IM or slow IV; 6–11 years 5 mg; 6 months–5 years 2.5 mg; under 6 months 250 micrograms/kg (BNF for Children; Resuscitation Council UK 2008). Resuscitation Council UK 2021 no longer includes an antihistamine in the emergency treatment and suggests an oral non-sedating one (cetirizine, loratadine) for skin symptoms after stabilisation — either is acceptable."
+        },
+        {
+          label: "Injection, other allergic reactions",
+          text: "Adult and child 12 years and over: 10 mg IM or IV, repeated if needed, maximum 4 doses (40 mg) in 24 hours (BNF). Give IV slowly over 1 minute: a fast push causes a transient fall in blood pressure and CNS stimulation. Child doses by age as above, also up to 4 doses in 24 hours."
+        },
+        {
+          label: "Oral, adult",
+          text: "4 mg every 4–6 hours, maximum 24 mg a day (BNF; Nelson gives the same over 12 years). Williams uses 4 mg every 6 hours for itch in pregnancy."
+        },
+        {
+          label: "Oral, child",
+          text: "2–5 years 1 mg every 4–6 hours (maximum 6 mg a day); 6–11 years 2 mg every 4–6 hours (maximum 12 mg a day) (Nelson). 1–23 months: 1 mg twice daily (BNF for Children), but cetirizine is preferred at this age because it sedates less."
+        },
+        {
+          label: "Allergic transfusion reaction",
+          text: "Itch or hives only, with normal temperature, pulse, blood pressure and breathing: stop the transfusion, check the patient's identity against the unit, give 10 mg slowly IV (child dose by age). Harrison treats mild allergic reactions by stopping the transfusion for a time and giving an antihistamine. Any fever, breathlessness, wheeze, low blood pressure or pain is NOT a mild reaction — see the method below and Blood transfusion."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Allergic reaction at a health post: decide first whether it is anaphylaxis",
+        best_for: "Any rash, hives or swelling after a drug, injection, sting, food or blood — before reaching for the antihistamine.",
+        requires: ["im"],
+        steps: [
+          "Look for ANY of: stridor, hoarse voice, swollen tongue or throat; wheeze or breathlessness; faintness, collapse, a weak fast pulse or low blood pressure; vomiting or abdominal pain after an injection or sting. Any one of these with a rash or after an exposure is anaphylaxis.",
+          "Anaphylaxis: adrenaline 1 mg/mL IM into the outer thigh NOW — adult 0.5 mL, child 0.01 mL/kg (maximum 0.5 mL) — and repeat every 5 minutes if not improving (see Adrenaline). Lie the patient flat with legs raised, or sitting up if breathing is the main problem. Chlorphenamine comes later, if at all.",
+          "When breathing and circulation are restored — or if it was only ever hives, itch or skin swelling — give chlorphenamine IM into the thigh or deltoid: 12 years and over 10 mg (1 mL); 6–11 years 5 mg (0.5 mL); 6 months–5 years 2.5 mg (0.25 mL, measured in a 1 mL syringe).",
+          "Skin-only reaction in a patient who can swallow: oral works as well — chlorphenamine 4 mg for an adult, or cetirizine or loratadine, which sedate less.",
+          "Stop the drug that caused it and write the allergy clearly in the notes and on the patient's card.",
+          "Anyone who needed adrenaline stays for observation (6–12 hours — see the Anaphylaxis case): a second (biphasic) reaction can follow, and antihistamines do not reliably prevent it (Nelson)."
+        ],
+        monitor: [
+          "Pulse, blood pressure if a cuff is available, breathing rate and voice every 5–15 minutes until stable, then hourly",
+          "A drowsy patient may be deteriorating from anaphylaxis, not just sedated by the antihistamine: reassess airway and circulation"
+        ],
+        cautions: [
+          "Chlorphenamine has no effect on airway swelling, bronchospasm or shock. Giving it first, or instead of adrenaline, costs lives.",
+          "If the facility has no adrenaline, the antihistamine and steroid are still given and the patient is transferred urgently — and restocking adrenaline is the real fix. An antihistamine is never the alternative."
+        ]
+      },
+      {
+        title: "Itch and hives during a blood transfusion",
+        best_for: "Ward or labour room, a nurse alone with a transfusion running, no laboratory on site at night.",
+        requires: ["iv"],
+        steps: [
+          "Stop the transfusion. Keep the vein open with normal saline through a NEW giving set (see Blood transfusion).",
+          "Check the patient's identity against the blood unit and its label at the bedside.",
+          "Take temperature, pulse, blood pressure and breathing rate; listen for wheeze; look at lips, tongue and urine colour.",
+          "ONLY itch and/or hives, with normal observations: chlorphenamine 10 mg by slow IV injection over 1 minute (child: 6–11 years 5 mg, 6 months–5 years 2.5 mg). Harrison: mild allergic reactions are treated by stopping the transfusion for a time and giving an antihistamine.",
+          "If the hives settle and the observations stay normal, the same unit may be restarted slowly with close watching, within the time allowed for that unit — follow the local transfusion policy and tell the doctor.",
+          "Fever, rigors, low blood pressure, breathlessness, wheeze, chest or loin pain, dark urine or oozing from drip sites: this is NOT a mild allergy. Do not restart. Give adrenaline IM for anaphylaxis, and send the unit and a fresh sample to the laboratory (see Blood transfusion).",
+          "Do not premedicate every transfusion with chlorphenamine as routine: Harrison notes there is no consensus even after a previous allergic reaction."
+        ],
+        monitor: ["Observations every 15 minutes for the rest of the transfusion", "Urine colour and volume"],
+        cautions: [
+          "A fever during a transfusion is never a simple allergy: think of haemolysis (wrong blood) and bacterial contamination.",
+          "Chlorphenamine can make the patient drowsy and hide early confusion — keep checking observations, not just the skin."
+        ]
+      },
+      {
+        title: "A child's dose when only 4 mg tablets or 10 mg ampoules are stocked",
+        best_for: "Paediatric ward or health post with no syrup.",
+        requires: ["oral"],
+        steps: [
+          "Under 1 year: avoid oral chlorphenamine. For hives or itch use cetirizine from 6 months (Nelson), or nothing. Inject chlorphenamine only after adrenaline in a true emergency (under 6 months 250 micrograms/kg).",
+          "1 mg dose (2–5 years): crush one 4 mg tablet, mix with 4 mL of clean water (1 mg per mL), shake and give 1 mL at once by oral syringe. Throw the rest away; do not keep it for later doses.",
+          "2 mg dose (6–11 years): half of a scored 4 mg tablet, or 2 mL of the freshly made mixture above.",
+          "Injection for a small child: the ampoule is 10 mg/mL, so 2.5 mg is 0.25 mL. Draw it up in a 1 mL syringe; never estimate it in a 2 or 5 mL syringe.",
+          "Do not use adult cough-and-cold mixtures that contain chlorphenamine for young children (UK MHRA 2009: not under 6 years)."
+        ],
+        monitor: [
+          "Drowsiness — or the opposite: restlessness, excitement and poor sleep are common in young children",
+          "Breathing in any child who becomes very drowsy"
+        ],
+        cautions: [
+          "Overdose in small children causes hallucinations, seizures and can be fatal. Keep tablets locked away and tell parents the exact dose."
+        ]
+      }
+    ],
+    paediatric: [
+      "Oral (Nelson): 2–5 years 1 mg every 4–6 hours, maximum 6 mg a day; 6–11 years 2 mg every 4–6 hours, maximum 12 mg a day; 12 years and over 4 mg every 4–6 hours, maximum 24 mg a day. 1–23 months: 1 mg twice daily (BNF for Children), though cetirizine is preferred.",
+      "Injection, IM or slow IV, up to 4 doses in 24 hours (BNF for Children): under 6 months 250 micrograms/kg; 6 months–5 years 2.5 mg; 6–11 years 5 mg; 12 years and over 10 mg.",
+      "Not for newborns except on specialist advice.",
+      "Young children are more likely to become excited, irritable or sleepless than drowsy; overdose causes seizures and can kill.",
+      "Anaphylaxis in children follows the same rule: adrenaline 0.01 mg/kg IM first; chlorphenamine afterwards for skin symptoms only."
+    ],
+    cautions: [
+      "Never instead of, or before, adrenaline in anaphylaxis (Harrison: ancillary; Nelson: secondary role).",
+      "Drowsiness and slowed reactions: no driving or machine work. Sedation adds to alcohol, opioids, benzodiazepines, phenobarbital and other sedating antihistamines (Kaplan) — see the interaction checker.",
+      "Anticholinergic effects: dry mouth, blurred vision, constipation and urinary retention (enlarged prostate). Avoid in angle-closure glaucoma — it can bring on an attack (see the angle-closure case).",
+      "Fast IV injection causes a transient fall in blood pressure and CNS stimulation: give over 1 minute.",
+      "Epilepsy: may lower the seizure threshold. Older people: confusion and falls — use the lowest dose.",
+      "Severe liver disease: avoid — sedation can tip a patient into hepatic encephalopathy."
+    ],
+    antidote: "No antidote. Overdose: support airway and breathing, treat seizures with a benzodiazepine, and watch for anticholinergic toxicity (hot dry skin, fast pulse, urinary retention, confusion).",
+    textbook: [
+      {
+        book: "harrison",
+        text: "In anaphylaxis, antihistamines, glucocorticoids and bronchodilators are ancillary agents, used for urticaria, angioedema and bronchospasm once the patient is haemodynamically stable. Adrenaline is the treatment.",
+        ref: "Harrison 22nd ed. 2025, ch. 364 Anaphylaxis, p. 2813"
+      },
+      {
+        book: "nelson",
+        text: "Antihistamines and glucocorticoids have only a secondary role in anaphylaxis, and they have not been shown clearly to prevent a biphasic (second) reaction.",
+        ref: "Nelson 22nd ed. 2024, ch. 190 Anaphylaxis, p. 1439"
+      },
+      {
+        book: "nelson",
+        text: "Biphasic anaphylaxis: antihistamines or corticosteroids do not clearly prevent it, so observation after the first reaction matters more.",
+        ref: "Nelson 22nd ed. 2024, ch. 190 Anaphylaxis, p. 1439"
+      },
+      {
+        book: "nelson",
+        text: "Oral chlorphenamine (chlorpheniramine maleate) by age: 2–5 years 1 mg every 4–6 hours (maximum 6 mg a day); 6–11 years 2 mg every 4–6 hours (maximum 12 mg a day); over 12 years 4 mg every 4–6 hours (maximum 24 mg a day).",
+        ref: "Nelson 22nd ed. 2024, ch. 184 Allergic Rhinitis, Table 184.3, p. 1383"
+      },
+      {
+        book: "harrison",
+        text: "Mild allergic transfusion reactions (rash, itch, urticaria, local swelling) are treated by stopping the transfusion for a time and giving an antihistamine. Premedicating patients with previous allergic reactions is done by some, but there is no consensus.",
+        ref: "Harrison 22nd ed. 2025, ch. 118 Transfusion Therapy and Biology, p. 911"
+      },
+      {
+        book: "harrison",
+        text: "An anaphylactic transfusion reaction can follow only a few millilitres of blood: stop the transfusion, keep the line open and give adrenaline; steroids, antihistamines and bronchodilators may be added.",
+        ref: "Harrison 22nd ed. 2025, ch. 118 Transfusion Therapy and Biology, p. 911"
+      },
+      {
+        book: "schwartz",
+        text: "Allergic transfusion reactions (rash, hives, itch) are treated, and can be prevented, with antihistamines; in more serious cases adrenaline or steroids are needed.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 121"
+      },
+      {
+        book: "gabbe",
+        text: "No increased risk of malformations has been found with commonly used antihistamines such as chlorphenamine.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 129"
+      },
+      {
+        book: "williams",
+        text: "For itch in pregnancy, oral first-generation antihistamines such as chlorphenamine 4 mg every 6 hours are suitable; loratadine or cetirizine cause less sedation.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 62 Dermatological Disorders, pdf p. 2632"
+      },
+      {
+        book: "harrison",
+        text: "Before each conventional amphotericin B infusion, an antihistamine such as chlorphenamine and paracetamol reduce the fever and chills of the infusion.",
+        ref: "Harrison 22nd ed. 2025, ch. 233 Leishmaniasis, p. 1784"
+      }
+    ],
+    sources: [
+      { name: "British National Formulary (BNF) and BNF for Children — chlorphenamine maleate" },
+      {
+        name: "Resuscitation Council UK. Emergency treatment of anaphylactic reactions, 2008 (age-banded chlorphenamine doses)"
+      },
+      { name: "Resuscitation Council UK. Emergency treatment of anaphylaxis, 2021" },
+      { name: "WHO Model Formulary 2008 — chlorphenamine" },
+      { name: "UK MHRA. Over-the-counter cough and cold medicines for children, 2009" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "cetirizine",
+    name: "Cetirizine",
+    aka: ["Zyrtec"],
+    cls: "Non-sedating (second-generation) H1 antihistamine",
+    cat: "respiratory",
+    wards: ["outpatient", "paediatric", "medical", "maternity"],
+    tags: [
+      "antihistamine",
+      "allergy",
+      "urticaria",
+      "hives",
+      "itch",
+      "allergic rhinitis",
+      "hay fever",
+      "allergic conjunctivitis"
+    ],
+    presentation: ["Tablets 10 mg (usually scored).", "Oral solution 1 mg/mL (5 mg/5 mL)."],
+    indications: [
+      "Urticaria (hives) and itch",
+      "Allergic rhinitis and allergic conjunctivitis: sneezing, itch, watery nose and eyes",
+      "Hives or itch remaining after anaphylaxis, once adrenaline has worked — it is oral and slow, never the emergency treatment"
+    ],
+    standard: {
+      summary: "Once daily, little sedation. For hives and hay fever. It does not treat anaphylaxis: adrenaline IM first.",
+      items: [
+        {
+          label: "Adult and child 6 years and over",
+          text: "10 mg once daily (Nelson gives 5–10 mg over 6 years). Williams uses 5 or 10 mg daily in pregnancy."
+        },
+        {
+          label: "Child under 6 years",
+          text: "6–23 months 2.5 mg once daily; 2–6 years 2.5–5 mg once daily (Nelson). Not under 6 months."
+        },
+        {
+          label: "After anaphylaxis",
+          text: "Once adrenaline has worked: 0.25 mg/kg orally, maximum 10 mg (Nelson)."
+        },
+        {
+          label: "Urticaria not controlled",
+          text: "Guidelines allow increasing a non-sedating antihistamine up to four times the usual daily dose (Harrison) — do this with specialist advice, and look for the trigger."
+        },
+        {
+          label: "Allergic rhinitis",
+          text: "Helps sneezing, itch and a runny nose, less so a blocked nose; a steroid nasal spray works best for persistent rhinitis (Harrison)."
+        },
+        {
+          label: "Kidney impairment",
+          text: "Halve the dose when creatinine clearance is below 50 mL/min (see Safety)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Hives or itch at a health post",
+        best_for: "Outpatient or health post, any age from 6 months, when the patient must stay alert by day.",
+        requires: ["oral"],
+        steps: [
+          "First rule out anaphylaxis: stridor, hoarse voice, tongue swelling, wheeze, faintness or collapse means adrenaline IM now (see Adrenaline), not a tablet.",
+          "Skin only: cetirizine 10 mg once daily for an adult or child over 6 years; younger children by age (2.5–5 mg).",
+          "Continue once daily while the hives last and for a few days after.",
+          "Look for the cause: a new drug (stop it and record the allergy), a food, an infection, an insect bite.",
+          "Hives on most days for more than 6 weeks, or with fever, joint pain or bruising: refer."
+        ],
+        monitor: ["Return at once if the lips, tongue or breathing are affected"],
+        cautions: ["A few people do get drowsy on 10 mg; advise care with driving until they know."]
+      },
+      {
+        title: "A child's dose without the syrup",
+        best_for: "Health post with only 10 mg tablets.",
+        requires: ["oral"],
+        steps: [
+          "5 mg: half of a scored 10 mg tablet.",
+          "2.5 mg: crush one 10 mg tablet, mix with 10 mL of clean water (1 mg per mL), shake and give 2.5 mL by oral syringe at once. Throw the rest away.",
+          "Under 6 months: do not give; seek advice."
+        ],
+        monitor: ["Drowsiness or irritability"],
+        cautions: ["Make a fresh mixture for every dose."]
+      }
+    ],
+    paediatric: [
+      "Nelson: 6–23 months 2.5 mg once daily; 2–6 years 2.5–5 mg once daily; over 6 years 5–10 mg once daily.",
+      "After anaphylaxis, once adrenaline has worked: 0.25 mg/kg orally, maximum 10 mg (Nelson).",
+      "Preferred to chlorphenamine in young children because it sedates less. Not under 6 months."
+    ],
+    cautions: [
+      "Not a treatment for anaphylaxis.",
+      "Low-sedating rather than non-sedating (Harrison): some patients are drowsy, more so with alcohol.",
+      "Reduce the dose in kidney impairment.",
+      "Rarely urinary retention; care in epilepsy."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "For urticaria, a long-acting non-sedating or low-sedating H1 antihistamine (loratadine, fexofenadine, cetirizine) is used first; the dose can be increased up to four times the usual daily dose. Older antihistamines sedate and impair psychomotor performance.",
+        ref: "Harrison 22nd ed. 2025, ch. 363 Urticaria, Angioedema, and Allergic Rhinitis, p. 2808"
+      },
+      {
+        book: "harrison",
+        text: "In allergic rhinitis, oral long-acting antihistamines help itching, sneezing and a watery nose and eye symptoms, reducing symptoms by about one third, but help nasal blockage less; a steroid nasal spray is the most effective treatment for persistent rhinitis.",
+        ref: "Harrison 22nd ed. 2025, ch. 363 Urticaria, Angioedema, and Allergic Rhinitis, p. 2810"
+      },
+      {
+        book: "nelson",
+        text: "Acute urticaria needs little more than an antihistamine and avoiding the trigger; loratadine, fexofenadine and cetirizine are preferred because they sedate less.",
+        ref: "Nelson 22nd ed. 2024, ch. 189 Urticaria (Hives) and Angioedema, p. 1431"
+      },
+      {
+        book: "nelson",
+        text: "Cetirizine for urticaria, once daily: 6–23 months 2.5 mg; 2–6 years 2.5–5 mg; over 6 years 5–10 mg.",
+        ref: "Nelson 22nd ed. 2024, ch. 189 Urticaria (Hives) and Angioedema, Table 189.8, p. 1431"
+      },
+      {
+        book: "nelson",
+        text: "In the anaphylaxis table, oral cetirizine 0.25 mg/kg (maximum 10 mg) follows adrenaline; it is not the emergency treatment.",
+        ref: "Nelson 22nd ed. 2024, ch. 190 Anaphylaxis, Table 190.5, p. 1438"
+      },
+      {
+        book: "williams",
+        text: "In pregnancy, loratadine 10 mg daily or cetirizine 5 or 10 mg daily cause less sedation than the older antihistamines.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 62 Dermatological Disorders, pdf p. 2632"
+      }
+    ],
+    sources: [
+      { name: "British National Formulary (BNF) — cetirizine hydrochloride" },
+      { name: "Cetirizine product information (dose in renal impairment)" },
+      {
+        name: "Resuscitation Council UK. Emergency treatment of anaphylaxis, 2021 (oral non-sedating antihistamine after stabilisation)"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "loratadine",
+    name: "Loratadine",
+    aka: ["Claritin", "Clarityne"],
+    cls: "Non-sedating (second-generation) H1 antihistamine",
+    cat: "respiratory",
+    wards: ["outpatient", "paediatric", "medical", "maternity"],
+    tags: [
+      "antihistamine",
+      "allergy",
+      "urticaria",
+      "hives",
+      "itch",
+      "allergic rhinitis",
+      "hay fever",
+      "pregnancy",
+      "breastfeeding"
+    ],
+    presentation: ["Tablets 10 mg.", "Syrup 5 mg/5 mL (1 mg/mL)."],
+    indications: [
+      "Urticaria (hives) and itch",
+      "Allergic rhinitis and allergic conjunctivitis",
+      "The non-sedating antihistamine with the most experience in pregnancy and breastfeeding"
+    ],
+    standard: {
+      summary: "Once daily, the least sedating of the common antihistamines. For hives and hay fever. It does not treat anaphylaxis: adrenaline IM first.",
+      items: [
+        {
+          label: "Adult and child 6 years and over",
+          text: "10 mg once daily (Nelson; Williams in pregnancy). BNF for Children uses weight instead: under 30 kg 5 mg, over 30 kg 10 mg."
+        },
+        {
+          label: "Child 2–5 years",
+          text: "5 mg once daily (Nelson). Not under 2 years — use cetirizine from 6 months."
+        },
+        {
+          label: "Urticaria not controlled",
+          text: "Guidelines allow increasing a non-sedating antihistamine up to four times the usual daily dose (Harrison) — with specialist advice."
+        },
+        { label: "Severe liver impairment", text: "10 mg every other day (product information)." }
+      ]
+    },
+    improvised: [
+      {
+        title: "Itch or hay fever in a pregnant or breastfeeding woman",
+        best_for: "Antenatal clinic, postnatal ward, health post.",
+        requires: ["oral"],
+        steps: [
+          "Rule out anaphylaxis first (airway, breathing, faintness): adrenaline IM, not a tablet.",
+          "Loratadine 10 mg once daily (Williams lists loratadine and cetirizine as the less sedating choices in pregnancy).",
+          "Itch in pregnancy without a rash, worse on the palms and soles, especially late in pregnancy: check for cholestasis of pregnancy (bile acids and liver tests if available) — an antihistamine does not treat it and the baby may need earlier delivery.",
+          "Breastfeeding: loratadine is preferred because very little reaches the milk and it does not make the baby sleepy."
+        ],
+        monitor: ["Symptoms; a baby who seems unusually sleepy (rare)"],
+        cautions: ["Avoid combination 'cold' products containing decongestants in the first trimester."]
+      },
+      {
+        title: "A child's dose without the syrup",
+        best_for: "Health post with only 10 mg tablets.",
+        requires: ["oral"],
+        steps: [
+          "2–5 years: 5 mg = half a scored 10 mg tablet, or crush one tablet in 10 mL of clean water (1 mg per mL) and give 5 mL at once; throw the rest away.",
+          "6 years and over: one 10 mg tablet once daily.",
+          "Under 2 years: do not give; use cetirizine from 6 months, or seek advice."
+        ],
+        monitor: ["Hives and itch settling"],
+        cautions: ["Make a fresh mixture for every dose."]
+      }
+    ],
+    paediatric: [
+      "Nelson: 2–5 years 5 mg once daily; 6 years and over 10 mg once daily (or 5 mg twice daily).",
+      "BNF for Children doses by weight: under 30 kg 5 mg, over 30 kg 10 mg, from 2 years.",
+      "Not under 2 years."
+    ],
+    cautions: [
+      "Not a treatment for anaphylaxis.",
+      "Severe liver impairment: give on alternate days.",
+      "Rarely drowsiness; headache.",
+      "May raise methadone levels a little (Kaplan): watch for extra sedation when it is started."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "For urticaria, long-acting non-sedating antihistamines such as loratadine are used first, and the dose can be increased up to four times daily under specialist advice.",
+        ref: "Harrison 22nd ed. 2025, ch. 363 Urticaria, Angioedema, and Allergic Rhinitis, p. 2808"
+      },
+      {
+        book: "harrison",
+        text: "The newer antihistamines cross into the brain less, so they cause less sedation and fewer anticholinergic effects; they work about equally well for rhinitis and sneezing.",
+        ref: "Harrison 22nd ed. 2025, ch. 363 Urticaria, Angioedema, and Allergic Rhinitis, p. 2810"
+      },
+      {
+        book: "nelson",
+        text: "Loratadine: 2–5 years 5 mg once daily; 6 years and over 10 mg once daily (or 5 mg twice daily).",
+        ref: "Nelson 22nd ed. 2024, ch. 184 Allergic Rhinitis, Table 184.3, p. 1383"
+      },
+      {
+        book: "nelson",
+        text: "Acute urticaria: loratadine, fexofenadine and cetirizine are preferred to sedating antihistamines.",
+        ref: "Nelson 22nd ed. 2024, ch. 189 Urticaria (Hives) and Angioedema, p. 1431"
+      },
+      {
+        book: "williams",
+        text: "In pregnancy, loratadine 10 mg daily is a less sedating choice for itch.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 62 Dermatological Disorders, pdf p. 2632"
+      },
+      {
+        book: "kaplan",
+        text: "Loratadine is among the drugs that can competitively slow methadone metabolism, giving higher methadone levels or a longer effect.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2172"
+      }
+    ],
+    sources: [
+      { name: "British National Formulary (BNF) and BNF for Children — loratadine" },
+      { name: "Loratadine product information (hepatic impairment)" },
+      { name: "LactMed (NIH): loratadine" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "famotidine",
+    name: "Famotidine",
+    aka: ["Pepcid", "H2 blocker", "H2-receptor antagonist"],
+    cls: "H2-receptor antagonist (H2 blocker)",
+    cat: "emergency",
+    wards: ["surgical", "maternity", "emergency", "medical", "icu", "outpatient", "paediatric"],
+    tags: [
+      "aspiration prophylaxis",
+      "caesarean",
+      "full stomach",
+      "acid suppression",
+      "peptic ulcer",
+      "GERD",
+      "reflux",
+      "heartburn in pregnancy",
+      "stress ulcer prophylaxis",
+      "urticaria",
+      "ranitidine alternative"
+    ],
+    presentation: [
+      "Tablets 20 mg and 40 mg.",
+      "Oral suspension 40 mg/5 mL (8 mg/mL) (Nelson).",
+      "Injection 10 mg/mL, 2 mL vial (20 mg), where available."
+    ],
+    indications: [
+      "Acid aspiration prophylaxis before caesarean section or emergency general anaesthesia — given early, with sodium citrate just before induction",
+      "Peptic ulcer and reflux when a PPI is not available or not tolerated",
+      "Heartburn in pregnancy not controlled by antacids (Gabbe)",
+      "Stress-ulcer prophylaxis in selected ICU patients (ventilated 48 hours or more, or coagulopathic) when there is no PPI",
+      "Urticaria or after anaphylaxis: an H2 add-on to an H1 antihistamine — after adrenaline, never instead"
+    ],
+    standard: {
+      summary: "The H2 blocker to use now that ranitidine has been withdrawn (2020). More potent than cimetidine and free of its liver-enzyme interactions (Harrison). Weaker than a PPI for a bleeding ulcer or erosive oesophagitis. It stops new acid being made but does nothing to acid already in the stomach — before an emergency anaesthetic give it early, and still give sodium citrate just before induction. Reduce the dose in kidney impairment.",
+      items: [
+        {
+          label: "Aspiration prophylaxis",
+          text: "Planned surgery: 20–40 mg orally the evening before and again on the morning of surgery. Emergency, including caesarean: 20 mg slowly IV as soon as the decision is made — it needs about 30–60 minutes to work — plus 30 mL of 0.3 M sodium citrate in the last few minutes before induction (see Sodium citrate). Gabbe adds an H2 blocker and metoclopramide for women with extra risk (morbid obesity, diabetes, recent food, difficult airway, opioids in labour). Confirm the regimen with the anaesthetist."
+        },
+        {
+          label: "Peptic ulcer",
+          text: "40 mg at night (Harrison), or 20 mg twice daily, for 4–8 weeks; test and treat H. pylori and stop NSAIDs. A PPI heals ulcers faster."
+        },
+        {
+          label: "Reflux and heartburn",
+          text: "20 mg twice daily (Gabbe, in pregnancy, after lifestyle measures and antacids). Up to 40 mg twice daily for oesophagitis (BNF), but severe or erosive disease needs a PPI (Harrison)."
+        },
+        {
+          label: "IV, when nothing can be given by mouth",
+          text: "20 mg every 12 hours, diluted to 5–10 mL with normal saline and injected over at least 2 minutes, or added to 100 mL and run over 15–30 minutes (product information). Change to oral as soon as possible."
+        },
+        {
+          label: "Urticaria or after anaphylaxis",
+          text: "20 mg twice daily orally or IV as an add-on to an H1 antihistamine when hives persist (Harrison notes some guidelines add famotidine). In anaphylaxis, adrenaline first."
+        },
+        {
+          label: "Kidney impairment",
+          text: "Creatinine clearance below 50 mL/min: half the dose, or the usual dose at double the interval (product information). Confusion, agitation, seizures and QT prolongation have occurred when the dose was not reduced."
+        },
+        {
+          label: "Child",
+          text: "Reflux: 0.5 mg/kg per dose orally, once daily under 3 months and twice daily from 3 months; over 40 kg 20 mg twice daily (maximum 40 mg per dose) (Nelson). Peptic ulcer: 1–2 mg/kg/day in two doses (Nelson)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Emergency caesarean or emergency anaesthetic: acid prophylaxis in the right order",
+        best_for: "District hospital theatre, full stomach, no time to fast.",
+        requires: ["iv"],
+        steps: [
+          "At the decision to operate: famotidine 20 mg slowly IV (over at least 2 minutes). If there is no IV famotidine, omeprazole 40 mg IV; if only tablets, famotidine 40 mg by mouth now (it takes longer, but every minute counts).",
+          "Add metoclopramide 10 mg slowly IV if she has eaten recently, is obese or diabetic, has had opioids, or has a difficult airway (Gabbe).",
+          "Send 30 mL of 0.3 M sodium citrate with her and give it to drink in the last few minutes before the spinal or induction (see Sodium citrate). Famotidine does not neutralise the acid already in the stomach; sodium citrate does.",
+          "Prefer a spinal. If general anaesthesia is unavoidable: rapid-sequence induction with cricoid pressure, and empty the stomach through a tube before waking her.",
+          "Bowel obstruction: pass a nasogastric tube and aspirate before induction — no drug protects a stomach full of fluid."
+        ],
+        monitor: [
+          "Time of each drug written on the anaesthetic chart",
+          "After surgery: cough, wheeze, fast breathing or low oxygen saturation (aspiration pneumonitis)"
+        ],
+        cautions: [
+          "Ranitidine was withdrawn worldwide in 2020: do not use old stock.",
+          "Do not delay a crash caesarean to wait for an H2 blocker to act."
+        ]
+      },
+      {
+        title: "A child's dose from 20 mg tablets when there is no suspension",
+        best_for: "Paediatric ward or clinic, infant or child with reflux or ulcer.",
+        requires: ["oral"],
+        steps: [
+          "Work out the dose: 0.5 mg/kg per dose for reflux (Nelson). Example: 8 kg child = 4 mg.",
+          "Crush one 20 mg tablet and mix with 10 mL of clean water: 2 mg in each mL. Shake well.",
+          "Give the dose by oral syringe at once (8 kg child: 2 mL). Throw the rest away and make a fresh mixture for each dose.",
+          "Under 3 months: once daily. From 3 months: twice daily."
+        ],
+        monitor: ["Vomiting, feeding and weight", "Irritability or unusual sleepiness"],
+        cautions: [
+          "H2 blockers lose effect with continued use (Nelson): review after 2–4 weeks; do not continue for months without a reason.",
+          "In a premature or sick newborn, acid suppression may increase infection risk — use only with a clear indication."
+        ]
+      },
+      {
+        title: "No creatinine result: protecting the kidneys and the brain",
+        best_for: "Elderly, dehydrated or oliguric patients where creatinine cannot be measured today.",
+        requires: [],
+        steps: [
+          "If creatinine is available, calculate creatinine clearance with the app's calculator; below 50 mL/min give half the dose or double the interval.",
+          "No result: in a patient who is old, small, dehydrated, passing little urine, or known to have kidney disease, start with the reduced dose (for example 20 mg once daily rather than twice).",
+          "Stop it and re-check if new confusion, agitation, hallucinations or seizures appear."
+        ],
+        monitor: ["Mental state daily", "Urine output"],
+        cautions: [
+          "In kidney failure, delirium on an H2 blocker is easily blamed on uraemia or infection — think of the drug."
+        ]
+      }
+    ],
+    paediatric: [
+      "Reflux (Nelson): 0.5 mg/kg per dose orally — once daily under 3 months, twice daily from 3 months; children over 40 kg 20 mg twice daily, maximum 40 mg per dose.",
+      "Peptic ulcer (Nelson): 1–2 mg/kg/day divided twice daily. Suspension 40 mg/5 mL; tablets 20 and 40 mg.",
+      "Urticaria, as an H2 add-on (Nelson): 3–12 months 1 mg/kg/day, 1–16 years 1–2 mg/kg/day, divided every 12 hours.",
+      "Tachyphylaxis: the effect fades with continuous use (Nelson). A PPI heals ulcers better."
+    ],
+    cautions: [
+      "Kidney impairment: reduce the dose; CNS effects (confusion, seizures) and QT prolongation have occurred when it was not reduced.",
+      "Acid suppression masks the symptoms of gastric cancer: in an older adult with weight loss, anaemia, vomiting or difficulty swallowing, investigate first.",
+      "Long-term acid suppression slightly increases gut and chest infections.",
+      "Unlike cimetidine, famotidine does not bind liver cytochrome P450 (Harrison), so it has few drug interactions. Like all acid suppressants, it can reduce absorption of drugs that need acid (ketoconazole, itraconazole, atazanavir)."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 0.5,
+      doseUnit: "mg",
+      conc: 8,
+      concUnit: "mg/mL",
+      maxDose: 20,
+      label: "Child reflux dose, oral suspension 40 mg/5 mL (0.5 mg/kg per dose, max 20 mg — Nelson)"
+    },
+    textbook: [
+      {
+        book: "harrison",
+        text: "Famotidine is a more potent H2 blocker than cimetidine. Equivalent night-time doses are cimetidine 800 mg and famotidine 40 mg. Cimetidine binds liver cytochrome P450; famotidine does not.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2524"
+      },
+      {
+        book: "harrison",
+        text: "Peptic ulcer treatment table: famotidine 40 mg at bedtime.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, Table 335-3, p. 2524"
+      },
+      {
+        book: "harrison",
+        text: "H2 blockers such as famotidine are useful in mild to moderate reflux; severe symptoms or erosive oesophagitis need a PPI.",
+        ref: "Harrison 22nd ed. 2025, ch. 48 Nausea, Vomiting, and Indigestion, p. 301"
+      },
+      {
+        book: "nelson",
+        text: "Reflux in children: famotidine 0.5 mg/kg per dose orally once daily under 3 months, twice daily from 3 months; over 40 kg 20 mg twice daily (maximum 40 mg per dose). H2 blockers lose effect with continued use (tachyphylaxis); ranitidine was withdrawn in 2020.",
+        ref: "Nelson 22nd ed. 2024, ch. 352 Major Symptoms and Signs of Digestive Tract Disorders, Table 352.8, p. 2229"
+      },
+      {
+        book: "nelson",
+        text: "Peptic ulcer in children: famotidine 1–2 mg/kg/day divided twice daily; syrup 40 mg/5 mL, tablets 20 and 40 mg. PPIs heal ulcers better.",
+        ref: "Nelson 22nd ed. 2024, ch. 381 Peptic Ulcer Disease in Children, Table 381.3, p. 2307"
+      },
+      {
+        book: "gabbe",
+        text: "At caesarean, a clear antacid is routine; an H2 blocker and metoclopramide may be added for women with extra risk: morbid obesity, diabetes, recent food, a difficult airway, or opioids given in labour.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 360"
+      },
+      {
+        book: "gabbe",
+        text: "Heartburn in pregnancy: after lifestyle measures and antacids, an H2 blocker such as famotidine 20 mg twice daily, then a PPI.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 6 Nutrition During Pregnancy, Fig. 6.4, p. 116"
+      },
+      {
+        book: "gabbe",
+        text: "Human data on famotidine in pregnancy are reassuring; animal data at very high doses raised concern for cimetidine and nizatidine.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 53 Gastrointestinal Diseases in Pregnancy, p. 1001"
+      },
+      {
+        book: "gabbe",
+        text: "H2 blockers are considered compatible with breastfeeding; famotidine is less concentrated in milk and may be preferred.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 136"
+      },
+      {
+        book: "schwartz",
+        text: "Stress gastritis prophylaxis (ventilated 48 hours or more, or coagulopathic): PPIs, H2 blockers and intragastric antacids are all effective, but patients without those risks should not get it after surgery.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 12 Quality, Patient Safety, Assessments of Care, and Complications, p. 422"
+      }
+    ],
+    sources: [
+      { name: "British National Formulary (BNF) — famotidine" },
+      { name: "Famotidine product information (IV administration; dose in renal impairment)" },
+      { name: "US FDA. Request to withdraw all ranitidine products (NDMA), April 2020" },
+      {
+        name: "American Society of Anesthesiologists Task Force on Obstetric Anesthesia. Practice guidelines, 2016"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "cimetidine",
+    name: "Cimetidine",
+    aka: ["Tagamet", "H2 blocker"],
+    cls: "H2-receptor antagonist (H2 blocker) — inhibits liver enzymes",
+    cat: "emergency",
+    wards: ["medical", "surgical", "maternity", "outpatient", "emergency"],
+    tags: [
+      "acid suppression",
+      "peptic ulcer",
+      "reflux",
+      "aspiration prophylaxis",
+      "drug interactions",
+      "enzyme inhibitor",
+      "CYP450",
+      "ranitidine alternative"
+    ],
+    presentation: [
+      "Tablets 200 mg, 400 mg and 800 mg.",
+      "Oral solution 200 mg/5 mL in some markets.",
+      "Injection 100 mg/mL (200 mg in 2 mL) where still available — withdrawn in many countries."
+    ],
+    indications: [
+      "Peptic ulcer and reflux, ONLY when famotidine and a PPI are not available",
+      "Acid aspiration prophylaxis before anaesthesia when it is the only H2 blocker stocked",
+      "H2 add-on for urticaria or after anaphylaxis (Nelson) — after adrenaline, never instead"
+    ],
+    standard: {
+      summary: "The least preferred H2 blocker. Cimetidine inhibits several liver cytochrome P450 enzymes and raises the levels of warfarin, phenytoin and theophylline/aminophylline (Harrison), and also carbamazepine, lidocaine, tricyclic antidepressants, diazepam and chlordiazepoxide, methadone, nifedipine and quinine (Kaplan, Harrison). It is antiandrogenic (gynaecomastia, impotence), raises prolactin, and can cause confusion in older people and in kidney failure. Use famotidine or omeprazole whenever you can; if cimetidine is all there is, check every other drug the patient takes before giving it.",
+      items: [
+        {
+          label: "Peptic ulcer",
+          text: "400 mg twice daily or 800 mg at night for 4–8 weeks (Harrison); test and treat H. pylori."
+        },
+        {
+          label: "Reflux oesophagitis",
+          text: "400 mg four times daily for 4–8 weeks (BNF). A PPI is better."
+        },
+        {
+          label: "Aspiration prophylaxis",
+          text: "400 mg orally 90–120 minutes before induction (BNF). In labour, where a regimen is used: 400 mg at the start, then up to 400 mg every 4 hours, maximum 2.4 g a day (BNF). Sodium citrate is still needed in the last minutes before induction. Confirm with the anaesthetist."
+        },
+        {
+          label: "IV (where available)",
+          text: "200 mg by slow IV injection over at least 5 minutes, every 4–6 hours; maximum 2.4 g a day (BNF). Rapid injection has caused bradycardia, arrhythmias and hypotension."
+        },
+        {
+          label: "After anaphylaxis (child)",
+          text: "4 mg/kg slowly IV, maximum 200 mg, as an H2 adjunct after adrenaline (Nelson)."
+        },
+        {
+          label: "Kidney impairment",
+          text: "Reduce the dose (see Safety): 200 mg four times daily at creatinine clearance 30–50 mL/min, three times daily at 15–30, twice daily below 15 (BNF)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Before giving cimetidine: the interaction check",
+        best_for: "Any ward where cimetidine is the only H2 blocker on the shelf.",
+        requires: [],
+        steps: [
+          "First ask: is famotidine or omeprazole available, even orally or by nasogastric tube? If yes, use it instead.",
+          "Read the drug chart. Warfarin: INR rises — check the INR within 3–5 days of starting, and again after stopping. Phenytoin: watch for unsteadiness, nystagmus, slurred speech or drowsiness. Aminophylline or theophylline: nausea, vomiting, fast heart rate and seizures — avoid the combination if you can. Carbamazepine: dizziness, double vision, unsteadiness.",
+          "Also: lidocaine infusion (toxicity), amitriptyline or imipramine, diazepam or chlordiazepoxide (more sedation), methadone (sedation, slow breathing), nifedipine (low blood pressure), quinine (toxicity: tinnitus, low glucose).",
+          "The effect starts within days of regular dosing and wears off within days of stopping: levels FALL when cimetidine is stopped, so a dose that was reduced must go back up.",
+          "Write on the chart: 'Cimetidine — enzyme inhibitor, check interactions'."
+        ],
+        monitor: [
+          "The specific signs above for each interacting drug",
+          "INR if on warfarin; drug levels where they can be measured"
+        ],
+        cautions: [
+          "Older patients, kidney failure and ICU patients are the ones who get confused on cimetidine (Harrison)."
+        ]
+      },
+      {
+        title: "Acid prophylaxis before an emergency anaesthetic when cimetidine is all there is",
+        best_for: "Theatre or labour ward without famotidine or a PPI.",
+        requires: ["oral"],
+        steps: [
+          "Give 400 mg orally as early as possible; ideally 90–120 minutes before induction (BNF).",
+          "If the injection is stocked and there is little time: 200 mg slowly IV over at least 5 minutes — never as a fast push.",
+          "Give 30 mL of 0.3 M sodium citrate in the last few minutes before the spinal or induction: cimetidine does not neutralise acid already in the stomach.",
+          "One or two preoperative doses matter far less for interactions than a regular course, but check for warfarin, phenytoin and aminophylline anyway."
+        ],
+        monitor: ["Heart rate and blood pressure during and after an IV dose"],
+        cautions: ["Do not delay a crash caesarean to wait for the H2 blocker."]
+      }
+    ],
+    paediatric: [
+      "Prefer famotidine or omeprazole in children: cimetidine is antiandrogenic, raises prolactin and interacts through enzyme inhibition (Nelson).",
+      "If it is the only option (Nelson, urticaria table): infants 10–20 mg/kg/day, children 20–40 mg/kg/day, divided every 6–12 hours; do not exceed the adult dose.",
+      "After anaphylaxis: 4 mg/kg slowly IV, maximum 200 mg, after adrenaline (Nelson)."
+    ],
+    cautions: [
+      "Enzyme inhibition: raises warfarin, phenytoin, theophylline/aminophylline, carbamazepine, lidocaine, tricyclics, diazepam, chlordiazepoxide, methadone, nifedipine and quinine levels (Harrison, Kaplan). Check the interaction checker before every new course.",
+      "Antiandrogenic: gynaecomastia and impotence with high doses for months; raises prolactin (Harrison, Nelson).",
+      "Confusion and delirium, especially in older people, kidney failure and ICU (Harrison).",
+      "Raises serum creatinine by blocking its secretion, without a real fall in kidney function (Harrison) — do not mistake this for acute kidney injury.",
+      "Rapid IV injection: bradycardia, arrhythmia, hypotension.",
+      "Rare: pancytopenia, neutropenia, thrombocytopenia; hepatitis."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Because cimetidine inhibits cytochrome P450, drugs such as warfarin, phenytoin and theophylline need careful monitoring during long-term use. It can also cause reversible gynaecomastia and impotence at high doses for months, and rarely confusion.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2524"
+      },
+      {
+        book: "harrison",
+        text: "Drug interaction table: cimetidine inhibits many CYP enzymes and raises the effect of warfarin, theophylline and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489"
+      },
+      {
+        book: "harrison",
+        text: "Peptic ulcer treatment table: cimetidine 400 mg twice daily (or 800 mg at night).",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, Table 335-3, p. 2524"
+      },
+      {
+        book: "harrison",
+        text: "Cimetidine competes for kidney tubular secretion and raises serum creatinine without any real fall in GFR.",
+        ref: "Harrison 22nd ed. 2025, ch. 320 Cell Biology and Physiology of the Kidney, p. 2369"
+      },
+      {
+        book: "nelson",
+        text: "Cimetidine is antiandrogenic, can raise prolactin and causes drug interactions through enzyme inhibition (from the reflux treatment table).",
+        ref: "Nelson 22nd ed. 2024, ch. 352 Major Symptoms and Signs of Digestive Tract Disorders, Table 352.8, p. 2229"
+      },
+      {
+        book: "nelson",
+        text: "Cimetidine as an H2 antihistamine for urticaria: infants 10–20 mg/kg/day, children 20–40 mg/kg/day, divided every 6–12 hours.",
+        ref: "Nelson 22nd ed. 2024, ch. 189 Urticaria (Hives) and Angioedema, Table 189.8, p. 1431"
+      },
+      {
+        book: "nelson",
+        text: "Anaphylaxis table: IV cimetidine 4 mg/kg (maximum 200 mg), given slowly, is an H2 adjunct after adrenaline; side effects headache and confusion.",
+        ref: "Nelson 22nd ed. 2024, ch. 190 Anaphylaxis, Table 190.5, p. 1438"
+      },
+      {
+        book: "gabbe",
+        text: "Human data for H2 blockers in pregnancy are reassuring, but animal data at very high doses raised concern for cimetidine.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 53 Gastrointestinal Diseases in Pregnancy, p. 1001"
+      },
+      {
+        book: "gabbe",
+        text: "H2 blockers, cimetidine included, are considered compatible with breastfeeding, though famotidine is less concentrated in milk.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 136"
+      }
+    ],
+    sources: [
+      {
+        name: "British National Formulary (BNF) — cimetidine (doses, renal impairment, IV administration)"
+      },
+      { name: "US FDA. Request to withdraw all ranitidine products (NDMA), April 2020" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "sodium-citrate",
+    name: "Sodium citrate 0.3 M",
+    aka: [
+      "Sodium citrate oral solution",
+      "Bicitra (sodium citrate with citric acid)",
+      "Shohl's solution",
+      "Clear antacid",
+      "Non-particulate antacid"
+    ],
+    cls: "Non-particulate (clear) oral antacid",
+    cat: "obstetric",
+    wards: ["maternity", "surgical", "emergency"],
+    tags: [
+      "aspiration prophylaxis",
+      "caesarean",
+      "emergency anaesthesia",
+      "full stomach",
+      "rapid sequence induction",
+      "antacid",
+      "Mendelson syndrome",
+      "obstetric anaesthesia"
+    ],
+    presentation: [
+      "Oral solution 0.3 M (0.3 mol/L), 30 mL single dose; contains about 27 mmol of sodium. Often made by the hospital pharmacy.",
+      "Bicitra / Shohl's solution (sodium citrate 500 mg with citric acid 334 mg per 5 mL) is the product Williams uses: same 30 mL dose.",
+      "ORAL USE ONLY. Not the citrate anticoagulant in blood bags and blood tubes."
+    ],
+    indications: [
+      "Caesarean section — before a spinal as well as before general anaesthesia (Williams, Gabbe)",
+      "Any emergency general anaesthetic with a full stomach: pregnancy from the second trimester, bowel obstruction, trauma, recent food",
+      "Other obstetric procedures under anaesthesia (manual removal of placenta, repair of a major tear, evacuation) — confirm with the anaesthetist"
+    ],
+    standard: {
+      summary: "30 mL of 0.3 M sodium citrate by mouth in the LAST FEW MINUTES before the spinal or induction. It neutralises acid already in the stomach at once, but only briefly — if more than 1 hour passes before induction, give a second 30 mL (Williams). It does not empty the stomach and does not protect against aspirated food, so a spinal where possible, rapid-sequence induction for general anaesthesia, and an H2 blocker or PPI given earlier are still needed. Williams: antacid just before induction has probably saved more lives in obstetric general anaesthesia than any other single practice.",
+      items: [
+        {
+          label: "Dose",
+          text: "30 mL of 0.3 M sodium citrate orally, swallowed in one go — adults, including pregnant women and adolescents."
+        },
+        {
+          label: "Timing — this is what matters",
+          text: "Williams gives it a few minutes before induction of general anaesthesia or a major neuraxial block. Gabbe gives it as soon as the caesarean is decided. In practice: give it on the theatre table or as she leaves for theatre, not on the ward an hour before. If more than 1 hour passes after the dose and she has not been anaesthetised, give a second 30 mL (Williams)."
+        },
+        {
+          label: "Before a spinal too",
+          text: "Give it before a spinal as well: a spinal can fail or need converting to general anaesthesia, and Williams gives it before either."
+        },
+        {
+          label: "What goes with it",
+          text: "An H2 blocker (famotidine) or omeprazole given early, because they take 30–60 minutes; metoclopramide for extra risk — obesity, diabetes, recent food, difficult airway, opioids in labour (Gabbe). Then left uterine tilt, and rapid-sequence induction with cricoid pressure if general anaesthesia is needed (Williams)."
+        },
+        {
+          label: "Children",
+          text: "No routine paediatric dose in the textbooks. In a child with a full stomach the anaesthetist decides; rapid-sequence induction and gastric emptying are the main protection."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Emergency caesarean: getting the timing right",
+        best_for: "Any labour ward or theatre, especially where theatre is shared and delays are common.",
+        requires: ["oral"],
+        steps: [
+          "At the decision for caesarean: give the drugs that need time first — famotidine 20 mg IV (or omeprazole 40 mg IV), and metoclopramide 10 mg IV if she has risk factors.",
+          "Pour 30 mL of sodium citrate into a labelled cup or syringe with her name, and send it to theatre WITH her.",
+          "Give it to drink on the theatre table or in the anteroom, a few minutes before the spinal or induction. Write the time on the anaesthetic chart.",
+          "If more than 1 hour passes and she has not been anaesthetised (theatre busy, waiting for blood), give another 30 mL (Williams).",
+          "Then left uterine tilt; spinal if at all possible; if general anaesthesia, rapid-sequence induction with cricoid pressure, and empty the stomach with a tube before extubation (Williams).",
+          "If she is too drowsy to swallow safely, do not force it: her airway is already at risk — tell the anaesthetist."
+        ],
+        monitor: ["Time given, on the anaesthetic chart", "Nausea or vomiting after the drink"],
+        cautions: [
+          "It adds 30 mL to the stomach and does nothing about food already eaten (Gabbe).",
+          "Never give a chalky (particulate) antacid instead — magnesium trisilicate, aluminium hydroxide or calcium carbonate: aspirated particles injure the lung (Gabbe)."
+        ]
+      },
+      {
+        title: "Ready-made sodium citrate out of stock: pharmacy-made 0.3 M solution",
+        best_for: "Hospital with a pharmacist who can weigh and label, and no commercial product.",
+        requires: ["oral"],
+        steps: [
+          "This is a pharmacy preparation, not a ward one. The pharmacist weighs the salt, checks it and labels the bottle.",
+          "0.3 M sodium citrate = trisodium citrate DIHYDRATE 8.82 g dissolved in purified (or freshly boiled and cooled) water and made up to 100 mL. One 30 mL dose contains about 2.65 g. If only ANHYDROUS trisodium citrate is available, use 7.74 g per 100 mL. Read the container: the two forms are not interchangeable gram for gram.",
+          "Use only pharmaceutical-grade trisodium citrate. Never use citric acid (an acid, not an antacid), and never the anticoagulant citrate solution from blood bags or blood-collection tubes.",
+          "Label: 'Sodium citrate 0.3 M — 30 mL by mouth immediately before anaesthesia — ORAL USE ONLY'. Make small batches and use them within the expiry the pharmacist assigns."
+        ],
+        monitor: ["The solution is clear and colourless with no crystals before each use"],
+        cautions: [
+          "If the salt or strength cannot be confirmed, do not improvise: give the H2 blocker or PPI early and rely on the anaesthetic technique."
+        ]
+      },
+      {
+        title: "No clear antacid at all",
+        best_for: "Emergency caesarean or laparotomy with a full stomach and no sodium citrate in the hospital.",
+        requires: [],
+        steps: [
+          "Do not delay the operation for lack of sodium citrate.",
+          "Give famotidine 20 mg IV or omeprazole 40 mg IV at the decision; they need 30–60 minutes and protect less, but they help.",
+          "Metoclopramide 10 mg slowly IV to speed stomach emptying for women at extra risk (Gabbe).",
+          "Choose a spinal whenever it is safe. If general anaesthesia: rapid-sequence induction with cricoid pressure; in bowel obstruction pass a nasogastric tube and aspirate before induction; empty the stomach before extubation and extubate her awake.",
+          "Do NOT substitute a chalky antacid suspension or crushed antacid tablets (Gabbe)."
+        ],
+        monitor: [
+          "Breathing rate, chest and oxygen saturation after surgery: aspiration pneumonitis shows as cough, wheeze, fast breathing and low oxygen within hours"
+        ],
+        cautions: ["A long fast does not mean an empty stomach in labour or after opioids."]
+      }
+    ],
+    paediatric: [
+      "No routine paediatric dose in the textbooks; the anaesthetist decides. Rapid-sequence induction and emptying the stomach with a tube are the main protection in a child with a full stomach.",
+      "Pregnant adolescents: adult dose, 30 mL."
+    ],
+    cautions: [
+      "Acts at once but only briefly: if more than 1 hour passes before induction, give a second dose (Williams).",
+      "Does not reduce the stomach volume or the risk from aspirated solid food (Gabbe).",
+      "About 27 mmol of sodium per 30 mL: irrelevant as a single dose even in pre-eclampsia or heart failure; repeated doses add up.",
+      "Oral use only. Do not confuse with sodium bicarbonate or with citrate anticoagulant.",
+      "Salty, unpleasant taste; may cause nausea."
+    ],
+    textbook: [
+      {
+        book: "williams",
+        text: "Antacid given shortly before induction has probably lowered deaths from obstetric general anaesthesia more than any other single practice. Williams gives 30 mL of Bicitra (sodium citrate with citric acid) a few minutes before induction of either general anaesthesia or a major neuraxial block.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1094"
+      },
+      {
+        book: "williams",
+        text: "If more than 1 hour passes after the first dose and anaesthesia has not been induced, a second dose is given.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1094"
+      },
+      {
+        book: "williams",
+        text: "Before caesarean, an antacid such as Bicitra 30 mL orally as a single dose is given shortly before the spinal or general anaesthetic, to reduce lung injury if acid is aspirated.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 30 Cesarean Delivery and Peripartum Hysterectomy, pdf p. 1254"
+      },
+      {
+        book: "williams",
+        text: "Acid aspiration was once the commonest cause of anaesthetic death in obstetrics; antacids are given routinely and intubation uses cricoid pressure.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1096"
+      },
+      {
+        book: "gabbe",
+        text: "As soon as caesarean is decided, whether under neuraxial or general anaesthesia, 30 mL of a clear non-particulate antacid such as 0.3 M sodium citrate is given. Chalky particulate antacids are avoided because they damage the lungs if aspirated.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 360"
+      },
+      {
+        book: "gabbe",
+        text: "Acid aspirate below pH 2.5 causes haemorrhage, exudate and severe hypoxaemia. Clear antacids or H2 blockers neutralise acid safely but cannot reduce the risk from aspirated solid food, which damages the lung even at pH 5.9.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 360"
+      },
+      {
+        book: "gabbe",
+        text: "A clear antacid is routine for every woman before surgery.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 360"
+      },
+      {
+        book: "gabbe",
+        text: "In obese women, a non-particulate antacid before anaesthesia and induction reduces the risk of aspiration.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 46 Obesity in Pregnancy, p. 895"
+      }
+    ],
+    sources: [
+      {
+        name: "American Society of Anesthesiologists Task Force on Obstetric Anesthesia. Practice guidelines for obstetric anesthesia, 2016 (timely non-particulate antacid)"
+      },
+      {
+        name: "Pharmacy formula: 0.3 M = 88.2 g/L trisodium citrate dihydrate (molar mass 294.1 g/mol) or 77.4 g/L anhydrous (258.1 g/mol) — confirm with the hospital pharmacist"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- anaesthesia and airway ---- */
+  {
+    id: "atracurium",
+    name: "Atracurium",
+    aka: ["Atracurium besilate", "Atracurium besylate", "Tracrium"],
+    cls: "Non-depolarising neuromuscular blocker (intermediate-acting muscle relaxant, benzylisoquinoline)",
+    cat: "analgesia",
+    wards: ["surgical", "maternity", "icu", "emergency", "paediatric"],
+    tags: [
+      "anaesthesia",
+      "muscle relaxant",
+      "intubation",
+      "paralysis",
+      "kidney failure",
+      "liver failure",
+      "Hofmann elimination",
+      "histamine",
+      "neostigmine"
+    ],
+    presentation: [
+      "10 mg/mL solution: 2.5 mL (25 mg), 5 mL (50 mg) and 25 mL (250 mg) ampoules or vials. Ready to use — no reconstitution.",
+      "Store in a FRIDGE at 2–8 °C; do not freeze; protect from light. It breaks itself down chemically (the same Hofmann reaction that clears it from the body), faster when warm. Labels commonly allow up to 14 days out of the fridge at room temperature (not above 25 °C) — read your label, write the date it left the fridge on the box, and discard it after that even if it goes back into the fridge.",
+      "Acidic solution: inactivated by alkaline drugs such as thiopental. Never mix in a syringe or run through the same line without flushing."
+    ],
+    indications: [
+      "Muscle relaxation for surgery under general anaesthesia with a tube and controlled ventilation",
+      "The relaxant of choice in kidney failure or liver failure, because its breakdown does not depend on either organ",
+      "Intubation when suxamethonium is contraindicated, if no rocuronium — slower onset (see the theatre packs)"
+    ],
+    standard: {
+      summary: "Atracurium paralyses for about 20–35 minutes after an intubating dose and is broken down in the blood by Hofmann elimination (Schwartz), not by the kidney or liver — so it is the relaxant to choose in kidney or liver failure. It releases histamine: give it slowly. It gives NO sedation and NO pain relief. A paralysed patient who is not deeply anaesthetised is awake, in pain and unable to move or tell you. Whenever the block is present, assume the patient is awake but unable to move unless you are giving enough anaesthetic to be sure they are not. Never paralyse a patient you cannot intubate and ventilate.",
+      items: [
+        {
+          label: "Intubating dose (adult and child over 1 month)",
+          text: "0.3–0.6 mg/kg IV; 0.5 mg/kg is usual (BNF). 70 kg: 35 mg = 3.5 mL of 10 mg/mL. Give over about 60 seconds, not as a fast push. Intubate when the jaw is slack — about 2–3 minutes. The theatre packs give 0.6 mg/kg when suxamethonium cannot be used; at that dose histamine release is more likely."
+        },
+        {
+          label: "Top-ups",
+          text: "0.1–0.2 mg/kg (adult about 5–10 mg) when relaxation returns — the abdomen tightens or the patient breathes against the bag; usually every 15–25 minutes (BNF). No top-up in the last 15–20 minutes of the operation so that reversal will work."
+        },
+        {
+          label: "Kidney or liver failure",
+          text: "Same dose. Its elimination is unchanged by organ failure (Schwartz, for its isomer cisatracurium; BNF for atracurium). Hypothermia and acidosis slow its breakdown — keep the patient warm."
+        },
+        {
+          label: "Reversal",
+          text: "Neostigmine 0.05 mg/kg (maximum 5 mg) with atropine 0.02 mg/kg, once the block has started to wear off (see Neostigmine). Sugammadex does NOT reverse atracurium."
+        },
+        {
+          label: "Histamine release",
+          text: "Flushing of the face and chest, a fall in BP, a fast pulse, and occasionally wheeze. Usually mild and brief if the dose is given slowly; worse with large or fast doses. True anaphylaxis is rarer — see the cards below."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "The hard rule: airway kit, reversal, a person to ventilate, and anaesthesia for as long as the block lasts",
+        best_for: "Every decision to give atracurium in a district theatre — the same rule as Vecuronium and the theatre packs.",
+        requires: ["iv", "oxygen"],
+        steps: [
+          "Before you draw it up, all of these must be true:",
+          "1. A working laryngoscope, tubes, suction and a bag-valve-mask with oxygen — and someone who can intubate. Never paralyse a patient you cannot intubate and ventilate.",
+          "2. Neostigmine AND atropine are in the room.",
+          "3. A ventilator, or a named person at the bag with a named relief, for as long as the block lasts.",
+          "4. Anaesthesia continues for as long as the paralysis does. Paralysis does not stop awareness, so sedation and amnesia are mandatory (Harrison). Assume the patient is awake but unable to move whenever the anaesthetic is light — keep ketamine or the volatile agent going.",
+          "5. Each dose and its time written on the anaesthetic chart.",
+          "If any is missing: do not give it. Intubate with suxamethonium and keep the patient breathing under ketamine with local infiltration, or use a spinal for lower abdominal surgery in a resuscitated patient (theatre packs)."
+        ],
+        monitor: [
+          "Chest movement, SpO2 and pulse continuously",
+          "Signs of awareness: tachycardia, rising BP, sweating, tears — deepen the anaesthetic"
+        ],
+        cautions: [
+          "A relaxant given before a failed intubation leaves a patient who can neither breathe nor be woken for half an hour. There is no safe workaround for missing airway kit."
+        ]
+      },
+      {
+        title: "Kidney failure, liver failure or jaundice: why atracurium, and how to use it",
+        best_for: "Emergency surgery in a patient with a high creatinine, no urine, cirrhosis or obstructive jaundice — the patients in whom vecuronium and pancuronium last for hours.",
+        requires: ["iv", "oxygen"],
+        steps: [
+          "Choose atracurium if you have it: the blood breaks it down by itself (Hofmann elimination), so a dose lasts about as long as in a healthy patient (Schwartz).",
+          "Do not use pancuronium in kidney failure. Vecuronium and rocuronium last longer in liver failure and somewhat longer in kidney failure — if one of them is all you have, give the intubating dose once and smaller, less frequent top-ups.",
+          "Suxamethonium in kidney failure only if a recent potassium is normal (see Suxamethonium).",
+          "Warm the patient: cold slows Hofmann breakdown, and these patients are often cold after a long operation.",
+          "Reverse with neostigmine and atropine once the block is wearing off; test recovery clinically before extubation (head lift for 5 seconds, strong grip, good cough)."
+        ],
+        monitor: ["Recovery tests before extubation", "Breathing and SpO2 for at least 30 minutes in recovery"],
+        cautions: [
+          "Uraemic and jaundiced patients are often also acidotic, anaemic and septic: the relaxant is only one of their risks. Get senior help early."
+        ]
+      },
+      {
+        title: "Give it slowly — and what to do about flushing, low BP or wheeze",
+        best_for: "Every dose, and above all in asthma, in a patient already hypotensive, or when a large (0.6 mg/kg) dose is used.",
+        requires: ["iv"],
+        steps: [
+          "Give the dose over about 60 seconds through a fast-running drip, not as a bolus push.",
+          "Flushing of the face and chest alone: expected; watch the BP.",
+          "BP falls: fluid bolus, and ephedrine or a vasopressor as for any fall in BP after induction.",
+          "Wheeze or high airway pressure: deepen the anaesthetic and give salbutamol through the circuit or bag.",
+          "Severe hypotension with bronchospasm, widespread rash or swelling: treat as anaphylaxis — adrenaline IM or IV as on the Adrenaline page — and stop giving the drug.",
+          "In a patient with severe asthma, vecuronium or rocuronium release less histamine — use one if you have it."
+        ],
+        monitor: [
+          "BP every 2 minutes for 10 minutes after the dose",
+          "Airway pressure or ease of bagging; wheeze"
+        ],
+        cautions: ["An antihistamine is never a substitute for adrenaline in anaphylaxis."]
+      },
+      {
+        title: "No reliable fridge: keeping atracurium usable",
+        best_for: "Theatres where power cuts and warm stores are usual.",
+        requires: [],
+        steps: [
+          "Keep stock in the pharmacy or ward fridge; bring to theatre only what the list needs.",
+          "When a box leaves the fridge, write the date on it. Discard it after the period on the label (commonly 14 days at no more than 25 °C), even if it goes back into the fridge.",
+          "An ampoule of unknown history, or one kept on a hot trolley for weeks, may be weak. Do not rely on it to secure an airway: use suxamethonium (or fresh rocuronium or vecuronium) for intubation.",
+          "Vecuronium powder needs no fridge — if your cold chain is unreliable, ask the pharmacy to stock it as the main maintenance relaxant."
+        ],
+        monitor: ["Fridge temperature log (2–8 °C)"],
+        cautions: [
+          "Do not keep adding doses of a relaxant that 'is not working': it may be weak, or the patient may be lightly anaesthetised and moving. Check the anaesthetic first."
+        ]
+      }
+    ],
+    paediatric: [
+      "Child over 1 month: same dose as adults, 0.3–0.6 mg/kg, top-ups 0.1–0.2 mg/kg (BNF for Children). Neonates: 0.3–0.5 mg/kg, experienced anaesthetist only.",
+      "Reverse with neostigmine 0.05 mg/kg (maximum 2.5 mg) and atropine 0.02 mg/kg (minimum 0.1 mg).",
+      "Nelson recommends cisatracurium (atracurium's purified isomer) in hepatic or renal disease for the same reason atracurium is chosen."
+    ],
+    cautions: [
+      "It gives NO sedation and NO pain relief. A paralysed patient who is not deeply anaesthetised is awake, in pain and unable to move or tell you. Whenever the block is present, assume the patient is awake but unable to move unless you are giving enough anaesthetic to be sure they are not.",
+      "Never paralyse a patient you cannot intubate and ventilate.",
+      "Histamine release: flushing, hypotension, bronchospasm — give slowly; prefer another relaxant in severe asthma.",
+      "Myasthenia gravis: extremely sensitive (Harrison) — tiny doses, specialist anaesthetist only.",
+      "Magnesium sulfate and aminoglycosides (gentamicin) deepen and prolong the block — see interactions.",
+      "Hypothermia and acidosis prolong it; a hot patient breaks it down faster.",
+      "Do not mix with thiopental or other alkaline solutions."
+    ],
+    antidote: "Neostigmine 0.05 mg/kg IV (maximum 5 mg; child maximum 2.5 mg) WITH atropine 0.02 mg/kg, once the block has begun to wear off. Sugammadex does not reverse atracurium. Until recovery: anaesthesia and ventilation.",
+    calc: {
+      type: "weight",
+      dosePerKg: 0.5,
+      doseUnit: "mg",
+      conc: 10,
+      concUnit: "mg/mL",
+      label: "Intubating dose (0.5 mg/kg; range 0.3–0.6) at 10 mg/mL — give over about 60 seconds"
+    },
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Atracurium and cisatracurium (benzylisoquinolines) are broken down in the plasma by Hofmann elimination; vecuronium and rocuronium are steroid relaxants metabolised by the liver and also cleared by the kidney.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "schwartz",
+        text: "In severe renal insufficiency doses of relaxants are reduced and intervals lengthened; cisatracurium (the purified isomer of atracurium, also broken down by Hofmann elimination) is often chosen because its elimination is unchanged by renal failure.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2036"
+      },
+      {
+        book: "schwartz",
+        text: "Non-depolarising relaxants block the receptor without fasciculation; failure to reverse the block adequately raises the risk of postoperative respiratory failure and death.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "harrison",
+        text: "A paralysing drug removes movement without changing consciousness, so sedative-induced amnesia is mandatory whenever one is given.",
+        ref: "Harrison 22nd ed. 2025, ch. 311 Approach to the Patient with Critical Illness, p. 2295"
+      },
+      {
+        book: "harrison",
+        text: "Non-depolarising relaxants (pancuronium, vecuronium, atracurium) are among the drugs that worsen weakness in myasthenia gravis.",
+        ref: "Harrison 22nd ed. 2025, ch. 459 Myasthenia Gravis and Other Diseases of the Neuromuscular Junction, p. 3633"
+      }
+    ],
+    sources: [
+      { name: "BNF and BNF for Children — atracurium besilate" },
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "Manufacturer storage instructions for atracurium (room-temperature allowance)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "rocuronium",
+    name: "Rocuronium",
+    aka: ["Rocuronium bromide", "Esmeron", "Zemuron", "Roc"],
+    cls: "Non-depolarising neuromuscular blocker (intermediate-acting muscle relaxant, aminosteroid)",
+    cat: "analgesia",
+    wards: ["emergency", "surgical", "maternity", "icu", "paediatric"],
+    tags: [
+      "anaesthesia",
+      "rapid sequence induction",
+      "intubation",
+      "muscle relaxant",
+      "full stomach",
+      "caesarean",
+      "suxamethonium contraindicated",
+      "hyperkalaemia",
+      "burns",
+      "neostigmine"
+    ],
+    presentation: [
+      "10 mg/mL solution: 5 mL (50 mg) and 10 mL (100 mg) vials. Ready to use.",
+      "Store in a FRIDGE at 2–8 °C. Labels differ on the time allowed out of the fridge (some 60 days at room temperature, some up to 12 weeks at no more than 30 °C) — read your label, write the date it left the fridge on the box and discard it after that.",
+      "Vecuronium powder, unlike rocuronium, needs no fridge."
+    ],
+    indications: [
+      "Rapid-sequence intubation when suxamethonium is contraindicated or unavailable (Williams, Gabbe): burns, crush injury, denervation, prolonged immobility, neuromuscular disease, high potassium, malignant hyperthermia risk — the list on the Suxamethonium page",
+      "Intubation and relaxation for surgery under general anaesthesia with controlled ventilation",
+      "The relaxant most often used for intubation in children (Nelson)"
+    ],
+    standard: {
+      summary: "Rocuronium is the alternative to suxamethonium for rapid-sequence induction when suxamethonium must not be given. But its specific reversal agent, sugammadex, is almost never available in district hospitals. So a rocuronium rapid-sequence induction COMMITS you to the airway for 30–60 minutes or longer: if you cannot intubate, the patient will not start breathing again in 5–8 minutes as after suxamethonium, and you must keep them oxygenated by mask or supraglottic airway until it wears off. Neostigmine reverses it only once it has started to wear off. It gives NO sedation and NO pain relief. A paralysed patient who is not deeply anaesthetised is awake, in pain and unable to move or tell you. Whenever the block is present, assume the patient is awake but unable to move unless you are giving enough anaesthetic to be sure they are not.",
+      items: [
+        {
+          label: "Rapid-sequence intubation",
+          text: "0.9–1.2 mg/kg IV as a fast push straight after the induction drug (Schwartz 1.2 mg/kg; Harrison 1 mg/kg; the theatre packs 0.9–1.2 mg/kg). 70 kg at 1 mg/kg: 70 mg = 7 mL of 10 mg/mL. Intubating conditions in about 60–90 seconds. Expect the block to last an hour or more at 1.2 mg/kg."
+        },
+        {
+          label: "Routine intubation",
+          text: "0.6 mg/kg IV (Schwartz); onset 1–1.5 minutes (Nelson); lasts roughly 30–40 minutes (Nelson's range 15–60 min)."
+        },
+        {
+          label: "Top-ups",
+          text: "0.15 mg/kg (adult about 10 mg) when relaxation returns (BNF). No top-up in the last 20–30 minutes of the operation, so that reversal will work."
+        },
+        {
+          label: "Reversal",
+          text: "Neostigmine 0.05 mg/kg (maximum 5 mg) WITH atropine 0.02 mg/kg — but only once the block has started to wear off: breathing efforts, swallowing, movement. Neostigmine does not reverse a deep rocuronium block, and Nelson warns an emergency intubating dose may not wear off on its own for 20 minutes or longer. Sugammadex reverses rocuronium at any depth where it exists (Schwartz)."
+        },
+        {
+          label: "Liver, kidney, age",
+          text: "Metabolised by the liver and excreted in bile (Nelson): liver disease and biliary obstruction prolong it; kidney failure and old age prolong it somewhat. Smaller, less frequent top-ups."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Rocuronium rapid-sequence induction with no sugammadex: you are committed to the airway",
+        best_for: "Emergency laparotomy, caesarean under general anaesthesia or trauma in a patient who must not have suxamethonium (burns after 24–48 h, crush injury, spinal cord injury, long immobility, muscle disease, high potassium).",
+        requires: ["iv", "oxygen"],
+        steps: [
+          "First ask: does this patient really need a general anaesthetic with a relaxant? A spinal for a lower abdominal or caesarean operation in a resuscitated patient, or ketamine with spontaneous breathing and local infiltration, avoids the problem (theatre packs).",
+          "If you go ahead, check everything on the Suxamethonium rapid-sequence card: laryngoscope with two blades, two tube sizes and a stylet, suction ON at the head, oral airways, bag-valve-mask on oxygen, an assistant. ALSO have out on the trolley: a supraglottic airway (laryngeal mask) if your theatre has one, and the front-of-neck (cricothyroidotomy) kit and the person trained to use it. Never paralyse a patient you cannot intubate and ventilate.",
+          "Say aloud to the team before induction: 'If I cannot intubate, this will NOT wear off for up to an hour. Plan B is bag-mask with two people and an oral airway; Plan C is the laryngeal mask; Plan D is front-of-neck access.'",
+          "Pre-oxygenate 3–5 minutes. Induction drug first — ketamine if shocked, a reduced dose of propofol or thiopental otherwise — then immediately rocuronium 0.9–1.2 mg/kg as a fast push. Never give it to an awake patient.",
+          "Intubate after about 60–90 seconds, when the jaw is slack. Confirm the tube: misting, both sides of the chest rising, breath sounds in both axillae, nothing over the stomach; capnography if you have it.",
+          "IF INTUBATION FAILS: stop after a second attempt. Keep cricoid pressure (release it if it prevents ventilation), oral airway, two-person bag-mask with oxygen. If that fails, laryngeal mask. If you can oxygenate, keep the patient ASLEEP and keep oxygenating until the block wears off (an hour or more) — then wake them. If you can neither intubate nor oxygenate and the saturation is falling: front-of-neck access now.",
+          "Keep the anaesthetic going the whole time: a paralysed patient whose anaesthetic is allowed to lighten 'so they can wake up' is awake and unable to move."
+        ],
+        monitor: [
+          "SpO2 and lip colour continuously; pulse every minute from induction to intubation",
+          "BP every 2–3 minutes after induction",
+          "Signs of awareness: tachycardia, rising BP, sweating, tears — deepen the anaesthetic"
+        ],
+        cautions: [
+          "This is the opposite of suxamethonium, where failed intubation ends with the patient breathing again in 5–8 minutes (Williams). With rocuronium and no sugammadex there is no such escape.",
+          "If you could not have managed this patient's airway by bag-mask for an hour, rocuronium is the wrong plan."
+        ]
+      },
+      {
+        title: "Reversal without sugammadex: wait for signs of recovery, then neostigmine",
+        best_for: "The end of every rocuronium anaesthetic in a theatre without sugammadex or a nerve stimulator.",
+        requires: ["iv", "oxygen"],
+        steps: [
+          "Keep ventilating and keep the patient asleep until the block is already wearing off: breathing efforts against the bag, swallowing or bucking on the tube, grimacing, moving a hand.",
+          "Then atropine 0.02 mg/kg and neostigmine 0.05 mg/kg (maximum 5 mg; child 2.5 mg), and wait a full 10 minutes (see Neostigmine).",
+          "Extubate only when awake and passing the tests: head lift held for 5 seconds, strong grip that does not fade, tongue out, strong cough, deep regular breaths.",
+          "If the tests fail, do not give more neostigmine beyond the ceiling. Re-sedate if needed — assume the patient is awake but unable to move — and keep ventilating until they pass.",
+          "After a 1.2 mg/kg rapid-sequence dose with no top-ups, expect to wait an hour or more before neostigmine can work."
+        ],
+        monitor: [
+          "Breathing, SpO2 and pulse for at least 30 minutes in recovery",
+          "Signs of awareness: tachycardia, rising BP, sweating, tears — deepen the anaesthetic"
+        ],
+        cautions: [
+          "Neostigmine given to a deep block does not work and uses up the maximum dose. Residual block after reversal is common (Nelson)."
+        ]
+      },
+      {
+        title: "Cold chain: rocuronium out of the fridge",
+        best_for: "Theatres and emergency rooms that keep rocuronium on the airway trolley or have unreliable power.",
+        requires: [],
+        steps: [
+          "Store the main stock at 2–8 °C. The emergency trolley may hold a small stock at room temperature only within the label's allowance.",
+          "Write the date it left the fridge on every box or vial. Discard at the label's limit (brands differ — some 60 days, some 12 weeks at no more than 30 °C).",
+          "If the history of a vial is unknown, do not rely on it for a rapid-sequence induction — the one situation where a weak dose is most dangerous. Use a dated vial, or another plan.",
+          "If the cold chain cannot be kept at all, ask the pharmacy for vecuronium powder (no fridge needed) as the stock relaxant; vecuronium 0.15 mg/kg is the slower alternative for rapid intubation (theatre packs)."
+        ],
+        monitor: ["Fridge temperature log"],
+        cautions: []
+      }
+    ],
+    paediatric: [
+      "0.6–1.2 mg/kg IV; onset 1–1.5 minutes, duration 15–60 minutes (Nelson, Table 86.11). Nelson also lists 1 mg/kg IM, but IM onset is slow and unpredictable — a route for experts, not for a district emergency.",
+      "The relaxant most commonly used for intubation in children because of its rapid onset (Nelson). Neonates: experienced anaesthetist only.",
+      "Reverse with neostigmine 0.05 mg/kg (maximum 2.5 mg) and atropine 0.02 mg/kg (minimum 0.1 mg), once the block is wearing off.",
+      "A child who cannot be intubated after rocuronium must be oxygenated by bag-mask until it wears off — plan the airway before you give it."
+    ],
+    cautions: [
+      "It gives NO sedation and NO pain relief. A paralysed patient who is not deeply anaesthetised is awake, in pain and unable to move or tell you. Whenever the block is present, assume the patient is awake but unable to move unless you are giving enough anaesthetic to be sure they are not.",
+      "Never paralyse a patient you cannot intubate and ventilate.",
+      "No sugammadex = no rescue from a deep block. A rocuronium rapid-sequence induction commits you to oxygenating the patient for 30–60 minutes or longer if intubation fails.",
+      "Anaphylaxis is one of the recognised perioperative causes (Harrison). Severe hypotension, bronchospasm or rash after induction: treat as anaphylaxis with adrenaline.",
+      "Magnesium sulfate (pre-eclampsia) and aminoglycosides deepen and prolong the block — see interactions.",
+      "Liver disease and biliary obstruction prolong it; so do old age, hypothermia and, to a lesser extent, kidney failure.",
+      "Myasthenia gravis: extremely sensitive — specialist anaesthetist only.",
+      "Stings on injection in a patient not yet asleep — another reason it follows the induction drug."
+    ],
+    antidote: "Neostigmine 0.05 mg/kg IV (maximum 5 mg; child maximum 2.5 mg) WITH atropine 0.02 mg/kg, only once the block has begun to wear off. Sugammadex reverses rocuronium at any depth where it is stocked (Schwartz) — usually it is not. Until recovery: anaesthesia and ventilation.",
+    calc: {
+      type: "weight",
+      dosePerKg: 1,
+      doseUnit: "mg",
+      conc: 10,
+      concUnit: "mg/mL",
+      label: "Rapid-sequence dose (1 mg/kg; range 0.9–1.2) at 10 mg/mL — routine intubation 0.6 mg/kg"
+    },
+    textbook: [
+      {
+        book: "williams",
+        text: "At caesarean under general anaesthesia, rocuronium is the alternative relaxant if suxamethonium is contraindicated or unavailable; it lasts much longer than suxamethonium unless reversed by sugammadex.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1095"
+      },
+      {
+        book: "gabbe",
+        text: "Suxamethonium remains the relaxant of choice at caesarean; high-dose rocuronium can be used if suxamethonium is contraindicated, with a similar time to intubation.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 362"
+      },
+      {
+        book: "schwartz",
+        text: "Rocuronium: intubating dose 0.6 mg/kg, 1.2 mg/kg for rapid-sequence induction; mainly hepatic metabolism; reversible with sugammadex or an anticholinesterase.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032, Table 46-2"
+      },
+      {
+        book: "schwartz",
+        text: "Sugammadex reverses the steroid relaxants rocuronium and vecuronium, and at very high dose can rapidly reverse an intubating dose.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "harrison",
+        text: "Where suxamethonium is relatively contraindicated for rapid-sequence intubation (cocaine toxicity), rocuronium 1 mg/kg IV is the alternative.",
+        ref: "Harrison 22nd ed. 2025, ch. 468 Cocaine, Other Psychostimulants, and Hallucinogens, p. 3695"
+      },
+      {
+        book: "nelson",
+        text: "Rocuronium 0.6–1.2 mg/kg IV (or 1 mg/kg IM): onset 1–1.5 min, duration 15–60 min; raises heart rate.",
+        ref: "Nelson 22nd ed. 2024, ch. 86, Table 86.11, p. 620"
+      },
+      {
+        book: "nelson",
+        text: "In children rocuronium is the relaxant most commonly used for intubation because of its rapid onset.",
+        ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, p. 671"
+      },
+      {
+        book: "nelson",
+        text: "An intubating dose of rocuronium given to paralyse rapidly in an emergency may not wear off on its own for 20 minutes or longer, against about 3 minutes for suxamethonium.",
+        ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, p. 673"
+      },
+      {
+        book: "nelson",
+        text: "Non-depolarising relaxants have a less rapid onset than suxamethonium but last longer; rocuronium is metabolised by the liver and excreted in bile; prolonged ICU use may cause profound weakness.",
+        ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, p. 669, Table 91.8"
+      },
+      {
+        book: "harrison",
+        text: "Rocuronium can activate mast cells directly (MRGPRX2), which may explain anaphylaxis to it without IgE sensitisation.",
+        ref: "Harrison 22nd ed. 2025, ch. 363 Urticaria, Angioedema, and Allergic Rhinitis, p. 2805"
+      }
+    ],
+    sources: [
+      { name: "BNF and BNF for Children — rocuronium bromide" },
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      {
+        name: "Difficult Airway Society guidelines for unanticipated difficult intubation (plans A–D)"
+      },
+      { name: "Manufacturer storage instructions for rocuronium (room-temperature allowance)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "pancuronium",
+    name: "Pancuronium",
+    aka: ["Pancuronium bromide", "Pavulon"],
+    cls: "Non-depolarising neuromuscular blocker (long-acting muscle relaxant, aminosteroid)",
+    cat: "analgesia",
+    wards: ["surgical", "icu", "neonatal"],
+    tags: [
+      "anaesthesia",
+      "muscle relaxant",
+      "long-acting",
+      "intubation",
+      "paralysis",
+      "tetanus",
+      "residual paralysis",
+      "neostigmine"
+    ],
+    presentation: [
+      "2 mg/mL, 2 mL ampoule (4 mg). Ready to use.",
+      "Store in a FRIDGE at 2–8 °C. Many labels allow up to 6 months at room temperature — read yours, and write the date it left the fridge on the box."
+    ],
+    indications: [
+      "Muscle relaxation for LONG operations under general anaesthesia with controlled ventilation, where it is the relaxant stocked",
+      "Paralysis of ventilated patients in ICU (for example severe tetanus), with sedation and a ventilator"
+    ],
+    standard: {
+      summary: "Pancuronium lasts much longer than vecuronium or atracurium — an hour or two after one intubating dose — and is mostly excreted by the kidney, so it lasts far longer in kidney failure. It also speeds the heart. The danger is the patient who leaves theatre still partly paralysed. Long-acting relaxants such as pancuronium are no longer widely used (Schwartz); use it only for long operations, always reverse it (Nelson), and test recovery before extubation. It gives NO sedation and NO pain relief. A paralysed patient who is not deeply anaesthetised is awake, in pain and unable to move or tell you. Whenever the block is present, assume the patient is awake but unable to move unless you are giving enough anaesthetic to be sure they are not. Never paralyse a patient you cannot intubate and ventilate.",
+      items: [
+        {
+          label: "Intubating dose",
+          text: "0.05–0.1 mg/kg IV (BNF). 70 kg at 0.1 mg/kg: 7 mg = 3.5 mL of 2 mg/mL. Onset is slow, about 3 minutes or more — not a drug for rapid-sequence induction."
+        },
+        {
+          label: "Top-ups",
+          text: "0.01–0.02 mg/kg (adult about 1 mg) when relaxation clearly returns (BNF). Top-ups add up: give none in the last 45–60 minutes of the operation."
+        },
+        {
+          label: "Duration",
+          text: "An hour or two after one intubating dose, longer after top-ups, much longer in kidney failure. Not for short operations — it will outlast them (theatre packs)."
+        },
+        {
+          label: "Reversal",
+          text: "Always (Nelson): neostigmine 0.05 mg/kg (maximum 5 mg) WITH atropine 0.02 mg/kg, once the block has started to wear off. Residual block is common even after reversal (Nelson)."
+        },
+        {
+          label: "Heart rate",
+          text: "It blocks the vagus: expect a rise in pulse and BP. Avoid in a patient with a fast pulse, ischaemic heart disease, or where tachycardia is dangerous (severe mitral stenosis, thyrotoxicosis)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Pancuronium is the only relaxant on the shelf: when to use it and when not to",
+        best_for: "District theatres that receive pancuronium as their only non-depolarising relaxant.",
+        requires: ["iv", "oxygen"],
+        steps: [
+          "All the Vecuronium hard-rule conditions apply: airway kit and a person who can intubate, neostigmine AND atropine in the room, someone to ventilate for as long as the block lasts, and anaesthesia continued throughout. Never paralyse a patient you cannot intubate and ventilate.",
+          "Use it only when the operation will last well over an hour (major laparotomy, for example). For shorter cases: suxamethonium for intubation and spontaneous breathing under ketamine or a volatile agent, or a spinal.",
+          "Do NOT use it in kidney failure (high creatinine, little or no urine): the block can last many hours. Use atracurium, or avoid a relaxant.",
+          "Give the smallest effective dose. Record every dose and the time.",
+          "No top-up in the last 45–60 minutes. If the surgeon needs more relaxation near the end, deepen the anaesthetic first.",
+          "Plan to keep the patient ventilated after surgery if reversal fails — decide before the first dose who will do it."
+        ],
+        monitor: [
+          "Chest movement, SpO2 and pulse continuously",
+          "Signs of awareness: tachycardia, rising BP, sweating, tears — deepen the anaesthetic"
+        ],
+        cautions: [
+          "A long-acting block in a theatre with no ventilator and one tired person at the bag is how patients die after 'routine' surgery."
+        ]
+      },
+      {
+        title: "Residual paralysis in recovery: find it, treat it",
+        best_for: "Every patient who has had pancuronium (or any non-depolarising relaxant) until they are fully strong.",
+        requires: ["oxygen"],
+        steps: [
+          "Before extubation: head lift held for 5 seconds, strong grip that does not fade, tongue out, strong cough, deep regular breaths. All must pass.",
+          "After extubation, residual block looks like: weak, jerky, uncoordinated movements; see-saw breathing; a weak cough; a patient who cannot open the eyes fully or swallow; falling saturation; restlessness from hypoxia.",
+          "If you see it: oxygen, sit up, support the airway; if breathing is inadequate, re-ventilate by bag-mask and call the anaesthetist. The patient is likely awake and frightened — tell them what is happening and that it will wear off; sedate only if you are ventilating.",
+          "Look for causes that deepen the block: magnesium, gentamicin, hypothermia, kidney failure, acidosis, low potassium.",
+          "A further dose of neostigmine only up to the ceiling (5 mg in total) and only with atropine — then ventilate and wait.",
+          "Do not send the patient to the ward until they have passed the tests and kept a good saturation on air or their usual oxygen for 30 minutes."
+        ],
+        monitor: [
+          "SpO2, breathing rate and depth, pulse every 5 minutes in recovery",
+          "Ability to lift the head and cough"
+        ],
+        cautions: [
+          "A drowsy, weak patient in recovery after a long-acting relaxant has residual block until proven otherwise (Nelson: residual block is common despite reversal)."
+        ]
+      },
+      {
+        title: "Paralysis in ICU (severe tetanus) — only with a ventilator and sedation",
+        best_for: "Severe tetanus whose spasms are not controlled by diazepam or magnesium, in a unit that can ventilate for days.",
+        requires: ["iv", "oxygen"],
+        steps: [
+          "Paralysis is the last step, used only when sedatives fail (Harrison) — and only if a ventilator and staff to run it day and night exist. Otherwise, sedation and magnesium (see those pages) and transfer.",
+          "Sedation must continue for as long as the paralysis: a paralysed tetanus patient who is not sedated is awake, in agony and unable to show it.",
+          "Give intermittent doses, letting the block wear off at least daily to check strength and spasms; the lowest dose that works (Harrison).",
+          "Pancuronium speeds the heart, which adds to the autonomic storm of tetanus — if vecuronium is available, it may be the better choice.",
+          "Expect weakness for days after stopping, especially with steroids, acidosis or kidney failure (Harrison)."
+        ],
+        monitor: [
+          "Ventilator alarms and chest movement continuously",
+          "Signs of awareness: tachycardia, rising BP, sweating, tears — deepen the anaesthetic",
+          "Pulse and BP hourly — tetanus causes swings"
+        ],
+        cautions: ["Never give pancuronium for tetanus spasms to a patient who will not be ventilated."]
+      }
+    ],
+    paediatric: [
+      "BNF for Children: neonate 0.05–0.1 mg/kg; child 1 month–12 years 0.06–0.1 mg/kg then 0.01–0.02 mg/kg as needed; 12–18 years as adult. Experienced anaesthetist or neonatologist only.",
+      "In newborns, pancuronium can cause oedema, hypovolaemia, hypotension and tachycardia (Nelson).",
+      "Children with myasthenia gravis may be paralysed for weeks after a single dose (Nelson).",
+      "Reverse with neostigmine 0.05 mg/kg (maximum 2.5 mg) and atropine 0.02 mg/kg (minimum 0.1 mg)."
+    ],
+    cautions: [
+      "It gives NO sedation and NO pain relief. A paralysed patient who is not deeply anaesthetised is awake, in pain and unable to move or tell you. Whenever the block is present, assume the patient is awake but unable to move unless you are giving enough anaesthetic to be sure they are not.",
+      "Never paralyse a patient you cannot intubate and ventilate.",
+      "Kidney failure: avoid — mostly excreted by the kidney, so the block is greatly prolonged. Use atracurium.",
+      "Liver disease and biliary obstruction also prolong it.",
+      "Raises heart rate and BP: avoid where tachycardia is dangerous.",
+      "Residual paralysis after surgery is the main danger: always reverse and test recovery before extubation.",
+      "Magnesium sulfate and aminoglycosides deepen and prolong the block; long-term phenytoin or carbamazepine shortens it — see interactions.",
+      "Myasthenia gravis: paralysis for weeks after one dose is possible (Nelson) — specialist only."
+    ],
+    antidote: "Neostigmine 0.05 mg/kg IV (maximum 5 mg; child maximum 2.5 mg) WITH atropine 0.02 mg/kg, once the block has begun to wear off — always given after pancuronium. Until full recovery: anaesthesia and ventilation.",
+    calc: {
+      type: "weight",
+      dosePerKg: 0.1,
+      doseUnit: "mg",
+      conc: 2,
+      concUnit: "mg/mL",
+      label: "Intubating dose (0.1 mg/kg; range 0.05–0.1) at 2 mg/mL"
+    },
+    textbook: [
+      {
+        book: "schwartz",
+        text: "Long-acting relaxants including pancuronium are no longer widely used.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032"
+      },
+      {
+        book: "nelson",
+        text: "Long-acting non-depolarising blocks (vecuronium, pancuronium) are always reversed; how well an anticholinesterase works depends on the depth of block, and residual block is common despite reversal.",
+        ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, p. 673"
+      },
+      {
+        book: "harrison",
+        text: "Pancuronium, vecuronium, rocuronium and cisatracurium used for days in ICU can leave persistent block and weakness after they are stopped; risk factors include female sex, metabolic acidosis and renal failure. Aminoglycosides also impair neuromuscular transmission.",
+        ref: "Harrison 22nd ed. 2025, ch. 318 Nervous System Disorders in Critical Care, p. 2352"
+      },
+      {
+        book: "nelson",
+        text: "Pancuronium in the newborn can cause oedema, hypovolaemia, hypotension and tachycardia.",
+        ref: "Nelson 22nd ed. 2024, ch. 119 The High-Risk Infant, p. 1045"
+      },
+      {
+        book: "nelson",
+        text: "Children with myasthenia gravis do not tolerate relaxants such as suxamethonium and pancuronium and may be paralysed for weeks after a single dose.",
+        ref: "Nelson 22nd ed. 2024, ch. 652 Disorders of Neuromuscular Transmission and of Motor Neurons, p. 3865"
+      },
+      {
+        book: "harrison",
+        text: "In tetanus, when sedatives cannot control spasms, non-depolarising relaxants are used — and the patient then needs mechanical ventilation.",
+        ref: "Harrison 22nd ed. 2025, ch. 157 Tetanus, p. 1231"
+      },
+      {
+        book: "schwartz",
+        text: "In severe renal insufficiency doses of relaxants are reduced and intervals lengthened; cisatracurium (the purified isomer of atracurium, also broken down by Hofmann elimination) is often chosen because its elimination is unchanged by renal failure.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2036"
+      }
+    ],
+    sources: [
+      { name: "BNF and BNF for Children — pancuronium bromide" },
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "Manufacturer storage instructions for pancuronium (room-temperature allowance)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "terbutaline",
+    name: "Terbutaline",
+    aka: ["Terbutaline sulfate", "Terbutaline sulphate", "Bricanyl", "Brethine"],
+    cls: "Selective β2-agonist (bronchodilator and uterine relaxant)",
+    cat: "respiratory",
+    wards: ["emergency", "maternity", "paediatric", "medical"],
+    tags: [
+      "asthma",
+      "wheeze",
+      "bronchospasm",
+      "tocolysis",
+      "preterm labour",
+      "uterine relaxation",
+      "uterine inversion",
+      "tachysystole",
+      "hyperstimulation",
+      "external cephalic version",
+      "fetal distress"
+    ],
+    presentation: [
+      "Injection 0.5 mg/mL, 1 mL ampoule (500 micrograms). 1 mg/mL also exists — CHECK the strength. 0.25 mg = 0.5 mL of 0.5 mg/mL, or 0.25 mL of 1 mg/mL: draw it up in a 1 mL syringe.",
+      "Inhaler (dry-powder or aerosol), nebuliser solution, tablets and syrup also exist; for acute asthma the inhaled route of salbutamol or terbutaline is used the same way.",
+      "Room temperature; protect from light. Discard a discoloured solution."
+    ],
+    indications: [
+      "Severe asthma or wheeze when there is no inhaled route (no inhaler, spacer or nebuliser), or not responding to inhaled therapy — subcutaneous doses, as on the Salbutamol page",
+      "Short-term uterine relaxation with a single dose: uterine tachysystole or hyperstimulation with a worrying fetal heart (Williams); before external cephalic version (Williams, Gabbe); replacing an inverted uterus with the placenta attached (Williams); Zavanelli manoeuvre (Williams)",
+      "Short-term tocolysis (up to 48 hours) in preterm labour only to allow antenatal corticosteroids and transfer, when nifedipine — the preferred tocolytic in this app — cannot be used. NOT for maintaining tocolysis over days."
+    ],
+    standard: {
+      summary: "Two uses. In asthma, inhaled salbutamol comes first; terbutaline injected under the skin is for the patient with no inhaled route (Salbutamol page). In obstetrics, a single 0.25 mg dose relaxes the uterus within minutes for acute problems. It is NOT for maintaining tocolysis over days: maintenance tocolysis is not recommended (Williams), and prolonged beta-agonist tocolysis has caused pulmonary oedema and maternal deaths (Gabbe). Harms: tachycardia, low potassium, high glucose, and pulmonary oedema.",
+      items: [
+        {
+          label: "Asthma — adult",
+          text: "0.25 mg SC; repeat once after 20 minutes if needed (as on the Salbutamol page). Give a steroid and keep trying to get an inhaler and spacer or nebuliser. BNF allows 0.25–0.5 mg SC up to 4 times daily; use the lowest dose that works."
+        },
+        {
+          label: "Asthma — child",
+          text: "0.01 mg/kg (10 micrograms/kg) SC, maximum 0.25 mg; repeat once after 20 minutes if needed (as on the Salbutamol page). Continuous IV infusion (Nelson: 2–10 micrograms/kg load then 0.1–0.4 micrograms/kg/min) needs a pump, a cardiac monitor and potassium checks — high-dependency care only."
+        },
+        {
+          label: "Uterine relaxation — single dose",
+          text: "0.25 mg (250 micrograms) SC or slowly IV (Williams). Works in 3–5 minutes after SC injection (Gabbe). For tachysystole or hyperstimulation: STOP the oxytocin first, left lateral, IV fluid, then terbutaline. Before external cephalic version: 0.25 mg SC 15–20 minutes before (Gabbe)."
+        },
+        {
+          label: "Uterine inversion (placenta attached)",
+          text: "An IV tocolytic — terbutaline, magnesium sulfate or GTN — can relax the uterus for replacement (Williams). Give 0.25 mg only with a fluid bolus running and the BP checked: the woman is usually bleeding, and terbutaline hides the tachycardia of blood loss (Gabbe). GTN acts faster and wears off sooner (see GTN). Oxytocin as soon as the uterus is back."
+        },
+        {
+          label: "Retained or trapped placenta",
+          text: "Not routine — the treatment is manual removal (see the GTN page and the Retained placenta case). A relaxant has a place only for a separated placenta trapped behind a closing cervix, decided by the obstetrician or anaesthetist."
+        },
+        {
+          label: "Preterm labour — short term only",
+          text: "Prefer nifedipine. If terbutaline is the only option: 0.25 mg SC, repeated every 20 minutes to 3 hours while contractions continue (Gabbe), for the 48 hours needed to give antenatal corticosteroids and transfer — not longer. Hold the dose if the mother's pulse is over 120/min (Gabbe). No oral terbutaline to prevent preterm birth (Williams, Gabbe)."
+        },
+        {
+          label: "Do not give for tocolysis",
+          text: "Heart disease; severe pre-eclampsia or eclampsia; insulin-treated diabetes; hyperthyroidism; fever or suspected chorioamnionitis (Gabbe); antepartum haemorrhage or suspected abruption (Williams); after trauma (Gabbe); maternal pulse already over 120."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Severe asthma with no inhaler, spacer or nebuliser: subcutaneous terbutaline",
+        best_for: "Health centres and wards that have injection ampoules but no inhaled bronchodilator — the same card as on the Salbutamol page.",
+        requires: ["syringe_1ml"],
+        steps: [
+          "Oxygen if you have it. Sit the patient up.",
+          "Check the ampoule strength. Adult: 0.25 mg SC (0.5 mL of 0.5 mg/mL). Child: 0.01 mg/kg SC, maximum 0.25 mg — 10 kg = 0.1 mg = 0.2 mL of 0.5 mg/mL, in a 1 mL syringe.",
+          "Repeat once after 20 minutes if still severe. SC adrenaline (Salbutamol page) is the alternative.",
+          "Give the steroid now (oral, or hydrocortisone IV/IM if vomiting — Salbutamol page). Consider magnesium sulfate or aminophylline for life-threatening attacks (see those pages).",
+          "Arrange an inhaler with a bottle spacer as soon as possible, and refer a life-threatening attack."
+        ],
+        monitor: [
+          "Pulse, breathing rate, wheeze, ability to talk, SpO2 if available — every 15–20 minutes",
+          "Potassium if repeated doses and the laboratory can do it"
+        ],
+        cautions: [
+          "Tremor and a fast pulse are expected. A pulse rising steeply, chest pain or an irregular pulse: stop and reassess.",
+          "A silent chest, exhaustion or confusion is life-threatening — refer urgently."
+        ]
+      },
+      {
+        title: "A single dose to relax the uterus now — and what to do next",
+        best_for: "Tachysystole or hyperstimulation with an abnormal fetal heart while preparing for caesarean or transfer; external cephalic version; uterine inversion with the placenta attached when GTN is not available.",
+        requires: ["syringe_1ml"],
+        steps: [
+          "Hyperstimulation: stop the oxytocin, left lateral, IV fluid, oxygen. If contractions are still too frequent with a worrying fetal heart: terbutaline 0.25 mg SC (or slowly IV) (Williams).",
+          "Count the mother's pulse first; do not give it if over 120/min or if she is bleeding and not yet resuscitated.",
+          "Expect the pulse to rise and the uterus to relax within minutes. A single dose wears off over a few hours.",
+          "Uterine inversion: fluid bolus running and the BP checked, then 0.25 mg, then replace the uterus at once. As soon as it is back, start oxytocin — a relaxed uterus bleeds.",
+          "Then deliver or refer as planned. Terbutaline does not treat the cause of fetal distress."
+        ],
+        monitor: [
+          "Mother's pulse and BP every 5 minutes for 30 minutes",
+          "Fetal heart",
+          "Bleeding after delivery — the uterus may be slow to contract"
+        ],
+        cautions: [
+          "In a bleeding or shocked woman the tachycardia it causes hides blood loss, and it lowers the diastolic pressure (Gabbe). Resuscitate first.",
+          "Not with suspected abruption (Williams)."
+        ]
+      },
+      {
+        title: "Tocolysis to buy 48 hours: the rules, and why NOT longer",
+        best_for: "Preterm labour (about 24–34 weeks) where nifedipine cannot be used and the aim is only to complete antenatal corticosteroids and transfer.",
+        requires: ["syringe_1ml"],
+        steps: [
+          "First choice is nifedipine (see its page). Confirm with the national protocol and the obstetrician.",
+          "Do not use if any of these: heart disease, severe pre-eclampsia, insulin-treated diabetes, hyperthyroidism, fever or suspected infection, bleeding, trauma, twins with a large fluid load, pulse over 120.",
+          "Give dexamethasone for the baby's lungs at the same time — the steroid is the treatment, the tocolytic only buys time for it.",
+          "Terbutaline 0.25 mg SC; repeat only while contractions continue, no more often than every 20 minutes, holding any dose if the pulse is over 120/min (Gabbe).",
+          "Restrict IV fluid; keep a fluid balance chart. Listen to the lung bases before each dose.",
+          "STOP at the latest when the steroid course is complete or by 48 hours — earlier if possible (Gabbe: restricting it to under 24 hours reduces the risk of pulmonary oedema).",
+          "Do not run a terbutaline drip without a pump and a cardiac monitor. Do not send the woman home on terbutaline tablets — they do not prevent preterm birth (Williams)."
+        ],
+        monitor: [
+          "Pulse before every dose — hold if over 120/min",
+          "Breathing rate, lung bases, SpO2 — breathlessness or crackles = pulmonary oedema: stop, sit up, oxygen, furosemide",
+          "Blood glucose and, if possible, potassium before starting and within the first 24 hours (Gabbe)",
+          "Contractions and fetal heart"
+        ],
+        cautions: [
+          "It is NOT for maintaining tocolysis over days. Prolonged beta-agonist tocolysis causes pulmonary oedema, arrhythmias, myocardial ischaemia and maternal deaths (Williams, Gabbe); the FDA warns against injected terbutaline for preterm labour beyond 48–72 hours.",
+          "Chest pain means stop (Gabbe).",
+          "Steroids plus terbutaline raise glucose further and add to the pulmonary oedema risk — see interactions."
+        ]
+      }
+    ],
+    paediatric: [
+      "Asthma: 0.01 mg/kg SC (maximum 0.25 mg), once repeated after 20 minutes if needed (Salbutamol page). Nelson lists parenteral terbutaline for life-threatening asthma not responding to high-dose inhaled beta-agonist, and IV infusion only with full monitoring including potassium.",
+      "Newborn after maternal tocolysis: hypoglycaemia, low calcium and ileus can follow if the mother's dosing is not stopped 2 hours or more before birth (Gabbe) — check the baby's glucose.",
+      "Fetal tachycardia can follow a maternal dose (Williams) — expected, but it complicates fetal heart interpretation."
+    ],
+    cautions: [
+      "Tachycardia, palpitations, tremor and headache are common. Hold if the maternal pulse is over 120/min in tocolysis (Gabbe).",
+      "Hypokalaemia: beta2-agonists drive potassium into cells (Harrison) — check potassium with repeated doses, with digoxin, diuretics, aminophylline or steroids (see interactions).",
+      "Hyperglycaemia: check glucose in diabetes and when steroids are given too (Gabbe).",
+      "Pulmonary oedema with tocolysis — especially beyond 24 hours, with steroids, twins, large IV volumes or infection (Williams). NOT for maintaining tocolysis over days.",
+      "Heart disease, arrhythmia, hyperthyroidism: use with great care, if at all.",
+      "Non-selective beta-blockers (propranolol, labetalol, timolol eye drops) block its effect and can cause bronchospasm in asthma — see interactions."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 0.01,
+      doseUnit: "mg",
+      conc: 0.5,
+      concUnit: "mg/mL",
+      maxDose: 0.25,
+      label: "Child asthma SC dose (0.01 mg/kg, max 0.25 mg) at 0.5 mg/mL — adult 0.25 mg"
+    },
+    textbook: [
+      {
+        book: "williams",
+        text: "Maintenance tocolysis after acute therapy is not recommended. Beta-agonist infusions have caused serious and fatal maternal effects; pulmonary oedema risk rises with multiple pregnancy, concurrent corticosteroids, tocolysis for more than 24 hours and large IV crystalloid volumes.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1829"
+      },
+      {
+        book: "williams",
+        text: "Terbutaline, like other beta-agonist tocolytics, can cause pulmonary oedema; pump and oral terbutaline do not prevent preterm birth, and after an FDA warning ACOG recommends only short-term inpatient use.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1829"
+      },
+      {
+        book: "williams",
+        text: "Subcutaneous terbutaline 0.25 mg is commonly used as acute therapy of uterine tachysystole.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1830"
+      },
+      {
+        book: "williams",
+        text: "For a worrying fetal heart tracing in labour, a single 250 microgram IV or subcutaneous dose of terbutaline relaxes the uterus as a temporising measure.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 24 Intrapartum Assessment, pdf p. 1044"
+      },
+      {
+        book: "williams",
+        text: "Uterine inversion with the placenta still attached: many recommend an IV tocolytic — terbutaline, magnesium sulfate or nitroglycerin — to relax the uterus for replacement; a halogenated anaesthetic if these fail.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1684"
+      },
+      {
+        book: "williams",
+        text: "Zavanelli manoeuvre for shoulder dystocia: terbutaline 0.25 mg subcutaneously to relax the uterus.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 27 Vaginal Delivery, pdf p. 1147"
+      },
+      {
+        book: "williams",
+        text: "Before external cephalic version, 250 micrograms of terbutaline subcutaneously; maternal tachycardia is a known side effect.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 28 Breech Delivery, pdf p. 1208"
+      },
+      {
+        book: "williams",
+        text: "IV terbutaline, like sublingual or IV nitroglycerin, is used to achieve uterine relaxation, best given by the anaesthesia team.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 45 Multifetal Pregnancy, pdf p. 1973"
+      },
+      {
+        book: "gabbe",
+        text: "Terbutaline acts 3–5 minutes after a subcutaneous dose; usual 0.25 mg SC every 20 minutes to 3 hours for no longer than 48–72 hours, held if the maternal pulse is above 120/min.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 677"
+      },
+      {
+        book: "gabbe",
+        text: "Beta-mimetics cause transient hyperglycaemia and hypokalaemia; pulmonary oedema has been reported and associated with maternal death; restricting treatment to under 24 hours and avoiding fluid overload reduce the risk.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 678"
+      },
+      {
+        book: "gabbe",
+        text: "FDA warning: injected or pumped terbutaline must not be used in pregnancy to prevent preterm labour or treat it beyond 48–72 hours (serious maternal heart problems and death); oral terbutaline is not recommended for prevention.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 678"
+      },
+      {
+        book: "gabbe",
+        text: "Terbutaline 0.25 mg subcutaneously 15–20 minutes before external cephalic version is the most commonly used tocolytic for it.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 19 Malpresentations, p. 386"
+      },
+      {
+        book: "gabbe",
+        text: "Do not use beta-mimetics with heart disease, severe pre-eclampsia or eclampsia, insulin-requiring diabetes, hyperthyroidism or suspected chorioamnionitis; keep the maternal pulse under 130/min; chest pain means stop.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 678"
+      },
+      {
+        book: "nelson",
+        text: "Status asthmaticus: continuous IV terbutaline 2–10 micrograms/kg loading then 0.1–0.4 micrograms/kg/min, with cardiorespiratory monitoring, oximetry, BP and serum potassium; adverse effects include tremor, tachycardia, arrhythmia and hypoxaemia.",
+        ref: "Nelson 22nd ed. 2024, ch. 185 Childhood Asthma, Table 185.17, p. 1406"
+      },
+      {
+        book: "nelson",
+        text: "Parenteral (SC, IM or IV) adrenaline or terbutaline may help life-threatening asthma not responding to high-dose inhaled beta-agonist, because inhaled drug may not reach the lower airway.",
+        ref: "Nelson 22nd ed. 2024, ch. 185 Childhood Asthma, p. 1409"
+      },
+      {
+        book: "harrison",
+        text: "Beta2-agonists — both bronchodilators and tocolytics — are powerful activators of cellular potassium uptake and cause hypokalaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 354"
+      }
+    ],
+    sources: [
+      { name: "BNF and BNF for Children — terbutaline sulfate" },
+      {
+        name: "WHO Pocket Book of Hospital Care for Children, 2013 (wheeze with no inhaled bronchodilator)"
+      },
+      {
+        name: "US FDA Drug Safety Communication: new warnings against use of terbutaline to treat preterm labor, 2011"
+      },
+      { name: "ACOG Practice Bulletin: Management of preterm labor (short-term inpatient use only)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- anticoagulant, infection and topical ---- */
+  {
+    id: "rivaroxaban",
+    name: "Rivaroxaban",
+    aka: ["Xarelto", "DOAC", "NOAC", "Direct oral anticoagulant", "Factor Xa inhibitor", "Xa inhibitor"],
+    cls: "Oral anticoagulant (direct factor Xa inhibitor, DOAC)",
+    cat: "haem",
+    wards: ["medical", "outpatient", "surgical", "emergency"],
+    tags: [
+      "anticoagulation",
+      "DOAC",
+      "atrial fibrillation",
+      "stroke prevention",
+      "DVT",
+      "PE",
+      "VTE",
+      "bleeding",
+      "reversal",
+      "perioperative",
+      "surgery",
+      "spinal",
+      "blood thinner",
+      "take with food"
+    ],
+    presentation: [
+      "Tablets 2.5 mg, 10 mg, 15 mg and 20 mg. Room temperature. The DVT/PE starter pack holds 15 mg tablets for the first 3 weeks, then 20 mg tablets.",
+      "The 15 mg and 20 mg tablets MUST be taken with food, or much less is absorbed (Harrison). The 2.5 mg and 10 mg tablets can be taken with or without food.",
+      "Tablets may be crushed and mixed with water or soft food just before the dose, or given down a nasogastric tube that ends in the stomach. A crushed 15 or 20 mg dose must be followed straight away by food or a feed (product information).",
+      "Rarely stocked in Ethiopian public hospitals. Most patients you meet on rivaroxaban were started at a referral or private hospital, or abroad. Ask to see the box."
+    ],
+    indications: [
+      "Stroke prevention in atrial fibrillation WITHOUT a mechanical heart valve or moderate–severe rheumatic mitral stenosis (Harrison). In rheumatic heart disease with AF, rivaroxaban did worse than warfarin (INVICTUS trial)",
+      "Treatment of DVT and pulmonary embolism, and prevention of recurrence",
+      "Prevention of VTE after hip or knee replacement",
+      "Specialist use: 2.5 mg twice daily with aspirin for coronary or peripheral artery disease (Harrison)",
+      "In district practice, mostly the patient who ARRIVES on rivaroxaban: you need to know how to stop and restart it, how to operate safely, and how to manage bleeding"
+    ],
+    standard: {
+      summary: "Fixed doses with no INR: once daily for AF and for clots after the first 3 weeks (twice daily only in those first 3 weeks, and for the low 2.5 mg vascular dose). The 15 mg and 20 mg doses must be taken WITH FOOD: on an empty stomach much less is absorbed and the patient is under-protected. The effect starts within a few hours and, with normal kidneys, wears off over 24–48 hours (half-life 7–11 h, Harrison; longer in the elderly and with poor kidneys). It raises the INR a little, but no routine test measures it reliably, and its specific antidote (andexanet) is essentially unavailable in Ethiopia. What you work with is the dose, the kidney function and the time of the last tablet.",
+      items: [
+        {
+          label: "Atrial fibrillation (non-valvular)",
+          text: "20 mg once daily WITH A MEAL (the same meal each day; the evening meal is usual). 15 mg once daily with a meal if creatinine clearance is 15–49 mL/min (Harrison). Do not 'reduce to be safe' outside this rule: doses that are too low let strokes through."
+        },
+        {
+          label: "DVT or PE: treatment",
+          text: "15 mg twice daily with food for 21 days, then 20 mg once daily with food (Harrison), for at least 3 months. No heparin lead-in is needed. After 6 months, if anticoagulation continues to prevent recurrence, 10 mg once daily can be used (Harrison); a physician may keep 20 mg once daily when the risk of a new clot is high (product information)."
+        },
+        {
+          label: "After hip or knee replacement",
+          text: "10 mg once daily, first dose 6–10 h after surgery once bleeding is controlled (Harrison Table 290-7). Usually about 30 days after hip and 10–14 days after knee replacement (Harrison). With or without food."
+        },
+        {
+          label: "Kidney function: calculate it before starting and every year",
+          text: "Creatinine clearance (Cockcroft–Gault), mL/min = (140 − age) × weight in kg × 1.23 for men or 1.04 for women ÷ creatinine in µmol/L. 50 or more: usual dose. 15–49: AF 15 mg once daily; for DVT/PE keep 15 mg twice daily for 3 weeks, then 20 mg once daily, and a physician may lower it to 15 mg once daily if the bleeding risk outweighs the clot risk (product information). 15–29: use with caution and ask a physician (Schwartz advises against use below 30); warfarin with INR monitoring or heparin is often safer. Under 15, or on dialysis: do not use (Nelson). Recheck the creatinine at least once a year and in any illness with vomiting, diarrhoea or dehydration."
+        },
+        {
+          label: "Missed dose",
+          text: "Once-daily dose: take it as soon as remembered on the same day, with food, then continue once daily the next day. During the first 3 weeks (15 mg twice daily): take it at once, even two 15 mg tablets together, so the day's total is 30 mg, then continue twice daily (product information). Otherwise never double a dose to catch up."
+        },
+        {
+          label: "Switching",
+          text: "Warfarin to rivaroxaban: stop warfarin and start rivaroxaban when the INR is 3.0 or below for AF, or 2.5 or below for DVT/PE (product information). Rivaroxaban to warfarin: give both together, check the INR just before a rivaroxaban dose (never sooner than 24 h after the last one), and stop rivaroxaban when the INR is 2.0 or above. Heparin or enoxaparin to rivaroxaban: give the first tablet up to 2 hours before the next injection would have been due, or when an infusion is stopped. Rivaroxaban to enoxaparin: give the first injection when the next tablet would have been due. Never overlap two full anticoagulants except while switching to warfarin."
+        },
+        {
+          label: "Surgery, spinal or epidural (same as the Pre-op tool)",
+          text: "Normal kidney function. Low-bleeding-risk surgery: last dose 2 days before (skip 1 day). High-bleeding-risk surgery: last dose 3 days before (skip 2 days). Spinal or epidural: at least 72 hours since the last dose (ASRA). Restart 24 hours after low-risk and 48–72 hours after high-risk surgery, once bleeding is controlled. No heparin bridging. Reduced kidney function: stop longer before, and ask the anaesthetist."
+        },
+        {
+          label: "Bleeding",
+          text: "Minor bleeding: withhold one or two doses (Harrison). Serious bleeding: see the bleeding card below and the antidote line. Vitamin K and fresh frozen plasma do not reverse rivaroxaban."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "The patient who arrives on rivaroxaban: what to find out in five minutes",
+        best_for: "Casualty, admissions, the pre-op clinic and the theatre list: any patient who says they take a 'blood thinner' that is not warfarin.",
+        requires: [],
+        steps: [
+          "Read the box: name (rivaroxaban, Xarelto), strength (2.5, 10, 15 or 20 mg) and how often. 15 mg twice daily means the patient is in the first 3 weeks after a clot. Apixaban, edoxaban and dabigatran are different drugs with different rules. Do not assume.",
+          "WHEN was the last tablet? Write the date and the clock time in the notes. This is your most important number. With normal kidneys, more than 24 hours since the last dose means rivaroxaban is unlikely to be the cause of bleeding (Harrison).",
+          "WHY is the patient on it: AF, a clot, after joint surgery, or 2.5 mg twice daily with aspirin for heart or leg arteries? Do they have a mechanical heart valve or rheumatic mitral stenosis? If so, they are on the wrong drug and need warfarin. Refer.",
+          "Ask HOW they take it: 'Do you take it with a meal?' A 15 or 20 mg tablet taken on an empty stomach protects less (Harrison). Teach it now.",
+          "Kidneys: send a creatinine and work out the clearance (Standard). Poor kidney function means rivaroxaban stays in the body longer.",
+          "Other drugs: aspirin, clopidogrel, NSAIDs (diclofenac, ibuprofen), SSRIs, TB treatment, carbamazepine, phenytoin, fluconazole, erythromycin (see Interactions). Is the patient pregnant?",
+          "Do NOT use the INR or aPTT to decide whether rivaroxaban is 'active'. Rivaroxaban prolongs the prothrombin time more than apixaban does (Harrison), so a raised INR may be the drug, but a normal INR does not rule it out (Harrison: with direct Xa inhibitors the PT may be normal). Only a calibrated anti-Xa assay measures it, and few hospitals have one."
+        ],
+        monitor: ["Haemoglobin and signs of bleeding if there is any doubt", "Creatinine on admission"],
+        cautions: [
+          "Do not stop rivaroxaban 'just in case' in a patient with AF or a recent clot without a plan to restart it. Stopping without cover raises the risk of stroke and new clots."
+        ]
+      },
+      {
+        title: "Major bleeding on rivaroxaban with no andexanet",
+        best_for: "GI bleeding, intracranial bleeding, trauma or postpartum haemorrhage in a patient on rivaroxaban, in a hospital without andexanet (which is almost every hospital in Ethiopia).",
+        requires: ["iv"],
+        steps: [
+          "Stop rivaroxaban. Note the time of the last dose and check the creatinine. Time is the real antidote: with normal kidneys about half the drug is gone by 12 hours, and most of it by 24–48 hours.",
+          "Treat the bleeding itself: pressure, packing, suturing, endoscopy or surgery as for any patient (Harrison). Resuscitate with fluids and blood. Do not wait for reversal before stopping the bleeding surgically.",
+          "Tranexamic acid 1 g IV over 10 minutes (as for trauma; see Tranexamic acid). Evidence in DOAC bleeding is limited, but it is cheap and available.",
+          "If the overdose or last dose was within the last few hours and the airway is safe, activated charcoal (Harrison: may help if the drug was taken in the last 4 h).",
+          "Four-factor prothrombin complex concentrate (PCC) 25–50 units/kg, if your blood bank or a referral hospital has it (Harrison). This is the best available substitute for andexanet.",
+          "Do NOT expect vitamin K, fresh frozen plasma or protamine to reverse rivaroxaban. Give plasma, platelets and cryoprecipitate only as part of a massive transfusion, for loss and dilution. Dialysis does not remove rivaroxaban.",
+          "Life-threatening or intracranial bleeding: senior and referral early. Do not delay the transfer for tests."
+        ],
+        monitor: [
+          "Pulse, BP and urine output every 15–30 minutes; haemoglobin after resuscitation",
+          "Creatinine (estimates how long the drug will last)",
+          "Neurological observations if there is any head injury or headache"
+        ],
+        cautions: [
+          "A normal INR in a bleeding patient on rivaroxaban is not reassuring and not a reason to restart. Restart only when bleeding is controlled and a senior has weighed the clot risk, usually after 2–3 days or longer after an intracranial bleed.",
+          "Minor bleeding (nose, gums, bruising): withhold one or two doses (Harrison), use local pressure or tranexamic acid mouthwash, and look for a cause."
+        ]
+      },
+      {
+        title: "Emergency surgery, caesarean or a spinal in a patient on rivaroxaban",
+        best_for: "The patient on the emergency list who took rivaroxaban today or yesterday.",
+        requires: [],
+        steps: [
+          "Find the time of the last dose. If the condition allows, delay surgery by 12–24 hours (Pre-op tool). Each 12 hours removes about half the drug if the kidneys are normal.",
+          "Spinal or epidural only if at least 72 hours have passed since the last dose (ASRA, as in the Pre-op tool). Otherwise use general anaesthesia. This applies to a caesarean too.",
+          "If you cannot wait: have blood cross-matched, give tranexamic acid, and have PCC available if it exists (Pre-op tool). Most operations can go ahead without reversal and with careful surgical haemostasis (Harrison).",
+          "Never remove an epidural catheter within the stopping interval either. If rivaroxaban was restarted, time the removal and the next dose with the anaesthetist.",
+          "Write the restart plan in the operation note: when, what dose, with food, and who decides."
+        ],
+        monitor: ["Wound and drain losses, haemoglobin; leg power and sensation after any neuraxial block"],
+        cautions: ["Practice varies. Confirm with the anaesthetist, especially with reduced kidney function."]
+      },
+      {
+        title: "Food, feeding tubes, fasting and running out",
+        best_for: "Wards and outpatients: the patient who is not eating, is on a nasogastric tube, is fasting, or cannot get the next box.",
+        requires: [],
+        steps: [
+          "The 15 mg and 20 mg doses go with a meal (Harrison). A patient who eats once a day takes it with that meal. During a religious fast, take it with the meal that breaks the fast, at about the same time each day.",
+          "Nil by mouth for a day or two with a nasogastric tube in the STOMACH: crush the tablet in a little water, flush it down, and give a feed straight after (product information). Do not give it down a tube that ends beyond the stomach: less is absorbed.",
+          "Not eating at all and no feed possible: a 15 or 20 mg dose on an empty stomach protects less. For more than a day or two, change to enoxaparin (see Heparin and the switching rule) until the patient eats again.",
+          "Do not stretch supply by halving tablets or skipping days. A half dose lets clots and strokes through.",
+          "DVT or PE still within its course: change to enoxaparin 1 mg/kg SC every 12 hours (once daily if creatinine clearance is under 30 mL/min) for the rest of the course, starting when the next tablet would have been due (see Heparin).",
+          "AF: change to warfarin with INR monitoring (see Warfarin and the switching rule above) if the patient can attend for INR checks. Aspirin is not a substitute for stroke prevention. If the patient can obtain apixaban instead, start it when the next rivaroxaban dose would have been due.",
+          "Write the switch and its date on the patient's card. Two anticoagulants taken together by mistake cause serious bleeding."
+        ],
+        monitor: [
+          "Appetite and intake each day on the ward",
+          "INR if switched to warfarin; platelets once at day 5–7 on enoxaparin if possible"
+        ],
+        cautions: [
+          "A mechanical valve or rheumatic mitral stenosis means warfarin, not rivaroxaban, whatever the supply."
+        ]
+      }
+    ],
+    paediatric: [
+      "Specialist use only. Trials have shown rivaroxaban to be safe and effective in children (Nelson), and some paediatric centres use DOACs, mainly in adolescents. In district practice, a child who needs anticoagulation gets heparin or enoxaparin, or warfarin with INR monitoring (see Heparin, Warfarin).",
+      "A child who has swallowed someone's rivaroxaban: phone the poison centre or a senior. Give activated charcoal if the child presents early and the airway is safe. Watch for bleeding, and check haemoglobin and the creatinine."
+    ],
+    cautions: [
+      "Contraindicated with ANY mechanical heart valve and with moderate–severe rheumatic mitral stenosis. Warfarin is required (Harrison). In rheumatic heart disease with AF, rivaroxaban did worse than warfarin (INVICTUS). Rheumatic heart disease is common in Ethiopia, so ask every patient on rivaroxaban about valve disease.",
+      "15 mg and 20 mg doses must be taken with food (Harrison). Without food the patient is under-protected.",
+      "Creatinine clearance under 15 mL/min or dialysis: do not use (Nelson); 15–29: caution and a physician's decision. Liver disease with a coagulopathy, or moderate–severe cirrhosis: do not use (product information).",
+      "Pregnancy: contraindicated. DOACs cross the placenta (Harrison). Change to enoxaparin as soon as pregnancy is known. Women who could become pregnant need contraception. Avoid while breastfeeding: rivaroxaban passes into milk (Gabbe).",
+      "Antiphospholipid syndrome with thrombosis: in the trial that showed the harm, rivaroxaban caused more clots than warfarin (Gabbe). Use warfarin.",
+      "Active major bleeding, recent intracranial bleeding, or a recent spinal or eye operation: do not start without senior advice.",
+      "Bleeding risk is higher with aspirin, clopidogrel, NSAIDs and SSRIs (see Interactions). Rifampicin (TB treatment), carbamazepine, phenytoin and phenobarbital lower rivaroxaban levels and leave the patient unprotected. Ritonavir-boosted HIV protease inhibitors and azole antifungals such as ketoconazole raise them; fluconazole and erythromycin raise them less.",
+      "INR and aPTT do not measure rivaroxaban reliably (Harrison). A normal result does not mean the drug has gone.",
+      "Stopping early without cover raises the risk of stroke and clots. Every stop needs a written restart plan."
+    ],
+    antidote: "The specific reversal agent, andexanet alfa, is expensive and not available in most hospitals (Harrison), essentially none in Ethiopia. Instead: stop rivaroxaban, control the bleeding, resuscitate, give tranexamic acid, and give four-factor prothrombin complex concentrate 25–50 units/kg where available (Harrison). Activated charcoal helps if the dose was taken in the last few hours. Vitamin K, fresh frozen plasma and protamine do NOT reverse rivaroxaban, and dialysis does not remove it. Time is the main antidote: the half-life is 7–11 h, longer in the elderly and with poor kidneys.",
+    textbook: [
+      {
+        book: "harrison",
+        text: "Atrial fibrillation: rivaroxaban 20 mg once daily, reduced to 15 mg once daily when creatinine clearance is 15–49 mL/min. DOACs are licensed for AF except with mechanical heart valves or severe rheumatic mitral valve disease.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952"
+      },
+      {
+        book: "harrison",
+        text: "At doses of 15 or 20 mg once daily, rivaroxaban must be taken with food to enhance absorption (apixaban can be taken with or without food).",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "VTE treatment can be all-oral: rivaroxaban 15 mg twice daily for 21 days, then 20 mg once daily. After 6 months of full-dose treatment it can be lowered to 10 mg once daily for secondary prevention.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "After hip or knee replacement: rivaroxaban 10 mg once daily, usually for 30 days after hip and 10–14 days after knee replacement.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "Rivaroxaban prolongs the prothrombin time more than apixaban, but only an anti-Xa assay measures it. Half-life 7–11 h; about one-third cleared by the kidney; interactions through CYP3A4 and P-glycoprotein (Table 123-9).",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, Table 123-9, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "With direct Xa inhibitors the PT may be normal.",
+        ref: "Harrison 22nd ed. 2025, ch. 69 Bleeding and Thrombosis, Table 69-3, p. 475"
+      },
+      {
+        book: "harrison",
+        text: "Bleeding: minor, withhold one or two doses; serious, manage like warfarin bleeding except that vitamin K is of no benefit. Charcoal may help within 4 h. More than 24 h after the last dose the DOAC is unlikely to be responsible unless renal function is markedly impaired.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "Periprocedural: DOACs are held for 1–2 days before procedures with moderate or high bleeding risk, longer if renal function is impaired.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 953"
+      },
+      {
+        book: "harrison",
+        text: "Andexanet is expensive and not available in all hospitals; four-factor prothrombin complex concentrate 25–50 units/kg is the alternative.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 954"
+      },
+      {
+        book: "harrison",
+        text: "DOACs cross the placenta and are contraindicated in pregnancy; avoid in nursing mothers.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 954"
+      },
+      {
+        book: "harrison",
+        text: "Warfarin is required for rheumatic mitral stenosis and mechanical heart valves.",
+        ref: "Harrison 22nd ed. 2025, ch. 258 Atrial Fibrillation, p. 1950"
+      },
+      {
+        book: "harrison",
+        text: "Harrison's mitral stenosis chapter lists the INVICTUS trial of rivaroxaban in rheumatic heart disease-associated AF (Connolly 2022), in which rivaroxaban did worse than warfarin.",
+        ref: "Harrison 22nd ed. 2025, ch. 274 Mitral Stenosis, p. 2052"
+      },
+      {
+        book: "harrison",
+        text: "Table 290-4: rivaroxaban 15 mg twice daily for 3 weeks, then 20 mg once daily with the evening meal.",
+        ref: "Harrison 22nd ed. 2025, ch. 290 Deep-Venous Thrombosis and Pulmonary Thromboembolism, Table 290-4, p. 2163"
+      },
+      {
+        book: "nelson",
+        text: "Apixaban, edoxaban and rivaroxaban are contraindicated with creatinine clearance below 15 mL/min. Rivaroxaban for VTE: 15 mg twice daily for 3 weeks, then 20 mg once daily.",
+        ref: "Nelson 22nd ed. 2024, ch. 458 Pulmonary Embolism, Infarction, and Hemorrhage, Table 458.3, p. 2697"
+      },
+      {
+        book: "nelson",
+        text: "Trials have shown dabigatran and rivaroxaban to be safe and effective in children; DOACs should be avoided in antiphospholipid syndrome with arterial thrombosis.",
+        ref: "Nelson 22nd ed. 2024, ch. 528 Thrombotic Disorders in Children, p. 3045"
+      },
+      {
+        book: "gabbe",
+        text: "DOACs such as apixaban and rivaroxaban are not recommended in pregnancy; heparin and enoxaparin are the alternatives.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 126"
+      },
+      {
+        book: "gabbe",
+        text: "Rivaroxaban crosses into breast milk in small amounts and its safety is not established, so it should be avoided in breastfeeding mothers.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 50 Thromboembolic Disorders in Pregnancy, p. 963"
+      },
+      {
+        book: "gabbe",
+        text: "In triple-positive antiphospholipid syndrome, rivaroxaban caused more thrombosis than warfarin; warfarin rather than a DOAC is recommended.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 51 Collagen Vascular Diseases in Pregnancy, p. 974"
+      },
+      {
+        book: "schwartz",
+        text: "Factor Xa inhibitors such as rivaroxaban were described as lacking a specific antidote.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 113"
+      },
+      {
+        book: "schwartz",
+        text: "Use is not recommended with creatinine clearance under 30 mL/min for rivaroxaban (under 15 for apixaban) or severe hepatic insufficiency.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 24 Venous and Lymphatic Disease, p. 989"
+      },
+      {
+        book: "note",
+        text: "Harrison ch. 290 (Table 290-4) gives 10 mg twice daily for VTE when creatinine clearance is 15–50 mL/min; the product licence instead keeps 15 mg twice daily for 3 weeks, then 20 mg once daily, lowered to 15 mg once daily only when bleeding risk outweighs recurrence risk. Schwartz advises against rivaroxaban below 30 mL/min; the licence allows it with caution down to 15. This page follows the licence, takes the cautious line below 30 and asks for a physician's decision. The stopping and restarting times are copied from the app's Pre-op tool (PAUSE, ASRA) and are the same as on the Apixaban page, so that the three never disagree. Switching, missed-dose, food, crushing and gastric-tube rules follow the product information. The antiphospholipid warning follows the TRAPS trial (Pengo 2018, cited by Gabbe) and the rheumatic AF warning the INVICTUS trial (Connolly 2022, listed by Harrison). The improvised methods are editorial guidance for district practice.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "Rivaroxaban (Xarelto) summary of product characteristics / prescribing information: dosing with food, renal criteria, switching, missed dose, crushing and gastric tubes"
+      },
+      {
+        name: "Douketis JD et al. Perioperative management of patients with atrial fibrillation receiving a direct oral anticoagulant (PAUSE). JAMA Intern Med 2019;179:1469–1478"
+      },
+      {
+        name: "ASRA evidence-based guidelines: Regional anesthesia in the patient receiving antithrombotic or thrombolytic therapy, 4th ed. 2018"
+      },
+      {
+        name: "Steffel J et al. European Heart Rhythm Association practical guide on the use of non-vitamin K antagonist oral anticoagulants in patients with atrial fibrillation, 2021"
+      },
+      {
+        name: "Connolly SJ et al. Rivaroxaban in rheumatic heart disease-associated atrial fibrillation (INVICTUS). N Engl J Med 2022;387:978–988"
+      },
+      {
+        name: "Pengo V et al. Rivaroxaban vs warfarin in high-risk patients with antiphospholipid syndrome (TRAPS). Blood 2018;132:1365–1371"
+      },
+      {
+        name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 69, 123, 258, 274, 290"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "atovaquone",
+    name: "Atovaquone (and atovaquone–proguanil)",
+    aka: ["Mepron", "Wellvone", "Malarone", "Atovaquone-proguanil", "Atovaquone/proguanil", "Proguanil"],
+    cls: "Hydroxynaphthoquinone antiprotozoal (blocks parasite mitochondrial electron transport); with proguanil as a fixed-dose antimalarial",
+    cat: "infection",
+    wards: ["outpatient", "medical", "paediatric"],
+    tags: [
+      "PCP",
+      "Pneumocystis",
+      "PCP prophylaxis",
+      "HIV",
+      "sulfa allergy",
+      "cotrimoxazole alternative",
+      "malaria",
+      "falciparum",
+      "malaria prophylaxis",
+      "traveller",
+      "take with fatty food"
+    ],
+    presentation: [
+      "Atovaquone oral suspension 750 mg/5 mL, bright yellow. Shake well and measure with an oral syringe: 10 mL = 1500 mg. There is no injection.",
+      "Atovaquone–proguanil (Malarone) tablets: adult 250 mg atovaquone/100 mg proguanil; paediatric 62.5 mg/25 mg (Harrison). Tablets may be crushed and mixed with food or a milky drink (product information).",
+      "Both are expensive and often unavailable in Ethiopia. The suspension usually has to come through an HIV referral centre or a private importer, and atovaquone–proguanil is mostly sold for travellers. Check what is actually in stock, and for how long, before you plan a patient's prophylaxis around it."
+    ],
+    indications: [
+      "Prophylaxis of Pneumocystis pneumonia (PCP) in HIV or other immunosuppression when cotrimoxazole cannot be used (a severe sulfonamide reaction, or bone-marrow suppression) and dapsone is unsuitable (Harrison)",
+      "Mild to moderate PCP when cotrimoxazole cannot be used (Harrison); severe PCP needs IV pentamidine instead",
+      "Atovaquone–proguanil: uncomplicated falciparum malaria when the national first-line treatment cannot be used, and as the oral follow-on after IV artesunate (Harrison, Nelson)",
+      "Atovaquone–proguanil: malaria prophylaxis for non-immune travellers, such as visitors or returning diaspora (Harrison)"
+    ],
+    standard: {
+      summary: "Atovaquone only works if it is absorbed, and it is absorbed well only with fat: a fatty meal raises absorption two- to threefold (Harrison). Every dose goes down with a meal that contains fat or milk. For PCP it is an alternative to cotrimoxazole, not an equal: cotrimoxazole also protects against toxoplasmosis, malaria, pneumonia and diarrhoea. For malaria, atovaquone–proguanil works everywhere but is seldom used in endemic areas because of its high cost (Harrison); in Ethiopia the national first-line treatments come first. Atovaquone must never be used alone for malaria: resistance develops quickly (Harrison).",
+      items: [
+        {
+          label: "PCP prophylaxis: adults and adolescents 13 years and over",
+          text: "1500 mg (10 mL of 750 mg/5 mL suspension) once daily WITH FOOD (Harrison, Nelson)."
+        },
+        {
+          label: "PCP prophylaxis: children",
+          text: "Age 1–3 months: 30 mg/kg once daily. 4–24 months: 45 mg/kg once daily. Over 24 months to 12 years: 30 mg/kg once daily. Always with food or a milk feed (Nelson). Never more than the adult 1500 mg."
+        },
+        {
+          label: "PCP treatment, mild to moderate, cotrimoxazole impossible",
+          text: "750 mg twice daily with food for 21 days (Harrison), then continue prophylaxis. Not for severe PCP (breathless at rest, low oxygen): IV pentamidine is the treatment when cotrimoxazole cannot be used (Harrison). Decide at referral level."
+        },
+        {
+          label: "Malaria treatment: atovaquone–proguanil",
+          text: "20/8 mg/kg once daily for 3 days with food (Harrison). By weight (Nelson): under 5 kg not indicated; 5–8 kg 2 paediatric tablets; 9–10 kg 3 paediatric tablets; 11–20 kg 1 adult tablet; 21–30 kg 2 adult tablets; 31–40 kg 3 adult tablets; over 40 kg 4 adult tablets. Each once daily for 3 days. P. vivax and P. ovale also need radical cure of the liver stage as in the national malaria guideline (Harrison)."
+        },
+        {
+          label: "Malaria prophylaxis (non-immune travellers)",
+          text: "Adult: 1 adult tablet daily with food, starting 1–2 days before entering the malarious area, every day there, and for 7 days after leaving (Harrison). Children: 5–8 kg ½ paediatric tablet; 8–10 kg ¾; 10–20 kg 1; 20–30 kg 2; 30–40 kg 3 paediatric tablets; 40 kg or more 1 adult tablet daily (Harrison Table 231-8)."
+        },
+        {
+          label: "Vomiting",
+          text: "If the patient vomits within 1 hour of a dose, give the dose again (product information). Persistent vomiting means the drug is not being absorbed: change treatment."
+        },
+        {
+          label: "Kidneys and liver",
+          text: "Creatinine clearance under 30 mL/min: do not give atovaquone–proguanil (Harrison, Nelson), and atovaquone alone is generally contraindicated because it accumulates (Harrison). Mild to moderate kidney impairment: no change. Moderate liver impairment lengthens atovaquone's half-life and raises proguanil levels (Harrison): use with caution."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Getting the fat in: making every dose count",
+        best_for: "Every patient on atovaquone or atovaquone–proguanil, at home or on the ward.",
+        requires: ["oral"],
+        steps: [
+          "Give each dose with a meal that contains fat or milk: a cup of whole milk, an egg, injera with a stew cooked in oil or butter, peanuts or peanut paste, avocado. For a baby, give it with a breast or milk feed.",
+          "Measure the suspension with an oral syringe (10 mL = 1500 mg; 5 mL = 750 mg). Shake the bottle first. Give it at the same time every day, with the main meal.",
+          "During a religious fast, give it with the meal that breaks the fast.",
+          "Vomited within 1 hour: give the dose again (product information).",
+          "A patient who is not eating, has severe diarrhoea or is vomiting will not absorb it reliably (Harrison: absorption is unpredictable when gut function is abnormal). Do not rely on atovaquone in that patient: discuss another option (Interactions and Substitutes) with the HIV clinician.",
+          "At every visit, ask HOW it is being taken. 'Every morning on an empty stomach before work' means the patient is barely protected."
+        ],
+        monitor: ["Adherence and how the dose is taken, at every visit", "Rash, nausea, diarrhoea, yellow eyes"],
+        cautions: ["Food is not optional. A dose on an empty stomach is a much smaller dose."]
+      },
+      {
+        title: "PCP prophylaxis when cotrimoxazole cannot be used",
+        best_for: "ART clinics and medical wards: a patient with a severe cotrimoxazole reaction, or marrow suppression, who still needs PCP protection.",
+        requires: [],
+        steps: [
+          "First check that cotrimoxazole really cannot be used. A mild, flat rash without fever or mouth sores may allow supervised rechallenge (see Cotrimoxazole). After Stevens-Johnson syndrome, blistering, mucosal sores or fever with rash: never again.",
+          "Dapsone 100 mg daily is the usual next choice if G6PD is normal (see Dapsone). But dapsone cross-reacts with sulfonamides in a substantial fraction of patients (Harrison), so after a severe cotrimoxazole reaction many clinicians avoid it. That is where atovaquone matters.",
+          "Atovaquone is a sensible choice only if all of these hold: a supply for months is secured, the patient eats regular meals, the creatinine clearance is 30 mL/min or more, and the patient is NOT on rifampicin TB treatment (rifampicin lowers atovaquone levels, Harrison).",
+          "On rifampicin TB treatment, both dapsone and atovaquone levels fall. Ask the HIV/TB clinician: monthly aerosolised pentamidine at a referral centre may be the option (see Pentamidine).",
+          "Atovaquone alone protects less against toxoplasmosis than cotrimoxazole. With a low CD4 count, ask the HIV clinician about toxoplasma cover.",
+          "Never leave the patient unprotected while you decide: report the stock-out or the problem the same day. Effective ART is the long-term protection, and prophylaxis can stop by the national criteria (Harrison: CD4 above 200 for at least 3 months on ART with a suppressed viral load)."
+        ],
+        monitor: [
+          "Adherence and food at every visit",
+          "Cough, breathlessness or fever: think of PCP even on prophylaxis"
+        ],
+        cautions: [
+          "All the alternatives are less effective than cotrimoxazole (Nelson). Go back to cotrimoxazole if it ever becomes possible."
+        ]
+      },
+      {
+        title: "Atovaquone–proguanil for malaria with only adult tablets, or only for the right patient",
+        best_for: "District hospitals and health centres that hold a few packs of atovaquone–proguanil, often without paediatric tablets.",
+        requires: ["oral"],
+        steps: [
+          "Check it is the right drug. Uncomplicated falciparum malaria in Ethiopia is treated first with the national first-line ACT; severe malaria needs IV or IM artesunate first (see Artesunate). Use atovaquone–proguanil only when the first-line drug cannot be used (allergy, treatment failure, stock-out), or as the oral follow-on after artesunate (Nelson).",
+          "Weigh the child. Do not give it under 5 kg (Nelson).",
+          "Only adult tablets (250/100 mg) in stock: 2 paediatric tablets = ½ adult tablet, and 3 paediatric tablets = ¾ adult tablet. So 5–8 kg: ½ adult tablet; 9–10 kg: ¾ adult tablet; then 11–20 kg 1, 21–30 kg 2, 31–40 kg 3, over 40 kg 4 adult tablets. Once daily for 3 days.",
+          "Crush the tablet portion, mix it with a little milk or soft food, and give it all (product information). Watch the first dose. Vomited within 1 hour: give it again.",
+          "Fever settles more slowly than after an ACT (Harrison). Repeat the blood film if the patient is still febrile on day 3 or is getting worse, and treat as severe malaria at once if danger signs appear.",
+          "Not in pregnancy unless the national guideline and a senior agree: safety is unknown (Nelson, Williams). Not with creatinine clearance under 30 mL/min."
+        ],
+        monitor: ["Temperature, vomiting and danger signs daily", "Blood film on day 3 if still febrile"],
+        cautions: [
+          "Never give atovaquone suspension alone for malaria: resistance develops rapidly (Harrison). It is always combined with proguanil."
+        ]
+      }
+    ],
+    paediatric: [
+      "PCP prophylaxis: 30 mg/kg once daily at 1–3 months and from 2 to 12 years; 45 mg/kg once daily at 4–24 months; 1500 mg from 13 years. With a feed or food (Nelson).",
+      "Malaria: atovaquone–proguanil by weight from 5 kg (Nelson); not under 5 kg.",
+      "HIV-exposed infants get cotrimoxazole first. Atovaquone is for the rare child who truly cannot take it, and usually needs a referral centre for supply."
+    ],
+    cautions: [
+      "Must be taken with fatty food or milk: absorption rises two- to threefold with a fatty meal (Harrison).",
+      "Rifampicin (TB treatment) lowers atovaquone levels, as do efavirenz and ritonavir-boosted lopinavir; metoclopramide lowers absorption; tetracycline lowers levels (Harrison). See Interactions.",
+      "The proguanil in atovaquone–proguanil may raise the INR on warfarin (product information).",
+      "Creatinine clearance under 30 mL/min: do not use atovaquone–proguanil, and atovaquone alone is generally contraindicated (Harrison).",
+      "Side effects: nausea, vomiting, diarrhoea, abdominal pain, headache; rash, fever and raised liver enzymes (Harrison).",
+      "Not for severe PCP or severe malaria. Never used alone for malaria.",
+      "Pregnancy: safety unknown; not recommended for prophylaxis (Harrison, Williams). See Safety. Women of childbearing age should keep taking folic acid (Harrison)."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Absorption is slow and variable; it rises two- to threefold with a fatty meal. Atovaquone is generally contraindicated with creatinine clearance under 30 mL/min.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1747"
+      },
+      {
+        book: "harrison",
+        text: "Plasma levels are lowered by rifampicin, tetracycline, efavirenz and lopinavir/ritonavir; bioavailability is lowered by metoclopramide. Common: nausea, vomiting.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1742"
+      },
+      {
+        book: "harrison",
+        text: "PCP prophylaxis alternative: atovaquone 1500 mg once daily by mouth; requires a fatty meal for optimal absorption.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, Table 227-2, p. 1734"
+      },
+      {
+        book: "harrison",
+        text: "Mild-moderate PCP treatment alternative: atovaquone 750 mg twice daily by mouth.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, Table 227-1, p. 1734"
+      },
+      {
+        book: "harrison",
+        text: "For patients who cannot tolerate TMP-SMX, alternatives include dapsone, atovaquone and monthly aerosolised pentamidine. Atovaquone is effective and well tolerated, but oral only and absorption is unpredictable with abnormal gut function.",
+        ref: "Harrison 22nd ed. 2025, ch. 227 Pneumocystis Infections, p. 1735"
+      },
+      {
+        book: "harrison",
+        text: "Uncomplicated falciparum malaria (second-line / imported): atovaquone-proguanil 20/8 mg/kg once daily for 3 days with food.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-6, p. 1770"
+      },
+      {
+        book: "harrison",
+        text: "Atovaquone-proguanil is highly effective everywhere but seldom used in endemic areas because of its high cost and rapid emergence of resistance; recovery is slower than after ACT.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
+      },
+      {
+        book: "harrison",
+        text: "Prophylaxis: 1 adult tablet (250/100 mg) daily, starting 1–2 days before travel and for 7 days after leaving; child doses by weight from 5 kg. Contraindicated with creatinine clearance under 30 mL/min; not recommended under 5 kg, in pregnancy, or when breastfeeding an infant under 5 kg; take with food or a milky drink.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-8, p. 1774"
+      },
+      {
+        book: "harrison",
+        text: "Women of childbearing age taking atovaquone-proguanil should continue folate supplements.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1751"
+      },
+      {
+        book: "nelson",
+        text: "Child PCP prophylaxis: atovaquone 30 mg/kg once daily (age 1–3 months and over 24 months to 12 years), 45 mg/kg once daily (4–24 months), 1500 mg once daily from 13 years — always with food.",
+        ref: "Nelson 22nd ed. 2024, ch. 322 Human Immunodeficiency Virus and Acquired Immunodeficiency Syndrome, Table 322.5, p. 2111"
+      },
+      {
+        book: "nelson",
+        text: "Uncomplicated chloroquine-resistant falciparum malaria: 4 adult tablets once daily for 3 days; children by weight (under 5 kg not indicated; 11–20 kg 1 adult tablet; over 40 kg 4 adult tablets daily).",
+        ref: "Nelson 22nd ed. 2024, ch. 325 Principles of Antiparasitic Therapy, Table 325.1, p. 2134"
+      },
+      {
+        book: "nelson",
+        text: "Take with food or a milky drink; safety in pregnancy is unknown and use is generally not recommended; do not give with creatinine clearance under 30 mL/min.",
+        ref: "Nelson 22nd ed. 2024, ch. 325 Principles of Antiparasitic Therapy, Table 325.1, p. 2134"
+      },
+      {
+        book: "williams",
+        text: "Data are insufficient for atovaquone-proguanil use as malaria chemoprophylaxis in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2723"
+      },
+      {
+        book: "williams",
+        text: "Atovaquone-proguanil is a second-line treatment for falciparum malaria in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2722"
+      },
+      {
+        book: "nelson",
+        text: "Child PCP prophylaxis alternatives (dapsone, atovaquone, aerosolised pentamidine) are all inferior to TMP-SMX.",
+        ref: "Nelson 22nd ed. 2024, ch. 290 Pneumocystis jirovecii, p. 1947"
+      },
+      {
+        book: "note",
+        text: "Neither atovaquone suspension nor atovaquone–proguanil is part of routine public-sector supply in Ethiopia in our experience, and both are expensive; check local availability. The Ethiopian national malaria guideline uses artemether–lumefantrine first line and artesunate for severe malaria, so atovaquone–proguanil appears here only as an alternative. The 'only adult tablets' arithmetic (2 paediatric tablets = ½ adult tablet, 3 = ¾) follows from the tablet strengths in Harrison Table 231-8 and the weight bands in Nelson Table 325.1; crushing and mixing with food or a milky drink, and repeating a dose vomited within 1 hour, follow the product information. Nelson Table 325.1 misprints the adult tablet as 50 mg atovaquone; it is 250 mg (Harrison). The improvised methods are editorial guidance for district practice.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "Atovaquone oral suspension (Wellvone/Mepron) and atovaquone–proguanil (Malarone) summaries of product characteristics: food, vomiting, crushing, renal limits, warfarin"
+      },
+      {
+        name: "NIH/CDC/IDSA Guidelines for the prevention and treatment of opportunistic infections in adults and adolescents with HIV (as summarised in Harrison 22nd ed., Table 208-11)"
+      },
+      {
+        name: "WHO Guidelines for malaria (current edition) and the Ethiopian national malaria guideline"
+      },
+      { name: "CDC Yellow Book: malaria prophylaxis for travellers" },
+      { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 208, 227, 229, 231" },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 218, 290, 322, 325" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "clotrimazole",
+    name: "Clotrimazole",
+    aka: [
+      "Canesten",
+      "Lotrimin",
+      "Clotrimazole pessary",
+      "Clotrimazole vaginal tablet",
+      "Clotrimazole cream",
+      "Clotrimazole troche",
+      "Topical azole",
+      "Imidazole"
+    ],
+    cls: "Imidazole antifungal (skin, vaginal and oral-lozenge use)",
+    cat: "infection",
+    wards: ["outpatient", "maternity", "paediatric", "medical"],
+    tags: [
+      "vaginal candidiasis",
+      "vaginal thrush",
+      "pregnancy",
+      "candida",
+      "nappy rash",
+      "intertrigo",
+      "tinea",
+      "ringworm",
+      "athlete's foot",
+      "oral thrush",
+      "topical azole",
+      "fluconazole alternative"
+    ],
+    presentation: [
+      "Cream 1 % (skin and vulva). Topical solution 1 % in some brands (skin folds, between the toes, the ear canal).",
+      "Vaginal tablets (pessaries) 100 mg, 200 mg and 500 mg, often with an applicator; vaginal cream where stocked.",
+      "Oral troches (lozenges) 10 mg: rarely stocked in Ethiopia.",
+      "Cheap and widely sold in private pharmacies. Room temperature."
+    ],
+    indications: [
+      "Vaginal candidiasis, including in PREGNANCY, where a topical azole is used instead of oral fluconazole (see Fluconazole)",
+      "Candida of the skin: skin folds, under the breasts, groin, nappy area, around the nails",
+      "Ringworm (tinea) of the body, groin and feet; NOT the scalp or nails, which need oral treatment",
+      "Mild oral thrush (troches), where stocked",
+      "Candida balanitis in a partner who has symptoms"
+    ],
+    standard: {
+      summary: "Applied where the fungus is, so very little reaches the blood: safe in pregnancy and breastfeeding (Gabbe), and without the warfarin, QT and liver problems of oral fluconazole. It treats Candida and the ringworm fungi of the skin. It cannot reach infections of the scalp, nails, oesophagus or blood, which need an oral or IV drug.",
+      items: [
+        {
+          label: "Vaginal candidiasis (not pregnant)",
+          text: "One 100 mg pessary at night for 7 nights (Harrison Table 141-5), or 200 mg (two 100 mg) nightly for 3 nights (Harrison), or a single 500 mg pessary. Add 1 % cream to the vulva 2–3 times daily if it itches. Partners need no routine treatment (Harrison)."
+        },
+        {
+          label: "Vaginal candidiasis in pregnancy",
+          text: "Use the 7-night course: one 100 mg pessary high in the vagina at night for 7 nights, with cream to the vulva if needed (as on the Fluconazole page). Single-dose and short courses work less well in pregnancy. Insert it with a clean finger rather than the applicator (product information)."
+        },
+        {
+          label: "Candida of the skin and nappy rash",
+          text: "1 % cream thinly 2–3 times daily, on clean dry skin and 1–2 cm beyond the edge. Continue for 1 week after the skin looks normal (Harrison). Keep the area dry; for nappy rash, change nappies often and leave the nappy off for periods (Nelson)."
+        },
+        {
+          label: "Ringworm: body, groin, feet",
+          text: "1 % cream twice daily (Harrison), usually for 2–4 weeks (Nelson), and for 1 week after it looks clear (Harrison). Athlete's foot often needs longer and comes back (Harrison). Scalp ringworm and nail infections do not respond to cream alone (Harrison): they need an oral antifungal, so refer or follow the national guideline."
+        },
+        {
+          label: "Oral thrush (troches)",
+          text: "One 10 mg troche dissolved slowly in the mouth five times a day for 7–14 days (IDSA), for adults and children old enough to suck a lozenge safely. Mild thrush only; moderate or severe thrush, or pain on swallowing, needs fluconazole (Harrison)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Is it really thrush? Check before you hand over a pessary",
+        best_for: "Health centres, OPD and antenatal clinics treating vaginal discharge without a microscope.",
+        requires: [],
+        steps: [
+          "Thrush: itch and soreness, thick white 'curdy' discharge, no bad smell. That is the woman to treat with clotrimazole.",
+          "Thin grey discharge with a fishy smell suggests bacterial vaginosis; frothy yellow-green discharge suggests trichomonas. These need metronidazole, not an azole (Harrison: many women who treat themselves for yeast have a different infection).",
+          "Discharge with lower abdominal pain, fever, pain on intercourse or a contact with a sexually transmitted infection: follow the national syndromic STI guideline, not a pessary alone.",
+          "In pregnancy, a watery 'discharge' may be ruptured membranes. Ask and examine before calling it thrush.",
+          "Thrush that keeps coming back: check the blood glucose (diabetes, including gestational diabetes) and offer an HIV test."
+        ],
+        monitor: ["Symptoms at the end of the course; come back if not better in a week"],
+        cautions: [
+          "Recurrent or severe vaginal candidiasis outside pregnancy may need prolonged oral treatment (Harrison): refer or discuss with a clinician."
+        ]
+      },
+      {
+        title: "Vaginal thrush in pregnancy when there is no clotrimazole pessary",
+        best_for: "Antenatal clinics and health posts where the pessary is out of stock.",
+        requires: [],
+        steps: [
+          "A miconazole pessary or vaginal cream for 7 nights works just as well (see Miconazole). Use whichever topical azole is on the shelf.",
+          "No vaginal azole at all: nystatin pessaries are the alternative (as on the Fluconazole page).",
+          "Vulval itch only, with little discharge: clotrimazole 1 % cream on the vulva 2–3 times daily can control symptoms until a pessary is obtained.",
+          "Do NOT give a fluconazole capsule instead. Treatment can wait a day for a pessary or a referral (see Fluconazole)."
+        ],
+        monitor: ["Symptoms after 7 days"],
+        cautions: [
+          "In pregnancy, insert the pessary with a clean finger rather than the applicator (product information)."
+        ]
+      },
+      {
+        title: "Skin fungus: making the tube work and stopping it coming back",
+        best_for: "OPD, school health and the paediatric ward: ringworm, groin rash, athlete's foot, nappy rash.",
+        requires: [],
+        steps: [
+          "Wash, then dry the skin completely (folds, between the toes). Constant moisture is what keeps Candida going (Harrison).",
+          "Apply a thin layer only, twice daily, from 1–2 cm outside the edge inwards. A 20 g tube treats a large area if it is applied thinly.",
+          "Keep going for 1 week after the skin looks clear (Harrison). Stopping when it looks better is the commonest reason it comes back.",
+          "Do not add a strong steroid cream: steroids make ringworm spread and can turn it into deep nodules (Harrison). Mixed steroid–antifungal creams sold in pharmacies should not be used on ringworm, and only briefly elsewhere.",
+          "Ringworm of the scalp (patchy hair loss with scale) or of the nails: cream alone will not work (Harrison). Refer for oral treatment.",
+          "Nappy rash present for more than 3 days: treat it as Candida (Nelson), change nappies often and leave them off for periods."
+        ],
+        monitor: [
+          "Review at 2 weeks; if no better, think of another diagnosis (eczema, psoriasis) or scalp or nail involvement"
+        ],
+        cautions: [
+          "Widespread ringworm, or skin fungus that keeps coming back, may be a sign of HIV or diabetes: test."
+        ]
+      }
+    ],
+    paediatric: [
+      "Nappy rash with Candida (red, with small spots beyond the edge): 1 % cream 2–3 times daily, frequent changes, time without a nappy (Nelson).",
+      "Ringworm of the body: cream twice daily for 2–4 weeks (Nelson). Scalp ringworm needs oral treatment.",
+      "Vaginal Candida is unusual before puberty unless there is diabetes or recent antibiotics (Nelson): look for another cause of the discharge.",
+      "Troches only for a child old enough to suck a lozenge safely; not for infants and young children."
+    ],
+    cautions: [
+      "Local burning, itch or redness can occur; rarely allergy. Stop if the rash spreads or blisters.",
+      "Vaginal pessaries and creams can damage latex condoms and diaphragms (product information). Advise another method during treatment and for a few days after.",
+      "Treats Candida and dermatophytes on skin and mucosa only. Oesophageal thrush, scalp and nail infections, and invasive fungal infection need systemic treatment.",
+      "Recurrent thrush: check for diabetes and HIV.",
+      "No interaction with warfarin is listed for clotrimazole cream or pessaries (BNF). For a woman on warfarin it is the topical azole to choose rather than miconazole (see Miconazole)."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Vulvovaginal candidiasis: intravaginal imidazole (miconazole or clotrimazole) for 3–7 days, e.g. clotrimazole two 100 mg vaginal tablets daily for 3 days, or a single oral fluconazole dose. Sexual partners need no routine treatment.",
+        ref: "Harrison 22nd ed. 2025, ch. 141 Sexually Transmitted Infections: Overview and Clinical Approach, p. 1103"
+      },
+      {
+        book: "harrison",
+        text: "Usual treatment of vulvovaginal candidiasis: azole cream, tablet or suppository, e.g. clotrimazole 100 mg vaginal tablet once daily for 7 days.",
+        ref: "Harrison 22nd ed. 2025, ch. 141, Table 141-5, p. 1101"
+      },
+      {
+        book: "harrison",
+        text: "Mild oral thrush may be treated with topical nystatin suspension or clotrimazole troches; moderate or severe disease, or oesophageal involvement, needs a systemic azole.",
+        ref: "Harrison 22nd ed. 2025, ch. 225 Superficial Fungal Infections, p. 1723"
+      },
+      {
+        book: "harrison",
+        text: "Table 222-3: cutaneous candidiasis — topical azole preferred; oral thrush — fluconazole, or clotrimazole troches or nystatin as alternatives.",
+        ref: "Harrison 22nd ed. 2025, ch. 222 Candidiasis, Table 222-3, p. 1710"
+      },
+      {
+        book: "harrison",
+        text: "Tinea corporis, cruris and limited tinea pedis: topical therapy twice daily, continued 1 week beyond clinical resolution. Topicals do not work alone for tinea capitis or nail infection, and nystatin does not treat dermatophytes.",
+        ref: "Harrison 22nd ed. 2025, ch. 60 Eczema, Psoriasis, Cutaneous Infections, Acne, and Other Common Skin Disorders, p. 389"
+      },
+      {
+        book: "harrison",
+        text: "Cutaneous candidiasis: remove predisposing factors (moisture, antibiotics) and use topical nystatin or an azole (miconazole, clotrimazole); a mild hydrocortisone cream can treat the inflammation.",
+        ref: "Harrison 22nd ed. 2025, ch. 60 Eczema, Psoriasis, Cutaneous Infections, Acne, and Other Common Skin Disorders, p. 390"
+      },
+      {
+        book: "gabbe",
+        text: "Clotrimazole and miconazole in pregnancy are not known to cause malformations; one study suggested more first-trimester miscarriage, but this was not considered definitive. 2092 first-trimester exposures showed no increase in anomalies.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131"
+      },
+      {
+        book: "gabbe",
+        text: "Breastfeeding: no milk data for nystatin, miconazole or clotrimazole, but with little vaginal absorption and poor oral bioavailability no problem is expected.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135"
+      },
+      {
+        book: "nelson",
+        text: "Candida vulvovaginitis: vaginal creams or troches of nystatin, clotrimazole or miconazole, or a single oral fluconazole dose. Candida nappy rash: topical nystatin, clotrimazole or miconazole.",
+        ref: "Nelson 22nd ed. 2024, ch. 280 Candida, p. 1923"
+      },
+      {
+        book: "nelson",
+        text: "Oral thrush in children with HIV: nystatin suspension is often effective; clotrimazole troches or fluconazole are alternatives.",
+        ref: "Nelson 22nd ed. 2024, ch. 322 Human Immunodeficiency Virus and Acquired Immunodeficiency Syndrome, p. 2093"
+      },
+      {
+        book: "nelson",
+        text: "Tinea corporis usually responds to a topical antifungal (e.g. an imidazole) twice daily for 2–4 weeks.",
+        ref: "Nelson 22nd ed. 2024, ch. 707 Cutaneous Fungal Infections, p. 4162"
+      },
+      {
+        book: "harrison",
+        text: "Azoles such as clotrimazole and miconazole are used topically for skin fungal infections and for oral and vaginal candidiasis.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1692"
+      },
+      {
+        book: "note",
+        text: "The 7-day topical azole course in pregnancy follows the CDC STI Treatment Guidelines 2021 and agrees with the Fluconazole page. Inserting pessaries by finger rather than with the applicator in pregnancy, and the latex warning, follow the product information. Troche dosing (10 mg five times daily for 7–14 days) is from the IDSA candidiasis guideline 2016; troches are rarely stocked in Ethiopia. The improvised methods are editorial guidance for district practice.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      { name: "Clotrimazole (Canesten) cream, pessary and troche product information" },
+      {
+        name: "CDC Sexually Transmitted Infections Treatment Guidelines 2021: vulvovaginal candidiasis (7-day topical azole in pregnancy)"
+      },
+      { name: "IDSA Clinical practice guideline for the management of candidiasis, 2016" },
+      { name: "BNF / BNF for Children: clotrimazole" },
+      {
+        name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 60, 141, 217, 222, 225"
+      },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 280, 322, 707" },
+      { name: "Gabbe's Obstetrics, 9th ed., ch. 7" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "miconazole",
+    name: "Miconazole (oral gel, cream, pessary)",
+    aka: [
+      "Daktarin",
+      "Daktarin oral gel",
+      "Miconazole oral gel",
+      "Gyno-Daktarin",
+      "Monistat",
+      "Miconazole cream",
+      "Topical azole",
+      "Imidazole"
+    ],
+    cls: "Imidazole antifungal (oral gel, skin cream and vaginal)",
+    cat: "infection",
+    wards: ["outpatient", "paediatric", "medical", "maternity"],
+    tags: [
+      "oral thrush",
+      "oral gel",
+      "warfarin",
+      "INR",
+      "bleeding",
+      "infant",
+      "choking",
+      "candida",
+      "nappy rash",
+      "tinea",
+      "ringworm",
+      "vaginal candidiasis",
+      "pregnancy",
+      "topical azole"
+    ],
+    presentation: [
+      "Oral gel 20 mg/g (2 %), in a tube with a measuring spoon. Sold without prescription in many pharmacies.",
+      "Cream 2 % for the skin; some brands combine it with hydrocortisone.",
+      "Vaginal cream 2 % with applicator, and pessaries (100 mg, 200 mg, 400 mg or 1200 mg; brands vary).",
+      "THE ORAL GEL IS SWALLOWED AND ABSORBED. It is not 'just a cream for the mouth': enough reaches the blood to cause dangerous drug interactions, above all with warfarin."
+    ],
+    indications: [
+      "Oral thrush and angular cheilitis (cracked mouth corners) in adults and in children from 4 months of age (oral gel)",
+      "Candida of the skin, nappy rash, and ringworm of the body, groin and feet (cream)",
+      "Vaginal candidiasis, including in pregnancy, where a topical azole is used instead of oral fluconazole (see Fluconazole)"
+    ],
+    standard: {
+      summary: "Same family as clotrimazole and just as good on the skin and in the vagina. The difference is the ORAL GEL: it is swallowed, enough is absorbed to block the liver enzyme (CYP2C9) that clears warfarin, and patients on warfarin have had large INR rises with serious bleeding after using it (MHRA). Never give the oral gel to a patient on warfarin. In babies the danger is choking: small amounts to the front of the mouth, never a blob at the back of the throat, and not under 4 months of age.",
+      items: [
+        {
+          label: "Oral thrush: adults and children 2 years and over",
+          text: "Oral gel 2.5 mL four times a day after food. Hold it in the mouth on the patches as long as possible before swallowing. Continue for at least 1 week after the patches have gone. Dentures: take them out at night and clean them, and treat the denture surface too (product information)."
+        },
+        {
+          label: "Oral thrush: infants 4–24 months",
+          text: "Oral gel 1.25 mL four times a day after feeds, divided into small portions and smeared with a clean finger onto the patches and the front of the mouth. Never put it at the back of the throat. Continue for 1 week after the patches have gone (product information)."
+        },
+        {
+          label: "Under 4 months",
+          text: "Do not use the oral gel: the licence excludes infants under 4 months, and older babies whose swallowing is not yet mature, because of the choking risk (product information). Mild thrush may not need treatment at all (Nelson); otherwise use nystatin suspension, the usual treatment in infants (Nelson)."
+        },
+        {
+          label: "Skin: Candida, nappy rash, ringworm",
+          text: "2 % cream twice daily on clean, dry skin, and for 1 week after it looks clear (Harrison). Nappy rash present for more than 3 days: treat as Candida (Nelson). Not for ringworm of the scalp or nails (Harrison)."
+        },
+        {
+          label: "Vaginal candidiasis",
+          text: "100 mg pessary (or 2 % vaginal cream) at night for 7 nights (Harrison Table 141-5), or a single 1200 mg pessary (Harrison). In pregnancy use the 7-night course, as on the Fluconazole page."
+        },
+        {
+          label: "Patients on warfarin (read before using any form)",
+          text: "Oral gel: do not use (MHRA, BNF). Choose nystatin suspension for thrush. Vaginal and skin miconazole: much less is absorbed, but INR rises have been reported; prefer clotrimazole, and if miconazole is used, check the INR within 3–5 days (see Interactions)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Oral gel in a baby: the safe way to give it",
+        best_for: "Mothers at home, under-five clinics and the paediatric ward.",
+        requires: [],
+        steps: [
+          "Check the age: 4 months or older, and the baby swallows and feeds well. Younger, premature or with feeding or swallowing problems: do not use the gel (product information).",
+          "Wash your hands. Measure the dose: 1.25 mL (a quarter of the 5 mL spoon supplied with Daktarin; check the marks on the spoon you have). Split it into 4 or 5 tiny portions.",
+          "Smear each portion with a clean fingertip onto the white patches, inside the cheeks and the front of the gums. Never squeeze gel into the back of the mouth or throat.",
+          "Give it after a feed, with the baby held upright. Wait for each portion to be swallowed before the next.",
+          "If the baby gags, coughs or chokes: stop, sit the baby up, and do not give the rest of that dose.",
+          "Do not put the gel on the mother's nipple as a way of dosing the baby (product information: choking). If her nipples are sore, red or itchy, she needs her own treatment (Nelson: treat mother and baby together).",
+          "Thrush that keeps coming back without a reason such as antibiotics: test the baby (and mother) for HIV (Nelson)."
+        ],
+        monitor: ["Feeding and breathing during and after each dose", "White patches at day 5–7"],
+        cautions: [
+          "Before giving the gel to a baby, ask whether anyone gives the baby other medicines; and before giving it to ANY patient, ask about warfarin."
+        ]
+      },
+      {
+        title: "Thrush in a patient on warfarin",
+        best_for: "Medical wards, cardiac and anticoagulation clinics, and pharmacies: any patient on warfarin with a sore white mouth, angular cheilitis or vaginal thrush.",
+        requires: [],
+        steps: [
+          "Never give miconazole oral gel. Use nystatin suspension for oral thrush: it is not absorbed and does not change the INR.",
+          "Fluconazole also raises the INR steeply (see Warfarin and Fluconazole interactions). If it is unavoidable, follow that rule: check the INR within 3–5 days and expect to lower the warfarin dose.",
+          "Vaginal thrush: use clotrimazole pessaries rather than miconazole.",
+          "The patient has ALREADY used the oral gel (often bought over the counter): check the INR now, and again in 3–5 days. Adjust or withhold warfarin by the INR and look for bleeding (see Warfarin: high INR). The effect can last more than a week after the last dose, so recheck weekly until the INR is stable.",
+          "Ask every warfarin patient at every visit what else they have bought from the pharmacy, and add 'miconazole oral gel (Daktarin)' to the list of medicines to avoid on the warfarin card."
+        ],
+        monitor: ["INR as above", "Bruising, bleeding gums, black stools, blood in urine"],
+        cautions: [
+          "A high INR from miconazole can cause serious bleeding (MHRA). Treat it like any high INR on warfarin."
+        ]
+      },
+      {
+        title: "Nappy rash or skin fold rash that will not settle",
+        best_for: "Under-five clinics, paediatric wards and OPD.",
+        requires: [],
+        steps: [
+          "Red, raw rash in the nappy area or a skin fold with small red spots beyond the edge: likely Candida. Treat any nappy rash present for more than 3 days as Candida (Nelson).",
+          "Wash gently with water, pat completely dry, and apply 2 % cream thinly twice daily, or at each change if the rash is severe.",
+          "Change nappies often and leave the nappy off for periods (Nelson). Avoid tight plastic covers.",
+          "Very inflamed skin: a mild 1 % hydrocortisone cream may be added for the first 1–2 days only (Nelson). Do not use strong steroid creams on babies.",
+          "Continue the antifungal for 1 week after the skin looks normal (Harrison)."
+        ],
+        monitor: ["Skin at day 5–7; check the mouth for thrush as well"],
+        cautions: [
+          "Rash with blisters, pus, fever or a baby who is unwell is not simple nappy rash: examine fully and treat as infection."
+        ]
+      }
+    ],
+    paediatric: [
+      "Oral gel: not under 4 months, or in any baby who does not swallow well (choking). 4–24 months 1.25 mL four times daily; 2 years and over 2.5 mL four times daily; after feeds, in small portions to the front of the mouth (product information).",
+      "Under 4 months: nystatin suspension, or no treatment for mild thrush (Nelson).",
+      "Recurrent thrush without a reason suggests HIV or another immune problem: test (Nelson).",
+      "Nappy rash: cream twice daily, frequent changes and nappy-free time (Nelson)."
+    ],
+    cautions: [
+      "WARFARIN: the oral gel can raise the INR dangerously and cause serious bleeding (MHRA). Do not use the oral gel with warfarin. INR rises have also been reported with vaginal and skin miconazole. See Interactions.",
+      "The oral gel also raises the levels of phenytoin, carbamazepine and midazolam (see Interactions), and of diabetes tablets such as glibenclamide (hypoglycaemia). It must not be combined with several drugs cleared by the liver enzyme CYP3A4 (some cholesterol and heart-rhythm drugs): check the leaflet before combining.",
+      "Choking in infants: never under 4 months; small portions to the front of the mouth only.",
+      "Liver disease: do not use the oral gel (product information).",
+      "Vaginal products can damage latex condoms and diaphragms (product information).",
+      "Local irritation or allergy can occur. Oesophageal thrush (pain on swallowing) needs fluconazole, not gel."
+    ],
+    textbook: [
+      {
+        book: "harrison",
+        text: "Vulvovaginal candidiasis: miconazole 100 mg vaginal suppository once daily for 7 days, or a 1200 mg suppository as a single dose.",
+        ref: "Harrison 22nd ed. 2025, ch. 141, Table 141-5, p. 1101"
+      },
+      {
+        book: "harrison",
+        text: "Short-course intravaginal azoles work for uncomplicated vulvovaginal candidiasis, e.g. miconazole 1200 mg vaginal suppository as a single dose.",
+        ref: "Harrison 22nd ed. 2025, ch. 141 Sexually Transmitted Infections: Overview and Clinical Approach, p. 1103"
+      },
+      {
+        book: "harrison",
+        text: "Cutaneous candidiasis: topical nystatin or an azole (miconazole, clotrimazole).",
+        ref: "Harrison 22nd ed. 2025, ch. 60 Eczema, Psoriasis, Cutaneous Infections, Acne, and Other Common Skin Disorders, p. 390"
+      },
+      {
+        book: "harrison",
+        text: "Topical azoles (clotrimazole, miconazole) treat skin fungal infections and oral and vaginal candidiasis.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1692"
+      },
+      {
+        book: "nelson",
+        text: "Thrush affects 2–5 % of normal newborns; mild cases may not need treatment. Persistent or recurrent thrush without a reason such as antibiotics should prompt a search for HIV or another immune defect.",
+        ref: "Nelson 22nd ed. 2024, ch. 280 Candida, p. 1922"
+      },
+      {
+        book: "nelson",
+        text: "Candida nappy rash present more than 3 days: topical nystatin, clotrimazole or miconazole; frequent nappy changes.",
+        ref: "Nelson 22nd ed. 2024, ch. 280 Candida, p. 1923"
+      },
+      {
+        book: "nelson",
+        text: "The topical azoles (clotrimazole, econazole, ketoconazole, miconazole) have a broad spectrum covering dermatophytes and yeasts; nystatin covers Candida only.",
+        ref: "Nelson 22nd ed. 2024, ch. 687 Principles of Dermatologic Therapy, p. 4039"
+      },
+      {
+        book: "gabbe",
+        text: "Miconazole in pregnancy is not known to cause malformations.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131"
+      },
+      {
+        book: "gabbe",
+        text: "No milk data for miconazole, but little is absorbed and none is expected to matter.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135"
+      },
+      {
+        book: "note",
+        text: "None of the four textbooks discusses the miconazole–warfarin interaction or the infant choking risk; both are from the MHRA Drug Safety Update (June 2016), the BNF and the oral gel product information, which also give the oral-gel doses, the 4-month age limit, the advice not to apply gel to the nipple, and the contraindication in liver disease. Nelson recommends nystatin as the usual treatment for infant thrush. The improvised methods are editorial guidance for district practice.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "MHRA Drug Safety Update, June 2016: miconazole (Daktarin) oral gel and warfarin — serious interactions with bleeding; oral gel contraindicated with warfarin"
+      },
+      {
+        name: "Miconazole oral gel (Daktarin) summary of product characteristics: dosing, age limit, choking, contraindications, CYP2C9 and CYP3A4 interactions"
+      },
+      { name: "BNF / BNF for Children: miconazole, and interactions (miconazole–warfarin)" },
+      {
+        name: "CDC Sexually Transmitted Infections Treatment Guidelines 2021: vulvovaginal candidiasis"
+      },
+      { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 60, 141, 217" },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 280, 687" },
+      { name: "Gabbe's Obstetrics, 9th ed., ch. 7" }
     ],
     review: { status: "draft", by: null, date: null }
   }

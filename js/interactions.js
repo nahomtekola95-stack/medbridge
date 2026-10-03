@@ -2519,7 +2519,7 @@ window.INTERACTIONS = [
     b: ["tb-rhze"],
     severity: "moderate",
     effect: "Daily rifampicin (in TB treatment) induces dapsone metabolism and lowers dapsone levels markedly (Harrison), so dapsone PCP prophylaxis may fail in a patient with HIV and TB. The once-monthly rifampicin dose in leprosy multidrug therapy does not matter — that combination is intended.",
-    action: "In HIV with TB, cotrimoxazole is the prophylaxis of choice and should be used if at all possible. If cotrimoxazole cannot be used and daily rifampicin is STARTED, discuss PCP prophylaxis with the HIV/TB clinician — dapsone may not protect; an alternative (atovaquone, aerosolised pentamidine) may be needed at referral level — and do not stop prophylaxis while the decision is made. When daily rifampicin is STOPPED at the end of TB treatment, dapsone levels rise over about 2 weeks: watch more closely for haemolysis and blue lips. No action needed for monthly rifampicin in leprosy MDT.",
+    action: "In HIV with TB, cotrimoxazole is the prophylaxis of choice and should be used if at all possible. If cotrimoxazole cannot be used and daily rifampicin is STARTED, discuss PCP prophylaxis with the HIV/TB clinician — dapsone may not protect; aerosolised pentamidine may be needed at referral level — NOT atovaquone, whose levels rifampicin also lowers (Harrison 22nd ed., antiparasitic drug interactions, p. 1742) — and do not stop prophylaxis while the decision is made. When daily rifampicin is STOPPED at the end of TB treatment, dapsone levels rise over about 2 weeks: watch more closely for haemolysis and blue lips. No action needed for monthly rifampicin in leprosy MDT.",
     ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1743; BNF interactions (rifampicin–dapsone)",
     refs: [
       {
@@ -2564,5 +2564,572 @@ window.INTERACTIONS = [
         quote: "include livedo reticularis and weight gain"
       }
     ]
+  },
+
+  /* ---- allergy and stomach ---- */
+  {
+    a: ["cimetidine"],
+    b: ["warfarin"],
+    severity: "major",
+    effect: "Cimetidine inhibits the liver enzymes that clear warfarin: the INR rises over several days of regular dosing, with a risk of bleeding (Harrison). When cimetidine is stopped, warfarin is cleared faster again and the INR falls.",
+    action: "Prefer famotidine or omeprazole for a patient on warfarin. If cimetidine must be STARTED, check the INR within 3–5 days and again after a week, and reduce the warfarin dose if the INR rises; look for bruising, gum or urine bleeding. When cimetidine is STOPPED, check the INR again within a week — a warfarin dose that was reduced may need to go back up.",
+    ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489; ch. 335, p. 2524; BNF interactions (cimetidine–warfarin)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Cimetidine inhibits many CYPs and increases the effect of warfarin, theophylline and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489",
+        pdf_page: 532,
+        quote: "Cimetidine (inhibits many CYPs):"
+      },
+      {
+        book: "harrison",
+        text: "Because cimetidine inhibits cytochrome P450, warfarin, phenytoin and theophylline need careful monitoring with long-term use.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2524",
+        pdf_page: 2567,
+        quote: "careful monitoring of drugs such as warfarin, phenytoin, and theophylline is indicated"
+      }
+    ]
+  },
+  {
+    a: ["cimetidine"],
+    b: ["phenytoin"],
+    severity: "major",
+    effect: "Cimetidine raises phenytoin levels (Harrison, Kaplan). Phenytoin has a narrow therapeutic range and saturable metabolism, so a small rise can cause toxicity: unsteadiness, nystagmus, slurred speech, drowsiness, confusion.",
+    action: "Prefer famotidine or omeprazole. If cimetidine is STARTED, watch for phenytoin toxicity over the next 1–2 weeks and check a phenytoin level if one can be measured; reduce the phenytoin dose if signs appear. When cimetidine is STOPPED, phenytoin levels fall over days: watch for breakthrough seizures and restore the previous dose if it was reduced.",
+    ref: "Harrison 22nd ed. 2025, ch. 335, p. 2524; Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3, pdf p. 2107; BNF interactions (cimetidine–phenytoin)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Because cimetidine inhibits cytochrome P450, warfarin, phenytoin and theophylline need careful monitoring with long-term use.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2524",
+        pdf_page: 2567,
+        quote: "careful monitoring of drugs such as warfarin, phenytoin, and theophylline is indicated"
+      },
+      {
+        book: "kaplan",
+        text: "Cimetidine and other H2 antagonists may increase phenytoin serum levels.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2107",
+        pdf_page: 2107,
+        quote: "cimetidine, diazepam, disulfiram, estrogens, fluoxetine, H2-antagonists"
+      }
+    ]
+  },
+  {
+    a: ["cimetidine"],
+    b: ["aminophylline"],
+    severity: "major",
+    effect: "Cimetidine slows the liver clearance of theophylline (the active drug in aminophylline) and raises its level (Harrison). Theophylline toxicity — vomiting, fast heart rate, arrhythmias and seizures — can occur at doses that were previously safe.",
+    action: "Avoid the combination: use famotidine or omeprazole. If cimetidine must be STARTED in a patient on aminophylline or theophylline, reduce the aminophylline dose (agree the reduction with a pharmacist or senior), measure a theophylline level if possible, and stop aminophylline at the first vomiting, palpitations or tremor. When cimetidine is STOPPED, theophylline levels fall over a few days; return to the usual dose and watch for loss of effect.",
+    ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489; ch. 335, p. 2524; BNF interactions (cimetidine–theophylline)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Cimetidine inhibits many CYPs and increases the effect of warfarin, theophylline and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 71 Principles of Clinical Pharmacology, Table 71-2, p. 489",
+        pdf_page: 532,
+        quote: "Cimetidine (inhibits many CYPs):"
+      },
+      {
+        book: "harrison",
+        text: "Because cimetidine inhibits cytochrome P450, warfarin, phenytoin and theophylline need careful monitoring with long-term use.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2524",
+        pdf_page: 2567,
+        quote: "careful monitoring of drugs such as warfarin, phenytoin, and theophylline is indicated"
+      }
+    ]
+  },
+  {
+    a: ["cimetidine"],
+    b: ["carbamazepine"],
+    severity: "moderate",
+    effect: "Cimetidine can raise carbamazepine levels (Harrison, Kaplan), causing dizziness, double vision, unsteadiness, nausea and drowsiness.",
+    action: "Prefer famotidine or omeprazole. If cimetidine is STARTED, watch for carbamazepine side effects over the first 1–2 weeks and check a level if available; reduce the dose if toxic. When cimetidine is STOPPED, levels fall: watch for seizures or relapse of mood symptoms and restore the usual dose.",
+    ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, Table 436-9, p. 3421; Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3, pdf p. 2090",
+    refs: [
+      {
+        book: "harrison",
+        text: "Carbamazepine levels are increased by erythromycin, isoniazid, cimetidine and fluoxetine.",
+        ref: "Harrison 22nd ed. 2025, ch. 436 Seizures and Epilepsy, Table 436-9, p. 3421",
+        pdf_page: 3464,
+        quote: "Level increased by erythromycin"
+      },
+      {
+        book: "kaplan",
+        text: "Cimetidine is among the agents that may increase carbamazepine plasma concentration.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2090",
+        pdf_page: 2090,
+        quote: "Agents that may increase"
+      }
+    ]
+  },
+  {
+    a: ["cimetidine"],
+    b: ["lidocaine"],
+    severity: "moderate",
+    effect: "Cimetidine reduces lidocaine clearance and raises its blood level. This matters for IV lidocaine (arrhythmia) and for large infiltration or nerve-block doses: numb lips and tongue, tinnitus, confusion, seizures and arrhythmia; it does not matter for a small local infiltration.",
+    action: "If cimetidine is STARTED in a patient on an IV lidocaine infusion, reduce the infusion rate and watch closely for toxicity; prefer famotidine. Before a large-volume infiltration or block, keep well within the maximum lidocaine dose. When cimetidine is STOPPED, no action is needed for single local doses; an infusion may need its usual rate again.",
+    ref: "BNF interactions (cimetidine–lidocaine)"
+  },
+  {
+    a: ["cimetidine"],
+    b: ["amitriptyline", "imipramine"],
+    severity: "moderate",
+    effect: "Cimetidine raises tricyclic antidepressant levels (Kaplan): more sedation, dry mouth, urinary retention, low blood pressure on standing, and in overdose-range levels, arrhythmia and seizures.",
+    action: "Prefer famotidine. If cimetidine is STARTED, watch for anticholinergic effects, dizziness on standing and sedation, and reduce the tricyclic dose if needed. When cimetidine is STOPPED, levels fall: watch for return of depression or pain and restore the usual dose.",
+    ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 2030",
+    refs: [
+      {
+        book: "kaplan",
+        text: "Tricyclic plasma concentrations may be increased by cimetidine.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.2 Antidepressants, pdf p. 2030",
+        pdf_page: 2030,
+        quote: "acetylsalicylic acid, cimetidine, thiazide diuretics"
+      }
+    ]
+  },
+  {
+    a: ["cimetidine"],
+    b: ["diazepam", "chlordiazepoxide"],
+    severity: "moderate",
+    effect: "Cimetidine increases plasma concentrations of diazepam and chlordiazepoxide (Kaplan): deeper and longer sedation, unsteadiness and, with other sedatives, slowed breathing. Lorazepam is not affected.",
+    action: "If cimetidine is STARTED, use lower or less frequent benzodiazepine doses and watch sedation and breathing, especially in older people and in alcohol withdrawal regimens; prefer famotidine or omeprazole. When cimetidine is STOPPED, levels fall over days: watch for re-emerging withdrawal or anxiety.",
+    ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2122",
+    refs: [
+      {
+        book: "kaplan",
+        text: "Cimetidine increases the plasma concentration of diazepam and chlordiazepoxide.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.4 Anxiolytics, pdf p. 2122",
+        pdf_page: 2122,
+        quote: "of diazepam, chlordiazepoxide, clorazepate, and flurazepam"
+      }
+    ]
+  },
+  {
+    a: ["cimetidine"],
+    b: ["methadone"],
+    severity: "moderate",
+    effect: "Cimetidine can inhibit methadone metabolism, giving higher levels or a longer effect (Kaplan): sedation and slowed breathing, and a little more QT prolongation.",
+    action: "Prefer famotidine or omeprazole. If cimetidine is STARTED, watch for drowsiness and slow breathing over the first week and tell the methadone programme. When cimetidine is STOPPED, levels fall: watch for withdrawal symptoms over the following days.",
+    ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2172",
+    refs: [
+      {
+        book: "kaplan",
+        text: "Cimetidine can competitively inhibit methadone metabolism, giving higher levels or a longer effect.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2172",
+        pdf_page: 2172,
+        quote: "administration of cimetidine (Tagamet)"
+      }
+    ]
+  },
+  {
+    a: ["cimetidine"],
+    b: ["nifedipine"],
+    severity: "moderate",
+    effect: "Cimetidine raises nifedipine levels (Kaplan): a stronger fall in blood pressure, headache, flushing and fast pulse — relevant in pre-eclampsia and preterm labour, where nifedipine is used.",
+    action: "Prefer famotidine or omeprazole. If cimetidine is STARTED, check blood pressure more often for the first days and lower the nifedipine dose if it falls too far. When cimetidine is STOPPED, blood pressure may rise again: re-check and adjust.",
+    ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3, pdf p. 2110; BNF interactions (cimetidine–nifedipine)",
+    refs: [
+      {
+        book: "kaplan",
+        text: "Cimetidine has been reported to increase plasma concentrations of nifedipine.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.3 Mood Stabilizers, pdf p. 2110",
+        pdf_page: 2110,
+        quote: "Cimetidine (Tagamet) has been reported to increase plasma concentrations of"
+      }
+    ]
+  },
+  {
+    a: ["cimetidine"],
+    b: ["quinine"],
+    severity: "moderate",
+    effect: "Cimetidine reduces the renal excretion of quinine (Harrison) and so raises quinine levels: tinnitus, deafness, visual disturbance, low blood glucose and QT prolongation.",
+    action: "During a quinine course, use famotidine or omeprazole instead. If cimetidine is STARTED, check blood glucose more often, ask about tinnitus and vision, and follow the quinine dose reduction rules if toxicity appears. When cimetidine is STOPPED, no change is needed beyond the normal quinine schedule.",
+    ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1752",
+    refs: [
+      {
+        book: "harrison",
+        text: "Renal excretion of quinine is decreased when cimetidine is taken.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1752",
+        pdf_page: 1795,
+        quote: "Renal excretion of quinine is decreased when cimetidine"
+      }
+    ]
+  },
+  {
+    a: ["chlorphenamine"],
+    b: [
+      "morphine",
+      "pethidine",
+      "tramadol",
+      "methadone",
+      "diazepam",
+      "lorazepam",
+      "midazolam",
+      "chlordiazepoxide",
+      "phenobarbital",
+      "promethazine"
+    ],
+    severity: "moderate",
+    effect: "Additive sedation (and with opioids or benzodiazepines, slowed breathing). The sedation of first-generation antihistamines adds to that of alcohol, other sedatives and psychotropic drugs, and anticholinergic effects add up (Kaplan). Two sedating antihistamines together (chlorphenamine and promethazine) add nothing but sedation.",
+    action: "Prefer a non-sedating antihistamine (cetirizine, loratadine) for patients on these drugs. If chlorphenamine is STARTED, use the lowest dose, count the breathing rate and check rousability, especially in children, older people and after IV doses; do not give it with promethazine. When chlorphenamine is STOPPED, sedation lifts within a day; no dose change of the other drug is needed.",
+    ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10, pdf p. 2218; BNF interactions (antihistamines, sedating)",
+    refs: [
+      {
+        book: "kaplan",
+        text: "The sedation of H1 antihistamines adds to alcohol, other sedative-hypnotics and many psychotropic drugs; anticholinergic effects add up.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.10 Drugs Used to Treat the Side Effects of Psychotropic Drugs, pdf p. 2218",
+        pdf_page: 2218,
+        quote: "other sedative-hypnotic drugs, and many psychotropic drugs"
+      }
+    ]
+  },
+  {
+    a: ["loratadine"],
+    b: ["methadone"],
+    severity: "moderate",
+    effect: "Kaplan lists loratadine among drugs that competitively inhibit methadone metabolism, which may give higher methadone levels or a longer effect. The size of the effect is uncertain and usually small.",
+    action: "No routine dose change. If loratadine is STARTED in a patient on methadone, ask about extra drowsiness in the first days; cetirizine is an alternative. When loratadine is STOPPED, no action is needed unless the methadone dose was lowered.",
+    ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2172",
+    refs: [
+      {
+        book: "kaplan",
+        text: "Loratadine is listed among drugs that competitively inhibit methadone metabolism.",
+        ref: "Kaplan & Sadock's Synopsis of Psychiatry 12th ed. 2022, ch. 21.7 Drugs Used to Treat Substance Use Disorders, pdf p. 2172",
+        pdf_page: 2172,
+        quote: "loratadine (Claritin), quinidine (Quinidex)"
+      }
+    ]
+  },
+
+  /* ---- anaesthesia and airway ---- */
+  {
+    a: ["atracurium", "rocuronium", "pancuronium"],
+    b: ["magnesium-sulfate"],
+    severity: "major",
+    effect: "Magnesium reduces acetylcholine release and muscle excitability: it deepens and prolongs the block from non-depolarising relaxants, weakens neostigmine reversal and makes residual paralysis after extubation more likely — a real risk at caesarean in pre-eclampsia. Same effect as with vecuronium.",
+    action: "When magnesium is STARTED or running (or given in the last few hours): give these relaxants only if really needed, at a reduced dose, with no top-ups late in the operation; if a rocuronium rapid-sequence induction is unavoidable, expect a longer block. Confirm full recovery before extubation and watch breathing closely in recovery. Do not stop magnesium for eclampsia to make anaesthesia easier. Calcium gluconate 10 mL of 10 % IV reverses dangerous magnesium weakness. When magnesium is STOPPED, the effect fades over hours as the level falls — longer in kidney impairment.",
+    ref: "BNF interactions (magnesium salts, parenteral–muscle relaxants: effect of non-depolarising relaxants enhanced); consistent with this app's vecuronium–magnesium rule"
+  },
+  {
+    a: ["atracurium", "rocuronium", "pancuronium"],
+    b: ["gentamicin", "paromomycin"],
+    severity: "moderate",
+    effect: "Aminoglycosides potentiate non-depolarising neuromuscular block (Gabbe) and make neostigmine reversal less effective; prolonged weakness or apnoea after surgery can follow, especially with magnesium as well.",
+    action: "When an aminoglycoside is STARTED during or shortly before an anaesthetic using one of these relaxants (e.g. prophylaxis at induction): use the smallest effective relaxant doses, confirm full recovery with clinical tests before extubation, and watch breathing in recovery. Calcium gluconate may partly help. When the aminoglycoside is STOPPED, its effect on the block fades as levels fall over hours (longer in kidney impairment).",
+    ref: "Gabbe 9th ed., ch. 7, p. 130; Harrison 22nd ed. 2025, ch. 318, p. 2352; BNF interactions (aminoglycosides–non-depolarising muscle relaxants)",
+    refs: [
+      {
+        book: "gabbe",
+        text: "Aminoglycosides potentiate curare-like (non-depolarising) neuromuscular block.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 130",
+        pdf_page: 163,
+        quote: "Neuromuscular blockade may be potentiated by the combined use of aminoglycosides and curariform drugs"
+      },
+      {
+        book: "harrison",
+        text: "Pancuronium, vecuronium, rocuronium and cisatracurium used for days in ICU can leave persistent block and weakness after they are stopped; risk factors include female sex, metabolic acidosis and renal failure. Aminoglycosides also impair neuromuscular transmission.",
+        ref: "Harrison 22nd ed. 2025, ch. 318 Nervous System Disorders in Critical Care, p. 2352",
+        pdf_page: 2395,
+        quote: "metabolic acidosis, and renal failure"
+      }
+    ]
+  },
+  {
+    a: ["rocuronium", "pancuronium"],
+    b: ["phenytoin", "carbamazepine"],
+    severity: "moderate",
+    effect: "Long-term phenytoin or carbamazepine makes the aminosteroid relaxants (rocuronium, pancuronium, vecuronium) work less well and wear off sooner. Acute IV phenytoin given during an anaesthetic can instead enhance the block. Atracurium is affected little.",
+    action: "In a patient taking either drug long-term (STARTED weeks ago), expect to need more frequent top-ups; titrate to clinical relaxation, not to the usual schedule, or choose atracurium. After acute IV phenytoin, check recovery carefully before extubation. When the anticonvulsant has been STOPPED for some weeks, doses return to normal. Do not stop an anticonvulsant before surgery to avoid this.",
+    ref: "BNF interactions (antiepileptics–non-depolarising muscle relaxants); consistent with this app's vecuronium–phenytoin/carbamazepine rule"
+  },
+  {
+    a: ["atracurium", "rocuronium", "pancuronium"],
+    b: ["dexamethasone", "hydrocortisone"],
+    severity: "moderate",
+    effect: "Prolonged non-depolarising block in critical illness combined with high-dose corticosteroids contributes to myopathy and weakness lasting days to weeks (Nelson; Harrison). A single anaesthetic dose of dexamethasone does not matter.",
+    action: "No action for single theatre doses. When high-dose steroids are STARTED in a patient being kept paralysed in ICU (for example severe tetanus), avoid continuous paralysis where possible, let the block wear off daily to check, and use the lowest effective dose. When either is STOPPED, expect recovery of strength over days to weeks; physiotherapy.",
+    ref: "Nelson 22nd ed. 2024, ch. 91, p. 671; Harrison 22nd ed. 2025, ch. 318, p. 2352",
+    refs: [
+      {
+        book: "nelson",
+        text: "Prolonged non-depolarising block in critical illness contributes to myopathy, especially with high-dose corticosteroids.",
+        ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, p. 671",
+        pdf_page: 717,
+        quote: "critical illness may contribute to myopathy, especially when combined"
+      },
+      {
+        book: "harrison",
+        text: "Pancuronium, vecuronium, rocuronium and cisatracurium used for days in ICU can leave persistent block and weakness after they are stopped; risk factors include female sex, metabolic acidosis and renal failure. Aminoglycosides also impair neuromuscular transmission.",
+        ref: "Harrison 22nd ed. 2025, ch. 318 Nervous System Disorders in Critical Care, p. 2352",
+        pdf_page: 2395,
+        quote: "metabolic acidosis, and renal failure"
+      }
+    ]
+  },
+  {
+    a: ["terbutaline"],
+    b: ["propranolol", "labetalol", "timolol-eye"],
+    severity: "major",
+    effect: "Non-selective beta-blockers block beta-2 receptors: they stop terbutaline from working and can trigger severe or fatal bronchospasm in asthma. Enough timolol is absorbed from eye drops to do this. In obstetrics, labetalol and terbutaline oppose each other's heart-rate effects and the uterine relaxation may be weaker.",
+    action: "In asthma: do not START a non-selective beta-blocker in anyone who needs terbutaline or salbutamol — use another drug for BP or rate (see each page). If wheeze starts in a patient on one, stop the beta-blocker (tell the eye unit the same day for timolol) and treat the asthma. When terbutaline is STARTED for tocolysis or uterine relaxation in a woman on labetalol, expect less tachycardia but possibly less effect; check BP. When the beta-blocker is STOPPED, terbutaline works normally within a day (propranolol, labetalol) — do not stop propranolol abruptly in heart disease.",
+    ref: "BNF interactions (beta-blockers–beta2 agonists); consistent with this app's propranolol, labetalol and timolol rules with salbutamol"
+  },
+  {
+    a: ["terbutaline"],
+    b: ["digoxin"],
+    severity: "major",
+    effect: "Terbutaline lowers potassium (Harrison), and low potassium makes digoxin toxicity and arrhythmias more likely; both also raise the heart rate or excite the heart.",
+    action: "When terbutaline is STARTED in a patient on digoxin: check potassium before and after repeated doses where possible, correct it, and watch the pulse for irregularity, slowing or nausea. Use the fewest doses that work. When terbutaline is STOPPED, potassium recovers over hours; no digoxin change is needed.",
+    ref: "Harrison 22nd ed. 2025, ch. 56, p. 354; BNF interactions; consistent with this app's digoxin–salbutamol rule",
+    refs: [
+      {
+        book: "harrison",
+        text: "Beta2-agonists — both bronchodilators and tocolytics — are powerful activators of cellular potassium uptake and cause hypokalaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 354",
+        pdf_page: 397,
+        quote: "including both bronchodilators and tocolytics (ritodrine)"
+      }
+    ]
+  },
+  {
+    a: ["terbutaline"],
+    b: ["salbutamol", "aminophylline"],
+    severity: "moderate",
+    effect: "Two beta-2 agonists, or a beta-2 agonist with aminophylline, add together: more tachycardia, tremor, arrhythmia and low potassium (Harrison). Using them together is sometimes intended in severe asthma.",
+    action: "In asthma, when SC terbutaline is STARTED on top of salbutamol or aminophylline, give it only for a severe attack not responding, watch the pulse and rhythm, and check potassium if repeated. Do not use terbutaline as a second routine bronchodilator. When either is STOPPED, the extra effects wear off over a few hours.",
+    ref: "Harrison 22nd ed. 2025, ch. 56, p. 354; BNF interactions (beta2 agonists–theophylline: risk of hypokalaemia)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Beta2-agonists — both bronchodilators and tocolytics — are powerful activators of cellular potassium uptake and cause hypokalaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 354",
+        pdf_page: 397,
+        quote: "including both bronchodilators and tocolytics (ritodrine)"
+      }
+    ]
+  },
+  {
+    a: ["terbutaline"],
+    b: ["furosemide"],
+    severity: "moderate",
+    effect: "Both lower potassium: terbutaline by driving it into cells (Harrison), furosemide by losing it in the urine. Low potassium causes weakness and arrhythmias.",
+    action: "When terbutaline is STARTED in a patient on furosemide (for example pulmonary oedema or heart failure with wheeze), check potassium where possible and give potassium if low. In a pregnant woman on terbutaline who develops pulmonary oedema, STOP the terbutaline first — furosemide alone is not the answer. When either is STOPPED, the potassium risk falls over hours to a day.",
+    ref: "Harrison 22nd ed. 2025, ch. 56, p. 354; BNF interactions (beta2 agonists–loop diuretics: risk of hypokalaemia)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Beta2-agonists — both bronchodilators and tocolytics — are powerful activators of cellular potassium uptake and cause hypokalaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 354",
+        pdf_page: 397,
+        quote: "including both bronchodilators and tocolytics (ritodrine)"
+      }
+    ]
+  },
+  {
+    a: ["terbutaline"],
+    b: ["dexamethasone", "hydrocortisone"],
+    severity: "moderate",
+    effect: "Steroids add to terbutaline's rise in blood glucose and fall in potassium (Gabbe). In tocolysis, concurrent corticosteroid therapy is a risk factor for pulmonary oedema (Williams) — and dexamethasone for the baby's lungs is routinely given with tocolysis. In asthma, the combination is intended.",
+    action: "In preterm labour, when dexamethasone is STARTED alongside terbutaline: keep terbutaline to the shortest time (under 24 hours if possible, never beyond 48), restrict IV fluid, listen to the lungs before each dose, and check glucose (and potassium where possible) within the first 24 hours; women with diabetes need another tocolytic. In asthma: give both as indicated and check glucose in diabetes. When terbutaline is STOPPED, glucose and potassium settle within hours; glucose may stay high for a day or two after dexamethasone.",
+    ref: "Williams Obstetrics 25th ed. 2018, ch. 42, pdf p. 1829; Gabbe's Obstetrics 9th ed., ch. 36, p. 678",
+    refs: [
+      {
+        book: "williams",
+        text: "Risk factors for pulmonary oedema include concurrent corticosteroid therapy and tocolysis for more than 24 hours.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1829",
+        pdf_page: 1829,
+        quote: "concurrent corticosteroid therapy"
+      },
+      {
+        book: "gabbe",
+        text: "Beta-mimetics cause transient hyperglycaemia and hypokalaemia; pulmonary oedema has been reported and associated with maternal death; restricting treatment to under 24 hours and avoiding fluid overload reduce the risk.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 678",
+        pdf_page: 829,
+        quote: "induce transient hyperglycemia and hypokalemia"
+      }
+    ]
+  },
+  {
+    a: ["terbutaline"],
+    b: ["insulin-soluble"],
+    severity: "moderate",
+    effect: "Terbutaline raises blood glucose (Gabbe) and so opposes insulin, while both lower potassium. In insulin-treated diabetes beta-mimetic tocolysis is contraindicated (Gabbe).",
+    action: "Do not START terbutaline for tocolysis in a woman on insulin — use another tocolytic. For asthma in a patient on insulin: check glucose 2–4-hourly while terbutaline is being given and adjust insulin; check potassium. When terbutaline is STOPPED, insulin needs fall back within hours — watch for hypoglycaemia if the dose was increased.",
+    ref: "Gabbe's Obstetrics 9th ed., ch. 36, p. 678; BNF interactions (beta2 agonists–antidiabetics)",
+    refs: [
+      {
+        book: "gabbe",
+        text: "Beta-mimetics cause transient hyperglycaemia and hypokalaemia; pulmonary oedema has been reported and associated with maternal death; restricting treatment to under 24 hours and avoiding fluid overload reduce the risk.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 678",
+        pdf_page: 829,
+        quote: "induce transient hyperglycemia and hypokalemia"
+      },
+      {
+        book: "gabbe",
+        text: "Do not use beta-mimetics with heart disease, severe pre-eclampsia or eclampsia, insulin-requiring diabetes, hyperthyroidism or suspected chorioamnionitis; keep the maternal pulse under 130/min; chest pain means stop.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 678",
+        pdf_page: 829,
+        quote: "should not be used in women with known or suspected heart disease"
+      }
+    ]
+  },
+  {
+    a: ["terbutaline"],
+    b: ["magnesium-sulfate"],
+    severity: "moderate",
+    effect: "As tocolytics, both can cause pulmonary oedema (Williams); together the risk adds, without better results. In severe asthma, magnesium and a beta-2 agonist are given together on purpose (Nelson).",
+    action: "Do not use both as tocolytics. When magnesium is STARTED for eclampsia or fetal neuroprotection in a woman who has had terbutaline, stop the terbutaline, restrict IV fluid and watch breathing and the lung bases. In asthma, the combination is intended: monitor pulse, BP and breathing. When either is STOPPED, the added risk falls over hours.",
+    ref: "Williams Obstetrics 25th ed. 2018, ch. 42, pdf pp. 1829–1830; Nelson 22nd ed. 2024, ch. 185, p. 1406",
+    refs: [
+      {
+        book: "williams",
+        text: "Terbutaline, like other beta-agonist tocolytics, can cause pulmonary oedema; pump and oral terbutaline do not prevent preterm birth, and after an FDA warning ACOG recommends only short-term inpatient use.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1829",
+        pdf_page: 1829,
+        quote: "Like ritodrine, it may cause pulmonary edema"
+      },
+      {
+        book: "nelson",
+        text: "Status asthmaticus: continuous IV terbutaline 2–10 micrograms/kg loading then 0.1–0.4 micrograms/kg/min, with cardiorespiratory monitoring, oximetry, BP and serum potassium; adverse effects include tremor, tachycardia, arrhythmia and hypoxaemia.",
+        ref: "Nelson 22nd ed. 2024, ch. 185 Childhood Asthma, Table 185.17, p. 1406",
+        pdf_page: 1421,
+        quote: "Continuous IV infusion (terbutaline only)"
+      }
+    ]
+  },
+
+  /* ---- anticoagulant, infection and topical ---- */
+  {
+    a: ["rivaroxaban"],
+    b: ["diclofenac", "ibuprofen"],
+    severity: "major",
+    effect: "NSAIDs inhibit platelets and injure the stomach lining. With an anticoagulant, the risk of serious GI bleeding is much higher (Harrison).",
+    action: "Avoid: use paracetamol for pain. If an NSAID must be STARTED, give the shortest possible course with omeprazole, and teach the patient to look for black stools. When rivaroxaban is STARTED, stop any regular NSAID. When either is STOPPED, no dose change is needed in the other.",
+    ref: "Harrison 22nd ed. 2025, ch. 335, p. 2521; BNF interactions (rivaroxaban–NSAIDs)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Concomitant anticoagulants are an established risk factor for NSAID ulcer complications.",
+        ref: "Harrison 22nd ed. 2025, ch. 335 Peptic Ulcer Disease and Related Disorders, p. 2521",
+        pdf_page: 2564,
+        quote: "concomitant use of anticoagulants or"
+      }
+    ]
+  },
+  {
+    a: ["rivaroxaban"],
+    b: ["heparin"],
+    severity: "major",
+    effect: "Two anticoagulants together: bleeding. Unfractionated heparin and enoxaparin should overlap with rivaroxaban only at the moment of switching.",
+    action: "When rivaroxaban is STARTED in place of heparin or enoxaparin: give the first tablet up to 2 hours before the next injection would have been due, or when an infusion is STOPPED. When rivaroxaban is STOPPED and replaced by heparin (for example a stock-out, surgery or pregnancy): give the first injection when the next tablet would have been due. Small heparin flushes to keep a line open are acceptable. Never prescribe both as treatment doses.",
+    ref: "Rivaroxaban product information (switching); BNF interactions (rivaroxaban–heparins)"
+  },
+  {
+    a: ["rivaroxaban"],
+    b: ["warfarin"],
+    severity: "major",
+    effect: "Two anticoagulants: bleeding if both continue. Rivaroxaban also raises the INR, so the INR reads higher while both are being taken.",
+    action: "Warfarin to rivaroxaban: STOP warfarin and START rivaroxaban once the INR is 3.0 or below (AF) or 2.5 or below (DVT/PE). Rivaroxaban to warfarin: START warfarin and continue rivaroxaban alongside it. Check the INR just before a rivaroxaban dose (never sooner than 24 hours after the last one), and STOP rivaroxaban when the INR is 2.0 or more. Never continue both once the INR is in range.",
+    ref: "Rivaroxaban product information (switching to and from vitamin K antagonists)"
+  },
+  {
+    a: ["rivaroxaban"],
+    b: ["tb-rhze", "carbamazepine", "phenytoin", "phenobarbital"],
+    severity: "major",
+    effect: "Rifampicin, carbamazepine, phenytoin and phenobarbital induce both CYP3A4 and P-glycoprotein, the routes that clear rivaroxaban (Harrison Table 123-9). They lower rivaroxaban levels enough to leave the patient unprotected against stroke or new clots.",
+    action: "Avoid. When TB treatment or one of these antiepileptics is STARTED in a patient on rivaroxaban, change to enoxaparin for VTE, or to warfarin with close INR checks (warfarin is also affected by these drugs; see Warfarin). When the inducer is STOPPED: its effect lasts about 2 weeks, after which rivaroxaban can be used again at the normal dose.",
+    ref: "Harrison 22nd ed. 2025, ch. 123, Table 123-9, p. 953; rivaroxaban product information (strong CYP3A4 and P-gp inducers)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Rivaroxaban interactions are through CYP3A4 and P-glycoprotein.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, Table 123-9, p. 953",
+        pdf_page: 996,
+        quote: "Interactions 3A4/P-gp 3A4/P-gp"
+      }
+    ]
+  },
+  {
+    a: ["rivaroxaban"],
+    b: ["fluoxetine", "sertraline", "escitalopram"],
+    severity: "moderate",
+    effect: "SSRIs reduce platelet function. Together with an anticoagulant there is more bleeding, especially from the gut.",
+    action: "The combination is often necessary, so do not stop the antidepressant for this reason alone. When an SSRI is STARTED: ask about bleeding at each visit, avoid adding NSAIDs, and consider omeprazole if there is a history of ulcer. When the SSRI is STOPPED: no dose change in rivaroxaban.",
+    ref: "BNF interactions (rivaroxaban–SSRIs)"
+  },
+  {
+    a: ["rivaroxaban"],
+    b: ["fluconazole", "erythromycin"],
+    severity: "moderate",
+    effect: "Fluconazole and erythromycin partly block CYP3A4 (erythromycin also P-glycoprotein) and raise rivaroxaban levels moderately, about 1.3–1.4-fold in healthy people and about 2-fold with erythromycin when kidney function is reduced. Bleeding risk rises, most in the elderly and with poor kidneys.",
+    action: "When either is STARTED: check the creatinine, prefer azithromycin over erythromycin where it will do, and ask about bleeding during the course; with reduced kidney function or other bleeding risks, discuss with a physician before combining. When it is STOPPED: no change to the rivaroxaban dose. Ketoconazole, itraconazole and ritonavir raise levels much more and should not be combined with rivaroxaban.",
+    ref: "Rivaroxaban product information (interactions: fluconazole, erythromycin, strong CYP3A4/P-gp inhibitors); Harrison 22nd ed. 2025, ch. 123, Table 123-9, p. 953"
+  },
+  {
+    a: ["atovaquone"],
+    b: ["tb-rhze"],
+    severity: "major",
+    effect: "Rifampicin lowers atovaquone plasma levels markedly (Harrison), so PCP prophylaxis or malaria treatment with atovaquone may fail. This matters most in HIV with TB, where both drugs are likely.",
+    action: "Avoid. When TB treatment is STARTED in a patient on atovaquone prophylaxis, discuss PCP protection with the HIV/TB clinician (cotrimoxazole if it can possibly be used; otherwise monthly aerosolised pentamidine at referral level) and do not stop prophylaxis while the decision is made. For malaria during TB treatment, use the national first-line ACT or artesunate rather than atovaquone–proguanil. When TB treatment is STOPPED, atovaquone levels recover over about 2 weeks and it can be relied on again.",
+    ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1742; BNF interactions (rifampicin–atovaquone)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Atovaquone plasma levels are decreased by rifampin, tetracycline, atazanavir, efavirenz and lopinavir/ritonavir.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1742",
+        pdf_page: 1785,
+        quote: "Plasma levels decreased by rifampin, tetracycline, atazanavir"
+      }
+    ]
+  },
+  {
+    a: ["atovaquone"],
+    b: ["metoclopramide"],
+    severity: "moderate",
+    effect: "Metoclopramide lowers the absorption of atovaquone (Harrison). Atovaquone absorption is already limited and variable, so prophylaxis or malaria treatment may fail.",
+    action: "When metoclopramide is STARTED for nausea in a patient on atovaquone: use another antiemetic if one is available, or keep metoclopramide to the shortest course; give atovaquone with a fatty meal and repeat a dose vomited within 1 hour. When metoclopramide is STOPPED, absorption returns to normal; no dose change.",
+    ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1742; atovaquone product information",
+    refs: [
+      {
+        book: "harrison",
+        text: "Metoclopramide decreases atovaquone bioavailability.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, Table 229-1, p. 1742",
+        pdf_page: 1785,
+        quote: "bioavailability decreased by metoclopramide"
+      }
+    ]
+  },
+  {
+    a: ["atovaquone"],
+    b: ["warfarin"],
+    severity: "moderate",
+    effect: "The proguanil in atovaquone–proguanil (Malarone) may increase the anticoagulant effect of warfarin and raise the INR. Atovaquone suspension alone has no proguanil.",
+    action: "When atovaquone–proguanil is STARTED (malaria treatment or travel prophylaxis) in a patient on warfarin: check the INR within 3–5 days of starting, and once during long prophylaxis; adjust warfarin to the INR. When it is STOPPED, recheck the INR within 1–2 weeks. Without INR testing, keep the course short and teach the bleeding danger signs.",
+    ref: "Atovaquone–proguanil (Malarone) product information (proguanil may potentiate warfarin); BNF interactions (proguanil–warfarin)"
+  },
+  {
+    a: ["miconazole"],
+    b: ["warfarin"],
+    severity: "major",
+    effect: "Miconazole is swallowed and absorbed from the ORAL GEL and blocks CYP2C9, the main enzyme that clears warfarin. The INR can rise steeply within days and serious bleeding has been reported (MHRA). The gel is sold over the counter, so the patient may not mention it. INR rises have also been reported with vaginal and skin miconazole, though less is absorbed.",
+    action: "Do not use miconazole oral gel in a patient on warfarin: use nystatin suspension for oral thrush, and clotrimazole for vaginal or skin infection. If the oral gel has been STARTED (or already used): check the INR at once and again 3–5 days later, reduce or withhold warfarin according to the INR, and look for bleeding (see Warfarin: high INR). When miconazole is STOPPED, its effect can last more than a week: check the INR weekly until stable and return to the usual warfarin dose as the INR falls. If vaginal or skin miconazole must be used, check the INR within 3–5 days. Add miconazole oral gel to the medicines-to-avoid list on the warfarin card.",
+    ref: "MHRA Drug Safety Update, June 2016 (miconazole oral gel and warfarin); miconazole oral gel product information (contraindicated with warfarin); BNF interactions (miconazole–warfarin)"
+  },
+  {
+    a: ["miconazole"],
+    b: ["phenytoin", "carbamazepine"],
+    severity: "moderate",
+    effect: "Absorbed miconazole (mainly from the oral gel) inhibits the liver enzymes that clear phenytoin (CYP2C9) and carbamazepine (CYP3A4). Levels rise, with unsteadiness, nystagmus, double vision, drowsiness and vomiting.",
+    action: "Prefer nystatin suspension for oral thrush in a patient on these antiepileptics. If the oral gel is STARTED: keep the course to the usual 1–2 weeks, ask about unsteadiness, double vision or drowsiness, and check a phenytoin level if toxicity appears; reduce the antiepileptic only on clinical grounds or a level. When miconazole is STOPPED, levels fall back over 1–2 weeks: watch seizure control. Skin creams and pessaries are not expected to matter.",
+    ref: "Miconazole oral gel product information (interactions: phenytoin, carbamazepine); BNF interactions"
+  },
+  {
+    a: ["miconazole"],
+    b: ["midazolam"],
+    severity: "moderate",
+    effect: "Absorbed miconazole (mainly from the oral gel) inhibits CYP3A4, which clears midazolam. Sedation is deeper and longer, with a risk of breathing depression, especially with oral or buccal midazolam.",
+    action: "When midazolam is STARTED in a patient using miconazole oral gel: avoid oral and buccal midazolam where possible (the product information contraindicates oral midazolam); for IV doses give smaller increments, watch breathing and SpO2, and expect longer recovery. A single dose for a seizure must not be withheld: give it and monitor. When miconazole is STOPPED, normal midazolam handling returns within about a week.",
+    ref: "Miconazole oral gel product information (oral midazolam contraindicated; IV midazolam with caution); BNF interactions"
   }
 ];

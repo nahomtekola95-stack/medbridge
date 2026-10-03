@@ -34,8 +34,9 @@ window.CONDITIONS = [
     { id: "salbutamol", role: "adjunct", note: "For persistent wheeze after adrenaline." },
     { id: "hydrocortisone", role: "adjunct", note: "200 mg adult IM/IV. Does not treat the acute event; may reduce biphasic reactions." },
     { id: "noradrenaline", role: "alternative", note: "Infusion for shock that persists after repeated adrenaline and fluids." },
-    { id: "oxygen", role: "supportive", note: "High-flow oxygen by non-rebreather mask while adrenaline takes effect." }
-  ],
+    { id: "oxygen", role: "supportive", note: "High-flow oxygen by non-rebreather mask while adrenaline takes effect." },
+      { id: "chlorphenamine", role: "adjunct", note: "Only AFTER adrenaline, and only for itch and hives once breathing and circulation are restored. It does not treat airway swelling, wheeze or shock — never give it instead of adrenaline or delay adrenaline to give it." }
+    ],
   sources: [{ name: "Resuscitation Council UK. Emergency treatment of anaphylaxis, 2021" }, { name: "WHO Pocket Book 2013" }],
   textbook: [
     { book: "harrison", text: "First-choice treatment is IM epinephrine 0.3-0.5 mg (1 mg/mL), repeated every 5-20 min for severe reactions; failure to give it within 20 min is linked to poor outcomes.", ref: "Harrison 22nd ed. 2025, ch. 364 Anaphylaxis, p. 2813" },
@@ -705,8 +706,10 @@ window.CONDITIONS = [
     { id: "tranexamic-acid", role: "adjunct", note: "1 g IV for bleeding. Routine prophylaxis at caesarean is not recommended: a large trial found no reduction in death or transfusion (Williams, Gabbe)." },
     { id: "misoprostol", role: "adjunct", note: "Second uterotonic for atony on the table." },
     { id: "paracetamol", role: "supportive", note: "Regular, by the clock, from the end of surgery." },
-    { id: "morphine", role: "supportive", note: "For breakthrough pain in the first 24 h." }
-  ],
+    { id: "morphine", role: "supportive", note: "For breakthrough pain in the first 24 h." },
+      { id: "sodium-citrate", role: "adjunct", note: "Before a general anaesthetic — including when a spinal fails: 30 mL of 0.3 M by mouth within the few minutes before induction to neutralise stomach acid and lessen aspiration pneumonitis. Not needed for a working spinal." },
+      { id: "famotidine", role: "adjunct", note: "If a general anaesthetic is planned or likely: famotidine IV once the decision to operate is made, so it has time to act. Sodium citrate covers the gap until then." }
+    ],
   sources: [{ name: "WHO. Surgical Care at the District Hospital, 2003" }, { name: "MSF Clinical Guidelines — Anaesthesia" }],
   textbook: [
     { book: "williams", text: "Prophylaxis reduces post-cesarean pelvic infection by 70 to 80 percent; single-dose ampicillin 2 g or a first-generation cephalosporin (cefazolin 3 g if obese) is ideal, given before incision.", ref: "Williams Obstetrics 25th ed. 2018, ch. 37 Puerperal Complications, pdf p. 1476" },

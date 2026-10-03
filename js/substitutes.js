@@ -180,7 +180,7 @@ window.SUBSTITUTES = {
     {use: "COPD exacerbation",none: true,note: "No substitute bronchodilator in this app apart from salbutamol: give salbutamol more often, steroid, and oxygen to 88–92 %."}
   ],
   "adenosine": [
-    {use: "Stable SVT",none: true,note: "No substitute in this app. Vagal manoeuvres; if unstable, synchronised cardioversion. Adults only: verapamil 5 mg IV over 2 min if in your formulary (never in infants, WPW, broad-complex tachycardia or with a β-blocker). Refer."}
+    {use: "Stable SVT",none: true,note: "Vagal manoeuvres; if unstable, synchronised cardioversion. Adults only: verapamil 5 mg IV over 2 min if in your formulary (never in infants, WPW, broad-complex tachycardia or with a β-blocker). Refer."}
   ],
   "mannitol": [
     {use: "Raised intracranial pressure",with: "hypertonic-saline",note: "3 % saline 2–5 mL/kg over 10–20 min; can be made from 0.9 % saline and 20 % or 10 % NaCl ampoules. Preferred if hypotensive."}
@@ -234,8 +234,8 @@ window.SUBSTITUTES = {
     {use: "Sedation in rapid tranquillisation",with: "lorazepam",note: "1–2 mg IM. Do not also give promethazine."},
     {use: "Sedation in rapid tranquillisation",with: "diazepam",note: "10 mg orally or 5–10 mg slowly IV. Never IM."},
     {use: "Anaphylaxis",with: "adrenaline",note: "Adrenaline IM is the essential treatment; an antihistamine is only for skin symptoms afterwards."},
-    {use: "Allergic itch or urticaria",none: true,note: "Use chlorphenamine, cetirizine or loratadine if stocked (not in this app)."},
-    {use: "Nausea and vomiting",none: true,note: "Use metoclopramide or ondansetron if stocked. Chlorpromazine is a last-line antiemetic because of hypotension."}
+    {use: "Allergic itch or urticaria",with: "chlorphenamine",note: "Use chlorphenamine, cetirizine or loratadine if stocked."},
+    {use: "Nausea and vomiting",with: "ondansetron",note: "Use metoclopramide or ondansetron if stocked. Chlorpromazine is a last-line antiemetic because of hypotension."}
   ],
   "lorazepam": [
     {use: "Acute agitation",with: "diazepam",note: "10 mg orally, or 5–10 mg slowly IV over 2 minutes. Never IM (erratic absorption)."},
@@ -744,8 +744,8 @@ window.SUBSTITUTES = {
     },
     {
       use: "Atrial fibrillation without a mechanical valve or mitral stenosis, when warfarin cannot be monitored",
-      none: true,
-      note: "A direct oral anticoagulant (apixaban, rivaroxaban, dabigatran, edoxaban) is the alternative if the patient can obtain and afford one; none is in this app. Aspirin is NOT an adequate substitute: it prevents fewer strokes than warfarin and is no safer for bleeding. Long-term enoxaparin is not a standard AF treatment. Refer to a centre with INR testing."
+      with: "apixaban",
+      note: "A direct oral anticoagulant (apixaban, rivaroxaban, dabigatran, edoxaban) is the alternative if the patient can obtain and afford one. Aspirin is NOT an adequate substitute: it prevents fewer strokes than warfarin and is no safer for bleeding. Long-term enoxaparin is not a standard AF treatment. Refer to a centre with INR testing."
     }
   ],
 
@@ -777,8 +777,8 @@ window.SUBSTITUTES = {
   vecuronium: [
     {
       use: "Relaxation for abdominal surgery",
-      none: true,
-      note: "Atracurium, rocuronium or pancuronium at equivalent dose (not in this app) are a straight swap; pancuronium lasts longer. With no relaxant: ketamine with spontaneous breathing and local infiltration, or a spinal for lower abdominal surgery."
+      with: "atracurium",
+      note: "Atracurium, rocuronium or pancuronium — each has its own page and its own dose — can replace it; pancuronium lasts longer. With no relaxant: ketamine with spontaneous breathing and local infiltration, or a spinal for lower abdominal surgery."
     },
     {
       use: "Intubation only",
@@ -935,13 +935,13 @@ window.SUBSTITUTES = {
     },
     {
       use: "Acid suppression with no PPI at all",
-      none: true,
-      note: "Famotidine or cimetidine (not in this app) are the remaining H2 blockers. Ranitidine was withdrawn in 2020 and must not be used. An H2 blocker is weaker than a PPI for a bleeding ulcer."
+      with: "famotidine",
+      note: "Famotidine or cimetidine are the remaining H2 blockers. Ranitidine was withdrawn in 2020 and must not be used. An H2 blocker is weaker than a PPI for a bleeding ulcer."
     },
     {
       use: "Immediate acid neutralisation before emergency anaesthesia",
-      none: true,
-      note: "30 mL of 0.3 M sodium citrate by mouth just before induction (not in this app). A PPI takes 30–60 minutes or longer to act."
+      with: "sodium-citrate",
+      note: "30 mL of 0.3 M sodium citrate by mouth just before induction. A PPI takes 30–60 minutes or longer to act."
     }
   ],
 
@@ -1026,8 +1026,8 @@ window.SUBSTITUTES = {
   cotrimoxazole: [
     {
       use: "PCP / HIV prophylaxis (cotrimoxazole preventive therapy)",
-      none: true,
-      note: "No substitute in this app. The alternatives — dapsone 100 mg daily (check G6PD), atovaquone, or monthly aerosolised pentamidine with a special nebuliser — need referral or the HIV programme. Do not leave the patient unprotected: report the stock-out the same day."
+      with: "dapsone",
+      note: "The alternatives — dapsone 100 mg daily (check G6PD), atovaquone, or monthly aerosolised pentamidine with a special nebuliser — need referral or the HIV programme. Do not leave the patient unprotected: report the stock-out the same day."
     },
     {
       use: "Severe PCP treatment when cotrimoxazole cannot be used",
@@ -1075,13 +1075,13 @@ window.SUBSTITUTES = {
     },
     {
       use: "Oral or oesophageal candidiasis",
-      none: true,
-      note: "No drug substitute in this app. Nystatin suspension or miconazole oral gel treat oral thrush; oesophageal candidiasis needs an azole (itraconazole) or referral."
+      with: "miconazole",
+      note: "Nystatin suspension or miconazole oral gel treat oral thrush; oesophageal candidiasis needs an azole (itraconazole) or referral."
     },
     {
       use: "Vaginal candidiasis (and always in pregnancy)",
-      none: true,
-      note: "Use a topical azole (clotrimazole or miconazole pessary/cream) — not in this app's list; preferred to fluconazole in pregnancy."
+      with: "clotrimazole",
+      note: "Use a topical azole (clotrimazole or miconazole pessary/cream); preferred to fluconazole in pregnancy."
     },
     {
       use: "Fungal keratitis",
@@ -1160,7 +1160,7 @@ window.SUBSTITUTES = {
     {
       use: "Uterine relaxation to replace an inverted uterus",
       with: "magnesium-sulfate",
-      note: "Williams lists IV magnesium sulfate (and terbutaline, not in this app) as an alternative relaxant. It acts more slowly than GTN. Use the loading dose on the Magnesium sulfate page with calcium gluconate at hand; general anaesthesia with a halogenated agent is the other option. Oxytocin as soon as the uterus is replaced."
+      note: "Williams lists IV magnesium sulfate and terbutaline as alternative relaxants. It acts more slowly than GTN. Use the loading dose on the Magnesium sulfate page with calcium gluconate at hand; general anaesthesia with a halogenated agent is the other option. Oxytocin as soon as the uterus is replaced."
     },
     {
       use: "Acute cardiogenic pulmonary oedema",
@@ -1336,6 +1336,305 @@ window.SUBSTITUTES = {
       use: "Influenza",
       none: true,
       note: "Amantadine must not be used — resistance is near-universal. Neuraminidase inhibitors (oseltamivir) are the treatment; they are not in this app."
+    }
+  ],
+
+  /* ---- allergy and stomach ---- */
+  chlorphenamine: [
+    {
+      use: "Anaphylaxis",
+      with: "adrenaline",
+      note: "Adrenaline IM is the treatment. No antihistamine replaces it; chlorphenamine is only for skin symptoms afterwards."
+    },
+    {
+      use: "Allergic reaction needing an injection",
+      with: "promethazine",
+      note: "25–50 mg deep IM for an adult. Never under 2 years; more sedating, and tissue injury if injected badly."
+    },
+    {
+      use: "Hives or itch, patient can swallow",
+      with: "cetirizine",
+      note: "10 mg once daily (child by age from 6 months). Sedates less; preferred in young children."
+    },
+    {
+      use: "Hives or itch, patient can swallow",
+      with: "loratadine",
+      note: "10 mg once daily (2–5 years 5 mg). Least sedating; preferred in pregnancy and breastfeeding."
+    }
+  ],
+  cetirizine: [
+    {
+      use: "Hives, itch or hay fever",
+      with: "loratadine",
+      note: "10 mg once daily; 2–5 years 5 mg. Not under 2 years."
+    },
+    {
+      use: "Hives or itch, oral or injection",
+      with: "chlorphenamine",
+      note: "4 mg orally every 4–6 hours, or 10 mg IM/IV. Sedating — best at night."
+    },
+    {
+      use: "Anaphylaxis",
+      with: "adrenaline",
+      note: "Adrenaline IM first; an oral antihistamine is only for skin symptoms afterwards."
+    }
+  ],
+  loratadine: [
+    {
+      use: "Hives, itch or hay fever",
+      with: "cetirizine",
+      note: "10 mg once daily; usable from 6 months. Slightly more sedating."
+    },
+    {
+      use: "Hives or itch, oral or injection",
+      with: "chlorphenamine",
+      note: "4 mg orally every 4–6 hours, or 10 mg IM/IV. Sedating."
+    },
+    {
+      use: "Anaphylaxis",
+      with: "adrenaline",
+      note: "Adrenaline IM first; an oral antihistamine is only for skin symptoms afterwards."
+    }
+  ],
+  famotidine: [
+    {
+      use: "Acid suppression, ulcer or reflux",
+      with: "omeprazole",
+      note: "More potent; first choice for a bleeding ulcer. Oral, IV, or by NG tube as a bicarbonate suspension."
+    },
+    {
+      use: "Acid suppression when no famotidine or PPI",
+      with: "cimetidine",
+      note: "Last choice: inhibits liver enzymes (warfarin, phenytoin, aminophylline and others). Check every other drug first."
+    },
+    {
+      use: "Immediate neutralisation before induction",
+      with: "sodium-citrate",
+      note: "30 mL of 0.3 M in the last minutes before induction. Not a substitute for the H2 blocker given earlier — they work together."
+    },
+    {
+      use: "Any use",
+      none: true,
+      note: "Ranitidine was withdrawn worldwide in 2020 and must not be used as an alternative."
+    }
+  ],
+  cimetidine: [
+    {
+      use: "Acid suppression, ulcer or reflux",
+      with: "famotidine",
+      note: "Preferred H2 blocker: more potent and no liver-enzyme interactions."
+    },
+    {
+      use: "Acid suppression, ulcer or reflux",
+      with: "omeprazole",
+      note: "More potent still; first choice for a bleeding ulcer."
+    },
+    {
+      use: "Immediate neutralisation before induction",
+      with: "sodium-citrate",
+      note: "30 mL of 0.3 M in the last minutes before induction."
+    }
+  ],
+  "sodium-citrate": [
+    {
+      use: "Immediate neutralisation of stomach acid before induction",
+      none: true,
+      note: "Nothing else acts at once. Never use a chalky (particulate) antacid. A pharmacy can make 0.3 M sodium citrate (see the Sodium citrate page)."
+    },
+    {
+      use: "Acid aspiration prophylaxis (slower)",
+      with: "famotidine",
+      note: "20 mg IV at the decision to operate; needs 30–60 minutes. Does not neutralise acid already in the stomach."
+    },
+    {
+      use: "Acid aspiration prophylaxis (slower)",
+      with: "omeprazole",
+      note: "40 mg IV at least 30–60 minutes before induction."
+    }
+  ],
+
+  /* ---- anaesthesia and airway ---- */
+  atracurium: [
+    {
+      use: "Relaxation for surgery",
+      with: "vecuronium",
+      note: "0.1 mg/kg IV, top-ups 0.02–0.03 mg/kg; a straight swap with the same rules (neostigmine and atropine in the room, someone to ventilate). The powder needs no fridge. It lasts longer in liver failure and somewhat longer in kidney failure."
+    },
+    {
+      use: "Relaxation in kidney or liver failure",
+      none: true,
+      note: "No other relaxant on these pages escapes kidney and liver clearance as atracurium does. Avoid pancuronium. If only vecuronium or rocuronium exists: one intubating dose, then smaller, less frequent top-ups and full clinical recovery before extubation. Or avoid a relaxant: ketamine with spontaneous breathing and local infiltration, or a spinal in a resuscitated patient."
+    },
+    {
+      use: "Any relaxant where the airway kit, a trained person or the reversal drugs are missing",
+      none: true,
+      note: "No substitute and nothing to improvise. Do not paralyse a patient you cannot intubate and ventilate."
+    }
+  ],
+  rocuronium: [
+    {
+      use: "Rapid-sequence intubation (patient who CAN have suxamethonium)",
+      with: "suxamethonium",
+      note: "1–1.5 mg/kg IV. Usually the better choice where sugammadex is not stocked: if intubation fails, breathing returns in 5–8 minutes. Check the contraindication list on its page first."
+    },
+    {
+      use: "Rapid-sequence intubation when suxamethonium is contraindicated",
+      with: "vecuronium",
+      note: "0.15 mg/kg IV — slower onset and a block of more than an hour. The same commitment to the airway as rocuronium: only with a second airway plan on the trolley and someone to ventilate (theatre packs)."
+    },
+    {
+      use: "Relaxation for surgery after intubation",
+      with: "atracurium",
+      note: "0.5 mg/kg IV given slowly, top-ups 0.1–0.2 mg/kg. Best choice in kidney or liver failure. Needs a fridge. Vecuronium 0.1 mg/kg is the other straight swap."
+    }
+  ],
+  pancuronium: [
+    {
+      use: "Relaxation for surgery",
+      with: "vecuronium",
+      note: "0.1 mg/kg IV, top-ups 0.02–0.03 mg/kg. Shorter, less residual paralysis and no rise in heart rate — the better drug for most operations."
+    },
+    {
+      use: "Relaxation in kidney failure",
+      with: "atracurium",
+      note: "0.5 mg/kg IV given slowly. Its breakdown does not depend on the kidney, whereas pancuronium can last many hours in kidney failure."
+    }
+  ],
+  terbutaline: [
+    {
+      use: "Acute asthma (inhaled route available)",
+      with: "salbutamol",
+      note: "Inhaled salbutamol by spacer or nebuliser is first-line anyway; terbutaline injection is only for the patient with no inhaled route."
+    },
+    {
+      use: "Severe asthma with no inhaled route",
+      with: "adrenaline",
+      note: "Adrenaline 1:1000 SC 0.01 mL/kg (maximum 0.3 mL child, 0.3–0.5 mL adult), repeated every 20 minutes up to 3 doses, as on the Salbutamol page. More tachycardia and BP rise than terbutaline."
+    },
+    {
+      use: "Uterine relaxation (inversion, head entrapment, trapped placenta)",
+      with: "glyceryl-trinitrate",
+      note: "50 micrograms IV (repeat 50–100 micrograms) or sublingual GTN; acts in 1–2 minutes and wears off in minutes. BP checked first, fluids running. See the GTN page."
+    },
+    {
+      use: "Uterine relaxation when neither GTN nor terbutaline is available",
+      with: "magnesium-sulfate",
+      note: "Williams lists IV magnesium sulfate as an alternative relaxant for inversion; slower. Use the loading dose on its page, with calcium gluconate at hand. General anaesthesia with a halogenated agent is the other option."
+    },
+    {
+      use: "Tocolysis to allow antenatal corticosteroids and transfer",
+      with: "nifedipine",
+      note: "The preferred tocolytic: 20 mg orally, then 10–20 mg every 6–8 h for up to 48 h (see its page). Do not combine it with magnesium as tocolytics."
+    }
+  ],
+
+  /* ---- anticoagulant, infection and topical ---- */
+  rivaroxaban: [
+    {
+      use: "Stroke prevention in atrial fibrillation (no mechanical valve, no rheumatic mitral stenosis)",
+      with: "warfarin",
+      note: "Needs INR monitoring (target 2.0–3.0). Switch by giving both until the INR is 2.0 or more, then stop rivaroxaban (see Rivaroxaban: switching). Aspirin is not an adequate substitute."
+    },
+    {
+      use: "Stroke prevention in atrial fibrillation, if the patient can obtain another DOAC",
+      with: "apixaban",
+      note: "5 mg twice daily (2.5 mg twice daily only by apixaban's own criteria). Start the first apixaban tablet when the next rivaroxaban dose would have been due. Apixaban can be taken without food. Not for valves or rheumatic mitral stenosis either."
+    },
+    {
+      use: "DVT or PE treatment",
+      with: "heparin",
+      note: "Enoxaparin 1 mg/kg SC every 12 hours for the whole course (once daily if creatinine clearance is under 30 mL/min), starting when the next tablet would have been due. Warfarin overlapped with heparin is the other option where INR testing exists."
+    },
+    {
+      use: "Mechanical heart valve or moderate–severe rheumatic mitral stenosis",
+      with: "warfarin",
+      note: "Rivaroxaban is the wrong drug here (Harrison); in rheumatic AF it did worse than warfarin (INVICTUS). Change to warfarin at the valve target INR with heparin cover until it is in range (see Warfarin). Refer if you cannot measure the INR."
+    },
+    {
+      use: "Pregnancy, or a woman planning pregnancy",
+      with: "heparin",
+      note: "Stop rivaroxaban and change to enoxaparin (or unfractionated heparin) as soon as pregnancy is known. DOACs cross the placenta (Harrison)."
+    }
+  ],
+  atovaquone: [
+    {
+      use: "PCP prophylaxis (first choice)",
+      with: "cotrimoxazole",
+      note: "Cotrimoxazole is always first: it also prevents toxoplasmosis, malaria, bacterial pneumonia and diarrhoea. After a mild, non-mucosal rash a supervised rechallenge may be possible (national guideline); never after Stevens-Johnson syndrome, blistering, mucosal sores or fever with rash."
+    },
+    {
+      use: "PCP prophylaxis when cotrimoxazole cannot be used",
+      with: "dapsone",
+      note: "100 mg daily if G6PD is normal. Dapsone cross-reacts with sulfonamides in a substantial fraction of patients (Harrison), so after a severe cotrimoxazole reaction many clinicians avoid it. Its levels also fall on rifampicin."
+    },
+    {
+      use: "PCP prophylaxis when neither cotrimoxazole nor dapsone can be used, or during rifampicin TB treatment",
+      with: "pentamidine",
+      note: "Monthly aerosolised pentamidine 300 mg with a special nebuliser — referral level and less effective than cotrimoxazole (Harrison). Do not leave the patient unprotected while it is arranged."
+    },
+    {
+      use: "Severe PCP treatment when cotrimoxazole cannot be used",
+      with: "pentamidine",
+      note: "4 mg/kg IV once daily over at least 60 minutes for 21 days — toxic (hypotension, hypoglycaemia, kidney injury, arrhythmia). Atovaquone is only for mild to moderate PCP."
+    },
+    {
+      use: "Uncomplicated falciparum malaria",
+      none: true,
+      note: "Atovaquone–proguanil is itself the alternative, not the first choice. Use the national first-line ACT (artemether–lumefantrine in Ethiopia). If the patient cannot take oral treatment or has any danger sign, give artesunate as for severe malaria."
+    },
+    {
+      use: "Severe malaria",
+      with: "artesunate",
+      note: "IV or IM artesunate first (see Artesunate). Atovaquone–proguanil is used only as the oral follow-on once the patient can swallow."
+    }
+  ],
+  clotrimazole: [
+    {
+      use: "Vaginal candidiasis, including pregnancy",
+      with: "miconazole",
+      note: "Miconazole pessary or 2 % vaginal cream at night for 7 nights works as well. Not the oral gel."
+    },
+    {
+      use: "Vaginal candidiasis, NOT pregnant",
+      with: "fluconazole",
+      note: "150 mg by mouth as a single dose (Harrison). Never in pregnancy; check for warfarin and QT drugs first."
+    },
+    {
+      use: "Vaginal candidiasis in pregnancy when no topical azole is stocked",
+      none: true,
+      note: "Nystatin pessaries are the alternative. Do not give oral fluconazole instead; treatment can wait a day for a pessary or a referral (see Fluconazole)."
+    },
+    {
+      use: "Skin Candida, nappy rash, ringworm",
+      with: "miconazole",
+      note: "2 % cream twice daily, continued for 1 week after the skin looks clear. Equivalent to clotrimazole on the skin."
+    },
+    {
+      use: "Mild oral thrush (clotrimazole troches)",
+      with: "fluconazole",
+      note: "100–200 mg daily for 7–14 days in adults, 3–6 mg/kg daily in children (see Fluconazole). Nystatin suspension or miconazole oral gel are the topical options; never the oral gel with warfarin."
+    }
+  ],
+  miconazole: [
+    {
+      use: "Vaginal candidiasis, including pregnancy",
+      with: "clotrimazole",
+      note: "100 mg pessary at night for 7 nights. The better choice for a woman on warfarin."
+    },
+    {
+      use: "Skin Candida, nappy rash, ringworm",
+      with: "clotrimazole",
+      note: "1 % cream twice daily, continued for 1 week after the skin looks clear."
+    },
+    {
+      use: "Oral thrush in an adult or child (not on warfarin)",
+      with: "fluconazole",
+      note: "Adult 100–200 mg daily for 7–14 days; child 3–6 mg/kg daily (see Fluconazole). Fluconazole also raises the INR on warfarin."
+    },
+    {
+      use: "Oral thrush in an infant under 4 months, or in a patient on warfarin",
+      none: true,
+      note: "Nystatin oral suspension: it is not absorbed, does not affect the INR, and is the usual treatment in young infants (Nelson). Mild thrush in a well baby may need no treatment at all (Nelson)."
     }
   ]
 };

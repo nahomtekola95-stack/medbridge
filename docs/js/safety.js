@@ -4094,5 +4094,619 @@ window.SAFETY = {
       }
     ],
     sources: ["Amantadine product information", "BNF", "LactMed (NIH)", "The Renal Drug Handbook"]
+  },
+
+  /* ---- allergy and stomach ---- */
+  chlorphenamine: {
+    pregnancy: {
+      level: "safe",
+      text: "No increased risk of malformations with commonly used antihistamines such as chlorphenamine (Gabbe); Williams lists it for itch in pregnancy (4 mg every 6 hours). Used near delivery it can make the newborn irritable or drowsy — prefer loratadine or cetirizine for regular use late in pregnancy. In anaphylaxis in pregnancy, adrenaline IM first, as for anyone."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Occasional doses are acceptable. Regular use can make the baby drowsy or irritable and may reduce milk supply; prefer loratadine (or cetirizine) for repeated doses."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change; sedation may last longer in severe kidney failure, so use the lowest dose."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Severe liver disease: avoid — sedation can precipitate hepatic encephalopathy. Mild to moderate disease: lowest dose, watch for drowsiness."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "No increased risk of anomalies with most commonly used antihistamines, such as chlorphenamine.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 129",
+        pdf_page: 162,
+        quote: "commonly used antihistamines, such as chlorpheniramine"
+      },
+      {
+        book: "williams",
+        text: "Chlorphenamine 4 mg every 6 hours is a suitable oral antihistamine for itch in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 62 Dermatological Disorders, pdf p. 2632",
+        pdf_page: 2632,
+        quote: "chlorpheniramine (Chlor-Trimeton), 4 mg every 6 hours"
+      }
+    ],
+    sources: ["BNF", "LactMed (NIH): chlorpheniramine"]
+  },
+  cetirizine: {
+    pregnancy: {
+      level: "safe",
+      text: "Large experience without increased malformations; Williams lists cetirizine 5 or 10 mg daily as a less sedating choice for itch in pregnancy."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible at usual doses; occasional drowsiness in the baby reported. Loratadine is slightly preferred for long courses."
+    },
+    renal: {
+      level: "adjust",
+      text: "Mostly excreted by the kidney. Halve the dose when creatinine clearance is below 50 mL/min (product information).",
+      bands: [
+        { below: 50, text: "CrCl 30–49: 5 mg once daily." },
+        { below: 30, text: "CrCl 10–29: 5 mg every 48 hours." },
+        { below: 10, text: "CrCl below 10 (end-stage, not on dialysis): avoid." }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No change in liver disease alone; reduce if the kidneys are also impaired."
+    },
+    refs: [
+      {
+        book: "williams",
+        text: "Cetirizine 5 or 10 mg daily or loratadine 10 mg daily cause less sedation in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 62 Dermatological Disorders, pdf p. 2632",
+        pdf_page: 2632,
+        quote: "cetirizine (Zyrtec) 5 or 10"
+      }
+    ],
+    sources: ["BNF", "Cetirizine product information (renal impairment)", "LactMed (NIH): cetirizine"]
+  },
+  loratadine: {
+    pregnancy: {
+      level: "safe",
+      text: "The non-sedating antihistamine with the most pregnancy experience; Williams lists loratadine 10 mg daily for itch in pregnancy."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible: very little enters the milk and it does not sedate the baby. The preferred antihistamine while breastfeeding."
+    },
+    renal: { level: "none", text: "No dose change." },
+    hepatic: {
+      level: "adjust",
+      text: "Severe liver impairment: 10 mg every other day (product information)."
+    },
+    refs: [
+      {
+        book: "williams",
+        text: "Loratadine 10 mg daily is a less sedating antihistamine for itch in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 62 Dermatological Disorders, pdf p. 2632",
+        pdf_page: 2632,
+        quote: "loratadine (Claritin) 10 mg daily"
+      }
+    ],
+    sources: ["BNF", "Loratadine product information (hepatic impairment)", "LactMed (NIH): loratadine"]
+  },
+  famotidine: {
+    pregnancy: {
+      level: "safe",
+      text: "Human data are reassuring (Gabbe). The H2 blocker named for heartburn in pregnancy after antacids (20 mg twice daily), and used for aspiration prophylaxis before caesarean."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. H2 blockers are considered compatible with breastfeeding, and famotidine is less concentrated in milk than cimetidine, so it is preferred (Gabbe)."
+    },
+    renal: {
+      level: "adjust",
+      text: "Excreted by the kidney. Creatinine clearance below 50 mL/min: half the dose, or the usual dose at double the interval (product information). Confusion, agitation, seizures and QT prolongation have occurred when the dose was not reduced.",
+      bands: [
+        {
+          below: 50,
+          text: "CrCl below 50: half the dose (for example 20 mg once daily instead of twice), or the usual dose every 36–48 hours."
+        }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change. Famotidine does not bind liver cytochrome P450 (Harrison)."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Human data for H2 blockers other than ranitidine, including famotidine, have been reassuring.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 53 Gastrointestinal Diseases in Pregnancy, p. 1001",
+        pdf_page: 1234,
+        quote: "have been reassuring, although animal data at supratherapeutic"
+      },
+      {
+        book: "gabbe",
+        text: "Heartburn in pregnancy: famotidine 20 mg twice daily after lifestyle measures and antacids.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 6 Nutrition During Pregnancy, Fig. 6.4, p. 116",
+        pdf_page: 146,
+        quote: "Famotidine 20 mg BID"
+      },
+      {
+        book: "gabbe",
+        text: "H2 blockers are compatible with breastfeeding; famotidine is less concentrated in milk and may be preferable.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 136",
+        pdf_page: 169,
+        quote: "Famotidine, nizatidine, and roxatidine are"
+      }
+    ],
+    sources: ["BNF", "Famotidine product information (renal impairment)", "LactMed (NIH): famotidine"]
+  },
+  cimetidine: {
+    pregnancy: {
+      level: "caution",
+      text: "Human use has not shown harm, but animal data at very high doses raised concern for cimetidine (Gabbe) and it is antiandrogenic. Prefer famotidine or omeprazole; if cimetidine is all there is, it may be used for aspiration prophylaxis."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "H2 blockers are considered compatible with breastfeeding (Gabbe), but cimetidine is more concentrated in milk than famotidine. Prefer famotidine; a short course is acceptable."
+    },
+    renal: {
+      level: "adjust",
+      text: "Reduce the dose: confusion is more common in kidney failure. Cimetidine also raises serum creatinine without a real fall in GFR (Harrison) — do not mistake this for worsening kidney function.",
+      bands: [
+        { below: 50, text: "CrCl 30–50: 200 mg four times daily (BNF)." },
+        { below: 30, text: "CrCl 15–30: 200 mg three times daily (BNF)." },
+        { below: 15, text: "CrCl below 15: 200 mg twice daily (BNF)." }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Use a lower dose in severe liver disease (confusion; the drug is partly cleared by the liver); rarely causes hepatitis. Prefer famotidine."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Animal data at supratherapeutic doses for cimetidine were of concern.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 53 Gastrointestinal Diseases in Pregnancy, p. 1001",
+        pdf_page: 1234,
+        quote: "doses for cimetidine and nizatidine were of concern"
+      },
+      {
+        book: "gabbe",
+        text: "H2 blockers, cimetidine included, are considered compatible with breastfeeding.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 136",
+        pdf_page: 169,
+        quote: "compatible with breastfeeding"
+      },
+      {
+        book: "harrison",
+        text: "Cimetidine raises serum creatinine without an actual change in GFR.",
+        ref: "Harrison 22nd ed. 2025, ch. 320 Cell Biology and Physiology of the Kidney, p. 2369",
+        pdf_page: 2412,
+        quote: "there is no actual change in GFR in this setting"
+      }
+    ],
+    sources: ["BNF (renal dosing)", "LactMed (NIH): cimetidine"]
+  },
+  "sodium-citrate": {
+    pregnancy: {
+      level: "safe",
+      text: "Given routinely to women before caesarean section (Williams, Gabbe). A single 30 mL dose; not absorbed in amounts that matter to the baby."
+    },
+    breastfeeding: { level: "safe", text: "Compatible: a single dose before anaesthesia." },
+    renal: {
+      level: "none",
+      text: "No change for a single dose. Each 30 mL carries about 27 mmol of sodium and a small alkali load; repeated doses add up in severe kidney failure."
+    },
+    hepatic: { level: "none", text: "No dose change." },
+    refs: [
+      {
+        book: "williams",
+        text: "30 mL of Bicitra (sodium citrate with citric acid) a few minutes before induction of general or major neuraxial anaesthesia.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1094",
+        pdf_page: 1094,
+        quote: "a few minutes before anesthesia induction by either general or major neuraxial block"
+      },
+      {
+        book: "gabbe",
+        text: "A clear antacid is routine for every woman before surgery.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 360",
+        pdf_page: 451,
+        quote: "Use of a clear antacid is considered routine for all parturients prior"
+      }
+    ],
+    sources: ["American Society of Anesthesiologists Task Force on Obstetric Anesthesia, 2016"]
+  },
+
+  /* ---- anaesthesia and airway ---- */
+  atracurium: {
+    pregnancy: {
+      level: "caution",
+      text: "Used for general anaesthesia at caesarean, after intubation or when suxamethonium is unsuitable. Highly ionised muscle relaxants cross the placenta very little, so the baby is not paralysed (Gabbe). Magnesium for pre-eclampsia prolongs the block — see interactions."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Broken down within an hour in the mother's blood and not absorbed from milk by the baby. Breastfeed once the mother is awake and strong."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change: broken down in the blood by Hofmann elimination, not by the kidney (Schwartz). The relaxant of choice in kidney failure."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change: elimination does not depend on the liver. The relaxant of choice in liver failure or obstructive jaundice."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Essentially all anaesthetic drugs cross the placenta freely except the highly ionised muscle relaxants, so general anaesthesia for caesarean does not paralyse the baby.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 347",
+        pdf_page: 438,
+        quote: "except highly ionized muscle relaxants cross the placenta freely"
+      },
+      {
+        book: "schwartz",
+        text: "Atracurium and cisatracurium (benzylisoquinolines) are broken down in the plasma by Hofmann elimination; vecuronium and rocuronium are steroid relaxants metabolised by the liver and also cleared by the kidney.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2032",
+        pdf_page: 2059,
+        quote: "undergo breakdown in plasma known as Hofmann elimination"
+      },
+      {
+        book: "schwartz",
+        text: "In severe renal insufficiency doses of relaxants are reduced and intervals lengthened; cisatracurium (the purified isomer of atracurium, also broken down by Hofmann elimination) is often chosen because its elimination is unchanged by renal failure.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2036",
+        pdf_page: 2063,
+        quote: "Doses of opioids and neuromuscular agents are typically reduced"
+      }
+    ],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+  rocuronium: {
+    pregnancy: {
+      level: "caution",
+      text: "The alternative to suxamethonium for rapid-sequence induction at caesarean when suxamethonium is contraindicated (Williams, Gabbe). Very little crosses the placenta (Gabbe). Without sugammadex a failed intubation cannot be undone quickly — plan the airway. Magnesium prolongs the block."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Not absorbed from milk by the baby's gut. Breastfeed once the mother is awake and strong."
+    },
+    renal: {
+      level: "adjust",
+      text: "Kidney failure prolongs the block somewhat. Normal intubating dose; smaller, less frequent top-ups; test recovery before extubation."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Metabolised by the liver and excreted in bile (Nelson): liver disease and biliary obstruction prolong the block. Normal intubating dose; smaller, less frequent top-ups."
+    },
+    refs: [
+      {
+        book: "williams",
+        text: "At caesarean under general anaesthesia, rocuronium is the alternative relaxant if suxamethonium is contraindicated or unavailable; it lasts much longer than suxamethonium unless reversed by sugammadex.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 25 Obstetrical Analgesia and Anesthesia, pdf p. 1095",
+        pdf_page: 1095,
+        quote: "is an alternative muscle relaxant if succinylcholine is contraindicated"
+      },
+      {
+        book: "gabbe",
+        text: "Suxamethonium remains the relaxant of choice at caesarean; high-dose rocuronium can be used if suxamethonium is contraindicated, with a similar time to intubation.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 362",
+        pdf_page: 453,
+        quote: "high-dose rocuronium can be used if succinylcholine is contraindicated"
+      },
+      {
+        book: "gabbe",
+        text: "Essentially all anaesthetic drugs cross the placenta freely except the highly ionised muscle relaxants, so general anaesthesia for caesarean does not paralyse the baby.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 347",
+        pdf_page: 438,
+        quote: "except highly ionized muscle relaxants cross the placenta freely"
+      },
+      {
+        book: "nelson",
+        text: "Non-depolarising relaxants have a less rapid onset than suxamethonium but last longer; rocuronium is metabolised by the liver and excreted in bile; prolonged ICU use may cause profound weakness.",
+        ref: "Nelson 22nd ed. 2024, ch. 91 Anesthesia and Perioperative Care, p. 669, Table 91.8",
+        pdf_page: 715,
+        quote: "Prolonged ICU use may lead to profound muscle weakness"
+      }
+    ],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+  pancuronium: {
+    pregnancy: {
+      level: "caution",
+      text: "Can be used under general anaesthesia; very little crosses the placenta (Gabbe). Its long action and the rise in heart rate make an intermediate relaxant (atracurium, vecuronium) a better choice at caesarean."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Not absorbed from milk by the baby's gut. Breastfeed once the mother is awake and strong."
+    },
+    renal: {
+      level: "avoid",
+      text: "Mostly excreted unchanged by the kidney: the block is greatly prolonged in kidney failure, and renal failure is a risk factor for prolonged paralysis (Harrison). Use atracurium."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Liver disease and biliary obstruction prolong the block. Smaller doses, and avoid if another relaxant is available."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Essentially all anaesthetic drugs cross the placenta freely except the highly ionised muscle relaxants, so general anaesthesia for caesarean does not paralyse the baby.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 18 Obstetric Anesthesia, p. 347",
+        pdf_page: 438,
+        quote: "except highly ionized muscle relaxants cross the placenta freely"
+      },
+      {
+        book: "harrison",
+        text: "Pancuronium, vecuronium, rocuronium and cisatracurium used for days in ICU can leave persistent block and weakness after they are stopped; risk factors include female sex, metabolic acidosis and renal failure. Aminoglycosides also impair neuromuscular transmission.",
+        ref: "Harrison 22nd ed. 2025, ch. 318 Nervous System Disorders in Critical Care, p. 2352",
+        pdf_page: 2395,
+        quote: "metabolic acidosis, and renal failure"
+      },
+      {
+        book: "schwartz",
+        text: "In severe renal insufficiency doses of relaxants are reduced and intervals lengthened; cisatracurium (the purified isomer of atracurium, also broken down by Hofmann elimination) is often chosen because its elimination is unchanged by renal failure.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 46 Anesthesia for Surgical Patients, p. 2036",
+        pdf_page: 2063,
+        quote: "Doses of opioids and neuromuscular agents are typically reduced"
+      }
+    ],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+  terbutaline: {
+    pregnancy: {
+      level: "caution",
+      text: "For asthma in pregnancy it is a preferred bronchodilator; no birth defects reported (Gabbe) — never withhold bronchodilator treatment from a pregnant woman with asthma. As a tocolytic: single doses or up to 48 hours only — prolonged use causes pulmonary oedema and maternal deaths, and raises glucose (Gabbe, Williams)."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Small amounts pass into milk; normal asthma doses are compatible with breastfeeding (BNF). Watch a young baby for jitteriness or a fast pulse."
+    },
+    renal: {
+      level: "adjust",
+      text: "Single doses unchanged. Largely excreted by the kidney: with repeated doses in severe kidney impairment use the lowest dose that works and watch the pulse and potassium."
+    },
+    hepatic: { level: "none", text: "No dose change needed." },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Terbutaline is preferred for asthma in pregnancy; no birth defects reported; long-term use is linked with glucose intolerance.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 128",
+        pdf_page: 161,
+        quote: "it is preferred for asthma in the pregnant patient"
+      },
+      {
+        book: "gabbe",
+        text: "FDA warning: injected or pumped terbutaline must not be used in pregnancy to prevent preterm labour or treat it beyond 48–72 hours (serious maternal heart problems and death); oral terbutaline is not recommended for prevention.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 36 Spontaneous Preterm Labor and Birth, p. 678",
+        pdf_page: 829,
+        quote: "treatment of preterm labor due to the potential for serious maternal"
+      },
+      {
+        book: "williams",
+        text: "Maintenance tocolysis after acute therapy is not recommended. Beta-agonist infusions have caused serious and fatal maternal effects; pulmonary oedema risk rises with multiple pregnancy, concurrent corticosteroids, tocolysis for more than 24 hours and large IV crystalloid volumes.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 42 Preterm Birth, pdf p. 1829",
+        pdf_page: 1829,
+        quote: "Maintenance tocolysis after acute therapy is not recommended"
+      }
+    ],
+    sources: ["BNF", "WHO Model Formulary 2008"]
+  },
+
+  /* ---- anticoagulant, infection and topical ---- */
+  rivaroxaban: {
+    pregnancy: {
+      level: "avoid",
+      text: "Contraindicated. DOACs cross the placenta (Harrison) and are not recommended in pregnancy (Gabbe); the risks to the fetus are essentially unknown (Williams). Change to enoxaparin or unfractionated heparin as soon as pregnancy is known, and give women who could become pregnant reliable contraception."
+    },
+    breastfeeding: {
+      level: "avoid",
+      text: "Avoid. Rivaroxaban passes into breast milk in small amounts and its safety for the baby is not established (Gabbe, Harrison). Use enoxaparin or warfarin, which are compatible with breastfeeding."
+    },
+    renal: {
+      level: "adjust",
+      text: "About a third is cleared unchanged by the kidney (Harrison). Calculate creatinine clearance. 50 mL/min or more: usual dose. Stop for longer before surgery when kidney function is reduced.",
+      bands: [
+        {
+          below: 50,
+          text: "CrCl 15–49: AF 15 mg once daily with food (Harrison). DVT/PE: 15 mg twice daily for 3 weeks, then 20 mg once daily; a physician may lower this to 15 mg once daily if bleeding risk outweighs clot risk (product information)."
+        },
+        {
+          below: 30,
+          text: "CrCl 15–29: use with caution and only on a physician's decision (Schwartz advises against use below 30). Warfarin with INR monitoring or heparin is often safer."
+        },
+        { below: 15, text: "CrCl under 15 or on dialysis: do not use (Nelson)." }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Mild liver disease: usual dose. Liver disease with a coagulopathy, or moderate–severe cirrhosis (Child-Pugh B or C): do not use (product information; Schwartz advises against use in severe hepatic insufficiency)."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "DOACs cross the placenta, are contraindicated in pregnancy, and should be avoided in nursing mothers.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 954",
+        pdf_page: 997,
+        quote: "these agents are contraindicated in pregnancy"
+      },
+      {
+        book: "gabbe",
+        text: "DOACs such as rivaroxaban are not recommended in pregnancy.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 126",
+        pdf_page: 159,
+        quote: "are not recommended in pregnancy"
+      },
+      {
+        book: "gabbe",
+        text: "Rivaroxaban crosses into breast milk in small amounts; avoid in breastfeeding mothers.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 50 Thromboembolic Disorders in Pregnancy, p. 963",
+        pdf_page: 1182,
+        quote: "cross into breast milk in small amounts, and their safety has not been"
+      },
+      {
+        book: "williams",
+        text: "Reproductive risks of the newer oral anticoagulants are essentially unknown.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 52 Thromboembolic Disorders, pdf p. 2247",
+        pdf_page: 2247,
+        quote: "the human reproductive risks are essentially unknown"
+      },
+      {
+        book: "harrison",
+        text: "AF: rivaroxaban 15 mg once daily when creatinine clearance is 15–49 mL/min.",
+        ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952",
+        pdf_page: 995,
+        quote: "rivaroxaban is given at a dosage of 20 mg once daily"
+      },
+      {
+        book: "nelson",
+        text: "Rivaroxaban is contraindicated with creatinine clearance below 15 mL/min.",
+        ref: "Nelson 22nd ed. 2024, ch. 458, Table 458.3, p. 2697",
+        pdf_page: 2717,
+        quote: "contraindicated in patients with a creatinine clearance below 15 mL/min"
+      },
+      {
+        book: "schwartz",
+        text: "Factor Xa inhibitors are not recommended with creatinine clearance under 30 mL/min for rivaroxaban, or in severe hepatic insufficiency.",
+        ref: "Schwartz's Principles of Surgery 11th ed., ch. 24 Venous and Lymphatic Disease, p. 989",
+        pdf_page: 1016,
+        quote: "<30 mL/min for rivaroxaban"
+      }
+    ],
+    sources: [
+      "Rivaroxaban (Xarelto) summary of product characteristics",
+      "Harrison 22nd ed. ch. 123",
+      "Gabbe's Obstetrics 9th ed., ch. 7 and 50",
+      "Williams Obstetrics 25th ed.",
+      "Nelson 22nd ed. ch. 458"
+    ]
+  },
+  atovaquone: {
+    pregnancy: {
+      level: "caution",
+      text: "Safety unknown, and use is generally not recommended (Nelson); data are insufficient for prophylaxis in pregnancy (Williams), and atovaquone–proguanil is not recommended for travel prophylaxis in pregnancy (Harrison). Atovaquone–proguanil is a second-line malaria treatment in pregnancy only when other options are unavailable (Williams). For PCP prophylaxis in a pregnant woman who cannot take cotrimoxazole, the HIV clinician weighs the alternatives. Continue folic acid (Harrison)."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No information on atovaquone in milk (Harrison Table 229-1). Atovaquone–proguanil is not recommended for women breastfeeding an infant under 5 kg (Harrison, Nelson). Above that, use if the mother needs it."
+    },
+    renal: {
+      level: "adjust",
+      text: "Mild to moderate kidney impairment: no change (Harrison).",
+      bands: [
+        {
+          below: 30,
+          text: "CrCl under 30: do not give atovaquone–proguanil (Harrison, Nelson); atovaquone alone is generally contraindicated because it accumulates (Harrison)."
+        }
+      ]
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Moderate liver impairment lengthens atovaquone's half-life, and proguanil levels rise in liver failure (Harrison). Use with caution and watch for side effects; atovaquone can raise liver enzymes."
+    },
+    refs: [
+      {
+        book: "nelson",
+        text: "Atovaquone-proguanil: safety in pregnancy is unknown and use is generally not recommended; do not give with creatinine clearance under 30 mL/min.",
+        ref: "Nelson 22nd ed. 2024, ch. 325 Principles of Antiparasitic Therapy, Table 325.1, p. 2134",
+        pdf_page: 2142,
+        quote: "Safety in pregnancy is unknown, and use is generally not recommended"
+      },
+      {
+        book: "williams",
+        text: "Data are insufficient for atovaquone-proguanil use as chemoprophylaxis in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2723",
+        pdf_page: 2723,
+        quote: "insufficient for atovaquone/proguanil use"
+      },
+      {
+        book: "harrison",
+        text: "Atovaquone-proguanil is contraindicated with creatinine clearance under 30 mL/min and not recommended under 5 kg, in pregnancy, or when breastfeeding an infant under 5 kg.",
+        ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, Table 231-8, p. 1774",
+        pdf_page: 1817,
+        quote: "recommended for children weighing <5 kg"
+      },
+      {
+        book: "harrison",
+        text: "Atovaquone is generally contraindicated with creatinine clearance under 30 mL/min; half-life increased in moderate hepatic impairment.",
+        ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1747",
+        pdf_page: 1790,
+        quote: "contraindicated in persons with a creatinine clearance rate <30 mL/min"
+      }
+    ],
+    sources: [
+      "Atovaquone and atovaquone–proguanil summaries of product characteristics",
+      "Harrison 22nd ed. ch. 229, 231",
+      "Nelson 22nd ed. ch. 325",
+      "Williams Obstetrics 25th ed. ch. 64",
+      "LactMed (NIH)"
+    ]
+  },
+  clotrimazole: {
+    pregnancy: {
+      level: "safe",
+      text: "The treatment of choice for vaginal thrush in pregnancy, instead of oral fluconazole: use a 7-night course. Clotrimazole is not known to cause malformations; one study suggested more first-trimester miscarriage but this was not considered definitive evidence of risk, and 2092 first-trimester exposures showed no rise in anomalies (Gabbe). Insert pessaries with a clean finger rather than the applicator."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. Little is absorbed through the skin or vagina, so none is expected to reach the baby in a meaningful amount (Gabbe). Wipe cream off the nipple before a feed."
+    },
+    renal: { level: "none", text: "No dose change (topical and vaginal use)." },
+    hepatic: { level: "none", text: "No dose change (topical and vaginal use)." },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Clotrimazole or miconazole in pregnancy is not known to be associated with congenital malformations.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131",
+        pdf_page: 164,
+        quote: "in pregnancy is not known to be associated with congenital malformations"
+      },
+      {
+        book: "gabbe",
+        text: "With only small amounts absorbed vaginally and poor oral bioavailability, breastfeeding is not expected to be a problem.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "with only small amounts absorbed vaginally"
+      }
+    ],
+    sources: [
+      "Clotrimazole product information",
+      "CDC STI Treatment Guidelines 2021",
+      "Gabbe's Obstetrics 9th ed., ch. 7",
+      "LactMed (NIH)"
+    ]
+  },
+  miconazole: {
+    pregnancy: {
+      level: "safe",
+      text: "Vaginal and skin use: an accepted alternative to clotrimazole for vaginal thrush in pregnancy (7-night course), instead of oral fluconazole. Miconazole is not known to cause malformations (Gabbe). Oral gel: more is absorbed; use it in pregnancy only if nystatin will not do (product information)."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Compatible. No milk data, but little is absorbed from the skin or vagina (Gabbe). Do not put oral gel on the nipple to treat the baby (choking risk); wipe any cream off the nipple before a feed."
+    },
+    renal: { level: "none", text: "No dose change." },
+    hepatic: {
+      level: "adjust",
+      text: "Oral gel: do not use in liver disease (product information). Cream and pessaries: no change."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Clotrimazole or miconazole in pregnancy is not known to be associated with congenital malformations.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131",
+        pdf_page: 164,
+        quote: "in pregnancy is not known to be associated with congenital malformations"
+      },
+      {
+        book: "gabbe",
+        text: "No data on miconazole in breast milk, but little is absorbed vaginally.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "No data are available with nystatin, miconazole, or clotrimazole in breast milk"
+      }
+    ],
+    sources: [
+      "Miconazole oral gel (Daktarin) summary of product characteristics",
+      "CDC STI Treatment Guidelines 2021",
+      "Gabbe's Obstetrics 9th ed., ch. 7",
+      "LactMed (NIH)"
+    ]
   }
 };
