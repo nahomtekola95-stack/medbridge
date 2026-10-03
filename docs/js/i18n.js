@@ -492,6 +492,17 @@
     "Enter the age in months.": "ዕድሜን በወር ያስገቡ።", "Lines are the WHO −3, −2, 0, +2 and +3 SD curves. Dots are this child's visits.": "መስመሮቹ የWHO −3፣ −2፣ 0፣ +2 እና +3 SD ኩርባዎች ናቸው። ነጥቦቹ የዚህ ሕፃን ክትትሎች ናቸው።",
     "Weight-for-age": "ክብደት-ለዕድሜ", "Length/height-for-age": "ርዝመት/ቁመት-ለዕድሜ", "Head circumference-for-age": "የራስ ዙሪያ-ለዕድሜ", "Weight-for-length": "ክብደት-ለርዝመት",
     "Weight-for-height": "ክብደት-ለቁመት", "MUAC-for-age": "MUAC-ለዕድሜ", "girl": "ሴት ልጅ", "boy": "ወንድ ልጅ", "visit": "ክትትል", "visits": "ክትትሎች",
+    /* ---- bedside procedures and theatre packs ---- */
+    "Bedside procedures": "የአልጋ ላይ ሂደቶች", "Theatre packs": "የኦፕራሲዮን ዝግጅት",
+    "Chest drain, catheters, tracheostomy and stomas: technique, sizes and what to do when the kit is short.": "የደረት ቱቦ፣ ካቴተር፣ የጉሮሮ ቱቦና የሆድ መውጫ፡ አሠራሩ፣ መጠኑና ዕቃ ሲጎድል ምን ማድረግ እንዳለብዎ።",
+    "What to have ready for an operation, and what to do when it is missing.": "ለኦፕራሲዮን ምን ማዘጋጀት እንዳለብዎና ዕቃው ሲጎድል ምን ማድረግ እንዳለብዎ።",
+    "Technique, sizes, aftercare and complications — and what to do when the kit is incomplete.": "አሠራር፣ መጠን፣ ተከታይ እንክብካቤና ችግሮች — እንዲሁም ዕቃው ሳይሟላ ሲቀር ምን ማድረግ እንዳለብዎ።",
+    "All procedures": "ሁሉም ሂደቶች", "All packs": "ሁሉም ዝግጅቶች", "Stop and think": "ቆም ብለው ያስቡ",
+    "Indications": "የሚሰጥበት ምክንያት", "Contraindications": "የማይሰጥበት ምክንያት", "Sizes": "መጠኖች", "Equipment": "ዕቃዎች",
+    "How to do it": "እንዴት እንደሚሠራ", "If it is missing": "ዕቃው ከጎደለ", "Aftercare": "ተከታይ እንክብካቤ",
+    "If it is not working": "የማይሠራ ከሆነ", "Taking it out": "ማውጣት", "Complications": "ችግሮች", "Sources": "ምንጮች",
+    "Absolute": "ፍጹም", "Relative": "አንጻራዊ", "Emergency": "አስቸኳይ", "Elective": "የታቀደ",
+    "Elective or emergency": "የታቀደ ወይም አስቸኳይ", "Before the incision": "ከመቀደዱ በፊት", "When": "መቼ", "How": "እንዴት",
     /* ---- catch-up vaccination ---- */
     "Catch-up vaccination": "የክትባት ማሟያ",
     "What to give a child who has missed doses, and when to bring them back.": "ክትባት ያመለጠውን ሕፃን ዛሬ ምን እንደሚሰጡና መቼ እንደሚመለስ።",

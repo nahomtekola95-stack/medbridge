@@ -971,3 +971,9 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
   background: var(--surface-2); color: var(--text); font-weight: 700; cursor: pointer; }
 .vx-dot.on { background: var(--primary); border-color: transparent; color: #fff; }
 @media (max-width: 420px) { .vx-row { flex-direction: column; align-items: flex-start; gap: .4rem; } }
+
+/* bedside procedures: numbered steps that stay readable when you are holding
+   a phone in one hand */
+.proc-steps { margin: 0; padding-left: 1.3rem; display: grid; gap: .6rem; }
+.proc-steps li { padding-left: .2rem; }
+.proc-steps li::marker { color: var(--primary); font-weight: 800; }

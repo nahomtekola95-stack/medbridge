@@ -678,6 +678,7 @@ window.Features = function (ctx) {
     const T = [
       ["#/ward", "ward", "Ward board", "Every bed on one screen with acuity, doses due and tasks, and an I-PASS shift handover.", ""],
       ["#/optics", "eye", "Optics and refraction", "Transpose a prescription, work out the reading add, convert visual acuity and size a magnifier.", ""],
+      ["#/procedures", "tool", "Bedside procedures", "Chest drain, catheters, tracheostomy and stomas: technique, sizes and what to do when the kit is short.", ""],
       ["#/theatre", "tool", "Theatre packs", "What to have ready for an operation, and what to do when it is missing.", ""],
       ["#/vaccines", "check", "Catch-up vaccination", "What to give a child who has missed doses, and when to bring them back.", ""],
       ["#/growth", "baby", "Child growth", "WHO z-scores and centiles for weight, height, MUAC and head circumference, with growth charts.", ""],
