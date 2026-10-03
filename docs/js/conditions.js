@@ -5968,5 +5968,891 @@ window.CONDITIONS = [
       }
     ],
     review: { status: "draft" }
+  },
+
+  /* ---- postoperative and anaesthetic complications ---- */
+  {
+    id: "postoperative-fever",
+    name: "Postoperative fever",
+    group: "surgical",
+    aka: [
+      "fever after surgery",
+      "post-op pyrexia",
+      "5 Ws",
+      "wind water wound walk wonder drugs",
+      "fever after caesarean",
+      "atelectasis and fever"
+    ],
+    summary: "Fever is common after surgery. In the first 48 hours it is usually the body's inflammatory response to the operation and settles on its own. Atelectasis has not been shown to cause fever, so ‘it is just the lungs’ is not a diagnosis. The day of onset tells you where to look first; the examination and the vital signs tell you how worried to be.",
+    redflags: [
+      "Fever with a fast pulse, low BP, fast breathing, confusion or falling urine output — sepsis: start the Septic shock pathway now",
+      "Day 0–2: wound pain out of proportion, dusky or blistered skin, crepitus or thin grey discharge — necrotising wound infection, back to theatre the same day",
+      "After abdominal surgery: worsening pain, distension, an ileus that does not settle, or a rising pulse after day 3 — anastomotic leak or collection",
+      "Fever with new crackles and falling saturation after vomiting or a difficult airway — aspiration pneumonia",
+      "Fever, rigors or back pain during or soon after a blood transfusion — stop the transfusion",
+      "Tremor, sweating, fast pulse and confusion on day 2–4 — alcohol withdrawal",
+      "After caesarean section: tender uterus, offensive lochia or persisting fever — endometritis or pelvic collection (see Puerperal sepsis)"
+    ],
+    steps: [
+      "Confirm it: 38.0 °C or more, measured properly. Take the pulse, BP, breathing rate, oxygen saturation, urine output and mental state with it. These, not the number on the thermometer, decide how urgent it is.",
+      "Examine the whole patient every time: chest, wound (take the dressing down), drains and what is in them, every cannula site, the catheter and urine, both calves, the abdomen, and after caesarean the uterus, lochia and breasts. Then read the drug and transfusion chart.",
+      "First 48 hours, patient well, normal pulse and normal examination: this is usually the inflammatory response to the tissue injury of surgery. It settles without treatment. Do not start antibiotics for it, and do not send a routine fever screen — cultures and chest films for an isolated early fever rarely change anything.",
+      "Correct the old teaching. The ‘5 Ws’ mnemonic puts ‘Wind’ first and blames early fever on atelectasis. The evidence does not support this: atelectasis is just as common in patients without fever, and a systematic review found no clinical evidence that it causes fever (Mavros, Chest 2011). The harm is in labelling a real early cause ‘atelectasis’ and missing it. Treat atelectasis for its own sake when it lowers the saturation: sit up, walk early, deep breathing and coughing, and good analgesia.",
+      "Use the day as a prompt for where to look, not as a diagnosis. Days 1–2: the operation itself, but always exclude the red-flag causes and an infection the patient already had before surgery. Days 3–5: urine (especially with a catheter), cannula phlebitis, hospital-acquired pneumonia. Days 5–7: surgical site infection. Days 5–10: collections and anastomotic leak. Any day: DVT and pulmonary embolism, drugs, transfusion, an infected cannula, and malaria.",
+      "Malaria: in anyone from or recently in a malarious area, do an RDT or blood film for fever on any day. Blood transfusion can also transmit it.",
+      "Urine: test only with urinary symptoms, a catheter, or no other source. A positive dipstick in a catheterised patient is expected and is not by itself a reason to treat. If the patient is unwell, remove or change the catheter, send a culture if you can, and treat.",
+      "When you cannot image, serial examination is the test. A pulse that keeps rising, an ileus that does not settle, new diarrhoea, tenderness on rectal or vaginal examination (pelvic collection), or a patient who is worse each day after day 4 needs a senior decision about re-operation. Do not wait for an ultrasound or CT that is not coming.",
+      "Treat the cause: open and drain an infected wound (antibiotics only for spreading cellulitis or systemic illness); remove an inflamed cannula; drain a collection; go back to theatre for a leak; anticoagulate a DVT; stop a suspected drug and watch the fever fall over 1–2 days.",
+      "If there are signs of sepsis: blood cultures if possible, antibiotics within 1 hour, fluids, and source control — follow the Septic shock case.",
+      "Paracetamol for comfort is fine. It does not hide a real cause from someone who examines the patient."
+    ],
+    drugs: [
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "1 g every 6 h (15 mg/kg per dose if under 50 kg) for comfort. It treats the symptom, not the cause."
+      },
+      {
+        id: "ceftriaxone",
+        role: "adjunct",
+        note: "Once an infection is found or sepsis is suspected — not for an isolated fever in the first 48 h in a well patient. With metronidazole for an abdominal or pelvic source."
+      },
+      {
+        id: "metronidazole",
+        role: "adjunct",
+        note: "Anaerobic cover for leak, collection, pelvic infection or endometritis."
+      },
+      {
+        id: "ampicillin",
+        role: "adjunct",
+        note: "With gentamicin and metronidazole for endometritis or intra-abdominal sepsis where that is the local regimen."
+      },
+      {
+        id: "gentamicin",
+        role: "adjunct",
+        note: "Part of the triple regimen. Avoid, or give with great care, in hypotension or falling urine output — it adds kidney injury."
+      },
+      {
+        id: "cloxacillin",
+        role: "adjunct",
+        note: "Wound infection with spreading cellulitis (usually Staphylococcus aureus). Opening and draining the wound matters more than the antibiotic."
+      },
+      {
+        id: "artesunate",
+        role: "adjunct",
+        note: "Severe malaria found as the cause of fever — see Severe malaria."
+      },
+      {
+        id: "heparin",
+        role: "adjunct",
+        note: "Treatment dose for DVT or PE, after weighing the bleeding risk with the surgeon — see Postoperative DVT & pulmonary embolism."
+      },
+      {
+        id: "diazepam",
+        role: "adjunct",
+        note: "Only for alcohol withdrawal presenting as fever, tremor and confusion on day 2–4 — see Alcohol withdrawal."
+      }
+    ],
+    textbook: [],
+    sources: [
+      {
+        name: "Mavros MN, Velmahos GC, Falagas ME. Atelectasis as a cause of postoperative fever: where is the clinical evidence? Chest 2011"
+      },
+      { name: "WHO. Global guidelines for the prevention of surgical site infection, 2nd ed., 2018" },
+      { name: "Surviving Sepsis Campaign 2021" },
+      {
+        name: "Hooton TM et al. IDSA guidelines on catheter-associated urinary tract infection, 2010"
+      },
+      { name: "WHO. Surgical Care at the District Hospital, 2003" }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "wound-dehiscence",
+    name: "Wound dehiscence & burst abdomen",
+    group: "surgical",
+    aka: [
+      "burst abdomen",
+      "evisceration",
+      "fascial dehiscence",
+      "abdominal wound dehiscence",
+      "wound breakdown",
+      "wound gaping"
+    ],
+    summary: "Separation of the layers of a wound, most often a midline laparotomy between days 5 and 8. Breakdown of skin and fat alone is managed with dressings. Separation of the fascia is a surgical problem, and a burst abdomen with bowel outside is an emergency. Always ask why it burst — often there is infection or a leak underneath.",
+    redflags: [
+      "Pink, serous (‘salmon-coloured’) fluid soaking the dressing around day 4–8 — the fascia has usually already opened",
+      "Bowel or omentum visible in the wound — burst abdomen",
+      "A ‘pop’ or tearing feeling on coughing, vomiting or straining",
+      "Fever, rising pulse, ileus or peritonism with the dehiscence — leak or abscess underneath",
+      "Shock, or dark, dusky bowel in the wound"
+    ],
+    steps: [
+      "Burst abdomen: stay calm and reassure the patient. Lie them flat with the knees bent. Tell them not to cough or strain.",
+      "Cover the bowel at once with large sterile packs or towels soaked in warm sterile saline, then a plastic sheet or dry layer on top to keep it moist and warm. Keep it covered and wet. Do not push bowel back on the ward.",
+      "Nil by mouth, nasogastric tube if vomiting or distended, two cannulae and IV fluids, catheter, IV analgesia and IV antibiotics. Call the surgeon and theatre now — this is a same-day operation.",
+      "In theatre, find and treat the cause: leak, abscess, retained pus or haematoma. Wash out. Re-close the fascia without tension with strong monofilament as a mass closure, suture length at least four times the wound length.",
+      "If the bowel is swollen and the fascia will not close without tension, do not force it. Leave the abdomen open with a temporary cover — a sterile opened IV fluid bag sewn to the skin edges — and plan a re-look or transfer. Forced closure causes abdominal compartment syndrome and a second burst.",
+      "Fascia open but skin intact and no bowel visible, in a patient without sepsis: this may be managed with a binder and dressings and a planned hernia repair later. This is a senior decision.",
+      "Superficial dehiscence (skin and fat only; the fascia is intact when gently probed with a sterile gloved finger): open the wound fully, drain pus or haematoma, pack with saline gauze changed daily, and let it heal by secondary intention or delayed closure once clean.",
+      "Correct what you can: anaemia, blood glucose in diabetes, electrolytes, and nutrition — start feeding early, by mouth or nasogastric tube. Treat coughing, vomiting, distension and urinary retention, which all raise abdominal pressure.",
+      "Know who is at risk. General: malnutrition and low albumin, anaemia, diabetes, obesity, kidney failure, jaundice, sepsis, cancer, steroids, older age, smoking, chronic cough. Local: poor closure technique, wound infection, haematoma or seroma, raised abdominal pressure (ileus, coughing, vomiting, ascites), emergency or repeat laparotomy, and peritonitis. A patient with typhoid perforation often has several at once.",
+      "Prevent it: close a midline fascia with a continuous slowly absorbable monofilament, small bites about 5 mm from the edge and 5 mm apart, suture length at least four times the wound length (STITCH trial). Give prophylactic antibiotics before the incision and handle tissues gently."
+    ],
+    drugs: [
+      {
+        id: "ringers-lactate",
+        role: "first",
+        note: "Resuscitation and maintenance while nil by mouth. A patient with sepsis underneath is usually dry."
+      },
+      {
+        id: "ceftriaxone",
+        role: "first",
+        note: "With metronidazole, from the moment bowel is exposed, and as treatment if leak or sepsis is found."
+      },
+      { id: "metronidazole", role: "first", note: "Anaerobic cover with ceftriaxone." },
+      {
+        id: "gentamicin",
+        role: "alternative",
+        note: "With ampicillin and metronidazole where ceftriaxone is unavailable. Watch urine output."
+      },
+      {
+        id: "morphine",
+        role: "supportive",
+        note: "Titrated IV. Pain makes patients splint and strain."
+      },
+      { id: "paracetamol", role: "supportive", note: "Regular, to reduce opioid needs." },
+      {
+        id: "ketamine",
+        role: "adjunct",
+        note: "Anaesthesia for re-closure where no anaesthetist is available; spinal is unsuitable in a septic or hypotensive patient."
+      },
+      {
+        id: "blood-transfusion",
+        role: "supportive",
+        note: "Correct significant anaemia before or at re-closure."
+      },
+      {
+        id: "heparin",
+        role: "supportive",
+        note: "Prophylactic dose once bleeding is controlled: these patients are at high risk of thrombosis."
+      },
+      {
+        id: "dexamethasone",
+        role: "avoid",
+        note: "Avoid repeated or high-dose steroids that are not essential: they impair wound healing. A single antiemetic dose is not a problem. Never stop long-term steroids abruptly — patients on them need stress-dose hydrocortisone cover."
+      }
+    ],
+    textbook: [],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      {
+        name: "Deerenberg EB et al. Small bites versus large bites for closure of abdominal midline incisions (STITCH). Lancet 2015"
+      },
+      {
+        name: "van Ramshorst GH et al. Abdominal wound dehiscence in adults: development and validation of a risk model. World J Surg 2010"
+      },
+      { name: "WHO. Global guidelines for the prevention of surgical site infection, 2nd ed., 2018" }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "postoperative-hypotension",
+    name: "Postoperative hypotension & bleeding",
+    group: "surgical",
+    aka: [
+      "low blood pressure after surgery",
+      "post-op shock",
+      "postoperative bleeding",
+      "reactionary haemorrhage",
+      "hypotension after spinal",
+      "postoperative haemorrhage"
+    ],
+    summary: "Low blood pressure after an operation is bleeding until proven otherwise. Next most likely are too little fluid, a spinal or epidural still working, and drugs; then sepsis, the heart, an obstructed circulation (tension pneumothorax, pulmonary embolism, tamponade) and anaphylaxis. Compare with the patient's own baseline. Young and pregnant patients keep a normal BP until they have lost a lot of blood.",
+    redflags: [
+      "Rising pulse with cold hands, pallor, restlessness or thirst — hidden bleeding",
+      "Abdominal distension, a tense swelling at the wound, or blood in the drains — or an empty drain in a shocked patient (drains block)",
+      "After caesarean or hysterectomy: soft uterus, heavy lochia, or a vaginal or flank swelling — see Postpartum haemorrhage",
+      "Neck swelling with noisy breathing after thyroid or neck surgery — open the wound at the bedside now",
+      "Shock index (pulse ÷ systolic BP) above 1, or a response to a fluid bolus that fades — ongoing bleeding",
+      "Distended neck veins with hypotension — tension pneumothorax, tamponade or pulmonary embolism",
+      "Urine under 0.5 mL/kg/h, confusion or capillary refill over 3 s — organs are not perfused"
+    ],
+    steps: [
+      "Recheck the measurement with a manual cuff of the right size, and compare with the pre-operative BP and the pulse. Then treat the patient: capillary refill, warmth of the hands, mental state and urine output decide urgency.",
+      "Call for help early. Oxygen, lie flat and raise the legs, two large cannulae, and send blood for haemoglobin, group and crossmatch. If blood is short, call donors now.",
+      "Give 250–500 mL Ringer's lactate over 10–15 minutes (child 10 mL/kg) and reassess pulse, BP and perfusion. Repeat while it helps. A response that fades within minutes means continuing loss.",
+      "Look for blood: wound, drains (and whether they are blocked), abdominal girth and tenderness, chest (a dull base is a haemothorax), uterus and vagina after obstetric or gynaecological surgery, NG aspirate and stool. Ultrasound for free fluid if any machine and user are available.",
+      "An early haemoglobin does not fall until fluid has been given. A normal result does not exclude bleeding; clinical signs and the response to fluid decide.",
+      "Bleeding that continues: stop heparin, give tranexamic acid, transfuse (fresh whole blood also brings clotting factors and platelets), keep the patient warm, and go back to theatre. Do not keep resuscitating on the ward while the patient bleeds — the operation is the treatment. If no one can operate, transfer early with blood running.",
+      "Spinal or epidural still working (warm feet, block still high, no signs of bleeding): fluids, legs up, and a vasopressor — ephedrine 5–10 mg IV, or push-dose adrenaline 5–20 mcg. Atropine for a slow pulse. A block rising above the nipples (T4) is a high spinal.",
+      "Drugs: opioid excess (small pupils, slow breathing — titrate naloxone), sedatives, antihypertensives given before surgery, magnesium. Read the chart.",
+      "Sepsis (fever or low temperature, mottled skin, known peritonitis or leak): antibiotics within 1 hour and source control — see Septic shock.",
+      "Then think of the rest: myocardial infarction or arrhythmia (feel the pulse, ECG if available); tension pneumothorax after a central line or chest or upper abdominal surgery (decompress clinically); pulmonary embolism; anaphylaxis to an antibiotic, blood or latex; transfusion reaction; and adrenal crisis in a patient on long-term steroids who missed doses.",
+      "Measure urine output hourly with a catheter. Do not give furosemide for a low urine output in a hypotensive patient — fix the circulation first."
+    ],
+    drugs: [
+      {
+        id: "ringers-lactate",
+        role: "first",
+        note: "250–500 mL boluses (child 10 mL/kg) with reassessment after each. A bridge to blood, not a substitute for it."
+      },
+      {
+        id: "blood-transfusion",
+        role: "first",
+        note: "The fluid for haemorrhage. Fresh whole blood from a donor is a good choice where components are unavailable."
+      },
+      {
+        id: "tranexamic-acid",
+        role: "adjunct",
+        note: "1 g IV over 10 min for surgical bleeding while theatre is arranged. It does not replace the operation."
+      },
+      {
+        id: "adrenaline",
+        role: "adjunct",
+        note: "Push-dose 5–20 mcg IV (1:100 000 dilution) for hypotension from a spinal, or as a bridge while an infusion is set up. Not a treatment for bleeding."
+      },
+      {
+        id: "noradrenaline",
+        role: "adjunct",
+        note: "Septic or vasodilatory shock that persists after fluids. Never used to hold up the pressure of a bleeding patient instead of blood and surgery."
+      },
+      {
+        id: "atropine",
+        role: "adjunct",
+        note: "0.5–1 mg IV for a slow pulse with hypotension, for example from a high block or a vagal reaction."
+      },
+      {
+        id: "naloxone",
+        role: "adjunct",
+        note: "Opioid excess with slow breathing: titrate 40 mcg IV doses. It also reverses analgesia."
+      },
+      {
+        id: "hydrocortisone",
+        role: "adjunct",
+        note: "100 mg IV for a patient on long-term steroids (adrenal crisis), or for shock that persists despite fluids and vasopressors."
+      },
+      { id: "ceftriaxone", role: "adjunct", note: "With metronidazole when sepsis is the cause." },
+      {
+        id: "oxygen",
+        role: "supportive",
+        note: "For every shocked patient while the cause is found."
+      },
+      {
+        id: "furosemide",
+        role: "avoid",
+        note: "Low urine output from low blood pressure is not fluid overload. A diuretic makes it worse."
+      },
+      {
+        id: "heparin",
+        role: "avoid",
+        note: "Hold prophylactic and treatment doses while bleeding is suspected; restart once it is controlled."
+      }
+    ],
+    textbook: [],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "Surviving Sepsis Campaign 2021" },
+      { name: "WHO. The Clinical Use of Blood, 2001" }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "postoperative-urinary-retention",
+    name: "Postoperative urinary retention",
+    group: "surgical",
+    aka: [
+      "POUR",
+      "cannot pass urine after surgery",
+      "urinary retention after spinal",
+      "postpartum urinary retention",
+      "overflow incontinence",
+      "full bladder"
+    ],
+    summary: "Inability to empty a full bladder after an operation. Common after spinal anaesthesia, hernia, anorectal, pelvic and perineal surgery, in older men, and with opioids and anticholinergic drugs. An overdistended bladder can be permanently damaged without much pain, so look for it rather than waiting for a complaint.",
+    redflags: [
+      "No urine passed 6–8 hours after surgery, or after a catheter is removed",
+      "Restlessness, rising BP or pulse, or new confusion in an older patient — a full bladder is a common hidden cause",
+      "Frequent small voids or dribbling — overflow from a full bladder, not good output",
+      "A bladder palpable or dull to percussion above the pubis",
+      "Low urine output with an empty bladder — this is not retention: think hypovolaemia or kidney injury",
+      "Back pain with new leg weakness or numbness after a spinal or epidural — spinal haematoma or abscess: urgent"
+    ],
+    steps: [
+      "Check at 4–6 hours after surgery and after any catheter is removed: when did they last pass urine, is there discomfort, is the bladder palpable or dull to percussion above the pubis?",
+      "Measure the volume if you can. A bladder scanner is best; any ultrasound will do (length × width × height in cm × 0.52 ≈ mL). Without ultrasound, rely on palpation and percussion.",
+      "Try simple measures first: privacy, sitting or standing to void (men standing), walking to the toilet, warm water over the perineum, the sound of a running tap, and adequate analgesia.",
+      "Still unable to void, with about 600 mL or more in the bladder (or a clearly palpable, uncomfortable bladder): catheterise with sterile technique and lubricant gel. A single in-and-out catheterisation is often enough.",
+      "Drain the bladder completely and record the volume. Clamping to ‘drain slowly’ is not needed: bleeding and hypotension after full drainage are uncommon and usually mild. Watch the urine output for a few hours after a very large volume.",
+      "If retention recurs after one in-and-out catheter, or the volume was very large (over about 1000 mL), leave an indwelling catheter for 24–48 hours and then try without it. Older men may need longer, and an alpha-blocker such as tamsulosin if available.",
+      "Review drugs: reduce opioids where pain allows, and stop anticholinergics (promethazine, amitriptyline, unnecessary atropine) if possible.",
+      "Prevent it: give only the IV fluid that is needed, ask the patient to void before going to theatre, mobilise early, and remove any catheter placed for surgery as soon as possible — ideally within 24 hours — because each extra day adds infection risk.",
+      "After caesarean or birth, the woman should pass urine within about 6 hours of catheter removal or delivery. A full bladder stops the uterus contracting: check the bladder in any woman with postpartum bleeding or lower abdominal pain.",
+      "Fever, cloudy offensive urine or loin pain with a catheter: urinary infection — see Postoperative fever. Do not treat a positive dipstick alone in a catheterised patient."
+    ],
+    drugs: [
+      {
+        id: "lidocaine",
+        role: "supportive",
+        note: "2 % lidocaine gel as lubricant and local anaesthetic for catheterisation where available; plain sterile gel otherwise."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "Regular 1 g every 6 h so that opioids, which relax the bladder, can be reduced."
+      },
+      {
+        id: "bupivacaine",
+        role: "adjunct",
+        note: "Wound infiltration or a nerve block spares opioids. Note that spinal anaesthesia itself, and intrathecal opioid added to it, are causes of retention."
+      },
+      {
+        id: "morphine",
+        role: "supportive",
+        note: "Needed for severe pain, but opioids cause retention: lowest effective dose, with paracetamol."
+      },
+      {
+        id: "promethazine",
+        role: "avoid",
+        note: "Anticholinergic: causes and worsens urinary retention. Choose another antiemetic."
+      },
+      {
+        id: "amitriptyline",
+        role: "avoid",
+        note: "Anticholinergic: worsens retention, especially in older men."
+      }
+    ],
+    textbook: [],
+    sources: [
+      {
+        name: "Baldini G et al. Postoperative urinary retention: anesthetic and perioperative considerations. Anesthesiology 2009"
+      },
+      {
+        name: "Nyman MA et al. Management of urinary retention: rapid versus gradual decompression and risk of complications. Mayo Clin Proc 1997"
+      },
+      {
+        name: "Hooton TM et al. IDSA guidelines on catheter-associated urinary tract infection, 2010"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "postoperative-delirium",
+    name: "Postoperative delirium",
+    group: "surgical",
+    aka: [
+      "POD",
+      "confusion after surgery",
+      "emergence delirium",
+      "emergence agitation",
+      "ketamine emergence reaction",
+      "acute confusion after an operation"
+    ],
+    summary: "Acute, fluctuating confusion after an operation. Most common in older people, after hip fracture and emergency surgery, and in those with dementia or heavy alcohol use. It is a sign that something is wrong — hypoxia, bleeding, sepsis, a full bladder, pain or a drug — and it is linked to falls, longer stays and death. Find the cause; medicines only make the patient safe. Read with the general Delirium case.",
+    redflags: [
+      "Low oxygen saturation, low BP or a rising pulse — hypoxia or bleeding, not ‘just confusion’",
+      "Low blood glucose",
+      "Fever, distension or a leak picture after day 3",
+      "A full bladder, or no stool for several days",
+      "Tremor, sweating, fast pulse and hallucinations on day 2–4 — alcohol withdrawal",
+      "New weakness of one side, unequal pupils, or a fall with head injury",
+      "Pinpoint pupils with slow breathing — opioid toxicity",
+      "A quiet, sleepy, withdrawn patient who is not eating — hypoactive delirium is the commonest form and the most often missed"
+    ],
+    steps: [
+      "Screen older and high-risk patients daily and whenever behaviour changes. The 4AT takes 2 minutes: alertness; age, date of birth, place and year; months of the year backwards; acute change or fluctuation. Ask the family whether this is new.",
+      "ABC first: oxygen saturation, BP, pulse, glucose, temperature. Treat hypoxia, low glucose and shock at once — they kill quickly and present as confusion.",
+      "Then look for the postoperative causes, often several together: bleeding or anaemia, sepsis (wound, chest, urine, leak), urinary retention, constipation, uncontrolled pain, dehydration, low sodium (especially after large volumes of 5 % dextrose), alcohol or sedative withdrawal, stroke, myocardial infarction.",
+      "Review the drug chart and stop what you can: pethidine (its metabolite causes confusion and seizures — use morphine instead), benzodiazepines, promethazine and other anticholinergics, high-dose opioids, steroids.",
+      "Treat pain properly: regular paracetamol, wound infiltration or nerve blocks, and small titrated doses of morphine. Untreated pain causes delirium as surely as too much opioid.",
+      "Non-drug care for every patient: a relative at the bedside, glasses and hearing aids, a clock, light by day and dark at night, frequent reorientation, drinking and eating, walking from day 1, and the catheter out as soon as possible. Avoid restraints; they increase injury.",
+      "Medicine only for severe distress or danger to self or others, after the steps above: haloperidol 0.5–1 mg orally or IM in older patients, repeated only if needed, stopped as soon as possible. Do not give antipsychotics to prevent or shorten delirium — trials show no benefit.",
+      "Avoid benzodiazepines, which worsen delirium — except in alcohol or benzodiazepine withdrawal, where diazepam with thiamine is the treatment (see Alcohol withdrawal).",
+      "Emergence agitation in recovery after ketamine or a general anaesthetic: exclude hypoxia, a full bladder and pain, keep the area quiet and the patient safe. After ketamine, a small dose of midazolam is reasonable for severe distress.",
+      "Prevent it in older patients: avoid long fasting, continue usual medicines, bring glasses and a relative, plan opioid-sparing analgesia, and operate on a hip fracture on the day of or the day after admission where possible."
+    ],
+    drugs: [
+      {
+        id: "oxygen",
+        role: "first",
+        note: "Hypoxia is a leading cause after surgery. Target SpO2 94–98 % (88–92 % in chronic lung disease)."
+      },
+      { id: "dextrose", role: "first", note: "Treat low glucose at once." },
+      {
+        id: "paracetamol",
+        role: "first",
+        note: "Regular 1 g every 6 h: reduces both pain and the opioid dose."
+      },
+      {
+        id: "haloperidol",
+        role: "adjunct",
+        note: "Severe distress or danger only: 0.5–1 mg orally or IM in older adults. Not for prevention. Avoid in Parkinson disease and Lewy body dementia."
+      },
+      {
+        id: "morphine",
+        role: "supportive",
+        note: "Small titrated doses for severe pain; lower doses in older people and kidney impairment. Prefer it to pethidine."
+      },
+      {
+        id: "naloxone",
+        role: "adjunct",
+        note: "Opioid toxicity with slow breathing: titrate 40 mcg IV doses."
+      },
+      {
+        id: "thiamine",
+        role: "adjunct",
+        note: "Heavy alcohol use or malnutrition, before or with glucose."
+      },
+      {
+        id: "midazolam",
+        role: "adjunct",
+        note: "Severe ketamine emergence reaction only: 1–2 mg IV in an adult, with the airway watched."
+      },
+      {
+        id: "ringers-lactate",
+        role: "supportive",
+        note: "For dehydration or hypotension. Avoid large volumes of 5 % dextrose, which lower the sodium."
+      },
+      {
+        id: "diazepam",
+        role: "avoid",
+        note: "Worsens delirium. Exception: alcohol or benzodiazepine withdrawal, where it is the treatment."
+      },
+      {
+        id: "promethazine",
+        role: "avoid",
+        note: "Anticholinergic and sedating: causes and worsens confusion, especially in older people."
+      }
+    ],
+    textbook: [],
+    sources: [
+      { name: "NICE CG103. Delirium: prevention, diagnosis and management, 2010 (updated 2023)" },
+      {
+        name: "American Geriatrics Society. Postoperative delirium in older adults: best practice statement, 2015"
+      },
+      {
+        name: "Oh ES et al. Antipsychotics for preventing delirium in hospitalized adults: a systematic review. Ann Intern Med 2019"
+      },
+      {
+        name: "Tieges Z et al. Diagnostic accuracy of the 4AT for delirium detection: systematic review and meta-analysis. Age Ageing 2021"
+      },
+      { name: "NICE CG124. Hip fracture: management, 2011 (updated 2023)" }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "paralytic-ileus",
+    name: "Postoperative ileus",
+    group: "surgical",
+    aka: [
+      "paralytic ileus",
+      "adynamic ileus",
+      "prolonged ileus",
+      "post-op distension",
+      "early postoperative obstruction",
+      "colonic pseudo-obstruction"
+    ],
+    summary: "After abdominal surgery the gut slows for a few days. The small bowel recovers within hours, the stomach in about 1–2 days, and the colon in about 2–3 days. Ileus lasting beyond about day 4–5, or returning after the patient had started eating, is a sign to look for a cause — leak, collection, low potassium, opioids — or for mechanical obstruction.",
+    redflags: [
+      "Ileus beyond day 4–5 with fever, a rising pulse or localised tenderness — leak or collection",
+      "Colicky pain, loud tinkling bowel sounds and vomiting after the bowel had started working — early mechanical obstruction",
+      "Constant pain, tenderness, fever and fast pulse with distension — strangulation or ischaemia: operate",
+      "Massive caecal distension in an older patient, or after caesarean or hip surgery — colonic pseudo-obstruction, risk of perforation",
+      "Large vomits with dehydration and low potassium"
+    ],
+    steps: [
+      "Expect some ileus and do not over-treat it. Routine nasogastric tubes after laparotomy do not speed recovery and increase chest complications: pass an NG tube only for repeated vomiting or painful distension.",
+      "Feed early. Fluids and then food from the first day are safe after most abdominal operations, including caesarean section and bowel anastomosis, and shorten ileus. Waiting for flatus before feeding is outdated. If the patient vomits, step back for a day.",
+      "Get the patient walking. Chewing gum, if available, shortens ileus a little. Keep opioids low: regular paracetamol, wound infiltration with bupivacaine, and an NSAID where the kidneys and bleeding risk allow.",
+      "Replace measured losses (NG aspirate, vomit) with Ringer's lactate or saline plus potassium. Avoid both dehydration and salt-and-water overload — a swollen bowel wall from too much fluid prolongs ileus.",
+      "Check and correct potassium (and sodium and magnesium where measurable). If you cannot measure, add potassium to maintenance fluids once urine is flowing.",
+      "Tell ileus from early obstruction. Ileus: quiet abdomen, generalised distension, little pain, no colic; on a plain film, gas throughout the small bowel AND the colon down to the rectum. Obstruction: colicky pain, active or tinkling bowel sounds, often after a period of normal function; on film, dilated small-bowel loops with fluid levels and little or no gas in the colon.",
+      "Early postoperative adhesive obstruction often settles with NG decompression and fluids. Where water-soluble contrast (Gastrografin) is available, 100 mL by NG tube with an abdominal film at 24 hours helps: contrast reaching the colon predicts resolution.",
+      "Operate — do not wait — for signs of strangulation (constant pain, tenderness, fever, fast pulse), a closed loop, a leak, or obstruction that is getting worse despite decompression.",
+      "Prolonged ileus (beyond about day 5, or recurring) is a symptom: look for leak or collection (fever, pulse, tenderness; a pelvic collection on rectal examination), haematoma, pancreatitis, pneumonia, urinary retention, low potassium, opioids and anticholinergic drugs.",
+      "Do not use metoclopramide to treat ileus: it does not shorten it, and it is dangerous when mechanical obstruction is possible. Neostigmine for colonic pseudo-obstruction needs cardiac monitoring and atropine at the bedside — refer if you cannot provide that."
+    ],
+    drugs: [
+      {
+        id: "ringers-lactate",
+        role: "first",
+        note: "Replace measured losses and maintain hydration; avoid overload."
+      },
+      {
+        id: "potassium-chloride",
+        role: "first",
+        note: "20–40 mmol per litre once urine is flowing. Never as a bolus."
+      },
+      { id: "paracetamol", role: "first", note: "Regular, so that opioids can be kept low." },
+      {
+        id: "bupivacaine",
+        role: "adjunct",
+        note: "Wound infiltration or a TAP block at the end of surgery spares opioids."
+      },
+      {
+        id: "morphine",
+        role: "supportive",
+        note: "For severe pain, but opioids slow the gut: lowest effective dose, reviewed daily."
+      },
+      {
+        id: "ceftriaxone",
+        role: "adjunct",
+        note: "With metronidazole if leak or collection is suspected."
+      },
+      {
+        id: "metronidazole",
+        role: "adjunct",
+        note: "Anaerobic cover for suspected leak or collection."
+      },
+      {
+        id: "promethazine",
+        role: "avoid",
+        note: "Anticholinergic and sedating; prolongs ileus. Vomiting from ileus is treated with an NG tube, not an antiemetic."
+      }
+    ],
+    textbook: [],
+    sources: [
+      {
+        name: "Nelson R, Edwards S, Tse B. Prophylactic nasogastric decompression after abdominal surgery. Cochrane Review 2007"
+      },
+      {
+        name: "Gustafsson UO et al. ERAS Society guidelines for perioperative care in elective colorectal surgery, 2018"
+      },
+      {
+        name: "Short V et al. Chewing gum for postoperative recovery of gastrointestinal function. Cochrane Review 2015"
+      },
+      {
+        name: "Ten Broek RPG et al. Bologna guidelines for diagnosis and management of adhesive small bowel obstruction, 2017 update"
+      },
+      { name: "WHO. Surgical Care at the District Hospital, 2003" }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "postoperative-nausea-vomiting",
+    name: "Postoperative nausea & vomiting",
+    group: "surgical",
+    aka: [
+      "PONV",
+      "vomiting after surgery",
+      "nausea after spinal",
+      "nausea during caesarean",
+      "antiemetic prophylaxis"
+    ],
+    summary: "Common, distressing and mostly preventable. First exclude the causes that matter: low blood pressure (especially under spinal), hypoxia, low glucose, pain, a full bladder, ileus or obstruction. Then prevent according to risk, and treat with a drug from a different class from the one already given.",
+    redflags: [
+      "Nausea, yawning or faintness during a spinal — low BP until proven otherwise: measure it and treat it",
+      "Vomiting with distension, colicky pain or no flatus beyond the expected time — ileus or obstruction (see Postoperative ileus)",
+      "Vomiting with headache, drowsiness or a slow pulse — raised intracranial pressure",
+      "Vomiting in a drowsy patient or one with a weak gag — aspiration risk: turn on the side and suction",
+      "Coffee-ground or bloody vomit"
+    ],
+    steps: [
+      "Nausea under spinal anaesthesia: measure the BP now. Treat it with fluids and a vasopressor before any antiemetic.",
+      "Rule out hypoxia, low glucose, pain, a full bladder, swallowed blood, gastric distension from bag-mask ventilation (pass an NG tube to empty it) and opioid excess.",
+      "Know the risk. Adults: female sex, non-smoker, previous PONV or motion sickness, and opioids after surgery — one point each. Younger age, volatile anaesthetics, nitrous oxide and long operations add risk. Children: risk rises from age 3, and after strabismus surgery and tonsillectomy. Obesity, anxiety and a nasogastric tube are not independent risk factors.",
+      "Reduce the baseline risk: regional anaesthesia instead of general where suitable, no nitrous oxide, adequate hydration of the fasted patient, and opioid-sparing analgesia.",
+      "Prevent by risk: 1–2 risk factors, one or two drugs; 3–4 risk factors, two or more drugs from different classes. Dexamethasone at induction is cheap and effective; add low-dose haloperidol, or ondansetron where available.",
+      "Treat established PONV with a drug from a DIFFERENT class from the prophylaxis. Repeating the same drug within 6 hours adds little. Dexamethasone is too slow to act as rescue.",
+      "Rescue options: ondansetron 4 mg IV where available; haloperidol 0.5–1 mg IV slowly or IM; promethazine 12.5 mg deep IM (sedating). Metoclopramide 10 mg is a weak antiemetic for PONV and must not be given when mechanical obstruction is possible.",
+      "Vomiting that persists: stop oral intake briefly, give IV fluid with potassium, and reassess for ileus, obstruction, a leak or a drug cause. Persistent vomiting is a symptom, not a diagnosis.",
+      "Children: dexamethasone 0.15 mg/kg IV once before high-risk operations (never more than the adult dose); ondansetron 0.1 mg/kg (maximum 4 mg) where available. No promethazine under 2 years."
+    ],
+    drugs: [
+      {
+        id: "dexamethasone",
+        role: "first",
+        note: "Prophylaxis: 4–8 mg IV at induction in adults. A single dose did not increase wound infection in a large trial (PADDI), but it raises glucose for about a day — check it in diabetics."
+      },
+      {
+        id: "haloperidol",
+        role: "first",
+        note: "0.5–1 mg IV slowly or IM, for prophylaxis or rescue. QT risk is small at this dose. Avoid in Parkinson disease."
+      },
+      {
+        id: "promethazine",
+        role: "alternative",
+        note: "12.5–25 mg deep IM for rescue. Sedating and anticholinergic: avoid in older people, under 2 years, and in patients already drowsy from opioids."
+      },
+      {
+        id: "ringers-lactate",
+        role: "supportive",
+        note: "Correct dehydration and hypotension; a well-hydrated patient vomits less."
+      },
+      {
+        id: "adrenaline",
+        role: "adjunct",
+        note: "Push-dose 5–20 mcg IV for spinal hypotension causing nausea where no ephedrine is available."
+      },
+      {
+        id: "oxygen",
+        role: "supportive",
+        note: "For hypoxia, which causes nausea. Extra oxygen does not prevent PONV otherwise."
+      }
+    ],
+    textbook: [],
+    sources: [
+      {
+        name: "Gan TJ et al. Fourth consensus guidelines for the management of postoperative nausea and vomiting. Anesth Analg 2020"
+      },
+      {
+        name: "Corcoran TB et al. Dexamethasone and surgical-site infection (PADDI). N Engl J Med 2021"
+      },
+      { name: "MSF Clinical Guidelines — Anaesthesia" }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "post-dural-puncture-headache",
+    name: "Post-dural puncture headache",
+    group: "surgical",
+    aka: [
+      "PDPH",
+      "spinal headache",
+      "headache after spinal",
+      "headache after lumbar puncture",
+      "post-spinal headache",
+      "headache after caesarean"
+    ],
+    summary: "A headache that is worse sitting or standing and better lying flat, starting within about 5 days of a spinal anaesthetic or lumbar puncture. Cerebrospinal fluid leaks through the hole in the dura. It is common after caesarean section under spinal, especially with cutting needles. Most settle within about a week; an epidural blood patch is the only definitive treatment. Always exclude postpartum pre-eclampsia, meningitis and venous sinus thrombosis first.",
+    redflags: [
+      "High BP, proteinuria, visual disturbance or seizure in a postpartum woman — pre-eclampsia, not a spinal headache",
+      "Fever, neck stiffness and a headache that is not postural — meningitis after the spinal: start antibiotics",
+      "A headache that stops being postural, or confusion, vomiting or focal signs — subdural haematoma or cerebral venous thrombosis",
+      "Seizure, weakness or reduced consciousness after delivery — eclampsia or cerebral venous thrombosis",
+      "Double vision (sixth nerve palsy) or hearing loss — needs a blood patch soon",
+      "Back pain with leg weakness or numbness, or loss of bladder control — spinal haematoma or abscess: urgent"
+    ],
+    steps: [
+      "Confirm the pattern: frontal or occipital headache, often with neck stiffness, worse within minutes of sitting or standing and better lying flat, usually starting 1–3 days after the puncture. Nausea, tinnitus or dulled hearing may come with it.",
+      "In every postpartum woman with headache, measure the BP and test the urine for protein. Check temperature and neck, and look for focal signs.",
+      "Explain: it is caused by a leak, it is not dangerous in itself, and most settle within about a week. She may lie flat when that helps, but bed rest does not prevent or cure it. She can breastfeed lying on her side.",
+      "Regular analgesia: paracetamol 1 g every 6 h plus an NSAID such as ibuprofen 400 mg every 8 h unless contraindicated. Drink normally — extra IV or oral fluid beyond normal hydration does not help.",
+      "Caffeine may give short relief (low-certainty evidence): about 300 mg orally, roughly 2–3 cups of strong coffee, once or twice a day. Avoid it in pre-eclampsia or after a seizure, and keep the total under about 900 mg a day; some passes into breast milk.",
+      "Epidural blood patch for a severe headache that stops her caring for herself or her baby, one lasting more than a few days despite treatment, or one with cranial nerve signs: 15–20 mL of her own blood taken with full asepsis and injected into the epidural space at or below the puncture level, stopping if back or leg pain develops. Best done more than 24 hours after the puncture. Not with fever, sepsis, local infection or a bleeding disorder. It works in most patients; a second patch is sometimes needed.",
+      "If no one at your hospital can do an epidural blood patch, refer a severe or prolonged headache rather than sending the woman home with it. Untreated, it can last weeks and rarely leads to subdural haematoma.",
+      "Prevent it: use the finest pencil-point spinal needle available (25–27 G Whitacre or Sprotte). If only cutting (Quincke) needles exist, use the finest that works, with the bevel parallel to the long axis of the spine, and replace the stylet before withdrawing. Routine bed rest and extra fluids after a spinal do not prevent it.",
+      "Tell every woman before discharge what to watch for: the headache often starts after she has gone home."
+    ],
+    drugs: [
+      {
+        id: "paracetamol",
+        role: "first",
+        note: "1 g every 6 h, regularly, with an NSAID if not contraindicated."
+      },
+      {
+        id: "ceftriaxone",
+        role: "adjunct",
+        note: "If meningitis is suspected after the spinal (fever, neck stiffness, non-postural headache): 2 g IV every 12 h, without delay. Mouth streptococci from the operator are a typical cause."
+      },
+      {
+        id: "magnesium-sulfate",
+        role: "adjunct",
+        note: "If the headache is postpartum pre-eclampsia with severe features — see Severe pre-eclampsia."
+      }
+    ],
+    textbook: [],
+    sources: [
+      {
+        name: "Uppal V et al. Consensus practice guidelines on postdural puncture headache from a multisociety international working group, 2023"
+      },
+      {
+        name: "Russell R et al. Treatment of obstetric post-dural puncture headache (Obstetric Anaesthetists' Association), 2019"
+      },
+      {
+        name: "Arevalo-Rodriguez I et al. Posture and fluids for preventing post-dural puncture headache. Cochrane Review 2016"
+      },
+      {
+        name: "Basurto Ona X et al. Drug therapy for treating post-dural puncture headache. Cochrane Review 2015"
+      },
+      { name: "International Classification of Headache Disorders, 3rd ed. (ICHD-3), 2018" }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "high-spinal",
+    name: "High or total spinal block",
+    group: "surgical",
+    aka: [
+      "total spinal",
+      "high block",
+      "high regional block",
+      "spinal too high",
+      "respiratory arrest after spinal",
+      "collapse after spinal"
+    ],
+    summary: "Local anaesthetic spreading too high: the BP and pulse fall, the arms weaken, breathing and speaking become difficult, then apnoea and unconsciousness. It usually develops within minutes of the injection. Treat it as a cardiac arrest about to happen — airway, ventilation with a bag-valve-mask, fluids, vasopressor and atropine — and support the patient until the block wears off, usually within 1–2 hours.",
+    redflags: [
+      "Tingling or weakness in the hands or arms — the diaphragm (C3–5) is next",
+      "Whispering, a weak cough, or unable to take a deep breath",
+      "Sudden severe hypotension with a slow pulse soon after the block",
+      "Nausea, restlessness or drowsiness — the brain is not perfused",
+      "Apnoea, loss of consciousness and dilated pupils — total spinal",
+      "Risk: a second full dose after a ‘failed’ spinal, a short patient, or a head-down tilt soon after a heavy spinal"
+    ],
+    steps: [
+      "Before every spinal: IV running, fluids and a vasopressor drawn up, atropine, suction, oxygen, a working bag-valve-mask, and someone who can intubate or insert a supraglottic airway. One person stays at the head throughout.",
+      "Recognise it early. Feeling ‘short of breath’ is common with a normal block because the chest wall is numb. If she can talk in a normal voice, cough and squeeze your hand firmly, the diaphragm is working. Weak hands, a whisper or a weak cough means the block is rising dangerously.",
+      "Call for help and tell the surgeon. Keep the patient flat, raise the legs, and in pregnancy keep left uterine displacement with a wedge or tilt. Do not sit the patient up to ‘stop the block rising’ — it drops venous return and the BP.",
+      "Breathing: 100 % oxygen. If breathing is inadequate, ventilate with the bag-valve-mask. Intubate with a cuffed tube as soon as someone skilled is there — a pregnant patient is at high risk of aspiration. Use a supraglottic airway if intubation fails.",
+      "Circulation: fluids wide open through a large cannula; ephedrine 5–10 mg IV repeated, or push-dose adrenaline 10–20 mcg, increasing to 50–100 mcg if there is no response; atropine 0.5–1 mg for a slow pulse. Start an adrenaline or noradrenaline infusion if hypotension persists.",
+      "Cardiac arrest: CPR and adrenaline 1 mg IV as in any arrest. In pregnancy beyond about 20 weeks, keep manual uterine displacement and deliver the baby by perimortem caesarean within 4–5 minutes if circulation has not returned — this helps the mother's resuscitation.",
+      "Awareness: the patient may be awake but unable to breathe or move, or may wake while still being ventilated. Talk to her and explain. Once the BP is restored, give a small dose of sedation (midazolam 1–2 mg or ketamine 0.5 mg/kg IV) while she is ventilated.",
+      "Surgery can usually continue once the mother is stable; at caesarean, delivering the baby helps the circulation. Prepare to resuscitate the baby.",
+      "Keep ventilating until the block recedes: strong hand grip, sustained head lift, adequate breathing. With heavy bupivacaine this usually takes 1–2 hours. Do not remove the airway early.",
+      "Prevent it: dose for height (2–2.5 mL of 0.5 % heavy bupivacaine for caesarean, less in short women), inject slowly, avoid steep head-down tilt in the first 15–20 minutes, and never repeat a full spinal dose after a block that seems to have failed — wait and retest, or convert to general anaesthesia.",
+      "Think of the alternatives: local anaesthetic toxicity (seizures, arrhythmia — after a large infiltration or nerve block, not a spinal dose; give lipid emulsion where available), vasovagal collapse, anaphylaxis, amniotic fluid embolism and concealed haemorrhage. Afterwards, explain to the patient what happened and record it."
+    ],
+    drugs: [
+      {
+        id: "oxygen",
+        role: "first",
+        note: "100 % by bag-valve-mask; ventilate if breathing is inadequate."
+      },
+      { id: "ringers-lactate", role: "first", note: "Wide open through a large cannula." },
+      {
+        id: "adrenaline",
+        role: "first",
+        note: "Push-dose 10 mcg/mL (1:100 000): 1–2 mL IV, increasing if no response. 1 mg IV in cardiac arrest. Infusion if hypotension persists."
+      },
+      {
+        id: "atropine",
+        role: "first",
+        note: "0.5–1 mg IV for a slow pulse; repeat to a total of 3 mg."
+      },
+      {
+        id: "noradrenaline",
+        role: "adjunct",
+        note: "Infusion for hypotension that persists after fluids and boluses."
+      },
+      {
+        id: "ketamine",
+        role: "adjunct",
+        note: "Small doses (about 0.5 mg/kg IV) to prevent awareness during ventilation once the BP is supported; also for induction if intubation is needed."
+      },
+      {
+        id: "midazolam",
+        role: "alternative",
+        note: "1–2 mg IV for amnesia once the BP is restored. Worsens hypotension."
+      },
+      {
+        id: "dopamine",
+        role: "alternative",
+        note: "Only if neither adrenaline nor noradrenaline is available."
+      },
+      {
+        id: "bupivacaine",
+        role: "avoid",
+        note: "No further local anaesthetic. Never repeat a full spinal dose after an apparently failed block."
+      }
+    ],
+    textbook: [],
+    sources: [
+      { name: "WHO. Surgical Care at the District Hospital, 2003" },
+      { name: "MSF Clinical Guidelines — Anaesthesia" },
+      {
+        name: "Mushambi MC et al. OAA/DAS guidelines for the management of difficult and failed tracheal intubation in obstetrics, 2015"
+      },
+      {
+        name: "Resuscitation Council UK. Adult advanced life support guidelines, 2021 (cardiac arrest in pregnancy)"
+      }
+    ],
+    review: { status: "draft" }
+  },
+  {
+    id: "postoperative-dvt-pe",
+    name: "Postoperative DVT & pulmonary embolism",
+    group: "surgical",
+    aka: [
+      "post-op DVT",
+      "postoperative PE",
+      "thromboprophylaxis",
+      "VTE prophylaxis",
+      "clot after surgery",
+      "thrombosis after caesarean",
+      "warfarin"
+    ],
+    summary: "Surgery, immobility and pregnancy all raise the risk of clots. Most postoperative DVT and pulmonary embolism can be prevented by early walking and, for patients at risk, heparin prophylaxis. Where there is no imaging the diagnosis is clinical, and D-dimer is no help because it is raised after any operation. Treat with heparin overlapped with warfarin, weighing the bleeding risk from the fresh wound. Read with the Deep vein thrombosis & pulmonary embolism case.",
+    redflags: [
+      "Sudden breathlessness, fast breathing, low saturation or pleuritic chest pain after surgery — pulmonary embolism until proven otherwise",
+      "Collapse, hypotension or fainting with distended neck veins — massive pulmonary embolism",
+      "One leg swollen, painful or warm compared with the other (measure both calves 10 cm below the tibial tuberosity)",
+      "Unexplained fast pulse or low-grade fever days after surgery",
+      "High risk: hip or knee surgery, hip fracture, pelvic or cancer surgery, caesarean section in labour, previous clot, obesity, older age, sepsis, prolonged immobility, oestrogen-containing pill"
+    ],
+    steps: [
+      "Prevent it in everyone: walking on the day of surgery or the next day, leg exercises in bed, no dehydration.",
+      "Assess each surgical and post-caesarean patient for risk, and give prophylaxis to those at moderate or high risk unless the bleeding risk is high: enoxaparin 40 mg SC once daily (20–30 mg if creatinine clearance is below 30 mL/min), or unfractionated heparin 5000 units SC every 8–12 hours.",
+      "Timing with a spinal: give the first prophylactic enoxaparin dose no sooner than 12 hours after the spinal puncture (24 hours after a bloody tap), and do not do a spinal within 12 hours of a prophylactic dose.",
+      "Duration: until fully mobile. Extend to about 4 weeks after major abdominal or pelvic cancer surgery and after hip fracture or hip replacement. After caesarean section in labour, at least 10 days (RCOG).",
+      "Compression stockings add little to heparin in most surgical patients, but use them, or intermittent pneumatic compression, when heparin cannot be given.",
+      "Recognise it. Most DVT has few signs and Homans' sign is useless. Do not send a D-dimer after surgery: the operation itself raises it, so a positive result means nothing.",
+      "If any ultrasound is available, compress the femoral and popliteal veins — a vein that will not compress contains clot. For suspected PE: ECG (a fast pulse is the commonest finding; right heart strain supports PE), chest film to look for other causes, and a dilated right ventricle on bedside echo supports PE in a shocked patient.",
+      "If you cannot image, decide on clinical probability (signs of DVT, PE the most likely diagnosis, pulse over 100, recent surgery or immobility, previous clot, haemoptysis, cancer). With high probability and an acceptable bleeding risk, start treatment; do not wait for a test that is not available. Agree the bleeding risk with the surgeon — the first 24–48 hours after surgery, neurosurgery and eye surgery change the balance.",
+      "Treatment: enoxaparin 1 mg/kg SC every 12 hours, or SC unfractionated heparin without a pump (333 units/kg, then 250 units/kg every 12 hours). Where the bleeding risk is high, IV unfractionated heparin is easier to stop (see the heparin drug page for a gravity infusion).",
+      "Warfarin where DOACs are unavailable: start on the first day of heparin, 5 mg daily (2.5–5 mg if older, under 50 kg, with liver disease or on interacting drugs). Overlap heparin for at least 5 days AND until the INR is 2–3 on two readings a day apart. Target INR 2–3. Check the INR every few days at first, then every 2–4 weeks once stable.",
+      "Warfarin safely: metronidazole, cotrimoxazole, fluconazole, erythromycin, ciprofloxacin and amiodarone raise the INR; rifampicin, carbamazepine, phenytoin and phenobarbital lower it. Keep green leafy vegetable intake steady rather than avoiding it. Never in pregnancy; safe in breastfeeding. Without INR testing, warfarin is unsafe — continue LMWH for the whole course if supply allows, or refer.",
+      "Duration: 3 months for a clot provoked by surgery.",
+      "Massive PE with shock: oxygen, small fluid boluses only (about 250 mL — an overloaded right ventricle fails), noradrenaline or adrenaline, and heparin. Surgery within 3 weeks is a contraindication to thrombolysis; in cardiac arrest from PE the balance may favour giving it if available — a senior decision.",
+      "Bleeding on anticoagulation: stop heparin (protamine reverses unfractionated heparin and partly reverses LMWH); for warfarin give vitamin K and fresh frozen plasma or fresh whole blood. Caval filters are only for proximal clot when anticoagulation is impossible, not routine.",
+      "This case covers the postoperative patient only. For a clot unrelated to surgery, or for deciding how long to continue anticoagulation, open the venous thromboembolism case."
+    ],
+    drugs: [
+      {
+        id: "heparin",
+        role: "first",
+        note: "Prophylaxis: enoxaparin 40 mg SC daily or UFH 5000 units SC every 8–12 h. Treatment: enoxaparin 1 mg/kg SC every 12 h, or SC UFH 333 units/kg then 250 units/kg every 12 h. Overlap with warfarin for at least 5 days and until INR ≥ 2 on two days."
+      },
+      {
+        id: "vitamin-k",
+        role: "adjunct",
+        note: "Warfarin reversal: 5–10 mg slow IV for bleeding, with plasma or fresh whole blood; 1–5 mg orally for a high INR without bleeding."
+      },
+      { id: "oxygen", role: "supportive", note: "Pulmonary embolism with low saturation." },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "Analgesia; prefer it to NSAIDs while anticoagulated."
+      },
+      { id: "morphine", role: "supportive", note: "Severe pleuritic pain." },
+      {
+        id: "noradrenaline",
+        role: "adjunct",
+        note: "Shock from massive pulmonary embolism, with heparin."
+      },
+      {
+        id: "ringers-lactate",
+        role: "supportive",
+        note: "Massive PE: small boluses of about 250 mL only, with reassessment."
+      },
+      {
+        id: "tranexamic-acid",
+        role: "avoid",
+        note: "Antifibrinolytics are contraindicated in active thrombosis."
+      },
+      {
+        id: "furosemide",
+        role: "avoid",
+        note: "The raised neck veins of PE are not fluid overload; diuresis worsens the low output."
+      }
+    ],
+    textbook: [],
+    sources: [
+      { name: "CHEST guideline: antithrombotic therapy for VTE disease, 2021" },
+      {
+        name: "NICE NG89. Venous thromboembolism in over 16s: reducing the risk, 2018 (updated 2019)"
+      },
+      {
+        name: "Horlocker TT et al. Regional anesthesia in the patient receiving antithrombotic or thrombolytic therapy (ASRA), 4th ed., 2018"
+      },
+      {
+        name: "RCOG Green-top Guideline 37a. Reducing the risk of venous thromboembolism during pregnancy and the puerperium, 2015"
+      },
+      {
+        name: "Shalhoub J et al. Graduated compression stockings as adjuvant to pharmaco-thromboprophylaxis in elective surgical patients (GAPS). BMJ 2020"
+      },
+      { name: "Konstantinides SV et al. ESC guidelines for acute pulmonary embolism, 2019" }
+    ],
+    review: { status: "draft" }
   }
 ];

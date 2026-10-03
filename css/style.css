@@ -977,3 +977,11 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 .proc-steps { margin: 0; padding-left: 1.3rem; display: grid; gap: .6rem; }
 .proc-steps li { padding-left: .2rem; }
 .proc-steps li::marker { color: var(--primary); font-weight: 800; }
+
+/* preoperative assessment: toggle chips for conditions and medicines */
+.po-group { margin: .9rem 0 .4rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.po-group:first-of-type { margin-top: .2rem; }
+.po-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.po-chip { min-height: 38px; padding: .35rem .75rem; border-radius: 999px; border: 1px solid var(--border-strong);
+  background: var(--surface); color: var(--text); font: inherit; font-size: .88rem; cursor: pointer; }
+.po-chip.on { background: var(--primary); border-color: transparent; color: #fff; font-weight: 650; }
