@@ -17,5 +17,8 @@ window.BOOKS = {
   whosepsis:{ title: "WHO Managing puerperal sepsis (midwifery education modules)", edition: "2nd ed.", year: 2006, scope: "Puerperal sepsis: recognition, treatment and prevention" },
   ethepi:   { title: "Routine immunization catch-up vaccination guidelines (Ministry of Health, Ethiopia)", edition: "", year: 2022, scope: "Catch-up immunisation: minimum ages, minimum intervals and upper age limits" },
   asellaor: { title: "List of OR materials for surgical cases, Asella Referral and Teaching Hospital", edition: "", year: 2025, scope: "What to have ready in theatre for each operation — institutional practice, not a guideline" },
+  ichem:    { title: "Acute management of spontaneous intracerebral hemorrhage (ICH) in the emergency department", edition: "Puissant & Ganti, Int J Emerg Med 19:35", year: 2026, scope: "Emergency care of brain haemorrhage — a review of the 2022 AHA/ASA guideline" },
+  bmjksd:   { title: "Practical Prescribing: Potassium sparing diuretics", edition: "Anisman, Erickson & Luneau, BMJ 392:e085905", year: 2026, scope: "Spironolactone, eplerenone, finerenone, amiloride and triamterene in practice" },
+  ahastats: { title: "Heart Disease and Stroke Statistics: A Report of US and Global Data from the American Heart Association", edition: "Circulation 153", year: 2026, scope: "How common heart disease and stroke are, and how many die of them, in the US and worldwide" },
   note:     { title: "Editorial notes", edition: "", year: null, scope: "Where the textbooks differ from low-resource practice or are silent" }
 };

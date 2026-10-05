@@ -1802,5 +1802,28 @@ window.SUBSTITUTES = {
       with: "clotrimazole",
       note: "1 % cream 2–3 times daily, continued for 1 week after the skin looks clear. Covers both Candida and ringworm, which nystatin does not."
     }
+  ],
+
+  spironolactone: [
+    {
+      use: "Fluid overload or ascites when potassium is high or eGFR is below 30",
+      with: "furosemide",
+      note: "A loop diuretic lowers potassium instead of raising it. In cirrhosis use it with care and frequent electrolyte checks; in ascites it works less well alone than spironolactone (BMJ)."
+    },
+    {
+      use: "Hypertension in pregnancy",
+      with: "labetalol",
+      note: "Spironolactone is contraindicated in pregnancy (Gabbe). Labetalol, nifedipine or methyldopa are used instead."
+    },
+    {
+      use: "Hypertension in pregnancy, oral",
+      with: "nifedipine",
+      note: "Modified-release nifedipine is an oral alternative to labetalol."
+    },
+    {
+      use: "Gynaecomastia on spironolactone (ascites or heart failure)",
+      none: true,
+      note: "No substitute in this app. Amiloride 5–40 mg a day can replace it for ascites (Harrison), and eplerenone (same dose as spironolactone) for heart failure (BMJ), where stocked. Gynaecomastia is dose-related and reversible (BMJ): a lower dose may be enough."
+    }
   ]
 };

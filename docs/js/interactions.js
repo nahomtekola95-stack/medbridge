@@ -3416,5 +3416,120 @@ window.INTERACTIONS = [
         quote: "if tetracycline is used for the treatment of acne"
       }
     ]
+  },
+
+  /* ---- spironolactone (potassium-sparing) ---- */
+  {
+    a: ["spironolactone"],
+    b: ["potassium-chloride"],
+    severity: "major",
+    effect: "Spironolactone holds potassium back in the body; adding potassium (tablets, syrup or IV additives) can push it to dangerous levels, especially with kidney impairment, dehydration or an ACE inhibitor.",
+    action: "Stop routine potassium supplements when spironolactone is STARTED (BMJ, BNF). Give potassium only for a measured low potassium, and recheck within days. When spironolactone is STOPPED in a patient who also takes furosemide, recheck potassium: a supplement may be needed again.",
+    ref: "BNF interactions; BMJ 2026;392:e085905, p. 7; Harrison 22nd ed. 2025, ch. 56, Table 56-5, p. 358",
+    refs: [
+      {
+        book: "harrison",
+        text: "Mineralocorticoid-receptor blockers (spironolactone, eplerenone) cause hyperkalaemia, with greater risk when combined with ACE inhibitors or ARBs.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, Table 56-5, p. 358",
+        pdf_page: 401,
+        quote: "Blockade of the mineralocorticoid receptor: spironolactone"
+      },
+      {
+        book: "bmjksd",
+        text: "The BNF states that potassium supplements should be avoided with potassium-sparing diuretics; if needed for a clinically important low potassium, monitor more.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 7",
+        pdf_page: 7,
+        quote: "that potassium supplementation should be avoided with potassium"
+      }
+    ]
+  },
+  {
+    a: ["spironolactone"],
+    b: ["cotrimoxazole", "pentamidine"],
+    severity: "major",
+    effect: "Trimethoprim (in co-trimoxazole) and pentamidine block the same kidney sodium channel as amiloride, so they raise potassium. With spironolactone the two effects add up: dangerous hyperkalaemia, most often in older patients, kidney impairment and high (PCP-treatment) doses.",
+    action: "Where possible choose another antibiotic for a short course. If co-trimoxazole (especially high dose) or pentamidine is needed, pause spironolactone or check potassium and creatinine within 3–5 days of STARTING, then twice weekly. Low-dose co-trimoxazole prophylaxis in HIV: check potassium after starting.",
+    ref: "BNF interactions; BMJ 2026;392:e085905, p. 6; Harrison 22nd ed. 2025, ch. 56, Table 56-5, p. 358",
+    refs: [
+      {
+        book: "harrison",
+        text: "Blockade of the epithelial sodium channel by amiloride, triamterene, trimethoprim and pentamidine causes hyperkalaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, Table 56-5, p. 358",
+        pdf_page: 401,
+        quote: "Blockade of the epithelial sodium channel (ENaC): amiloride"
+      },
+      {
+        book: "bmjksd",
+        text: "Heparin, trimethoprim, pentamidine, ciclosporin and tacrolimus add to the hyperkalaemia risk of potassium-sparing diuretics.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 6",
+        pdf_page: 6,
+        quote: "trimethoprim, pentamidine, cyclosporine, and tacrolimus"
+      }
+    ]
+  },
+  {
+    a: ["spironolactone"],
+    b: ["diclofenac", "ibuprofen"],
+    severity: "major",
+    effect: "NSAIDs raise potassium themselves (they suppress renin and aldosterone), reduce kidney blood flow and blunt the diuretic effect. With spironolactone: hyperkalaemia and acute kidney injury, especially in heart failure, cirrhosis, older age or dehydration.",
+    action: "Avoid. Use paracetamol for pain. In cirrhosis with ascites NSAIDs should be avoided altogether (Harrison). If an NSAID is unavoidable, use the shortest course and check potassium and creatinine within a few days of STARTING.",
+    ref: "BNF interactions; Harrison 22nd ed. 2025, ch. 56, p. 359; ch. 53, p. 329",
+    refs: [
+      {
+        book: "harrison",
+        text: "NSAIDs and COX-2 inhibitors cause hyperkalaemia by several mechanisms, including hyporeninaemic hypoaldosteronism.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 359",
+        pdf_page: 402,
+        quote: "Cyclosporine, tacrolimus, NSAIDs, and"
+      },
+      {
+        book: "harrison",
+        text: "NSAIDs, ACE inhibitors and ARBs should be avoided in patients with cirrhosis and ascites.",
+        ref: "Harrison 22nd ed. 2025, ch. 53 Abdominal Swelling and Ascites, p. 329",
+        pdf_page: 372,
+        quote: "should be avoided in patients with cirrhosis and ascites"
+      }
+    ]
+  },
+  {
+    a: ["spironolactone"],
+    b: ["heparin"],
+    severity: "moderate",
+    effect: "Heparin suppresses aldosterone production and raises potassium; with spironolactone, which blocks aldosterone's action, the effects add up, more so in kidney impairment or diabetes.",
+    action: "Check potassium before and every few days while both are given, particularly after more than a few days of heparin. Pause spironolactone if potassium rises above 5.5 mmol/L.",
+    ref: "BNF interactions; BMJ 2026;392:e085905, p. 6; Harrison 22nd ed. 2025, ch. 56, p. 359",
+    refs: [
+      {
+        book: "harrison",
+        text: "Heparin preparations inhibit aldosterone synthesis and cause hyperkalaemia.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, p. 359",
+        pdf_page: 402,
+        quote: "heparin preparations can cause selective inhibition of aldosterone synthesis"
+      },
+      {
+        book: "harrison",
+        text: "Mineralocorticoid-receptor blockers (spironolactone, eplerenone) cause hyperkalaemia, with greater risk when combined with ACE inhibitors or ARBs.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, Table 56-5, p. 358",
+        pdf_page: 401,
+        quote: "Blockade of the mineralocorticoid receptor: spironolactone"
+      }
+    ]
+  },
+  {
+    a: ["spironolactone"],
+    b: ["digoxin"],
+    severity: "moderate",
+    effect: "Spironolactone raises serum digoxin levels. Both are common together in heart failure; a high potassium from spironolactone also changes digoxin's effect on the heart.",
+    action: "When spironolactone is STARTED in a patient on digoxin, watch pulse, nausea, vomiting and visual symptoms, and check a digoxin level where possible. Keep potassium in the normal range (4.0–5.0 mmol/L).",
+    ref: "BNF interactions; Nelson 22nd ed. 2024, ch. 94 Poisoning, p. 714",
+    refs: [
+      {
+        book: "nelson",
+        text: "Medications that increase serum digoxin concentrations include spironolactone, verapamil and amiodarone.",
+        ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, p. 714",
+        pdf_page: 760,
+        quote: "spironolactone, verapamil, amiodarone, and itraconazole"
+      }
+    ]
   }
 ];

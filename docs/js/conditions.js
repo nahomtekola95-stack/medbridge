@@ -219,7 +219,8 @@ window.CONDITIONS = [
     { id: "salbutamol", role: "adjunct", note: "Nebulised 10–20 mg adult; shifts potassium and needs no IV. Use with insulin, not instead of it — about 20 % of dialysis patients do not respond (Harrison)." },
     { id: "sodium-bicarbonate", role: "adjunct", note: "Only with significant metabolic acidosis; Harrison gives it no role in hyperkalaemia otherwise. Never in the same line as calcium." },
     { id: "furosemide", role: "adjunct", note: "Only if the patient still passes urine." },
-    { id: "ringers-lactate", role: "avoid", note: "Contains potassium. Use 0.9 % saline instead." }
+    { id: "ringers-lactate", role: "avoid", note: "Contains potassium. Use 0.9 % saline instead." },
+    { id: "spironolactone", role: "avoid", note: "Stop it, with any potassium supplement, ACE inhibitor, ARB, NSAID or co-trimoxazole. Restart only when potassium and creatinine are back to baseline, at a lower dose and with a check at 1 week (BMJ 2026)." }
   ],
   sources: [{ name: "Nelson 22nd ed. 2024, ch. 573, p. 3245" }, { name: "UK Kidney Association, 2023" }],
   textbook: [
@@ -7018,6 +7019,242 @@ window.CONDITIONS = [
       { name: "Harrison 22nd ed. 2025, ch. 231 Malaria" },
       { name: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium)" },
       { name: "Williams Obstetrics 25th ed. 2018, ch. 64; Gabbe's Obstetrics 9th ed., ch. 58" }
+    ],
+    review: { status: "draft" }
+  },
+
+  /* ---- spontaneous intracerebral haemorrhage ---- */
+  {
+    id: "intracerebral-haemorrhage",
+    name: "Spontaneous intracerebral haemorrhage (haemorrhagic stroke)",
+    group: "emergency",
+    aka: [
+      "ICH",
+      "haemorrhagic stroke",
+      "hemorrhagic stroke",
+      "intracerebral hemorrhage",
+      "brain bleed",
+      "stroke",
+      "hypertensive bleed",
+      "cerebellar haemorrhage",
+      "anticoagulant bleed",
+      "warfarin bleed",
+      "bleeding in the brain"
+    ],
+    summary: "A bleed into the brain itself, most often from long-standing high blood pressure. The bleed often grows in the first hours, and that growth kills, so the first hour matters. Do four things together: protect the airway; bring systolic BP to about 140 (keep it 130–150, never a fall of more than 60 mmHg); reverse any blood thinner within the hour; and control glucose, fever and seizures. Call neurosurgery early for cerebellar bleeds and hydrocephalus. Do not decide on 'do not resuscitate' in the first 24 hours.",
+    redflags: [
+      "GCS 8 or below, or not protecting the airway: needs a secure airway",
+      "Falling GCS, a new dilated pupil, or vomiting with worsening headache: bleed growth, hydrocephalus or herniation",
+      "Cerebellar bleed (occipital headache, repeated vomiting, unable to walk or stand, gaze palsy): can kill within hours by brainstem compression; urgent neurosurgery",
+      "On warfarin, apixaban, rivaroxaban, dabigatran or heparin: the bleed grows for longer (up to 24–48 h); reverse within the first hour",
+      "Seizure, fever or high glucose: each worsens outcome",
+      "Young patient, lobar bleed, or no hypertension: think of an AVM, aneurysm, cocaine or amphetamine, eclampsia, or a bleeding disorder"
+    ],
+    steps: [
+      "AIRWAY AND BREATHING. ABC first. Secure the airway if GCS is 8 or below or the patient cannot protect it (ICH review). Oxygen to keep SpO2 above 94 %. Head of bed up 30°, head midline. Nil by mouth until a swallow test.",
+      "CONFIRM THE BLEED. No clinical sign reliably tells a bleed from an infarct (Harrison): a non-contrast CT is needed. Until a bleed is confirmed, keep the presenting blood pressure unless it is extreme (Harrison). WITHOUT CT: do not give aspirin, heparin or any blood thinner, and treat blood pressure only if above 220/120 while you arrange CT or referral (editorial: this is Harrison's threshold for ischaemic stroke, where lowering BP can enlarge the infarct).",
+      "HISTORY AND TESTS. Time last seen well; blood thinners and the time of the last dose; kidney disease; recent surgery, head injury or stroke; alcohol, cocaine or amphetamine (ICH review, Harrison). Glucose now. Full blood count, electrolytes, creatinine, INR/clotting and, if available, a toxicology screen. Pregnant or recently delivered: treat as eclampsia until proven otherwise (see Eclampsia).",
+      "SCORE IT, BUT DO NOT USE IT TO WITHHOLD CARE. Record GCS and the ICH score: age 80 or over 1; volume 30 mL or more 1; blood in the ventricles 1; below the tentorium (cerebellum or brainstem) 1; GCS 13–15 = 0, 5–12 = 1, 3–4 = 2 (Harrison Table 439-2). Estimate the volume on CT as A × B × C ÷ 2 in cm (ABC/2). Use the score to communicate severity; using it to predict death can become a self-fulfilling prophecy (Harrison). Defer any DNR order for the first 24 hours (ICH review).",
+      "BLOOD PRESSURE (once a bleed is confirmed). Start within the first hour. Aim for systolic 140 mmHg and keep it between 130 and 150, smoothly and steadily, for the next several days (ICH review, Harrison). Avoid a fall of more than 60 mmHg, especially in the first hour, and do not go below 130 (ICH review). Use labetalol: 20 mg IV over 2 min, then 40 mg, 80 mg, 80 mg at 10-minute intervals to a maximum of 300 mg, or an infusion (see Labetalol). Harrison prefers drugs with less cerebral vasodilating action (labetalol, nicardipine). Hydralazine only if labetalol is unavailable or contraindicated, in 5 mg steps.",
+      "REVERSE BLOOD THINNERS WITHIN THE FIRST HOUR (ICH review, Harrison). WARFARIN: vitamin K 10 mg slow IV (works in 6–24 h) PLUS four-factor PCC 25–50 IU/kg if INR is 2 or more, aiming for INR 1.4 or less; PCC is reasonable for INR 1.3–1.9 too (ICH review). No PCC: fresh frozen plasma 15 mL/kg (Harrison: the alternative, slower and larger volume; see Warfarin). APIXABAN or RIVAROXABAN: PCC 25–50 IU/kg (Harrison); andexanet was withdrawn from the US market in December 2025 (ICH review). DABIGATRAN: idarucizumab; if unavailable, PCC and consider dialysis (ICH review). HEPARIN or enoxaparin: protamine (see Protamine). Stop the blood thinner and write the time on the chart.",
+      "ANTIPLATELETS AND OTHER 'HAEMOSTATIC' DRUGS. Do NOT transfuse platelets just because the patient takes aspirin or clopidogrel: no benefit and possible harm (Harrison). Platelets ARE indicated for a count below 50,000/µL (Harrison) or before emergency neurosurgery (ICH review). Tranexamic acid did not change outcome in spontaneous ICH (Harrison) and is not routine (ICH review); recombinant factor VIIa is not recommended (Harrison). This is different from head injury, where early tranexamic acid helps (see Head injury).",
+      "GLUCOSE, FEVER, FLUIDS. Check glucose: treat hypoglycaemia at once, and treat glucose above 10 mmol/L (180 mg/dL) with insulin, aiming not to fall below 3.3 mmol/L (60 mg/dL) (ICH review: treat above 180–220 mg/dL; Harrison). Fever is common in the first 72 h and worsens outcome: paracetamol and cooling (ICH review). Isotonic fluids (0.9 % saline) to keep the patient hydrated without overload; no glucose-only or hypotonic fluids (see Head injury).",
+      "SEIZURES. Treat any clinical or EEG seizure at once (ICH review), with diazepam or lorazepam then phenytoin as in the Status epilepticus case. Seizures occur in 6–15 % within the first 3 days (Harrison). Do NOT give antiseizure drugs to prevent seizures in a patient who has not had one (ICH review).",
+      "RAISED PRESSURE AND HERNIATION. Signs of herniation (falling GCS, dilated pupil): head up, intubate if possible, mannitol 0.5–1 g/kg or 3 % saline 2–5 mL/kg as a bridge while neurosurgery is called (Harrison, ICH review; see Head injury). No steroids: dexamethasone has no role and may harm (Harrison, ICH review). Brief hyperventilation only as a bridge (Harrison).",
+      "NEUROSURGERY: CALL EARLY, IN PARALLEL. Cerebellar bleed with falling consciousness, brainstem compression, hydrocephalus or volume 15 mL or more: urgent evacuation (ICH review); hydrocephalus from a cerebellar clot needs evacuation, not a drain alone (Harrison). Supratentorial bleed over 20 mL with GCS 5–12: minimally invasive evacuation may help where expertise exists (ICH review). Arrange transfer while medical care continues.",
+      "WORK AS A BUNDLE AGAINST THE CLOCK. Doctor within 10 min, CT started by 25 min, reversal and the first BP drug within 60 min, BP at target by 90 min (proposed CODE ICH targets, ICH review). In INTERACT-3, run in low- and middle-income countries, a bundle of BP lowering, glucose and temperature control and reversal improved function (Harrison).",
+      "PROGNOSIS AND FAMILY. Death rates are high (30-day mortality up to 40–50 %; 91 % with a clot over 60 mL), but survivors can recover well as the clot resolves (ICH review, Harrison). Give full active care for the first 24 hours unless the patient had already limited care; do not recommend withdrawal in that time (ICH review).",
+      "AFTER THE FIRST DAYS. Keep BP controlled long term, stop alcohol and illicit stimulants (Harrison). Restarting an anticoagulant (for example for atrial fibrillation or a valve) is a specialist decision, weighing clot against re-bleed."
+    ],
+    drugs: [
+      {
+        id: "labetalol",
+        role: "first",
+        note: "20 mg IV over 2 min, then 40, 80, 80 mg every 10 min (max 300 mg), or infusion 1–2 mg/min. Target SBP 140 (130–150); never a fall of more than 60 mmHg. Avoid in asthma, heart block, bradycardia."
+      },
+      {
+        id: "hydralazine",
+        role: "alternative",
+        note: "Only if labetalol is unavailable or contraindicated: a cerebral vasodilator (Harrison prefers agents with less of this effect) that can drop BP abruptly. 5 mg slow IV, recheck at 20 min; do not go below SBP 130 (editorial)."
+      },
+      {
+        id: "oxygen",
+        role: "first",
+        note: "Keep SpO2 above 94 % (ICH review); intubate if GCS 8 or below."
+      },
+      {
+        id: "vitamin-k",
+        role: "first",
+        note: "Warfarin-related bleed: 10 mg slow IV now, with PCC or plasma (vitamin K alone takes 6–24 h)."
+      },
+      {
+        id: "blood-transfusion",
+        role: "adjunct",
+        note: "Fresh frozen plasma 15 mL/kg for warfarin when no PCC (Harrison: slower and larger volume). Platelets only if count below 50,000/µL or before neurosurgery; NOT for aspirin or clopidogrel users (no benefit, possible harm, Harrison)."
+      },
+      {
+        id: "protamine",
+        role: "first",
+        note: "Bleed on heparin or enoxaparin: reverse with protamine (ICH review); see the Protamine page for the dose by time since the last heparin."
+      },
+      {
+        id: "mannitol",
+        role: "adjunct",
+        note: "Herniation signs: 0.5–1 g/kg over 20–30 min as a bridge to neurosurgery; only if not hypovolaemic."
+      },
+      {
+        id: "hypertonic-saline",
+        role: "adjunct",
+        note: "Herniation signs: 3 % saline 2–5 mL/kg over 10–20 min as a bridge to neurosurgery."
+      },
+      { id: "diazepam", role: "adjunct", note: "Active seizure only; watch the airway." },
+      { id: "lorazepam", role: "adjunct", note: "Active seizure only, where stocked." },
+      {
+        id: "phenytoin",
+        role: "adjunct",
+        note: "After a clinical or EEG seizure. NOT for prevention in a patient without seizures (ICH review)."
+      },
+      {
+        id: "paracetamol",
+        role: "supportive",
+        note: "Fever (common in the first 72 h and linked to worse outcome) and headache. Avoid NSAIDs."
+      },
+      {
+        id: "insulin-soluble",
+        role: "supportive",
+        note: "Glucose above 10 mmol/L (180 mg/dL): treat, but avoid hypoglycaemia (keep above 3.3 mmol/L)."
+      },
+      {
+        id: "dextrose",
+        role: "supportive",
+        note: "Hypoglycaemia only; not as a maintenance fluid in brain injury."
+      },
+      {
+        id: "normal-saline",
+        role: "supportive",
+        note: "Isotonic maintenance and resuscitation fluid; avoid hypotonic fluids and fluid overload."
+      },
+      {
+        id: "warfarin",
+        role: "avoid",
+        note: "Stop. Reverse with vitamin K 10 mg IV plus PCC (or FFP) within the first hour. Restarting is a specialist decision."
+      },
+      {
+        id: "apixaban",
+        role: "avoid",
+        note: "Stop; note the time of the last dose. Reverse with PCC 25–50 IU/kg where available (Harrison)."
+      },
+      {
+        id: "rivaroxaban",
+        role: "avoid",
+        note: "Stop; note the time of the last dose. Reverse with PCC 25–50 IU/kg where available (Harrison)."
+      },
+      { id: "heparin", role: "avoid", note: "Stop and reverse with protamine." },
+      {
+        id: "tranexamic-acid",
+        role: "avoid",
+        note: "Not routine in spontaneous ICH: no outcome benefit in the large trial (Harrison). Different from head injury (CRASH-3)."
+      },
+      {
+        id: "dexamethasone",
+        role: "avoid",
+        note: "No steroids in ICH: no benefit and possible harm (Harrison, ICH review)."
+      }
+    ],
+    textbook: [
+      {
+        book: "ichem",
+        text: "Secure a definitive airway if the patient is not protecting it or the GCS is 8 or below; give oxygen to keep SpO2 above 94 %. Record GCS, NIH stroke scale and ICH score to track change and communicate severity.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 3"
+      },
+      {
+        book: "ichem",
+        text: "Haematoma volume is the strongest predictor of death: over 60 mL carries 91 % 30-day mortality. Over 70 % of patients presenting within 3 hours have growth within 24 hours. A DNR order should be deferred for the first 24 hours whatever the score.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 4"
+      },
+      {
+        book: "ichem",
+        text: "Start BP lowering within the first hour, smoothly and sustained: target SBP 140, range 130–150 mmHg, avoiding drops of more than 60 mmHg especially in the first hour; in mild-moderate ICH with SBP above 150, avoid lowering below 130.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 4"
+      },
+      {
+        book: "ichem",
+        text: "Give reversal agents within the first hour of arrival. Warfarin: vitamin K 10 mg IV (takes 6–24 h) plus four-factor PCC if INR is 2 or more, aiming for INR 1.4 or less; PCC is reasonable for INR 1.3–1.9.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 5"
+      },
+      {
+        book: "ichem",
+        text: "Factor Xa inhibitors: reverse with four-factor PCC. Andexanet controlled haematoma growth (ANNEXA-I) but its thrombotic complications led to its withdrawal from the US market in December 2025. Dabigatran: idarucizumab, or PCC and dialysis if unavailable. Heparin and LMWH: protamine.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 5"
+      },
+      {
+        book: "ichem",
+        text: "Platelet transfusion for patients on antiplatelet drugs is not recommended routinely; rFVIIa and tranexamic acid lack enough evidence for routine use.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 5"
+      },
+      {
+        book: "ichem",
+        text: "Fever (30–45 % in the first 72 h) and hyperglycaemia (up to 60 %) worsen outcome: treating fever may be reasonable, and treating glucose above 180–220 mg/dL is reasonable. Treat clinical or EEG seizures immediately; no prophylactic antiseizure medicine.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 6"
+      },
+      {
+        book: "ichem",
+        text: "Raised ICP: bolus mannitol or hypertonic saline may transiently reduce it, but neurosurgical drainage is life-saving; no prophylactic steroids. Cerebellar ICH of 15 mL or more with deterioration or brainstem compression: neurosurgery. Supratentorial ICH over 20 mL with GCS 5–12: minimally invasive evacuation may reduce mortality.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 7"
+      },
+      {
+        book: "ichem",
+        text: "Care bundles with time targets improve outcomes (proposed CODE ICH: door to CT 25 min, reversal and first antihypertensive within 60 min, target BP within 90 min). Withdrawal of care should not be recommended in the first 24 hours.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 7"
+      },
+      {
+        book: "harrison",
+        text: "Keep the initial BP until CT confirms ICH. Current AHA/ASA guidance: achieve and keep SBP 130–150 mmHg. Use IV drugs with less cerebral vasodilating action (nicardipine, clevidipine, labetalol, esmolol). Reverse coagulopathy ideally within 1 hour.",
+        ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, p. 3453"
+      },
+      {
+        book: "harrison",
+        text: "About a third of patients, even without coagulopathy, have significant haematoma growth in the first day; anticoagulant bleeds may evolve for 24–48 h. Seizures occur in 6–15 % within 3 days. A cerebellar bleed can cause coma from brainstem compression; immediate evacuation may be lifesaving.",
+        ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, p. 3454"
+      },
+      {
+        book: "harrison",
+        text: "The ICH score stratifies risk but should not be used to prognosticate precisely: withholding early care can create a self-fulfilling prophecy of poor outcome.",
+        ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, Table 439-2, p. 3455"
+      },
+      {
+        book: "harrison",
+        text: "Warfarin: PCC with vitamin K; FFP is an alternative but needs more volume and time. PCC may partially reverse factor Xa inhibitors. Transfuse platelets for counts below 50,000/µL; platelet transfusion for antiplatelet users showed no benefit and possible harm. rFVIIa and tranexamic acid did not improve outcome. INTERACT-3, in low- and middle-income countries, showed a care bundle improved function. Glucocorticoids are not recommended.",
+        ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, p. 3456"
+      },
+      {
+        book: "harrison",
+        text: "No reliable clinical findings conclusively separate ischaemic from haemorrhagic stroke: an emergency non-contrast CT is needed. In ischaemic stroke, lower BP only above 220/120 mmHg (or 185/110 before thrombolysis); keep glucose below 10 mmol/L (180 mg/dL).",
+        ref: "Harrison 22nd ed. 2025, ch. 438 Ischemic Stroke, p. 3440"
+      },
+      {
+        book: "ahastats",
+        text: "In 2021, ICH caused 3.31 million deaths worldwide, close to ischaemic stroke's 3.59 million. ICH mortality was highest in Oceania, then Southeast and East Asia and central and eastern sub-Saharan Africa.",
+        ref: "AHA Heart Disease and Stroke Statistics 2026, Circulation 2026;153, ch. 15 Stroke, p. e309"
+      },
+      {
+        book: "note",
+        text: "'Without CT, give no blood thinner and lower BP only above 220/120' combines Harrison's two stroke chapters for hospitals with no CT; it is editorial. The ABC/2 volume estimate is from Kothari 1996. FFP 15 mL/kg and PCC 25–50 IU/kg match the Warfarin page. Hydralazine as second choice and its 5 mg steps are editorial: neither source names it for ICH.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "Puissant M, Ganti L. Acute management of spontaneous intracerebral hemorrhage (ICH) in the emergency department. Int J Emerg Med 2026;19:35 (review of the 2022 AHA/ASA guideline)"
+      },
+      {
+        name: "Greenberg SM et al. 2022 AHA/ASA Guideline for the Management of Patients With Spontaneous Intracerebral Hemorrhage. Stroke 2022;53:e282–e361"
+      },
+      { name: "Harrison 22nd ed. 2025, ch. 438 Ischemic Stroke; ch. 439 Intracerebral Hemorrhage" },
+      {
+        name: "Hemphill JC et al. The ICH score. Stroke 2001;32:891–7; Kothari RU et al. The ABCs of measuring intracerebral hemorrhage volumes. Stroke 1996;27:1304–5"
+      },
+      { name: "AHA 2026 Heart Disease and Stroke Statistics, Circulation 2026;153, ch. 15" }
     ],
     review: { status: "draft" }
   }

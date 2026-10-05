@@ -4984,5 +4984,72 @@ window.SAFETY = {
       "Nystatin product information",
       "LactMed (NIH)"
     ]
+  },
+
+  spironolactone: {
+    pregnancy: {
+      level: "avoid",
+      text: "Avoid. It crosses the placenta and its antiandrogen effect can cause ambiguous genitalia in a male fetus (Gabbe). For hypertension in pregnancy use labetalol, nifedipine or methyldopa. Potassium-sparing diuretics are generally avoided in pregnancy (BMJ)."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Considered acceptable in breastfeeding (BMJ, as in UK guidance), although a small amount passes into milk."
+    },
+    renal: {
+      level: "adjust",
+      text: "The danger in kidney impairment is a high potassium (BMJ, Harrison). Lower the dose below an eGFR of 50 and do not use it below 30 (BMJ). Check potassium and creatinine at 1 week and 1 month.",
+      bands: [
+        { below: 50, text: "GFR 30–50: 12.5 mg daily or on alternate days; double as tolerated to a maximum of 25 mg daily, only if potassium is below 5 and kidney function is stable (BMJ). Check potassium and creatinine at 1 week and 1 month." },
+        { below: 30, text: "GFR below 30: not recommended (BMJ). Use a loop diuretic for fluid; a specialist decision only." }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change for liver disease (BMJ), and it is the main diuretic for cirrhotic ascites (Harrison). Its use may be limited by low sodium, high potassium and gynaecomastia (Harrison): check electrolytes and creatinine before each dose increase, and stop if encephalopathy appears."
+    },
+    refs: [
+      {
+        book: "gabbe",
+        text: "Spironolactone is contraindicated in pregnancy: it crosses the placenta and is a potent antiandrogen that can cause ambiguous genitalia in a male fetus.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 48 Pituitary and Adrenal Disorders in Pregnancy, p. 931",
+        pdf_page: 1143,
+        quote: "which can cause ambiguous genitalia in a male fetus"
+      },
+      {
+        book: "bmjksd",
+        text: "Potassium-sparing diuretics are generally avoided in pregnancy, but spironolactone is considered acceptable during breastfeeding.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 6",
+        pdf_page: 6,
+        quote: "spironolactone is considered acceptable for use during breastfeeding"
+      },
+      {
+        book: "bmjksd",
+        text: "Table 1: GFR 30–50, 12.5 mg daily or every other day; GFR below 30, not recommended.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 7",
+        pdf_page: 7,
+        quote: "GFR 30-50: 12.5 mg daily or every other day"
+      },
+      {
+        book: "bmjksd",
+        text: "No changes recommended for hepatic failure.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 8",
+        pdf_page: 8,
+        quote: "No changes recommended for hepatic failure"
+      },
+      {
+        book: "harrison",
+        text: "Use of spironolactone in cirrhotic ascites may be limited by hyponatraemia, hyperkalaemia and painful gynaecomastia.",
+        ref: "Harrison 22nd ed. 2025, ch. 53 Abdominal Swelling and Ascites, p. 329",
+        pdf_page: 372,
+        quote: "Use of spironolactone may be limited by"
+      }
+    ],
+    sources: [
+      "Gabbe's Obstetrics 9th ed., ch. 48",
+      "BMJ 2026;392:e085905",
+      "Harrison 22nd ed. 2025, ch. 53",
+      "BNF",
+      "LactMed (NIH)"
+    ]
   }
 };

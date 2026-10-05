@@ -1544,7 +1544,7 @@ window.DRUG_DB = [
   wards: ["emergency", "maternity", "medical", "icu"],
   tags: ["severe hypertension", "pre-eclampsia", "hypertensive emergency"],
   presentation: ["5 mg/mL, 20 mL ampoule (100 mg).", "Tablets 100 mg, 200 mg."],
-  indications: ["Severe hypertension in pregnancy", "Hypertensive emergency (stroke, dissection)"],
+  indications: ["Severe hypertension in pregnancy", "Hypertensive emergency (stroke, dissection)", "Acute intracerebral haemorrhage: systolic target 140, kept between 130 and 150 (see the case)"],
   standard: {
     summary: "Escalating IV boluses, or pump infusion 1–2 mg/min.",
     items: [
@@ -1592,7 +1592,9 @@ window.DRUG_DB = [
     { book: "williams", text: "ACOG: labetalol 20 mg IV bolus; if not effective in 10 minutes, 40 mg, then 80 mg every 10 minutes, then hydralazine. Sibai caps 220 mg per treatment cycle. Not given to asthmatic women.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1632" },
     { book: "williams", text: "Labetalol causes maternal hypotension and bradycardia more often than hydralazine, and is contraindicated in asthma.", ref: "Williams Obstetrics 25th ed. 2018, ch. 40 Hypertensive Disorders, pdf p. 1632" },
     { book: "gabbe", text: "IV labetalol 20, 40, 80, 80, 80 mg every 10 min, maximum 300 mg; authors use it first-line and switch to hydralazine if 20, 40 and 80 mg fail.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" },
-    { book: "gabbe", text: "Avoid labetalol in moderate-severe asthma, bradycardia below 60/min and congestive heart failure.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" }
+    { book: "gabbe", text: "Avoid labetalol in moderate-severe asthma, bradycardia below 60/min and congestive heart failure.", ref: "Gabbe's Obstetrics 9th ed., ch. 38 Hypertensive Disorders of Pregnancy, p. 712" },
+    { book: "harrison", text: "Intracerebral haemorrhage: lower BP with IV drugs that have less cerebral vasodilating action, such as nicardipine, clevidipine, labetalol or esmolol; AHA/ASA guidance is to reach and keep systolic 130–150 mmHg.", ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, p. 3453" },
+    { book: "ichem", text: "In ICH start BP lowering within the first hour, smoothly and sustained, preferably as a titratable infusion such as labetalol: target systolic 140 (130–150), avoiding falls of more than 60 mmHg and, in mild-moderate ICH, values below 130.", ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 4" }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -1655,7 +1657,8 @@ window.DRUG_DB = [
     "Williams advises against antifibrinolytics once consumptive coagulopathy is established (for example placental abruption or amniotic fluid embolism) and reports renal cortical necrosis with tranexamic acid. This does not change the WHO recommendation to give it early in postpartum haemorrhage.",
     "Never intrathecal (fatal). Deaths have followed TXA given by mistake into the intrathecal space during obstetric spinal anaesthesia — the ampoule looks like a local anaesthetic ampoule. Store it away from the spinal tray and read the label aloud.",
     "NOT for prevention. WHO 2025 does not recommend tranexamic acid to prevent PPH at vaginal birth or at caesarean birth: it gave no benefit over standard prophylaxis and a small increase in thromboembolic events could not be ruled out.",
-    "TXA is an antifibrinolytic, not a uterotonic. It must never be used in place of a prophylactic uterotonic — it does not contract the uterus."
+    "TXA is an antifibrinolytic, not a uterotonic. It must never be used in place of a prophylactic uterotonic — it does not contract the uterus.",
+    "Spontaneous brain haemorrhage (no injury): not routine. Tranexamic acid did not change outcome in the large trial (Harrison), and the AHA/ASA guidance does not recommend it (ICH review 2026). Head injury is different: give it within 3 h (CRASH-3). See the Intracerebral haemorrhage case."
   ],
   sources: [{ name: "WHO. Consolidated guidelines for the prevention, diagnosis and treatment of postpartum haemorrhage, 2025 (Recommendations 14, 15 and 27) — incorporating the 2017 tranexamic acid recommendation" }, { name: "WOMAN trial collaborators. Lancet 2017; CRASH-2 collaborators. Lancet 2010" }],
   textbook: [
@@ -1670,6 +1673,8 @@ window.DRUG_DB = [
   { book: "whopph", text: "A second gram is given if bleeding restarts within twenty-four hours of completing the first dose; separately, starting TXA more than three hours after birth is not supported, as the effect beyond three hours points towards harm.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 27 remarks, pdf pp. 62–63" },
   { book: "whopph", text: "TXA is not recommended for preventing PPH at vaginal or caesarean birth; it is an antifibrinolytic and not a uterotonic, and must never replace a first-line prophylactic uterotonic.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendations 14 and 15, pdf pp. 50–51" },
   { book: "ethpph", text: "Tranexamic acid is cheap, easy to give, has a shelf life of about three years and can be stored at room temperature, 15 to 30 °C, in most places; it should always be to hand in delivery and postpartum areas.", ref: "Ethiopian national PPH guideline 2022, Use of tranexamic acid in PPH management, pdf p. 23" },
+  { book: "harrison", text: "In spontaneous intracerebral haemorrhage, tranexamic acid did not alter outcome in a large randomised trial; recombinant factor VIIa reduced haematoma growth without improving outcome.", ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, p. 3456" },
+  { book: "ichem", text: "Haemostatic agents such as recombinant factor VIIa and tranexamic acid are still under trial in ICH; there are not enough data on their safety or usefulness, so they are not recommended in routine practice.", ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 5" },
   { book: "whopph", text: "Early intravenous tranexamic acid within three hours of birth, in addition to standard care, is recommended for women with PPH after vaginal or caesarean birth; the earlier standalone TXA recommendation is integrated here.", ref: "WHO Consolidated guidelines on PPH 2025, Recommendation 27, pdf p. 62" }
 ],
   review: { status: "draft", by: null, date: null }
@@ -3433,6 +3438,7 @@ window.DRUG_DB = [
     { book: "harrison", text: "Lorazepam is the benzodiazepine of choice; seizure control is then maintained with a loading dose of fosphenytoin, valproate or levetiracetam, which have similar efficacy.", ref: "Harrison 22nd ed. 2025, ch. 311 Approach to the Patient with Critical Illness, p. 2298" },
     { book: "nelson", text: "If emergency therapy with a benzodiazepine is unsuccessful, with persistent seizures 5 minutes after the second benzodiazepine dose, fosphenytoin, valproate or levetiracetam is the recommended urgent therapy. Fosphenytoin is given at a loading dose of 20 mg/kg and a level is usually taken 2 hours later. Valproate is given at a loading dose of 40 mg/kg.", ref: "Nelson 22nd ed. 2024, ch. 633.8 Status epilepticus, p. 3628" },
     { book: "nelson", text: "For refractory neonatal seizures, phenytoin 20 mg/kg loading dose or lorazepam 0.1 mg/kg have historically been preferred, but levetiracetam is now often preferred as a second-line agent.", ref: "Nelson 22nd ed. 2024, ch. 122, p. 1067" },
+    { book: "ichem", text: "After intracerebral haemorrhage, start antiseizure medicine at once for clinical or EEG seizures; in patients without seizures there is no evidence of benefit from prophylactic antiseizure medicine.", ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 6" },
     { book: "nelson", text: "Loading doses to achieve a therapeutic level quickly are 20 mg/kg for valproate, 20 mg/kg for phenytoin, and 10–20 mg/kg for phenobarbital; a lower phenobarbital load of 5 mg/kg is sometimes used in older children to avoid excessive sedation.", ref: "Nelson 22nd ed. 2024, ch. 633.10, p. 3612" }
   ],
   sources: [
@@ -3929,6 +3935,7 @@ window.DRUG_DB = [
     { book: "harrison", text: "Give one red cell unit at a time (250-350 mL); each unit raises Hb by about 1 g/dL and haematocrit by 3%.", ref: "Harrison 22nd ed. 2025, ch. 118 Transfusion Therapy and Biology, p. 906" },
     { book: "harrison", text: "Preventing circulatory overload (TACO): identify at-risk patients, transfuse slowly (1 unit over 3-4 h), use diuretics in stable patients with prior TACO; treat by stopping transfusion, oxygen and diuretics.", ref: "Harrison 22nd ed. 2025, ch. 118 Transfusion Therapy and Biology, p. 912" },
     { book: "williams", text: "With ongoing obstetrical haemorrhage Parkland transfuses rapidly when hematocrit is below 25 percent; compatible whole blood is ideal and one unit raises hematocrit 3 to 4 volume percent.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1745" },
+    { book: "harrison", text: "Intracerebral haemorrhage: transfuse platelets when the count is below 50,000/µL. In patients taking antiplatelet drugs without thrombocytopenia, platelet transfusion showed no benefit and possible harm.", ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, p. 3456" },
     { book: "williams", text: "After about five red cell units check platelets, clotting studies and fibrinogen; keep platelets above 50,000/microL, replace if fibrinogen below 150 mg/dL, fresh-frozen plasma 10 to 15 mL/kg.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1746" },
     { book: "williams", text: "Urine output measured hourly is a key vital sign in haemorrhage; maintain at least 30 and preferably 50 mL or more per hour.", ref: "Williams Obstetrics 25th ed. 2018, ch. 41 Obstetrical Hemorrhage, pdf p. 1743" },
     { book: "gabbe", text: "Consider packed red cells for Hb below 7 g/dL or active haemorrhage with coagulopathy; one unit raises Hb about 1 g/dL in a 70 kg patient.", ref: "Gabbe's Obstetrics 9th ed., ch. 20 Antepartum and Postpartum Hemorrhage, p. 418" },
@@ -15736,6 +15743,16 @@ window.DRUG_DB = [
         ref: "Harrison 22nd ed. 2025, ch. 123 Antiplatelet, Anticoagulant, and Fibrinolytic Drugs, p. 952"
       },
       {
+        book: "ichem",
+        text: "Brain haemorrhage on warfarin: within the first hour, vitamin K 10 mg IV (it takes 6–24 h) plus four-factor PCC if the INR is 2 or more, aiming for INR 1.4 or less; PCC is also reasonable for INR 1.3–1.9. Anticoagulated patients have more, and later, haematoma growth.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 5"
+      },
+      {
+        book: "harrison",
+        text: "In ICH on a vitamin K antagonist, PCC given with vitamin K corrects the coagulopathy quickly; fresh frozen plasma is an alternative but needs larger volumes and more time, so it is not recommended if PCC is available.",
+        ref: "Harrison 22nd ed. 2025, ch. 439 Intracerebral Hemorrhage, p. 3456"
+      },
+      {
         book: "harrison",
         text: "Over-anticoagulation without symptoms can be corrected with minimal doses of vitamin K (1 mg orally or IV) while keeping the patient anticoagulated.",
         ref: "Harrison 22nd ed. 2025, ch. 121 Coagulation Disorders, p. 935"
@@ -21153,11 +21170,11 @@ window.DRUG_DB = [
         steps: [
           "Stop apixaban. Note the time of the last dose and check the creatinine. Time is the real antidote: with normal kidneys about half the drug is gone by 12 hours, and most of it by 24–48 hours.",
           "Treat the bleeding itself: pressure, packing, suturing, endoscopy or surgery as for any patient (Harrison). Resuscitate with fluids and blood. Do not wait for reversal before stopping the bleeding surgically.",
-          "Tranexamic acid 1 g IV over 10 minutes (as for trauma; see Tranexamic acid). Evidence in DOAC bleeding is limited, but it is cheap and available.",
+          "Tranexamic acid 1 g IV over 10 minutes (as for trauma; see Tranexamic acid). Evidence in DOAC bleeding is limited, but it is cheap and available. Not for a spontaneous brain bleed without injury: there it did not improve outcome (Harrison) and is not routine (ICH review 2026).",
           "If the overdose or last dose was within the last few hours and the airway is safe, activated charcoal (Harrison: may help if the drug was taken in the last 4 h).",
           "Four-factor prothrombin complex concentrate (PCC) 25–50 units/kg, if your blood bank or a referral hospital has it (Harrison). This is the best available substitute for andexanet.",
           "Do NOT expect vitamin K, fresh frozen plasma or protamine to reverse apixaban. Give plasma, platelets and cryoprecipitate only as part of a massive transfusion, for loss and dilution. Dialysis does not remove apixaban.",
-          "Life-threatening or intracranial bleeding: senior and referral early. Do not delay the transfer for tests."
+          "Life-threatening or intracranial bleeding: senior and referral early. Do not delay the transfer for tests. Brain bleed: give PCC within the first hour and bring systolic BP to 130–150 (see the Intracerebral haemorrhage case)."
         ],
         monitor: [
           "Pulse, BP and urine output every 15–30 minutes; haemoglobin after resuscitation",
@@ -21214,7 +21231,7 @@ window.DRUG_DB = [
       "INR and aPTT do not measure apixaban (Harrison). A normal result does not mean the drug has gone.",
       "Stopping early without cover raises the risk of stroke and clots. Every stop needs a written restart plan."
     ],
-    antidote: "The specific reversal agent, andexanet alfa, is expensive and not available in most hospitals (Harrison), essentially none in Ethiopia. Instead: stop apixaban, control the bleeding, resuscitate, give tranexamic acid, and give four-factor prothrombin complex concentrate 25–50 units/kg where available (Harrison). Activated charcoal helps if the dose was taken in the last few hours. Vitamin K, fresh frozen plasma and protamine do NOT reverse apixaban, and dialysis does not remove it. Time is the main antidote: the half-life is about 12 h.",
+    antidote: "The specific reversal agent, andexanet alfa, is expensive and not available in most hospitals (Harrison), essentially none in Ethiopia, and it was withdrawn from the US market in December 2025 because of clotting complications (ICH review 2026). Instead: stop apixaban, control the bleeding, resuscitate, give tranexamic acid, and give four-factor prothrombin complex concentrate 25–50 units/kg where available (Harrison). Activated charcoal helps if the dose was taken in the last few hours. Vitamin K, fresh frozen plasma and protamine do NOT reverse apixaban, and dialysis does not remove it. Time is the main antidote: the half-life is about 12 h.",
     sources: [
       {
         name: "Apixaban (Eliquis) summary of product characteristics / prescribing information: dosing, renal criteria, switching, missed dose, crushing"
@@ -21260,6 +21277,11 @@ window.DRUG_DB = [
         book: "harrison",
         text: "Andexanet alfa reverses apixaban but is expensive and not available in all hospitals. If it is unavailable, four-factor prothrombin complex concentrate 25–50 units/kg is also effective at restoring haemostasis. Most surgery can be done without reversal.",
         ref: "Harrison 22nd ed. 2025, ch. 123, p. 954"
+      },
+      {
+        book: "ichem",
+        text: "Intracerebral haemorrhage on a factor Xa inhibitor (apixaban, rivaroxaban, edoxaban): reverse with four-factor PCC within the first hour. Andexanet controlled haematoma growth in ANNEXA-I, but thrombotic complications led to its withdrawal from the US market in December 2025.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 5"
       },
       {
         book: "harrison",
@@ -24343,11 +24365,11 @@ window.DRUG_DB = [
         steps: [
           "Stop rivaroxaban. Note the time of the last dose and check the creatinine. Time is the real antidote: with normal kidneys about half the drug is gone by 12 hours, and most of it by 24–48 hours.",
           "Treat the bleeding itself: pressure, packing, suturing, endoscopy or surgery as for any patient (Harrison). Resuscitate with fluids and blood. Do not wait for reversal before stopping the bleeding surgically.",
-          "Tranexamic acid 1 g IV over 10 minutes (as for trauma; see Tranexamic acid). Evidence in DOAC bleeding is limited, but it is cheap and available.",
+          "Tranexamic acid 1 g IV over 10 minutes (as for trauma; see Tranexamic acid). Evidence in DOAC bleeding is limited, but it is cheap and available. Not for a spontaneous brain bleed without injury: there it did not improve outcome (Harrison) and is not routine (ICH review 2026).",
           "If the overdose or last dose was within the last few hours and the airway is safe, activated charcoal (Harrison: may help if the drug was taken in the last 4 h).",
           "Four-factor prothrombin complex concentrate (PCC) 25–50 units/kg, if your blood bank or a referral hospital has it (Harrison). This is the best available substitute for andexanet.",
           "Do NOT expect vitamin K, fresh frozen plasma or protamine to reverse rivaroxaban. Give plasma, platelets and cryoprecipitate only as part of a massive transfusion, for loss and dilution. Dialysis does not remove rivaroxaban.",
-          "Life-threatening or intracranial bleeding: senior and referral early. Do not delay the transfer for tests."
+          "Life-threatening or intracranial bleeding: senior and referral early. Do not delay the transfer for tests. Brain bleed: give PCC within the first hour and bring systolic BP to 130–150 (see the Intracerebral haemorrhage case)."
         ],
         monitor: [
           "Pulse, BP and urine output every 15–30 minutes; haemoglobin after resuscitation",
@@ -24410,7 +24432,7 @@ window.DRUG_DB = [
       "INR and aPTT do not measure rivaroxaban reliably (Harrison). A normal result does not mean the drug has gone.",
       "Stopping early without cover raises the risk of stroke and clots. Every stop needs a written restart plan."
     ],
-    antidote: "The specific reversal agent, andexanet alfa, is expensive and not available in most hospitals (Harrison), essentially none in Ethiopia. Instead: stop rivaroxaban, control the bleeding, resuscitate, give tranexamic acid, and give four-factor prothrombin complex concentrate 25–50 units/kg where available (Harrison). Activated charcoal helps if the dose was taken in the last few hours. Vitamin K, fresh frozen plasma and protamine do NOT reverse rivaroxaban, and dialysis does not remove it. Time is the main antidote: the half-life is 7–11 h, longer in the elderly and with poor kidneys.",
+    antidote: "The specific reversal agent, andexanet alfa, is expensive and not available in most hospitals (Harrison), essentially none in Ethiopia, and it was withdrawn from the US market in December 2025 because of clotting complications (ICH review 2026). Instead: stop rivaroxaban, control the bleeding, resuscitate, give tranexamic acid, and give four-factor prothrombin complex concentrate 25–50 units/kg where available (Harrison). Activated charcoal helps if the dose was taken in the last few hours. Vitamin K, fresh frozen plasma and protamine do NOT reverse rivaroxaban, and dialysis does not remove it. Time is the main antidote: the half-life is 7–11 h, longer in the elderly and with poor kidneys.",
     textbook: [
       {
         book: "harrison",
@@ -24506,6 +24528,11 @@ window.DRUG_DB = [
         book: "schwartz",
         text: "Factor Xa inhibitors such as rivaroxaban were described as lacking a specific antidote.",
         ref: "Schwartz's Principles of Surgery 11th ed., ch. 4 Hemostasis, Surgical Bleeding, and Transfusion, p. 113"
+      },
+      {
+        book: "ichem",
+        text: "Intracerebral haemorrhage on a factor Xa inhibitor (rivaroxaban, apixaban, edoxaban): reverse with four-factor PCC within the first hour. Andexanet controlled haematoma growth in ANNEXA-I, but thrombotic complications led to its withdrawal from the US market in December 2025.",
+        ref: "Puissant & Ganti. Acute management of spontaneous ICH in the ED. Int J Emerg Med 2026;19:35, p. 5"
       },
       {
         book: "schwartz",
@@ -26742,6 +26769,273 @@ window.DRUG_DB = [
       { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 60, 217, 222, 225" },
       { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 280, 322, 361, 687" },
       { name: "Gabbe's Obstetrics, 9th ed., ch. 7" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- spironolactone (BMJ Practical Prescribing 2026) ---- */
+  {
+    id: "spironolactone",
+    name: "Spironolactone",
+    aka: [
+      "Aldactone",
+      "Spirotone",
+      "Lasilactone (with furosemide)",
+      "Aldactide (with a thiazide)",
+      "Potassium-sparing diuretic",
+      "Mineralocorticoid receptor antagonist",
+      "MRA",
+      "Aldosterone antagonist"
+    ],
+    cls: "Potassium-sparing diuretic: mineralocorticoid (aldosterone) receptor antagonist",
+    cat: "cardio",
+    wards: ["medical", "outpatient", "paediatric", "icu"],
+    tags: [
+      "heart failure",
+      "HFrEF",
+      "HFpEF",
+      "resistant hypertension",
+      "ascites",
+      "cirrhosis",
+      "nephrotic syndrome",
+      "oedema",
+      "diuretic resistance",
+      "hyperkalaemia",
+      "gynaecomastia",
+      "primary aldosteronism",
+      "potassium-sparing"
+    ],
+    presentation: [
+      "Tablets 25 mg, 50 mg and 100 mg. A 25 mg tablet can be halved for 12.5 mg.",
+      "Fixed combinations with furosemide or with a thiazide exist. Patients often do not know their 'water tablet' contains spironolactone (BMJ): read the label.",
+      "Oral only. There is no injection in routine use."
+    ],
+    indications: [
+      "Heart failure with reduced ejection fraction (below 40 %): lowers mortality and admissions, added to the other heart-failure drugs (BMJ, Harrison)",
+      "Heart failure with preserved ejection fraction: reduces heart-failure admissions (Harrison: weak recommendation; BMJ)",
+      "Resistant hypertension: the fourth drug when blood pressure stays high on a thiazide-type diuretic, a calcium-channel blocker and an ACE inhibitor or ARB (Harrison, BMJ)",
+      "Ascites from cirrhosis: the main diuretic, usually with furosemide (Harrison)",
+      "Oedema that resists furosemide (heart failure, nephrotic syndrome): added to the loop diuretic, which it also stops from wasting potassium (BMJ)",
+      "Children with heart failure, as an add-on to furosemide (Nelson)",
+      "Primary aldosteronism; also used for acne and hirsutism in polycystic ovary syndrome (BMJ)"
+    ],
+    standard: {
+      summary: "A weak diuretic (5–10 % of the effect of a loop diuretic, BMJ) that saves potassium instead of wasting it, and blocks aldosterone, which is why it saves lives in heart failure. The danger is a high potassium. It is greatest with poor kidney function, dehydration, potassium supplements, ACE inhibitors or ARBs, NSAIDs, heparin and co-trimoxazole. Check potassium and creatinine before starting, at 1 week and at 1 month (BMJ). Tell every patient to stop it during vomiting, diarrhoea or poor drinking. It takes days to weeks for the full effect.",
+      items: [
+        {
+          label: "Before starting",
+          text: "Potassium and creatinine (eGFR). Guidelines often advise not starting if potassium is above 4.5 mmol/L (BMJ, citing NICE for hypertension). Not recommended if eGFR is below 30 (BMJ). Never in Addison's disease (BMJ). Stop any potassium supplement unless potassium is measured low (BNF, BMJ)."
+        },
+        {
+          label: "Heart failure with reduced EF (adult)",
+          text: "Start 25 mg once daily and increase to 50 mg if potassium and creatinine allow (BMJ). eGFR 30–50: 12.5 mg daily or on alternate days, doubled as tolerated to a maximum of 25 mg daily if potassium is below 5 and kidney function is stable (BMJ). Usually given with an ACE inhibitor or ARB: this pair gives the largest survival benefit (BMJ), but do not use ACE inhibitor + ARB + spironolactone together (Harrison)."
+        },
+        {
+          label: "Resistant hypertension (adult)",
+          text: "Add as the fourth drug after a long-acting thiazide-type diuretic, a calcium-channel blocker and an ACE inhibitor or ARB (Harrison). Start 25 mg once daily; can increase to 100 mg daily (BMJ; higher than the BNF). It lowered systolic pressure by about 9–22 mmHg in trials (BMJ)."
+        },
+        {
+          label: "Cirrhotic ascites (adult)",
+          text: "Salt restriction to 2 g sodium a day first. Then spironolactone 100 mg once daily, adding furosemide 40 mg daily, particularly if there is leg oedema (Harrison). Keep the ratio about 100 : 40 and increase both in steps to a maximum of 400 mg spironolactone and 160 mg furosemide a day (Harrison). Avoid NSAIDs, ACE inhibitors and ARBs in cirrhosis with ascites (Harrison)."
+        },
+        {
+          label: "Child (heart failure)",
+          text: "1–3 mg/kg/day by mouth in 2 or 3 divided doses (Nelson Table 491.6); usually 2 mg/kg/day in two doses (Nelson). Check potassium, especially if an ACE inhibitor is also given."
+        },
+        {
+          label: "Monitoring",
+          text: "Potassium and creatinine at baseline, 1 week and 1 month after starting or after any dose increase (high potassium usually appears in the first 4 weeks), then at least every 6 months (BMJ). A small rise in potassium and creatinine is expected (BMJ)."
+        },
+        {
+          label: "When to stop",
+          text: "Persistent high potassium causing ECG changes or needing admission (BMJ's pragmatic threshold); some guidelines also stop for potassium above 5.0 mmol/L or a fall in eGFR of more than 30 % (BMJ). In heart failure the survival benefit persisted with potassium up to 5.5 mmol/L (BMJ), so a borderline value calls for a recheck and a senior decision, not reflex stopping. Pause it during vomiting, diarrhoea or dehydration (BMJ, citing NICE)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Starting spironolactone where potassium tests are scarce",
+        best_for: "Outpatient and chronic-care clinics, district hospitals with an unreliable laboratory.",
+        requires: ["oral"],
+        steps: [
+          "Get at least ONE potassium and creatinine before starting. If that is impossible, do not start it in a patient with known kidney disease, diabetes with kidney disease, an age over 75, or anyone also taking a potassium supplement or an NSAID (editorial, from the risk factors in BMJ and Harrison).",
+          "Start low: 25 mg once daily, or 12.5 mg (half a 25 mg tablet) if the kidneys are weak or the patient is old or small (BMJ).",
+          "Stop the potassium chloride tablets the patient was given for furosemide: spironolactone usually makes them unnecessary (BMJ).",
+          "Book the potassium checks before the patient leaves: at 1 week and at 1 month (BMJ). If only one test is possible, do it in the first 2–4 weeks, when a high potassium usually appears (BMJ).",
+          "Teach the sick-day rule: during vomiting, diarrhoea, fever with poor drinking, or fasting, stop spironolactone and come to the clinic (BMJ, citing NICE). Restart when eating and drinking normally.",
+          "Tell the patient not to buy painkillers like diclofenac or ibuprofen while on it (see Interactions), and not to use 'low-sodium' salt substitutes, which are potassium chloride (editorial)."
+        ],
+        monitor: [
+          "Potassium and creatinine at 1 week and 1 month, then 6-monthly (BMJ)",
+          "Weight and blood pressure at each visit",
+          "Ask about muscle weakness, palpitations, nausea or vomiting (signs of a high potassium; BMJ)"
+        ],
+        cautions: [
+          "Nausea and vomiting can themselves be caused by a high potassium: check electrolytes if they start (BMJ).",
+          "Hyperkalaemia with ECG changes: treat as an emergency (see the Hyperkalaemia case) and stop spironolactone."
+        ]
+      },
+      {
+        title: "Stepwise diuretics for ascites (cirrhosis)",
+        best_for: "Medical wards and liver clinics without frequent electrolyte tests.",
+        requires: ["oral"],
+        steps: [
+          "Salt first: 2 g sodium a day is a little over three-quarters of a teaspoon of salt in all the food for the day (Harrison). Advise fresh foods and avoiding canned or processed foods.",
+          "Spironolactone 100 mg once daily, with furosemide 40 mg once daily if there is leg oedema (Harrison).",
+          "Weigh the patient daily, same time and same scale. If the weight is not falling after several days and the patient is keeping to the salt limit, increase both drugs together, keeping the 100 : 40 ratio: 200/80, then 300/120, then 400/160 mg (Harrison).",
+          "Check sodium, potassium and creatinine before each increase. If sodium falls below 125 mmol/L, restrict fluids (Harrison).",
+          "Stop and ask a senior if creatinine rises, the patient becomes confused (encephalopathy), potassium is high, or sodium keeps falling.",
+          "Painful breast swelling (gynaecomastia) that the patient cannot accept: amiloride 5–40 mg a day can replace spironolactone (Harrison), if stocked.",
+          "Still tense ascites on maximum doses with the salt limit kept: refractory ascites. Refer for repeated large-volume paracentesis (Harrison)."
+        ],
+        monitor: [
+          "Weight daily",
+          "Sodium, potassium and creatinine before each dose step",
+          "Confusion or drowsiness (encephalopathy)"
+        ],
+        cautions: [
+          "No NSAIDs, ACE inhibitors or ARBs in cirrhosis with ascites (Harrison).",
+          "Failure of diuretics most often means the patient is not keeping to the salt limit (Harrison): ask before increasing."
+        ]
+      },
+      {
+        title: "Furosemide is not enough: adding spironolactone for oedema",
+        best_for: "Heart failure or nephrotic oedema that persists on a full dose of furosemide.",
+        requires: ["oral"],
+        steps: [
+          "Spironolactone acts later in the kidney than furosemide, so the two together remove more fluid (BMJ).",
+          "Add 25 mg once daily (BMJ) and keep the furosemide.",
+          "Stop routine potassium supplements unless the potassium is measured low (BMJ, BNF).",
+          "Check potassium and creatinine within a week, sooner if the patient is also on an ACE inhibitor or has kidney disease (BMJ)."
+        ],
+        monitor: ["Daily weight", "Potassium and creatinine within 1 week"],
+        cautions: [
+          "In nephrotic syndrome the combination improves diuresis and limits potassium loss, but there are no head-to-head trials (BMJ)."
+        ]
+      }
+    ],
+    paediatric: [
+      "Heart failure: 1–3 mg/kg/day by mouth in 2–3 divided doses (Nelson Table 491.6), usually 2 mg/kg/day in two doses (Nelson).",
+      "It saves potassium, so children on furosemide plus spironolactone often need no potassium supplement (Nelson).",
+      "Check potassium and creatinine after starting, especially with an ACE inhibitor such as captopril.",
+      "Liddle syndrome does NOT respond to spironolactone; amiloride or triamterene is used (Nelson)."
+    ],
+    cautions: [
+      "High potassium is the main danger (BMJ: 2–3 % in trials, up to 8 % in real-world use). The risk rises with kidney impairment, dehydration, older age, diabetes, and other potassium-raising drugs: ACE inhibitors, ARBs, NSAIDs, heparin, trimethoprim (co-trimoxazole), pentamidine, ciclosporin and tacrolimus (BMJ, Harrison).",
+      "Avoid potassium supplements unless potassium is measured low and monitored (BNF, BMJ).",
+      "Not recommended if eGFR is below 30 (BMJ). Contraindicated in Addison's disease (BMJ).",
+      "Breast swelling and tenderness (gynaecomastia), impotence and menstrual upset: about 9 % at 25 mg a day and up to 52 % at 150 mg, reversible on stopping (BMJ). Eplerenone lacks these effects (Harrison, BMJ); amiloride is the substitute in ascites (Harrison).",
+      "Pregnancy: avoid. It crosses the placenta and its antiandrogen effect can cause ambiguous genitalia in a male fetus (Gabbe).",
+      "Raises the digoxin level (Nelson): watch for digoxin toxicity.",
+      "Can be limited by low sodium in cirrhosis (Harrison), although low sodium is less common than with thiazides (BMJ).",
+      "It contains no sulfonamide group and does not cause gout (BMJ): useful where furosemide or thiazides cause trouble.",
+      "Slow to act: days to weeks for the full effect (BMJ). It is not a drug for acute pulmonary oedema; use furosemide."
+    ],
+    textbook: [
+      {
+        book: "bmjksd",
+        text: "Potassium-sparing diuretics treat resistant hypertension, mild fluid overload and boost other diuretics; potassium and kidney function must be monitored. The aldosterone blockers (spironolactone, eplerenone, finerenone) improve outcomes in heart failure with reduced and preserved ejection fraction.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 1"
+      },
+      {
+        book: "bmjksd",
+        text: "In heart failure with reduced ejection fraction, mineralocorticoid receptor antagonists reduce mortality and the length of hospital stays. Eplerenone has identical dosing to spironolactone without its gynaecomastia.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 5"
+      },
+      {
+        book: "bmjksd",
+        text: "Resistant hypertension (uncontrolled on a thiazide-type diuretic, a calcium-channel blocker and an ACE inhibitor or ARB): spironolactone and eplerenone are effective, lowering systolic pressure by 9 to 22 mmHg in trials.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 5"
+      },
+      {
+        book: "bmjksd",
+        text: "Spironolactone works better than loop diuretics for ascites in cirrhosis. Combined with loop diuretics it improves diuresis in nephrotic syndrome while limiting potassium loss.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 5"
+      },
+      {
+        book: "bmjksd",
+        text: "NICE advises counselling about kidney failure and high potassium with dehydration: patients with diarrhoea and vomiting should consult their prescriber about stopping.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 5"
+      },
+      {
+        book: "bmjksd",
+        text: "Drugs that add to the risk of high potassium: NSAIDs, ACE inhibitors, ARBs, renin inhibitors, beta-blockers, heparin, trimethoprim, pentamidine, ciclosporin and tacrolimus. Guidelines often advise not starting if potassium is above 4.5 mmol/L and stopping above 5.0, but in RALES the survival benefit persisted with potassium up to 5.5.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 6"
+      },
+      {
+        book: "bmjksd",
+        text: "Gynaecomastia affects about 9 % at 25 mg a day and up to 52 % at 150 mg, and is usually reversible. Avoided in pregnancy; considered acceptable in breastfeeding. Contraindicated in Addison's disease. No sulfa group, and not linked to gout.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 6"
+      },
+      {
+        book: "bmjksd",
+        text: "Table 1: heart failure start 25 mg, increase to 50 mg; hypertension start 25 mg, up to 100 mg daily. GFR 30–50: 12.5 mg daily or on alternate days, to a maximum of 25 mg if potassium is below 5; GFR below 30: not recommended.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 7"
+      },
+      {
+        book: "bmjksd",
+        text: "Check electrolytes and creatinine at baseline, 1 week and 1 month (high potassium usually appears within 4 weeks), then at least every 6 months. The BNF says to avoid potassium supplements; the authors sometimes need them for a clinically important low potassium, with extra monitoring. Stop for persistent high potassium causing ECG changes or admission.",
+        ref: "Anisman, Erickson & Luneau. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905, p. 7"
+      },
+      {
+        book: "harrison",
+        text: "Spironolactone is the most used aldosterone antagonist in heart failure with reduced ejection fraction (RALES). Potassium and kidney function must be closely monitored. Eplerenone lacks its antiandrogen effects. Guidelines discourage combining an ACE inhibitor, an ARB and spironolactone.",
+        ref: "Harrison 22nd ed. 2025, ch. 265 Heart Failure: Management, p. 1994"
+      },
+      {
+        book: "harrison",
+        text: "In heart failure with preserved ejection fraction (TOPCAT), spironolactone reduced heart-failure admissions; guidelines give it a weak recommendation.",
+        ref: "Harrison 22nd ed. 2025, ch. 265 Heart Failure: Management, p. 1988"
+      },
+      {
+        book: "harrison",
+        text: "Resistant hypertension: after optimising a long-acting diuretic, add an MRA such as spironolactone; hyperkalaemia, dizziness, leg cramps and gynaecomastia can trouble a minority.",
+        ref: "Harrison 22nd ed. 2025, ch. 288 Hypertension, p. 2146"
+      },
+      {
+        book: "harrison",
+        text: "Cirrhotic ascites: restrict sodium to 2 g a day; spironolactone 100 mg once daily, with furosemide 40 mg daily, increased to a maximum of 400 mg and 160 mg.",
+        ref: "Harrison 22nd ed. 2025, ch. 355 Cirrhosis and Its Complications, p. 2715"
+      },
+      {
+        book: "harrison",
+        text: "Spironolactone may be limited by low sodium, high potassium and painful gynaecomastia; amiloride 5–40 mg a day may replace it. Furosemide and spironolactone are combined in a 40 : 100 ratio. Avoid NSAIDs, ACE inhibitors and ARBs in cirrhosis with ascites.",
+        ref: "Harrison 22nd ed. 2025, ch. 53 Abdominal Swelling and Ascites, p. 329"
+      },
+      {
+        book: "harrison",
+        text: "Causes of hyperkalaemia include blockade of the mineralocorticoid receptor (spironolactone, eplerenone) and of the epithelial sodium channel (amiloride, triamterene, trimethoprim, pentamidine), with higher risk when combined with ACE inhibitors or ARBs.",
+        ref: "Harrison 22nd ed. 2025, ch. 56 Fluid and Electrolyte Disturbances, Table 56-5, p. 358"
+      },
+      {
+        book: "nelson",
+        text: "Heart failure in children: spironolactone 1–3 mg/kg/day by mouth, divided two or three times daily.",
+        ref: "Nelson 22nd ed. 2024, ch. 491 Heart Failure, Table 491.6, p. 2898"
+      },
+      {
+        book: "nelson",
+        text: "Spironolactone is usually given in two divided doses of 2 mg/kg/24 h; it enhances potassium retention, often removing the need for potassium supplements in children on diuretics. Eplerenone is an alternative without gynaecomastia.",
+        ref: "Nelson 22nd ed. 2024, ch. 491 Heart Failure, p. 2899"
+      },
+      {
+        book: "gabbe",
+        text: "Spironolactone is contraindicated in pregnancy: it crosses the placenta and is a potent antiandrogen that can cause ambiguous genitalia in a male fetus. Labetalol, methyldopa or a calcium-channel blocker is used instead.",
+        ref: "Gabbe's Obstetrics 9th ed., ch. 48 Pituitary and Adrenal Disorders in Pregnancy, p. 931"
+      },
+      {
+        book: "note",
+        text: "The improvised methods (starting with a single potassium check, the sick-day card, the salt-substitute warning and the ascites dose steps written out as 200/80, 300/120, 400/160 mg) are editorial guidance built from the BMJ and Harrison rules for district practice. The BNF dose for resistant hypertension is lower than the BMJ's 100 mg ceiling.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "Anisman SD, Erickson SB, Luneau AK. Practical Prescribing: Potassium sparing diuretics. BMJ 2026;392:e085905"
+      },
+      { name: "Harrison's Principles of Internal Medicine, 22nd ed. 2025, ch. 53, 56, 265, 288, 355" },
+      { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 491" },
+      { name: "Gabbe's Obstetrics, 9th ed., ch. 48" },
+      { name: "BNF / BNF for Children: spironolactone" }
     ],
     review: { status: "draft", by: null, date: null }
   }
