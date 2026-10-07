@@ -180,15 +180,22 @@ window.SAFETY = {
   },
 
   "artesunate": {
-    pregnancy: { level: "safe", text: "IV or IM artesunate is the first-line treatment for severe malaria in all trimesters (WHO 2023). Never delay it because of pregnancy. Check glucose: severe malaria in pregnancy often causes hypoglycaemia." },
+    pregnancy: { level: "safe", text: "IV or IM artesunate is the first-line treatment for severe malaria in all trimesters (Ethiopia; WHO 2026). Never delay it because of pregnancy. Check glucose: severe malaria in pregnancy often causes hypoglycaemia." },
     breastfeeding: { level: "safe", text: "Compatible. Continue breastfeeding." },
     renal: { level: "none", text: "No dose change. Acute kidney injury is common in severe malaria: monitor urine output and creatinine." },
     hepatic: { level: "none", text: "No dose change." },
     refs: [
       { book: "gabbe", text: "Severe malaria in pregnancy is treated as in non-pregnant patients, with IV artesunate first-line.", ref: "Gabbe's Obstetrics 9th ed. 2025, ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1133", pdf_page: 1385, quote: "Management is the same as for nonpregnant individuals, with IV artesunate being the first-line therapy." },
-      { book: "williams", text: "A large trial of artemisinin drugs in pregnant women found no serious maternal or perinatal harm.", ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2722", pdf_page: 2722, quote: "reported no serious maternal or perinatal adverse effects" }
+      { book: "williams", text: "A large trial of artemisinin drugs in pregnant women found no serious maternal or perinatal harm.", ref: "Williams Obstetrics 25th ed. 2018, ch. 64 Infectious Diseases, pdf p. 2722", pdf_page: 2722, quote: "reported no serious maternal or perinatal adverse effects" },
+      {
+      book: "whomal",
+      text: "WHO: parenteral artesunate is the treatment of choice for severe malaria in all trimesters.",
+      ref: "WHO guidelines for malaria 2026, 5.2.2 Treatment of severe malaria during pregnancy, p. 216",
+      pdf_page: 216,
+      quote: "Parenteral artesunate is the treatment of choice in all trimesters"
+    }
     ],
-    sources: ["WHO Guidelines for Malaria 2023", "WHO Model Formulary 2008"]
+    sources: ["WHO guidelines for malaria 2026", "Ethiopia FMoH Malaria case management manual 2024", "WHO Model Formulary 2008"]
   },
 
   "quinine": {
@@ -200,9 +207,23 @@ window.SAFETY = {
     },
     hepatic: { level: "adjust", text: "Severe liver impairment: same approach as kidney failure. Normal doses for 48 h, then reduce maintenance by one-third if not improving. Monitor glucose." },
     refs: [
-      { book: "harrison", text: "Reduce quinine maintenance by 30 to 50% if the patient remains seriously ill or in renal failure after 2 days.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772", pdf_page: 1815, quote: "maintenance doses of quinine should be reduced by 30–50% to prevent toxic accumulation of the drug" }
+      { book: "harrison", text: "Reduce quinine maintenance by 30 to 50% if the patient remains seriously ill or in renal failure after 2 days.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772", pdf_page: 1815, quote: "maintenance doses of quinine should be reduced by 30–50% to prevent toxic accumulation of the drug" },
+      {
+      book: "ethmal",
+      text: "Quinine is safe in pregnancy and in anaemic patients if doses are carefully calculated by weight.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Quinine dihydrochloride, pdf p. 115",
+      pdf_page: 115,
+      quote: "Quinine is safe in pregnancy and anemic patients"
+    },
+      {
+      book: "ethmal",
+      text: "Pregnant women are particularly vulnerable to quinine-induced hypoglycaemia.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Malaria in pregnancy, pdf p. 82",
+      pdf_page: 82,
+      quote: "pregnant women with uncomplicated or severe malaria are particularly vulnerable to quinine-induced hypoglycemia"
+    }
     ],
-    sources: ["WHO Guidelines for Malaria 2023", "WHO Model Formulary 2008", "BNF"]
+    sources: ["WHO guidelines for malaria 2026", "Ethiopia FMoH Malaria case management manual 2024", "WHO Model Formulary 2008", "BNF"]
   },
 
   "dextrose": {
@@ -754,11 +775,11 @@ window.SAFETY = {
   },
 
   "arv-prophylaxis": {
-    pregnancy: { level: "safe", text: "TDF + 3TC + DTG is the WHO-preferred regimen in pregnancy, including early pregnancy, for PEP and treatment. Do not delay PEP (start within 72 h). Infant nevirapine or zidovudine prophylaxis is standard for HIV-exposed babies." },
+    pregnancy: { level: "safe", text: "TDF + 3TC + DTG is the WHO-preferred regimen in pregnancy, including early pregnancy, for PEP and treatment. Do not delay PEP (start within 72 h). In Ethiopia every HIV-exposed baby gets zidovudine for 6 weeks + nevirapine for 12 weeks. Pregnancy is not a contraindication to PrEP (Ethiopia)." },
     breastfeeding: { level: "safe", text: "Continue breastfeeding with the mother on ARVs and infant prophylaxis, as per national (WHO) guidance. A breastfeeding woman taking PEP can continue to breastfeed; if she may have acquired HIV recently, seek advice, as risk to the baby is highest in early infection." },
     renal: {
       level: "adjust",
-      text: "Tenofovir disoproxil (TDF) can harm the kidneys and is cleared by them. Check creatinine before starting if possible, but do not delay the first dose waiting for the result. Dolutegravir needs no change. Infant nevirapine needs no change.",
+      text: "Tenofovir disoproxil (TDF) can harm the kidneys and is cleared by them. Check creatinine before starting if possible, but do not delay the first dose waiting for the result. Dolutegravir needs no change. Infant nevirapine needs no change. PrEP (TDF/3TC): do not start with creatinine clearance under 60 mL/min; if confirmed on PrEP, stop, recheck monthly for 3 months and restart if eGFR returns above 60 (Ethiopia).",
       bands: [
         { below: 70, text: "CrCl 50 to 70: WHO allows standard TDF + 3TC + DTG; some guidance (US) prefers to avoid TDF below 70. Recheck creatinine during the course and seek advice if it rises." },
         { below: 50, text: "CrCl under 50: do not use the fixed-dose TDF tablet. Use zidovudine + lamivudine (lamivudine 150 mg once daily at CrCl 30 to 49) with dolutegravir 50 mg daily. Get HIV clinician or pharmacist advice." },
@@ -2101,7 +2122,7 @@ window.SAFETY = {
   "liposomal-amphotericin-b": {
     pregnancy: {
       level: "caution",
-      text: "This is the drug to use if VL must be treated in pregnancy: WHO states that the current literature favours liposomal amphotericin B for VL in pregnant women. Untreated VL threatens mother, fetus and newborn far more than the drug does — spontaneous abortion, small-for-gestational-age babies and congenital leishmaniasis are all described. Miltefosine must NOT be added (teratogenic), and pentavalent antimonials are contraindicated, so a pregnant woman with VL–HIV gets L-AMB alone. Discuss the decision with the woman, and record the outcome in a pregnancy register as the guideline asks. If she received it in the last month of pregnancy, check the newborn's renal function."
+      text: "This is the drug to use if VL must be treated in pregnancy: WHO states that the current literature favours liposomal amphotericin B for VL in pregnant women. Untreated VL threatens mother, fetus and newborn far more than the drug does — spontaneous abortion, small-for-gestational-age babies and congenital leishmaniasis are all described. Miltefosine must NOT be added (teratogenic), and pentavalent antimonials are contraindicated, so a pregnant woman with VL–HIV gets L-AMB alone. Discuss the decision with the woman, and record the outcome in a pregnancy register as the guideline asks. WHO 2026 lists pregnant women, and women breastfeeding (for < 6 months), among those for whom L-AMB 3–5 mg/kg per day over 6–10 days (total 30 mg/kg) is suggested; in a review of VL in pregnancy 2.8 % of L-AMB-treated mothers miscarried against 27.6 % with antimony. If she received it in the last month of pregnancy, check the newborn's renal function."
     },
     breastfeeding: {
       level: "caution",
@@ -2181,7 +2202,21 @@ window.SAFETY = {
         ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.2 Information on leishmanial medicines, pdf p. 55",
         pdf_page: 55,
         quote: "efficacy similar to that of amphotericin B deoxycholate but which are significantly less toxic"
-      }
+      },
+      {
+      book: "whovl26",
+      text: "Pregnant women and women breastfeeding (for < 6 months) are L-AMB groups.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26",
+      pdf_page: 44,
+      quote: "Pregnant and lactating (for < 6 months) women"
+    },
+      {
+      book: "whovl26",
+      text: "In a systematic review of VL in pregnancy, 2.8 % of 176 mothers treated with L-AMB miscarried, against 27.6 % spontaneous abortion with pentavalent antimony.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Rationale, p. 27",
+      pdf_page: 45,
+      quote: "The outcomes of 176 mothers treated with LAmB included four (2.3%)"
+    }
     ],
     sources: [
       "WHO guideline on VL in HIV co-infected patients, 2022",
@@ -2269,7 +2304,7 @@ window.SAFETY = {
   "sodium-stibogluconate": {
     pregnancy: {
       level: "avoid",
-      text: "Contraindicated. Pentavalent antimonials can cause spontaneous abortion, preterm delivery, hepatic encephalopathy in the mother, and vertical transmission. Treat VL in pregnancy with liposomal amphotericin B instead — do not delay treating, because untreated VL is more dangerous to mother and baby than the drug used to treat it. Ask about the date of the last period before the first injection in any woman who could be pregnant."
+      text: "Contraindicated. Pentavalent antimonials can cause spontaneous abortion, preterm delivery, hepatic encephalopathy in the mother, and vertical transmission. Treat VL in pregnancy with liposomal amphotericin B instead (WHO 2026: in MSF's Sudan series 57 % of pregnant women given SSG alone aborted, none given L-AMB) — do not delay treating, because untreated VL is more dangerous to mother and baby than the drug used to treat it. Ask about the date of the last period before the first injection in any woman who could be pregnant."
     },
     breastfeeding: {
       level: "caution",
@@ -2335,22 +2370,44 @@ window.SAFETY = {
         ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28",
         pdf_page: 28,
         quote: "which is known to be highly toxic in HIV patients"
-      }
+      },
+      {
+      book: "whovl26",
+      text: "In MSF's Sudan series, 13 of the pregnant women given SSG alone (57 %) had spontaneous abortions, against none in the L-AMB groups.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Rationale, p. 27",
+      pdf_page: 45,
+      quote: "Spontaneous abortions occurred in 13 women (57%) who received SSG monotherapy"
+    },
+      {
+      book: "whovl26",
+      text: "Known cardiac, liver or kidney disease, liver enzymes about five times normal, or rising creatinine on SSG plus paromomycin are L-AMB groups, as is any other contraindication to miltefosine, paromomycin or SSG.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26",
+      pdf_page: 44,
+      quote: "Patients with known cardiac, liver or kidney disease"
+    },
+      {
+      book: "whovl26",
+      text: "Monitor serum chemistry, full blood count and ECG on SSG.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Pentavalent antimonials, p. 44",
+      pdf_page: 62,
+      quote: "Patients should be monitored by serum chemistry, complete blood counts and electrocardiography."
+    }
     ],
     sources: [
       "WHO guideline on VL in HIV co-infected patients, 2022",
       "WHO Expert Committee on the Control of Leishmaniases, TRS 949, 2010",
-      "Ethiopian national kala-azar guideline — confirm current edition"
+      "Ethiopian national kala-azar guideline — confirm current edition",
+      "WHO VL & PKDL guideline 2026"
     ]
   },
   miltefosine: {
     pregnancy: {
       level: "avoid",
-      text: "CONTRAINDICATED — it is embryotoxic and teratogenic, with fetal death and malformation in animals at doses below the maximum recommended human dose. Get a urine or serum pregnancy test before the first capsule in any woman of reproductive age. Do not prescribe it to a woman of childbearing potential unless effective contraception is assured for the whole course AND for 5 months after the last dose. Vomiting and diarrhoea on the drug can stop an oral contraceptive working, so an implant, an injectable or an added barrier method is needed. If contraception cannot be assured, WHO's alternative is liposomal amphotericin B alone up to 40 mg/kg. If a pregnancy occurs, record it in the centre's pregnancy register."
+      text: "CONTRAINDICATED — it is embryotoxic and teratogenic, with fetal death and malformation in animals at doses below the maximum recommended human dose. Get a urine or serum pregnancy test before the first capsule in any woman of reproductive age. Do not prescribe it to a woman of childbearing potential unless effective contraception is assured for the whole course AND afterwards: 5 months after courses of 28 days or more, 2 months after 5-, 7- or 10-day courses (WHO 2026); after the 14-day VL course use 5 months, as in its trial, unless the national programme decides otherwise. Vomiting and diarrhoea on the drug can stop an oral contraceptive working, so an implant, an injectable or an added barrier method is needed. If contraception cannot be assured: with HIV, liposomal amphotericin B alone up to 40 mg/kg (WHO 2022); without HIV in eastern Africa, SSG plus paromomycin, or liposomal amphotericin B if that is excluded (WHO 2026). If a pregnancy occurs, record it in the centre's pregnancy register."
     },
     breastfeeding: {
       level: "avoid",
-      text: "Either the drug or nursing should be stopped after a risk–benefit discussion, and breastfeeding should be avoided for 5 months after treatment because of the long half-life. In a setting where replacement feeding is not safe or affordable, that is a serious trade-off: treating the mother with liposomal amphotericin B alone may be the better answer. Discuss with the mother and follow the national infant feeding policy."
+      text: "Either the drug or nursing should be stopped after a risk–benefit discussion, and breastfeeding should be avoided for 5 months after treatment because of the long half-life. In a setting where replacement feeding is not safe or affordable, that is a serious trade-off: treating the mother with liposomal amphotericin B alone may be the better answer. WHO 2026 excludes breastfeeding women from paromomycin + miltefosine and suggests liposomal amphotericin B for women breastfeeding (for < 6 months). Discuss with the mother and follow the national infant feeding policy."
     },
     renal: {
       level: "adjust",
@@ -2426,17 +2483,67 @@ window.SAFETY = {
         ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 4.2 Recommendations — remarks, pdf p. 35",
         pdf_page: 35,
         quote: "When miltefosine is not available or is contraindicated, consider using monotherapy with L-AMB"
-      }
+      },
+      {
+      book: "whovl26",
+      text: "Miltefosine is contraindicated in pregnancy; contraception must cover the course and 2 months after short regimens (e.g. 5, 7 or 10 days) or 5 months after regimens of 28 days or longer.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1, remark 3, p. 23",
+      pdf_page: 41,
+      quote: "5 months (for 28-day or longer miltefosine regimens) post-treatment"
+    },
+      {
+      book: "whovl26",
+      text: "After the standard 28-day course contraceptive cover of at least 5 months after the last dose; for 5-, 7- or 10-day courses at least 2 months.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43",
+      pdf_page: 61,
+      quote: "For shorter regimens (e.g. 5, 7 or 10 days), at least 2 months of contraceptive coverage is considered adequate"
+    },
+      {
+      book: "whovl26",
+      text: "The trial excluded women of childbearing potential unwilling to use contraception until 5 months after the end of treatment.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.1 Summary of data, p. 24",
+      pdf_page: 42,
+      quote: "who were unwilling to use contraception until 5 months after the end of treatment"
+    },
+      {
+      book: "whovl26",
+      text: "Long-acting reversible or depot contraception gives more reliable cover than barrier or short-course oral methods.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43",
+      pdf_page: 61,
+      quote: "Use of long-acting reversible contraceptive methods or depot preparations may provide more reliable coverage"
+    },
+      {
+      book: "whovl26",
+      text: "Exclusions from paromomycin plus miltefosine include age under 4 or over 50 years, pregnancy or breastfeeding, and a woman who could become pregnant who does not agree to a pregnancy test or to contraception until 5 months after treatment.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1, remark 1, p. 22",
+      pdf_page: 40,
+      quote: "pregnant or lactating women; female patients of childbearing"
+    },
+      {
+      book: "whovl26",
+      text: "Pregnant women and women breastfeeding (for < 6 months) are L-AMB groups.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26",
+      pdf_page: 44,
+      quote: "Pregnant and lactating (for < 6 months) women"
+    },
+      {
+      book: "whovl26",
+      text: "SSG plus paromomycin is suggested rather than SSG monotherapy in patients in whom paromomycin plus miltefosine is excluded (conditional, low certainty).",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.2, p. 22",
+      pdf_page: 40,
+      quote: "patients in whom paromomycin plus miltefosine is excluded"
+    }
     ],
     sources: [
       "WHO guideline on VL in HIV co-infected patients, 2022",
-      "Miltefosine (Impavido) product information"
+      "Miltefosine (Impavido) product information",
+      "WHO VL & PKDL guideline 2026"
     ]
   },
   paromomycin: {
     pregnancy: {
       level: "caution",
-      text: "There are insufficient data on paromomycin in pregnancy, and fetal ototoxicity is the main concern — as with any aminoglycoside. Liposomal amphotericin B is the drug WHO's guideline points to for VL in pregnancy, so use that instead where it can be obtained. If paromomycin is the only option, the untreated disease is still the greater danger to mother and baby: treat, keep the course as short as the protocol allows, and record the pregnancy outcome in the centre's register."
+      text: "There are insufficient data on paromomycin in pregnancy, and fetal ototoxicity is the main concern — as with any aminoglycoside. Liposomal amphotericin B is the drug both WHO guidelines point to for VL in pregnancy (WHO 2026 lists pregnant and breastfeeding women for L-AMB, and excludes them from paromomycin + miltefosine), so use that instead where it can be obtained. If paromomycin is the only option, the untreated disease is still the greater danger to mother and baby: treat, keep the course as short as the protocol allows, and record the pregnancy outcome in the centre's register."
     },
     breastfeeding: {
       level: "caution",
@@ -2502,12 +2609,34 @@ window.SAFETY = {
         ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28",
         pdf_page: 28,
         quote: "they generally require higher doses of paromomycin and L-AMB"
-      }
+      },
+      {
+      book: "whovl26",
+      text: "Pregnant women and women breastfeeding (for < 6 months) are L-AMB groups.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26",
+      pdf_page: 44,
+      quote: "Pregnant and lactating (for < 6 months) women"
+    },
+      {
+      book: "whovl26",
+      text: "Exclusions from paromomycin plus miltefosine include age under 4 or over 50 years, pregnancy or breastfeeding, and a woman who could become pregnant who does not agree to a pregnancy test or to contraception until 5 months after treatment.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1, remark 1, p. 22",
+      pdf_page: 40,
+      quote: "pregnant or lactating women; female patients of childbearing"
+    },
+      {
+      book: "whovl26",
+      text: "Mild injection-site pain is the commonest adverse event (55 %); reversible ototoxicity occurs in 2 %; renal toxicity is rare; raised liver enzymes and tetany occur.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Paromomycin, p. 44",
+      pdf_page: 62,
+      quote: "Reversible ototoxicity occurs in 2% of patients."
+    }
     ],
     sources: [
       "WHO guideline on VL in HIV co-infected patients, 2022",
       "WHO Expert Committee on the Control of Leishmaniases, TRS 949, 2010",
-      "BNF; WHO Model Formulary"
+      "BNF; WHO Model Formulary",
+      "WHO VL & PKDL guideline 2026"
     ]
   },
 
@@ -3618,7 +3747,14 @@ window.SAFETY = {
         ref: "Gabbe's Obstetrics 9th ed., ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 131",
         pdf_page: 164,
         quote: "Limb deformities were reported in three infants"
-      }
+      },
+      {
+      book: "ethhiv",
+      text: "Fluconazole: category D risk in pregnancy; chronic high doses (400–800 mg/day) may be associated with rare birth defects after first-trimester exposure.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3, pp. 236–237",
+      pdf_page: 266,
+      quote: "Category D risk in pregnancy"
+    }
     ],
     sources: [
       "BNF",
@@ -3995,7 +4131,7 @@ window.SAFETY = {
     },
     breastfeeding: {
       level: "caution",
-      text: "Passes into milk. Generally compatible (Harrison lists it as usable in breastfeeding) and leprosy MDT continues while breastfeeding, but haemolysis has been reported in G6PD-deficient infants. Watch a newborn or preterm baby for jaundice, pallor and blue lips; if the baby is known to be G6PD deficient, seek advice."
+      text: "Passes into milk. Ethiopia's HIV manual says dapsone is not recommended during breastfeeding when it replaces cotrimoxazole for PCP prophylaxis; Harrison lists it as usable in breastfeeding, and leprosy MDT continues while breastfeeding, but haemolysis has been reported in G6PD-deficient infants. Watch a newborn or preterm baby for jaundice, pallor and blue lips; if the baby is known to be G6PD deficient, seek advice."
     },
     renal: {
       level: "adjust",
@@ -4713,12 +4849,12 @@ window.SAFETY = {
   /* ---- malaria ---- */
   "artemether-lumefantrine": {
     pregnancy: {
-      level: "caution",
-      text: "Treat malaria in pregnancy promptly: it causes maternal anaemia, low birthweight, stillbirth and maternal death. Second and third trimesters: artemether–lumefantrine is recommended by all sources. First trimester: WHO now recommends it, preferentially among ACTs (Harrison: ACTs are safe in all trimesters); Gabbe still gives quinine plus clindamycin as first line in the first trimester, and the US CDC (Nelson) uses it there only if there is no other option. Confirm with the Ethiopian National Malaria Guidelines; do not delay treatment while deciding."
+      level: "safe",
+      text: "Treat malaria in pregnancy promptly: it causes maternal anaemia, low birthweight, stillbirth and maternal death. Ethiopia gives AL for falciparum in all trimesters, and WHO (2022, strong recommendation, low-certainty evidence) recommends AL in the first trimester: in a large analysis it was followed by fewer adverse pregnancy outcomes than quinine. Second and third trimesters: recommended by all sources. Gabbe and the US CDC (Nelson) still prefer quinine-based treatment in the first trimester; that is not Ethiopian or WHO practice. Do not delay treatment."
     },
     breastfeeding: {
-      level: "caution",
-      text: "No information on milk transfer (Harrison Table 229-1). WHO allows ACTs during breastfeeding; Nelson (US CDC) advises against it for women breastfeeding an infant under 5 kg. Do not leave the mother's malaria untreated: treat her and watch the baby; continue breastfeeding."
+      level: "safe",
+      text: "WHO recommends ACTs for breastfeeding women; the amounts of antimalarials reaching the baby in milk are relatively small (WHO). The Ethiopian manual sets no restriction. Nelson (US CDC) advises against AL for women breastfeeding an infant under 5 kg. Continue breastfeeding."
     },
     renal: {
       level: "none",
@@ -4749,7 +4885,35 @@ window.SAFETY = {
         ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.2, p. 2176",
         pdf_page: 2184,
         quote: "Not for infants <5 kg or women breastfeeding infants <5 kg"
-      }
+      },
+      {
+      book: "ethmal",
+      text: "Ethiopia: AL for uncomplicated falciparum malaria in all trimesters.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Treatment of uncomplicated malaria in pregnancy, pdf p. 83",
+      pdf_page: 83,
+      quote: "In all trimesters, give Artemether-Lumefantrine (AL)"
+    },
+      {
+      book: "whomal",
+      text: "WHO 2022: treat uncomplicated falciparum malaria in the first trimester with artemether-lumefantrine.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.4.1 Pregnant and lactating women, p. 183",
+      pdf_page: 183,
+      quote: "Pregnant women with uncomplicated P. falciparum malaria should be treated with artemether-lumefantrine during the first"
+    },
+      {
+      book: "whomal",
+      text: "WHO: ACTs are recommended for adults and children including infants, lactating women and pregnant women.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.1 Artemisinin-based combination therapy, p. 171",
+      pdf_page: 171,
+      quote: "including infants, lactating women and pregnant women in their"
+    },
+      {
+      book: "whomal",
+      text: "The amounts of antimalarials in breast milk consumed by infants are relatively small.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.4.1 Pregnant and lactating women, p. 183",
+      pdf_page: 183,
+      quote: "The amounts of antimalarial drugs that enter breast milk and are consumed by breastfeeding infants are relatively small"
+    }
     ],
     sources: [
       "WHO Guidelines for malaria (current edition)",
@@ -4757,13 +4921,13 @@ window.SAFETY = {
       "Harrison 22nd ed. ch. 229, 231",
       "Nelson 22nd ed. ch. 334",
       "Gabbe's Obstetrics 9th ed. ch. 58",
-      "Ethiopian National Malaria Guidelines (confirm)"
+      "Ethiopia FMoH Malaria case management manual 2024, pdf p. 83", "WHO guidelines for malaria 2026, 5.2.1.4.1"
     ]
   },
   chloroquine: {
     pregnancy: {
       level: "safe",
-      text: "Safe and well tolerated in pregnancy (Williams; Harrison: regarded as safe; Nelson: used extensively and safely). It is the drug used weekly through pregnancy to suppress vivax relapse when primaquine cannot be given (Harrison, Nelson). It does not treat falciparum."
+      text: "Safe and well tolerated in pregnancy (Williams; Harrison: regarded as safe; Nelson: used extensively and safely). It is the Ethiopian treatment for vivax in pregnancy, and is then given weekly (300 mg base, 2 tablets) until after delivery and 6 months of breastfeeding to suppress relapse, because primaquine cannot be given (Ethiopia; WHO: until delivery and breastfeeding are completed). It does not treat falciparum."
     },
     breastfeeding: {
       level: "safe",
@@ -4798,7 +4962,21 @@ window.SAFETY = {
         ref: "Harrison 22nd ed. 2025, ch. 229 Agents Used to Treat Parasitic Infections, p. 1747",
         pdf_page: 1790,
         quote: "the dose should not be reduced for"
-      }
+      },
+      {
+      book: "ethmal",
+      text: "Pregnancy: weekly chloroquine 2 tablets (300 mg base) until after delivery and 6 months of breastfeeding, then radical cure.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Treatment of uncomplicated malaria in pregnancy, pdf p. 83",
+      pdf_page: 83,
+      quote: "Provide weekly chloroquine prophylaxis at a dose of 2 tabs weekly (300mg base/500mg salt)"
+    },
+      {
+      book: "whomal",
+      text: "WHO: weekly chloroquine until delivery and breastfeeding are completed, then primaquine.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.7 Pregnant and breastfeeding women, p. 211",
+      pdf_page: 211,
+      quote: "weekly chemoprophylaxis with chloroquine can be given until delivery and breastfeeding are completed"
+    }
     ],
     sources: [
       "Harrison 22nd ed. ch. 229, 231",
@@ -4815,7 +4993,7 @@ window.SAFETY = {
     },
     breastfeeding: {
       level: "caution",
-      text: "Give only if the breastfed infant's G6PD activity is known to be normal (Nelson). Where infant G6PD cannot be tested, defer radical cure (WHO has advised against it while breastfeeding an infant under 6 months) and protect the mother with weekly chloroquine. Confirm with the Ethiopian National Malaria Guidelines."
+      text: "Ethiopia: contraindicated in a woman breastfeeding an infant under 6 months; protect her with weekly chloroquine 300 mg base and give radical cure afterwards. WHO 2024–2026: contraindicated while breastfeeding an infant under 1 month (secretion in milk is negligible), although another WHO passage still says not to use it in nursing women unless the infant's G6PD has been checked; Nelson: only if the infant's G6PD is normal. In Ethiopia follow the 6-month rule."
     },
     renal: {
       level: "none",
@@ -4846,14 +5024,35 @@ window.SAFETY = {
         ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), Table 334.3, p. 2177",
         pdf_page: 2185,
         quote: "Primaquine can be used during breastfeeding if infant found to also have normal G6PD activity"
-      }
+      },
+      {
+      book: "ethmal",
+      text: "Primaquine is contraindicated in women breastfeeding infants less than six months of age.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Primaquine contraindications, pdf p. 79",
+      pdf_page: 79,
+      quote: "Women breastfeeding infants less than six months of age"
+    },
+      {
+      book: "whomal",
+      text: "WHO: primaquine is contraindicated in pregnancy and in women breastfeeding infants under 1 month.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.7 Preventing relapse, p. 211",
+      pdf_page: 211,
+      quote: "Primaquine is contraindicated in pregnancy and women breastfeeding infants aged < 1 month"
+    },
+      {
+      book: "whomal",
+      text: "WHO (lactating women): primaquine should not be used in nursing women unless the breastfed infant has been checked for G6PD deficiency.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.4.1 Pregnant and lactating women, p. 183",
+      pdf_page: 183,
+      quote: "primaquine should not be used for nursing women, unless the"
+    }
     ],
     sources: [
       "Harrison 22nd ed. ch. 105, 229, 231",
       "Williams Obstetrics 25th ed. ch. 64",
       "Nelson 22nd ed. ch. 334",
       "WHO Guidelines for malaria (current edition)",
-      "Ethiopian National Malaria Guidelines (confirm)"
+      "Ethiopia FMoH Malaria case management manual 2024, pdf p. 79"
     ]
   },
 
@@ -5050,6 +5249,400 @@ window.SAFETY = {
       "Harrison 22nd ed. 2025, ch. 53",
       "BNF",
       "LactMed (NIH)"
+    ]
+  },
+
+  "dihydroartemisinin-piperaquine": {
+    pregnancy: {
+      level: "caution",
+      text: "Ethiopia lists no contraindication in pregnancy. WHO: used successfully in more than 2000 women in the second and third trimesters; in the first trimester artemether–lumefantrine is the recommended ACT, and other ACTs such as DHA-PPQ may be used where AL is not available — still preferable to quinine. Piperaquine is cleared faster in pregnancy, which shortens the protection after treatment but needs no dose change (WHO)."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "WHO recommends ACTs for breastfeeding women; the amounts of antimalarials that reach the baby through milk are relatively small (WHO). Continue breastfeeding. Primaquine given afterwards has its own breastfeeding limit (see Primaquine)."
+    },
+    renal: {
+      level: "none",
+      text: "No dose change is given. Use with caution in kidney impairment (Ethiopia)."
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change is given. Use with caution in liver impairment (Ethiopia); rarely causes liver disorders."
+    },
+    refs: [
+      {
+        book: "ethmal",
+        text: "Dihydroartemisinin–piperaquine: pregnancy, no contra-indication.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, contra-indications and precautions, pdf p. 81",
+        pdf_page: 81,
+        quote: "Pregnancy: no contra-indication"
+      },
+      {
+        book: "whomal",
+        text: "In the first trimester other ACTs (including dihydroartemisinin–piperaquine) may be considered where artemether–lumefantrine is not available.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.4.1 Pregnant and lactating women, p. 183",
+        pdf_page: 183,
+        quote: "these other ACTs may be considered"
+      },
+      {
+        book: "whomal",
+        text: "Piperaquine is eliminated more rapidly by pregnant women; no dose adjustment is recommended.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 179",
+        pdf_page: 179,
+        quote: "Piperaquine is eliminated more rapidly by pregnant women"
+      },
+      {
+        book: "whomal",
+        text: "The amounts of antimalarial drugs that enter breast milk and are consumed by breastfed infants are relatively small.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.4.1 Pregnant and lactating women, p. 183",
+        pdf_page: 183,
+        quote: "The amounts of antimalarial drugs that enter breast milk and are consumed by breastfeeding infants are relatively small"
+      },
+      {
+        book: "ethmal",
+        text: "Administer with caution to patients over 60 years or with renal or hepatic impairment.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, contra-indications and precautions, pdf p. 81",
+        pdf_page: 81,
+        quote: "Administer with caution to patients > 60 years old or with renal or hepatic"
+      }
+    ],
+    sources: [
+      "Ethiopia FMoH Malaria case management manual 2024, Table 7, pdf p. 81",
+      "WHO guidelines for malaria 2026, 5.2.1.1.2 and 5.2.1.4.1"
+    ]
+  },
+
+  dolutegravir: {
+    pregnancy: {
+      level: "safe",
+      text: "TLD (TDF + 3TC + DTG) is the preferred first-line regimen in pregnancy and breastfeeding in Ethiopia, including women newly diagnosed in pregnancy or labour (start within the same hour in labour). Check viral load at 34–36 weeks in every pregnant woman."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Continue TLD while breastfeeding. Viral load 3 months after delivery, then every 6 months while breastfeeding (Ethiopia)."
+    },
+    renal: {
+      level: "adjust",
+      text: "Dolutegravir itself needs no dose change. TLD contains tenofovir disoproxil (TDF): check creatinine and eGFR before starting where possible, but missing tests must not delay ART (Ethiopia). Higher TDF risk: kidney disease, older age, BMI under 18.5 or weight under 50 kg, untreated diabetes or hypertension, nephrotoxic drugs or a boosted PI (Ethiopia Table 12.8).",
+      bands: [
+        {
+          below: 50,
+          text: "eGFR under 50 mL/min: do NOT start TDF, so not TLD (Ethiopia Table 12.8). Give dolutegravir 50 mg once daily with abacavir/lamivudine (Ethiopia: ABC for renal insufficiency) or zidovudine/lamivudine; lamivudine and zidovudine doses need adjusting for creatinine clearance — ask the pharmacist."
+        }
+      ]
+    },
+    hepatic: {
+      level: "none",
+      text: "No dose change is given in the Ethiopian manual. Hepatotoxicity is more likely with hepatitis B or C or liver disease: check ALT if jaundice or abdominal pain, and substitute another class (EFV or a boosted PI) for DTG hepatotoxicity (Ethiopia Table 12.8). HBsAg-positive: never stop the TDF/3TC part without advice — hepatitis flare."
+    },
+    refs: [
+      {
+        book: "ethhiv",
+        text: "TDF + 3TC + DTG is the preferred first line for adults and adolescents including pregnant and breastfeeding women.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 12.4, p. 277",
+        pdf_page: 307,
+        quote: "including pregnant and breast-feeding women is TDF+ 3TC+DTG as a once-daily dose"
+      },
+      {
+        book: "ethhiv",
+        text: "Do not initiate TDF at eGFR below 50 mL/min.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.8, p. 318",
+        pdf_page: 348,
+        quote: "Do not initiate TDF at eGFR <50 mL/min"
+      },
+      {
+        book: "ethhiv",
+        text: "DTG hepatotoxicity risk with hepatitis B or C and liver disease; substitute another class.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.8, p. 315",
+        pdf_page: 345,
+        quote: "Substitute another therapeutic class: EFV or boosted PIs"
+      },
+      {
+        book: "ethhiv",
+        text: "Breastfeeding women: viral load 3 months after delivery and every 6 months.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 12.8.1, p. 330",
+        pdf_page: 360,
+        quote: "Conduct viral load test three months after delivery and every six months thereafter"
+      }
+    ],
+    sources: ["Ethiopia MoH National HIV PCT manual 2025", "WHO HIV clinical management 2025"]
+  },
+  "abacavir-lamivudine": {
+    pregnancy: {
+      level: "safe",
+      text: "ABC + 3TC + DTG is listed for adults including pregnant women in special circumstances (renal insufficiency, anaemia) in Ethiopia Table 12.3."
+    },
+    breastfeeding: {
+      level: "safe",
+      text: "Continue while breastfeeding as part of ART (Ethiopia regimens include breastfeeding women)."
+    },
+    renal: {
+      level: "adjust",
+      text: "Lamivudine doses should be adjusted for creatinine clearance in renal insufficiency (Ethiopia Table 12.1). The fixed-dose ABC/3TC tablet cannot be adjusted: in significant kidney impairment ask the pharmacist about separate tablets. Abacavir is still the backbone of choice when TDF must be avoided (Ethiopia)."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Not covered by the Ethiopian manual. Abacavir product information advises a reduced dose in mild liver impairment and avoidance in moderate to severe impairment: get specialist advice. HBsAg-positive: stopping lamivudine can cause a hepatitis flare."
+    },
+    refs: [
+      {
+        book: "ethhiv",
+        text: "ABC is used for people with renal insufficiency and anaemia.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.3 footnote c, p. 279",
+        pdf_page: 309,
+        quote: "For PLHIV with renal insufficiency and anemia"
+      },
+      {
+        book: "ethhiv",
+        text: "Zidovudine and lamivudine doses are adjusted for creatinine clearance in renal insufficiency; tenofovir should be avoided.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.1 footnote b, p. 271",
+        pdf_page: 301,
+        quote: "dosages should be adjusted for the Creatinine clearance during renal insufficiency whereas"
+      }
+    ],
+    sources: [
+      "Ethiopia MoH National HIV PCT manual 2025",
+      "BNF / abacavir product information (hepatic impairment)"
+    ]
+  },
+  "zidovudine-lamivudine": {
+    pregnancy: {
+      level: "safe",
+      text: "AZT + 3TC + DTG is an Ethiopian alternative first line for adults including pregnant women (Table 12.3). Check haemoglobin: avoid AZT if under 7 g/dL."
+    },
+    breastfeeding: { level: "safe", text: "Continue while breastfeeding as part of ART." },
+    renal: {
+      level: "adjust",
+      text: "Zidovudine and lamivudine doses should be adjusted for creatinine clearance in renal insufficiency (Ethiopia Table 12.1). The fixed-dose tablet cannot be adjusted — ask the pharmacist about separate tablets. Still an option when TDF must be avoided."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Zidovudine: reduce the dose in severe liver disease (product information; not in the Ethiopian manual) — get specialist advice. NRTIs can rarely cause lactic acidosis with fatty liver (Ethiopia)."
+    },
+    refs: [
+      {
+        book: "ethhiv",
+        text: "Avoid AZT for people with severe anaemia at baseline (haemoglobin under 7.0 g/dL).",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.8, p. 315",
+        pdf_page: 345,
+        quote: "Avoid use of AZT for people with HIV and severe anemia at baseline (hemoglobin <7.0"
+      },
+      {
+        book: "ethhiv",
+        text: "Zidovudine and lamivudine doses are adjusted for creatinine clearance in renal insufficiency.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.1 footnote b, p. 271",
+        pdf_page: 301,
+        quote: "dosages should be adjusted for the Creatinine clearance during renal insufficiency whereas"
+      }
+    ],
+    sources: [
+      "Ethiopia MoH National HIV PCT manual 2025",
+      "Zidovudine product information (hepatic impairment)"
+    ]
+  },
+  "atazanavir-ritonavir": {
+    pregnancy: {
+      level: "safe",
+      text: "WHO 2025 rates ATV/r as safe in pregnancy and with fewer adverse pregnancy outcomes than LPV/r. Used in Ethiopia as second line, including in pregnancy. Check viral load at 34–36 weeks."
+    },
+    breastfeeding: { level: "safe", text: "Continue while breastfeeding as part of ART." },
+    renal: {
+      level: "none",
+      text: "No dose change. With a history of kidney stones substitute LPV/r (Ethiopia). TDF with a boosted PI raises the kidney risk: closely monitor renal function (Ethiopia Table 12.9)."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Indirect (unconjugated) jaundice is common and benign, but true hepatotoxicity is more likely with hepatitis B or C or other liver drugs (Ethiopia). Product information advises avoiding ritonavir-boosted atazanavir in hepatic impairment: get specialist advice."
+    },
+    refs: [
+      {
+        book: "whohivclin",
+        text: "LPV/r is associated with more adverse pregnancy outcomes than ATV/r and DRV/r.",
+        ref: "WHO HIV clinical management 2025, Table 3.1, p. 14",
+        pdf_page: 30,
+        quote: "LPV/r is associated with occurrence of more pregnancy adverse outcomes than ATV/r and DRV/r"
+      },
+      {
+        book: "ethhiv",
+        text: "ATV/r renal stone: substitute with LPV/r.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.8, p. 315",
+        pdf_page: 345,
+        quote: "History of renal stone"
+      },
+      {
+        book: "ethhiv",
+        text: "TDF with ritonavir-boosted PIs: closely monitor renal function.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+        pdf_page: 352,
+        quote: "Closely monitor renal function"
+      }
+    ],
+    sources: [
+      "Ethiopia MoH National HIV PCT manual 2025",
+      "WHO HIV clinical management 2025",
+      "Atazanavir product information (hepatic impairment)"
+    ]
+  },
+  "lopinavir-ritonavir": {
+    pregnancy: {
+      level: "caution",
+      text: "Can be used, but WHO 2025 links LPV/r with more adverse pregnancy outcomes than ATV/r or DRV/r: prefer ATV/r if a PI is needed in pregnancy. Check viral load at 34–36 weeks."
+    },
+    breastfeeding: { level: "safe", text: "Continue while breastfeeding as part of ART." },
+    renal: {
+      level: "none",
+      text: "No dose change. TDF with a boosted PI: closely monitor renal function (Ethiopia)."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Hepatotoxicity is more likely with hepatitis B or C, liver disease or other liver-toxic drugs (Ethiopia Table 12.8). Severe liver impairment: product information advises avoiding it — get specialist advice."
+    },
+    refs: [
+      {
+        book: "whohivclin",
+        text: "LPV/r is associated with more adverse pregnancy outcomes than ATV/r and DRV/r.",
+        ref: "WHO HIV clinical management 2025, Table 3.1, p. 14",
+        pdf_page: 30,
+        quote: "LPV/r is associated with occurrence of more pregnancy adverse outcomes than ATV/r and DRV/r"
+      },
+      {
+        book: "ethhiv",
+        text: "TDF with ritonavir-boosted PIs: closely monitor renal function.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+        pdf_page: 352,
+        quote: "Closely monitor renal function"
+      }
+    ],
+    sources: [
+      "Ethiopia MoH National HIV PCT manual 2025",
+      "WHO HIV clinical management 2025",
+      "Lopinavir/ritonavir product information (hepatic impairment)"
+    ]
+  },
+
+  flucytosine: {
+    pregnancy: {
+      level: "caution",
+      text: "The supplied sources give no pregnancy data for flucytosine. It is converted inside the fungus to 5-fluorouracil, an antimetabolite (Harrison). Cryptococcal meningitis kills the mother if untreated, so do not withhold induction: decide the regimen with a specialist, and record the pregnancy and gestation on the chart."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "No data in the supplied sources. The course lasts only 14 days; discuss with a specialist whether to continue breastfeeding during induction, and watch the baby for pallor, bleeding or poor feeding."
+    },
+    renal: {
+      level: "adjust",
+      text: "Cleared by the kidneys; the dose must be adjusted for renal function (Harrison), and Nelson's paediatric dose assumes normal kidney function. Amphotericin often damages the kidneys during the same fortnight, so check creatinine at least twice weekly. The supplied sources give no dose table: when creatinine rises, review the dose with a senior or specialist the same day."
+    },
+    hepatic: {
+      level: "adjust",
+      text: "Can cause liver toxicity, worse with amphotericin (Harrison). Check liver tests at baseline and weekly where possible; the sources give no dose rule, so review the regimen with a senior if liver tests rise or jaundice appears."
+    },
+    refs: [
+      {
+        book: "harrison",
+        text: "Flucytosine is converted inside the fungus to 5-fluorouracil.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1692",
+        pdf_page: 1735,
+        quote: "intrafungal conversion to 5-fluorouracil"
+      },
+      {
+        book: "harrison",
+        text: "Flucytosine can cause bone marrow suppression and liver toxicity, intensified when used with amphotericin B.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1692",
+        pdf_page: 1735,
+        quote: "bone marrow suppression and liver toxicity, which are intensified when the drug is used with AmB"
+      },
+      {
+        book: "harrison",
+        text: "5-FC can cause bone marrow suppression and the dose should be adjusted for renal function.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705",
+        pdf_page: 1748,
+        quote: "5-FC can cause bone marrow suppression, and the dose should be adjusted for renal function."
+      }
+    ],
+    sources: ["Harrison 22nd ed. 2025, ch. 217 and 221", "Nelson 22nd ed. 2024, ch. 281"]
+  },
+  isoniazid: {
+    pregnancy: {
+      level: "caution",
+      text: "ISONIAZID ALONE (6H) IS USED IN PREGNANCY: Ethiopia gives TPT to people with HIV irrespective of pregnancy status, and isoniazid has been used for decades and is considered safe in pregnancy (Williams). Give pyridoxine. Pregnancy and the first 3 months after delivery raise the risk of isoniazid hepatitis (Harrison): check ALT at baseline where possible and ask about nausea, vomiting and jaundice at every visit. 3HP (RIFAPENTINE) IS NOT RECOMMENDED IN PREGNANCY in Ethiopia; WHO 2025 calls the evidence for 3HP with dolutegravir in pregnancy limited and preliminary. Use 6H."
+    },
+    breastfeeding: {
+      level: "caution",
+      text: "Isoniazid is considered compatible with breastfeeding (Gabbe); give the mother pyridoxine, and the baby pyridoxine if the baby also takes isoniazid. Rifapentine (3HP) is not indicated in breastfeeding women in Ethiopia: use 6H."
+    },
+    renal: {
+      level: "none",
+      text: "Isoniazid needs no dose adjustment in renal disease (Harrison). Give pyridoxine: kidney failure adds to the neuropathy risk."
+    },
+    hepatic: {
+      level: "avoid",
+      text: "Do not give TPT with active (acute or chronic) hepatitis or regular heavy alcohol use (Ethiopia). In other liver disease, HIV, pregnancy or within 3 months postpartum, check ALT at baseline and monthly (Harrison). Stop for hepatitis symptoms or jaundice with ALT over 3 times normal, or ALT over 5 times normal without symptoms (Harrison)."
+    },
+    refs: [
+      {
+        book: "ethhiv",
+        text: "TPT for adults and adolescents with HIV irrespective of CD4, ART status, pregnancy status or prior TB treatment more than three years ago.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.1 TB Preventive Therapy, p. 203",
+        pdf_page: 233,
+        quote: "irrespective of CD4 count, ART status, pregnancy status or history of treatment for prior episode of TB before three years"
+      },
+      {
+        book: "ethhiv",
+        text: "3HP is currently not recommended in pregnancy or under 2 years.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 11.8, p. 209",
+        pdf_page: 239,
+        quote: "3HP is currently not recommended in:"
+      },
+      {
+        book: "ethhiv",
+        text: "Rifapentine is not indicated under 2 years, with PI or NVP ART, or in pregnant and breastfeeding women; active hepatitis and heavy alcohol use contraindicate TPT.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.1 TB Preventive Therapy, p. 211",
+        pdf_page: 241,
+        quote: "rifapentine is not currently indicated for children below 2 years"
+      },
+      {
+        book: "whohivclin",
+        text: "3HP in pregnant women with HIV on dolutegravir is supported only by limited phase 2 evidence.",
+        ref: "WHO HIV clinical management 2025, 5.1.3 Supporting evidence, p. 77",
+        pdf_page: 93,
+        quote: "3HP is supported by limited (phase 2 RCT) evidence"
+      },
+      {
+        book: "williams",
+        text: "Isoniazid has been used for decades and is considered safe in pregnancy.",
+        ref: "Williams Obstetrics 25th ed. 2018, ch. 51 Pulmonary Disorders, pdf p. 2208",
+        pdf_page: 2208,
+        quote: "Isoniazid has been used for decades, and it is considered safe in pregnancy"
+      },
+      {
+        book: "gabbe",
+        text: "Isoniazid is considered compatible with breastfeeding.",
+        ref: "Gabbe's Obstetrics 9th ed. 2025, ch. 7 Drugs and Environmental Agents in Pregnancy and Lactation, p. 135",
+        pdf_page: 168,
+        quote: "its use is considered compatible with breastfeeding"
+      },
+      {
+        book: "harrison",
+        text: "Isoniazid needs no dose adjustment in renal disease.",
+        ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+        pdf_page: 1465,
+        quote: "Isoniazid does not require dosage adjustment in patients with renal disease."
+      },
+      {
+        book: "harrison",
+        text: "Stop isoniazid for hepatitis symptoms or jaundice with ALT over 3 times normal, or ALT over 5 times normal without symptoms.",
+        ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+        pdf_page: 1465,
+        quote: "an ALT or AST level three times the upper limit of normal or in the absence of symptoms with an ALT or AST level five times the upper limit of normal"
+      }
+    ],
+    sources: [
+      "Ethiopia MoH National HIV PCT manual 2025, 11.3.1",
+      "WHO HIV clinical management 2025, ch. 5",
+      "Harrison 22nd ed. 2025, ch. 186",
+      "Williams Obstetrics 25th ed., ch. 51",
+      "Gabbe's Obstetrics 9th ed., ch. 7"
     ]
   }
 };

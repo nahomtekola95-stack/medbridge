@@ -675,35 +675,42 @@ window.Features = function (ctx) {
      ========================================================= */
   function viewTools(main) {
     const due = scheds.list().reduce((n, s) => n + (schedState(s)?.dueSoon || 0), 0);
+    /* grouped so a physician finds a tool by what they are doing, not by scanning 25 cards */
     const T = [
-      ["#/ward", "ward", "Ward board", "Every bed on one screen with acuity, doses due and tasks, and an I-PASS shift handover.", ""],
-      ["#/optics", "eye", "Optics and refraction", "Transpose a prescription, work out the reading add, convert visual acuity and size a magnifier.", ""],
-      ["#/preop", "clipboard", "Preoperative assessment", "Tick conditions and medicines: what to stop, hold or continue, what to test, and when to postpone.", ""],
-      ["#/procedures", "tool", "Bedside procedures", "Chest drain, catheters, tracheostomy and stomas: technique, sizes and what to do when the kit is short.", ""],
-      ["#/theatre", "tool", "Theatre packs", "What to have ready for an operation, and what to do when it is missing.", ""],
-      ["#/vaccines", "check", "Catch-up vaccination", "What to give a child who has missed doses, and when to bring them back.", ""],
-      ["#/growth", "baby", "Child growth", "WHO z-scores and centiles for weight, height, MUAC and head circumference, with growth charts.", ""],
-      ["#/pregnancy", "calendar", "Pregnancy dating wheel", "Due date and gestational age in Ethiopian and Gregorian dates, milestones, ANC contacts and fetal weight.", ""],
-      ["#/pph", "drop", "PPH first response", "Measured blood loss, the six-part bundle on a 15-minute clock, and the tranexamic acid window.", "emergency"],
-      ["#/resus", "zap", "Emergency drug card", "Every resuscitation dose and volume for one weight. Printable.", "emergency"],
-      ["#/drip", "drop", "Drip guide", "Metronome at the target drop rate, plus tap-to-measure the real rate.", ""],
-      ["#/schedules", "clock", "Dose schedules", `Clock times, pre-dose checks and reminders for repeat regimens.${due ? ` <b class="bad-text">${due} due</b>` : ""}`, ""],
-      ["#/compat", "swap", "Never mix", "Drugs and fluids that must not share a line or syringe.", ""],
-      ["#/calc", "calc", "Calculators", "Drip rate, dose to drops, mg/kg, dilution, Plan C, child weight, units.", ""],
-      ["#/techniques", "tool", "No-pump techniques", "Burettes, time-taping, countable concentrations, peripheral pressors.", ""],
-      ["#/calc?tab=ciwa", "clipboard", "Alcohol withdrawal score", "CIWA-Ar scoring with the action for each score and a record of scores over time.", ""],
-      ["#/community", "chat", "Network", "Practice notes and stock-outs reported by colleagues across Ethiopia.", ""],
-      ["#/interactions", "shield", "Drug interactions", "Check a patient's medicines against each other for harmful combinations.", ""],
-      ["#/newborn", "baby", "Newborn doses", "Doses and intervals for one baby by weight, gestation and age in days.", ""],
-      ["#/calc?tab=fluids", "drop", "Fluids and blood", "Maintenance, newborn fluids, burns, transfusion volume and oxygen cylinder time.", ""],
-      ["#/calc?tab=kidney", "calc", "Kidney function", "Creatinine clearance, then dose changes for each drug.", ""],
-      ["#/charts", "print", "Wall charts", "Printable drip-rate tables, case protocols and ward drug cards.", ""],
-      ["#/quiz", "help", "Practice quiz", "Dose maths, first-line drugs, never-mix and substitutes, with explanations.", ""],
-      ["#/review", "check", "Clinical sign-off", "For verified reviewers: check each drug entry and sign it off.", ""]
+      ["Emergency", "#/resus", "zap", "Emergency drug card", "Every resuscitation dose and volume for one weight. Printable.", "emergency"],
+      ["Emergency", "#/pph", "drop", "PPH first response", "Measured blood loss, the six-part bundle on a 15-minute clock, and the tranexamic acid window.", "emergency"],
+      ["Endemic diseases", "#/endemic", "globe", "Endemic disease pathways", "Malaria, HIV and kala-azar: pick the situation, enter the weight, get the regimen (Ethiopian guideline first).", ""],
+      ...(window.ENDEMIC || []).map(x => ["Endemic diseases", `#/disease/${x.id}`, x.icon || "shield", `${x.name} pathway`, x.short || "", ""]),
+      ["On the ward", "#/ward", "ward", "Ward board", "Every bed on one screen with acuity, doses due and tasks, and an I-PASS shift handover.", ""],
+      ["On the ward", "#/schedules", "clock", "Dose schedules", `Clock times, pre-dose checks and reminders for repeat regimens.${due ? ` <b class="bad-text">${due} due</b>` : ""}`, ""],
+      ["On the ward", "#/interactions", "shield", "Drug interactions", "Check a patient's medicines against each other for harmful combinations.", ""],
+      ["On the ward", "#/compat", "swap", "Never mix", "Drugs and fluids that must not share a line or syringe.", ""],
+      ["On the ward", "#/calc?tab=ciwa", "clipboard", "Alcohol withdrawal score", "CIWA-Ar scoring with the action for each score and a record of scores over time.", ""],
+      ["Doses and drips", "#/calc", "calc", "Calculators", "Drip rate, dose to drops, mg/kg, dilution, Plan C, child weight, units.", ""],
+      ["Doses and drips", "#/drip", "drop", "Drip guide", "Metronome at the target drop rate, plus tap-to-measure the real rate.", ""],
+      ["Doses and drips", "#/calc?tab=fluids", "drop", "Fluids and blood", "Maintenance, newborn fluids, burns, transfusion volume and oxygen cylinder time.", ""],
+      ["Doses and drips", "#/calc?tab=kidney", "calc", "Kidney function", "Creatinine clearance, then dose changes for each drug.", ""],
+      ["Doses and drips", "#/techniques", "tool", "No-pump techniques", "Burettes, time-taping, countable concentrations, peripheral pressors.", ""],
+      ["Mother and child", "#/pregnancy", "calendar", "Pregnancy dating wheel", "Due date and gestational age in Ethiopian and Gregorian dates, milestones, ANC contacts and fetal weight.", ""],
+      ["Mother and child", "#/newborn", "baby", "Newborn doses", "Doses and intervals for one baby by weight, gestation and age in days.", ""],
+      ["Mother and child", "#/growth", "baby", "Child growth", "WHO z-scores and centiles for weight, height, MUAC and head circumference, with growth charts.", ""],
+      ["Mother and child", "#/vaccines", "check", "Catch-up vaccination", "What to give a child who has missed doses, and when to bring them back.", ""],
+      ["Surgery and theatre", "#/preop", "clipboard", "Preoperative assessment", "Tick conditions and medicines: what to stop, hold or continue, what to test, and when to postpone.", ""],
+      ["Surgery and theatre", "#/procedures", "tool", "Bedside procedures", "Chest drain, catheters, tracheostomy and stomas: technique, sizes and what to do when the kit is short.", ""],
+      ["Surgery and theatre", "#/theatre", "tool", "Theatre packs", "What to have ready for an operation, and what to do when it is missing.", ""],
+      ["Eye", "#/optics", "eye", "Optics and refraction", "Transpose a prescription, work out the reading add, convert visual acuity and size a magnifier.", ""],
+      ["Learn, share and review", "#/charts", "print", "Wall charts", "Printable drip-rate tables, case protocols and ward drug cards.", ""],
+      ["Learn, share and review", "#/quiz", "help", "Practice quiz", "Dose maths, first-line drugs, never-mix and substitutes, with explanations.", ""],
+      ["Learn, share and review", "#/community", "chat", "Network", "Practice notes and stock-outs reported by colleagues across Ethiopia.", ""],
+      ["Learn, share and review", "#/review", "check", "Clinical sign-off", "For verified reviewers: check each drug entry and sign it off.", ""]
     ];
+    const sections = [...new Set(T.map(t => t[0]))];
+    const card = ([, h, i, t, d, cls]) => `<a class="card tool ${cls}" href="${h}"><span class="tool-ic">${ic(i)}</span><div><h3 style="margin:0 0 .2rem">${t}</h3><p class="small text-2" style="margin:0">${d}</p></div></a>`;
     main.innerHTML = `<h1>Tools</h1>
-      <div class="tools-grid">${T.map(([h, i, t, d, cls]) => `<a class="card tool ${cls}" href="${h}"><span class="tool-ic">${ic(i)}</span><div><h3 style="margin:0 0 .2rem">${t}</h3><p class="small text-2" style="margin:0">${d}</p></div></a>`).join("")}</div>
+      <nav class="tool-jump" aria-label="Tool sections">${sections.map((n, k) => `<a href="#/tools" data-jump="ts-${k}">${esc(n)}</a>`).join("")}</nav>
+      ${sections.map((n, k) => `<h2 class="tool-sec" id="ts-${k}">${esc(n)}</h2><div class="tools-grid">${T.filter(t => t[0] === n).map(card).join("")}</div>`).join("")}
       <div class="card" id="install-card" hidden><h3>${ic("pill")} Install MedBridge</h3><p class="small text-2">Add it to your home screen: it opens like an app and works offline on the ward.</p><button type="button" class="btn sm" id="install-btn">Install</button></div>`;
+    main.querySelector(".tool-jump").onclick = (e) => { const a = e.target.closest("[data-jump]"); if (!a) return; e.preventDefault(); document.getElementById(a.dataset.jump)?.scrollIntoView({ behavior: "smooth", block: "start" }); };
     if (deferredInstall) { $("#install-card").hidden = false; $("#install-btn").addEventListener("click", async () => { deferredInstall.prompt(); await deferredInstall.userChoice.catch(() => {}); deferredInstall = null; $("#install-card").hidden = true; }); }
   }
 

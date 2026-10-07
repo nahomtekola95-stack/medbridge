@@ -908,8 +908,8 @@ window.DRUG_DB = [
   standard: {
     summary: "IV bolus at 0, 12, 24 h then daily; then a full oral ACT course.",
     items: [
-      { label: "Dose", text: "2.4 mg/kg IV (slow push over 1–2 min) at 0, 12 and 24 h, then once daily until oral therapy possible (minimum 3 doses / 24 h). Children < 20 kg: 3 mg/kg per dose." },
-      { label: "Follow-on", text: "Full 3-day ACT course once the patient can swallow." }
+      { label: "Dose", text: "2.4 mg/kg IV (slow push over 1–2 min; the Ethiopian manual says 'slow infusion') at 0, 12 and 24 h, then once daily until oral therapy is possible (minimum 3 doses / 24 h; up to 7 days, Ethiopia). Children < 20 kg: 3 mg/kg per dose (Ethiopia; WHO)." },
+      { label: "Follow-on", text: "After at least three doses (0, 12, 24 h) and once the patient can swallow: a full 3-day course of artemether–lumefantrine; if AL cannot be taken, a full course of dihydroartemisinin–piperaquine. Add single-dose primaquine for falciparum or the 14-day course for vivax (Ethiopia)." }
     ]
   },
   improvised: [
@@ -928,10 +928,10 @@ window.DRUG_DB = [
     },
     {
       title: "Pre-referral rectal artesunate",
-      best_for: "Children < 6 years at community/health-post level who cannot take oral treatment; referral time > 6 h.",
+      best_for: "Children under 6 years with suspected severe malaria, or who cannot take oral treatment, at community or health-post level where IM artesunate cannot be given, before referral (WHO). Not for older children or adults.",
       requires: ["rectal"],
       steps: [
-        "10 mg/kg single rectal dose (100 mg capsules: 1 capsule for 10–< 20 kg? — use the national dosing table by weight/age).",
+        "10 mg/kg as a single rectal dose (WHO). Neither the Ethiopian manual nor the WHO guideline prints a capsule-by-weight table: use the table on the product leaflet and do not guess.",
         "If expelled within 30 min, insert another and hold buttocks together 10 min.",
         "Refer immediately for parenteral treatment; the rectal dose only buys time."
       ],
@@ -943,7 +943,7 @@ window.DRUG_DB = [
       best_for: "Stock-outs.",
       requires: ["im"],
       steps: [
-        "Artemether IM 3.2 mg/kg loading, then 1.6 mg/kg once daily (anterior thigh; absorption poorer in shock).",
+        "Artemether IM (80 mg/mL oily solution) 3.2 mg/kg on day 1, then 1.6 mg/kg once daily on days 2 and 3, into the anterior thigh; never IV. Change to a full AL course once oral treatment is tolerated after 48 hours (Ethiopia). WHO prefers artemether to quinine when artesunate is unavailable. Absorption is poorer in shock.",
         "Or quinine (see entry) — loading dose then 8-hourly, IV by gravity or IM diluted."
       ],
       monitor: [],
@@ -953,14 +953,39 @@ window.DRUG_DB = [
   paediatric: ["< 20 kg: 3 mg/kg per dose.", "Check glucose; treat convulsions; transfuse if Hb < 5 g/dL (WHO)."],
   cautions: ["Post-artesunate delayed haemolysis (day 7–21) in high-parasitaemia patients."],
   calc: { type: "weight", dosePerKg: 2.4, bands: [{ under: 20, dosePerKg: 3 }], doseUnit: "mg", conc: 10, concUnit: "mg/mL", label: "IV dose (2.4 mg/kg; use 3 mg/kg if < 20 kg) at 10 mg/mL" },
-  sources: [{ name: "WHO Guidelines for malaria, 2023 (severe malaria)", url: "https://www.who.int/publications/i/item/guidelines-for-malaria" }],
+  sources: [{ name: "WHO guidelines for malaria, 10 September 2026 (5.2.2 Treating severe malaria)", url: "https://www.who.int/publications/i/item/guidelines-for-malaria" }, { name: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4–5.3.5, pdf pp. 112–115" } ],
   textbook: [
     { book: "harrison", text: "Severe falciparum malaria: artesunate 2.4 mg/kg IV stat, then at 12 and 24 h, then daily if needed; children under 20 kg 3 mg/kg per dose.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
     { book: "harrison", text: "Artesunate is given IV but is also rapidly absorbed IM; oily IM artemether is erratically absorbed and less effective.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
     { book: "harrison", text: "Switch to oral therapy as soon as fluids are tolerated and give a full 3-day ACT course; avoid mefloquine as follow-on.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
     { book: "harrison", text: "In non-immune patients with hyperparasitaemia, sudden haemolysis can occur many days after artesunate treatment.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1765" },
     { book: "nelson", text: "Severe malaria (all species): artesunate 2.4 mg/kg/dose IV at 0, 12 and 24 h, then daily (3 days), followed by artemether–lumefantrine (preferred), atovaquone–proguanil, or quinine plus doxycycline/clindamycin.", ref: "Nelson 22nd ed. 2024, ch. 325, Table 325.1 Drugs for Parasitic Infections, p. 2136" },
-    { book: "nelson", text: "Interim treatment while awaiting IV artesunate: oral artemether–lumefantrine, atovaquone–proguanil or quinine.", ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), p. 2176" }
+    { book: "nelson", text: "Interim treatment while awaiting IV artesunate: oral artemether–lumefantrine, atovaquone–proguanil or quinine.", ref: "Nelson 22nd ed. 2024, ch. 334 Malaria (Plasmodium), p. 2176" },
+    {
+    book: "ethmal",
+    text: "Ethiopia: 3 mg/kg for children under 20 kg, 2.4 mg/kg above 20 kg; IV preferred, IM if IV cannot be secured.",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Specific antimalarial treatment, pdf p. 112"
+  },
+    {
+    book: "ethmal",
+    text: "Reconstitute with 1 mL 5 % bicarbonate; add 5 mL 5 % glucose or saline for IV (10 mg/mL) or 2 mL for IM (20 mg/mL).",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Specific antimalarial treatment, pdf p. 112"
+  },
+    {
+    book: "ethmal",
+    text: "At least three doses (0, 12, 24 h), then AL; DHA-PPQ if AL cannot be taken; artesunate may continue up to 7 days if oral treatment is not tolerated.",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Specific antimalarial treatment, pdf p. 113"
+  },
+    {
+    book: "whomal",
+    text: "WHO: rectal artesunate 10 mg/kg single dose, only for children under 6 years and only when IM artesunate is not available.",
+    ref: "WHO guidelines for malaria 2026, 5.2.2.3 Pre-referral treatment options, p. 222"
+  },
+    {
+    book: "whomal",
+    text: "WHO: delayed haemolysis starting more than a week after artesunate; follow hyperparasitaemic patients for late anaemia.",
+    ref: "WHO guidelines for malaria 2026, 5.2.2.1 Artesunate and post-treatment haemolysis, p. 217"
+  }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -974,12 +999,12 @@ window.DRUG_DB = [
   wards: ["emergency", "maternity", "paediatric", "medical"],
   tags: ["severe malaria", "malaria"],
   presentation: ["300 mg/mL, 2 mL ampoule (600 mg)."],
-  indications: ["Severe malaria when artesunate/artemether unavailable", "First trimester severe malaria (artesunate now preferred by WHO)"],
+  indications: ["Severe malaria when artesunate/artemether unavailable", "Severe malaria in pregnancy only when artesunate and IM artemether are unavailable: artesunate is first line in all trimesters (Ethiopia; WHO)"],
   standard: {
     summary: "Loading dose then 8-hourly infusions, each over 4 h, by pump.",
     items: [
       { label: "Loading", text: "20 mg salt/kg (max 1.2 g) in 10 mL/kg D5W or NS over 4 h. Omit if quinine/quinidine/mefloquine in the last 24 h." },
-      { label: "Maintenance", text: "10 mg/kg over 4 h every 8 h (start 8 h after the start of the loading dose). Switch to oral 10 mg/kg 8-hourly when able, to complete 7 days, plus doxycycline or clindamycin — or a full ACT course. If the patient still needs IV quinine after 48 h, or has acute kidney injury, reduce each maintenance dose by one-third to one-half to avoid accumulation (Harrison)." }
+      { label: "Maintenance", text: "10 mg/kg over 4 h every 8 h (start 8 h after the start of the loading dose). Switch to oral 10 mg/kg 8-hourly when able, to complete 7 days, plus doxycycline or clindamycin — or a full ACT course. If the patient still needs IV quinine after 48 h, or has acute kidney injury, reduce each maintenance dose by one-third to one-half to avoid accumulation (Harrison; Ethiopia: to 5–7 mg salt/kg every 8 h). WHO 2026: reduce by one-third, to 10 mg salt/kg every 12 h. Give at least 48 h of parenteral quinine, never faster than 5 mg salt/kg per hour (Ethiopia). In Ethiopia it is the third choice, after artesunate and IM artemether." }
     ]
   },
   improvised: [
@@ -1013,13 +1038,33 @@ window.DRUG_DB = [
   paediatric: ["Hypoglycaemia is the major risk — feed/glucose infusion; check glucose before each dose."],
   cautions: ["QT prolongation; do not combine with mefloquine/halofantrine; pregnancy: safe but hypoglycaemia risk higher."],
   calc: { type: "weight", dosePerKg: 10, doseUnit: "mg", conc: 300, concUnit: "mg/mL", maxDose: 600, label: "Maintenance dose (10 mg/kg); loading = double" },
-  sources: [{ name: "WHO Guidelines for malaria 2023" }, { name: "WHO Pocket Book of Hospital Care for Children 2013" }],
+  sources: [{ name: "WHO guidelines for malaria, 10 September 2026 (5.2.2.2 Parenteral alternatives)" }, { name: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Quinine dihydrochloride, pdf pp. 113–115" }, { name: "WHO Pocket Book of Hospital Care for Children 2013" }],
   textbook: [
     { book: "harrison", text: "Severe malaria if artesunate/artemether unavailable: quinine dihydrochloride 20 mg salt/kg infused over 4 h, then 10 mg salt/kg over 2–8 h every 8 h.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
     { book: "harrison", text: "Omit the loading dose only if therapeutic quinine doses were definitely given in the previous 24 h.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1770" },
     { book: "harrison", text: "Rapid injection causes dangerous hypotension: give by rate-controlled infusion only; if impossible, deep IM injection into the anterior thigh.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772" },
     { book: "harrison", text: "Hypoglycaemia is a common major toxicity; cinchonism and modest QT prolongation are common minor effects.", ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1771" },
-    { book: "note", text: "Nelson (US practice) uses IV artesunate for severe malaria and oral quinine only as follow-on; IV quinine dosing is not given. The IV/IM quinine regimens in this app follow WHO 2023.", ref: "Editorial note" }
+    { book: "note", text: "Nelson (US practice) uses IV artesunate for severe malaria and oral quinine only as follow-on; IV quinine dosing is not given. The IV/IM quinine regimens in this app follow the Ethiopian manual 2024 and WHO 2026.", ref: "Editorial note" },
+    {
+    book: "ethmal",
+    text: "Ethiopia: IM artemether is the second parenteral choice; quinine is used only when artesunate and artemether are both unavailable.",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Artemether, pdf p. 113"
+  },
+    {
+    book: "ethmal",
+    text: "Each dose as a slow, rate-controlled infusion over 4 hours, never faster than 5 mg salt/kg per hour; under 20 kg in 10 mL/kg of fluid.",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Quinine dihydrochloride, pdf p. 114"
+  },
+    {
+    book: "ethmal",
+    text: "After 48 hours of parenteral therapy reduce maintenance by one-third to one-half (5–7 mg salt/kg every 8 hours).",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Quinine dihydrochloride, pdf p. 115"
+  },
+    {
+    book: "whomal",
+    text: "WHO: with persisting kidney injury or no improvement by 48 h, reduce to 10 mg salt/kg every 12 h.",
+    ref: "WHO guidelines for malaria 2026, 5.2.2 Treating severe malaria, p. 213"
+  }
   ],
   review: { status: "draft", by: null, date: null }
 },
@@ -4737,7 +4782,7 @@ window.DRUG_DB = [
 /* ---------------------------------------------------------- */
 {
   id: "arv-prophylaxis",
-  name: "HIV prophylaxis: post-exposure (PEP) and infant prophylaxis",
+  name: "HIV prophylaxis: PEP, PrEP and infant prophylaxis (ePNP)",
   aka: [
     "PEP",
     "post-exposure prophylaxis",
@@ -4749,7 +4794,13 @@ window.DRUG_DB = [
     "AZT",
     "ZDV",
     "PMTCT",
-    "HIV-exposed infant"
+    "HIV-exposed infant",
+    "PrEP",
+    "pre-exposure prophylaxis",
+    "TDF/3TC",
+    "ePNP",
+    "enhanced postnatal prophylaxis",
+    "basic 2-drug PEP"
   ],
   cls: "Antiretrovirals (NRTI backbone + integrase inhibitor; NNRTI/NRTI for infants)",
   cat: "infection",
@@ -4779,18 +4830,19 @@ window.DRUG_DB = [
   indications: [
     "PEP: percutaneous injury, mucous-membrane or broken-skin exposure to blood, visibly bloody fluid, semen, vaginal secretions or CSF/pleural/peritoneal/amniotic fluid from a person who has HIV or whose status is unknown — within 72 h",
     "PEP after sexual assault or other high-risk sexual exposure — within 72 h",
-    "Infant prophylaxis for every HIV-exposed newborn, starting as soon as possible after birth"
+    "Infant prophylaxis for every HIV-exposed newborn, starting as soon as possible after birth",
+    "PrEP: HIV-negative female sex workers and HIV-negative partners in serodiscordant couples at substantial risk — TDF 300 mg + 3TC 300 mg once daily (Ethiopia)"
   ],
   standard: {
-    summary: "Oral tablets or syrup — no infusion needed. The only thing that makes PEP fail is delay or stopping early. Doses and durations must be confirmed against the current Ethiopian national HIV guideline.",
+    summary: "Oral tablets or syrup — no infusion needed. The only thing that makes PEP fail is delay or stopping early. Regimens here follow the Ethiopian MoH HIV manual (approved March 2025); WHO differences are stated where they exist.",
     items: [
       {
         label: "PEP — adults and adolescents (WHO)",
-        text: "TDF + 3TC (or FTC) + DTG: one TLD tablet once daily for 28 days. Start as soon as possible — ideally within hours, and no later than 72 h after exposure. Give the first dose before test results come back. Alternatives if DTG cannot be used: TDF/3TC with atazanavir/ritonavir, darunavir/ritonavir, lopinavir/ritonavir or raltegravir, per national guideline."
+        text: "Ethiopia (Tables 16.6–16.7) chooses by exposure code and source status. EXPANDED 3-drug PEP — TLD one tablet once daily for 28 days — for severe percutaneous exposure (large-bore hollow needle, deep puncture, visible blood on the device, needle from a vein or artery) from any HIV-positive source, and for a major mucous-membrane or mild percutaneous exposure from a source with advanced HIV or high viral load. BASIC 2-drug PEP — TDF 300 mg + 3TC 300 mg once daily, or AZT/3TC 300/150 mg twice daily, for 28 days — for minor exposures, and to consider when the source status is unknown. After sexual assault: TLD. WHO's 2024 PEP guideline (cited below, not one of the March 2025 sources) uses three drugs for everyone; where TLD is stocked, giving TLD is within both. Start within 1–2 hours where possible, never after 72 h, and before test results. Ethiopian alternatives to DTG: TDF + 3TC with efavirenz, LPV/r or ATV/r."
       },
       {
         label: "PEP — children",
-        text: "Weight 30 kg or more: adult regimen. Under 30 kg: use the preferred paediatric first-line regimen of the national guideline for 28 days, dosed by weight band — usually ABC/3TC (120/60 mg dispersible) + DTG 10 mg dispersible (WHO bands; DTG from 4 weeks of age: 3–5.9 kg 1 ABC/3TC + DTG 5 mg; 6–9.9 kg 1.5 + 15 mg; 10–13.9 kg 2 + 20 mg; 14–19.9 kg 2.5 + 25 mg; 20–24.9 kg 3 + DTG 50 mg film-coated). Confirm with the paediatric HIV dosing chart; AZT/3TC is an acceptable backbone."
+        text: "Ethiopia Table 16.7: adults and older children TLD (from 30 kg); children over 6 years AZT + 3TC + DTG; children under 6 years AZT + 3TC + LPV/r — 28 days, each drug by the paediatric weight bands (see Zidovudine/lamivudine, Dolutegravir and Lopinavir/ritonavir pages; Annex 10). Note: the Ethiopian PEP table names AZT, not ABC, as the children's backbone, and LPV/r (not DTG) under 6 years, although DTG is the first-line ART for children from 4 weeks. Involve child-protection services after abuse."
       },
       {
         label: "At the first visit",
@@ -4798,24 +4850,28 @@ window.DRUG_DB = [
       },
       {
         label: "Follow-up",
-        text: "Adherence check and side effects at 3–7 days; complete 28 days; repeat HIV test at 4–6 weeks and 3 months (national protocol). If the baseline test is positive, do not stop — refer the same day for lifelong ART (TLD is also first-line treatment). Start hepatitis B vaccination if not immune."
+        text: "Review at 3–5 days for tolerance and side effects; CBC and liver tests at baseline and 2 weeks as a minimum; complete 28 days; HIV test at 6 weeks, 12 weeks and 24 weeks (Ethiopia). If the baseline test is positive, do not stop — refer the same day for lifelong ART (TLD is also first-line treatment). Start hepatitis B vaccination if not immune."
       },
       {
-        label: "HIV-exposed newborn — low risk (WHO)",
-        text: "Mother on ART for more than 4 weeks before delivery with a suppressed viral load: nevirapine once daily for 6 weeks (breastfeeding or not; some programmes use 4–6 weeks for formula-fed infants)."
+        label: "HIV-exposed newborn — risk groups (Ethiopia vs WHO)",
+        text: "ETHIOPIA has no low-risk group: every HIV-exposed infant gets enhanced postnatal prophylaxis (ePNP) — see the next item. WHO 2025, for comparison only: infants of mothers on ART who are not at high risk get 6 weeks of nevirapine alone (dolutegravir or lamivudine as alternatives), and WHO warns that universal enhanced prophylaxis exposes most newborns to drugs they do not need."
       },
       {
-        label: "HIV-exposed newborn — high risk (WHO)",
-        text: "Mother diagnosed in labour or after birth, on ART for less than 4 weeks before delivery, or viral load over 1000 copies/mL in the last 4 weeks before delivery (or unknown): zidovudine twice daily + nevirapine once daily for the first 6 weeks, then continue for a further 6 weeks (nevirapine alone, or both) if breastfeeding — 12 weeks in total. Confirm the exact regimen with the Ethiopian national PMTCT guideline."
+        label: "HIV-exposed newborn — Ethiopian regimen (ePNP, all infants)",
+        text: "ETHIOPIA — every HIV-exposed infant, whatever the risk: zidovudine twice daily for 6 weeks + nevirapine once daily for 12 weeks, both started within 1 hour of birth. WHO 2025 — high-risk infants only (mother on ART under 4 weeks at delivery, viral load over 1000 copies/mL in the 4 weeks before delivery, HIV acquired in pregnancy or breastfeeding, or first diagnosed after birth): ABC/3TC + DTG for 6 weeks, then nevirapine while breastfeeding until the mother is suppressed. Ethiopian practice follows the Ethiopian regimen."
       },
       {
-        label: "Infant doses (WHO weight bands)",
-        text: "Nevirapine 10 mg/mL, once daily — birth to 6 weeks: birth weight 2.0–2.49 kg 10 mg (1 mL); 2.5 kg or more 15 mg (1.5 mL). 6–12 weeks: 20 mg (2 mL). Zidovudine 10 mg/mL, twice daily — birth to 6 weeks: 2.0–2.49 kg 10 mg (1 mL); 2.5 kg or more 15 mg (1.5 mL). 6–12 weeks: 60 mg (6 mL). Under 2 kg: nevirapine 2 mg/kg once daily and zidovudine 2 mg/kg twice daily — seek specialist advice for preterm infants."
+        label: "Infant doses (Ethiopia Table 5.2)",
+        text: "Both syrups are 10 mg/mL. Nevirapine ONCE daily — birth to 6 weeks by birth weight: under 2000 g 2 mg/kg (0.2 mL/kg); 2000–2499 g 10 mg (1 mL); 2500 g or more 15 mg (1.5 mL). 6 to 12 weeks: 20 mg (2 mL, or half a 50 mg tablet). Zidovudine TWICE daily — birth to 6 weeks only: under 2000 g 2 mg/kg (0.2 mL/kg); 2000–2499 g 10 mg (1 mL); 2500 g or more 15 mg (1.5 mL). The Ethiopian regimen stops zidovudine at 6 weeks (no 6–12-week AZT dose). Pour a little syrup into a cup and draw the dose from the cup — never put the syringe into the bottle; label the bottle with the date it was opened. Seek specialist advice for preterm infants."
       },
       {
         label: "Every HIV-exposed infant also needs",
-        text: "Cotrimoxazole prophylaxis from 6 weeks, early infant diagnosis (DNA PCR at 6 weeks or earlier per national algorithm, and after breastfeeding ends), exclusive breastfeeding for 6 months with the mother on ART, and routine immunisation including BCG."
-      }
+        text: "Cotrimoxazole from 6 weeks until HIV is excluded and breastfeeding has ended. DNA PCR at 4–6 weeks; if negative, again at 9 months and whenever the child is sick with signs of HIV; final antibody test at 18 months or 12 weeks after breastfeeding stops, whichever is later (Ethiopia). Exclusive breastfeeding for 6 months with the mother on ART, then continued to at least 12 months (WHO 2025). Routine immunisation; no BCG if the infant has symptomatic HIV (Ethiopia). Follow-up monthly for 6 months, then every 3 months to 18 months."
+      },
+      {
+      label: "PrEP — oral (Ethiopia)",
+      text: "TDF 300 mg + lamivudine 300 mg, one tablet once daily, for HIV-negative female sex workers and HIV-negative partners in serodiscordant couples whose partner is not yet suppressed (18 years and over unless a special programme). HIV-negative rapid test the same day and no signs of acute HIV. Not with creatinine clearance under 60 mL/min. HIV test every 3 months; creatinine every 6 months. Continue for 28 days after the last high-risk exposure. Pregnancy is not a contraindication. See the HIV PrEP case. WHO 2025 adds six-monthly injectable lenacapavir as an extra option (not in the Ethiopian manual)."
+    }
     ]
   },
   improvised: [
@@ -4852,7 +4908,7 @@ window.DRUG_DB = [
       steps: [
         "Use a 1 mL or 2 mL syringe without the needle to measure syrup exactly (1 mL = 10 mg for both nevirapine and zidovudine 10 mg/mL). Never use a household spoon.",
         "No nevirapine syrup: disperse one nevirapine 50 mg dispersible tablet in 5 mL of clean water = 10 mg/mL; stir, draw the dose immediately and discard the rest. Confirm this use with the pharmacist and national guideline.",
-        "Zidovudine 60 mg dispersible tablet for the 6–12 week dose (60 mg twice daily): disperse one tablet in a little clean water and give it all.",
+        "Nevirapine for weeks 6–12 (20 mg once daily): 2 mL of syrup, or half a 50 mg tablet (Ethiopia Table 5.2). Zidovudine is not continued after 6 weeks in the Ethiopian regimen.",
         "Teach the mother with her own syringe, mark the dose level on the syringe barrel with tape or a pen, and ask her to show you before discharge."
       ],
       monitor: [
@@ -4871,9 +4927,9 @@ window.DRUG_DB = [
         "oral"
       ],
       steps: [
-        "Treat the infant as HIV-exposed at high risk: start zidovudine + nevirapine as soon as possible after birth (ideally within 6 h; do not wait for confirmatory tests).",
-        "Do not stop breastfeeding; start the mother on ART (TLD) the same day or as soon as the national algorithm confirms the diagnosis.",
-        "Continue dual prophylaxis for 6 weeks, then per national guideline for a further 6 weeks while breastfeeding.",
+        "Start zidovudine + nevirapine within 1 hour of birth (Ethiopia; do not wait for confirmatory tests).",
+        "Do not stop breastfeeding; start the mother on TLD within the same hour of the HIV diagnosis, with brief counselling now and full counselling after delivery (Ethiopia).",
+        "Zidovudine for 6 weeks and nevirapine for 12 weeks (Ethiopia ePNP). WHO 2025 would give this baby ABC/3TC + DTG for 6 weeks, then nevirapine while breastfeeding until the mother is suppressed.",
         "Link mother and baby to the ART/PMTCT clinic before discharge, with a written appointment."
       ],
       monitor: [
@@ -4885,8 +4941,8 @@ window.DRUG_DB = [
     }
   ],
   paediatric: [
-    "Infant nevirapine (10 mg/mL) once daily: birth–6 weeks 1 mL (2.0–2.49 kg) or 1.5 mL (≥ 2.5 kg); 6–12 weeks 2 mL.",
-    "Infant zidovudine (10 mg/mL) twice daily: birth–6 weeks 1 mL (2.0–2.49 kg) or 1.5 mL (≥ 2.5 kg); 6–12 weeks 6 mL.",
+    "Infant nevirapine (10 mg/mL) once daily: birth–6 weeks 1 mL (2.0–2.49 kg) or 1.5 mL (≥ 2.5 kg), under 2 kg 0.2 mL/kg; 6–12 weeks 2 mL. Ethiopia: 12 weeks for every HIV-exposed infant.",
+    "Infant zidovudine (10 mg/mL) twice daily: birth–6 weeks 1 mL (2.0–2.49 kg) or 1.5 mL (≥ 2.5 kg), under 2 kg 0.2 mL/kg. Ethiopia stops zidovudine at 6 weeks.",
     "Children needing PEP after sexual abuse: 28 days of a weight-banded paediatric regimen; involve child-protection services."
   ],
   cautions: [
@@ -4909,7 +4965,13 @@ window.DRUG_DB = [
     },
     {
       name: "MSF Clinical Guidelines — post-exposure prophylaxis and sexual violence"
-    }
+    },
+    {
+    name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, approved March 2025 (ch. 5 HIV-exposed infants; ch. 16 PrEP and PEP)"
+  },
+    {
+    name: "WHO. Updated recommendations on HIV clinical management, 2025 (4.1 infant postnatal prophylaxis)"
+  }
   ],
   textbook: [
     {
@@ -4931,7 +4993,32 @@ window.DRUG_DB = [
       book: "nelson",
       text: "All HIV-exposed infants receive antiretroviral prophylaxis; more drugs are added when the risk is high — mother on no antenatal ART, only intrapartum ART, or not virally suppressed near delivery.",
       ref: "Nelson 22nd ed. 2024, ch. 322, p. 2113"
-    }
+    },
+    {
+    book: "ethhiv",
+    text: "Enhanced postnatal prophylaxis for all HIV-exposed infants: AZT for 6 weeks and NVP for 12 weeks, started within 1 hour of birth.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, 5.1, p. 92"
+  },
+    {
+    book: "ethhiv",
+    text: "Basic 2-drug or expanded 3-drug PEP by exposure code and source status; no PEP after 72 hours; 28 days.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 16.6, p. 435"
+  },
+    {
+    book: "ethhiv",
+    text: "Follow-up HIV testing after occupational exposure at 6, 12 and 24 weeks.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, 16.3.3, p. 432"
+  },
+    {
+    book: "ethhiv",
+    text: "National PrEP drug: tenofovir 300 mg + lamivudine 300 mg once daily.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, 16.2, p. 423"
+  },
+    {
+    book: "whohivclin",
+    text: "Infants not at high risk: six weeks of single-drug prophylaxis, nevirapine preferred; high risk: three-drug regimen.",
+    ref: "WHO HIV clinical management 2025, 4.1.1, p. 54"
+  }
   ],
   review: {
     status: "draft",
@@ -4980,7 +5067,7 @@ window.DRUG_DB = [
   ],
   indications: [
     "Drug-susceptible pulmonary and extrapulmonary TB in adults and children (confirmed or clinically diagnosed)",
-    "TB with HIV (start ART within 2 weeks of TB treatment, later in TB meningitis per guideline)"
+    "TB with HIV: start ART as soon as possible within 2 weeks of starting TB treatment, whatever the CD4; in TB meningitis delay ART at least 4 weeks and start it within 8 weeks (Ethiopia)"
   ],
   standard: {
     summary: "Daily oral fixed-dose tablets dosed by weight band, taken under supervision for 6 months (2RHZE/4RH). Re-weigh monthly and move up a band as the patient gains weight.",
@@ -5008,7 +5095,11 @@ window.DRUG_DB = [
       {
         label: "Taking the tablets",
         text: "Once daily, all tablets together, ideally on an empty stomach (1 h before food). If nausea stops adherence, take with a light meal — taking the drugs matters more than perfect absorption. Rifampicin turns urine, sweat and tears orange-red; warn the patient."
-      }
+      },
+      {
+      label: "TB with HIV (Ethiopia)",
+      text: "Same 2RHZE/4RH (CNS and bone/joint TB 2RHZE/10RH). ART within 2 weeks of starting TB treatment, any CD4, including drug-resistant TB; TB meningitis: ART after at least 4 weeks and within 8 weeks. Add cotrimoxazole preventive therapy. ART regimen with rifampicin (dolutegravir dose): see the ARV entries. Previously treated TB gets the same 6-month regimen once rifampicin resistance is excluded by a rapid test. TB meningitis in HIV: prednisolone 1 mg/kg for 2–4 weeks, then taper over 4–8 weeks, for all (Ethiopia). Urine LF-LAM helps diagnose TB in advanced HIV (see the Advanced HIV disease case)."
+    }
     ]
   },
   improvised: [
@@ -5139,7 +5230,17 @@ window.DRUG_DB = [
       book: "nelson",
       text: "Children with HIV and drug-susceptible TB: four drugs for 2 months then isoniazid and rifampicin; treatment should be daily, not intermittent, with close monitoring for adverse reactions and rifampicin–antiretroviral interactions.",
       ref: "Nelson 22nd ed. 2024, ch. 261 Tuberculosis, p. 1851"
-    }
+    },
+    {
+    book: "ethhiv",
+    text: "Table 11.6: ART should be started in all TB clients, including drug-resistant TB, irrespective of CD4, as soon as possible within two weeks of starting TB treatment, except with meningitis; ART should be delayed at least four weeks (and started within eight weeks) after TB meningitis treatment begins.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 11.6, pp. 201–202"
+  },
+    {
+    book: "ethhiv",
+    text: "TB meningitis in HIV: TB treatment per national protocol, delay ART at least 4 weeks and start within 8 weeks, and give prednisolone 1 mg/kg for 2–4 weeks, then taper over 4–8 weeks, for all.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3 Tuberculosis meningitis, pp. 237–238"
+  }
   ],
   review: {
     status: "draft",
@@ -12564,7 +12665,7 @@ window.DRUG_DB = [
     cls: "Antileishmanial / antifungal (liposomal polyene)",
     cat: "infection",
     wards: ["medical", "paediatric", "maternity", "icu", "outpatient"],
-    tags: ["visceral leishmaniasis", "kala-azar", "VL-HIV", "leishmaniasis", "AmBisome"],
+    tags: ["visceral leishmaniasis", "kala-azar", "VL-HIV", "leishmaniasis", "AmBisome", "cryptococcal meningitis", "HIV", "advanced HIV disease", "PKDL" ],
     presentation: [
       "50 mg vial of yellow lyophilised powder, usually supplied with a 5 micron filter needle.",
       "Reconstituted with 12 mL water for injection = 4 mg/mL.",
@@ -12574,8 +12675,10 @@ window.DRUG_DB = [
       "VL in an HIV co-infected patient in East Africa — with miltefosine (WHO first choice)",
       "VL–HIV when miltefosine is unavailable or contraindicated — L-AMB alone",
       "VL in pregnancy (the formulation WHO's guideline says the literature favours)",
-      "Complicated or second-line VL in HIV-negative patients in East Africa",
-      "Relapse and extended therapy after a poor response"
+      "VL without HIV in eastern Africa when paromomycin + miltefosine and/or SSG + paromomycin is excluded: pregnancy, breastfeeding, severe illness, relapse or failure, severe malnutrition, heart, liver or kidney disease (WHO 2026)",
+      "Relapse and extended therapy after a poor response",
+      "Cryptococcal meningitis in HIV: ONE dose of 10 mg/kg with 14 days of flucytosine and fluconazole (Ethiopia's preferred induction); or 3–4 mg/kg daily for 2 weeks with fluconazole when there is no flucytosine",
+      "PKDL in eastern Africa — 5 mg/kg on days 1, 3, 5 and 7 with miltefosine for 28 days; preferred for children and the severely malnourished (WHO 2026)"
     ],
     standard: {
       summary: "Test dose 1 mg, then 5 mg/kg by infusion over 2 h on alternate days. Reconstitute with water for injection, dilute in 5 % dextrose only, never saline.",
@@ -12590,7 +12693,7 @@ window.DRUG_DB = [
         },
         {
           label: "VL without HIV, East Africa",
-          text: "L-AMB is the second-line drug and the regimen for complicated cases: 3–5 mg/kg per daily dose by infusion over 6–10 days, up to a total of 30 mg/kg. First line remains a pentavalent antimonial with paromomycin for 17 days."
+          text: "3–5 mg/kg per daily dose by infusion over 6–10 days, up to a total of 30 mg/kg (WHO 2026, rec. 4.1.3). For: relapse or failure after paromomycin + miltefosine or SSG + paromomycin; pregnant women and women breastfeeding (for < 6 months); severely ill patients; known heart, liver or kidney disease, liver enzymes about 5 times normal or rising creatinine on SSG + paromomycin; any other contraindication to miltefosine, paromomycin or SSG; children with severe acute malnutrition; adults with BMI under 14. Everyone else now starts with paromomycin + miltefosine for 14 days."
         },
         {
           label: "Test dose and infusion",
@@ -12607,7 +12710,19 @@ window.DRUG_DB = [
         {
           label: "Monitoring",
           text: "Creatinine, and potassium where possible, once or twice weekly through treatment, with potassium and magnesium replacement adjusted to the results. If renal function deteriorates, halve the dose for a few days."
-        }
+        },
+        {
+        label: "Cryptococcal meningitis (HIV) — Ethiopia",
+        text: "10 mg/kg as a SINGLE infusion on day 1, with flucytosine 25 mg/kg every 6 h and fluconazole 1200 mg daily (child 12 mg/kg, max 800 mg) for 14 days. If there is no flucytosine: 3–4 mg/kg DAILY for 2 weeks with fluconazole 1200 mg daily. Same reconstitution, 5 % dextrose dilution and monitoring as for VL; a 60 kg adult's 10 mg/kg dose is 600 mg = 12 vials. Do not confuse the single 10 mg/kg crypto dose with the repeated 5 mg/kg VL doses. See the Cryptococcal meningitis case."
+      },
+        {
+        label: "PKDL, eastern Africa (WHO 2026)",
+        text: "5 mg/kg IV on days 1, 3, 5 and 7 (total 20 mg/kg) with miltefosine in allometric doses twice daily for 28 days — preferred for children and the severely malnourished. 1 mg test dose first."
+      },
+        {
+        label: "Potassium on high cumulative doses (WHO 2026)",
+        text: "Hypokalaemia is common: tiredness, confusion, weakness, cramps. Give potassium-rich food (bananas, oranges, tomatoes, beans, spinach, potatoes) and potassium supplements, and magnesium if that is low too. High-dose regimens belong where potassium and other blood tests can be checked at baseline, during, and up to 2–4 weeks after treatment."
+      }
       ]
     },
     improvised: [
@@ -12707,7 +12822,10 @@ window.DRUG_DB = [
       },
       {
         name: "WHO Expert Committee on the Control of Leishmaniases, Technical Report Series 949, 2010"
-      }
+      },
+      {
+      name: "WHO guidelines on leishmaniases: treatment of visceral leishmaniasis and post-kala-azar dermal leishmaniasis in eastern Africa and South-East Asia, 2026"
+    }
     ],
     textbook: [
       {
@@ -12742,14 +12860,94 @@ window.DRUG_DB = [
       },
       {
         book: "whovl",
-        text: "For VL without HIV in East Africa, L-AMB is the second-line or complicated-case regimen at 3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg.",
+        text: "(2022 wording; WHO 2026 now names the groups.) For VL without HIV in East Africa, L-AMB is the second-line or complicated-case regimen at 3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg.",
         ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
       },
       {
         book: "note",
         text: "Reconstitution with 12 mL water for injection to 4 mg/mL, dilution in 5 % dextrose only, the 5 micron withdrawal filter and the 1.0 micron minimum in-line filter pore, and the storage conditions, come from the AmBisome product information, not from the WHO guideline. Confirm against your own carton and the national protocol.",
         ref: "Editorial note"
-      }
+      },
+      {
+      book: "ethhiv",
+      text: "Preferred cryptococcal induction: a single high dose (10 mg/kg) of liposomal amphotericin B with 14 days of flucytosine and fluconazole; if no flucytosine, liposomal amphotericin B 3–4 mg/kg per day with fluconazole for two weeks.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3, p. 231"
+    },
+      {
+      book: "whovl26",
+      text: "Liposomal amphotericin B 3–5 mg/kg per day by infusion over 6–10 days up to a total of 30 mg/kg is suggested when paromomycin plus miltefosine and/or SSG plus paromomycin is excluded (conditional, very low certainty).",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.3, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "L-AMB groups include therapeutic failure or relapse after paromomycin plus miltefosine and/or SSG plus paromomycin.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26"
+    },
+      {
+      book: "whovl26",
+      text: "Pregnant women and women breastfeeding (for < 6 months) are L-AMB groups.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26"
+    },
+      {
+      book: "whovl26",
+      text: "Severely ill patients at increased risk of death are an L-AMB group.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26"
+    },
+      {
+      book: "whovl26",
+      text: "Known cardiac, liver or kidney disease, liver enzymes about five times normal, or rising creatinine on SSG plus paromomycin are L-AMB groups, as is any other contraindication to miltefosine, paromomycin or SSG.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26"
+    },
+      {
+      book: "whovl26",
+      text: "Children with severe acute malnutrition, who are very ill and often have impaired liver and kidney function, are an L-AMB group.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26"
+    },
+      {
+      book: "whovl26",
+      text: "Adults with a BMI under 14, an independent risk factor for death, are an L-AMB group.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26"
+    },
+      {
+      book: "whovl26",
+      text: "In a systematic review of VL in pregnancy, 2.8 % of 176 mothers treated with L-AMB miscarried, against 27.6 % spontaneous abortion with pentavalent antimony.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Rationale, p. 27"
+    },
+      {
+      book: "whovl26",
+      text: "Comparator: L-AMB 5 mg/kg IV on days 1, 3, 5 and 7 (total 20 mg/kg) with miltefosine in allometric doses twice a day for 28 days.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.3.1, footnote b, p. 29"
+    },
+      {
+      book: "whovl26",
+      text: "Give L-AMB as a 1 mg test dose by infusion, then the full dose.",
+      ref: "WHO VL & PKDL guideline 2026, 4.3.1 Implementation considerations, p. 32"
+    },
+      {
+      book: "whovl26",
+      text: "Lipid formulations are infused over 2 h; mild infusion reactions are commonest and hypokalaemia (tiredness, confusion, weakness, cramps) is common.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Lipid formulations of AmB, p. 42"
+    },
+      {
+      book: "whovl26",
+      text: "High-dose L-AMB belongs in hospitals that can check potassium and other blood tests at baseline, during and up to 2–4 weeks after treatment.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Safety of LAmB at higher doses, p. 42"
+    },
+      {
+      book: "whovl26",
+      text: "Give potassium-rich food (bananas, oranges, tomatoes, beans, spinach, potatoes) and potassium supplements; add magnesium if low.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Safety of LAmB at higher doses, p. 42"
+    },
+      {
+      book: "whovl26",
+      text: "Other lipid formulations should be evaluated for toxicity, bioequivalence and efficacy before clinical use.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Lipid formulations of AmB, p. 42"
+    },
+      {
+      book: "whovl26",
+      text: "L-AMB: chills, fever, nausea, vomiting, low potassium, magnesium, calcium and sodium and raised creatinine very common; kidney failure and muscle breakdown uncommon or rare.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 3, p. 81"
+    }
     ],
     review: { status: "draft", by: null, date: null }
   },
@@ -12769,7 +12967,8 @@ window.DRUG_DB = [
     indications: [
       "VL where liposomal amphotericin B is out of stock or unaffordable",
       "Secondary prophylaxis after a first VL episode in South-East Asia (1 mg/kg every 3–4 weeks)",
-      "VL in pregnancy where L-AMB is not available"
+      "VL in pregnancy where L-AMB is not available",
+      "Cryptococcal meningitis in HIV when liposomal amphotericin is not available: 1 mg/kg daily with flucytosine for 1 week (then fluconazole for week 2), or with fluconazole for 2 weeks if there is no flucytosine (Ethiopia)"
     ],
     standard: {
       summary: "Use only when liposomal amphotericin B is unavailable. Far more toxic: give slowly, pre-hydrate with saline, and replace potassium and magnesium.",
@@ -12780,7 +12979,7 @@ window.DRUG_DB = [
         },
         {
           label: "VL treatment dose",
-          text: "0.75–1 mg/kg by infusion daily or on alternate days for 15–20 doses. This dose is NOT in the 2022 VL–HIV guideline; it comes from the WHO Expert Committee report (TRS 949) — confirm with the national protocol."
+          text: "0.75–1 mg/kg by infusion daily or on alternate days for 15–20 doses. This is the 2010 WHO Expert Committee regimen for eastern Africa, reprinted as a previous recommendation in the WHO 2026 guideline (Table 2); the 2026 recommendations do not include it. Rescue for non-response in that list: amphotericin B deoxycholate or L-AMB at higher doses. Confirm with the national protocol."
         },
         {
           label: "Secondary prophylaxis (South-East Asia)",
@@ -12801,7 +13000,11 @@ window.DRUG_DB = [
         {
           label: "Potassium and magnesium",
           text: "Expect potassium and magnesium to fall with every dose. Give oral potassium routinely with the course where the protocol allows, and magnesium if available; check them before starting and at least twice weekly."
-        }
+        },
+        {
+        label: "Cryptococcal meningitis (HIV) — Ethiopia",
+        text: "1 mg/kg once daily. With flucytosine 25 mg/kg every 6 h: 7 days, then fluconazole 1200 mg daily (child 12 mg/kg, max 800 mg) for 7 more days. Without flucytosine: 14 days with fluconazole 1200 mg daily. The same pre-hydration, potassium and magnesium replacement and twice-weekly potassium, creatinine and haemoglobin apply (Ethiopia: a minimum toxicity-prevention package is required)."
+      }
       ]
     },
     improvised: [
@@ -12893,7 +13096,10 @@ window.DRUG_DB = [
       {
         name: "WHO Expert Committee on the Control of Leishmaniases, Technical Report Series 949, 2010"
       },
-      { name: "Amphotericin B deoxycholate product information" }
+      { name: "Amphotericin B deoxycholate product information" },
+      {
+      name: "WHO guidelines on leishmaniases: treatment of visceral leishmaniasis and post-kala-azar dermal leishmaniasis in eastern Africa and South-East Asia, 2026"
+    }
     ],
     textbook: [
       {
@@ -12933,9 +13139,29 @@ window.DRUG_DB = [
       },
       {
         book: "note",
-        text: "The VL treatment dose of 0.75–1 mg/kg for 15–20 doses is not stated in the 2022 VL–HIV guideline; it follows the WHO Expert Committee report (TRS 949, 2010). Reconstitution in water for injection, dilution in 5 % dextrose only and the saline pre-load are product-information and standard practice. Confirm with the national kala-azar protocol.",
+        text: "The VL treatment dose of 0.75–1 mg/kg for 15–20 doses follows the WHO Expert Committee report (TRS 949, 2010), reprinted in the WHO 2026 guideline, Table 2. Reconstitution in water for injection, dilution in 5 % dextrose only and the saline pre-load are product-information and standard practice. Confirm with the national kala-azar protocol.",
         ref: "Editorial note"
-      }
+      },
+      {
+      book: "ethhiv",
+      text: "If liposomal amphotericin B is not available: one week of amphotericin B deoxycholate 1.0 mg/kg/day with flucytosine, then one week of fluconazole; if neither liposomal amphotericin nor flucytosine: two weeks of amphotericin B deoxycholate with fluconazole 1200 mg daily.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3, p. 231"
+    },
+      {
+      book: "whovl26",
+      text: "Previous (2010) eastern Africa ranking included amphotericin B deoxycholate 0.75–1 mg/kg per day by infusion, daily or on alternate days, for 15–20 doses.",
+      ref: "WHO VL & PKDL guideline 2026, 2.3, Table 2 (previous recommendations, eastern Africa), p. 11"
+    },
+      {
+      book: "whovl26",
+      text: "Previous rescue for non-response: amphotericin B deoxycholate or L-AMB at higher doses.",
+      ref: "WHO VL & PKDL guideline 2026, 2.3, Table 2 (previous recommendations), p. 12"
+    },
+      {
+      book: "whovl26",
+      text: "The 2010 Expert Committee guidance remains valid for other clinical forms and regions.",
+      ref: "WHO VL & PKDL guideline 2026, 2.5, p. 12"
+    }
     ],
     review: { status: "draft", by: null, date: null }
   },
@@ -12952,20 +13178,21 @@ window.DRUG_DB = [
       "Store below 25 °C, protected from light. Once broached, the multi-dose vial must be handled with strict asepsis and dated."
     ],
     indications: [
-      "First-line treatment of VL in HIV-NEGATIVE patients in East Africa, combined with paromomycin for 17 days",
+      "VL without HIV in eastern Africa when paromomycin + miltefosine is excluded — with paromomycin for 17 days (WHO 2026 second choice)",
       "SSG monotherapy where paromomycin is out of stock",
-      "Rescue treatment of VL–HIV that has not responded to L-AMB plus miltefosine — with close cardiac and pancreatic monitoring"
+      "Rescue treatment of VL–HIV that has not responded to L-AMB plus miltefosine — with close cardiac and pancreatic monitoring",
+      "PKDL — older eastern-African practice, 20 mg/kg/day for up to 2 months; not in the 2026 recommendations because of toxicity"
     ],
     standard: {
       summary: "20 mg Sb5+/kg once daily by deep IM injection or slow IV. Cardiotoxic and pancreatotoxic; much more dangerous in HIV.",
       items: [
         {
-          label: "East Africa, VL without HIV (first line)",
-          text: "SSG 20 mg Sb5+/kg/day IM or slow IV PLUS paromomycin 15 mg/kg/day IM, both for 17 days. WHO's 2022 guideline names this combination as the East African first line for HIV-negative patients but does not restate the doses — confirm the mg/kg and the duration with the national kala-azar protocol."
+          label: "Eastern Africa, VL without HIV (second choice since WHO 2026)",
+          text: "For patients in whom paromomycin + miltefosine is excluded: SSG 20 mg/kg/day IV or IM once daily PLUS paromomycin 15 mg/kg/day as sulfate (= 11 mg/kg base) IM once daily, both for 17 days (WHO 2026, rec. 4.1.2). Preferred to SSG alone for 30 days: it probably halves the risk of PKDL and shortens the stay. Liposomal amphotericin B instead for pregnancy, breastfeeding, severe illness, relapse, and heart, liver or kidney disease."
         },
         {
           label: "SSG alone",
-          text: "20 mg Sb5+/kg/day for 30 days when paromomycin is unavailable. Longer course, more toxicity."
+          text: "20 mg Sb5+/kg/day for 30 days when paromomycin is unavailable. Longer course, more toxicity. This was the comparator in WHO 2026 rec. 4.1.2; the combination is preferred."
         },
         {
           label: "In HIV coinfection",
@@ -12973,15 +13200,15 @@ window.DRUG_DB = [
         },
         {
           label: "Route",
-          text: "Deep IM is the usual route in the field. If given IV it must go in slowly through a fine needle; IV administration causes pain and thrombosis."
+          text: "Deep IM is the usual route in the field. If given IV: by infusion over 5–10 minutes, or by slow injection through a fine needle (23–25 gauge) to avoid thrombosis (WHO 2026). IV administration causes pain and thrombosis."
         },
         {
           label: "Before the first dose",
-          text: "Ask about palpitations, blackouts and known heart disease. Record a baseline pulse and, where a machine exists, an ECG. Check amylase or lipase at baseline if the laboratory can do it."
+          text: "Ask about palpitations, blackouts and known heart disease. Record a baseline pulse and, where a machine exists, an ECG. Check amylase or lipase at baseline if the laboratory can do it. WHO 2026: monitor serum chemistry, full blood count and ECG during treatment."
         },
         {
           label: "Stop the drug",
-          text: "Stop for QT prolongation or new T-wave changes, syncope, an irregular or very slow pulse, or severe abdominal pain with vomiting (pancreatitis). Fatal arrhythmia is a recognised adverse effect."
+          text: "Stop for QT prolongation or new T-wave changes, syncope, an irregular or very slow pulse, or severe abdominal pain with vomiting (pancreatitis). Fatal arrhythmia is a recognised adverse effect. A corrected QT over 0.5 s signals serious, possibly fatal arrhythmia; for serious hepato- or cardiotoxicity change the drug (WHO 2026). Ethiopian criteria for switching to liposomal amphotericin B: pancreatitis with pain and vomiting, jaundice on treatment, liver enzymes over 5 times normal, rising creatinine, cardiotoxicity, severe uninterrupted vomiting, falling blood counts, or no response after 2 weeks."
         }
       ]
     },
@@ -13014,7 +13241,7 @@ window.DRUG_DB = [
         best_for: "Massive wasting, bleeding tendency, or a patient who cannot tolerate IM.",
         requires: ["iv"],
         steps: [
-          "Dilute the day's dose in 50–100 mL of 5 % dextrose and run it over 20–30 minutes, or give it slowly through a fine needle directly into a running drip.",
+          "Give it by infusion over 5–10 minutes, or by slow injection through a fine needle (23–25 gauge) (WHO 2026). The guideline does not state a diluent or volume — follow the product leaflet.",
           "Watch the cannula site: thrombophlebitis and thrombosis on IV administration are recognised.",
           "Count the pulse before, during and 10 minutes after. Stop for any new irregularity.",
           "Do not push a large undiluted volume of antimonial into a vein."
@@ -13053,7 +13280,7 @@ window.DRUG_DB = [
     cautions: [
       "Cardiotoxic: ECG changes, reduced or inverted T waves, QT prolongation, fatal arrhythmia.",
       "Pancreatitis, with a transient rise in lipase and amylase, is common.",
-      "Contraindicated in pregnancy — spontaneous abortion, preterm delivery, maternal hepatic encephalopathy and vertical transmission.",
+      "Contraindicated in pregnancy — spontaneous abortion, preterm delivery, maternal hepatic encephalopathy and vertical transmission. In MSF's Sudan series 13 of 23 pregnant women given SSG alone (57 %) aborted, against none given liposomal amphotericin B (WHO 2026).",
       "More toxic in HIV coinfection; cure rate in VL–HIV in Ethiopia was only 43 %.",
       "Transient falls in platelets, white cells and haemoglobin; nose and gum bleeding."
     ],
@@ -13074,12 +13301,18 @@ window.DRUG_DB = [
       },
       {
         name: "Ethiopian national guideline for diagnosis and treatment of leishmaniasis — confirm current edition"
-      }
+      },
+      {
+      name: "WHO guidelines on leishmaniases: treatment of visceral leishmaniasis and post-kala-azar dermal leishmaniasis in eastern Africa and South-East Asia, 2026"
+    },
+      {
+      name: "Ethiopia MoH National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025 (section 11.5)"
+    }
     ],
     textbook: [
       {
         book: "whovl",
-        text: "The first-line treatment of VL in HIV-negative patients in East Africa is a pentavalent antimonial with paromomycin, given parenterally for 17 days.",
+        text: "(2022 wording; since WHO 2026 SSG + paromomycin is the second choice, after paromomycin + miltefosine.) The first-line treatment of VL in HIV-negative patients in East Africa is a pentavalent antimonial with paromomycin, given parenterally for 17 days.",
         ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
       },
       {
@@ -13124,9 +13357,84 @@ window.DRUG_DB = [
       },
       {
         book: "note",
-        text: "The 20 mg Sb5+/kg/day dose, the 17-day SSG-plus-paromomycin course and the 30-day monotherapy course are not stated in the 2022 VL–HIV guideline; they follow the WHO Expert Committee report (TRS 949, 2010) and the East African national protocols. Confirm with the national kala-azar protocol. The guideline does not formally contraindicate SSG in HIV — it reports poor cure rates and high toxicity; national programmes restrict it in advanced HIV.",
+        text: "The 20 mg/kg/day dose, the 17-day SSG-plus-paromomycin course and the 30-day monotherapy course are now stated in the WHO 2026 VL & PKDL guideline (rec. 4.1.2). Ethiopia's own kala-azar guideline was not reviewed here — confirm with the national programme. The guideline does not formally contraindicate SSG in HIV — it reports poor cure rates and high toxicity; national programmes restrict it in advanced HIV.",
         ref: "Editorial note"
-      }
+      },
+      {
+      book: "whovl26",
+      text: "SSG plus paromomycin is suggested rather than SSG monotherapy in patients in whom paromomycin plus miltefosine is excluded (conditional, low certainty).",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.2, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "SSG plus paromomycin: pentavalent antimonial 20 mg/kg per day IV or IM once a day for 17 days plus paromomycin sulfate 15 mg/kg (= 11 mg/kg base) IM once a day for 17 days.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.2, footnote a, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "SSG monotherapy, the comparator: 20 mg/kg per day IV or IM once a day for 30 days.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.2, footnote b, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "Compared with SSG alone, SSG plus paromomycin probably reduces the risk of PKDL and may reduce mortality.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.2 Rationale, p. 25"
+    },
+      {
+      book: "whovl26",
+      text: "Paromomycin plus miltefosine was better tolerated than SSG plus paromomycin, removes the risk of SSG cardiotoxicity, and is 3 days shorter with one fewer painful injection a day.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.1 Rationale, p. 23"
+    },
+      {
+      book: "whovl26",
+      text: "SSG may be given IM or IV, by infusion over 5–10 min or slow injection through a fine (23–25 gauge) needle to avoid thrombosis.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Pentavalent antimonials, p. 44"
+    },
+      {
+      book: "whovl26",
+      text: "Monitor serum chemistry, full blood count and ECG on SSG.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Pentavalent antimonials, p. 44"
+    },
+      {
+      book: "whovl26",
+      text: "A corrected QT over 0.5 s signals the likely onset of serious, possibly fatal arrhythmia; for serious hepato- or cardiotoxicity change the drug.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Pentavalent antimonials, p. 44"
+    },
+      {
+      book: "whovl26",
+      text: "Substandard antimonials can cause severe toxicity and death; quality must be assured.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Pentavalent antimonials, p. 44"
+    },
+      {
+      book: "whovl26",
+      text: "The Ethiopian guideline's indications for L-AMB, presented to the GDG: pancreatitis with abdominal pain and vomiting, jaundice on treatment, liver enzymes five times normal, raised creatinine, cardiotoxicity, severe uninterrupted vomiting, falling blood counts, and no response after 2 weeks.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Rationale, p. 27"
+    },
+      {
+      book: "whovl26",
+      text: "Ethiopia lists acute pancreatitis with abdominal pain and vomiting, and jaundice developing on treatment, as indications for L-AMB.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Rationale, p. 27"
+    },
+      {
+      book: "whovl26",
+      text: "In MSF's Sudan series, 13 of the pregnant women given SSG alone (57 %) had spontaneous abortions, against none in the L-AMB groups.",
+      ref: "WHO VL & PKDL guideline 2026, 4.1.3 Rationale, p. 27"
+    },
+      {
+      book: "whovl26",
+      text: "SSG: fatal arrhythmia and ECG changes, transient rise in lipase and amylase with symptomatic pancreatitis, and nose or gum bleeding are very common.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 3, p. 83"
+    },
+      {
+      book: "whovl26",
+      text: "Traditionally only severe (grade III) or disfiguring PKDL, lesions over 6 months, anterior uveitis, or young children with oral lesions that stop feeding were treated — SSG up to 2 months or L-AMB 2.5 mg/kg/day for 20 days.",
+      ref: "WHO VL & PKDL guideline 2026, 3.3.1 PKDL in eastern Africa, p. 18"
+    },
+      {
+      book: "ethhiv",
+      text: "Because of high toxicity and mortality in co-infection, antimonials are the last option.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.5, p. 252"
+    }
     ],
     review: { status: "draft", by: null, date: null }
   },
@@ -13137,7 +13445,7 @@ window.DRUG_DB = [
     cls: "Oral antileishmanial (alkylphosphocholine)",
     cat: "infection",
     wards: ["medical", "paediatric", "outpatient"],
-    tags: ["visceral leishmaniasis", "kala-azar", "VL-HIV", "leishmaniasis", "oral"],
+    tags: ["visceral leishmaniasis", "kala-azar", "VL-HIV", "leishmaniasis", "oral", "PKDL", "paromomycin plus miltefosine", "allometric" ],
     presentation: [
       "50 mg and 10 mg capsules, oral.",
       "Store at 20–25 °C (excursions 15–30 °C permitted). Protect from moisture — keep the capsules in the original blister until the moment of the dose."
@@ -13145,14 +13453,16 @@ window.DRUG_DB = [
     indications: [
       "VL in an HIV co-infected patient in East Africa — 28 days with liposomal amphotericin B",
       "VL–HIV in South-East Asia — 14 days with L-AMB",
-      "Extended therapy for a slow responder, as a second cycle with L-AMB"
+      "Extended therapy for a slow responder, as a second cycle with L-AMB",
+      "VL without HIV in eastern Africa — FIRST CHOICE, 14 days with paromomycin (WHO 2026)",
+      "PKDL in eastern Africa — 42 days with paromomycin, or 28 days with liposomal amphotericin B (WHO 2026)"
     ],
     standard: {
-      summary: "The only oral antileishmanial. 100 mg/day for 28 days in East Africa, with L-AMB. Teratogenic: pregnancy test and contraception are mandatory.",
+      summary: "The only oral antileishmanial. Without HIV in eastern Africa (WHO 2026): allometric weight-band dose twice daily for 14 days with paromomycin. With HIV: 28 days with L-AMB. Teratogenic: pregnancy test and contraception are mandatory. Stop at once for any eye symptom.",
       items: [
         {
-          label: "East Africa (adult)",
-          text: "100 mg/day for 28 days, alongside L-AMB 5 mg/kg on days 1, 3, 5, 7, 9 and 11. In practice 50 mg twice daily with food."
+          label: "East Africa, VL with HIV (adult)",
+          text: "28 days, alongside L-AMB 5 mg/kg on days 1, 3, 5, 7, 9 and 11. WHO 2022: 100 mg/day (in practice 50 mg twice daily with food). Ethiopia (HIV manual 2025): 2.5 mg/kg/day from day 1 — 100 mg/day over 30 kg, 150 mg/day over 45 kg."
         },
         {
           label: "South-East Asia (adult)",
@@ -13160,7 +13470,7 @@ window.DRUG_DB = [
         },
         {
           label: "Children",
-          text: "2–11 years: 2.5 mg/kg per day. 12 years and over weighing under 25 kg: 50 mg/day. Weighing 25–50 kg: 100 mg/day. No trial of the combination enrolled children, so this is an extrapolation."
+          text: "WHO 2026: use the allometric weight-band dose, particularly under 30 kg — children reach lower drug levels per kg, and under-dosing causes relapse. Daily dose, given as two doses: under 6 kg 20 mg; 6 to under 10 kg 30 mg; 10 to under 15 kg 50 mg; 15 to under 20 kg 60 mg; 20 to under 25 kg 70 mg; 25 to under 30 kg 80 mg; 30 to under 45 kg 100 mg; 45 kg and over 150 mg (Annex 2). The older age-based dose (2.5 mg/kg at 2–11 years; from 12 years 50 mg under 25 kg, 100 mg at 25–50 kg) came from the 2022 VL–HIV guideline, whose trials enrolled no children."
         },
         {
           label: "With food, always",
@@ -13168,20 +13478,32 @@ window.DRUG_DB = [
         },
         {
           label: "Women of childbearing potential",
-          text: "Contraindicated in pregnancy — it is embryotoxic and teratogenic. Obtain a urine or serum pregnancy test before the first dose. Do not prescribe it where adequate contraception cannot be assured for the whole course AND for 5 months afterwards. Vomiting and diarrhoea during treatment can stop an oral contraceptive working: an additional non-hormonal method is needed."
+          text: "Contraindicated in pregnancy — it is embryotoxic and teratogenic. Obtain a urine or serum pregnancy test before the first dose. Do not prescribe it where adequate contraception cannot be assured for the whole course AND afterwards: 5 months after courses of 28 days or more, 2 months after short courses of 5, 7 or 10 days (WHO 2026). The 2026 guideline does not classify the 14-day VL course; its trial required 5 months — use 5 months unless the national programme decides otherwise. Depot or long-acting methods give more reliable cover than pills or condoms. Vomiting and diarrhoea during treatment can stop an oral contraceptive working: an additional non-hormonal method is needed."
         },
         {
           label: "Breastfeeding",
-          text: "Either the drug or nursing is stopped after a risk–benefit discussion. Breastfeeding should be avoided for 5 months after treatment."
+          text: "Either the drug or nursing is stopped after a risk–benefit discussion. Breastfeeding should be avoided for 5 months after treatment. WHO 2026 excludes breastfeeding women from paromomycin + miltefosine and suggests liposomal amphotericin B for women breastfeeding (for < 6 months)."
         },
         {
           label: "Monitoring",
-          text: "Platelets (it causes thrombocytopenia), creatinine, and liver transaminases and bilirubin during therapy where the laboratory can do them. Counsel about eye symptoms and arrange eye examination during and after treatment — the drug has a long half-life."
+          text: "Platelets (it causes thrombocytopenia), creatinine, and liver transaminases and bilirubin during therapy where the laboratory can do them. Eyes (WHO 2026, Annex 1): ask about eye problems and examine the eyes BEFORE the first dose; defer miltefosine in active keratitis, uveitis or scleritis until healed. Tell the patient to stop the capsules and come back at once for a red, watering or painful eye, light sensitivity, blurred or dim vision, or a white spot. Eye examination at 4 weeks of therapy, and follow-up for at least 2 months after treatment. In PKDL: eye examination every 2 weeks during and after treatment."
         },
         {
           label: "Stop the drug",
-          text: "Stop for an exfoliative or bullous rash (Stevens–Johnson syndrome)."
-        }
+          text: "Stop for any eye symptom (refer to an eye specialist the same day and report to the national pharmacovigilance programme), and for an exfoliative or bullous rash (Stevens–Johnson syndrome)."
+        },
+        {
+        label: "Eastern Africa, VL without HIV (WHO 2026 first choice)",
+        text: "Allometric weight-band dose (see Children) orally twice daily for 14 days, WITH paromomycin 20 mg/kg/day as sulfate (= 15 mg/kg base) IM for 14 days. For patients aged 4–50 years with none of the exclusions (pregnancy, breastfeeding, relapse, severe malnutrition, severe VL, Hb under 5 g/dL, hearing loss, heart, kidney or liver disease, HIV, cannot swallow capsules, and others — see the kala-azar pathway)."
+      },
+        {
+        label: "PKDL, eastern Africa (WHO 2026)",
+        text: "Allometric dose twice daily for 42 days with paromomycin for 14 days; or for 28 days with L-AMB 5 mg/kg on days 1, 3, 5 and 7 — the shorter regimen is preferred in children and the severely malnourished. Exclude pre-existing eye disease; eye examination every 2 weeks during and after treatment."
+      },
+        {
+        label: "Food and supervision (WHO 2026)",
+        text: "With food if tolerated, in divided doses, directly observed where feasible. Provide food for unsupervised doses where food is short. Admit severely malnourished children and feed them before each supervised dose."
+      }
       ]
     },
     improvised: [
@@ -13214,12 +13536,12 @@ window.DRUG_DB = [
         best_for: "Every woman of childbearing potential — the one absolute prerequisite for this drug.",
         requires: [],
         steps: [
-          "Do a urine pregnancy test before the first dose. No test, no miltefosine — use L-AMB alone up to 40 mg/kg instead.",
-          "Agree a contraception plan that covers the 28 days AND the 5 months after the last capsule. Write the end date on the card, in the Ethiopian calendar too.",
+          "Do a urine pregnancy test before the first dose. No test, no miltefosine — with HIV use L-AMB alone up to 40 mg/kg; without HIV in eastern Africa use SSG plus paromomycin (or L-AMB if that is excluded).",
+          "Agree a contraception plan that covers the whole course AND the 5 months after the last capsule (WHO 2026 accepts 2 months only after a 5-, 7- or 10-day course). Write the end date on the card, in the Ethiopian calendar too.",
           "An injectable (for example depot medroxyprogesterone) or an implant is more reliable here than an oral pill, because vomiting and diarrhoea on miltefosine can stop an oral contraceptive from being absorbed. If the woman is on a pill, add condoms for the whole period.",
           "Explain, in her language and without an audience, why this matters: the drug damages the fetus.",
           "If she becomes pregnant during or after treatment, record it in the pregnancy register the guideline asks centres to keep.",
-          "If contraception cannot be assured, do not prescribe miltefosine. WHO's alternative is L-AMB monotherapy up to 40 mg/kg."
+          "If contraception cannot be assured, do not prescribe miltefosine. With HIV, WHO's alternative is L-AMB monotherapy up to 40 mg/kg; without HIV in eastern Africa, SSG plus paromomycin for 17 days (WHO 2026)."
         ],
         monitor: [
           "Pregnancy test documented before dose 1",
@@ -13235,7 +13557,7 @@ window.DRUG_DB = [
         best_for: "Health centres continuing the oral phase after discharge.",
         requires: [],
         steps: [
-          "Ask about vision at every visit: blurring, floaters, pain, redness, light sensitivity. Any new eye symptom means refer for eye examination and discuss stopping — reported ocular events include uveitis.",
+          "Ask about vision at every visit: blurring, floaters, pain, redness, light sensitivity. Any new eye symptom means STOP miltefosine now and refer for eye examination the same day — keratitis, scleritis and uveitis have been reported, and some patients lost sight (WHO 2026, Annex 1).",
           "Check the conjunctivae and gums for bleeding and look for new bruising or petechiae; VL itself causes thrombocytopenia and miltefosine adds to it.",
           "Look at the eyes and under the tongue for jaundice; ask about dark urine.",
           "Look at the whole skin at each visit. A blistering or peeling rash means stop the drug immediately.",
@@ -13253,30 +13575,32 @@ window.DRUG_DB = [
       }
     ],
     paediatric: [
-      "2–11 years: 2.5 mg/kg per day. 12 years and over under 25 kg: 50 mg/day. 25–50 kg: 100 mg/day.",
-      "No trial enrolled children; use is by extrapolation.",
-      "The 10 mg capsule makes paediatric dosing possible — do not open or split 50 mg capsules to estimate a dose."
+      "Use the WHO 2026 allometric weight-band dose (daily, split into two doses): under 6 kg 20 mg; 6 to under 10 kg 30 mg; 10 to under 15 kg 50 mg; 15 to under 20 kg 60 mg; 20 to under 25 kg 70 mg; 25 to under 30 kg 80 mg; 30 to under 45 kg 100 mg; 45 kg and over 150 mg.",
+      "Children under 30 kg given the same mg/kg as adults are under-exposed, which is linked to relapse and failure. The weight-band dose fixes that; exposure depends on weight, not age.",
+      "The eastern-Africa VL regimen (with paromomycin) was tested from age 4 years and the PKDL regimen from 6 years. A child who cannot swallow capsules is excluded.",
+      "Children may not report eye symptoms: for PKDL the shorter L-AMB + miltefosine regimen is preferred.",
+      "The 10 mg capsule makes paediatric dosing possible — do not open or split 50 mg capsules to estimate a dose. The guideline does not say how to split a daily dose that does not divide evenly; check with the pharmacist."
     ],
     cautions: [
       "Contraindicated in pregnancy (embryotoxic and teratogenic), in Sjögren–Larsson syndrome, and in hypersensitivity.",
-      "Contraception is required for the course and for 5 months afterwards.",
+      "Contraception is required for the course and afterwards: 5 months after courses of 28 days or more, 2 months after 5–10-day courses (WHO 2026); use 5 months after the 14-day VL course unless the national programme decides otherwise.",
       "Vomiting and diarrhoea are very common and can defeat an oral contraceptive and cause volume depletion.",
       "Thrombocytopenia, raised creatinine, raised transaminases and bilirubin.",
-      "Ocular adverse events including uveitis have been reported.",
+      "Ocular adverse events — keratitis, scleritis, uveitis, visual loss up to blindness. WHO considers a causal link at least a reasonable possibility. Stop the drug for any eye symptom and refer.",
       "Efavirenz was associated with lower miltefosine exposure in an Ethiopian study; miltefosine exposure was lower in VL–HIV patients than in HIV-negative adults."
     ],
-    calc: {
-      type: "weight",
-      dosePerKg: 2.5,
-      doseUnit: "mg",
-      maxDose: 100,
-      label: "Child 2–11 years (2.5 mg/kg/day). Adults and children 25–50 kg: a flat 100 mg/day; 12 years and over under 25 kg: 50 mg/day"
-    },
+    calc: null,
     sources: [
       {
         name: "WHO guideline for the treatment of visceral leishmaniasis in HIV co-infected patients in East Africa and South-East Asia, 2022"
       },
-      { name: "Miltefosine (Impavido) product information" }
+      { name: "Miltefosine (Impavido) product information" },
+      {
+      name: "WHO guidelines on leishmaniases: treatment of visceral leishmaniasis and post-kala-azar dermal leishmaniasis in eastern Africa and South-East Asia, 2026"
+    },
+      {
+      name: "Ethiopia MoH National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025 (section 11.5)"
+    }
     ],
     textbook: [
       {
@@ -13323,7 +13647,132 @@ window.DRUG_DB = [
         book: "whovl",
         text: "Miltefosine does not markedly induce or inhibit human cytochrome P450 enzymes, so interactions with antiretrovirals are not expected.",
         ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 5.3.2 Drug interactions, pdf p. 60"
-      }
+      },
+      {
+      book: "whovl26",
+      text: "Paromomycin plus miltefosine is suggested rather than SSG plus paromomycin (conditional, low certainty).",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.1, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "Doses in combination: paromomycin sulfate 20 mg/kg (= 15 mg/kg base) IM once a day for 14 days plus miltefosine in allometric doses orally twice a day for 14 days.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.1, footnote a, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "Miltefosine is given in allometric doses, particularly for patients under 30 kg (Annex 2).",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1, remark 2, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "Children, especially under 30 kg, reach lower blood levels than adults at the same mg/kg dose, which is linked to relapse and failure.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43"
+    },
+      {
+      book: "whovl26",
+      text: "Allometric dosing gives children and adults similar drug levels; exposure depends on weight, not age.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 44"
+    },
+      {
+      book: "whovl26",
+      text: "Allometric weight-band regimen of miltefosine: selected daily dose by weight band.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 2, p. 79"
+    },
+      {
+      book: "whovl26",
+      text: "Miltefosine is contraindicated in pregnancy; contraception must cover the course and 2 months after short regimens (e.g. 5, 7 or 10 days) or 5 months after regimens of 28 days or longer.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1, remark 3, p. 23"
+    },
+      {
+      book: "whovl26",
+      text: "After the standard 28-day course contraceptive cover of at least 5 months after the last dose; for 5-, 7- or 10-day courses at least 2 months.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43"
+    },
+      {
+      book: "whovl26",
+      text: "Long-acting reversible or depot contraception gives more reliable cover than barrier or short-course oral methods.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43"
+    },
+      {
+      book: "whovl26",
+      text: "Vomiting or diarrhoea may reduce absorption of oral contraceptives; advise an additional non-oral method.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43"
+    },
+      {
+      book: "whovl26",
+      text: "Take miltefosine with food if tolerated and in divided doses; directly observed treatment improves adherence.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43"
+    },
+      {
+      book: "whovl26",
+      text: "No data in severely malnourished children: admit them and give food before each directly observed dose.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43"
+    },
+      {
+      book: "whovl26",
+      text: "Paromomycin sulfate 20 mg/kg (= 15 mg/kg base) IM once a day for 14 days and miltefosine in allometric doses orally twice a day for 42 days.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.3.1, footnote a, p. 29"
+    },
+      {
+      book: "whovl26",
+      text: "Comparator: L-AMB 5 mg/kg IV on days 1, 3, 5 and 7 (total 20 mg/kg) with miltefosine in allometric doses twice a day for 28 days.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.3.1, footnote b, p. 29"
+    },
+      {
+      book: "whovl26",
+      text: "Before miltefosine take a history of eye disorders and examine the eyes as appropriate; with current or past eye disease seek an ophthalmologist's advice where feasible.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 1, p. 66"
+    },
+      {
+      book: "whovl26",
+      text: "Tell every patient: red eyes, watering, eye pain or blurred vision means stop miltefosine and contact a health worker immediately.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 1, p. 66"
+    },
+      {
+      book: "whovl26",
+      text: "In severe eye disease (keratitis, uveitis, scleritis) defer miltefosine until the lesions have completely resolved.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 1, Appendix 2, p. 69"
+    },
+      {
+      book: "whovl26",
+      text: "Follow all patients on miltefosine at frequent intervals for a minimum of 2 months after treatment; an eye examination at 4 weeks of therapy is critically important.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 1, Appendix 2, p. 70"
+    },
+      {
+      book: "whovl26",
+      text: "A causal link between miltefosine and eye events is at least a reasonable possibility; most were in South Asian PKDL, usually beyond 28 days, and some lost sight permanently.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 1, Appendix 1, p. 68"
+    },
+      {
+      book: "whovl26",
+      text: "Reported eye events: keratitis, keratopathy, acute scleritis, uveitis, ocular hyperaemia and visual impairment up to blindness.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 1, Appendix 1, p. 68"
+    },
+      {
+      book: "whovl26",
+      text: "Report suspected adverse events to the local health authority and the national pharmacovigilance programme without delay.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 1, p. 66"
+    },
+      {
+      book: "whovl26",
+      text: "Miltefosine: vomiting, diarrhoea and raised liver enzymes very common; anorexia, nausea, raised urea and creatinine common; abdominal pain, thrombocytopenia and Stevens–Johnson syndrome uncommon.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 3, p. 80"
+    },
+      {
+      book: "whovl26",
+      text: "Annex 3 lists inflammation of eye structures (keratitis, uveitis) as uncommon, with a footnote to the WHO miltefosine ocular-safety advice, although the row is printed inside the paromomycin table.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 3, p. 80"
+    },
+      {
+      book: "ethhiv",
+      text: "Ethiopia first line for VL–HIV: AmBisome total 30 mg/kg (5 mg/kg on days 1, 3, 5, 7, 9, 11) with miltefosine 2.5 mg/kg/day for 28 days from day 1.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.5 Visceral leishmaniasis and HIV co-infection, p. 252"
+    },
+      {
+      book: "ethhiv",
+      text: "Ethiopia: miltefosine 100 mg/day for clients over 30 kg and 150 mg/day over 45 kg.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.5, p. 252"
+    }
     ],
     review: { status: "draft", by: null, date: null }
   },
@@ -13334,46 +13783,55 @@ window.DRUG_DB = [
     cls: "Aminoglycoside antileishmanial",
     cat: "infection",
     wards: ["medical", "paediatric", "outpatient"],
-    tags: ["visceral leishmaniasis", "kala-azar", "leishmaniasis", "aminoglycoside"],
+    tags: ["visceral leishmaniasis", "kala-azar", "leishmaniasis", "aminoglycoside", "PKDL", "paromomycin plus miltefosine" ],
     presentation: ["2 mL vial of 375 mg/mL, for IM (or IV) use.", "Store below 25 °C, protected from light."],
     indications: [
-      "First-line treatment of VL in HIV-NEGATIVE patients in East Africa, with a pentavalent antimonial for 17 days",
+      "VL without HIV in eastern Africa: FIRST CHOICE with miltefosine for 14 days (WHO 2026); with sodium stibogluconate for 17 days when miltefosine cannot be used",
       "Rescue treatment of VL–HIV that has failed L-AMB plus miltefosine, with sodium stibogluconate",
-      "Paromomycin with miltefosine has been used for relapse in South-East Asia"
+      "Paromomycin with miltefosine has been used for relapse in South-East Asia",
+      "PKDL in eastern Africa — 14 days, with miltefosine for 42 days (WHO 2026)"
     ],
     standard: {
-      summary: "15 mg/kg once daily by deep IM injection for 17 days, with a pentavalent antimonial. Nephrotoxic and ototoxic.",
+      summary: "Deep IM once daily. With miltefosine (first choice, WHO 2026): 20 mg/kg as sulfate (= 15 mg/kg base) for 14 days. With SSG: 15 mg/kg as sulfate (= 11 mg/kg base) for 17 days. Know whether your vial is labelled as sulfate or base. Nephrotoxic and ototoxic.",
       items: [
         {
-          label: "East Africa, VL without HIV (first line)",
-          text: "Paromomycin 15 mg/kg/day IM PLUS sodium stibogluconate 20 mg Sb5+/kg/day, both for 17 days. WHO's 2022 guideline names the antimonial-plus-paromomycin combination as the East African first line for HIV-negative patients but does not restate the doses — confirm with the national kala-azar protocol."
+          label: "Eastern Africa, VL without HIV — with SSG (second choice since 2026)",
+          text: "For patients in whom paromomycin + miltefosine is excluded: paromomycin 15 mg/kg/day as sulfate (= 11 mg/kg base) IM PLUS sodium stibogluconate 20 mg/kg/day IM or IV, both once daily for 17 days (WHO 2026, rec. 4.1.2)."
         },
         {
           label: "Monotherapy",
-          text: "20 mg/kg/day IM for 21 days has been used in East Africa where an antimonial cannot be given. Confirm with the national protocol."
+          text: "Not one of the regimens WHO lists for eastern Africa — neither in the 2026 recommendations nor in the 2010 Expert Committee ranking that the 2026 guideline reprints. Do not use paromomycin alone unless the national programme directs it."
         },
         {
           label: "Check the label before you calculate",
-          text: "Some vials are labelled as paromomycin BASE and some as the SULFATE salt, and the mg/kg dose differs accordingly. Read the vial and the protocol together before working out the volume. If they do not match, ask the pharmacist — do not guess."
+          text: "Some vials are labelled as paromomycin BASE and some as the SULFATE salt, and the mg/kg dose differs accordingly. WHO 2026 states its doses as the sulfate: 15 mg/kg sulfate = 11 mg/kg base, 20 mg/kg sulfate = 15 mg/kg base. Read the vial and the protocol together before working out the volume. If they do not match, ask the pharmacist — do not guess."
         },
         {
           label: "In HIV coinfection",
-          text: "HIV-positive VL patients generally need higher doses of paromomycin and L-AMB than HIV-negative patients. Paromomycin is not part of the WHO first-line combination for co-infected patients; it appears as rescue treatment with sodium stibogluconate."
+          text: "HIV-positive VL patients generally need higher doses of paromomycin and L-AMB than HIV-negative patients. Paromomycin is not part of the WHO first-line combination for co-infected patients; it appears as rescue treatment with sodium stibogluconate. Ethiopia (HIV manual 2025) lists paromomycin with AmBisome or with miltefosine as a second-line option. The WHO 2026 paromomycin + miltefosine regimen is for HIV-negative patients only."
         },
         {
           label: "Monitoring",
-          text: "Hearing, balance and kidney function. A reversible abnormal audiogram is a common finding; ototoxicity, conductive deafness and proteinuria are less common but real."
-        }
+          text: "Hearing, balance and kidney function. A reversible abnormal audiogram is a common finding; ototoxicity, conductive deafness and proteinuria are less common but real. WHO 2026: mild injection-site pain is the commonest adverse event (55 %), reversible ototoxicity occurs in 2 %, renal toxicity is rare; raised liver enzymes and tetany occur."
+        },
+        {
+        label: "Eastern Africa, VL without HIV — with miltefosine (WHO 2026 first choice)",
+        text: "Paromomycin 20 mg/kg/day as sulfate (= 15 mg/kg base) deep IM once daily for 14 days, WITH miltefosine in allometric weight-band doses twice daily for 14 days. Ages 4–50 years with no exclusion; pre-existing hearing loss was an exclusion."
+      },
+        {
+        label: "PKDL, eastern Africa (WHO 2026)",
+        text: "Paromomycin 20 mg/kg/day as sulfate (= 15 mg/kg base) IM once daily for 14 days, with miltefosine twice daily for 42 days."
+      }
       ]
     },
     improvised: [
       {
-        title: "Deep IM injection and site rotation for a 17-day course",
+        title: "Deep IM injection and site rotation for a 14- or 17-day course",
         best_for: "Daily injections in a wasted patient who is also getting daily antimonial.",
         requires: ["im"],
         steps: [
-          "Work out the volume: 15 mg/kg ÷ 375 mg/mL. A 60 kg adult needs 900 mg = 2.4 mL; a 35 kg patient 525 mg = 1.4 mL; a 20 kg child 300 mg = 0.8 mL. The volume is small — one site is enough.",
-          "This patient is probably getting sodium stibogluconate at the same time. Plan the sites together: put the antimonial and the paromomycin in DIFFERENT sites on the same day, and rotate both on a written four-site chart.",
+          "Work out the volume from the dose in the SAME form as your vial label (sulfate or base): with miltefosine 20 mg/kg sulfate = 15 mg/kg base; with SSG 15 mg/kg sulfate = 11 mg/kg base. Example at 15 mg/kg ÷ 375 mg/mL: A 60 kg adult needs 900 mg = 2.4 mL; a 35 kg patient 525 mg = 1.4 mL; a 20 kg child 300 mg = 0.8 mL. The volume is small — one site is enough.",
+          "On the 17-day regimen the patient also gets sodium stibogluconate. Plan the sites together: put the antimonial and the paromomycin in DIFFERENT sites on the same day, and rotate both on a written four-site chart.",
           "Upper outer quadrant of the buttock or the ventrogluteal site in adults; anterolateral thigh in small children and the very wasted.",
           "Change the needle after drawing up, aspirate, inject slowly, then press without rubbing.",
           "Inspect yesterday's sites before injecting. Injection-site swelling and abscess are recognised adverse effects — a fluctuant, hot or tender lump means stop using that area and treat it.",
@@ -13440,7 +13898,7 @@ window.DRUG_DB = [
       doseUnit: "mg",
       conc: 375,
       concUnit: "mg/mL",
-      label: "Daily IM dose (15 mg/kg) — check whether your vial is labelled as base or sulfate before using this volume"
+      label: "15 mg/kg at 375 mg/mL. WHO 2026: 15 mg/kg BASE (= 20 mg/kg sulfate) with miltefosine; 15 mg/kg SULFATE (= 11 mg/kg base) with SSG. Use this volume only if your vial's mg/mL is stated in the same form"
     },
     sources: [
       {
@@ -13451,12 +13909,18 @@ window.DRUG_DB = [
       },
       {
         name: "Ethiopian national guideline for diagnosis and treatment of leishmaniasis — confirm current edition"
-      }
+      },
+      {
+      name: "WHO guidelines on leishmaniases: treatment of visceral leishmaniasis and post-kala-azar dermal leishmaniasis in eastern Africa and South-East Asia, 2026"
+    },
+      {
+      name: "Ethiopia MoH National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025 (section 11.5)"
+    }
     ],
     textbook: [
       {
         book: "whovl",
-        text: "In East Africa, VL in HIV-negative patients is treated first line with a pentavalent antimonial and paromomycin given parenterally for 17 days.",
+        text: "(2022 wording; since WHO 2026 SSG + paromomycin is the second choice, after paromomycin + miltefosine.) In East Africa, VL in HIV-negative patients is treated first line with a pentavalent antimonial and paromomycin given parenterally for 17 days.",
         ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3 VL–HIV coinfection in East Africa, pdf p. 28"
       },
       {
@@ -13496,9 +13960,54 @@ window.DRUG_DB = [
       },
       {
         book: "note",
-        text: "The 15 mg/kg/day dose with an antimonial for 17 days, and 20 mg/kg/day for 21 days as monotherapy, are not stated in the 2022 VL–HIV guideline; they follow the WHO Expert Committee report (TRS 949, 2010) and East African protocols. Vials may be labelled as base or as sulfate — confirm the labelling and the dose with the national kala-azar protocol before calculating a volume.",
+        text: "The doses are now stated in the WHO 2026 VL & PKDL guideline: 20 mg/kg/day sulfate (15 mg/kg base) for 14 days with miltefosine, and 15 mg/kg/day sulfate (11 mg/kg base) for 17 days with SSG. Monotherapy (20 mg/kg/day for 21 days) is in neither the 2026 recommendations nor the 2010 ranking for eastern Africa. Vials may be labelled as base or as sulfate — confirm the labelling and the dose with the national kala-azar protocol before calculating a volume.",
         ref: "Editorial note"
-      }
+      },
+      {
+      book: "whovl26",
+      text: "Paromomycin plus miltefosine is suggested rather than SSG plus paromomycin (conditional, low certainty).",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.1, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "Paromomycin sulfate 20 mg/kg is equivalent to 15 mg/kg paromomycin base.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.1, footnote a, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "SSG plus paromomycin: pentavalent antimonial 20 mg/kg per day IV or IM once a day for 17 days plus paromomycin sulfate 15 mg/kg (= 11 mg/kg base) IM once a day for 17 days.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.2, footnote a, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "15 mg/kg paromomycin sulfate equals 11 mg/kg base; 20 mg/kg sulfate equals 15 mg/kg base.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Paromomycin, p. 44"
+    },
+      {
+      book: "whovl26",
+      text: "Mild injection-site pain is the commonest adverse event (55 %); reversible ototoxicity occurs in 2 %; renal toxicity is rare; raised liver enzymes and tetany occur.",
+      ref: "WHO VL & PKDL guideline 2026, 5.1 Paromomycin, p. 44"
+    },
+      {
+      book: "whovl26",
+      text: "Also excluded: drug hypersensitivity, pre-existing hearing loss, and cardiac, renal or hepatic disease.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1, remark 1, p. 22"
+    },
+      {
+      book: "whovl26",
+      text: "Paromomycin sulfate 20 mg/kg (= 15 mg/kg base) IM once a day for 14 days and miltefosine in allometric doses orally twice a day for 42 days.",
+      ref: "WHO VL & PKDL guideline 2026, Recommendation 4.3.1, footnote a, p. 29"
+    },
+      {
+      book: "whovl26",
+      text: "Paromomycin: headache, lethargy and mild injection-site pain very common; fever and reversible abnormal audiogram common; injection-site abscess, ototoxicity, conductive deafness and proteinuria uncommon.",
+      ref: "WHO VL & PKDL guideline 2026, Annex 3, p. 80"
+    },
+      {
+      book: "ethhiv",
+      text: "Ethiopia second line also lists paromomycin with AmBisome or with miltefosine, or SSG 20 mg/kg/day for 30 days with paromomycin 15 mg/kg/day for 17 days.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.5, p. 252"
+    }
     ],
     review: { status: "draft", by: null, date: null }
   },
@@ -18783,7 +19292,9 @@ window.DRUG_DB = [
       "HIV-exposed infants from 6 weeks of age until HIV infection is excluded after breastfeeding ends",
       "Treatment of Pneumocystis pneumonia (high dose)",
       "Shigella or urinary infection only when the organism is known or expected to be susceptible",
-      "Pertussis in infants over 2 months who cannot take a macrolide"
+      "Pertussis in infants over 2 months who cannot take a macrolide",
+      "Toxoplasmic encephalitis in HIV: Ethiopia's first-line treatment (4 single-strength tablets twice daily for 28 days), then maintenance and secondary prophylaxis",
+      "Isospora belli diarrhoea in HIV (Ethiopia, Table 11.10)"
     ],
     standard: {
       summary: "In Ethiopia cotrimoxazole is above all the HIV prophylaxis drug: one dose a day prevents PCP, toxoplasmosis and many bacterial infections and diarrhoeas. Who starts and stops it is set by the national HIV guideline, which is broader than the CD4 under 200 rule in Harrison. As a treatment antibiotic it is now limited by widespread resistance.",
@@ -18798,11 +19309,11 @@ window.DRUG_DB = [
         },
         {
           label: "Who gets prophylaxis",
-          text: "Every HIV-exposed infant from 6 weeks (WHO: 4–6 weeks) until HIV is excluded after breastfeeding has stopped; children and adults with HIV according to the Ethiopian national HIV guideline (WHO recommends it for WHO stage 3–4 disease or CD4 350 or below, and in malaria and bacterial-infection settings continues it more widely). Harrison's US criteria — prior PCP, CD4 under 200 or under 15 %, oral thrush, unexplained fever over 2 weeks — are the minimum, not the Ethiopian rule. Follow the national guideline for stopping."
+          text: "Ethiopia (Table 11.1): HIV-exposed infants — all, from 6 weeks, until the risk of HIV transmission ends or HIV infection is excluded. Children with HIV under 5 years — all, regardless of CD4 or stage; stop after age 5 only when clinically stable with immune recovery (CD4 over 350 with suppressed viral load) and/or viral suppression on ART. Children 5 years and over and adults — any WHO stage with CD4 350 or below, or WHO stage 3 or 4 whatever the CD4; stop only when on ART for at least a year with no new WHO stage 2–4 event AND CD4 over 350 with a suppressed viral load (or two consecutive CD4 counts over 350 if there is no viral load). Stop at once for Stevens-Johnson syndrome, severe liver disease, severe anaemia or pancytopenia, or a negative HIV result in an exposed infant. Contraindicated with severe sulfa allergy (including Fansidar), severe liver or kidney disease, and G6PD deficiency (Ethiopia). Harrison's US threshold (CD4 under 200) is narrower and is not the Ethiopian rule."
         },
         {
           label: "PCP treatment",
-          text: "Trimethoprim 5 mg/kg (with sulfamethoxazole 25 mg/kg) every 6–8 h by mouth or IV, for 21 days in HIV — in an adult about 2 double-strength tablets three or four times a day (Harrison). Add a corticosteroid for moderate–severe disease (Harrison: prednisone 40 mg twice daily for 5 days, 40 mg daily for 5 days, then 20 mg daily for 11 days). Then continue prophylaxis."
+          text: "Ethiopia: trimethoprim 15–25 mg/kg with sulfamethoxazole 75–125 mg/kg, given three or four times daily, for 21 days — read as the DAILY total split into 3–4 doses (the manual's wording is ambiguous; Harrison's 5 mg/kg every 6–8 h = 15–20 mg/kg per day). Harrison: in an adult about 2 double-strength tablets three or four times a day. Severely ill adults with marked respiratory distress: prednisolone 40 mg twice daily for 5 days, 40 mg daily for the next 6 days, then 20 mg daily until the end of treatment (Ethiopia); Harrison: 40 mg twice daily days 1–5, 40 mg daily days 6–10, 20 mg daily days 11–21. Severe PCP in a child: prednisolone 2 mg/kg/day for 7–10 days, then taper over 10–14 days (Ethiopia). Start secondary prophylaxis (960 mg daily) immediately after the 21 days. See the PCP case."
         },
         {
           label: "Shigella / UTI (susceptible only)",
@@ -18811,7 +19322,19 @@ window.DRUG_DB = [
         {
           label: "Pertussis (infants over 2 months)",
           text: "Trimethoprim 8 mg/kg/day with sulfamethoxazole 40 mg/kg/day in 2 divided doses for 14 days (Nelson). Contraindicated under 2 months."
-        }
+        },
+        {
+        label: "Toxoplasmic encephalitis (Ethiopian first line)",
+        text: "Adult: 480 mg (80/400) tablets, 4 tablets every 12 h for 28 days, then 2 tablets every 12 h for 3 months; then secondary prophylaxis 960 mg daily. Child: trimethoprim 5 mg/kg + sulfamethoxazole 25 mg/kg per dose every 12 h (trimethoprim 10 mg/kg per DAY) for 28 days, then half that for 3 months. This matches the adult regimen per kg. The manual prints 10 mg/kg + 50 mg/kg PER DOSE, which is twice the adult dose per kg and is read here as a daily total: confirm with a senior (editorial). Treat empirically when there are focal neurological signs and CD4 is under 200; nearly 90 % improve within days, and failure to improve in 1–2 weeks makes toxoplasmosis unlikely (Ethiopia)."
+      },
+        {
+        label: "Rash on prophylaxis — Ethiopian grading",
+        text: "Grade 1 (erythema, itch) and grade 2 (diffuse maculopapular rash, dry peeling): give an antihistamine, CONTINUE cotrimoxazole and follow closely. Grade 3 (blisters, minor mucosal ulcers): stop, manage, and re-introduce after 2 weeks under observation by desensitisation. Grade 4 (exfoliative dermatitis, Stevens-Johnson syndrome, erythema multiforme, moist desquamation): stop and NEVER restart (Ethiopia, Table 11.3)."
+      },
+        {
+        label: "Desensitisation (adults and adolescents, Ethiopia Table 11.4)",
+        text: "Using suspension 240 mg/5 mL (40/200 per 5 mL): day 1 2 mL, day 2 4 mL, day 3 6 mL, day 4 8 mL, day 5 one 480 mg tablet, day 6 one 960 mg tablet — then continue 960 mg daily. Only for mild to moderate reactions, under supervision. If severe allergy or desensitisation fails: dapsone if available (see Dapsone)."
+      }
       ]
     },
     improvised: [
@@ -18826,7 +19349,7 @@ window.DRUG_DB = [
           "Over 14 years (960 mg): one 960 mg tablet or two 480 mg tablets.",
           "For an infant, crush the quarter tablet, mix it with a few drops of breast milk or clean water on a spoon, and give it all. A quarter does not need to be exact; it should not be a half.",
           "Give it at the same time every day as the child's other medicines (for example with the morning ARV dose) so it is not forgotten.",
-          "Move the child up a band on their birthday — the bands are by age (weight bands are used in some national tables; follow the one your clinic uses)."
+          "Move the child up a band as they grow. Ethiopia's Table 11.2 gives age with weight in brackets: up to 6 months (5 kg); 6 months–5 years (5–15 kg); 6–14 years (15–30 kg); over 14 years (over 30 kg)."
         ],
         monitor: ["Adherence at each visit (count tablets left)", "Rash, yellow eyes, pallor"],
         cautions: [
@@ -18861,8 +19384,8 @@ window.DRUG_DB = [
         steps: [
           "Stop the drug at once and do not give another dose if there is ANY of: blistering or peeling skin, sores in the mouth, eyes or genitals, fever with the rash, yellow eyes, or a widespread rash. This may be Stevens-Johnson syndrome or toxic epidermal necrolysis — refer urgently.",
           "After such a reaction, never give cotrimoxazole or any sulfonamide again (including sulfadoxine-pyrimethamine). Write 'SULFA ALLERGY — SEVERE' on the card and the file.",
-          "A mild, flat, itchy rash with no mucosal involvement and no fever: do not decide alone. Harrison allows rechallenge or a dose-escalation protocol after non-life-threatening reactions, but this must follow the national guideline and be supervised by a clinician.",
-          "While off cotrimoxazole, the patient still needs PCP protection: the alternatives — dapsone, atovaquone or aerosolised pentamidine — usually require referral."
+          "Ethiopia grades the rash. Grade 1–2 (redness, itch, a flat or bumpy rash, dry peeling, no blisters, no mucosal sores, no fever): give an antihistamine, CONTINUE cotrimoxazole and review within days. Grade 3 (blisters or minor mouth ulcers): stop, treat, and re-introduce after 2 weeks by supervised desensitisation (Table 11.4). Grade 4: never again (Ethiopia).",
+          "While off cotrimoxazole, the patient still needs PCP protection. Ethiopia: dapsone (if available) after severe allergy or failed desensitisation — only for WHO stage 4 and/or CD4 under 200 (child under 5: CD4 under 25 %), stopped once CD4 stays over 200 (over 25 %) for 6 months; check haemoglobin before starting and every 1–2 weeks for the first months; not during breastfeeding. Atovaquone and aerosolised pentamidine usually need referral."
         ],
         monitor: ["Mucous membranes, temperature, skin daily after a reaction"],
         cautions: ["Never rechallenge after mucosal involvement, blistering or fever — it can kill."]
@@ -18890,7 +19413,7 @@ window.DRUG_DB = [
       }
     ],
     paediatric: [
-      "HIV-exposed infants: start at 6 weeks and continue until HIV is excluded after breastfeeding ends (national guideline).",
+      "HIV-exposed infants: start at 6 weeks and continue until the risk of HIV transmission ends or HIV infection is excluded (Ethiopia, Table 11.1 and ch. 5). Children with HIV under 5: give to all, regardless of CD4 or stage, until at least age 5 (Ethiopia).",
       "Avoid treatment courses under 2 months (kernicterus risk); in jaundiced or premature babies use another antibiotic.",
       "Child treatment dose: trimethoprim 4 mg/kg + sulfamethoxazole 20 mg/kg twice daily."
     ],
@@ -18951,7 +19474,22 @@ window.DRUG_DB = [
         book: "note",
         text: "WHO and the Ethiopian national HIV guideline use broader criteria for cotrimoxazole preventive therapy than the US thresholds quoted in Harrison (CD4 under 200), because malaria and severe bacterial infections are common. The WHO age bands for prophylaxis are from the WHO co-trimoxazole prophylaxis guidelines. Confirm start and stop rules with the current national guideline.",
         ref: "Editorial note"
-      }
+      },
+      {
+      book: "ethhiv",
+      text: "Table 11.1: HIV-exposed infants from 6 weeks until transmission risk ends or HIV is excluded; children with HIV under 5 all, stopping after 5 years when stable with immune recovery and/or viral suppression; 5 years and over and adults with any WHO stage and CD4 350 or below, or WHO stage 3–4; stop when stable on ART at least a year with CD4 over 350 and suppressed viral load, or two CD4 counts over 350 if no viral load.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.2, Table 11.1, p. 182"
+    },
+      {
+      book: "ethhiv",
+      text: "Table 11.2 doses: up to 6 months (5 kg) 2.5 mL suspension or ¼ single-strength tablet; 6 months–5 years (5–15 kg) 5 mL or ½ tablet; 6–14 years (15–30 kg) 10 mL, 1 single-strength or ½ double-strength tablet; over 14 years (over 30 kg) 2 single-strength or 1 double-strength tablet daily. Contraindications: severe sulfa allergy, severe liver or renal disease, G6PD deficiency.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.2, Table 11.2, p. 183"
+    },
+      {
+      book: "ethhiv",
+      text: "Toxoplasmic encephalitis first line: trimethoprim/sulfamethoxazole 80/400, 4 tablets 12-hourly for 28 days, then 2 tablets 12-hourly for 3 months; secondary prophylaxis 960 mg daily.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3 Toxoplasma encephalitis, p. 228"
+    }
     ],
     sources: [
       {
@@ -18962,7 +19500,10 @@ window.DRUG_DB = [
       },
       { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
       { name: "Nelson Textbook of Pediatrics 22nd ed. 2024" },
-      { name: "BNF / BNF for Children — co-trimoxazole" }
+      { name: "BNF / BNF for Children — co-trimoxazole" },
+      {
+      name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025 (11.2 CPT; 11.3 OIs)"
+    }
     ],
     review: { status: "draft", by: null, date: null }
   },
@@ -19161,18 +19702,18 @@ window.DRUG_DB = [
       "Oral and oesophageal candidiasis",
       "Vaginal candidiasis (not in pregnancy — see Safety)",
       "Invasive Candida infection in neonates and children when the species is susceptible",
-      "Primary cryptococcal prophylaxis in advanced HIV where CrAg screening is not available"
+      "Primary cryptococcal prophylaxis for adults and adolescents with CD4 under 100 where CrAg screening is not available (Ethiopia)"
     ],
     standard: {
       summary: "Absorbed almost completely by mouth, so tablets are as good as the IV bag. It is fungistatic and does not cover moulds — it does nothing for fungal keratitis (that needs natamycin drops). It inhibits the enzymes that clear warfarin, phenytoin and many QT-prolonging drugs, and the dose is halved after loading in kidney impairment.",
       items: [
         {
           label: "Oral thrush",
-          text: "Adult 100–200 mg once daily (Harrison) for 7–14 days. Child 3–6 mg/kg once daily."
+          text: "Ethiopia: miconazole 2 % oral gel twice daily; fluconazole 100 mg daily for 10 days for recurrent or oropharyngeal thrush. Harrison: 100–200 mg once daily (usually 7–14 days). Child 3–6 mg/kg once daily."
         },
         {
           label: "Oesophageal candidiasis (pain on swallowing)",
-          text: "Adult 100–200 mg once daily (Harrison; some guidelines up to 400 mg) for 14–21 days. Child 6 mg/kg once daily (up to 12 mg/kg in severe disease)."
+          text: "Ethiopia: 200 mg once daily (child 6 mg/kg/day) for 14–21 days, treating on clinical grounds when thrush comes with painful or difficult swallowing. No response: refer or investigate for other causes (HSV — acyclovir 400 mg five times daily for 14–21 days; CMV), and check for ART failure in a patient on ART (Ethiopia). Harrison: 100–200 mg daily."
         },
         {
           label: "Vaginal candidiasis",
@@ -19180,15 +19721,15 @@ window.DRUG_DB = [
         },
         {
           label: "Cryptococcal meningitis — induction (WHO, via Harrison)",
-          text: "Preferred: single dose liposomal amphotericin B 10 mg/kg + flucytosine 25 mg/kg four times daily + fluconazole 1200 mg daily for 14 days. No liposomal: amphotericin B deoxycholate 1 mg/kg/day for 7 days instead. No amphotericin: an all-oral 14-day regimen of fluconazole 1200 mg daily + flucytosine."
+          text: "Ethiopia (same as WHO): preferred — single dose liposomal amphotericin B 10 mg/kg + flucytosine 100 mg/kg/day in 4 doses + fluconazole 1200 mg daily (child and adolescent 12 mg/kg, max 800 mg), all for 14 days. No liposomal: amphotericin B deoxycholate 1 mg/kg/day + flucytosine for 7 days, then fluconazole 1200 mg (child 12 mg/kg, max 800) for 7 days. No amphotericin: fluconazole 1200 mg + flucytosine for 14 days. No flucytosine: liposomal amphotericin B 3–4 mg/kg/day + fluconazole 1200 mg for 14 days. No liposomal and no flucytosine: amphotericin B deoxycholate 1 mg/kg/day + fluconazole 1200 mg for 14 days. Flucytosine regimens are superior. See the Cryptococcal meningitis case."
         },
         {
           label: "Cryptococcal meningitis — consolidation and maintenance",
-          text: "Consolidation fluconazole 400–800 mg daily for 8 weeks (WHO uses 800 mg), then maintenance 200 mg daily (Harrison 200–400 mg) for at least a year and until immune recovery on ART by the national criteria. Children: consolidation 10–12 mg/kg/day, maintenance 6 mg/kg/day (Nelson)."
+          text: "Consolidation: fluconazole 400–800 mg daily for 8 weeks (child and adolescent 6–12 mg/kg/day, max 800 mg). Maintenance (secondary prophylaxis): 200 mg daily (child 6 mg/kg/day). Stop maintenance only when the patient is stable and adherent to ART and fluconazole for at least one year AND has CD4 200 or more on two counts six months apart (Ethiopia). Harrison: maintenance 200–400 mg; Nelson: child consolidation 10–12 mg/kg/day."
         },
         {
           label: "CrAg positive, no meningitis",
-          text: "Fluconazole 800 mg daily for 2 weeks (up to 1200 mg when the antigen titre is high), then consolidation and maintenance. Start ART 2 weeks after starting fluconazole (Harrison). Do a lumbar puncture first if at all possible."
+          text: "Ethiopia (fluconazole pre-emptive therapy, FPT): blood CrAg positive with no symptoms or signs of meningitis — fluconazole 800 mg daily for 2 weeks; start or restart ART after these 2 weeks; then 400 mg daily for 8 weeks; then 200 mg daily until on ART for at least 6 months with CD4 over 200, or CD4 over 100 with viral load under 50. Any symptom of meningitis: lumbar puncture first and treat as meningitis if CSF is positive. Harrison allows up to 1200 mg in the first 2 weeks with a high fungal burden. Same regimen as primary prophylaxis for CD4 under 100 when no CrAg test is available (Ethiopia)."
         },
         {
           label: "Invasive candidiasis in children and neonates",
@@ -19220,10 +19761,10 @@ window.DRUG_DB = [
         requires: ["oral"],
         steps: [
           "Suspect it in anyone with HIV and headache, fever, confusion or a stiff neck; test serum or CSF with the CrAg lateral-flow test if available.",
-          "Refer if amphotericin can be reached. If not, start the all-oral induction: fluconazole 1200 mg once daily plus flucytosine 25 mg/kg four times daily for 14 days (Harrison/WHO). If flucytosine is also unavailable, fluconazole 1200 mg daily alone is the last-resort option — confirm with the national guideline and an HIV clinician.",
-          "Raised intracranial pressure kills more of these patients than the fungus. Repeat therapeutic lumbar punctures for persistent headache, vomiting or visual loss, following the WHO/national guidance on pressure and volume. Do NOT treat it with mannitol, acetazolamide or corticosteroids (WHO).",
+          "Refer if amphotericin can be reached. If not, start the all-oral induction: fluconazole 1200 mg once daily (child 12 mg/kg) plus flucytosine 25 mg/kg four times daily for 14 days (Ethiopia, Harrison/WHO). The Ethiopian manual lists no fluconazole-only induction: if flucytosine is also unavailable, the options need amphotericin (with fluconazole 1200 mg for 2 weeks), so transfer. Starting fluconazole 1200 mg while arranging transfer is better than nothing (editorial) — confirm with an HIV clinician.",
+          "Raised intracranial pressure kills more of these patients than the fungus (over 90 % of deaths in the first 2 weeks; Ethiopia). Do daily therapeutic lumbar punctures, removing 20–30 mL of CSF each time, guided by headache, conscious level, vision and hearing (Ethiopia). Do NOT treat it with mannitol, acetazolamide or corticosteroids.",
           "Do not start ART at once: in cryptococcal meningitis WHO advises delaying ART by 4–6 weeks after starting antifungal treatment. (For CrAg-positive patients without meningitis, start ART 2 weeks after fluconazole.)",
-          "After 2 weeks: consolidation 800 mg daily for 8 weeks, then maintenance 200 mg daily.",
+          "After 2 weeks: consolidation 400–800 mg daily for 8 weeks (Ethiopia), then maintenance 200 mg daily.",
           "Check the drug list for interactions — fluconazole at 800–1200 mg strongly raises the effect of warfarin, phenytoin and several QT drugs."
         ],
         monitor: [
@@ -19268,16 +19809,17 @@ window.DRUG_DB = [
     ],
     paediatric: [
       "Children clear fluconazole faster than adults: invasive disease 12 mg/kg/day; neonates need a 25 mg/kg loading dose (Nelson). Thrush 3–6 mg/kg/day.",
-      "Cryptococcal consolidation 10–12 mg/kg/day for 8 weeks, maintenance 6 mg/kg/day.",
+      "Cryptococcal (Ethiopia): induction 12 mg/kg/day (max 800 mg) for 14 days; consolidation 6–12 mg/kg/day (max 800 mg) for 8 weeks (Nelson: 10–12); maintenance 6 mg/kg/day. Routine CrAg screening starts at 10 years.",
       "Recurrent thrush outside the newborn period suggests HIV — test."
     ],
     cautions: [
       "Inhibits CYP2C9 and CYP3A4: raises the INR on warfarin and levels of phenytoin, carbamazepine, midazolam, methadone, quetiapine, amitriptyline and others (see Interactions).",
       "QT prolongation, especially at high doses, with other QT drugs or with low potassium — the electrolytes are often low in advanced HIV and during amphotericin treatment.",
       "Hepatotoxicity (mostly mild; rarely severe) — stop if jaundice appears; take extra care with TB drugs, nevirapine and cotrimoxazole.",
-      "Rifampicin lowers fluconazole levels.",
+      "Rifampicin lowers fluconazole levels: Ethiopia increases the fluconazole dose by 50 % in cryptococcal induction and advises considering a 50 % increase in consolidation and maintenance. Weekly rifapentine (3HP) also lowers it (see Isoniazid).",
       "No activity against moulds: useless for fungal keratitis (use natamycin) and aspergillosis; less active against C. krusei and C. glabrata.",
-      "Pregnancy: avoid where possible (see Safety)."
+      "Pregnancy: avoid where possible (see Safety).",
+      "With a sulfonylurea (e.g. glibenclamide) there is a risk of hypoglycaemia: check glucose more often (Ethiopia)."
     ],
     calc: {
       type: "weight",
@@ -19328,7 +19870,27 @@ window.DRUG_DB = [
         book: "note",
         text: "WHO cryptococcal guidance (2018, 2022): delay ART 4–6 weeks after starting treatment for cryptococcal meningitis; manage raised pressure with therapeutic lumbar puncture, not corticosteroids, mannitol or acetazolamide. Confirm with the national HIV guideline.",
         ref: "Editorial note"
-      }
+      },
+      {
+      book: "ethhiv",
+      text: "Induction: single-dose liposomal amphotericin B 10 mg/kg + 14 days of flucytosine 100 mg/kg/day in four doses + fluconazole 1200 mg daily (child 12 mg/kg, max 800 mg); alternatives by availability. Consolidation 400–800 mg (child 6–12 mg/kg) for 8 weeks; maintenance 200 mg (child 6 mg/kg).",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3, p. 231"
+    },
+      {
+      book: "ethhiv",
+      text: "Fluconazole pre-emptive therapy for blood CrAg positive without meningitis: 800 mg daily for 2 weeks, ART after 2 weeks, 400 mg daily for 8 weeks, then 200 mg daily until on ART at least 6 months with CD4 over 200, or CD4 over 100 with viral load under 50.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3, p. 236"
+    },
+      {
+      book: "ethhiv",
+      text: "With rifampicin, fluconazole dose is increased by 50 % in induction; consider a 50 % increase in consolidation and maintenance.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3, p. 237"
+    },
+      {
+      book: "ethhiv",
+      text: "Oesophageal candidiasis: fluconazole 200 mg (child 6 mg/kg/day) daily for 14–21 days, treated on clinical grounds.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.2, p. 214"
+    }
     ],
     sources: [
       {
@@ -19337,7 +19899,10 @@ window.DRUG_DB = [
       { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025" },
       { name: "Nelson Textbook of Pediatrics 22nd ed. 2024" },
       { name: "Williams Obstetrics 25th ed. 2018; Gabbe's Obstetrics 9th ed." },
-      { name: "BNF / BNF for Children — fluconazole" }
+      { name: "BNF / BNF for Children — fluconazole" },
+      {
+      name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025, 11.3.2–11.3.3 and 11.7"
+    }
     ],
     review: { status: "draft", by: null, date: null }
   },
@@ -21760,7 +22325,7 @@ window.DRUG_DB = [
       items: [
         {
           label: "PCP prophylaxis, adult",
-          text: "100 mg once daily by mouth (or 50 mg twice daily) (Harrison). Start and stop by the same national HIV-guideline rules as cotrimoxazole preventive therapy. Dapsone alone does NOT give the extra protection cotrimoxazole gives against toxoplasmosis (that needs dapsone plus pyrimethamine and leucovorin), malaria, bacterial pneumonia and diarrhoea — so go back to cotrimoxazole if a clinician decides that is safe."
+          text: "100 mg once daily by mouth (Ethiopia; Harrison also 50 mg twice daily). Ethiopia does NOT use the cotrimoxazole rules for dapsone: use it after severe cotrimoxazole allergy or failed desensitisation, only for WHO stage 4 and/or CD4 under 200 (child under 5: CD4 under 25 %), and stop when CD4 has stayed over 200 (over 25 % under 5 years) for at least 6 months. Check haemoglobin before starting and every 1–2 weeks for the first couple of months. Dapsone alone does NOT give the extra protection cotrimoxazole gives against toxoplasmosis (that needs dapsone plus pyrimethamine and leucovorin), malaria, bacterial pneumonia and diarrhoea — so go back to cotrimoxazole if a clinician decides that is safe."
         },
         {
           label: "PCP prophylaxis, child (1 month and over)",
@@ -21971,7 +22536,12 @@ window.DRUG_DB = [
         book: "note",
         text: "Ethiopia: PCP-prophylaxis start and stop rules follow the national HIV guideline (as for cotrimoxazole); leprosy MDT regimens, packs and reaction management follow the national leprosy programme (WHO MDT). The 2-, 4-, 6- and 8-week clinical review without a laboratory is an editorial low-resource adaptation, not a textbook schedule.",
         ref: "Editorial note"
-      }
+      },
+      {
+      book: "ethhiv",
+      text: "Dapsone can replace cotrimoxazole after severe allergy or failed desensitisation; it protects mainly against PCP, contributes to anaemia, is not recommended in breastfeeding, and is used only for WHO stage 4 and/or CD4 under 200 (under 25 % in children under 5), stopping after CD4 over 200 (over 25 %) for 6 months. Children 2 mg/kg daily (max 100 mg) or 4 mg/kg weekly (max 200 mg); adults 100 mg daily.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.2, pp. 184–185"
+    }
     ],
     sources: [
       { name: "WHO Guidelines for the diagnosis, treatment and prevention of leprosy, 2018" },
@@ -25258,18 +25828,18 @@ window.DRUG_DB = [
       "Keep in the blister, dry, below 30 °C (product information). No fridge needed. There is no injection: a patient who cannot swallow needs artesunate (see Artesunate)."
     ],
     indications: [
-      "Uncomplicated P. falciparum malaria: the first-line ACT in Ethiopia (confirm with the Ethiopian National Malaria Guidelines). WHO recommends an ACT first line in all endemic areas (Harrison).",
+      "Uncomplicated P. falciparum malaria: the first-line drug in Ethiopia, always with a single dose of primaquine 0.25 mg base/kg (Ethiopia). Also the treatment, with single-dose primaquine, when no test is available. WHO lists AL among six recommended ACTs.",
       "Mixed falciparum and vivax infection, and malaria where the species is unknown: treat as falciparum (Harrison), then add primaquine radical cure for vivax (see Primaquine).",
-      "P. vivax and P. ovale blood stage: an ACT or chloroquine (Harrison; WHO). Whether Ethiopia uses artemether–lumefantrine or chloroquine for vivax is set by the national guideline: confirm it. Either way, add primaquine for the liver stage.",
+      "P. vivax and P. ovale blood stage: Ethiopia uses chloroquine first line; AL is given only when chloroquine syrup is not available for a child (Ethiopian algorithm), or for mixed infection. WHO allows an ACT or chloroquine. Either way, add the 14-day primaquine for the liver stage.",
       "Oral follow-on after parenteral artesunate for severe malaria: a full 3-day course once the patient can swallow (Harrison, Nelson).",
-      "Uncomplicated malaria in pregnancy, including the first trimester (WHO, as given in Harrison). Gabbe and the US CDC still prefer other drugs in the first trimester: see Safety."
+      "Uncomplicated falciparum malaria in pregnancy, in ALL trimesters including the first (Ethiopia; WHO 2022 recommendation). Gabbe and the US CDC still prefer other drugs in the first trimester: see Safety."
     ],
     standard: {
       summary: "Six doses over 3 days, the number of tablets set by weight band, and every dose taken with fat. Lumefantrine is absorbed poorly and unpredictably on an empty stomach and much better with fat (Harrison), so a dose swallowed without food or milk is a smaller dose. Poor absorption, an incomplete course and vomited doses are avoidable reasons for treatment to fail. Never use it for severe malaria: any danger sign, or a patient who cannot swallow or keeps vomiting, needs artesunate first (Severe malaria case).",
       items: [
         {
-          label: "Dose by weight (WHO and Nelson bands; tablets of 20/120 mg)",
-          text: "5 to under 15 kg: 1 tablet per dose (6 tablets for the course). 15 to under 25 kg: 2 tablets per dose (12). 25 to under 35 kg: 3 tablets per dose (18). 35 kg and over, including adults and pregnant women: 4 tablets per dose (24). The target is 1.5/9 mg/kg twice daily for 3 days (Harrison). Weigh the patient: the age guide printed on packs is only for when there is no scale."
+          label: "Dose by weight (Ethiopia Table 4; tablets of 20/120 mg)",
+          text: "Ethiopia: under 5 kg 1 tablet per dose (6 for the course; yellow pack). 5–14 kg: 1 tablet (6). 15–24 kg: 2 tablets (12; blue pack). 25–34 kg: 3 tablets (18). 35 kg and over, including adults and pregnant women: 4 tablets (24) — the source writes '>35', read here as 35 and over, as in WHO. WHO 2026 uses the same bands from 5 kg, but for infants and neonates under 5 kg recommends the new baby formulation: artemether 5 mg + lumefantrine 60 mg twice daily for 3 days. The target is 1.5/9 mg/kg twice daily for 3 days (Harrison). Weigh the patient: the age guide printed on packs is only for when there is no scale."
         },
         {
           label: "Timing: six doses",
@@ -25281,7 +25851,7 @@ window.DRUG_DB = [
         },
         {
           label: "Vomiting",
-          text: "Watch for 1 hour after the dose; if vomited, repeat it (Harrison). WHO practice: vomited within 30 minutes, repeat the full dose; at 30–60 minutes, repeat half the dose. A patient who vomits the repeat dose, or vomits everything, cannot be treated by mouth: give artesunate (pre-referral rectal artesunate for a young child, or IM/IV) and manage as severe malaria."
+          text: "Watch for 1 hour after the dose; if vomited, repeat it (Harrison). Ethiopia: vomited within half an hour, repeat the dose and give a replacement from stock so the course is complete. WHO 2026 (young children): give the dose again if it is brought up within 1 hour. The half-dose rule for 30–60 minutes is the Ethiopian rule for dihydroartemisinin–piperaquine, not for AL. A patient who vomits the repeat dose, or vomits everything, cannot be treated by mouth: give artesunate (pre-referral rectal artesunate for a young child, or IM/IV) and manage as severe malaria."
         },
         {
           label: "Missed dose",
@@ -25289,7 +25859,7 @@ window.DRUG_DB = [
         },
         {
           label: "Add-ons",
-          text: "Vivax, ovale or mixed infection: add primaquine for radical cure (see Primaquine). Falciparum: a single low dose of primaquine (0.25 mg base/kg) to block transmission is recommended where transmission is low, except in pregnancy and in infants (Harrison); use it where the Ethiopian National Malaria Guidelines say to. Fever: paracetamol, which also reduces vomiting (Harrison)."
+          text: "Vivax, ovale or mixed infection: add primaquine for radical cure (see Primaquine). Falciparum (and no-test treatment): ALWAYS a single dose of primaquine 0.25 mg base/kg on day 1, given with the first AL dose under observation (Ethiopia); not in pregnancy, under 6 months, or when breastfeeding an infant under 6 months. WHO 2026 recommends the single dose only in low-transmission areas and excludes pregnancy and infants (or breastfed infants) under 1 month; no G6PD test is needed. Fever: paracetamol, which also reduces vomiting (Harrison)."
         },
         {
           label: "After severe malaria",
@@ -25331,7 +25901,7 @@ window.DRUG_DB = [
           "If the child is hot and miserable, give paracetamol first and let the fever come down a little: it reduces vomiting (Harrison).",
           "Dispersible tablet: put it in a cup with a small amount of clean water, swirl until it breaks up, give it all, then rinse the cup with a little more water or milk and give that too.",
           "No dispersible tablets: crush the ordinary tablet between two spoons, mix with a little breast milk, milk or water, and give all of it, followed by a breastfeed or milk.",
-          "Keep the child at the facility for an hour after dose 1. Vomited within 30 minutes: repeat the full dose; at 30–60 minutes: half the dose (WHO). Vomited after an hour: no repeat.",
+          "Keep the child at the facility after dose 1. Vomited within 30 minutes: repeat the dose (Ethiopia); WHO 2026 repeats a dose brought up within 1 hour. Vomited after an hour: no repeat.",
           "Vomits again, cannot drink, is very sleepy or convulses: this is severe malaria. Give pre-referral rectal artesunate (children under 6 years) or IM artesunate and refer (see Artesunate and the Severe malaria case)."
         ],
         monitor: [
@@ -25339,7 +25909,7 @@ window.DRUG_DB = [
           "Temperature, feeding and danger signs; the caregiver returns at once if any appear"
         ],
         cautions: [
-          "Under 5 kg there is no standard band: Nelson (US CDC) does not use artemether–lumefantrine below 5 kg; WHO advises treating infants under 5 kg with an ACT at the same mg/kg target dose as for a 5 kg child. This is a senior decision: admit the infant and confirm the dose with the national guideline."
+          "Under 5 kg: Ethiopia gives 1 tablet (20/120 mg) a dose, six doses. WHO 2026 recommends the new AL baby formulation (artemether 5 mg + lumefantrine 60 mg twice daily for 3 days) for infants and neonates under 5 kg, or another ACT at the same mg/kg dose as a 5 kg child. Nelson (US CDC) does not use AL below 5 kg. Admit the infant, watch the response closely, and involve a senior."
         ]
       },
       {
@@ -25364,9 +25934,9 @@ window.DRUG_DB = [
         requires: [],
         steps: [
           "Any danger sign (cannot sit or stand, cannot drink, repeated vomiting, convulsions, confusion or drowsiness, deep or fast breathing, very pale, jaundice with illness, dark urine, bleeding, shock), or pregnancy with a high fever and vomiting: give parenteral artesunate first and follow the Severe malaria case. Artemether–lumefantrine comes later, as the follow-on.",
-          "On rifampicin TB treatment, carbamazepine, phenytoin or phenobarbital: these drugs lower artemether and lumefantrine levels and the course may fail (see Interactions). Do not withhold malaria treatment; give the full course with fat, ask a senior or the national guideline about an alternative, and check the response closely.",
+          "On rifampicin TB treatment, carbamazepine, phenytoin or phenobarbital: these drugs lower artemether and lumefantrine levels and the course may fail (see Interactions). Do not withhold malaria treatment and do not change the drug or the dose: Ethiopia and WHO find the evidence insufficient to change dosing. Give the full course with fat and follow up closely, testing again by microscopy for any fever in the next 4 weeks.",
           "Long QT, a family history of sudden death, or already on a strongly QT-prolonging drug: ask a senior; correct low potassium or magnesium; avoid adding other QT drugs during the 3 days where you can.",
-          "Malaria returning within 4 weeks of a full course: suspect treatment failure. Confirm parasites by microscopy or a pLDH (Pf) test, because an HRP2 test can stay positive for weeks after treatment (Harrison). Treat with a different ACT or the second-line regimen of the national guideline (Harrison: a different ACT; or artesunate or quinine with doxycycline, tetracycline or clindamycin for 7 days)."
+          "Malaria returning within 28 days of a full course: suspect treatment failure. Confirm parasites by microscopy, not RDT, because an HRP2 test can stay positive for weeks after treatment (Ethiopia; WHO). If no cause such as vomiting or missed doses is found, give the Ethiopian second-line drug, dihydroartemisinin–piperaquine, with primaquine (see Dihydroartemisinin–piperaquine). After 28 days, treat as a new infection with AL (Ethiopia; WHO)."
         ],
         monitor: [],
         cautions: ["Not for prophylaxis: the artemether is gone within hours (Harrison)."]
@@ -25375,9 +25945,9 @@ window.DRUG_DB = [
     paediatric: [
       "Weight bands: 5 to under 15 kg 1 tablet; 15 to under 25 kg 2; 25 to under 35 kg 3; 35 kg and over 4 tablets per dose, six doses over 3 days (Nelson; WHO).",
       "Dispersible tablets for young children; otherwise crush the ordinary tablet in milk or breast milk.",
-      "Under 5 kg: Nelson (CDC) says not for infants under 5 kg; WHO advises an ACT at the same mg/kg target as for a 5 kg child. Senior decision, admit, and confirm with the national guideline.",
+      "Under 5 kg: Ethiopia gives 1 tablet a dose (the manual indicates AL for young infants under 3 months, about 5 kg). WHO 2026: the AL baby formulation, artemether 5 mg + lumefantrine 60 mg twice daily for 3 days. Nelson (CDC) does not use AL under 5 kg. Admit and monitor closely.",
       "Children vomit easily: paracetamol first, observe for an hour, repeat vomited doses (WHO rule above).",
-      "Primaquine (single low dose or radical cure) is not given to infants: see Primaquine for the age limit."
+      "Primaquine (single dose or radical cure) is not given under 6 months (Ethiopia; WHO: under 1 month). See Primaquine."
     ],
     cautions: [
       "Not for severe malaria, and not for a patient who cannot swallow or keep tablets down: use artesunate.",
@@ -25386,7 +25956,7 @@ window.DRUG_DB = [
       "QT: lumefantrine is chemically related to quinine (Harrison). The product information advises against use with other QT-prolonging drugs and in people with long QT or a family history of sudden death. Check the Interactions tab before adding antipsychotics, antiarrhythmics, macrolides or other antimalarials.",
       "Enzyme inducers (rifampicin, carbamazepine, phenytoin, phenobarbital) lower its levels (product information); nevirapine raises lumefantrine and lowers artemether (Harrison). See Interactions.",
       "Hormonal contraception may be less effective during and shortly after the course; advise an additional non-hormonal method (product information).",
-      "Pregnancy: WHO recommends it in all trimesters (Harrison); Gabbe and the US CDC prefer other drugs in the first trimester. Confirm with the Ethiopian National Malaria Guidelines. See Safety.",
+      "Pregnancy: used in all trimesters in Ethiopia and recommended by WHO for the first trimester (2022); Gabbe and the US CDC prefer other drugs in the first trimester. See Safety.",
       "Hypersensitivity to either component: do not use."
     ],
     textbook: [
@@ -25449,7 +26019,37 @@ window.DRUG_DB = [
         book: "gabbe",
         text: "Gabbe differs: for uncomplicated malaria in the first trimester it gives quinine plus clindamycin as first line, with ACT usable but not preferred for lack of first-trimester safety data; ACT is first line in the second and third trimesters.",
         ref: "Gabbe's Obstetrics 9th ed., ch. 58 Bacterial and Parasitic Infections in Pregnancy, p. 1133"
-      }
+      },
+      {
+      book: "ethmal",
+      text: "Ethiopia Table 4: under 5 kg and 5–14 kg 1 tablet; 15–24 kg 2; 25–34 kg 3; over 35 kg 4 tablets, at once, after 8 hours, then morning and evening on days 2 and 3.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, Table 4, pdf p. 77"
+    },
+      {
+      book: "ethmal",
+      text: "If the patient vomits within half an hour, repeat the dose and supply a replacement so the course is completed.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Treatment of uncomplicated malaria, pdf p. 77"
+    },
+      {
+      book: "ethmal",
+      text: "In pregnancy, AL for uncomplicated falciparum malaria in all trimesters.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Treatment of uncomplicated malaria in pregnancy, pdf p. 83"
+    },
+      {
+      book: "whomal",
+      text: "WHO 2026: the 1:12 AL baby formulation (artemether 5 mg + lumefantrine 60 mg twice daily) for infants and neonates under 5 kg.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 176"
+    },
+      {
+      book: "whomal",
+      text: "Lumefantrine exposure is lower in children under 3, pregnant women, large adults and people on rifampicin or efavirenz: monitor these patients more closely.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 176"
+    },
+      {
+      book: "whomal",
+      text: "WHO 2022 strong recommendation: AL for uncomplicated falciparum malaria in the first trimester.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.4.1 Pregnant and lactating women, p. 183"
+    }
     ],
     sources: [
       {
@@ -25457,7 +26057,7 @@ window.DRUG_DB = [
         url: "https://www.who.int/publications/i/item/guidelines-for-malaria"
       },
       {
-        name: "Federal Ministry of Health Ethiopia. National Malaria Guidelines (current edition) — confirm the vivax regimen, weight bands, single low-dose primaquine and first-trimester use"
+        name: "Ethiopia FMoH Malaria case management manual 2024 (National Malaria Guidelines, 5th ed. 2022), 4.2 and Table 4, pdf pp. 76–83"
       },
       { name: "Coartem and Coartem Dispersible summary of product characteristics" },
       { name: "Harrison 22nd ed. 2025, ch. 229 and 231" },
@@ -25494,14 +26094,14 @@ window.DRUG_DB = [
     indications: [
       "Radical cure of P. vivax and P. ovale: given after or with the blood-stage treatment (chloroquine or an ACT) to kill the dormant liver forms and prevent relapse (Harrison, Nelson). Without it, many vivax patients come back with malaria again weeks or months later.",
       "Mixed falciparum–vivax infection: radical cure after the ACT course.",
-      "Single low dose with falciparum treatment to stop transmission to mosquitoes, where transmission is low or elimination is the aim (Harrison; WHO). Use it where the Ethiopian National Malaria Guidelines say to."
+      "Single dose with every falciparum treatment (AL, or dihydroartemisinin–piperaquine), and with AL when no test is available, to stop transmission to mosquitoes: part of the Ethiopian first-line regimen (Ethiopia). WHO 2026 recommends it only in low-transmission areas."
     ],
     standard: {
-      summary: "Two different jobs at two different doses. The 14-day radical-cure course protects the patient from vivax relapse; the single low dose protects the community from falciparum transmission. The danger is haemolysis in G6PD deficiency, which is dose-related: the single low dose is safe even in G6PD deficiency (Harrison), but the 14-day course can cause serious haemolytic anaemia in severe deficiency. G6PD testing is usually not available: see the first No-pump method for what to do. Never in pregnancy, never in young infants.",
+      summary: "Two different jobs at two different doses. The 14-day radical-cure course protects the patient from vivax relapse; the single low dose protects the community from falciparum transmission. The danger is haemolysis in G6PD deficiency, which is dose-related: the single low dose is safe even in G6PD deficiency (Harrison), but the 14-day course can cause serious haemolytic anaemia in severe deficiency. Ethiopia gives both without a G6PD test, because deficiency is very rare here, and relies on warning and close follow-up; WHO now wants the G6PD status to guide radical cure. Never in pregnancy, under 6 months, or when breastfeeding an infant under 6 months (Ethiopia).",
       items: [
         {
-          label: "Radical cure, P. vivax or P. ovale (WHO standard outside Southeast Asia and Oceania)",
-          text: "0.25 mg base/kg once daily for 14 days, with food (Harrison). Adult 60 kg: 15 mg daily. The same total dose can be condensed into 7 days (0.5 mg/kg daily) (Harrison). Nelson (US CDC) uses 0.5 mg base/kg, maximum 30 mg, daily for 14 days. Use the dose your national guideline sets: confirm with the Ethiopian National Malaria Guidelines."
+          label: "Radical cure, P. vivax or P. ovale",
+          text: "Ethiopia: 0.25 mg base/kg once daily for 14 days, with food, by the weight table: 8–18 kg ½ × 7.5 mg (or ¼ × 15 mg); 19–24 kg ¾ × 7.5 mg (or ½ × 15 mg — the source columns differ here); 25–35 kg 1 × 7.5 mg (½ × 15 mg); 36–50 kg 1½ × 7.5 mg (¾ × 15 mg); over 50 kg 2 × 7.5 mg (1 × 15 mg). WHO 2024–2026 differs: a high total dose of 7 mg/kg — 0.5 mg/kg daily for 14 days, or 1 mg/kg daily for 7 days only if G6PD activity is 70 % or more — after a G6PD test; Nelson (US CDC) also uses 0.5 mg/kg (max 30 mg) for 14 days. In Ethiopia follow the national 0.25 mg/kg dose."
         },
         {
           label: "When to start",
@@ -25509,7 +26109,7 @@ window.DRUG_DB = [
         },
         {
           label: "Single low dose, P. falciparum (transmission blocking)",
-          text: "0.25 mg base/kg ONCE, with the ACT (Harrison). No G6PD test is needed at this dose (Harrison). Not for pregnant women or infants (Harrison). Give it where the national guideline uses it."
+          text: "0.25 mg base/kg ONCE on day 1, with the first ACT dose, under observation, by the same weight table (Ethiopia). No G6PD test is needed at this dose (Ethiopia; WHO; Harrison). Not in pregnancy, under 6 months, or when breastfeeding an infant under 6 months (Ethiopia); WHO 2026: not in pregnancy or under 1 month. WHO's own table (7.5 mg tablets): 5 to under 25 kg 3.75 mg; 25 to under 50 kg 7.5 mg; 50–100 kg 15 mg."
         },
         {
           label: "Known mild or intermediate G6PD deficiency",
@@ -25517,7 +26117,7 @@ window.DRUG_DB = [
         },
         {
           label: "Known severe G6PD deficiency, pregnancy, or an infant too young",
-          text: "No primaquine course. Prevent relapses with weekly chloroquine instead: in pregnancy 5 mg base/kg weekly until 1 month after delivery (Harrison; Nelson gives 300 mg base weekly for the rest of the pregnancy), then radical cure if allowed; in G6PD deficiency 300 mg base weekly for 1 year in adults (Nelson). See Chloroquine."
+          text: "No primaquine course. Prevent relapses with weekly chloroquine instead: in pregnancy chloroquine 300 mg base (2 tablets) weekly until after delivery and 6 months of breastfeeding, then radical cure (Ethiopia; WHO: until delivery and breastfeeding are completed; Harrison: 5 mg base/kg until 1 month after delivery); in G6PD deficiency 300 mg base weekly for 1 year in adults (Nelson). See Chloroquine."
         },
         {
           label: "Stop at once if",
@@ -25535,10 +26135,10 @@ window.DRUG_DB = [
         best_for: "Health centres and hospitals treating vivax without a G6PD test, which is most of Ethiopia.",
         requires: ["oral"],
         steps: [
-          "First check the national rule. Harrison and Nelson give primaquine only after a G6PD test is normal; WHO leaves the decision without a test to a weighing of benefit and risk, and many national programmes give the 14-day course without testing, with careful warning. Do what the Ethiopian National Malaria Guidelines say.",
-          "Exclude pregnancy (ask; test if in doubt) and check the age (see Paediatric). Do not give if breastfeeding a young infant whose G6PD is unknown (Nelson).",
+          "The Ethiopian rule: give the course without a G6PD test. G6PD deficiency is very rare in Ethiopia, but haemolysis can be serious, so warn the patient and follow up closely; dark urine means stop and come back (Ethiopia). WHO: where no test exists, weigh the benefit against the risk; Harrison and Nelson test first.",
+          "Exclude pregnancy (ask; test if in doubt), infants under 6 months, and women breastfeeding an infant under 6 months (Ethiopia).",
           "Ask about earlier dark urine or jaundice after medicines, after eating fava beans (baqela), or in the newborn period, in the patient or close family. A yes means probable G6PD deficiency: do not give the daily course; see Standard for the weekly or chloroquine alternatives.",
-          "If the patient is already very pale or has a low haemoglobin, a haemolytic episode is more dangerous. Discuss with a senior before starting.",
+          "Moderate to severe anaemia is a contraindication in the Ethiopian algorithm: if the patient is very pale or the haemoglobin is low, do not start; give the blood-stage treatment and reconsider radical cure once the haemoglobin has recovered (senior decision).",
           "Give the first dose at the facility with food. Explain the warning signs in plain words and show them: urine turning dark like strong tea or cola, yellow eyes, unusual paleness, weakness, breathlessness, back or belly pain. If any appear: STOP the tablets and come back the same day.",
           "Haemolysis usually shows in the first days of the course; once it starts, jaundice and dark urine follow within hours to 2–3 days (Harrison). Review on day 3: ask about urine colour, look at the conjunctivae and palms, and check haemoglobin if possible. If all is well, supply the rest of the course.",
           "Write on the patient's card: 'PRIMAQUINE — G6PD unknown, day 1 = (date)'. This warns the next clinician not to add another oxidant drug such as dapsone."
@@ -25563,7 +26163,7 @@ window.DRUG_DB = [
           "Transfuse for severe anaemia with distress (see Blood transfusion). Without other illness, full recovery is the rule once the drug is stopped (Harrison).",
           "Grey-blue lips or skin with a low pulse-oximeter reading that does not improve with oxygen suggests methaemoglobinaemia, which primaquine can cause whatever the G6PD status (Harrison). Give oxygen and refer. Methylene blue is the usual antidote at referral level, but it can itself cause haemolysis in G6PD deficiency (Harrison Table 105-6): leave that decision to the referral team.",
           "Refer if the haemoglobin is falling fast, urine output falls, or the patient is breathless at rest or confused.",
-          "Afterwards, protect against vivax relapse with weekly chloroquine as the national guideline allows (Nelson), not with more primaquine."
+          "Afterwards, never give primaquine again (Ethiopia); write it on the card. Relapses can be suppressed with weekly chloroquine 300 mg base (Nelson: for 1 year in G6PD deficiency). WHO's weekly primaquine regimen for known G6PD deficiency (0.75 mg/kg for 8 weeks under close supervision) conflicts with the Ethiopian 'never again' rule after a haemolytic reaction."
         ],
         monitor: ["Haemoglobin daily until stable", "Urine output and colour; creatinine if available"],
         cautions: []
@@ -25573,7 +26173,7 @@ window.DRUG_DB = [
         best_for: "Health centres with only 15 mg base tablets and no paediatric strength.",
         requires: ["oral"],
         steps: [
-          "Weigh the child. Work out the dose: 0.25 mg/kg × weight (or the national dose). For example 12 kg × 0.25 = 3 mg; 20 kg × 0.25 = 5 mg; 30 kg × 0.25 = 7.5 mg.",
+          "Weigh the child and read the Ethiopian table, which gives the 15 mg tablet fraction for each band: 8–18 kg ¼; 19–24 kg ½; 25–35 kg ½; 36–50 kg ¾; over 50 kg 1 tablet. Under 8 kg there is no band: senior decision.",
           "A quarter of a 15 mg tablet is 3.75 mg; a half is 7.5 mg. Round to the nearest quarter-tablet. If a 7.5 mg tablet is available, a half of it (3.75 mg) is easier to split accurately.",
           "Cut with a tablet cutter or a clean blade on a clean surface; crush the piece between two spoons and mix with a little food. It is bitter.",
           "For a 14-day course, cut and package the pieces for the week at the facility, so the caregiver does not have to.",
@@ -25586,27 +26186,29 @@ window.DRUG_DB = [
       }
     ],
     paediatric: [
-      "Radical cure: 0.25 mg base/kg once daily for 14 days (Harrison; WHO); Nelson (US CDC) uses 0.5 mg base/kg, maximum 30 mg, daily for 14 days. Confirm with the national guideline.",
+      "Radical cure: 0.25 mg base/kg once daily for 14 days by the Ethiopian weight table (Ethiopia). WHO now recommends 0.5 mg/kg daily for 14 days after a G6PD test; Nelson (US CDC) also 0.5 mg/kg, maximum 30 mg.",
       "Single low dose for falciparum: 0.25 mg base/kg once (Harrison).",
-      "Not for infants (Harrison). WHO has set the lower limit at 6 months of age; the textbooks searched give no exact age. Confirm with the Ethiopian National Malaria Guidelines. Young infants with vivax get the blood-stage treatment, and radical cure later.",
-      "Breastfeeding: give primaquine to the mother only if the infant's G6PD is known to be normal (Nelson); otherwise protect her with weekly chloroquine and give radical cure later."
+      "Not under 6 months of age, for either the single dose or radical cure (Ethiopia). WHO 2024–2026 lowered its limit to 1 month (an older remark in the same WHO guideline still says 6 months). The Ethiopian table starts at 8 kg: a child of 6 months or more under 8 kg needs a senior decision. Young infants with vivax get the blood-stage treatment, and radical cure later.",
+      "Breastfeeding: no primaquine for a woman breastfeeding an infant under 6 months (Ethiopia); protect her with weekly chloroquine 300 mg base and give radical cure later. WHO: contraindicated while breastfeeding an infant under 1 month; Nelson: only if the infant's G6PD is normal."
     ],
     cautions: [
       "G6PD deficiency: dose-related haemolysis, serious with the 14-day course in severe deficiency (Harrison); the single low dose is safe even in G6PD deficiency (Harrison).",
       "Pregnancy: contraindicated (Harrison, Williams, Nelson): the fetus's G6PD status is unknown. Give weekly chloroquine until after delivery instead.",
-      "Breastfeeding: only if the infant's G6PD is known to be normal (Nelson). See Safety.",
+      "Breastfeeding: not while breastfeeding an infant under 6 months (Ethiopia). See Safety.",
       "Methaemoglobinaemia can occur whatever the G6PD status (Harrison).",
       "Common: nausea, vomiting, abdominal pain, diarrhoea (Harrison): take with food.",
       "Activated by the liver enzyme CYP2D6 (Harrison); so people with low CYP2D6 activity may get less benefit and relapse despite a full course (published studies).",
       "Avoid with other oxidant drugs, especially dapsone (see Interactions). Quinacrine increases primaquine toxicity (Harrison).",
-      "Oral only: hypotension if given by injection (Harrison)."
+      "Oral only: hypotension if given by injection (Harrison).",
+      "Moderate to severe anaemia, and known hypersensitivity to primaquine: do not give (Ethiopian algorithm).",
+      "Tafenoquine is not an option in Ethiopia: WHO recommends it only in South America, only after a quantitative or semi-quantitative G6PD test, and not with an ACT."
     ],
     antidote: "No antidote for haemolysis: stop primaquine, give fluids, and transfuse for severe anaemia. Methaemoglobinaemia: oxygen, and methylene blue at referral level, which is risky in G6PD deficiency.",
     calc: {
       type: "weight",
       dosePerKg: 0.25,
       doseUnit: "mg",
-      label: "Daily dose 0.25 mg BASE/kg (radical cure for 14 days, or ONE dose with an ACT for falciparum). Confirm the national dose; tablets are 15 mg or 7.5 mg base"
+      label: "Daily dose 0.25 mg BASE/kg (Ethiopia: radical cure for 14 days, or ONE dose with an ACT for falciparum). Prefer the Ethiopian weight table; tablets are 15 mg or 7.5 mg base"
     },
     textbook: [
       {
@@ -25678,7 +26280,47 @@ window.DRUG_DB = [
         book: "harrison",
         text: "In adults the most serious threat from drug-induced haemolysis in G6PD deficiency is acute kidney failure (exceedingly rare in children); without other illness, full recovery is the rule.",
         ref: "Harrison 22nd ed. 2025, ch. 105 Hemolytic Anemias, p. 799"
-      }
+      },
+      {
+      book: "ethmal",
+      text: "Single-dose primaquine with AL for falciparum: 0.25 mg base/kg, given under direct observation.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Treatment of uncomplicated malaria, pdf p. 76"
+    },
+      {
+      book: "ethmal",
+      text: "Ethiopia Table 6 by weight: 8–18 kg ½ × 7.5 mg (¼ × 15 mg); 19–24 kg ¾ (½); 25–35 kg 1 (½); 36–50 kg 1½ (¾); 50+ kg 2 (1).",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, Table 6, pdf p. 79"
+    },
+      {
+      book: "ethmal",
+      text: "G6PD deficiency is very rare in Ethiopia but haemolysis can be serious: follow up, stop for dark urine, and never give again after haemolysis.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Side effects of primaquine, pdf p. 79"
+    },
+      {
+      book: "ethmal",
+      text: "Contraindications: pregnancy; women breastfeeding infants under 6 months; infants under 6 months.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Primaquine contraindications, pdf p. 79"
+    },
+      {
+      book: "whomal",
+      text: "WHO 2024: high total dose 7 mg/kg, as 0.5 mg/kg daily for 14 days or 1 mg/kg daily for 7 days (the 7-day regimen only with G6PD activity of 70 % or more).",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.7 Primaquine as anti-relapse therapy (2024), p. 207"
+    },
+      {
+      book: "whomal",
+      text: "WHO 2026: single-dose primaquine 0.25 mg/kg in low-transmission areas, except pregnancy and infants or breastfed infants under 1 month; no G6PD test needed.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.3 Reducing the transmissibility of treated P. falciparum infections, p. 180"
+    },
+      {
+      book: "whomal",
+      text: "WHO: in G6PD deficiency, 0.75 mg base/kg once a week for 8 weeks under close medical supervision.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.7 Preventing relapse in G6PD deficiency, p. 209"
+    },
+      {
+      book: "whomal",
+      text: "WHO 2024: tafenoquine as an alternative applies only to South America, needs ≥70 % G6PD activity on a quantitative test, and is not given with ACTs.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.7 Tafenoquine as anti-relapse therapy, p. 205"
+    }
     ],
     sources: [
       {
@@ -25686,7 +26328,7 @@ window.DRUG_DB = [
         url: "https://www.who.int/publications/i/item/guidelines-for-malaria"
       },
       {
-        name: "Federal Ministry of Health Ethiopia. National Malaria Guidelines (current edition) — confirm the radical-cure dose, the rule when G6PD cannot be tested, single low-dose use and the age limit"
+        name: "Ethiopia FMoH Malaria case management manual 2024 (National Malaria Guidelines, 5th ed. 2022), 4.2 and Table 6, pdf pp. 76–79, 94"
       },
       { name: "Primaquine phosphate product information" },
       { name: "Harrison 22nd ed. 2025, ch. 105, 229 and 231" },
@@ -25716,11 +26358,11 @@ window.DRUG_DB = [
     ],
     presentation: [
       "Tablet 250 mg chloroquine phosphate = about 150–155 mg chloroquine BASE (Harrison: 250 mg salt contains 155 mg base). Every dose in this entry is in mg of BASE: read the label, because some packs state the salt.",
-      "Syrup in some supplies (often 50 mg base per 5 mL): check the label for base or salt and the strength before every child's dose.",
+      "Syrup 50 mg base per 5 mL (the strength used in the Ethiopian dosing table): check the label for base or salt and the strength before every child's dose.",
       "Injection: avoid. Too-rapid parenteral chloroquine can cause seizures and death from cardiovascular collapse (Harrison). Oral is the route."
     ],
     indications: [
-      "P. vivax blood-stage infection where chloroquine still works, if the Ethiopian National Malaria Guidelines use it for vivax: always followed by primaquine radical cure (Harrison, Nelson). Confirm the national vivax regimen: an ACT is the alternative (Harrison).",
+      "P. vivax blood-stage infection: the Ethiopian first-line drug, always with the 14-day primaquine radical cure (Ethiopia). WHO allows an ACT or chloroquine where vivax is chloroquine-sensitive.",
       "P. ovale and P. malariae (Harrison; Nelson).",
       "Weekly suppression of vivax relapse when primaquine cannot be given: pregnancy (until after delivery), G6PD deficiency, young infants (Harrison, Nelson).",
       "NOT for P. falciparum or mixed infection: very few areas now have chloroquine-sensitive falciparum (Harrison), and Ethiopia is not one of them."
@@ -25730,7 +26372,7 @@ window.DRUG_DB = [
       items: [
         {
           label: "Vivax, ovale or malariae: total 25 mg base/kg over 3 days",
-          text: "Day 1: 10 mg base/kg. Day 2 (24 h): 10 mg base/kg. Day 3 (48 h): 5 mg base/kg (Harrison Table 231-6; total 25 mg/kg). Adults: 600 mg, 600 mg, 300 mg base = 4, 4 and 2 tablets of 150 mg base. Never more than the adult dose (Nelson). Harrison's other schedule (10 mg/kg, then 5 mg/kg at 12, 24 and 36 h) and the US CDC schedule in Nelson (10 mg/kg, then 5 mg/kg at 6, 24 and 48 h) give a similar total. Use the schedule of the Ethiopian National Malaria Guidelines."
+          text: "Ethiopia Table 5 (tablets 150 mg base; syrup 50 mg base/5 mL), days 1 / 2 / 3: 5–6 kg ½ / ½ / ¼ tablet (or 5 / 5 / 2.5 mL); 7–10 kg ½ / ½ / ½ (7.5 / 7.5 / 5 mL); 11–14 kg 1 / ½ / ½ (12.5 / 12.5 / 7.5 mL); 15–18 kg 1 / 1 / 1 (15 / 15 / 15 mL); 19–24 kg 1½ / 1½ / 1 (20 / 20 / 15 mL); 25–35 kg 2½ / 2 / 1 tablets; 36–50 kg 3 / 2 / 2; 51 kg and over 4 / 4 / 2. Never more than four tablets in one day (Ethiopia). The tablet and syrup columns are not mg-equivalent in some rows: give one form for the whole course. WHO and Harrison give the same total as 10, 10 and 5 mg base/kg on days 1, 2 and 3."
         },
         {
           label: "Then radical cure",
@@ -25738,7 +26380,7 @@ window.DRUG_DB = [
         },
         {
           label: "Weekly relapse prevention instead of primaquine",
-          text: "Pregnancy: 5 mg base/kg once weekly until 1 month after delivery, then radical cure (Harrison); Nelson gives 300 mg base weekly for the rest of the pregnancy. Known G6PD deficiency: 300 mg base weekly for 1 year from the infection in adults (Nelson); children 5 mg base/kg weekly, not more than the adult dose."
+          text: "Pregnancy (vivax): 300 mg base (2 tablets) once weekly until after delivery and 6 months of breastfeeding, then radical cure (Ethiopia). WHO: weekly until delivery and breastfeeding are completed. Harrison: 5 mg base/kg weekly until 1 month after delivery. Known G6PD deficiency: 300 mg base weekly for 1 year from the infection in adults (Nelson); children 5 mg base/kg weekly, not more than the adult dose."
         },
         {
           label: "Vomiting and food",
@@ -25750,7 +26392,7 @@ window.DRUG_DB = [
         },
         {
           label: "Response",
-          text: "Fever and parasites should fall within 2–3 days. If symptoms persist or worsen, or the parasite count does not fall, change to a regimen for chloroquine-resistant vivax (Nelson): artemether–lumefantrine, plus primaquine."
+          text: "Fever and parasites should fall within 2–3 days. If symptoms persist or worsen, or parasites return within 28 days with no other cause (microscopy, not RDT), change to the Ethiopian second-line drug, dihydroartemisinin–piperaquine, plus primaquine (Ethiopia). WHO and Nelson: an ACT."
         }
       ]
     },
@@ -25760,11 +26402,11 @@ window.DRUG_DB = [
         best_for: "Any health post or OPD treating malaria with rapid tests or microscopy.",
         requires: [],
         steps: [
-          "Read the test carefully. A combined Pf/Pv rapid test with only the vivax (or pan) line positive, or a film showing only P. vivax, allows chloroquine if the national guideline uses it.",
+          "Read the test carefully. A combined Pf/Pv rapid test with only the vivax (or pan) line positive, or a film showing only P. vivax, means chloroquine plus 14-day primaquine (Ethiopia).",
           "Falciparum line positive, alone or with the vivax line, or a film showing falciparum or a mixed infection: give artemether–lumefantrine, not chloroquine (chloroquine does not work against falciparum here). Add primaquine for the vivax part.",
           "No test available, the species is unclear, or a Pf/Pan test shows only the pan line (usually vivax, but an HRP2-negative falciparum is possible): give artemether–lumefantrine, which treats both in the blood (Harrison: if any doubt about the species, treat as falciparum), and radical cure as for vivax if the film or history supports vivax.",
           "Any danger sign: this is severe malaria whatever the species (Harrison: severe vivax is treated as severe falciparum). Give artesunate.",
-          "Ask the patient to come back if not better by day 3, or at once if worse; vivax that does not respond to chloroquine needs artemether–lumefantrine (Nelson)."
+          "Ask the patient to come back if not better after 3 days, or at once if worse (Ethiopia). Vivax that returns within 28 days with parasites on microscopy and no other cause is a treatment failure: dihydroartemisinin–piperaquine plus primaquine (Ethiopia)."
         ],
         monitor: [
           "Temperature and symptoms on day 3",
@@ -25779,8 +26421,8 @@ window.DRUG_DB = [
         best_for: "Clinics with adult tablets only, or a syrup of uncertain strength.",
         requires: ["oral"],
         steps: [
-          "Weigh the child. Day 1 and day 2 dose = 10 mg base × kg; day 3 = 5 mg base × kg. Use the calculator, then turn it into tablets of 150 mg base.",
-          "Examples: 15 kg: 150, 150, 75 mg = 1, 1 and ½ tablet. 20 kg: 200, 200, 100 mg = about 1¼, 1¼ and ¾ tablet. 30 kg: 300, 300, 150 mg = 2, 2 and 1 tablet.",
+          "Weigh the child and read the Ethiopian weight table (see Standard), which gives tablets of 150 mg base or syrup 50 mg base/5 mL for each day. Use the mg/kg arithmetic (10, 10 and 5 mg base/kg) only for a child outside the table.",
+          "Examples from the Ethiopian table: 15 kg: 1, 1 and 1 tablet; 20 kg: 1½, 1½ and 1 tablet; 30 kg: 2½, 2 and 1 tablets. These differ a little from straight mg/kg arithmetic; follow the national table.",
           "Round each dose to the nearest quarter-tablet. Under about 12 kg, quarter-tablet steps are too coarse (a quarter is about 37 mg): use a syrup of known strength, or ask the pharmacist to prepare the doses.",
           "Crush the piece between two spoons and mix with a little food or sugar water; it is bitter. Watch for an hour; repeat a vomited dose.",
           "Syrup: confirm the label states mg BASE per 5 mL before you calculate. If the label is unclear, use tablets."
@@ -25815,7 +26457,7 @@ window.DRUG_DB = [
     paediatric: [
       "Treatment: 10 mg base/kg on days 1 and 2 and 5 mg base/kg on day 3 (Harrison), never more than the adult dose (Nelson). Calculate from weight.",
       "Better tolerated by children than by adults (Harrison), but children are the most at risk from accidental overdose.",
-      "Infants with vivax who are too young for primaquine: give the chloroquine course; then weekly chloroquine relapse prevention (5 mg base/kg) as the national guideline allows, with radical cure when old enough."
+      "Infants under 6 months with vivax are too young for primaquine (Ethiopia): give the chloroquine course (the table starts at 5 kg; under 5 kg give AL, Ethiopian algorithm) and radical cure from 6 months. Weekly chloroquine for infants is not described in the Ethiopian manual or WHO: senior decision."
     ],
     cautions: [
       "Useless for falciparum and mixed infections (Harrison: very few areas have chloroquine-sensitive falciparum).",
@@ -25823,7 +26465,7 @@ window.DRUG_DB = [
       "QT prolongation: present at treatment doses but not proarrhythmic at recommended doses (Harrison). Care with other QT drugs: see Interactions.",
       "Common: nausea, dysphoria, itching in dark-skinned patients, postural hypotension (Harrison). The itching is harmless and is not an allergy.",
       "Long-term or high cumulative doses (over 100 g): retinal damage and cardiac or skeletal myopathy (Harrison). Not relevant to a 3-day course; relevant to long weekly use or rheumatology use.",
-      "May worsen epilepsy, psoriasis and myasthenia gravis (product information).",
+      "Contraindicated with a history of epilepsy or with psoriasis (Ethiopia); it may also worsen myasthenia gravis (product information). For vivax in these patients an ACT is the alternative (WHO).",
       "Antacids and kaolin reduce its absorption: give 4 hours apart (Harrison; product information). It reduces ampicillin absorption; cimetidine raises chloroquine levels (Harrison).",
       "Write the dose as mg BASE: salt and base differ by 40 % (Harrison)."
     ],
@@ -25900,7 +26542,37 @@ window.DRUG_DB = [
         book: "harrison",
         text: "Severe vivax malaria is uncommon outside New Guinea but occurs; it is treated as severe falciparum malaria.",
         ref: "Harrison 22nd ed. 2025, ch. 231 Malaria, p. 1772"
-      }
+      },
+      {
+      book: "ethmal",
+      text: "Ethiopia: chloroquine 25 mg base/kg total is the first-line drug for P. vivax, with 14-day primaquine.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 P. vivax malaria, pdf p. 78"
+    },
+      {
+      book: "ethmal",
+      text: "Ethiopia Table 5: 150 mg base tablets or 50 mg base/5 mL syrup by weight band for days 1, 2 and 3.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, Table 5, pdf p. 78"
+    },
+      {
+      book: "ethmal",
+      text: "One 250 mg chloroquine phosphate tablet contains 150 mg base; never more than four tablets in one day.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, Table 5, pdf p. 78"
+    },
+      {
+      book: "ethmal",
+      text: "Contraindications: hypersensitivity, a history of epilepsy, psoriasis.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Chloroquine contraindications, pdf p. 78"
+    },
+      {
+      book: "ethmal",
+      text: "Pregnancy: weekly chloroquine 2 tablets (300 mg base) until after delivery and 6 months of breastfeeding, then radical cure.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Treatment of uncomplicated malaria in pregnancy, pdf p. 83"
+    },
+      {
+      book: "whomal",
+      text: "WHO: 10 mg base/kg, then 10 mg/kg on day 2 and 5 mg/kg on day 3; lower total doses are not recommended.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.5 P. vivax, P. ovale, P. malariae or P. knowlesi, p. 193"
+    }
     ],
     sources: [
       {
@@ -25908,7 +26580,7 @@ window.DRUG_DB = [
         url: "https://www.who.int/publications/i/item/guidelines-for-malaria"
       },
       {
-        name: "Federal Ministry of Health Ethiopia. National Malaria Guidelines (current edition) — confirm whether chloroquine or artemether–lumefantrine is first line for P. vivax, and the dosing schedule"
+        name: "Ethiopia FMoH Malaria case management manual 2024 (National Malaria Guidelines, 5th ed. 2022), 4.2 and Table 5, pdf pp. 78, 83"
       },
       { name: "Chloroquine phosphate product information" },
       { name: "Harrison 22nd ed. 2025, ch. 229, 231 and 470" },
@@ -25959,12 +26631,14 @@ window.DRUG_DB = [
       "Room temperature. Not on every district shelf: check before you plan to rely on it in theatre."
     ],
     indications: [
-      "Malaria partner drug: oral quinine plus clindamycin for 7 days. It is the partner of choice in pregnancy and in children under 8, where doxycycline is avoided (Harrison, Nelson; Gabbe for the first trimester)",
+      "Malaria partner drug: oral quinine plus clindamycin for 7 days. It is the partner of choice in pregnancy and in children under 8, where doxycycline is avoided (Harrison, Nelson; Gabbe for the first trimester). Not part of the Ethiopian protocol, and WHO 2026 no longer generally recommends 7-day quinine regimens: use only where no ACT is available",
       "Postpartum endometritis and pelvic infection after caesarean: clindamycin 900 mg 8-hourly with gentamicin (Gabbe, Williams)",
       "Caesarean prophylaxis when the woman has a significant penicillin allergy: one dose, with gentamicin (Gabbe, Williams)",
       "Bone, joint and soft-tissue infection, abscess and cellulitis from staphylococci or streptococci, including many MRSA (see Cloxacillin); dental infection and lung abscess (Harrison)",
       "Necrotising fasciitis and streptococcal or staphylococcal toxic shock: ADDED to penicillin and surgery to stop toxin production (Harrison, Gabbe)",
-      "Intrapartum GBS prophylaxis in penicillin allergy ONLY when the GBS isolate is known to be susceptible (Gabbe)"
+      "Intrapartum GBS prophylaxis in penicillin allergy ONLY when the GBS isolate is known to be susceptible (Gabbe)",
+      "Pneumocystis pneumonia, mild to moderate, when cotrimoxazole cannot be used: with primaquine (Ethiopia; Harrison)",
+      "Toxoplasmic encephalitis, alternative regimen: with pyrimethamine and folinic acid (Ethiopia)"
     ],
     standard: {
       summary: "Clindamycin stops bacteria making protein, including the toxins that drive necrotising fasciitis and toxic shock, so in those it is given WITH a penicillin and surgery, never instead of them. It is absorbed almost completely by mouth. It does not cover E. coli and the other gram-negative bacteria, which is why it is paired with gentamicin in the pelvis. Its big cost is Clostridioides difficile colitis: clindamycin was one of the first antibiotics linked to it (Harrison). Use it for a real indication, for the shortest course that works, and ask every patient on it about diarrhoea every day.",
@@ -25996,7 +26670,11 @@ window.DRUG_DB = [
         {
           label: "Necrotising fasciitis, toxic shock",
           text: "600–900 mg IV every 8 h WITH penicillin G 2–4 million units every 4 h, and urgent surgical debridement (Harrison Table 153-3; Schwartz). Staphylococcal toxic shock: with cloxacillin, and remove any tampon or packing (Harrison)."
-        }
+        },
+        {
+        label: "PCP and toxoplasmosis in HIV (Ethiopia)",
+        text: "PCP, mild to moderate, cotrimoxazole not possible: clindamycin 600 mg four times daily + primaquine 15 mg twice daily (check G6PD), for 21 days. Toxoplasmic encephalitis alternative: clindamycin 600 mg every 6 h + pyrimethamine (200 mg loading, then 50–75 mg daily) + folinic acid 10–20 mg daily. Cotrimoxazole remains first line for both. Watch for C. difficile diarrhoea."
+      }
       ]
     },
     improvised: [
@@ -26070,7 +26748,7 @@ window.DRUG_DB = [
         best_for: "Stock-outs, which are frequent.",
         requires: [],
         steps: [
-          "Malaria partner with quinine: doxycycline if the patient is not pregnant and is 8 years or older. In pregnancy, use artemether–lumefantrine as the national guideline allows (see Artemether–lumefantrine and Quinine).",
+          "Malaria partner with quinine: doxycycline if the patient is not pregnant and is 8 years or older. In pregnancy, give artemether–lumefantrine, which Ethiopia uses in all trimesters (see Artemether–lumefantrine).",
           "Staphylococcal bone, joint or skin infection: cloxacillin (see Cloxacillin). Possible MRSA: co-trimoxazole (see Co-trimoxazole and Cloxacillin).",
           "Postpartum endometritis: ampicillin plus gentamicin plus metronidazole (Gabbe, SMFM regimen for genital tract sepsis; see Metronidazole).",
           "Anaerobic cover anywhere: metronidazole.",
@@ -26213,7 +26891,12 @@ window.DRUG_DB = [
         book: "note",
         text: "The IV limits (dilute to 18 mg/mL or weaker, no faster than 30 mg/min, no more than 1.2 g in a 1-hour infusion, no more than 600 mg per IM injection), the warning about rapid injection, swallowing capsules with a full glass of water, not refrigerating the oral solution, and the potentiation of neuromuscular blockers are from the clindamycin product information and the BNF; none of the textbooks addresses the neuromuscular interaction. The adult oral range 150–450 mg 6-hourly is from the product information. Oral metronidazole as a fallback for non-severe C. difficile where oral vancomycin is unavailable follows the IDSA/SHEA 2017 guideline. The improvised methods are editorial guidance for district practice.",
         ref: "Editorial note"
-      }
+      },
+      {
+      book: "ethhiv",
+      text: "Alternatives for mild to moderate PCP: clindamycin 600 mg four times daily plus primaquine 15 mg twice daily. Toxoplasmosis alternative: pyrimethamine and folinic acid plus clindamycin 600 mg every 6 hours.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.1 and 11.3.3, pp. 190, 229"
+    }
     ],
     sources: [
       { name: "Clindamycin (Dalacin C / Cleocin) capsule and injection product information" },
@@ -26228,7 +26911,7 @@ window.DRUG_DB = [
       { name: "Gabbe's Obstetrics, 9th ed., ch. 7, 21, 58" },
       { name: "Williams Obstetrics, 25th ed. 2018, ch. 30, 37" },
       { name: "Schwartz's Principles of Surgery, 11th ed., ch. 16" },
-      { name: "Ethiopian National Malaria Guidelines (confirm the regimen in use)" }
+      { name: "Ethiopia FMoH Malaria case management manual 2024: AL first line in all trimesters, dihydroartemisinin–piperaquine second line" }
     ],
     review: { status: "draft", by: null, date: null }
   },
@@ -26375,7 +27058,7 @@ window.DRUG_DB = [
           "Suspected typhus or spotted fever (fever and headache with lice or tick exposure, a rash or an eschar) in a child of ANY age: give doxycycline 2.2 mg/kg (max 100 mg) every 12 h. Nelson makes it the treatment of choice under 8 because short courses carry negligible risk of tooth staining; Harrison allows up to five courses with minimal risk. Chloramphenicol is less effective (Harrison) and carries higher mortality (Nelson).",
           "Louse-borne relapsing fever in a child: Harrison gives single-dose doxycycline 5 mg/kg in an epidemic, but its treatment algorithm uses erythromycin under 9 years. Nelson recommends erythromycin under 8, noting that doxycycline courses under 2 weeks appear safe over 2 years. Follow the national outbreak protocol, and do not leave a sick child untreated while you decide.",
           "Where another drug works as well, use it under 8. Malaria partner: clindamycin (Nelson). Brucellosis: co-trimoxazole (Harrison). Chlamydia and trachoma: azithromycin. Cholera: a single dose of doxycycline is acceptable at any age (Nelson); azithromycin is the alternative.",
-          "Pregnancy, routine indications: avoid (Williams, Gabbe). Malaria: clindamycin with quinine, or artemether–lumefantrine as the national guideline allows. Chlamydia: azithromycin. Brucellosis: co-trimoxazole (Harrison).",
+          "Pregnancy, routine indications: avoid (Williams, Gabbe). Malaria: artemether–lumefantrine, used in all trimesters in Ethiopia; clindamycin with quinine only where no ACT is available (WHO). Chlamydia: azithromycin. Brucellosis: co-trimoxazole (Harrison).",
           "Pregnancy with life-threatening typhus or spotted fever: Nelson reserves chloramphenicol for pregnancy. Harrison finds little evidence of harm from doxycycline in pregnancy, calls chloramphenicol less effective, and for epidemic typhus advises chloramphenicol early in pregnancy and doxycycline late. Decide with a senior; do not leave her without effective treatment.",
           "Making a child's dose from the 100 mg tablet: halve or quarter it (50 mg, 25 mg), crush it into a spoonful of water or soft food (not milk), give it at once, then give a drink of water."
         ],
@@ -27036,6 +27719,1448 @@ window.DRUG_DB = [
       { name: "Nelson Textbook of Pediatrics, 22nd ed. 2024, ch. 491" },
       { name: "Gabbe's Obstetrics, 9th ed., ch. 48" },
       { name: "BNF / BNF for Children: spironolactone" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- malaria (Ethiopia FMoH 2024, WHO 2026) ---- */
+  {
+    id: "dihydroartemisinin-piperaquine",
+    name: "Dihydroartemisinin–piperaquine (DHA-PPQ)",
+    aka: [
+      "DHA-PPQ",
+      "DHA-PQP",
+      "DP",
+      "Dihydroartemisinin/piperaquine",
+      "Dihydroartemisinin-piperaquine",
+      "Piperaquine",
+      "Eurartesim",
+      "Duo-Cotecxin",
+      "Second-line ACT"
+    ],
+    cls: "Artemisinin-based combination therapy (ACT): dihydroartemisinin, a fast-acting artemisinin, with piperaquine, a slowly eliminated partner drug",
+    cat: "infection",
+    wards: ["outpatient", "medical", "paediatric", "maternity", "emergency"],
+    tags: [
+      "malaria",
+      "second-line",
+      "treatment failure",
+      "falciparum",
+      "vivax",
+      "mixed infection",
+      "ACT",
+      "QT",
+      "follow-on after artesunate",
+      "DHA-PPQ"
+    ],
+    presentation: [
+      "Adult tablet: 40 mg dihydroartemisinin + 320 mg piperaquine. Paediatric tablet: 20 mg + 160 mg. Fixed-dose combination (Ethiopia; WHO).",
+      "Registered in Ethiopia as the national second-line ACT; second-line treatment is held at health centre level, so a health post refers (Ethiopia).",
+      "Oral only. There is no injection: a patient who cannot swallow needs artesunate (see Artesunate)."
+    ],
+    indications: [
+      "Second-line treatment of uncomplicated P. falciparum AND P. vivax malaria in Ethiopia: treatment failure within 28 days of first-line treatment, or a patient allergic to or unable to tolerate the first-line drug (Ethiopia).",
+      "Oral follow-on after parenteral artesunate for severe malaria when the patient cannot take artemether–lumefantrine for any reason: a full 3-day course (Ethiopia). WHO lists it among the ACTs for follow-on.",
+      "Always followed by primaquine: a single dose for P. falciparum, the 14-day radical cure for P. vivax or mixed infection (Ethiopia).",
+      "WHO 2026: one of six ACTs for uncomplicated falciparum malaria; its long half-life gives longer protection against vivax recurrence than artemether–lumefantrine. In the first trimester WHO prefers artemether–lumefantrine and allows other ACTs only where it is not available."
+    ],
+    standard: {
+      summary: "Once a day for 3 days, the number of tablets set by weight band, and always with primaquine afterwards. In Ethiopia it is the second-line drug for both falciparum and vivax: use it for a failure confirmed by microscopy within 28 days, for allergy or intolerance to the first-line drug, and to finish treatment after artesunate when artemether–lumefantrine cannot be taken. Piperaquine prolongs the QT interval: do not give it to a patient with a heart rhythm problem or heart failure, or with another QT-prolonging drug (Ethiopia). Unlike artemether–lumefantrine it should not be taken with a high-fat meal (WHO).",
+      items: [
+        {
+          label: "Dose by weight (Ethiopia Table 7; once daily for 3 days)",
+          text: "5 to under 8 kg: 1 paediatric tablet (20/160 mg). 8 to under 11 kg: 1½ paediatric tablets. 11 to under 17 kg: 1 adult tablet (40/320 mg). 17 to under 25 kg: 1½ adult tablets. 25 to under 36 kg: 2 adult tablets. 36 to under 60 kg: 3 adult tablets. 60 to under 80 kg: 4 adult tablets. The Ethiopian table stops at 80 kg; WHO gives 200 mg + 1600 mg (5 adult tablets) a day above 80 kg."
+        },
+        {
+          label: "Target dose",
+          text: "Children 5 to under 25 kg: 2.5–10 mg/kg dihydroartemisinin + 20–32 mg/kg piperaquine a day (Ethiopia). WHO: children under 25 kg must get at least 2.5 mg/kg + 20 mg/kg a day, because young children otherwise have low piperaquine levels and fail more often; adults and children 25 kg and over 4 (2–10) mg/kg + 18 (16–27) mg/kg a day."
+        },
+        {
+          label: "Add primaquine",
+          text: "P. falciparum: a single dose of primaquine 0.25 mg base/kg. P. vivax or mixed: primaquine 0.25 mg base/kg daily for 14 days, given after a treatment failure if the first radical-cure course was completed; a patient still taking primaquine finishes that course and needs no new one (Ethiopia). Usual exclusions: pregnancy, infants under 6 months, women breastfeeding an infant under 6 months (see Primaquine)."
+        },
+        {
+          label: "Vomiting",
+          text: "Vomited within 30 minutes: give the full dose again. Vomited between 30 minutes and 1 hour: give half the dose again (Ethiopia). Vomits again, or vomits everything: treat as unable to take oral drugs and give artesunate (see the Severe malaria case)."
+        },
+        {
+          label: "Food",
+          text: "Give with water or a normal meal. Avoid a high-fat meal with the dose: it speeds piperaquine absorption and raises the risk of QT prolongation; normal meals do not change absorption (WHO). This is the opposite of artemether–lumefantrine, which needs fat."
+        },
+        {
+          label: "Heart and QT",
+          text: "Do not give with a cardiac disorder (slow pulse, rhythm disorder, heart failure), and do not combine with QT-prolonging drugs: amiodarone, other antimalarials, antipsychotics, fluconazole, fluoroquinolones, hydroxyzine, macrolides, ondansetron and others (Ethiopia). WHO: an ECG is not needed before prescribing, but do not use it with congenital long QT or with QT-prolonging drugs; piperaquine prolongs the QT about as much as chloroquine and less than quinine."
+        },
+        {
+          label: "Age, kidneys and liver",
+          text: "Give with caution over 60 years of age and in kidney or liver impairment (Ethiopia). No dose change is given."
+        },
+        {
+          label: "Other drugs",
+          text: "Rifampicin, carbamazepine, phenytoin and phenobarbital lower DHA and piperaquine levels; antiretrovirals change levels too: monitor the response closely (Ethiopia). See Interactions."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Is it really treatment failure? Checks before switching to second line",
+        best_for: "A patient back with fever 4 to 28 days after artemether–lumefantrine or chloroquine, at a health centre or hospital.",
+        requires: [],
+        steps: [
+          "Ask every malaria patient: any malaria treatment in the past 4 weeks? If yes, think of treatment failure (Ethiopia).",
+          "Look for danger signs first. Any danger sign means severe malaria: artesunate now, whatever the history.",
+          "Ask how the first course was taken: doses vomited, missed or stopped early; artemether–lumefantrine taken without milk or food; a pack bought outside; another drug such as rifampicin.",
+          "Confirm parasites by MICROSCOPY. Do not use an RDT: it can stay positive for weeks after a cured infection (Ethiopia; WHO). A health post refers for microscopy and second-line treatment.",
+          "Cause found (for example the doses were vomited): correct it and give the first-line drug again (Ethiopia).",
+          "No cause found and parasites seen 4 to 28 days after treatment: give dihydroartemisinin–piperaquine by weight for 3 days, then single-dose primaquine for falciparum or the 14-day course for vivax (Ethiopia).",
+          "More than 28 days since treatment: treat as a new infection with the first-line drug (Ethiopia; WHO). A different species from the first episode is also treated with first-line drugs (Ethiopia).",
+          "Smear negative and no other cause found: re-evaluate or refer (Ethiopia). Think of relapsing fever, typhoid, pneumonia and kala-azar."
+        ],
+        monitor: [
+          "Fever and symptoms on day 3; return at once if worse",
+          "Report every confirmed treatment failure (Ethiopia: treatment failures are reportable to pharmacovigilance)"
+        ],
+        cautions: [
+          "Do not switch to second line on an RDT result alone: you will treat cured patients and miss the real cause of the fever."
+        ]
+      },
+      {
+        title: "Only adult tablets for a small child",
+        best_for: "A health centre with 40/320 mg tablets but no 20/160 mg paediatric tablets.",
+        requires: ["oral"],
+        steps: [
+          "Half an adult tablet (40/320 mg) contains the same dose as one paediatric tablet (20/160 mg); this is arithmetic from the two strengths.",
+          "5 to under 8 kg: ½ adult tablet a day. 8 to under 11 kg: ¾ adult tablet a day (the dose of 1½ paediatric tablets). From 11 kg the table already uses adult tablets.",
+          "Cut with a tablet cutter or a clean blade, crush between two spoons, mix with a little water or breast milk and give all of it.",
+          "Prepare all three days' pieces at the facility and label them with the day."
+        ],
+        monitor: ["Vomiting in the first hour (repeat as in Standard)"],
+        cautions: [
+          "Splitting adult tablets is less accurate than a paediatric tablet; WHO prefers paediatric formulations whenever they are available. Never round down below the table dose: young children already have lower piperaquine levels (WHO)."
+        ]
+      },
+      {
+        title: "Second-line treatment for a patient with heart disease or on a QT drug",
+        best_for: "Treatment failure in a patient on amiodarone, an antipsychotic, a macrolide, a fluoroquinolone, fluconazole or ondansetron, or with a known rhythm problem or heart failure.",
+        requires: [],
+        steps: [
+          "Ethiopia says do not give DHA-PPQ with a cardiac disorder or with QT-prolonging drugs. Check the drug list (see Interactions) and ask about fainting, palpitations and sudden death in the family.",
+          "If the QT drug can safely be stopped or swapped for the 3 days (for example ondansetron, a macrolide or fluconazole for a non-urgent problem), stop it and give DHA-PPQ. Piperaquine is eliminated slowly, so do not restart a QT drug straight away.",
+          "Correct low potassium and magnesium (vomiting and diarrhoea are common in malaria), and do an ECG before and during the course if you have one.",
+          "If the patient has a cardiac disorder, or the QT drug cannot be stopped (amiodarone, a depot antipsychotic), ask a senior and consider referral. Atovaquone–proguanil does not prolong the QT and can treat falciparum where it is available (see Atovaquone); it is not part of the Ethiopian protocol.",
+          "Severe malaria is never treated with tablets first: give artesunate whatever the QT risk."
+        ],
+        monitor: [
+          "Pulse rate and rhythm daily during the course",
+          "ECG (QT) before and on day 2–3 where available"
+        ],
+        cautions: ["Do not give a high-fat meal with the dose: it raises piperaquine peaks (WHO)."]
+      },
+      {
+        title: "Finishing treatment after artesunate when AL cannot be taken",
+        best_for: "A patient recovering from severe malaria on the ward who is allergic to artemether–lumefantrine or cannot take it.",
+        requires: ["oral"],
+        steps: [
+          "Give at least three artesunate doses (0, 12 and 24 hours) before switching to tablets (Ethiopia).",
+          "When the patient can swallow and keep fluids down, give a FULL 3-day course of DHA-PPQ by weight, not just the 'remaining days' (Ethiopia).",
+          "Add a single dose of primaquine for falciparum, or the 14-day primaquine course for vivax, with the usual exclusions (Ethiopia).",
+          "If the patient was on quinine, check potassium, magnesium and, if possible, the ECG first: both drugs prolong the QT (see Interactions)."
+        ],
+        monitor: [
+          "Glucose until eating normally",
+          "Haemoglobin at about day 7 and 14 for delayed haemolysis after artesunate (WHO)"
+        ],
+        cautions: []
+      }
+    ],
+    paediatric: [
+      "Dose by the Ethiopian weight table from 5 kg: paediatric tablets (20/160 mg) up to 11 kg, adult tablets (40/320 mg) from 11 kg; once daily for 3 days.",
+      "Children under 25 kg need at least 2.5 mg/kg dihydroartemisinin and 20 mg/kg piperaquine a day; the older manufacturer doses under-dosed young children (WHO).",
+      "Under 5 kg: no Ethiopian band. WHO treats infants under 5 kg with an ACT at the same mg/kg dose as a 5 kg child; in Ethiopia artemether–lumefantrine is the drug for this age. Senior decision.",
+      "Vomiting: repeat the full dose if vomited within 30 minutes, half if within 30–60 minutes (Ethiopia).",
+      "Malnourished children fail treatment more often: monitor the response closely (WHO)."
+    ],
+    cautions: [
+      "QT prolongation: do not give with a cardiac disorder or with QT-prolonging drugs (Ethiopia). Piperaquine prolongs the QT about as much as chloroquine (WHO).",
+      "Not with a high-fat meal (WHO).",
+      "May cause QT prolongation and fast heart rate; rarely stomach upset, itching, liver problems, joint and muscle pain (Ethiopia).",
+      "Caution over 60 years and in kidney or liver impairment (Ethiopia).",
+      "First trimester: WHO prefers artemether–lumefantrine; use DHA-PPQ only where AL is not available. Ethiopia lists no contraindication in pregnancy. See Safety.",
+      "Enzyme inducers (rifampicin, carbamazepine, phenytoin, phenobarbital) lower its levels; antiretrovirals alter them: monitor closely (Ethiopia). See Interactions.",
+      "Never give dihydroartemisinin alone or piperaquine alone."
+    ],
+    textbook: [
+      {
+        book: "ethmal",
+        text: "In Ethiopia dihydroartemisinin–piperaquine is the second-line treatment for both P. falciparum and P. vivax, used after failure of the first-line drug or when the patient is allergic to it or cannot tolerate it; it protects longer against P. vivax than artemether–lumefantrine.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Second line treatment, pdf p. 80"
+      },
+      {
+        book: "ethmal",
+        text: "Dihydroartemisinin–piperaquine is followed by single-dose primaquine for P. falciparum and by radical cure for P. vivax.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Second line treatment, pdf p. 80"
+      },
+      {
+        book: "ethmal",
+        text: "Tablets of 40/320 mg and paediatric tablets of 20/160 mg; children 5 to under 25 kg receive 2.5–10 mg/kg dihydroartemisinin and 20–32 mg/kg piperaquine a day, once daily for 3 days.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 DHA-PPQ treatment schedule, pdf p. 80"
+      },
+      {
+        book: "ethmal",
+        text: "Table 7 weight bands: 5 to <8 kg 1 paediatric tablet; 8 to <11 kg 1½; 11 to <17 kg 1 adult tablet; 17 to <25 kg 1½; 25 to <36 kg 2; 36 to <60 kg 3; 60 to <80 kg 4.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, pdf p. 81"
+      },
+      {
+        book: "ethmal",
+        text: "Do not combine with QT-prolonging drugs (amiodarone, other antimalarials, antipsychotics, fluconazole, fluoroquinolones, hydroxyzine, macrolides, ondansetron), and do not give with cardiac disorders.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, contra-indications and precautions, pdf p. 81"
+      },
+      {
+        book: "ethmal",
+        text: "Vomited within 30 minutes: re-administer the full dose; between 30 minutes and 1 hour: re-administer half the dose. Pregnancy: no contra-indication.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, contra-indications and precautions, pdf p. 81"
+      },
+      {
+        book: "ethmal",
+        text: "With no cause identified and parasites on microscopy 4–28 days after treatment, change to the second-line drug, dihydroartemisinin–piperaquine (do not use RDTs to confirm).",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, 4.4 Management of treatment failure, pdf p. 88"
+      },
+      {
+        book: "ethmal",
+        text: "After severe malaria, if the patient cannot take artemether–lumefantrine for any reason, complete treatment with a full 3-day course of the second-line drug.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, 5.3.4 Specific antimalarial treatment, pdf p. 113"
+      },
+      {
+        book: "whomal",
+        text: "Children under 25 kg should receive at least 2.5 mg/kg dihydroartemisinin and 20 mg/kg piperaquine a day for 3 days; the older regimen under-dosed children under 5 years.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 178"
+      },
+      {
+        book: "whomal",
+        text: "WHO weight table (once daily for 3 days): <8 kg 20 + 160 mg; 8 to <11 kg 30 + 240; 11 to <17 kg 40 + 320; 17 to <25 kg 60 + 480; 25 to <36 kg 80 + 640; 36 to <60 kg 120 + 960; 60 to <80 kg 160 + 1280; >80 kg 200 + 1600.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 178"
+      },
+      {
+        book: "whomal",
+        text: "Avoid high-fat meals with dihydroartemisinin–piperaquine: they accelerate piperaquine absorption and raise the risk of QT prolongation. Normal meals do not alter absorption.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 178"
+      },
+      {
+        book: "whomal",
+        text: "No ECG is needed before prescribing, but do not use it in congenital QT prolongation or with QT-prolonging conditions or drugs; no cardiotoxicity was seen in large trials or deployment.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 179"
+      },
+      {
+        book: "whomal",
+        text: "Dihydroartemisinin–piperaquine has a longer half-life than artemether–lumefantrine, and fewer new infections occur within 9 weeks.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.1 Artemisinin-based combination therapy, p. 171"
+      },
+      {
+        book: "whomal",
+        text: "First trimester: artemether–lumefantrine is the recommended ACT; other ACTs including dihydroartemisinin–piperaquine may be considered where AL is not available.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.4.1 Pregnant and lactating women, p. 183"
+      }
+    ],
+    sources: [
+      {
+        name: "Ethiopia FMoH Malaria case management manual 2024 (National Malaria Guidelines, 5th ed. 2022), 4.2 Second line treatment and Table 7, pdf pp. 80–81; 4.4 Treatment failure, pdf pp. 87–88"
+      },
+      {
+        name: "WHO guidelines for malaria, 10 September 2026, 5.2.1.1.2 Dosing of ACTs, pp. 178–179",
+        url: "https://www.who.int/teams/global-malaria-programme"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- HIV antiretroviral therapy (Ethiopia MoH 2025) ---- */
+  {
+    id: "dolutegravir",
+    name: "Dolutegravir (DTG) — TLD, DTG 50 mg and paediatric DTG 10 mg",
+    aka: [
+      "DTG",
+      "TLD",
+      "TDF/3TC/DTG",
+      "TDF+3TC+DTG",
+      "tenofovir/lamivudine/dolutegravir",
+      "pDTG",
+      "paediatric dolutegravir",
+      "dolutegravir 10 mg dispersible",
+      "Tivicay",
+      "integrase inhibitor",
+      "INSTI",
+      "first-line ART",
+      "regimen 1j",
+      "regimen 4j"
+    ],
+    cls: "Antiretroviral: integrase strand transfer inhibitor (INSTI); TLD = dolutegravir with tenofovir disoproxil + lamivudine",
+    cat: "infection",
+    wards: ["medical", "outpatient", "paediatric", "maternity", "emergency"],
+    tags: [
+      "HIV",
+      "ART",
+      "antiretroviral therapy",
+      "first line",
+      "same-day ART",
+      "pregnancy",
+      "breastfeeding",
+      "TB/HIV",
+      "rifampicin",
+      "children",
+      "weight band",
+      "viral load"
+    ],
+    presentation: [
+      "TLD fixed-dose tablet: tenofovir disoproxil fumarate (TDF) 300 mg + lamivudine (3TC) 300 mg + dolutegravir 50 mg. One tablet once daily.",
+      "Dolutegravir 50 mg film-coated tablet. Swallow whole. Used alone (with an NRTI backbone) from 20 kg body weight (Ethiopia).",
+      "Paediatric dolutegravir 10 mg (pDTG): scored DISPERSIBLE tablet, dissolved in clean water.",
+      "pDTG is absorbed much better than the 50 mg film-coated tablet: one 50 mg film-coated tablet is about equal to 30 mg of dispersible tablets (3 × 10 mg). Five 10 mg tablets are NOT the same as one 50 mg tablet (Ethiopia)."
+    ],
+    indications: [
+      "First-line ART for adults and adolescents, including pregnant and breastfeeding women and people with TB: TLD once daily (Ethiopia Table 12.3)",
+      "First-line ART for children older than 4 weeks and at least 3 kg: dolutegravir with abacavir/lamivudine, dosed by weight band (Ethiopia Table 12.3, Annexes 9–10)",
+      "Second-line ART when the first line was efavirenz- or lopinavir/ritonavir-based and DTG was not used before (Ethiopia)",
+      "Third-line ART at selected hospitals: DTG 50 mg TWICE daily with darunavir/ritonavir (Ethiopia Table 12.13)",
+      "HIV post-exposure prophylaxis: TLD for 28 days (see the HIV prophylaxis page)"
+    ],
+    standard: {
+      summary: "TLD, one tablet once daily for life, is the Ethiopian first-line ART for everyone 30 kg and over, including pregnant and breastfeeding women and people with TB. Children from 4 weeks and 3 kg get dolutegravir by weight band with abacavir/lamivudine. Start the same day the diagnosis is confirmed if the person is ready, except in TB meningitis or cryptococcal meningitis. Two rules prevent most failures: give dolutegravir TWICE daily while on rifampicin, and keep it 2 hours before or 6 hours after iron, calcium, zinc, magnesium or antacids.",
+      items: [
+        {
+          label: "Adults and adolescents 30 kg and over (Ethiopia)",
+          text: "TLD (TDF 300 mg + 3TC 300 mg + DTG 50 mg) one tablet once daily. Ethiopia Table 12.3 defines this group as 10–19 years OR 30 kg and over, but the paediatric dosing annex warns against the 300 mg TDF in TLD for children under 30 kg: use body weight (see Cautions). No food restriction (Ethiopia: only efavirenz is affected by food)."
+        },
+        {
+          label: "Children over 4 weeks and at least 3 kg (Ethiopia Annex 9–10, once daily)",
+          text: "pDTG 10 mg dispersible: 3–5.9 kg ½ tablet (5 mg); 6–9.9 kg 1½ tablets (15 mg); 10–13.9 kg 2 tablets (20 mg); 14–19.9 kg 2½ tablets (25 mg). From 20 kg: DTG 50 mg film-coated, 1 tablet once daily. From 30 kg: move to TLD if eligible. Give with abacavir/lamivudine (see that page). Re-weigh at every visit and move up a band as the child grows."
+        },
+        {
+          label: "How to give pDTG (Ethiopia)",
+          text: "Put the dose in clean water and stir until dissolved: 5 mL (1 teaspoon) for ½ to 1½ tablets, 10 mL (2 teaspoons) for 2 or more tablets. The child drinks it at once, or within 30 minutes. Rinse the cup with a little more water and give that too. pDTG can be dissolved in the same water as ABC/3TC 120/60 mg dispersible tablets (use 10–20 mL). If dispersing in water is impossible, crushing, chewing or mixing with other food or breast milk is acceptable as long as the whole dose is taken."
+        },
+        {
+          label: "Before starting (Ethiopia Tables 12.6–12.7)",
+          text: "Re-test to verify the diagnosis at the ART site. Screen for TB symptoms; rule out TB meningitis and cryptococcal meningitis (they delay ART). Check pregnancy, WHO stage, other medicines and herbs. Tests: haemoglobin/CBC, CD4, cryptococcal antigen if CD4 is 100 or less, HBsAg, creatinine with eGFR for TDF, pregnancy test, fasting glucose. If tests are not available, this must NOT delay ART."
+        },
+        {
+          label: "With rifampicin (TB treatment)",
+          text: "Adults: dolutegravir 50 mg TWICE daily (Ethiopia) — TLD in the morning plus a separate DTG 50 mg tablet about 12 hours later. Children: DTG twice daily at the weight-band dose, and continue twice daily for 2 weeks after rifampicin ends (Ethiopia). The app's TB interaction rule also continues adult twice-daily dosing for 2 weeks after rifampicin (WHO 2021). Tenofovir and lamivudine need no change."
+        },
+        {
+          label: "Kidney function",
+          text: "Do not start TDF (and so not TLD) at eGFR under 50 mL/min, with uncontrolled hypertension, untreated diabetes or renal failure (Ethiopia Table 12.8). Give dolutegravir 50 mg with abacavir/lamivudine (Ethiopia: ABC for renal insufficiency) or zidovudine/lamivudine instead. Dolutegravir itself needs no dose change."
+        },
+        {
+          label: "Missed dose (Ethiopia)",
+          text: "Once-daily medicine: take the missed dose if it is within 12 hours of the usual time; otherwise skip it and take the next dose as normal. Never double the next dose."
+        },
+        {
+          label: "Third-line use (selected hospitals only)",
+          text: "When dolutegravir is reused in third line, the dose is 50 mg TWICE daily (Ethiopia Table 12.13), with darunavir/ritonavir and an NRTI backbone. Decided by an experienced HIV clinician; genotype first when it is accessible, but do not wait for it if the turnaround is long."
+        },
+        {
+          label: "WHO 2025 (not yet in the Ethiopian manual)",
+          text: "WHO 2025 allows switching people with an undetectable viral load on a 3-drug regimen and no active hepatitis B to dolutegravir + lamivudine (two drugs), and long-acting injectable cabotegravir + rilpivirine as an alternative switch. Neither is in the Ethiopian 2025 manual: do not use outside a national programme."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Giving pDTG to an infant without a measuring cup",
+        best_for: "Health centre or home, child 3–20 kg, when no dosing cup is available.",
+        requires: ["oral", "syringe_1ml"],
+        steps: [
+          "Use any clean cup and a clean teaspoon or a syringe without the needle to measure the water: 5 mL (1 teaspoon) for ½ to 1½ tablets, 10 mL (2 teaspoons) for 2 tablets or more (Ethiopia).",
+          "For ½ tablet, split the scored tablet along the score line. Keep the other half in its blister or a dry, closed container for the next day (editorial: the manual does not say how long a split half can be kept — ask the pharmacist).",
+          "Stir until the tablet is fully dissolved and give it within 30 minutes (Ethiopia). If the child takes ABC/3TC dispersible too, dissolve both together in 10–20 mL of water.",
+          "Rinse the cup with a little more water and give that as well, so no medicine is left behind.",
+          "If the child will not drink it, the tablet may be crushed and mixed with a little breast milk or soft food, as long as the whole amount is eaten (Ethiopia)."
+        ],
+        monitor: [
+          "Caregiver shows you the preparation before leaving",
+          "Weight at every visit: move to the next band when the child crosses a band edge"
+        ],
+        cautions: [
+          "Never swap pDTG and the 50 mg film-coated tablet 1:1 — they are not equivalent (Ethiopia).",
+          "Give pDTG 2 hours before or 6 hours after zinc, iron or calcium supplements (Ethiopia)."
+        ]
+      },
+      {
+        title: "Rifampicin started: doubling dolutegravir with what is in stock",
+        best_for: "Adult on TLD newly started on TB treatment at a site where single DTG 50 mg tablets may be short.",
+        requires: ["oral"],
+        steps: [
+          "Keep TLD one tablet in the morning. Add a single dolutegravir 50 mg tablet in the evening, about 12 hours later (Ethiopia: DTG 50 mg twice daily with rifampicin).",
+          "Do NOT give a second TLD tablet instead: that doubles tenofovir and lamivudine as well (editorial). If no single DTG 50 mg tablet is in stock, call the ART clinic or the hub hospital the same day.",
+          "Write 'DTG twice daily — on rifampicin' on the ART card and the TB card so both clinics see it.",
+          "Plan the end: keep the evening DTG for 2 weeks after rifampicin stops (WHO; Ethiopia states this for children), then go back to TLD once daily."
+        ],
+        monitor: [
+          "Adherence to both evening and morning doses",
+          "Viral load at the usual schedule; if raised, check the evening dose was actually taken"
+        ],
+        cautions: [
+          "Rifapentine (3HP preventive therapy) does not need a dolutegravir dose change (Ethiopia).",
+          "Boosted protease inhibitors with rifampicin are a different problem — see Atazanavir/ritonavir and Lopinavir/ritonavir."
+        ]
+      },
+      {
+        title: "Same-day ART when the laboratory cannot help",
+        best_for: "Health centre or district hospital without CD4, creatinine or HBsAg on the day of diagnosis.",
+        requires: ["oral"],
+        steps: [
+          "Confirm the diagnosis with the national three-test algorithm and re-test at the ART site (Ethiopia).",
+          "Ask about headache, neck stiffness, confusion, cough, fever, night sweats and weight loss. Suspected meningitis: do not start ART today — refer or investigate first (Ethiopia: TB and cryptococcal meningitis delay ART).",
+          "Ask about kidney disease, diabetes, high blood pressure and jaundice. If present, or the person is very sick, refer for physician evaluation before starting at a health centre (Ethiopia).",
+          "Otherwise start TLD today if the person is ready: missing baseline tests must not delay ART (Ethiopia). Send or book the tests and give a 2-week appointment.",
+          "Check readiness and adherence barriers (alcohol, mental illness, disclosure, transport). If not ready, see again within a week and keep counselling (Ethiopia)."
+        ],
+        monitor: [
+          "Visit at 2 weeks, then every 4 weeks to 24 weeks (Ethiopia)",
+          "Viral load at 6 months, 12 months, then yearly"
+        ],
+        cautions: [
+          "Worsening fever, cough or lymph nodes in the first 1–2 months may be IRIS, a new infection or drug toxicity: assess, do not simply stop ART."
+        ]
+      },
+      {
+        title: "Child crossing 20 kg or 30 kg: changing formulation safely",
+        best_for: "Paediatric ART clinic at refill visits.",
+        requires: ["oral"],
+        steps: [
+          "Weigh the child without heavy clothes at every visit.",
+          "At 20 kg: stop pDTG dispersible and give DTG 50 mg film-coated, 1 tablet once daily (Ethiopia Annex 10). The child must be able to swallow it whole.",
+          "Keep ABC/3TC by the weight band (3 dispersible 120/60 mg tablets at 20–24.9 kg; ABC/3TC 600/300 mg 1 tablet at 25 kg and over).",
+          "At 30 kg: change to TLD if eligible (no kidney contraindication) (Ethiopia Annex 9).",
+          "Write the new dose in words and in tablets on the card and show the caregiver the new tablets."
+        ],
+        monitor: ["Caregiver can name the new tablets", "Next viral load as scheduled"],
+        cautions: [
+          "Do not give five 10 mg dispersible tablets as a substitute for 50 mg: the dispersible form is absorbed better (Ethiopia)."
+        ]
+      }
+    ],
+    paediatric: [
+      "Children over 4 weeks and at least 3 kg, once daily (Ethiopia Annex 10, Table 10a): pDTG 10 mg dispersible 3–5.9 kg ½ tab; 6–9.9 kg 1½ tabs; 10–13.9 kg 2 tabs; 14–19.9 kg 2½ tabs. 20–29.9 kg: DTG 50 mg film-coated 1 tab. 30 kg and over: TLD if eligible.",
+      "With rifampicin: the weight-band dose twice daily, continued for 2 weeks after rifampicin ends (Ethiopia).",
+      "Neonates under 4 weeks: the Ethiopian manual gives no regimen. WHO 2025 Table 4.1: DTG 5 mg (½ of a 10 mg dispersible tablet) every other day from birth to 2 weeks, then every day from 2 to 4 weeks, with ABC/3TC ¼ of a DOUBLE-scored 120/60 mg tablet on the same schedule. Senior/specialist decision."
+    ],
+    cautions: [
+      "TDF in children under 30 kg: Ethiopia warns that 300 mg TDF in TLD can weaken bone mineralisation and harm the kidneys in children under 30 kg — use pDTG/DTG 50 mg with ABC/3TC until 30 kg.",
+      "Insomnia: consider a morning dose; persistent — substitute (Ethiopia). Weight gain: diet and exercise; if large despite this, consider substitution (Ethiopia).",
+      "Hepatotoxicity and hypersensitivity are uncommon; risk is higher with hepatitis B or C or liver disease. Grade 3 reaction: substitute the drug without stopping ART; grade 4 (severe hepatitis, Stevens–Johnson): stop all ARVs, stabilise, restart a modified regimen (Ethiopia).",
+      "High blood sugar on DTG has been reported from Ethiopian sites (Ethiopia): check glucose if thirst, polyuria or weight loss.",
+      "Dolutegravir raises metformin levels: start metformin low or adjust the dose when DTG is started or stopped (Ethiopia).",
+      "Hepatitis B: TDF and 3TC in TLD also treat hepatitis B. Stopping TLD in an HBsAg-positive person can cause a severe hepatitis flare.",
+      "Iron, calcium, zinc and magnesium supplements, multivitamins with minerals and antacids: give DTG at least 2 hours before or 6 hours after (Ethiopia).",
+      "Dolutegravir has no significant interaction with hormonal contraceptives (Ethiopia)."
+    ],
+    textbook: [
+      {
+        book: "ethhiv",
+        text: "Preferred first line for adults and adolescents, including pregnant and breastfeeding women, is TDF + 3TC + DTG once daily.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 12.4, p. 277"
+      },
+      {
+        book: "ethhiv",
+        text: "Paediatric DTG 10 mg once-daily weight bands; from 20 kg use the 50 mg film-coated tablet.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Annex 10, Table 10a, p. 469"
+      },
+      {
+        book: "ethhiv",
+        text: "DTG 50 mg film-coated is about equal to 30 mg of dispersible tablets; the two are not interchangeable 1:1.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, p. 278"
+      },
+      {
+        book: "ethhiv",
+        text: "With rifampicin, DTG 50 mg twice daily; children twice daily by weight band, continued 2 weeks after rifampicin ends.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323"
+      },
+      {
+        book: "ethhiv",
+        text: "Give DTG at least 2 hours before or 6 hours after supplements containing polyvalent cations.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323"
+      },
+      {
+        book: "ethhiv",
+        text: "Do not initiate TDF at eGFR below 50 mL/min.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.8, p. 318"
+      },
+      {
+        book: "ethhiv",
+        text: "Missing baseline tests should not delay ART initiation.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, p. 307"
+      },
+      {
+        book: "whohivclin",
+        text: "Neonatal DTG: 5 mg every other day in the first 2 weeks of life, then 5 mg daily.",
+        ref: "WHO HIV clinical management 2025, Table 3.2, p. 30"
+      },
+      {
+        book: "whohivclin",
+        text: "DTG + 3TC can be used for treatment simplification in people with undetectable viral load and no active hepatitis B.",
+        ref: "WHO HIV clinical management 2025, 3.3, p. 38"
+      },
+      {
+        book: "harrison",
+        text: "Dolutegravir must be increased to 50 mg twice daily with rifampin; tenofovir disoproxil needs no adjustment.",
+        ref: "Harrison 22nd ed. 2025, ch. 183 Tuberculosis, p. 1402"
+      }
+    ],
+    sources: [
+      {
+        name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training for Healthcare Providers — Participant Manual. Approved March 2025 (ch. 12, Annexes 9–10)"
+      },
+      {
+        name: "WHO. Updated recommendations on HIV clinical management: recommendations for a public health approach. Geneva, 2025"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "abacavir-lamivudine",
+    name: "Abacavir/lamivudine (ABC/3TC) — paediatric backbone",
+    aka: [
+      "ABC/3TC",
+      "ABC+3TC",
+      "abacavir",
+      "lamivudine",
+      "3TC",
+      "Kivexa",
+      "Epzicom",
+      "ABC/3TC 120/60",
+      "pALD",
+      "paediatric ART backbone",
+      "NRTI"
+    ],
+    cls: "Antiretroviral: two nucleoside reverse transcriptase inhibitors (NRTI backbone)",
+    cat: "infection",
+    wards: ["paediatric", "outpatient", "medical", "neonatal"],
+    tags: [
+      "HIV",
+      "children",
+      "paediatric ART",
+      "dispersible",
+      "weight band",
+      "first line",
+      "renal impairment",
+      "anaemia",
+      "hypersensitivity"
+    ],
+    presentation: [
+      "ABC/3TC 120 mg/60 mg scored DISPERSIBLE tablet (children). Some brands are double-scored, some single-scored: only a double-scored tablet can give a ¼-tablet neonatal dose (WHO 2025).",
+      "ABC/3TC 60 mg/30 mg scored dispersible tablet (older paediatric formulation, Ethiopia Annex 10).",
+      "ABC/3TC 600 mg/300 mg adult tablet (from 25 kg).",
+      "Abacavir adult dose 300 mg twice daily or 600 mg once daily (as the 600/300 tablet); lamivudine 150 mg twice daily or 300 mg once daily (Ethiopia Table 12.1)."
+    ],
+    indications: [
+      "First-line ART for children older than 4 weeks and at least 3 kg, with dolutegravir (preferred) or lopinavir/ritonavir (alternative) (Ethiopia Table 12.3)",
+      "Adults and adolescents in special circumstances: ABC + 3TC + DTG when TDF cannot be used, e.g. renal insufficiency or anaemia (Ethiopia Table 12.3)",
+      "Second line for children after an AZT-containing first line (Ethiopia); WHO 2025 suggests recycling ABC in subsequent regimens for children under 30 kg"
+    ],
+    standard: {
+      summary: "ABC/3TC is the NRTI backbone for children on ART in Ethiopia, given with dolutegravir. The 120/60 mg tablet is dispersible and scored; give it once daily by weight band, preferably together with pDTG in the same water. The one danger to teach is abacavir hypersensitivity: fever, rash, vomiting, belly pain or breathlessness in the first weeks — stop and never give abacavir again.",
+      items: [
+        {
+          label: "Once daily by weight (Ethiopia Annex 9–10, Table 10a) — preferred",
+          text: "ABC/3TC 120/60 mg dispersible: 3–5.9 kg 1 tablet; 6–9.9 kg 1½; 10–13.9 kg 2; 14–19.9 kg 2½; 20–24.9 kg 3. 25 kg and over: ABC/3TC 600/300 mg, 1 tablet once daily. (60/30 mg tablets: double the number — 2, 3, 4, 5, 6.)"
+        },
+        {
+          label: "Twice daily by weight (Ethiopia Annex 10, Table 10b) — if twice-daily dosing is used",
+          text: "ABC/3TC 120/60 mg: 3–5.9 kg ½ AM + ½ PM; 6–9.9 kg ½ AM + 1 PM; 10–13.9 kg 1 + 1; 14–19.9 kg 1 AM + 1½ PM; 20–24.9 kg 1½ + 1½. 25–34.9 kg: ABC/3TC 600/300 mg ½ AM + ½ PM. Ethiopia prefers once daily with pDTG."
+        },
+        {
+          label: "How to give",
+          text: "Dissolve in clean water; can be dissolved with pDTG in the same 10–20 mL of water. If the tablets lump, stir and add water slowly until dissolved (Ethiopia)."
+        },
+        {
+          label: "Adults (special circumstances)",
+          text: "ABC/3TC 600/300 mg once daily with DTG 50 mg once daily when TDF cannot be used: eGFR under 50, renal insufficiency, or anaemia that rules out AZT (Ethiopia Table 12.3 footnote c)."
+        },
+        {
+          label: "Neonates under 4 weeks (WHO 2025 only)",
+          text: "The Ethiopian manual starts ABC/3TC from 4 weeks. WHO 2025 Table 4.1: ¼ of a DOUBLE-scored 120/60 mg tablet every other day from birth to 2 weeks, then ¼ tablet daily from 2 to 4 weeks; with DTG on the same schedule. Use only with specialist advice."
+        },
+        {
+          label: "Second line in children (Ethiopia vs WHO)",
+          text: "Ethiopia: after failure of an ABC- or TDF-containing first line, switch the backbone to AZT + 3TC. WHO 2025: ABC (or TAF) + 3TC is the suggested backbone for subsequent ART in children under 30 kg, even if ABC was used before. Follow the Ethiopian table unless the national programme changes it."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Splitting and dissolving tablets at home",
+        best_for: "Caregivers of children on ½ or 1½ tablet doses.",
+        requires: ["oral"],
+        steps: [
+          "Split the scored tablet along the score with clean, dry hands or a tablet cutter.",
+          "Dissolve the dose together with the child's pDTG in 10–20 mL of clean water (2–4 teaspoons) and give at once (Ethiopia).",
+          "Rinse the cup with a little more water and give that too.",
+          "Keep the remaining half dry and give it at the next dose (editorial: confirm with the pharmacist how long split tablets keep)."
+        ],
+        monitor: [
+          "Weight at every visit; next band at the edge",
+          "Any fever, rash, vomiting or breathlessness in the first 6 weeks"
+        ],
+        cautions: ["For a neonatal ¼ dose, use only a double-scored tablet (WHO 2025)."]
+      },
+      {
+        title: "Suspected abacavir hypersensitivity without a specialist",
+        best_for: "Health centre, child or adult on ABC who becomes ill in the first weeks.",
+        requires: ["oral"],
+        steps: [
+          "Suspect it when two or more of fever, rash, vomiting or diarrhoea, abdominal pain, cough or breathlessness, or marked tiredness appear, usually in the first weeks (editorial summary; the Ethiopian manual names 'hypersensitivity reaction').",
+          "Stop abacavir. Do not stop the other ARVs for a mild or moderate reaction: substitute ABC with TDF (30 kg and over) or AZT (Ethiopia Table 12.8).",
+          "Severe or life-threatening (grade 4): stop all ARVs, treat, and restart a modified regimen when stable (Ethiopia).",
+          "Write 'ABACAVIR ALLERGY — NEVER REGIVE' on the card and the ART register. Re-exposure can be fatal (editorial; well-established).",
+          "Report the reaction on the national adverse drug event form (Ethiopia Annex 17)."
+        ],
+        monitor: [
+          "Temperature, breathing, blood pressure until better",
+          "Rule out IRIS, a new infection, malaria and cotrimoxazole rash"
+        ],
+        cautions: ["Hypersensitivity reactions can be confused with IRIS (Ethiopia)."]
+      }
+    ],
+    paediatric: [
+      "Once daily (Ethiopia Table 10a): ABC/3TC 120/60 mg dispersible 3–5.9 kg 1 tab; 6–9.9 kg 1½; 10–13.9 kg 2; 14–19.9 kg 2½; 20–24.9 kg 3; 25 kg and over ABC/3TC 600/300 mg 1 tab.",
+      "Give with pDTG 10 mg (3–19.9 kg) or DTG 50 mg (20–29.9 kg); move to TLD at 30 kg if eligible.",
+      "Under 4 weeks: not covered by the Ethiopian manual; WHO 2025 neonatal schedule with specialist advice."
+    ],
+    cautions: [
+      "Abacavir hypersensitivity: stop and never rechallenge; substitute TDF or AZT (Ethiopia).",
+      "Lamivudine dose must be adjusted for creatinine clearance in renal insufficiency (Ethiopia Table 12.1 footnote); the fixed-dose tablet cannot be adjusted — ask the pharmacist.",
+      "Hepatitis B: lamivudine treats hepatitis B; stopping it can cause a flare. Lamivudine alone is not adequate hepatitis B treatment.",
+      "Lactic acidosis with severe fatty liver is a rare late NRTI toxicity (Ethiopia)."
+    ],
+    textbook: [
+      {
+        book: "ethhiv",
+        text: "Preferred first line for children over 4 weeks and at least 3 kg is ABC + 3TC + DTG.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.3, p. 279"
+      },
+      {
+        book: "ethhiv",
+        text: "ABC/3TC 120/60 mg dispersible once daily by weight band; 600/300 mg adult tablet from 25 kg.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Annex 10, Table 10a, p. 469"
+      },
+      {
+        book: "ethhiv",
+        text: "ABC is used in adults with renal insufficiency and anaemia.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.3 footnote c, p. 279"
+      },
+      {
+        book: "ethhiv",
+        text: "After failure of ABC or TDF + 3TC, the preferred second-line backbone is AZT + 3TC.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 12.8.3, p. 336"
+      },
+      {
+        book: "whohivclin",
+        text: "ABC or TAF + 3TC is the suggested backbone for subsequent ART in children under 30 kg, including those previously on ABC or AZT.",
+        ref: "WHO HIV clinical management 2025, 3.2.1, p. 24"
+      },
+      {
+        book: "whohivclin",
+        text: "Only the double-scored ABC/3TC tablet may be used for the neonatal quarter-tablet dose.",
+        ref: "WHO HIV clinical management 2025, Table 4.1, p. 60"
+      }
+    ],
+    sources: [
+      {
+        name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025 (Table 12.3, Annexes 9–10)"
+      },
+      { name: "WHO. Updated recommendations on HIV clinical management, 2025" },
+      { name: "BNF for Children (abacavir hypersensitivity, hepatic impairment)" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "zidovudine-lamivudine",
+    name: "Zidovudine/lamivudine (AZT/3TC)",
+    aka: [
+      "AZT/3TC",
+      "AZT+3TC",
+      "ZDV/3TC",
+      "zidovudine",
+      "AZT",
+      "ZDV",
+      "Combivir",
+      "Duovir",
+      "second-line backbone",
+      "NRTI"
+    ],
+    cls: "Antiretroviral: two nucleoside reverse transcriptase inhibitors (NRTI backbone)",
+    cat: "infection",
+    wards: ["medical", "outpatient", "paediatric", "maternity"],
+    tags: ["HIV", "second line", "treatment failure", "anaemia", "PEP", "children", "weight band"],
+    presentation: [
+      "AZT/3TC 300 mg/150 mg tablet (adults and children 25 kg and over), twice daily.",
+      "AZT/3TC 60 mg/30 mg scored dispersible tablet (children), twice daily.",
+      "Zidovudine oral solution 10 mg/mL (infant prophylaxis — see the HIV prophylaxis page).",
+      "Adult doses: zidovudine 300 mg twice daily; lamivudine 150 mg twice daily (Ethiopia Table 12.1)."
+    ],
+    indications: [
+      "Second-line ART backbone after a TDF- or ABC-containing first line: AZT + 3TC + ATV/r or LPV/r (adults) or + LPV/r (children) (Ethiopia Table 12.13)",
+      "Alternative first line when TDF or ABC cannot be used: AZT + 3TC + DTG (Ethiopia Table 12.3)",
+      "Two-drug basic PEP (AZT + 3TC) for lower-risk exposures, and part of paediatric PEP (Ethiopia Tables 16.6–16.7)"
+    ],
+    standard: {
+      summary: "In Ethiopia AZT/3TC is mainly the second-line backbone: when TLD fails, the switch is to AZT + 3TC with a boosted protease inhibitor. Its main harm is anaemia and neutropenia in the first months. Do not use it as first line when haemoglobin is under 7 g/dL, and check haemoglobin at 4 weeks. WHO 2025 now prefers keeping (recycling) tenofovir in second line instead of switching to AZT: see the comparison below.",
+      items: [
+        {
+          label: "Adults and children 25 kg and over",
+          text: "AZT/3TC 300/150 mg, 1 tablet twice daily (Ethiopia Annex 9 from 25 kg; adult doses Table 12.1)."
+        },
+        {
+          label: "Children over 4 weeks, by weight (Ethiopia Annex 10, Table 10b)",
+          text: "AZT/3TC 60/30 mg dispersible, morning and evening: 3–5.9 kg 1 + 1; 6–9.9 kg 1½ + 1½; 10–13.9 kg 2 + 2; 14–19.9 kg 2½ + 2½; 20–24.9 kg 3 + 3. 25–34.9 kg: AZT/3TC 300/150 mg 1 + 1."
+        },
+        {
+          label: "Second line after TLD failure (Ethiopia vs WHO 2025)",
+          text: "Ethiopia Table 12.13: TDF + 3TC + DTG failing → AZT + 3TC + ATV/r (or LPV/r). WHO 2025 Table 3.3: TDF + 3TC + DRV/r preferred (tenofovir recycled), with ATV/r or LPV/r as alternatives; WHO says recycling TDF or ABC gives better outcomes and lower cost than switching to AZT. Follow the Ethiopian table unless the national programme changes it."
+        },
+        {
+          label: "Before and during treatment",
+          text: "Baseline haemoglobin/CBC (Ethiopia: especially with low CD4 or low BMI). Haemoglobin again at 4 weeks on AZT (Ethiopia Table 12.6) and whenever the patient is pale, tired or breathless."
+        },
+        {
+          label: "Anaemia or neutropenia on AZT",
+          text: "Substitute AZT with TDF or ABC (Ethiopia Table 12.8). Grade 3: substitute without stopping ART. Grade 4: stop all ARVs, treat, and restart a modified regimen. On second line where TDF failed, discuss the backbone with an experienced clinician."
+        },
+        {
+          label: "Kidney function",
+          text: "Zidovudine and lamivudine doses should be adjusted for creatinine clearance in renal insufficiency (Ethiopia); the fixed-dose tablet cannot be split to do this — get pharmacist advice. Still useful when TDF must be avoided."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Checking for AZT anaemia without a full blood count",
+        best_for: "Health centre without CBC; patient on AZT in the first 3 months.",
+        requires: ["oral"],
+        steps: [
+          "Look at the conjunctivae, palms and nail beds at every visit; ask about tiredness, breathlessness on walking and palpitations.",
+          "Get at least one haemoglobin (a haemoglobin meter or a referral sample) at 4 weeks after starting AZT (Ethiopia).",
+          "Severe pallor, breathlessness at rest or haemoglobin under 7 g/dL: refer the same day; substitute AZT with TDF or ABC (Ethiopia).",
+          "Give iron and folic acid only for proven iron deficiency or in pregnancy as usual, and give DTG 2 hours before or 6 hours after iron (Ethiopia)."
+        ],
+        monitor: ["Pallor and symptoms at every visit", "Haemoglobin at 4 weeks and when symptoms appear"],
+        cautions: ["Cotrimoxazole, valproate and methadone add to AZT marrow toxicity (see Interactions)."]
+      },
+      {
+        title: "Blue or dark nails on AZT",
+        best_for: "Reassuring patients at refill visits.",
+        requires: ["oral"],
+        steps: [
+          "Dark or bluish nail discolouration on AZT is cosmetic only (Ethiopia).",
+          "Explain this so the patient does not stop treatment.",
+          "Check for pallor at the same time — anaemia is the AZT side effect that matters."
+        ],
+        monitor: ["Adherence"],
+        cautions: ["Do not change the regimen for nail colour alone."]
+      }
+    ],
+    paediatric: [
+      "AZT/3TC 60/30 mg dispersible twice daily (Ethiopia Table 10b): 3–5.9 kg 1 + 1; 6–9.9 kg 1½ + 1½; 10–13.9 kg 2 + 2; 14–19.9 kg 2½ + 2½; 20–24.9 kg 3 + 3; 25–34.9 kg AZT/3TC 300/150 mg 1 + 1.",
+      "Children's second line in Ethiopia: after ABC + 3TC + DTG fails → AZT + 3TC + LPV/r (Table 12.13).",
+      "Infant zidovudine prophylaxis uses the 10 mg/mL solution — see the HIV prophylaxis page."
+    ],
+    cautions: [
+      "Avoid AZT as first line when haemoglobin is under 7 g/dL (Ethiopia).",
+      "Anaemia and neutropenia are more likely with CD4 200 or less, low BMI, baseline anaemia, and with cotrimoxazole, valproate or methadone.",
+      "Lactic acidosis with fatty liver: rare, late NRTI toxicity (Ethiopia).",
+      "Hepatitis B: lamivudine alone does not adequately treat hepatitis B, and an AZT/3TC regimen without TDF leaves hepatitis B under-treated — ask for advice in HBsAg-positive patients."
+    ],
+    textbook: [
+      {
+        book: "ethhiv",
+        text: "Avoid AZT as first line in people with severe anaemia at baseline (haemoglobin under 7.0 g/dL); substitute with TDF or ABC.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.8, p. 315"
+      },
+      {
+        book: "ethhiv",
+        text: "After failure of an ABC or TDF + 3TC first line, the preferred second-line backbone is AZT + 3TC.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 12.8.3, p. 336"
+      },
+      {
+        book: "ethhiv",
+        text: "AZT/3TC 60/30 mg twice-daily weight bands for children over 4 weeks.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Annex 10, Table 10b, p. 470"
+      },
+      {
+        book: "whohivclin",
+        text: "TDF or TAF + 3TC is the preferred backbone for initial and subsequent ART, including people previously treated with tenofovir or AZT.",
+        ref: "WHO HIV clinical management 2025, 3.2.1, p. 24"
+      }
+    ],
+    sources: [
+      {
+        name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025 (Tables 12.1, 12.8, 12.13, 16.7; Annexes 9–10)"
+      },
+      { name: "WHO. Updated recommendations on HIV clinical management, 2025" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "atazanavir-ritonavir",
+    name: "Atazanavir/ritonavir (ATV/r)",
+    aka: [
+      "ATV/r",
+      "atazanavir",
+      "ritonavir",
+      "boosted atazanavir",
+      "boosted protease inhibitor",
+      "PI/r",
+      "second-line ART",
+      "regimen 2f",
+      "regimen 2h"
+    ],
+    cls: "Antiretroviral: ritonavir-boosted protease inhibitor (PI/r)",
+    cat: "infection",
+    wards: ["medical", "outpatient", "maternity"],
+    tags: [
+      "HIV",
+      "second line",
+      "treatment failure",
+      "protease inhibitor",
+      "jaundice",
+      "rifampicin interaction"
+    ],
+    presentation: [
+      "Atazanavir/ritonavir 300 mg/100 mg heat-stable co-formulated tablet, once daily (adults; Ethiopia Table 12.1)."
+    ],
+    indications: [
+      "Second-line ART for adults and adolescents after TLD (DTG) failure: AZT + 3TC + ATV/r (Ethiopia preferred, with LPV/r as the other option)",
+      "First line only in special circumstances when neither DTG nor EFV can be used (Ethiopia Table 12.3)",
+      "WHO 2025: DRV/r is now the preferred boosted PI; ATV/r and LPV/r are alternatives"
+    ],
+    standard: {
+      summary: "ATV/r 300/100 mg once daily with AZT/3TC is the usual Ethiopian second-line regimen for adults when TLD has failed. It is one tablet a day and well tolerated. Expect harmless yellow eyes (indirect bilirubin). Its traps are drug interactions: rifampicin, acid-reducing drugs, ergometrine, some antimalarials and methadone.",
+      items: [
+        {
+          label: "Adult dose",
+          text: "Atazanavir 300 mg + ritonavir 100 mg once daily (Ethiopia Table 12.1), with an NRTI backbone — usually AZT/3TC 300/150 mg twice daily after TLD failure (Ethiopia Table 12.13)."
+        },
+        {
+          label: "Children",
+          text: "Ethiopia: ATV can be used for children older than 6 years (Table 12.8); no paediatric ATV dosing table is given in the manual. WHO 2025: ATV/r can replace LPV/r from 3 months of age, but formulations under 6 years are limited. Use LPV/r for young children."
+        },
+        {
+          label: "Yellow eyes",
+          text: "Indirect hyperbilirubinaemia is common and clinically benign, but can cause stigma and stop people taking it. Substitute with LPV/r only if adherence is compromised (Ethiopia). Check ALT if the patient is unwell — hepatitis must be excluded."
+        },
+        {
+          label: "With rifampicin",
+          text: "Boosted PIs and rifampicin: Ethiopia — adjust the PI dose or substitute with DTG. WHO 2025 reports a small study in which ATV/r 300/100 mg TWICE daily overcame the rifampicin interaction, but calls for more research. Seek an experienced clinician; DTG (twice daily) is the simpler option if it has not failed."
+        },
+        {
+          label: "Heart conduction",
+          text: "ATV/r can prolong the PR and QRS intervals. Use with caution with pre-existing conduction disease or other PR-prolonging drugs (Ethiopia)."
+        },
+        {
+          label: "Kidney stones",
+          text: "With a history of renal stones, substitute with LPV/r (Ethiopia)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Patient on ATV/r with yellow eyes at a health centre",
+        best_for: "Second-line follow-up where liver tests are not available.",
+        requires: ["oral"],
+        steps: [
+          "Ask: is the patient otherwise well — eating, no vomiting, no abdominal pain, no dark urine, no fever? Benign atazanavir jaundice causes yellow eyes in a well person (Ethiopia: clinically benign).",
+          "If unwell, or there is right upper abdominal pain, vomiting, fever or confusion: treat as possible hepatitis and refer for ALT the same day.",
+          "If well: explain that it is harmless and not liver damage; strongly advise against traditional healers and herbal medicines for jaundice (Ethiopia).",
+          "If the yellow colour is stopping the patient from taking ART, arrange substitution with LPV/r (Ethiopia)."
+        ],
+        monitor: ["Adherence", "Viral load as scheduled"],
+        cautions: ["Hepatitis B or C and other liver drugs raise the risk of real hepatotoxicity."]
+      },
+      {
+        title: "Dyspepsia in a patient on ATV/r",
+        best_for: "Outpatient prescribing when omeprazole is the usual answer.",
+        requires: ["oral"],
+        steps: [
+          "Do not give omeprazole: acid suppression lowers atazanavir absorption (product information; see Interactions).",
+          "Ask the pharmacist about a safer option and timing, or treat the cause (H. pylori, NSAIDs, alcohol).",
+          "If long-term acid suppression is unavoidable, discuss switching the PI to LPV/r with the ART clinician (LPV/r is not affected by stomach acid) (editorial)."
+        ],
+        monitor: ["Symptoms", "Viral load"],
+        cautions: ["Unverified in the supplied guidelines: from atazanavir product information."]
+      }
+    ],
+    paediatric: [
+      "Ethiopia: may be used in children older than 6 years; the manual gives no paediatric ATV/r weight-band table. Young children use LPV/r."
+    ],
+    cautions: [
+      "Interactions: rifampicin (major), omeprazole and other acid reducers, ergometrine, lumefantrine and halofantrine, methadone, simvastatin and lovastatin, estrogen-based contraception (use additional methods), rifapentine (do not give 3HP with PIs — use 6H) (Ethiopia Table 12.9).",
+      "PR/QRS prolongation; indirect hyperbilirubinaemia; renal stones (Ethiopia).",
+      "TDF with a boosted PI: closely monitor renal function (Ethiopia).",
+      "PIs can cause insulin resistance and high blood sugar (Ethiopia)."
+    ],
+    textbook: [
+      {
+        book: "ethhiv",
+        text: "After TDF + 3TC + DTG failure, second line is AZT + 3TC + ATV/r or LPV/r.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.13, p. 337"
+      },
+      {
+        book: "ethhiv",
+        text: "ATV/r indirect hyperbilirubinaemia is clinically benign; substitute LPV/r only if adherence is compromised.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.8, pp. 314–315"
+      },
+      {
+        book: "ethhiv",
+        text: "Boosted PIs with rifampicin: adjust the PI dose or substitute with DTG.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 321"
+      },
+      {
+        book: "whohivclin",
+        text: "DRV/r is now the preferred boosted PI; ATV/r or LPV/r are alternatives.",
+        ref: "WHO HIV clinical management 2025, 3.1.1, p. 10"
+      },
+      {
+        book: "whohivclin",
+        text: "A double dose of ATV/r (300/100 mg twice daily) overcame the rifampicin interaction in a small pharmacokinetic study.",
+        ref: "WHO HIV clinical management 2025, 3.1.5, p. 13"
+      }
+    ],
+    sources: [
+      {
+        name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025 (Tables 12.1, 12.8, 12.9, 12.13)"
+      },
+      { name: "WHO. Updated recommendations on HIV clinical management, 2025" },
+      {
+        name: "Atazanavir and ritonavir product information (acid-reducing agents, ergot alkaloids) — not in the supplied guidelines"
+      }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "lopinavir-ritonavir",
+    name: "Lopinavir/ritonavir (LPV/r)",
+    aka: [
+      "LPV/r",
+      "lopinavir",
+      "Kaletra",
+      "Aluvia",
+      "LPV/r pellets",
+      "LPV/r syrup",
+      "boosted protease inhibitor",
+      "PI/r",
+      "second-line ART",
+      "regimen 2e",
+      "regimen 5f"
+    ],
+    cls: "Antiretroviral: ritonavir-boosted protease inhibitor (PI/r)",
+    cat: "infection",
+    wards: ["paediatric", "medical", "outpatient"],
+    tags: [
+      "HIV",
+      "children",
+      "second line",
+      "treatment failure",
+      "pellets",
+      "oral solution",
+      "weight band",
+      "diarrhoea",
+      "rifampicin interaction"
+    ],
+    presentation: [
+      "LPV/r 200 mg/50 mg and 100 mg/25 mg heat-stable tablets (swallow whole).",
+      "LPV/r 40 mg/10 mg oral pellets per capsule (young children).",
+      "LPV/r oral solution 80 mg/20 mg per mL. WHO 2025: the liquid needs a cold chain and is poorly tolerated.",
+      "Adult dose: 400 mg/100 mg twice daily (Ethiopia Table 12.1)."
+    ],
+    indications: [
+      "Preferred second-line PI for children after a DTG-based first line: AZT + 3TC + LPV/r (Ethiopia)",
+      "Alternative first line for children who cannot take DTG: ABC + 3TC + LPV/r (Ethiopia Table 12.3)",
+      "Adult second line as an alternative to ATV/r (Ethiopia); WHO 2025: DRV/r preferred, ATV/r or LPV/r alternatives",
+      "Paediatric PEP under 6 years: AZT + 3TC + LPV/r (Ethiopia Table 16.7)"
+    ],
+    standard: {
+      summary: "LPV/r is the Ethiopian second-line protease inhibitor for children, and an alternative for adults. It is given twice daily by weight band. Expect diarrhoea and a bitter taste. It has the same interaction traps as other boosted PIs: rifampicin, lumefantrine, ergometrine, methadone.",
+      items: [
+        {
+          label: "Adults",
+          text: "LPV/r 400 mg/100 mg twice daily (2 × 200/50 mg tablets morning and evening) (Ethiopia Table 12.1), with an NRTI backbone."
+        },
+        {
+          label: "Children over 4 weeks, twice daily (Ethiopia Annex 10, Table 10b)",
+          text: "Pellets 40/10 mg per capsule, AM + PM: 3–5.9 kg 2 + 2; 6–9.9 kg 3 + 3; 10–13.9 kg 4 + 4; 14–19.9 kg 5 + 5; 20–24.9 kg 6 + 6. Tablets 100/25 mg: 10–13.9 kg 2 AM + 1 PM; 14–19.9 kg 2 + 2; 20–24.9 kg 2 + 2; 25–34.9 kg 3 + 3 (or 200/50 mg 2 AM + 1 PM). Solution 80/20 mg/mL: 3–5.9 kg 1 mL + 1 mL; 6–9.9 kg 1.5 + 1.5; 10–13.9 kg 2 + 2; 14–19.9 kg 2.5 + 2.5; 20–24.9 kg 3 + 3."
+        },
+        {
+          label: "Children's second and third line (Ethiopia Table 12.13)",
+          text: "ABC + 3TC + DTG failing → AZT + 3TC + LPV/r. LPV/r-based first line failing → switch to a DTG-based regimen. Third line: under 3 years, stay on the second-line regimen until 3 years of age; 3–10 years, switch to a DRV/r-based regimen (DRV/r is not used under 3 years)."
+        },
+        {
+          label: "Liver, heart, pancreas and lipids",
+          text: "Hepatotoxicity (higher with HBV/HCV), PR and QT prolongation (caution with conduction disease, low potassium, other QT drugs), pancreatitis, dyslipidaemia. In children with LPV/r toxicity substitute DTG or EFV according to age (Ethiopia)."
+        },
+        {
+          label: "Pregnancy",
+          text: "WHO 2025: LPV/r is associated with more adverse pregnancy outcomes than ATV/r or DRV/r. Prefer ATV/r if a PI is needed in pregnancy."
+        },
+        {
+          label: "With rifampicin",
+          text: "Ethiopia: adjust the PI dose or substitute with DTG. WHO 2025: LPV/r with rifampicin at adjusted doses (800/200 mg or 400/400 mg twice daily) causes a high rate of liver toxicity. Get specialist advice."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "LPV/r for a young child when pellets are out",
+        best_for: "Paediatric ART clinic during a pellet stock-out.",
+        requires: ["oral", "syringe_1ml"],
+        steps: [
+          "Use LPV/r oral solution 80/20 mg/mL at the weight-band volume (Ethiopia Table 10b), measured with an oral syringe.",
+          "From 10 kg, if the child can swallow tablets whole, use 100/25 mg tablets at the band dose (Ethiopia Table 10b).",
+          "Keep the solution as the label says (WHO 2025: the liquid needs a cold chain). Ask the pharmacist about storage at home where there is no refrigerator.",
+          "Give with food to reduce nausea, and warn about the bitter taste; a little sweet food afterwards helps (editorial)."
+        ],
+        monitor: ["Weight and band at each refill", "Diarrhoea, vomiting"],
+        cautions: [
+          "Do not crush or chew LPV/r tablets — absorption falls (product information; not in the supplied guidelines)."
+        ]
+      },
+      {
+        title: "Diarrhoea on LPV/r",
+        best_for: "Outpatients, children or adults.",
+        requires: ["oral"],
+        steps: [
+          "Exclude infection (stool, fever, blood) and dehydration; give ORS and zinc to children.",
+          "LPV/r diarrhoea has no known risk factor; if it persists, substitute with ATV/r or DTG (Ethiopia Table 12.8).",
+          "Give DTG 2 hours before or 6 hours after zinc if the child is switched to DTG (Ethiopia)."
+        ],
+        monitor: ["Hydration, weight"],
+        cautions: ["Do not stop ART without a substitution plan."]
+      }
+    ],
+    paediatric: [
+      "Pellets 40/10 mg (AM + PM): 3–5.9 kg 2 + 2; 6–9.9 kg 3 + 3; 10–13.9 kg 4 + 4; 14–19.9 kg 5 + 5; 20–24.9 kg 6 + 6 (Ethiopia Table 10b).",
+      "Tablets 100/25 mg: 10–13.9 kg 2 + 1; 14–24.9 kg 2 + 2; 25–34.9 kg 3 + 3.",
+      "Solution 80/20 mg/mL: 1, 1.5, 2, 2.5, 3 mL twice daily for 3–5.9, 6–9.9, 10–13.9, 14–19.9, 20–24.9 kg.",
+      "WHO 2025: LPV/r syrup or granules can be used if starting after 2 weeks of age."
+    ],
+    cautions: [
+      "Interactions: rifampicin, lumefantrine/halofantrine, ergometrine, methadone and buprenorphine, simvastatin/lovastatin, estrogen contraceptives, rifapentine (no 3HP with PIs) (Ethiopia Table 12.9).",
+      "QT and PR prolongation; hepatotoxicity; pancreatitis (substitute an INSTI); dyslipidaemia (Ethiopia).",
+      "PIs can cause high blood sugar (Ethiopia)."
+    ],
+    textbook: [
+      {
+        book: "ethhiv",
+        text: "For children starting first line with DTG, PI-based regimens are the recommended second line; LPV/r is the preferred boosted PI.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 12.8.3, p. 336"
+      },
+      {
+        book: "ethhiv",
+        text: "LPV/r twice-daily weight bands (pellets, tablets, solution) for children over 4 weeks.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Annex 10, Table 10b, p. 470"
+      },
+      {
+        book: "ethhiv",
+        text: "DRV/r should not be used in children younger than three years.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.13 footnote d, p. 339"
+      },
+      {
+        book: "whohivclin",
+        text: "LPV/r is associated with more adverse pregnancy outcomes than ATV/r and DRV/r.",
+        ref: "WHO HIV clinical management 2025, Table 3.1, p. 14"
+      },
+      {
+        book: "whohivclin",
+        text: "LPV/r at adjusted doses with rifampicin is associated with a high incidence of hepatic adverse effects.",
+        ref: "WHO HIV clinical management 2025, 3.1.5, p. 13"
+      }
+    ],
+    sources: [
+      {
+        name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025 (Tables 12.1, 12.8, 12.9, 12.13, 16.7; Annex 10)"
+      },
+      { name: "WHO. Updated recommendations on HIV clinical management, 2025" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+
+  /* ---- advanced HIV disease and opportunistic infections (Ethiopia MoH 2025) ---- */
+  {
+    id: "flucytosine",
+    name: "Flucytosine (5-FC)",
+    aka: ["5-FC", "5-fluorocytosine", "Ancobon", "Ancotil", "cryptococcal induction", "antifungal"],
+    cls: "Antifungal antimetabolite (converted inside the fungus to 5-fluorouracil)",
+    cat: "infection",
+    wards: ["medical", "icu", "paediatric"],
+    tags: [
+      "cryptococcal meningitis",
+      "CrAg",
+      "advanced HIV disease",
+      "HIV",
+      "induction",
+      "amphotericin",
+      "fluconazole",
+      "bone marrow suppression"
+    ],
+    presentation: [
+      "Oral tablets or capsules. Strength differs between suppliers: read the pack before you count tablets.",
+      "Oral only in the Ethiopian regimens. It is always given with amphotericin B or fluconazole, never alone (Harrison)."
+    ],
+    indications: [
+      "Induction treatment of cryptococcal meningitis in adults, adolescents and children with HIV, for 14 days, with single high-dose liposomal amphotericin B and fluconazole (Ethiopia's preferred regimen)",
+      "Cryptococcal meningitis when liposomal amphotericin B is not available: one week with amphotericin B deoxycholate, then one week of fluconazole",
+      "Cryptococcal meningitis when no amphotericin is available: two weeks with high-dose fluconazole (all-oral regimen)"
+    ],
+    standard: {
+      summary: "Flucytosine makes cryptococcal induction work better: the Ethiopian manual states that regimens containing it are superior. The dose is 100 mg/kg per day split into four doses (25 mg/kg every 6 hours) for the 14-day induction, for adults and children alike. It suppresses the bone marrow and can injure the liver, and both get worse alongside amphotericin, whose kidney damage lets flucytosine build up (Harrison). Never give it alone: resistance develops (Harrison).",
+      items: [
+        {
+          label: "Dose (Ethiopia)",
+          text: "100 mg/kg per day, divided into four doses: 25 mg/kg every 6 hours by mouth, for 14 days of induction. The same mg/kg for adults, adolescents and children (Ethiopia MoH National HIV PCT manual 2025, p. 231). Nelson quotes the US range of 100–150 mg/kg per day with blood levels; the Ethiopian and WHO dose is 100."
+        },
+        {
+          label: "Preferred induction (Ethiopia)",
+          text: "Liposomal amphotericin B 10 mg/kg ONCE (day 1) + flucytosine 25 mg/kg every 6 h for 14 days + fluconazole 1200 mg daily for 14 days (child and adolescent 12 mg/kg daily, maximum 800 mg). Then fluconazole consolidation and maintenance (see Fluconazole)."
+        },
+        {
+          label: "No liposomal amphotericin",
+          text: "Amphotericin B deoxycholate 1 mg/kg daily + flucytosine 25 mg/kg every 6 h for 7 days, then fluconazole 1200 mg daily (child 12 mg/kg, maximum 800 mg) for 7 more days."
+        },
+        {
+          label: "No amphotericin at all",
+          text: "Fluconazole 1200 mg daily (child 12 mg/kg) + flucytosine 25 mg/kg every 6 h, both for 14 days. This all-oral regimen is the one a district hospital can give while arranging referral."
+        },
+        {
+          label: "No flucytosine",
+          text: "The regimens without it are weaker. Ethiopia's options: liposomal amphotericin B 3–4 mg/kg daily + fluconazole 1200 mg daily for 2 weeks; or amphotericin B deoxycholate 1 mg/kg daily + fluconazole 1200 mg daily for 2 weeks. Report the stock-out the same day."
+        },
+        {
+          label: "Kidney impairment",
+          text: "Flucytosine is cleared by the kidneys and the dose must be adjusted for renal function (Harrison). The supplied sources give no dose table: if creatinine is rising (common on amphotericin), discuss the dose with a senior or specialist the same day rather than continuing the full dose."
+        },
+        {
+          label: "Monitoring",
+          text: "Full blood count (white cells, platelets, haemoglobin) and liver tests at baseline and at least weekly during the 2 weeks where available, with creatinine and potassium for the amphotericin. Bone marrow suppression and liver toxicity are worse with amphotericin (Harrison)."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Counting the tablets for each 6-hourly dose",
+        best_for: "Medical wards giving the all-oral or amphotericin-based induction without a pharmacist on site.",
+        requires: ["oral"],
+        steps: [
+          "Weigh the patient. Do not guess the weight: these patients are often wasted, and the dose is per kg.",
+          "Dose per 6-hourly dose = 25 mg × weight in kg. Example: 48 kg × 25 = 1200 mg per dose.",
+          "Divide by the tablet strength on the pack. Example with 500 mg tablets: 1200 ÷ 500 = 2.4 tablets.",
+          "Round to a practical amount and write the actual mg given on the chart (2.4 tablets of 500 mg is best given as 2½ = 1250 mg). Ask the pharmacist or a senior if the rounding changes the dose by more than about a tenth.",
+          "Give at fixed times, for example 06:00, 12:00, 18:00 and 24:00, and tick each dose. Missed night doses are the usual failure.",
+          "Re-weigh after a week if the patient was very dehydrated or oedematous on admission."
+        ],
+        monitor: ["Dose chart ticked four times a day", "Weight at day 1 and day 7"],
+        cautions: [
+          "Rounding arithmetic is editorial; the dose itself (25 mg/kg four times daily) is from the Ethiopian manual and Harrison."
+        ]
+      },
+      {
+        title: "Patient too drowsy to swallow",
+        best_for: "Cryptococcal meningitis with confusion or a falling Glasgow coma score.",
+        requires: ["oral"],
+        steps: [
+          "Pass a nasogastric tube. Do not skip flucytosine doses because the patient cannot swallow.",
+          "Crush the tablets (or open the capsules), mix with 10–20 mL of clean water and give through the tube; flush with water afterwards.",
+          "Give the fluconazole the same way.",
+          "A patient who is drowsy from raised pressure often wakes after a therapeutic lumbar puncture: check pressure first (see the Cryptococcal meningitis case)."
+        ],
+        monitor: ["Tube position before each dose", "Glasgow coma score"],
+        cautions: ["Crushing and the NG route are editorial practice; the sources only state the oral dose."]
+      },
+      {
+        title: "Watching for marrow toxicity without a laboratory",
+        best_for: "Hospitals where a blood count is not available every week.",
+        requires: [],
+        steps: [
+          "Get a baseline haemoglobin and white count before the first dose if at all possible.",
+          "Each day look for new pallor, bleeding gums, bruises or petechiae, mouth ulcers, a new fever, or diarrhoea.",
+          "If any appear, get a blood count the same day or refer. Low white cells or platelets mean the dose must be reviewed; kidney failure from amphotericin is the usual cause, because flucytosine then accumulates.",
+          "Keep the course to 14 days. There is no reason to continue flucytosine after induction."
+        ],
+        monitor: ["Pallor, bleeding, fever and mouth ulcers daily", "Blood count weekly where possible"],
+        cautions: [
+          "Never stop the whole induction because of a low count without a senior decision: untreated cryptococcal meningitis is fatal."
+        ]
+      }
+    ],
+    paediatric: [
+      "Same dose as adults: 100 mg/kg per day in four doses (25 mg/kg every 6 h) for 14 days of induction (Ethiopia).",
+      "Routine CrAg screening is not done under 10 years (Ethiopia), but a child with meningitis symptoms still needs cryptococcal testing and, if positive, the same regimens.",
+      "Children's fluconazole in the same regimens: 12 mg/kg daily, maximum 800 mg."
+    ],
+    cautions: [
+      "Never as monotherapy: resistance develops (Harrison).",
+      "Bone marrow suppression (anaemia, low white cells and platelets) and liver toxicity, both worse with amphotericin (Harrison).",
+      "Accumulates in kidney impairment: adjust for renal function (Harrison). Amphotericin often causes that impairment during the same fortnight.",
+      "It is converted to 5-fluorouracil inside the fungus (Harrison). The supplied sources give no pregnancy data: in pregnancy decide with a specialist (see Safety)."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 25,
+      doseUnit: "mg",
+      label: "One 6-hourly dose (25 mg/kg = 100 mg/kg/day in 4 doses); divide by the tablet strength on the pack"
+    },
+    textbook: [
+      {
+        book: "ethhiv",
+        text: "Preferred induction: a single high dose (10 mg/kg) of liposomal amphotericin B with 14 days of flucytosine (100 mg/kg per day divided into four doses) and fluconazole (1200 mg daily for adults; 12 mg/kg per day for children and adolescents, maximum 800 mg). Flucytosine-containing regimens are superior.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3 Cryptococcal infection, p. 231"
+      },
+      {
+        book: "harrison",
+        text: "5-FC is converted inside the fungus to 5-fluorouracil; it is combined with amphotericin B for cryptococcal induction because of synergy and good CSF penetration. Monotherapy is not recommended because resistance develops. It can cause marrow suppression and liver toxicity, intensified when used with amphotericin B.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1692"
+      },
+      {
+        book: "harrison",
+        text: "The dose of 5-FC is 25 mg/kg four times daily; it can cause bone marrow suppression and the dose should be adjusted for renal function. WHO's preferred HIV induction is single-dose liposomal AmB 10 mg/kg with 14 days of 5-FC and fluconazole 1200 mg daily.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705"
+      },
+      {
+        book: "nelson",
+        text: "WHO alternative induction regimens include 1 week of amphotericin B with flucytosine followed by 1 week of high-dose fluconazole; consolidation in children is fluconazole 10–12 mg/kg/day for 8 weeks.",
+        ref: "Nelson 22nd ed. 2024, ch. 281 Cryptococcus neoformans and Cryptococcus gattii, p. 1927"
+      },
+      {
+        book: "note",
+        text: "Tablet rounding, the NG route and the daily bedside check for marrow toxicity are editorial low-resource practice. The sources give no renal dose table and no pregnancy data for flucytosine.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025, 11.3.3"
+      },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025, ch. 217 and 221" },
+      { name: "Nelson Textbook of Pediatrics 22nd ed. 2024, ch. 281" }
+    ],
+    review: { status: "draft", by: null, date: null }
+  },
+  {
+    id: "isoniazid",
+    name: "Isoniazid (TB preventive therapy: 3HP, 6H, 1HP, 3RH)",
+    aka: [
+      "INH",
+      "IPT",
+      "TPT",
+      "TB preventive therapy",
+      "TB preventive treatment",
+      "isoniazid preventive therapy",
+      "3HP",
+      "6H",
+      "1HP",
+      "3RH",
+      "rifapentine",
+      "isoniazid-rifapentine",
+      "latent TB"
+    ],
+    cls: "Antimycobacterial (isoniazid, alone or with rifapentine or rifampicin) for TB infection without disease",
+    cat: "infection",
+    wards: ["outpatient", "medical", "paediatric", "maternity", "neonatal"],
+    tags: [
+      "TB preventive therapy",
+      "TPT",
+      "HIV",
+      "advanced HIV disease",
+      "household contact",
+      "child contact",
+      "newborn of mother with TB",
+      "rifapentine",
+      "peripheral neuropathy",
+      "pyridoxine",
+      "hepatitis",
+      "orange urine"
+    ],
+    presentation: [
+      "Isoniazid tablets (strengths vary; check the pack). The usual adult daily dose is 300 mg (Harrison).",
+      "3HP: isoniazid plus rifapentine once a week. WHO notes a fixed-dose isoniazid–rifapentine tablet has been on the WHO Essential Medicines List since 2023, and a child-friendly dispersible 3HP formulation now exists (WHO 2025).",
+      "3RH uses daily rifampicin plus isoniazid: in children, the RH 75/50 dispersible tablet in the TB treatment stock (see First-line TB treatment).",
+      "Pyridoxine (vitamin B6) tablets to prevent neuropathy (see below)."
+    ],
+    indications: [
+      "People living with HIV, adults and adolescents, who screen negative for active TB: irrespective of CD4, ART status, pregnancy or a TB episode treated more than three years ago (Ethiopia)",
+      "Children living with HIV (TPT is part of the advanced HIV disease package at every age in Ethiopia); infants under 1 year only after household contact with pulmonary TB and with active TB excluded",
+      "HIV-negative children and adolescents under 15 who are household contacts of a person with pulmonary TB, once active TB is excluded",
+      "A newborn whose mother has pulmonary TB diagnosed shortly before or after delivery, once congenital TB is excluded"
+    ],
+    standard: {
+      summary: "TB preventive therapy stops TB infection becoming TB disease. It must never be given to someone who has TB disease: rule it out first with symptoms (cough, fever, weight loss, night sweats; in children also poor weight gain and contact history) and a chest X-ray where available. Ethiopia's preferred regimen for adults and adolescents with HIV on non-PI ART is 3HP (isoniazid + rifapentine once a week for 3 months); 6H (daily isoniazid for 6 months) is the alternative and the regimen for anyone on a protease inhibitor, for children under 15 on dolutegravir, and in pregnancy. WHO 2025 agrees that 3HP is preferred.",
+      items: [
+        {
+          label: "Which regimen (Ethiopia, Table 11.7)",
+          text: "HIV, any age, on a PI-based ART regimen: 6H. HIV, under 15 years, on DTG-based ART: 6H. HIV, under 15 years, on EFV-based ART: 3HP preferred, 6H alternative. HIV, 15 years and over, on non-PI ART: 3HP preferred, 6H alternative. HIV-negative contacts under 2 years: 3RH preferred, 6H alternative. HIV-negative contacts 2–14 years: 3HP preferred, 6H or 3RH alternative."
+        },
+        {
+          label: "6H — daily isoniazid for 6 months",
+          text: "Adult: 5 mg/kg daily, maximum 300 mg (Harrison, WHO table). Child under 10 years: 10 mg/kg daily, range 7–15 mg/kg (Harrison); Nelson gives 10–15 mg/kg, maximum 300 mg. Six months of doses must be finished within nine months to count as complete (Ethiopia)."
+        },
+        {
+          label: "3HP — isoniazid + rifapentine once a WEEK, 12 doses",
+          text: "WHO table (in Harrison), adults and children: isoniazid 15 mg/kg (maximum 900 mg) + rifapentine 15–30 mg/kg (maximum 900 mg) once weekly. Nelson (US) bands for children 2 years and over: rifapentine 10–14.0 kg 300 mg; 14.1–25.0 kg 450 mg; 25.1–32.0 kg 600 mg; 32.1–49.9 kg 750 mg; 50 kg and over 900 mg; isoniazid 25 mg/kg at 2–12 years, 15 mg/kg (rounded up to the nearest 50 or 100 mg) at 12 years and over, maximum 900 mg. Complete = at least 11 doses within 16 weeks (Ethiopia). Take with food. The Ethiopian 3HP weight-band chart is not in the supplied documents: use the national chart where you have it."
+        },
+        {
+          label: "1HP and 3RH",
+          text: "1HP (WHO 'special circumstances'; not in the Ethiopian table): isoniazid 300 mg + rifapentine 600 mg daily for 28 doses, only over 13 years (Harrison; WHO 2025). 3RH: daily isoniazid 10–15 mg/kg (maximum 300 mg) + rifampicin 10–20 mg/kg for 3 months (Nelson); Ethiopia uses it for HIV-negative contacts under 2 years and as an alternative to 3HP at 2–14 years. Rifamycin regimens are not used with PIs or nevirapine."
+        },
+        {
+          label: "Newborn of a mother with pulmonary TB",
+          text: "If the mother started TB treatment less than 2 months before delivery or was diagnosed after birth, and the baby has no signs of TB: isoniazid 10 mg/kg once daily (range 7–15 mg/kg, the usual child dose: Harrison, Nelson) for 6 months; delay BCG until the course is finished (or repeat BCG afterwards); continue breastfeeding. The Ethiopian manual prints 5 mg/kg for this baby, half the usual child dose: confirm with the national TB programme (editorial)."
+        },
+        {
+          label: "Pyridoxine (vitamin B6)",
+          text: "Ethiopia: offer it with 3HP to people at higher risk of neuropathy, but do not delay 3HP if it is out of stock. WHO 2025 counts B6 as part of any isoniazid-containing regimen. Dose: 10–25 mg daily in those at risk (Harrison, ch. 183); Harrison's antimycobacterial chapter quotes 25–50 mg daily."
+        },
+        {
+          label: "Do NOT give TPT",
+          text: "Symptoms compatible with TB even if unconfirmed; active (acute or chronic) hepatitis; regular heavy alcohol use; prior allergy or intolerance to a drug in the regimen; symptoms of peripheral neuropathy (Ethiopia). Rifapentine (3HP) is not indicated under 2 years, with PI- or nevirapine-based ART, or in pregnant and breastfeeding women (Ethiopia)."
+        },
+        {
+          label: "Missed doses (isoniazid regimens)",
+          text: "Interrupted for less than 3 months: resume and add the missed doses at the end. More than 3 months: start a new course (Ethiopia). Trace anyone who stops; concerns about adherence are not a reason to withhold TPT."
+        }
+      ]
+    },
+    improvised: [
+      {
+        title: "Ruling out TB at the clinic before starting TPT",
+        best_for: "ART clinics and health centres without X-ray or Xpert on site.",
+        requires: [],
+        steps: [
+          "Ask the four questions every time: current cough, any fever, weight loss (or poor weight gain in a child), night sweats. In a child also ask about close contact with anyone with TB.",
+          "All four absent: TB is unlikely; start TPT the same day if there is no contraindication.",
+          "Any one present: do NOT start TPT. Investigate for TB (sputum Xpert, urine LF-LAM if eligible, chest X-ray where available). Start TPT later only once TB is excluded and the illness has resolved (Ethiopia algorithm).",
+          "Check the ART regimen before choosing: PI-based (LPV/r, ATV/r, DRV/r) or nevirapine means 6H, not 3HP. Dolutegravir in a child under 15 means 6H (Ethiopia).",
+          "Pregnant: 6H, not 3HP (Ethiopia).",
+          "Write the regimen, start date and expected end date on the HIV card."
+        ],
+        monitor: ["The four symptoms at every monthly visit", "New symptoms: stop TPT and investigate"],
+        cautions: [
+          "TPT given to someone with active TB is under-treatment and breeds resistance. If in doubt, investigate first."
+        ]
+      },
+      {
+        title: "3HP: twelve weekly doses without missing one",
+        best_for: "ART clinics starting 3HP for adults, adolescents and children over 2 years.",
+        requires: ["oral"],
+        steps: [
+          "Pick a fixed day of the week with the patient (for example every Monday) and write it on the card.",
+          "Weigh and dose by the national chart; check the dose again at each refill.",
+          "Take the whole weekly dose at once, with food, to prevent stomach upset. For a child who cannot swallow tablets, crush them into a little soft food (Ethiopia).",
+          "Warn that urine, tears and sweat turn red-orange: this is harmless (Ethiopia).",
+          "Tell the patient: if you feel flu-like, weak, dizzy, sick or yellow after a dose, take no more doses and come back (Ethiopia). Flu-like reactions are more common with 3HP than with 6H; liver injury is less common.",
+          "Count doses, not weeks. Complete = 11 or more doses within 16 weeks (Ethiopia)."
+        ],
+        monitor: ["Doses taken (tick the card)", "Flu-like or liver symptoms after each dose"],
+        cautions: [
+          "Rifapentine lowers the levels of other drugs (rifamycins induce liver enzymes; Nelson): check the drug list for warfarin, phenytoin, fluconazole, dapsone, hormonal contraception and the ART regimen."
+        ]
+      },
+      {
+        title: "Dosing a small child from adult isoniazid tablets (6H)",
+        best_for: "Health centres where the child formulation is out of stock.",
+        requires: ["oral"],
+        steps: [
+          "Child dose: 10 mg/kg once daily (range 7–15 mg/kg; Harrison). Multiply the weight by 10 to get the target mg.",
+          "Check the tablet strength on the pack, then pick the nearest whole or half tablet whose dose stays between 7 and 15 mg/kg for this child's weight. Write the mg actually given on the card. Example: an 8 kg child (target 80 mg, allowed 56–120 mg) can take one 100 mg tablet = 12.5 mg/kg.",
+          "Crush the tablet, mix with a little breast milk, water or soft food on a spoon and give all of it.",
+          "Same time every day, with the ART dose if the child is on ART.",
+          "Give pyridoxine if the child is malnourished, has HIV or is breastfed by a mother on isoniazid (Nelson, see First-line TB treatment)."
+        ],
+        monitor: ["Weight monthly; move up the dose as the child grows"],
+        cautions: [
+          "This is arithmetic from the mg/kg dose, not a national weight-band chart: use the national chart where available."
+        ]
+      }
+    ],
+    paediatric: [
+      "Choose by HIV status, age and ART (Ethiopia Table 11.7): with HIV under 15 on DTG or a PI, 6H; on EFV, 3HP (2 years and over).",
+      "HIV-negative household contacts: under 2 years 3RH (or 6H); 2–14 years 3HP (or 6H or 3RH).",
+      "3HP is not given under 2 years (Ethiopia). 1HP is not for children under 13 (WHO 2025).",
+      "Infants under 1 year with HIV get TPT only after a household TB contact, with active TB excluded (Ethiopia).",
+      "Newborn of a mother with pulmonary TB: isoniazid 5 mg/kg daily for 6 months, BCG after (Ethiopia; see the dose flag above)."
+    ],
+    cautions: [
+      "Never in active TB: always screen first.",
+      "Hepatitis: stop for jaundice, or for persistent nausea, vomiting, weakness or loss of appetite (early signs). Harrison's stop rule: ALT over 3 times normal with symptoms, or over 5 times without. Higher risk with daily alcohol, liver disease, HIV, pregnancy and the first 3 months postpartum.",
+      "Peripheral neuropathy: give pyridoxine to those at risk; do not start TPT in someone who already has neuropathy symptoms (Ethiopia).",
+      "Isoniazid inhibits liver enzymes and raises levels of warfarin, carbamazepine, benzodiazepines, paracetamol (toxic metabolite) and phenytoin (Harrison). In 3HP, rifapentine induces enzymes and lowers many drug levels (Nelson). See Interactions.",
+      "3HP (rifapentine): not under 2 years, not with PI- or nevirapine-based ART, not in pregnancy or breastfeeding (Ethiopia). Use 6H instead."
+    ],
+    calc: {
+      type: "weight",
+      dosePerKg: 10,
+      doseUnit: "mg",
+      maxDose: 300,
+      label: "Child 6H dose 10 mg/kg once daily (range 7–15 mg/kg, maximum 300 mg)"
+    },
+    textbook: [
+      {
+        book: "ethhiv",
+        text: "For adults and adolescents living with HIV, TPT should be given to those unlikely to have active TB irrespective of CD4 count, ART status, pregnancy status or prior TB treatment more than three years ago. Infants under 1 year get it only after household contact with pulmonary TB.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.1 TB Preventive Therapy, p. 203"
+      },
+      {
+        book: "ethhiv",
+        text: "Table 11.7: 6H for any age on a PI-based ART regimen and for children under 15 on DTG; 3HP preferred (6H alternative) for children on EFV and for people 15 years and over on non-PI ART; HIV-negative contacts: 3RH under 2 years, 3HP at 2–14 years. 3HP should be taken with food; tablets can be crushed into semi-solid food.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 11.7, pp. 207–208"
+      },
+      {
+        book: "ethhiv",
+        text: "3HP is not currently recommended in pregnancy or under 2 years. People at higher risk of neuropathy should be offered vitamin B6 with 3HP, but a lack of B6 should not delay 3HP. Red-orange urine on 3HP is harmless.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 11.8, pp. 209–210"
+      },
+      {
+        book: "ethhiv",
+        text: "Contraindications to TPT: symptoms compatible with TB, active hepatitis, regular heavy alcohol use, prior allergy or intolerance, peripheral neuropathy symptoms. Rifapentine is not indicated under 2 years, with PI or NVP ART, or in pregnant and breastfeeding women. 6H complete if finished within 9 months; 3HP complete with at least 11 doses in 16 weeks.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.1 TB Preventive Therapy, p. 211"
+      },
+      {
+        book: "ethhiv",
+        text: "Baby of a mother diagnosed with pulmonary TB less than 2 months before delivery or after birth: isoniazid 10 mg/kg once daily (7–15 mg/kg) for 6 months — the Ethiopian manual prints 5 mg/kg, half the usual child dose: confirm with the TB programme; delay BCG until it is completed; breastfeeding is safe.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, ch. 5 Care of HIV exposed infants, p. 94"
+      },
+      {
+        book: "whohivclin",
+        text: "In adults and adolescents with HIV eligible for TPT, 3HP is the suggested preferred regimen; 6H or 9H are alternatives (conditional recommendation, low certainty). 1HP is only for people 13 years and over.",
+        ref: "WHO HIV clinical management 2025, 5.1 TB preventive treatment, pp. 76–77"
+      },
+      {
+        book: "harrison",
+        text: "Table 183-6 (from WHO): isoniazid alone — adults 5 mg/kg (max 300 mg) daily, children under 10 years 10 mg/kg (7–15); 3HP — isoniazid 15 mg/kg (900 mg) + rifapentine 15–30 mg/kg (900 mg) weekly; 1HP — over 13 years only, isoniazid 300 mg + rifapentine 600 mg daily for 28 doses.",
+        ref: "Harrison 22nd ed. 2025, ch. 183 Tuberculosis, Table 183-6, p. 1402"
+      },
+      {
+        book: "harrison",
+        text: "Isoniazid inhibits cytochrome P450; drugs with significant interactions include warfarin, carbamazepine, benzodiazepines, acetaminophen and phenytoin. It needs no adjustment in renal disease. Stop it for hepatitis symptoms or jaundice with ALT over 3 times normal, or ALT over 5 times normal without symptoms.",
+        ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422"
+      },
+      {
+        book: "nelson",
+        text: "3HP weekly for 12 doses in children 2 years and over: rifapentine 10–14.0 kg 300 mg, 14.1–25.0 kg 450 mg, 25.1–32.0 kg 600 mg, 32.1–49.9 kg 750 mg, 50 kg and over 900 mg; isoniazid 25 mg/kg (2–12 years) or 15 mg/kg rounded up (12 years and over), maximum 900 mg. 3RH: isoniazid 10–15 mg/kg + rifampin 10–20 mg/kg daily for 3 months.",
+        ref: "Nelson 22nd ed. 2024, ch. 322 HIV and AIDS, Table 322.6, p. 2112"
+      },
+      {
+        book: "note",
+        text: "Ethiopia (2025 manual) and WHO 2025 agree that 3HP is preferred for adults and adolescents on non-PI ART. Neither supplied document prints TPT weight bands: the doses here come from Harrison's reproduction of the WHO table and from Nelson's US paediatric table. The Ethiopian manual's 5 mg/kg for newborns is half the usual child dose and is flagged for confirmation.",
+        ref: "Editorial note"
+      }
+    ],
+    sources: [
+      {
+        name: "Ethiopia MoH. National Comprehensive HIV Prevention, Care and Treatment Training — Participant Manual, March 2025, 11.3.1 and ch. 5"
+      },
+      { name: "WHO updated recommendations on HIV clinical management, 2025, ch. 5" },
+      { name: "Harrison's Principles of Internal Medicine 22nd ed. 2025, ch. 183 and 186" },
+      { name: "Nelson Textbook of Pediatrics 22nd ed. 2024, ch. 260, 261 and 322" },
+      { name: "Ethiopia national TB guideline — confirm the national 3HP and 6H weight-band chart" }
     ],
     review: { status: "draft", by: null, date: null }
   }

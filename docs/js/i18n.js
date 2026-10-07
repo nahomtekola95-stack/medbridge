@@ -517,6 +517,16 @@
     "If it is not working": "የማይሠራ ከሆነ", "Taking it out": "ማውጣት", "Complications": "ችግሮች", "Sources": "ምንጮች",
     "Absolute": "ፍጹም", "Relative": "አንጻራዊ", "Emergency": "አስቸኳይ", "Elective": "የታቀደ",
     "Elective or emergency": "የታቀደ ወይም አስቸኳይ", "Before the incision": "ከመቀደዱ በፊት", "When": "መቼ", "How": "እንዴት",
+    /* ---- endemic disease pathways and grouped tools ---- */
+    "Endemic diseases": "በአካባቢው የተስፋፉ በሽታዎች", "Endemic disease pathways": "የተስፋፉ በሽታዎች የሕክምና መንገዶች",
+    "Malaria, HIV and kala-azar: pick the situation, enter the weight, get the regimen (Ethiopian guideline first).": "ወባ፣ ኤች አይ ቪና ካላ-አዛር፡ ሁኔታውን ይምረጡ፣ ክብደቱን ያስገቡ፣ ሕክምናውን ያግኙ (የኢትዮጵያ መመሪያ ቅድሚያ)።",
+    "Endemic diseases — pick the situation, get the regimen": "የተስፋፉ በሽታዎች — ሁኔታውን ይምረጡ፣ ሕክምናውን ያግኙ", "All endemic": "ሁሉም የተስፋፉ",
+    "On the ward": "በክፍል ውስጥ", "Doses and drips": "መጠንና ጠብታ", "Mother and child": "እናትና ልጅ", "Surgery and theatre": "ቀዶ ጥገናና ኦፕራሲዮን ክፍል",
+    "Eye": "ዓይን", "Learn, share and review": "ይማሩ፣ ያጋሩ፣ ይገምግሙ",
+    "What is the situation?": "ሁኔታው ምንድን ነው?", "Weight": "ክብደት", "Give": "ይስጡ", "Do not": "አያድርጉ", "Also": "በተጨማሪ", "Follow-up": "ክትትል",
+    "Drugs in this pathway": "በዚህ መንገድ ያሉ መድኃኒቶች", "Full cases": "ሙሉ ጉዳዮች", "Other endemic conditions": "ሌሎች የተስፋፉ ሕመሞች",
+    "First, look for danger.": "መጀመሪያ የአደጋ ምልክት ይፈልጉ።", "Tap the situation above to see what to give.": "ምን እንደሚሰጥ ለማየት ከላይ ያለውን ሁኔታ ይንኩ።",
+    "Enter a weight to see the dose.": "መጠኑን ለማየት ክብደት ያስገቡ።",
     /* ---- catch-up vaccination ---- */
     "Catch-up vaccination": "የክትባት ማሟያ",
     "What to give a child who has missed doses, and when to bring them back.": "ክትባት ያመለጠውን ሕፃን ዛሬ ምን እንደሚሰጡና መቼ እንደሚመለስ።",

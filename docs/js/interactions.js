@@ -156,7 +156,7 @@ window.INTERACTIONS = [
     ref: "BNF interactions (rifampicin–nifedipine)" },
   { a: ["tb-rhze"], b: ["arv-prophylaxis"], severity: "major",
     effect: "Rifampicin induces metabolism of dolutegravir (and nevirapine), lowering levels enough to cause treatment failure and resistance.",
-    action: "Give dolutegravir 50 mg TWICE daily (adults) while on rifampicin and for 2 weeks after. Tenofovir and lamivudine need no change. Infant nevirapine prophylaxis levels are reduced by rifampicin: seek HIV/TB specialist advice (zidovudine-based infant prophylaxis may be preferred).",
+    action: "Give dolutegravir 50 mg TWICE daily (adults) while on rifampicin and for 2 weeks after. Children: the weight-band DTG dose twice daily, continued for 2 weeks after rifampicin ends (Ethiopia MoH 2025, Table 12.9). Tenofovir and lamivudine need no change. Infant nevirapine prophylaxis levels are reduced by rifampicin: seek HIV/TB specialist advice (zidovudine-based infant prophylaxis may be preferred).",
     ref: "Harrison 22nd ed. 2025, ch. 183 Tuberculosis, pp. 1400–1402; WHO consolidated HIV guidelines",
     refs: [
       { book: "harrison", text: "With rifampicin-based TB treatment, dolutegravir is given at double the standard dose.", ref: "Harrison 22nd ed. 2025, ch. 183 Tuberculosis, p. 1400", pdf_page: 1443, quote: "dolutegravir or raltegravir (but not bictegravir, cabotegravir, or elvitegravir) at double the standard dose" },
@@ -164,7 +164,7 @@ window.INTERACTIONS = [
     ] },
   { a: ["phenytoin", "phenobarbital"], b: ["arv-prophylaxis"], severity: "major",
     effect: "Phenytoin and phenobarbital induce dolutegravir metabolism and can make PEP or prophylaxis fail.",
-    action: "Avoid the combination; use levetiracetam (or valproate, not in pregnancy) for seizures, or seek HIV specialist advice on an alternative regimen.",
+    action: "Avoid the combination; use levetiracetam (or valproate, not in pregnancy; Ethiopia also names gabapentin) for seizures, or, if not possible, substitute DTG with efavirenz (a boosted PI under 3 years) per Ethiopia, with HIV specialist advice.",
     ref: "BNF interactions (dolutegravir–phenytoin/phenobarbital); dolutegravir product information" },
   { a: ["chloramphenicol"], b: ["phenytoin", "phenobarbital"], severity: "major",
     effect: "Chloramphenicol inhibits metabolism of phenytoin (and phenobarbital), causing toxicity (ataxia, nystagmus, drowsiness). Phenobarbital in turn lowers chloramphenicol levels, risking treatment failure in meningitis.",
@@ -315,7 +315,7 @@ window.INTERACTIONS = [
   {a: ["lithium"],b: ["nifedipine"],severity: "moderate",effect: "Calcium-channel blockers with lithium have caused neurotoxicity (ataxia, tremor, confusion) without consistent change in lithium levels; most reports involve verapamil and diltiazem.",action: "Use an alternative antihypertensive where possible (in pregnancy, labetalol or hydralazine); if combined, watch closely for neurological symptoms.",ref: "Kaplan & Sadock 12th ed. 2022, ch. 21.3, pdf p. 2063 and Table 21-30, p. 2066; BNF interactions (lithium–calcium-channel blockers)"},
   {a: ["lithium"],b: ["carbamazepine"],severity: "moderate",effect: "Neurotoxicity (confusion, ataxia, tremor) has been reported with the combination even with lithium levels in range; both can affect sodium balance.",action: "Combination is used for resistant bipolar disorder but start the second drug low and increase slowly; watch for neurological symptoms and check sodium where possible.",ref: "Kaplan & Sadock 12th ed. 2022, ch. 21.3, pdf p. 2063 and Table 21-30, p. 2065"},
   {a: ["lithium"],b: ["fluoxetine"],severity: "moderate",effect: "SSRIs with lithium can cause serotonin syndrome or neurotoxicity; fluoxetine may also change lithium levels.",action: "Combination can be used for resistant depression under supervision: start low, check lithium level after starting fluoxetine if possible, and teach serotonin syndrome warning signs (tremor, sweating, diarrhoea, agitation, fever).",ref: "Kaplan & Sadock 12th ed. 2022, ch. 21.2, pdf pp. 1990–1992"},
-  {a: ["carbamazepine"],b: ["arv-prophylaxis"],severity: "major",effect: "Carbamazepine induces metabolism of dolutegravir (and nevirapine and efavirenz), lowering levels enough to risk PEP or treatment failure and resistance.",action: "Avoid: choose valproate (not in women and girls who could become pregnant) or seek HIV specialist advice for seizures or bipolar disorder. If no alternative, dolutegravir product information advises 50 mg twice daily in adults; infant nevirapine prophylaxis needs specialist advice.",ref: "Dolutegravir (Tivicay) summary of product characteristics; BNF interactions (carbamazepine–dolutegravir/nevirapine/efavirenz)"},
+  {a: ["carbamazepine"],b: ["arv-prophylaxis"],severity: "major",effect: "Carbamazepine induces metabolism of dolutegravir (and nevirapine and efavirenz), lowering levels enough to risk PEP or treatment failure and resistance.",action: "Avoid: Ethiopia advises another anticonvulsant (such as valproic acid — not in women and girls who could become pregnant — or gabapentin), or, if that is not possible, substituting DTG with efavirenz (a boosted PI in children under 3 years); seek HIV specialist advice for bipolar disorder. If no alternative, dolutegravir product information advises 50 mg twice daily in adults; infant nevirapine prophylaxis needs specialist advice.",ref: "Dolutegravir (Tivicay) summary of product characteristics; BNF interactions (carbamazepine–dolutegravir/nevirapine/efavirenz)"},
   {a: ["carbamazepine"],b: ["tb-rhze"],severity: "major",effect: "Isoniazid inhibits carbamazepine metabolism (toxicity: drowsiness, ataxia, vomiting) and carbamazepine may increase isoniazid liver toxicity; rifampicin speeds carbamazepine metabolism (loss of seizure control). The net effect changes when either drug is started or stopped.",action: "Prefer another antiepileptic during TB treatment if possible. If combined, watch closely for toxicity in the first weeks and for seizures later; check carbamazepine levels and liver tests where available, and review again when TB treatment stops.",ref: "Kaplan & Sadock 12th ed. 2022, ch. 21.3, Table 21-39, pdf p. 2091; Harrison 22nd ed. 2025, ch. 186, p. 1422; BNF interactions"},
   {a: ["carbamazepine"],b: ["dexamethasone","hydrocortisone"],severity: "moderate",effect: "Carbamazepine is a potent enzyme inducer and speeds corticosteroid metabolism, reducing their effect (TB meningitis, cerebral oedema, adrenal insufficiency, fetal lung maturation).",action: "Expect to need higher steroid doses and watch for loss of effect; in adrenal insufficiency, seek specialist advice on the replacement dose.",ref: "Harrison 22nd ed. 2025, ch. 95, p. 717; BNF interactions (corticosteroids–carbamazepine)"},
   {a: ["carbamazepine"],b: ["paracetamol"],severity: "moderate",effect: "Carbamazepine lowers paracetamol levels and, like other enzyme inducers, increases formation of the toxic metabolite: less pain relief and liver injury at lower doses, especially in overdose.",action: "Keep to regular doses (adult 3 g/day or less for long courses); in paracetamol overdose treat at a lower threshold.",ref: "Kaplan & Sadock 12th ed. 2022, ch. 21.3, Table 21-39, pdf p. 2090; BNF"},
@@ -702,8 +702,8 @@ window.INTERACTIONS = [
     a: ["sodium-stibogluconate"],
     b: ["paromomycin"],
     severity: "moderate",
-    effect: "This is the East African first-line combination for VL without HIV, not a combination to avoid. The caution is practical: two daily intramuscular injections for 17 days in a wasted patient, with additive injection-site damage, plus antimonial cardiotoxicity and pancreatitis on one side and aminoglycoside oto- and nephrotoxicity on the other.",
-    action: "Give them in DIFFERENT sites on the same day and rotate both on a written four-site chart. Inspect yesterday's sites before injecting. Before every dose: 60-second pulse, and ask about palpitations, dizziness, blackouts, abdominal pain, tinnitus and muffled hearing. Whispered-voice hearing test weekly; urine dipstick for protein twice weekly. This combination is WHO's stated first line for HIV-negative patients in East Africa, and rescue treatment for VL–HIV non-responders.",
+    effect: "This is the WHO 2026 second-choice combination for VL without HIV in eastern Africa (used when paromomycin + miltefosine is excluded), not a combination to avoid. The caution is practical: two daily intramuscular injections for 17 days in a wasted patient, with additive injection-site damage, plus antimonial cardiotoxicity and pancreatitis on one side and aminoglycoside oto- and nephrotoxicity on the other.",
+    action: "Give them in DIFFERENT sites on the same day and rotate both on a written four-site chart. Inspect yesterday's sites before injecting. Before every dose: 60-second pulse, and ask about palpitations, dizziness, blackouts, abdominal pain, tinnitus and muffled hearing. Whispered-voice hearing test weekly; urine dipstick for protein twice weekly. Since WHO 2026 it is the second choice for HIV-negative patients in eastern Africa (after paromomycin + miltefosine), and rescue treatment for VL–HIV non-responders.",
     ref: "WHO guideline: visceral leishmaniasis in HIV co-infected patients (2022), 3.3, pdf p. 28 and 4.2.3, pdf p. 36",
     refs: [
       {
@@ -2032,7 +2032,7 @@ window.INTERACTIONS = [
     b: ["tb-rhze"],
     severity: "moderate",
     effect: "Rifampicin speeds fluconazole breakdown and lowers its levels, which matters in HIV with TB and cryptococcal disease. Isoniazid, rifampicin, pyrazinamide and fluconazole can all injure the liver.",
-    action: "Do not stop either: both infections kill. Monitor the clinical response to fluconazole closely; some guidelines increase the fluconazole dose while rifampicin is given — confirm with the HIV clinician and national guideline. Check liver tests where possible and stop drugs for clinical hepatitis. When rifampicin is STOPPED, fluconazole levels rise again over about 2 weeks.",
+    action: "Do not stop either: both infections kill. Ethiopia: increase the fluconazole dose by 50 % during cryptococcal induction while rifampicin is given, and consider the same 50 % increase in consolidation and maintenance. Monitor the clinical response to fluconazole closely. Check liver tests where possible and stop drugs for clinical hepatitis. When rifampicin is STOPPED, fluconazole levels rise again over about 2 weeks.",
     ref: "BNF interactions (rifampicin–fluconazole); Harrison 22nd ed. 2025, ch. 221, p. 1705",
     refs: [
       {
@@ -2041,7 +2041,14 @@ window.INTERACTIONS = [
         ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705",
         pdf_page: 1748,
         quote: "Fluconazole can cause drug interactions, QT interval prolongation, and liver dysfunction"
-      }
+      },
+      {
+      book: "ethhiv",
+      text: "Rifampicin decreases fluconazole levels; in practice the fluconazole dose is increased by 50 % in induction, and a 50 % increase is considered in consolidation and maintenance.",
+      ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3, p. 237",
+      pdf_page: 267,
+      quote: "fluconazole dose increased by 50% in induction phase"
+    }
     ]
   },
   {
@@ -3139,9 +3146,21 @@ window.INTERACTIONS = [
     b: ["tb-rhze", "carbamazepine", "phenytoin", "phenobarbital"],
     severity: "major",
     effect: "Rifampicin (in TB treatment), carbamazepine, phenytoin and phenobarbital induce the liver enzymes (CYP3A4) that clear artemether and lumefantrine. Levels of both fall sharply, and the malaria may not be cured or may come back within weeks. The product information lists strong inducers as contraindicated.",
-    action: "Do not leave malaria untreated. When malaria is diagnosed in a patient already on one of these, give the full 6-dose course with fat, check the response on day 3 and test again for any fever in the next 4 weeks, and ask a senior or the national guideline whether another regimen is better. The inducing effect persists for about 2 weeks after the inducer is STOPPED, so the same care applies then. Do not stop TB or epilepsy treatment to treat malaria.",
+    action: "Do not leave malaria untreated. When malaria is diagnosed in a patient already on one of these, give the full 6-dose course with fat, check the response on day 3 and test again for any fever in the next 4 weeks, but do not change the drug or the dose: Ethiopia and WHO find the evidence insufficient to change dosing, and ask for close monitoring because recrudescence is more likely. The inducing effect persists for about 2 weeks after the inducer is STOPPED, so the same care applies then. Do not stop TB or epilepsy treatment to treat malaria.",
     ref: "Coartem summary of product characteristics (interactions: strong CYP3A4 inducers); BNF interactions (artemether with lumefantrine)",
-    refs: []
+    refs: [ {
+      book: "ethmal",
+      text: "Rifampicin with quinine, ACTs or mefloquine lowers antimalarial levels three- to nine-fold and raises recrudescence.",
+      ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Malaria and TB, pdf p. 84",
+      pdf_page: 84,
+      quote: "patients taking Rifampicin with quinine, ACTs, and mefloquine have a three-to-nine-fold decrease"
+    }, {
+      book: "whomal",
+      text: "With rifampicin, exposure to artemether, dihydroartemisinin and lumefantrine was significantly lower; no dose change, monitor closely.",
+      ref: "WHO guidelines for malaria 2026, 5.2.1.4.3 Patients co-infected with tuberculosis, p. 190",
+      pdf_page: 190,
+      quote: "administration of artemether + lumefantrine resulted in significantly lower exposure"
+    } ]
   },
   {
     a: ["artemether-lumefantrine"],
@@ -3204,7 +3223,7 @@ window.INTERACTIONS = [
     b: ["sodium-stibogluconate", "pentamidine"],
     severity: "major",
     effect: "Sodium stibogluconate and pentamidine are strongly cardiotoxic and prolong the QT interval; fatal arrhythmias are recognised with both. Adding an antimalarial that also prolongs the QT (lumefantrine, chloroquine) adds to the risk. Malaria and visceral leishmaniasis occur together in parts of Ethiopia.",
-    action: "Malaria must still be treated. When malaria is found during an antimonial or pentamidine course, a senior decides whether to pause the antimonial for the 3 days of antimalarial treatment; correct potassium and magnesium, get an ECG before and during, and take a 60-second pulse before each injection. For a vivax infection, prefer artemether–lumefantrine over chloroquine only if the national guideline allows; both carry this risk. After the antimalarial course is STOPPED, lumefantrine and chloroquine persist for days to weeks: keep monitoring when the antimonial is restarted.",
+    action: "Malaria must still be treated. When malaria is found during an antimonial or pentamidine course, a senior decides whether to pause the antimonial for the 3 days of antimalarial treatment; correct potassium and magnesium, get an ECG before and during, and take a 60-second pulse before each injection. For a vivax infection the Ethiopian first-line drug is chloroquine; chloroquine, artemether–lumefantrine and the second-line dihydroartemisinin–piperaquine all carry this risk. After the antimalarial course is STOPPED, lumefantrine and chloroquine persist for days to weeks: keep monitoring when the antimonial is restarted.",
     ref: "BNF interactions (QT-prolonging drugs); Harrison 22nd ed. 2025, ch. 231, p. 1772",
     refs: []
   },
@@ -3529,6 +3548,598 @@ window.INTERACTIONS = [
         ref: "Nelson 22nd ed. 2024, ch. 94 Poisoning, p. 714",
         pdf_page: 760,
         quote: "spironolactone, verapamil, amiodarone, and itraconazole"
+      }
+    ]
+  },
+
+  /* ---- malaria (Ethiopia FMoH 2024, WHO 2026) ---- */
+  {
+    a: ["dihydroartemisinin-piperaquine"],
+    b: [
+      "amiodarone",
+      "haloperidol",
+      "haloperidol-decanoate",
+      "chlorpromazine",
+      "fluphenazine-decanoate",
+      "olanzapine",
+      "risperidone",
+      "quetiapine",
+      "clozapine",
+      "aripiprazole",
+      "azithromycin",
+      "erythromycin",
+      "ciprofloxacin",
+      "fluconazole",
+      "ondansetron",
+      "methadone",
+      "escitalopram",
+      "amitriptyline",
+      "imipramine",
+      "sodium-stibogluconate",
+      "pentamidine"
+    ],
+    severity: "major",
+    effect: "Piperaquine prolongs the QT interval. The Ethiopian manual says not to combine it with QT-prolonging drugs and names amiodarone, antipsychotics, fluconazole, fluoroquinolones, macrolides and ondansetron; methadone, escitalopram, tricyclics, sodium stibogluconate and pentamidine also prolong the QT. Together the risk of torsades de pointes rises, more so with low potassium or magnesium from vomiting and diarrhoea.",
+    action: "When DHA-PPQ is STARTED in a patient on one of these: stop or swap the partner for the 3 days if it can safely be stopped (ondansetron, a macrolide, a fluoroquinolone or fluconazole for a non-urgent problem, a PRN antipsychotic). If it cannot (amiodarone, methadone, a depot antipsychotic, an antimonial course), ask a senior before giving DHA-PPQ; correct potassium and magnesium and get an ECG before and during the course where possible. Never stop methadone or an antiarrhythmic abruptly. Piperaquine is eliminated slowly: after DHA-PPQ is STOPPED, stay cautious with new QT drugs for at least a week. Severe malaria still gets artesunate.",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, pdf p. 81; WHO guidelines for malaria 2026, 5.2.1.1.2, p. 179",
+    refs: [
+      {
+        book: "ethmal",
+        text: "Do not combine with drugs that prolong the QT interval: amiodarone, other antimalarials, antipsychotics, fluconazole, fluoroquinolones, hydroxyzine, macrolides, ondansetron.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, contra-indications and precautions, pdf p. 81",
+        pdf_page: 81,
+        quote: "Do not combine with drugs that prolong the QT interval"
+      },
+      {
+        book: "whomal",
+        text: "Do not use dihydroartemisinin–piperaquine with medications that prolong the QT interval.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 179",
+        pdf_page: 179,
+        quote: "this ACT should not be used in patients with congenital QT prolongation"
+      }
+    ]
+  },
+  {
+    a: ["dihydroartemisinin-piperaquine"],
+    b: ["artemether-lumefantrine", "chloroquine", "quinine"],
+    severity: "moderate",
+    effect: "All prolong the QT interval, and the Ethiopian manual says not to combine DHA-PPQ with other antimalarials. Yet the national protocol gives DHA-PPQ straight after a failed course of artemether–lumefantrine or chloroquine, and as follow-on after parenteral treatment, while lumefantrine (half-life 3–4 days) and chloroquine (weeks) are still in the blood. Piperaquine prolongs the QT about as much as chloroquine and less than quinine (WHO).",
+    action: "Do not withhold second-line treatment: the sequence is the national protocol. When DHA-PPQ is STARTED after artemether–lumefantrine or chloroquine, correct potassium and magnesium, ask about palpitations and fainting, and get an ECG if the patient has heart disease or another QT drug. Avoid STARTING IV quinine in a patient who has just taken DHA-PPQ unless it is the only treatment for severe malaria (prefer artesunate or IM artemether); if quinine was given first, check potassium, magnesium and the pulse before the first DHA-PPQ dose. Never give two ACT courses at the same time. Piperaquine stays in the blood for weeks after DHA-PPQ is STOPPED: if quinine is needed in that time, check potassium, magnesium and the pulse first.",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, pdf p. 81, and 4.4, pdf p. 88; WHO guidelines for malaria 2026, p. 179",
+    refs: [
+      {
+        book: "ethmal",
+        text: "Do not combine with drugs that prolong the QT interval, including other antimalarials.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, contra-indications and precautions, pdf p. 81",
+        pdf_page: 81,
+        quote: "Do not combine with drugs that prolong the QT interval"
+      },
+      {
+        book: "whomal",
+        text: "Piperaquine prolongs the QT interval by approximately the same amount as chloroquine but by less than quinine.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.1.2 Dosing of ACTs, p. 179",
+        pdf_page: 179,
+        quote: "Piperaquine prolongs the QT interval by approximately the same amount as chloroquine but by less"
+      }
+    ]
+  },
+  {
+    a: ["dihydroartemisinin-piperaquine"],
+    b: ["tb-rhze", "carbamazepine", "phenytoin", "phenobarbital"],
+    severity: "moderate",
+    effect: "Rifampicin, carbamazepine, phenytoin and phenobarbital induce the liver enzymes that clear dihydroartemisinin and piperaquine, lowering their blood levels (Ethiopia); the infection may not be cleared or may return.",
+    action: "Do not stop TB or epilepsy treatment and do not withhold malaria treatment. When DHA-PPQ is STARTED in a patient on one of these, give the full 3-day course, review on day 3, and test by microscopy for any fever in the next 4 weeks. The inducing effect lasts about 2 weeks after the inducer is STOPPED.",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, pdf p. 81; 4.2 Malaria and TB, pdf p. 84",
+    refs: [
+      {
+        book: "ethmal",
+        text: "Monitor combination with enzyme inducers such as rifampicin, carbamazepine, phenytoin and phenobarbital (reduced blood levels of DHA/PPQ).",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, contra-indications and precautions, pdf p. 81",
+        pdf_page: 81,
+        quote: "and enzyme inducers such as rifampicin, carbamazepine, phenytoin, and"
+      },
+      {
+        book: "ethmal",
+        text: "Patients on anti-TB drugs are at higher risk of recrudescence and should be monitored closely.",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, 4.2 Malaria and TB, pdf p. 84",
+        pdf_page: 84,
+        quote: "these patients are at higher risk of recrudescent"
+      }
+    ]
+  },
+  {
+    a: ["dihydroartemisinin-piperaquine"],
+    b: ["arv-prophylaxis"],
+    severity: "moderate",
+    effect: "The Ethiopian manual says to monitor DHA-PPQ given with antiretrovirals, because blood levels are altered. WHO finds the information insufficient to change malaria treatment in people with HIV.",
+    action: "When DHA-PPQ is STARTED in a patient on antiretrovirals, give the standard course without changing the dose and do not interrupt HIV prophylaxis or treatment. Watch the response on day 3 and re-test any fever in the next 4 weeks. Nothing extra is needed when either drug is STOPPED.",
+    ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, pdf p. 81; WHO guidelines for malaria 2026, 5.2.1.4.3, p. 190",
+    refs: [
+      {
+        book: "ethmal",
+        text: "Monitor the combination with antiretrovirals (increased blood levels of these drugs).",
+        ref: "Ethiopia FMoH Malaria case management manual 2024, Table 7, contra-indications and precautions, pdf p. 81",
+        pdf_page: 81,
+        quote: "Monitor combination with antiretroviral (increased blood levels of these drugs)"
+      },
+      {
+        book: "whomal",
+        text: "There is insufficient information to modify the general malaria treatment recommendations for patients with HIV/AIDS.",
+        ref: "WHO guidelines for malaria 2026, 5.2.1.4.3 Patients co-infected with HIV, p. 190",
+        pdf_page: 190,
+        quote: "There is presently insufficient information to modify the general malaria treatment recommendations for patients with HIV"
+      }
+    ]
+  },
+
+  /* ---- HIV antiretroviral therapy (Ethiopia MoH 2025) ---- */
+  {
+    a: ["tb-rhze"],
+    b: ["dolutegravir"],
+    severity: "major",
+    effect: "Rifampicin speeds up dolutegravir metabolism and lowers its blood level enough to cause treatment failure and resistance. Tenofovir and lamivudine in TLD are not affected.",
+    action: "When rifampicin is STARTED: adults take dolutegravir 50 mg TWICE daily — TLD in the morning plus a separate DTG 50 mg tablet about 12 hours later; children take the weight-band DTG dose twice daily (Ethiopia). When rifampicin is STOPPED: children continue twice-daily DTG for 2 more weeks, then return to once daily (Ethiopia); the app applies the same 2-week tail to adults (WHO 2021). Never give a second TLD tablet as the 'extra' dose. Rifapentine (3HP) needs no DTG change (Ethiopia).",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323; Table 12.1 footnote f, p. 271; Harrison 22nd ed. 2025, ch. 183, p. 1402",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "Rifampicin lowers DTG: give DTG 50 mg twice daily; children twice daily by weight band.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323",
+        pdf_page: 353,
+        quote: "DTG 50mg BID. For pediatrics DTG BID by weight band."
+      },
+      {
+        book: "ethhiv",
+        text: "Children continue twice-daily DTG for 2 weeks after rifampicin ends.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323",
+        pdf_page: 353,
+        quote: "Continue with twice daily dosing of DTG in children for 2 weeks after use of rifampicin"
+      },
+      {
+        book: "harrison",
+        text: "Dolutegravir must be increased to 50 mg twice daily with rifampin.",
+        ref: "Harrison 22nd ed. 2025, ch. 183 Tuberculosis, p. 1402",
+        pdf_page: 1445,
+        quote: "the dose of the integrase inhibitor dolutegravir needs to be increased to 50 mg twice daily when given together with rifampin"
+      }
+    ]
+  },
+  {
+    a: ["carbamazepine", "phenytoin", "phenobarbital"],
+    b: ["dolutegravir"],
+    severity: "major",
+    effect: "These enzyme-inducing anticonvulsants lower dolutegravir levels: risk of HIV treatment failure and resistance.",
+    action: "When an anticonvulsant is needed in someone on DTG: Ethiopia — use another anticonvulsant (such as valproic acid or gabapentin; valproate not in women and girls who could become pregnant); if that is not possible, substitute DTG with efavirenz, or with a boosted PI in children under 3 years. If the inducer is STOPPED after a regimen change, review the ART regimen with the ART clinic. Check viral load 3 months after any change.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "With carbamazepine, phenobarbital or phenytoin, use an alternative anticonvulsant or substitute DTG with EFV (boosted PI under 3 years).",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323",
+        pdf_page: 353,
+        quote: "substitute DTG with EFV and for children below 3 years substitute with boosted PIs"
+      }
+    ]
+  },
+  {
+    a: ["dolutegravir"],
+    b: ["zinc-ors"],
+    severity: "moderate",
+    effect: "Zinc (and iron, calcium, magnesium and aluminium in supplements and antacids) binds dolutegravir in the gut and reduces its absorption.",
+    action: "Give dolutegravir (TLD or pDTG) at least 2 hours BEFORE or at least 6 hours AFTER zinc tablets or other mineral supplements and antacids (Ethiopia). Do not stop the zinc course for diarrhoea — separate the times. Nothing extra is needed when zinc is stopped.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "Take DTG at least 2 hours before or 6 hours after supplements containing polyvalent cations.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 323",
+        pdf_page: 353,
+        quote: "Use DTG at least 2 hours before or at least 6 hours after supplements containing polyvalent cations"
+      }
+    ]
+  },
+  {
+    a: ["dolutegravir"],
+    b: ["gentamicin", "pentamidine", "liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    severity: "moderate",
+    effect: "TLD contains tenofovir disoproxil (TDF). TDF and aminoglycosides, amphotericin B or pentamidine are all kidney-toxic: together they add to the risk of kidney injury.",
+    action: "Ethiopia: avoid concurrent use where possible; if TDF is needed with an aminoglycoside, check creatinine and electrolytes at least every 2 weeks. Do NOT stop or delay ART because of this: where kidney function falls, ask the ART clinician to replace TDF (dolutegravir with ABC/3TC or AZT/3TC). When the other drug is STOPPED, recheck creatinine once and continue TLD if it is stable.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322; Table 12.10, p. 325",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "TDF with nephrotoxic drugs (aminoglycosides, amphotericin B, pentamidine) exacerbates nephrotoxicity: avoid concurrent use.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+        pdf_page: 352,
+        quote: "Exacerbate nephrotoxicity"
+      },
+      {
+        book: "ethhiv",
+        text: "If TDF is absolutely indicated with aminoglycosides, monitor creatinine and electrolytes at least every two weeks.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.10, p. 325",
+        pdf_page: 355,
+        quote: "Creatinine and electrolytes should be monitored"
+      }
+    ]
+  },
+  {
+    a: ["lithium"],
+    b: ["dolutegravir"],
+    severity: "moderate",
+    effect: "The tenofovir (TDF) in TLD can reduce kidney function, and lithium is cleared by the kidneys: lithium can accumulate to toxic levels.",
+    action: "Monitor renal function closely (Ethiopia) and check lithium levels where possible when TLD is STARTED, and after any rise in creatinine. If TDF is replaced (STOPPED), recheck lithium as kidney function recovers.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "Lithium with TDF: monitor renal function closely.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+        pdf_page: 352,
+        quote: "TDF: monitor renal function closely"
+      }
+    ]
+  },
+  {
+    a: ["tb-rhze"],
+    b: ["atazanavir-ritonavir", "lopinavir-ritonavir"],
+    severity: "major",
+    effect: "Rifampicin greatly lowers boosted protease inhibitor levels (treatment failure). Raising the PI dose to compensate causes frequent liver toxicity with LPV/r (WHO 2025).",
+    action: "When rifampicin is STARTED in someone on a boosted PI: Ethiopia — adjust the PI dose or substitute with DTG (50 mg twice daily). Decide with an experienced clinician. WHO 2025 notes a small study where ATV/r 300/100 mg twice daily overcame rifampicin without liver problems, but more research is needed; adjusted LPV/r doses (800/200 or 400/400 mg twice daily) caused high rates of hepatotoxicity. When rifampicin is STOPPED, return to the standard PI regimen as advised. Do not give 3HP (rifapentine) with PIs — use 6H (Ethiopia).",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, pp. 321–322; WHO HIV clinical management 2025, 3.1.5, p. 13",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "Boosted PI with rifampicin: adjust the PI dose or substitute with DTG.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 321",
+        pdf_page: 351,
+        quote: "Adjust the PI dose or substitute"
+      },
+      {
+        book: "whohivclin",
+        text: "ATV/r 300/100 mg twice daily overcame the rifampicin interaction in a small pharmacokinetic study.",
+        ref: "WHO HIV clinical management 2025, 3.1.5, p. 13",
+        pdf_page: 29,
+        quote: "a double dose of ATV/r (300/100 mg twice daily) was able to overcome the interaction with rifampicin"
+      },
+      {
+        book: "whohivclin",
+        text: "Rifampicin with dose-adjusted LPV/r is associated with a high incidence of hepatic adverse effects.",
+        ref: "WHO HIV clinical management 2025, 3.1.5, p. 13",
+        pdf_page: 29,
+        quote: "is also associated with a high incidence of hepatic adverse effects"
+      },
+      {
+        book: "ethhiv",
+        text: "Do not give 3HP with protease inhibitors; consider 6H.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+        pdf_page: 352,
+        quote: "Do not provide 3HP with protease inhibitors and consider 6H in this case"
+      }
+    ]
+  },
+  {
+    a: ["artemether-lumefantrine"],
+    b: ["atazanavir-ritonavir", "lopinavir-ritonavir"],
+    severity: "major",
+    effect: "Ritonavir-boosted PIs raise lumefantrine levels. The Ethiopian HIV manual lists lumefantrine (and halofantrine) as a key boosted-PI interaction.",
+    action: "Ethiopia: use an alternative antimalarial agent. Where artemether–lumefantrine is the only oral treatment stocked, do not leave malaria untreated: discuss with a senior, avoid other QT-prolonging drugs, correct low potassium, and get an ECG if possible (editorial). Nothing extra is needed when either drug is STOPPED.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "Boosted PIs with halofantrine and lumefantrine: use an alternative antimalarial agent.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+        pdf_page: 352,
+        quote: "Use an alternative antimalarial"
+      }
+    ]
+  },
+  {
+    a: ["methadone"],
+    b: ["atazanavir-ritonavir", "lopinavir-ritonavir"],
+    severity: "moderate",
+    effect: "Boosted protease inhibitors alter methadone (and buprenorphine) levels: withdrawal or excess sedation can follow a change in ART.",
+    action: "When a boosted PI is STARTED or STOPPED, watch for withdrawal or over-sedation over 1–2 weeks and adjust the methadone dose as needed (Ethiopia). Never stop ART because of methadone.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322; Kaplan 12th ed. 2022, ch. 21.7, pdf p. 2173",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "Boosted PIs with methadone and buprenorphine: adjust doses as appropriate.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.9, p. 322",
+        pdf_page: 352,
+        quote: "Adjust methadone and buprenorphine doses as appropriate"
+      },
+      {
+        book: "kaplan",
+        text: "Several protease inhibitors competitively inhibit methadone demethylation in vitro.",
+        ref: "Kaplan 12th ed. 2022, ch. 21.7, pdf p. 2173",
+        pdf_page: 2173,
+        quote: "inhibition of methadone demethylation by several protease inhibitors"
+      }
+    ]
+  },
+  {
+    a: ["omeprazole"],
+    b: ["atazanavir-ritonavir"],
+    severity: "major",
+    effect: "Atazanavir needs stomach acid to be absorbed. Proton pump inhibitors such as omeprazole sharply lower atazanavir levels, risking second-line failure.",
+    action: "Avoid omeprazole in patients on ATV/r. Treat dyspepsia another way, or ask the ART clinician about using LPV/r instead (not affected by stomach acid). If omeprazole was started, STOP it and check the next viral load. Source: atazanavir product information — not in the supplied guidelines.",
+    ref: "Atazanavir/ritonavir product information (SmPC); BNF interactions (atazanavir–proton pump inhibitors)"
+  },
+  {
+    a: ["ergometrine"],
+    b: ["atazanavir-ritonavir", "lopinavir-ritonavir"],
+    severity: "major",
+    effect: "Ritonavir strongly blocks the breakdown of ergot alkaloids: ergometrine can then cause ergotism — severe vasoconstriction, limb and organ ischaemia.",
+    action: "Do not give ergometrine to a woman on a ritonavir-boosted PI. For postpartum haemorrhage use oxytocin, tranexamic acid and misoprostol per the PPH bundle. Source: ritonavir product information — not in the supplied guidelines.",
+    ref: "Ritonavir product information (SmPC); BNF interactions (ritonavir–ergometrine)"
+  },
+  {
+    a: ["sodium-valproate"],
+    b: ["zidovudine-lamivudine"],
+    severity: "moderate",
+    effect: "Valproate raises zidovudine (AZT) levels, increasing anaemia and neutropenia.",
+    action: "When valproate is STARTED in someone on AZT, check haemoglobin within a few weeks and when pale or unwell. Prefer an AZT-free regimen if anaemia develops (Ethiopia: substitute AZT with TDF or ABC).",
+    ref: "BNF interactions (valproate–zidovudine); zidovudine product information"
+  },
+  {
+    a: ["methadone"],
+    b: ["zidovudine-lamivudine"],
+    severity: "moderate",
+    effect: "Methadone raises zidovudine concentrations and the risk of zidovudine toxicity (anaemia, neutropenia) at standard doses.",
+    action: "When methadone is STARTED or the dose increased, check haemoglobin and white cells where possible. Methadone and lamivudine do not interact importantly. Never stop ART because of methadone.",
+    ref: "Kaplan 12th ed. 2022, ch. 21.7, pdf pp. 2172–2173",
+    refs: [
+      {
+        book: "kaplan",
+        text: "Methadone may increase zidovudine concentrations.",
+        ref: "Kaplan 12th ed. 2022, ch. 21.7, pdf p. 2172",
+        pdf_page: 2172,
+        quote: "methadone may increase zidovudine (Retrovir) concentrations"
+      },
+      {
+        book: "kaplan",
+        text: "This increases the possibility of zidovudine toxicity at standard doses.",
+        ref: "Kaplan 12th ed. 2022, ch. 21.7, pdf p. 2173",
+        pdf_page: 2173,
+        quote: "increases the possibility of zidovudine toxicity at otherwise standard dosages"
+      }
+    ]
+  },
+  {
+    a: ["cotrimoxazole"],
+    b: ["zidovudine-lamivudine"],
+    severity: "moderate",
+    effect: "Both can suppress the bone marrow: anaemia and neutropenia add up, especially with low CD4, low BMI or baseline anaemia.",
+    action: "Do not withhold either. When cotrimoxazole is STARTED in someone on AZT (or AZT in someone on cotrimoxazole), monitor blood counts; if marrow suppression occurs, replace AZT (Ethiopia) and consider cotrimoxazole as a cause.",
+    ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.10, p. 324",
+    refs: [
+      {
+        book: "ethhiv",
+        text: "AZT bone marrow suppression: monitor blood counts; replace AZT; consider cotrimoxazole.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, Table 12.10, p. 324",
+        pdf_page: 354,
+        quote: "Monitor blood counts regularly. Replace AZT if bone marrow suppression occurs"
+      }
+    ]
+  },
+
+  /* ---- advanced HIV disease and opportunistic infections (Ethiopia MoH 2025) ---- */
+  {
+    a: ["isoniazid"],
+    b: ["warfarin"],
+    severity: "major",
+    effect: "Two opposite effects, depending on the TPT regimen. Daily isoniazid (6H) inhibits the liver enzymes that clear warfarin, so the INR can rise (Harrison). In 3HP the weekly rifapentine is a rifamycin, which induces the same enzymes and lowers warfarin levels (Nelson), so the INR can fall and then climb again when the 12 weeks end. The net effect is unpredictable.",
+    action: "Prefer 6H over 3HP in a patient on warfarin, and avoid TPT altogether until the INR can be checked. When TPT is STARTED: check the INR within 1 week, then weekly for the first month, and adjust the warfarin dose in small steps. When TPT is STOPPED (especially after the last 3HP dose): check the INR weekly for 4 weeks, because the dose that suited the combination may now be wrong. Write the warning on both the TPT card and the warfarin card. No INR testing: do not combine; refer.",
+    ref: "Harrison 22nd ed. 2025, ch. 186, p. 1422 (isoniazid interactions); Nelson 22nd ed. 2024, ch. 260, p. 1830 (rifamycins lower warfarin)",
+    refs: [
+      {
+        book: "harrison",
+        text: "Isoniazid inhibits cytochrome P450; drugs with significant isoniazid interactions include warfarin, carbamazepine, benzodiazepines, acetaminophen and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+        pdf_page: 1465,
+        quote: "Among the drugs with significant isoniazid interactions are warfarin, carbamazepine"
+      },
+      {
+        book: "nelson",
+        text: "Rifamycins (rifampin, rifabutin, rifapentine) induce hepatic cytochrome P450 and lower the levels of corticosteroids, dapsone, fluconazole, phenytoin, oral contraceptives, warfarin and many antiretrovirals.",
+        ref: "Nelson 22nd ed. 2024, ch. 260 Principles of Antimycobacterial Therapy, p. 1830",
+        pdf_page: 1836,
+        quote: "warfarin, and many antiretroviral agents"
+      }
+    ]
+  },
+  {
+    a: ["isoniazid"],
+    b: ["carbamazepine"],
+    severity: "major",
+    effect: "Isoniazid inhibits carbamazepine metabolism: drowsiness, ataxia, double vision and vomiting can appear within days of starting TPT (Harrison). In 3HP the weekly rifapentine pushes the other way (rifamycins induce liver enzymes), so levels swing.",
+    action: "Prefer an antiepileptic without this interaction where possible. When TPT is STARTED: warn the patient and family about drowsiness and unsteadiness, review in 1–2 weeks, measure a carbamazepine level where available and reduce the dose if toxic. When TPT is STOPPED: watch for breakthrough seizures over the next 2 weeks and return to the old dose if it was reduced.",
+    ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+    refs: [
+      {
+        book: "harrison",
+        text: "Isoniazid inhibits cytochrome P450; drugs with significant isoniazid interactions include warfarin, carbamazepine, benzodiazepines, acetaminophen and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+        pdf_page: 1465,
+        quote: "Among the drugs with significant isoniazid interactions are warfarin, carbamazepine"
+      }
+    ]
+  },
+  {
+    a: ["isoniazid"],
+    b: ["phenytoin"],
+    severity: "moderate",
+    effect: "Isoniazid inhibits phenytoin metabolism, especially in slow acetylators: nystagmus, ataxia and drowsiness (Harrison). With 3HP the rifapentine induces phenytoin metabolism and can lower levels (Nelson), so seizure control may be lost instead.",
+    action: "When TPT is STARTED: look for phenytoin toxicity at 1 and 2 weeks and check a level where available; reduce the dose if toxic. With 3HP, also ask about breakthrough seizures. When TPT is STOPPED: review seizure control and toxicity again over 2 weeks.",
+    ref: "Harrison 22nd ed. 2025, ch. 186, p. 1422; Nelson 22nd ed. 2024, ch. 260, p. 1830",
+    refs: [
+      {
+        book: "harrison",
+        text: "Isoniazid inhibits cytochrome P450; drugs with significant isoniazid interactions include warfarin, carbamazepine, benzodiazepines, acetaminophen and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+        pdf_page: 1465,
+        quote: "clopidogrel, maraviroc, dronedarone, salmeterol, tamoxifen, eplerenone, and phenytoin"
+      },
+      {
+        book: "nelson",
+        text: "Rifamycins (rifampin, rifabutin, rifapentine) induce hepatic cytochrome P450 and lower the levels of corticosteroids, dapsone, fluconazole, phenytoin, oral contraceptives, warfarin and many antiretrovirals.",
+        ref: "Nelson 22nd ed. 2024, ch. 260 Principles of Antimycobacterial Therapy, p. 1830",
+        pdf_page: 1836,
+        quote: "dapsone, fluconazole, phenytoin, oral contraceptives"
+      }
+    ]
+  },
+  {
+    a: ["isoniazid"],
+    b: ["diazepam", "lorazepam", "midazolam", "chlordiazepoxide"],
+    severity: "moderate",
+    effect: "Isoniazid inhibits the metabolism of several benzodiazepines (Harrison): more sedation and slower recovery, especially with repeated diazepam or chlordiazepoxide doses (for example in alcohol withdrawal).",
+    action: "Use the lower end of benzodiazepine doses and check rousability and breathing before each repeat dose. When TPT is STARTED in someone on a regular benzodiazepine, warn about extra drowsiness. When TPT is STOPPED, the same dose may be less effective.",
+    ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+    refs: [
+      {
+        book: "harrison",
+        text: "Isoniazid inhibits cytochrome P450; drugs with significant isoniazid interactions include warfarin, carbamazepine, benzodiazepines, acetaminophen and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+        pdf_page: 1465,
+        quote: "inhibition of the cytochrome P450 system. Among the drugs with"
+      }
+    ]
+  },
+  {
+    a: ["isoniazid"],
+    b: ["paracetamol"],
+    severity: "moderate",
+    effect: "Isoniazid interacts with paracetamol (Harrison): both can injure the liver, and the combination makes liver injury more likely at lower paracetamol doses, especially with alcohol or malnutrition.",
+    action: "During TPT keep regular paracetamol to the lower adult maximum (3 g/day or less) and avoid long high-dose courses. Ask about nausea, vomiting, abdominal pain and yellow eyes at each visit; stop TPT and check liver tests if they appear. Treat a paracetamol overdose at a lower threshold.",
+    ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+    refs: [
+      {
+        book: "harrison",
+        text: "Isoniazid inhibits cytochrome P450; drugs with significant isoniazid interactions include warfarin, carbamazepine, benzodiazepines, acetaminophen and phenytoin.",
+        ref: "Harrison 22nd ed. 2025, ch. 186 Antimycobacterial Agents, p. 1422",
+        pdf_page: 1465,
+        quote: "acetaminophen, clopidogrel, maraviroc"
+      }
+    ]
+  },
+  {
+    a: ["isoniazid"],
+    b: ["fluconazole", "dapsone"],
+    severity: "moderate",
+    effect: "These two drugs meet in the advanced HIV package. In 3HP the weekly rifapentine induces liver enzymes and lowers fluconazole and dapsone levels (Nelson). This could weaken fluconazole pre-emptive therapy for a positive CrAg, or dapsone PCP prophylaxis. Isoniazid and fluconazole can both injure the liver.",
+    action: "In a patient on fluconazole for a positive CrAg or cryptococcal disease, or on dapsone prophylaxis, prefer 6H (isoniazid alone does not induce) or start 3HP after the high-dose fluconazole phase, following the national guideline. If 3HP is STARTED anyway, watch for headache or other signs of cryptococcal disease and do not stop fluconazole. Ask about jaundice and vomiting at each visit. When 3HP is STOPPED, levels recover over about 2 weeks.",
+    ref: "Nelson 22nd ed. 2024, ch. 260 Principles of Antimycobacterial Therapy, p. 1830",
+    refs: [
+      {
+        book: "nelson",
+        text: "Rifamycins (rifampin, rifabutin, rifapentine) induce hepatic cytochrome P450 and lower the levels of corticosteroids, dapsone, fluconazole, phenytoin, oral contraceptives, warfarin and many antiretrovirals.",
+        ref: "Nelson 22nd ed. 2024, ch. 260 Principles of Antimycobacterial Therapy, p. 1830",
+        pdf_page: 1836,
+        quote: "dapsone, fluconazole, phenytoin, oral contraceptives"
+      }
+    ]
+  },
+  {
+    a: ["isoniazid"],
+    b: ["dexamethasone", "hydrocortisone"],
+    severity: "moderate",
+    effect: "In 3HP the weekly rifapentine, a rifamycin, induces liver enzymes and lowers corticosteroid levels (Nelson). Isoniazid alone (6H) does not do this.",
+    action: "A patient who depends on a steroid (adrenal insufficiency, cerebral oedema, a long anti-inflammatory course) should have 6H rather than 3HP. If 3HP is STARTED, watch for loss of steroid effect after each weekly dose and discuss a higher steroid dose with a senior. When 3HP is STOPPED, return to the usual dose.",
+    ref: "Nelson 22nd ed. 2024, ch. 260 Principles of Antimycobacterial Therapy, p. 1830",
+    refs: [
+      {
+        book: "nelson",
+        text: "Rifamycins (rifampin, rifabutin, rifapentine) induce hepatic cytochrome P450 and lower the levels of corticosteroids, dapsone, fluconazole, phenytoin, oral contraceptives, warfarin and many antiretrovirals.",
+        ref: "Nelson 22nd ed. 2024, ch. 260 Principles of Antimycobacterial Therapy, p. 1830",
+        pdf_page: 1836,
+        quote: "corticosteroids such as prednisone and dexamethasone"
+      }
+    ]
+  },
+  {
+    a: ["flucytosine"],
+    b: ["liposomal-amphotericin-b", "amphotericin-b-deoxycholate"],
+    severity: "moderate",
+    effect: "This is the recommended cryptococcal induction, not a combination to avoid. But the toxicities add up: amphotericin injures the kidneys, flucytosine is cleared by the kidneys and then accumulates, and its bone marrow suppression and liver toxicity are intensified alongside amphotericin (Harrison).",
+    action: "Give the combination: flucytosine-containing regimens save more lives (Ethiopia). Monitor rather than withhold: creatinine, potassium, haemoglobin, white cells and platelets at baseline and at least twice weekly; liver tests weekly. Pre-hydrate before conventional amphotericin and replace potassium. When creatinine rises, review the flucytosine dose with a senior the same day. When amphotericin is STOPPED (after the single liposomal dose or the 7-day course), kidney function usually recovers; keep checking the count until flucytosine ends at day 14.",
+    ref: "Harrison 22nd ed. 2025, ch. 217, p. 1692 and ch. 221, p. 1705; Ethiopia MoH National HIV PCT manual 2025, p. 231",
+    refs: [
+      {
+        book: "harrison",
+        text: "Flucytosine causes bone marrow suppression and liver toxicity, intensified when used with amphotericin B.",
+        ref: "Harrison 22nd ed. 2025, ch. 217 Pathogenesis, Diagnosis, and Treatment of Fungal Infections, p. 1692",
+        pdf_page: 1735,
+        quote: "bone marrow suppression and liver toxicity, which are intensified when the drug is used with AmB"
+      },
+      {
+        book: "harrison",
+        text: "5-FC can cause bone marrow suppression and its dose should be adjusted for renal function.",
+        ref: "Harrison 22nd ed. 2025, ch. 221 Cryptococcosis, p. 1705",
+        pdf_page: 1748,
+        quote: "5-FC can cause bone marrow suppression, and the dose should be adjusted for renal function."
+      },
+      {
+        book: "ethhiv",
+        text: "Flucytosine-containing regimens are superior.",
+        ref: "Ethiopia MoH National HIV PCT manual 2025, 11.3.3, p. 231",
+        pdf_page: 261,
+        quote: "Note: Flucytosine-containing regimens are superior."
+      }
+    ]
+  },
+
+  /* ---- kala-azar and PKDL (WHO 2026) ---- */
+  {
+    a: ["miltefosine"],
+    b: ["paromomycin"],
+    severity: "moderate",
+    effect: "This is the WHO 2026 first-choice combination for VL without HIV in eastern Africa, not one to avoid. The caution is practical: miltefosine very commonly causes vomiting and diarrhoea, and the volume depletion that follows adds to the kidney risk of an aminoglycoside. Both drugs can raise creatinine and liver enzymes, and VL itself affects both organs.",
+    action: "Give both. Give miltefosine with food in two doses, watched, and replace fluid losses with ORS. Before and during the 14 days: urine dipstick for protein, creatinine where available, whispered-voice hearing test at baseline and weekly, liver tests where available. If paromomycin has to stop (hearing loss, kidney injury), do not continue miltefosine alone as if it were a regimen — switch the whole regimen with senior advice (liposomal amphotericin B is WHO's option when paromomycin is contraindicated). When the course stops, contraception still continues to 5 months.",
+    ref: "WHO VL & PKDL guideline 2026, rec. 4.1.1, p. 22; 5.1, pp. 43–44; Annex 3, p. 80",
+    refs: [
+      {
+        book: "whovl26",
+        text: "Paromomycin plus miltefosine is suggested rather than SSG plus paromomycin (conditional, low certainty).",
+        ref: "WHO VL & PKDL guideline 2026, Recommendation 4.1.1, p. 22",
+        pdf_page: 40,
+        quote: "Use of a combination of paromomycin plus miltefosinea is suggested rather than a combination"
+      },
+      {
+        book: "whovl26",
+        text: "Take miltefosine with food if tolerated and in divided doses; directly observed treatment improves adherence.",
+        ref: "WHO VL & PKDL guideline 2026, 5.1 Miltefosine, p. 43",
+        pdf_page: 61,
+        quote: "taking the medicine with food, if tolerated, and in divided doses"
+      },
+      {
+        book: "whovl26",
+        text: "Miltefosine: vomiting, diarrhoea and raised liver enzymes very common; anorexia, nausea, raised urea and creatinine common; abdominal pain, thrombocytopenia and Stevens–Johnson syndrome uncommon.",
+        ref: "WHO VL & PKDL guideline 2026, Annex 3, p. 80",
+        pdf_page: 98,
+        quote: "Increased activity of liver"
+      },
+      {
+        book: "whovl26",
+        text: "Paromomycin: headache, lethargy and mild injection-site pain very common; fever and reversible abnormal audiogram common; injection-site abscess, ototoxicity, conductive deafness and proteinuria uncommon.",
+        ref: "WHO VL & PKDL guideline 2026, Annex 3, p. 80",
+        pdf_page: 98,
+        quote: "Injection site swelling, abscess, ototoxicity, conductive deafness, proteinuria"
+      },
+      {
+        book: "whovl26",
+        text: "Mild injection-site pain is the commonest adverse event (55 %); reversible ototoxicity occurs in 2 %; renal toxicity is rare; raised liver enzymes and tetany occur.",
+        ref: "WHO VL & PKDL guideline 2026, 5.1 Paromomycin, p. 44",
+        pdf_page: 62,
+        quote: "Reversible ototoxicity occurs in 2% of patients."
+      },
+      {
+        book: "whovl26",
+        text: "Known cardiac, liver or kidney disease, liver enzymes about five times normal, or rising creatinine on SSG plus paromomycin are L-AMB groups, as is any other contraindication to miltefosine, paromomycin or SSG.",
+        ref: "WHO VL & PKDL guideline 2026, 4.1.3 Groups of interest, p. 26",
+        pdf_page: 44,
+        quote: "Patients with known cardiac, liver or kidney disease"
       }
     ]
   }

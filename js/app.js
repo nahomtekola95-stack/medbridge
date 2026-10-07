@@ -61,14 +61,14 @@
     const parts = path.split("/").filter(Boolean);
     return { view: parts[0] || "drugs", id: parts[1], q: Object.fromEntries(new URLSearchParams(qs || "")) };
   }
-  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null, PP = null, VX = null, TH = null, PR = null, PO = null;
+  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null, PP = null, VX = null, TH = null, PR = null, PO = null, EN = null;
   const routes = { drugs: viewDrugs, drug: viewDrug, calc: viewCalc, techniques: viewTechniques, local: viewLocal, setup: viewSetup, about: viewAbout,
     case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r),
     resus: (m, r) => FX.views.resus(m, r), drip: (m, r) => FX.views.drip(m, r), schedules: (m, r) => FX.views.schedules(m, r),
     compat: (m, r) => FX.views.compat(m, r), tools: (m, r) => FX.views.tools(m, r),
     newborn: (m, r) => EX.views.newborn(m, r), interactions: (m, r) => EX.views.interactions(m, r), charts: (m, r) => EX.views.charts(m, r),
     quiz: (m, r) => EX.views.quiz(m, r), review: (m, r) => RV.views.review(m, r),
-    pregnancy: (m, r) => OB.view(m, r), growth: (m, r) => GR.view(m, r), optics: (m, r) => OP.view(m, r), pph: (m, r) => PP.view(m, r), vaccines: (m, r) => VX.view(m, r), theatre: (m, r) => TH.view(m, r), procedures: (m, r) => PR.view(m, r), procedure: (m, r) => PR.view(m, r), preop: (m, r) => PO.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
+    pregnancy: (m, r) => OB.view(m, r), growth: (m, r) => GR.view(m, r), optics: (m, r) => OP.view(m, r), pph: (m, r) => PP.view(m, r), vaccines: (m, r) => VX.view(m, r), theatre: (m, r) => TH.view(m, r), procedures: (m, r) => PR.view(m, r), procedure: (m, r) => PR.view(m, r), preop: (m, r) => PO.view(m, r), endemic: (m, r) => EN.view(m, r), disease: (m, r) => EN.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
   /* Cases that cover the same condition from two sides link to each other, so a
      reader who lands on one finds the other. */
   const RELATED = {
@@ -77,7 +77,7 @@
     "uncomplicated-malaria": ["severe-malaria"], "severe-malaria": ["uncomplicated-malaria"],
     "intracerebral-haemorrhage": ["raised-icp"], "raised-icp": ["intracerebral-haemorrhage"]
   };
-  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", pph: "tools", vaccines: "tools", theatre: "tools", procedures: "tools", procedure: "tools", preop: "tools", handover: "ward" };
+  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", pph: "tools", vaccines: "tools", theatre: "tools", procedures: "tools", procedure: "tools", preop: "tools", endemic: "tools", disease: "tools", handover: "ward" };
   function render() {
     const r = parseHash();
     const main = $("#app");
@@ -157,6 +157,8 @@
         <div class="hero-chips"><a class="setting-chip" href="#/local">${ic("globe")}<span>Setting: ${esc(profLabel())}</span>${ic("right")}</a><div class="seg lang-seg hero-lang" id="hero-lang" role="group" aria-label="Language" data-no-i18n><button type="button" data-lang="en" class="${window.I18N?.lang === "am" ? "" : "active"}" lang="en">English</button><button type="button" data-lang="am" class="${window.I18N?.lang === "am" ? "active" : ""}" lang="am">አማርኛ</button></div></div>
         <div class="quick-label">Emergencies</div>
         <div class="quick" id="quick">${QUICK.map(([l, q]) => `<button type="button" data-q="${esc(q)}">${ic("zap")}${esc(l)}</button>`).join("")}</div>
+        ${(window.ENDEMIC || []).length ? `<div class="quick-label">Endemic diseases — pick the situation, get the regimen</div>
+        <div class="quick endemic-quick">${window.ENDEMIC.map(x => `<a href="#/disease/${x.id}">${ic(x.icon || "shield")}${esc(x.name)}</a>`).join("")}<a href="#/endemic">${ic("grid")}All endemic</a></div>` : ""}
       </section>
       ${FX.shortcutsHtml()}
       <div class="filterbar">
@@ -311,6 +313,7 @@
           ${EX.neonatalCard(d)}
           ${FX.patientDoseCard(d)}
           ${EX.doseActions(d)}
+          ${EN.linksFor("drug", d.id) ? `<div class="row sched-links">${EN.linksFor("drug", d.id)}</div>` : ""}
           ${regs.length ? `<div class="row sched-links">${regs.map(g => `<a class="btn ghost sm" href="#/schedules?regimen=${g.id}">${ic("clock")}Start schedule: ${esc(g.name.split(" — ")[0])}</a>`).join("")}</div>` : ""}
           <div class="glance">
             <div class="card"><h4>Key doses</h4><ul>${glanceDoses.map(i => `<li><strong>${esc(i.label)}:</strong> ${esc(i.text)}</li>`).join("")}</ul></div>
@@ -400,6 +403,7 @@
         <div class="row tags"><span class="chip primary">${esc(CASE_GROUPS[c.group])}</span><span class="chip warn">${ic("alert")}Draft — not clinically verified</span><span style="margin-left:auto" class="row">${FX.starButton("case:" + c.id)}<button type="button" class="btn ghost sm" id="print">${ic("print")}Print</button></span></div>
       </div>
       <div class="row case-tools">
+        ${EN.linksFor("case", c.id)}
         <button type="button" class="btn ghost sm" data-open-patient>${ic("user")}${FX.patient.weight ? `Doses for ${Calc.round(FX.patient.weight, 1)} kg` : "Set weight for doses"}</button>
         <a class="btn ghost sm" href="#/resus${FX.patient.weight ? "?w=" + FX.patient.weight : ""}">${ic("zap")}Emergency card</a>
         ${/^(pph|secondary-pph|pph-prevention|retained-placenta|uterine-inversion)$/.test(c.id) ? `<a class="btn ghost sm" href="#/pph">${ic("drop")}PPH first response</a>` : ""}
@@ -780,6 +784,7 @@
     TH = window.TheatreView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton, textbookHtml });
     PR = window.ProceduresView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton, textbookHtml });
     PO = window.PreopView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
+    EN = window.EndemicView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton, textbookHtml });
     FX.syncPatientChip(); FX.updateDueBadge(); FX.checkDue();
     $("#patient-chip")?.addEventListener("click", () => FX.openPatientDialog());
     const syncAccount = () => {

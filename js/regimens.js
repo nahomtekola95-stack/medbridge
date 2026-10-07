@@ -48,10 +48,10 @@ window.REGIMENS = [
     weightBased: true,
     doses: [{ at: 0, label: "Dose 1" }, { at: 12, label: "Dose 2" }, { at: 24, label: "Dose 3" }, { at: 48, label: "Daily" }, { at: 72, label: "Daily" }],
     dose: { perKg: 2.4, bands: [{ under: 20, perKg: 3 }], unit: "mg", conc: 10, concLabel: "10 mg/mL IV (20 mg/mL IM)" },
-    extendable: "Continue daily until the patient can swallow, then give a full 3-day ACT course",
+    extendable: "Continue daily until the patient can swallow (up to 7 days, Ethiopia), then give a full 3-day course of artemether–lumefantrine (dihydroartemisinin–piperaquine if AL cannot be taken), plus primaquine",
     checks: ["Glucose checked (hypoglycaemia is common)", "Level of consciousness and convulsions reviewed", "Able to take oral treatment yet? If so, switch to ACT"],
     ifFail: "Check haemoglobin at day 7 and 14 for delayed haemolysis.",
-    ref: "WHO Guidelines for malaria 2023; Nelson 22nd ed., p. 2136"
+    ref: "Ethiopia FMoH Malaria case management manual 2024, pdf pp. 112–113; WHO guidelines for malaria 2026, p. 216; Nelson 22nd ed., p. 2136"
   },
   {
     id: "quinine", drug: "quinine", case: "severe-malaria",
@@ -61,10 +61,10 @@ window.REGIMENS = [
     doses: [{ at: 0, label: "Loading", perKgOverride: 20, maxOverride: 1200, note: "in 10 mL/kg dextrose over 4 h" }],
     every: 8, from: 8, until: 56, repeatLabel: "Maintenance", repeatNote: "in 10 mL/kg dextrose over 4 h",
     dose: { perKg: 10, unit: "mg", max: 600, conc: 300, concLabel: "300 mg/mL — never as a bolus" },
-    extendable: "Switch to oral quinine or an ACT when able. After 48 h on IV, or with renal failure, reduce each maintenance dose by one-third to one-half",
+    extendable: "Give at least 48 h of parenteral quinine, then a full AL course when able (Ethiopia). After 48 h on IV, or with renal failure, reduce each maintenance dose by one-third to one-half",
     checks: ["Glucose checked in the last 4 h", "Drip running over 4 h, not faster", "Pulse regular"],
     ifFail: "Never give quinine as an IV bolus.",
-    ref: "WHO Guidelines for malaria 2023; Harrison 22nd ed., p. 1815"
+    ref: "Ethiopia FMoH Malaria case management manual 2024, pdf pp. 113–115; WHO guidelines for malaria 2026, p. 219; Harrison 22nd ed., p. 1815"
   },
   {
     id: "antenatal-dexamethasone", drug: "dexamethasone", case: "preterm-labour",

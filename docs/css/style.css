@@ -985,3 +985,41 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 .po-chip { min-height: 38px; padding: .35rem .75rem; border-radius: 999px; border: 1px solid var(--border-strong);
   background: var(--surface); color: var(--text); font: inherit; font-size: .88rem; cursor: pointer; }
 .po-chip.on { background: var(--primary); border-color: transparent; color: #fff; font-weight: 650; }
+
+/* ---------- endemic disease pathways (js/endemic.js) and grouped tools ---------- */
+.endemic-quick a { flex: 0 0 auto; min-height: 38px; border: 1px solid rgba(255,255,255,.22); background: rgba(255,255,255,.1); color: var(--hero-text); border-radius: 999px; padding: .3rem .9rem .3rem .7rem; font-size: .84rem; font-weight: 650; display: inline-flex; align-items: center; gap: .35rem; text-decoration: none; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: background .18s var(--ease), border-color .18s var(--ease), transform .18s var(--ease); }
+.endemic-quick a .icon { width: 15px; height: 15px; color: #86efac; }
+.endemic-quick a:hover { background: rgba(255,255,255,.2); border-color: rgba(255,255,255,.4); transform: translateY(-1px); }
+.tool-jump { display: flex; gap: .4rem; overflow-x: auto; scrollbar-width: none; margin: .2rem 0 .4rem; padding-bottom: .1rem; }
+.tool-jump::-webkit-scrollbar { display: none; }
+.tool-jump a { flex: 0 0 auto; min-height: 36px; display: inline-flex; align-items: center; padding: .25rem .8rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); font-size: .84rem; font-weight: 650; text-decoration: none; white-space: nowrap; }
+.tool-jump a:hover { color: var(--primary-ink); border-color: color-mix(in srgb, var(--primary) 45%, var(--border)); }
+.tool-sec { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: 1.4rem 0 .6rem; scroll-margin-top: 80px; }
+.also-grid { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); margin-bottom: 1rem; }
+.also-link { display: flex; flex-direction: column; gap: .2rem; margin: 0; padding: .8rem .95rem; text-decoration: none; color: var(--text); }
+.also-link:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--border)); }
+.en-weight { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1rem; position: sticky; top: 64px; z-index: 5; padding: .7rem 1rem; }
+.en-weight input { font-size: 1.15rem; font-weight: 700; min-height: 44px; }
+.en-picker { display: grid; gap: .8rem; margin-bottom: 1rem; }
+.en-group-name { font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 750; color: var(--muted); margin-bottom: .35rem; }
+.en-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.en-chip { min-height: 40px; display: inline-flex; align-items: center; padding: .35rem .85rem; border-radius: 12px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); font-size: .9rem; font-weight: 600; text-decoration: none; transition: border-color .15s var(--ease), background .15s var(--ease); }
+.en-chip:hover { border-color: var(--primary); }
+.en-chip.active { background: var(--primary); border-color: transparent; color: var(--on-primary, #fff); }
+.en-scen { scroll-margin-top: 140px; border-left: 4px solid var(--primary); }
+.en-scen-head { display: flex; justify-content: space-between; align-items: flex-start; gap: .8rem; flex-wrap: wrap; }
+.en-h { font-size: .95rem; margin: 1.1rem 0 .45rem; display: flex; align-items: center; gap: .35rem; }
+.en-give { margin: 0; padding-left: 1.3rem; display: grid; gap: .8rem; }
+.en-give li::marker { font-weight: 700; color: var(--primary-ink); }
+.en-give-name { font-weight: 700; font-size: 1rem; }
+.en-dose { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .5rem; margin: .45rem 0 .2rem; padding: .55rem .8rem; border-radius: 12px; background: var(--primary-soft); color: var(--primary-ink); }
+.en-dose b { font-size: 1.35rem; }
+.en-dose > span:first-of-type { font-weight: 650; }
+.en-bands, .en-src { margin-top: .35rem; }
+.en-bands summary, .en-src summary { cursor: pointer; color: var(--text-2); display: inline-flex; align-items: center; gap: .3rem; min-height: 32px; }
+.en-bands table { margin-top: .4rem; }
+.en-bands tr.en-cur td { background: var(--primary-soft); font-weight: 700; }
+@media (max-width: 640px) { .en-weight { top: 56px; } .en-chip { flex: 1 1 calc(50% - .4rem); justify-content: center; text-align: center; } }
+@media print { .en-weight, .en-picker, .tool-jump { display: none; } .en-bands { display: block; } }
+.en-perkg { font-weight: 750; }
+@media (max-width: 640px) { .en-weight { flex-wrap: nowrap; padding: .5rem .8rem; } .en-weight .row { flex-wrap: nowrap; } .en-weight .small { display: none; } .en-weight input { max-width: 6.5rem; } }

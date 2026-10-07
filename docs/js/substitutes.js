@@ -77,7 +77,7 @@ window.SUBSTITUTES = {
     { use: "Anaphylaxis or cardiac arrest", none: true, note: "No substitute. Adrenaline is essential — keep 1 mg/mL ampoules on every emergency tray." }
   ],
   "artesunate": [
-    { use: "Severe malaria", with: "quinine", note: "Loading dose then 8-hourly infusions over 4 h; check glucose every 4 h." }
+    { use: "Severe malaria", with: "quinine", note: "Third choice after IM artemether (Ethiopia; WHO), which has no entry in this app. Loading dose then 8-hourly infusions over 4 h; check glucose every 4 h." }
   ],
   "quinine": [
     { use: "Severe malaria", with: "artesunate", note: "Preferred by WHO for all ages — more effective and safer." }
@@ -191,7 +191,12 @@ window.SUBSTITUTES = {
   ],
   "arv-prophylaxis": [
     {use: "HIV post-exposure prophylaxis",none: true,note: "No non-antiretroviral substitute. If TLD is out, start whatever national-guideline components are available (e.g. TDF/3TC) now and complete the regimen within 24 h; borrow from the ART clinic."},
-    {use: "HIV-exposed newborn",none: true,note: "If nevirapine syrup is out, use nevirapine 50 mg dispersible tablets (50 mg in 5 mL water = 10 mg/mL) after pharmacist confirmation; contact the PMTCT focal person."}
+    {use: "HIV-exposed newborn",none: true,note: "If nevirapine syrup is out, use nevirapine 50 mg dispersible tablets (50 mg in 5 mL water = 10 mg/mL) after pharmacist confirmation; contact the PMTCT focal person."},
+    {
+    use: "HIV PrEP",
+    none: true,
+    note: "No non-antiretroviral substitute. TLD is not a PrEP regimen. If TDF/3TC is out, offer condoms and arrange the refill; WHO 2025 lists six-monthly injectable lenacapavir where a national programme supplies it."
+  }
   ],
   "tb-rhze": [
     {use: "Drug-susceptible TB",none: true,note: "No substitute regimen. If FDCs are out, use loose rifampicin, isoniazid, pyrazinamide and ethambutol at the same per-kg doses; never give one or two drugs alone."}
@@ -399,7 +404,7 @@ window.SUBSTITUTES = {
     {
       use: "VL without HIV, East Africa",
       with: "sodium-stibogluconate",
-      note: "20 mg Sb5+/kg/day IM with paromomycin 15 mg/kg/day for 17 days is the first line in HIV-negative patients anyway. Not a substitute in advanced HIV — cardiotoxic, pancreatotoxic and poorly effective there."
+      note: "SSG 20 mg/kg/day with paromomycin 15 mg/kg/day (sulfate) for 17 days is the WHO 2026 second choice for HIV-negative patients — usable unless the patient is in a group that needs L-AMB (pregnancy, breastfeeding, severe illness, relapse, heart, liver or kidney disease). Not a substitute in advanced HIV — cardiotoxic, pancreatotoxic and poorly effective there."
     },
     {
       use: "VL in pregnancy",
@@ -421,14 +426,14 @@ window.SUBSTITUTES = {
     {
       use: "VL without HIV, East Africa",
       with: "sodium-stibogluconate",
-      note: "With paromomycin for 17 days — the East African first line in HIV-negative patients."
+      note: "With paromomycin for 17 days — the WHO 2026 second choice for HIV-negative patients in eastern Africa, when paromomycin + miltefosine is excluded."
     }
   ],
   "sodium-stibogluconate": [
     {
-      use: "VL without HIV, East Africa (first line)",
+      use: "VL without HIV, eastern Africa (second choice since WHO 2026)",
       with: "liposomal-amphotericin-b",
-      note: "3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg. This is the WHO second line and the regimen for complicated cases, and the choice in pregnancy and in HIV coinfection."
+      note: "3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg. WHO 2026 suggests it for pregnancy, breastfeeding, severe illness, relapse, and heart, liver or kidney disease; it is also part of the HIV-coinfection regimen."
     },
     {
       use: "VL when an antimonial is contraindicated (pregnancy, heart disease, QT drugs)",
@@ -439,7 +444,12 @@ window.SUBSTITUTES = {
       use: "Rescue treatment of VL–HIV after L-AMB plus miltefosine",
       with: "paromomycin",
       note: "The guideline's rescue options are sodium stibogluconate alone OR sodium stibogluconate with paromomycin. Paromomycin with miltefosine has also been used for relapse in South-East Asia."
-    }
+    },
+    {
+    use: "VL without HIV, eastern Africa",
+    with: "paromomycin",
+    note: "Paromomycin 20 mg/kg/day (sulfate) with miltefosine for 14 days is now the WHO first choice; SSG is needed only when that combination is excluded."
+  }
   ],
   miltefosine: [
     {
@@ -450,13 +460,23 @@ window.SUBSTITUTES = {
     {
       use: "A woman of childbearing potential with no assured contraception",
       with: "liposomal-amphotericin-b",
-      note: "Not a stock-out but a contraindication. No pregnancy test or no contraception plan covering the course and 5 months afterwards means no miltefosine — use L-AMB monotherapy."
+      note: "Not a stock-out but a contraindication. No pregnancy test or no contraception plan covering the course and 5 months afterwards means no miltefosine — with HIV use L-AMB monotherapy; without HIV in eastern Africa use SSG + paromomycin (WHO 2026)."
     },
     {
       use: "Oral treatment of VL",
       none: true,
       note: "Miltefosine is the only oral antileishmanial there is. Every other option is an injection or an infusion. There is no oral substitute."
-    }
+    },
+    {
+    use: "VL without HIV, eastern Africa (with paromomycin)",
+    with: "sodium-stibogluconate",
+    note: "If miltefosine is out of stock or excluded: SSG 20 mg/kg/day with paromomycin 15 mg/kg/day (sulfate) for 17 days (WHO 2026 second choice)."
+  },
+    {
+    use: "PKDL, eastern Africa",
+    none: true,
+    note: "Both WHO 2026 PKDL regimens contain miltefosine. The older practice was SSG 20 mg/kg/day for up to 2 months or L-AMB 2.5 mg/kg/day for 20 days — national programme decision."
+  }
   ],
   paromomycin: [
     {
@@ -467,13 +487,18 @@ window.SUBSTITUTES = {
     {
       use: "VL without HIV, East Africa",
       with: "liposomal-amphotericin-b",
-      note: "3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg — the second-line and complicated-case regimen."
+      note: "3–5 mg/kg per daily dose over 6–10 days to a total of 30 mg/kg — the WHO 2026 regimen when the paromomycin-based combinations are excluded."
     },
     {
       use: "Rescue treatment of VL–HIV",
       with: "liposomal-amphotericin-b",
       note: "Extending therapy with a further cycle of L-AMB plus miltefosine is what WHO suggests first for a slow responder, before rescue drugs."
-    }
+    },
+    {
+    use: "VL without HIV, eastern Africa (with miltefosine)",
+    none: true,
+    note: "WHO 2026 gives no regimen for a paromomycin stock-out. Both its first and second choices contain paromomycin; what remains is L-AMB (rec. 4.1.3) or, from the older 2010 ranking, SSG alone for 30 days. Senior or national programme decision."
+  }
   ],
 
   /* ---- eye and vision ---- */
@@ -1651,31 +1676,31 @@ window.SUBSTITUTES = {
       note: "Atovaquone–proguanil once daily for 3 days by weight, with food; not under 5 kg, not in pregnancy, not with creatinine clearance under 30 mL/min. Expensive and rarely stocked."
     },
     {
-      use: "Uncomplicated falciparum malaria: second line, or first trimester where the national guideline prefers it",
+      use: "Uncomplicated falciparum malaria when no ACT at all can be given",
       with: "quinine",
-      note: "Oral quinine 10 mg salt/kg 8-hourly for 7 days with doxycycline, tetracycline or clindamycin (Harrison); clindamycin in pregnancy and under 8 years. Hypoglycaemia and cinchonism; adherence over 7 days is poor. Confirm the regimen with the national guideline."
+      note: "Oral quinine 10 mg salt/kg 8-hourly for 7 days with doxycycline, tetracycline or clindamycin (Harrison); clindamycin in pregnancy and under 8 years. Hypoglycaemia and cinchonism; adherence over 7 days is poor. Not in the Ethiopian protocol, and WHO 2026 no longer generally recommends 7-day quinine regimens."
     },
     {
       use: "P. vivax blood stage only (never falciparum or mixed)",
       with: "chloroquine",
-      note: "10, 10 and 5 mg base/kg over 3 days where the national guideline uses chloroquine for vivax; then primaquine radical cure."
+      note: "Chloroquine is the Ethiopian first-line drug for vivax: 25 mg base/kg over 3 days by the weight table, then 14-day primaquine. Never for falciparum or mixed infection."
     },
     {
-      use: "Another ACT",
-      none: true,
-      note: "WHO recommends six ACTs (Harrison), e.g. artesunate–amodiaquine and dihydroartemisinin–piperaquine. They are not in routine public supply in Ethiopia; use one only if the national guideline and your stock allow."
+      use: "Treatment failure within 28 days, or allergy to or intolerance of AL",
+      with: "dihydroartemisinin-piperaquine",
+      note: "The Ethiopian second-line ACT for falciparum and vivax: once daily for 3 days by weight, then primaquine. Confirm failure by microscopy first. In the first trimester WHO prefers AL. Prolongs QT."
     }
   ],
   primaquine: [
     {
-      use: "Relapse prevention when primaquine cannot be given (pregnancy, known G6PD deficiency, infant too young, breastfeeding an infant of unknown G6PD)",
+      use: "Relapse prevention when primaquine cannot be given (pregnancy, breastfeeding an infant under 6 months, known G6PD deficiency, infant under 6 months)",
       with: "chloroquine",
-      note: "Weekly chloroquine: 5 mg base/kg (adult 300 mg base) — in pregnancy until 1 month after delivery (Harrison), in G6PD deficiency for 1 year (Nelson). It suppresses relapses but does not cure the liver stage."
+      note: "Weekly chloroquine 300 mg base (2 tablets) — in pregnancy until after delivery and 6 months of breastfeeding (Ethiopia); in G6PD deficiency for 1 year (Nelson). It suppresses relapses but does not cure the liver stage."
     },
     {
       use: "Radical cure of vivax or ovale: primaquine out of stock",
       none: true,
-      note: "No equivalent drug in Ethiopian public supply (tafenoquine needs a quantitative G6PD test and is not in routine use). Give the full blood-stage treatment, record 'radical cure pending', report the stock-out, and recall the patient to start primaquine when it arrives. Treat any relapse promptly."
+      note: "No equivalent drug in Ethiopian public supply (WHO recommends tafenoquine only in South America, only after a quantitative or semi-quantitative G6PD test, and not with an ACT). Give the full blood-stage treatment, record 'radical cure pending', report the stock-out, and recall the patient to start primaquine when it arrives. Treat any relapse promptly."
     },
     {
       use: "Single low dose to block falciparum transmission: out of stock",
@@ -1687,7 +1712,7 @@ window.SUBSTITUTES = {
     {
       use: "P. vivax blood stage: chloroquine out of stock, or vivax not responding to chloroquine",
       with: "artemether-lumefantrine",
-      note: "An ACT treats vivax blood stages as well (Harrison; Nelson). Then primaquine radical cure."
+      note: "An ACT treats vivax blood stages as well (Harrison; Nelson; WHO), and the Ethiopian algorithm gives AL when chloroquine syrup is not available. Then primaquine radical cure."
     },
     {
       use: "Weekly relapse suppression in pregnancy or G6PD deficiency: chloroquine out of stock",
@@ -1699,9 +1724,9 @@ window.SUBSTITUTES = {
   /* ---- clindamycin, doxycycline, nystatin ---- */
   clindamycin: [
     {
-      use: "Uncomplicated falciparum malaria (first line, including pregnancy where the national guideline allows)",
+      use: "Uncomplicated falciparum malaria (first line in all trimesters in Ethiopia)",
       with: "artemether-lumefantrine",
-      note: "A full 6-dose course with fatty food. Quinine plus clindamycin is second line, or the first-trimester choice where the national guideline still prefers it (Gabbe)."
+      note: "A full 6-dose course with fatty food. Quinine plus clindamycin is not in the Ethiopian protocol (second line is dihydroartemisinin–piperaquine); Gabbe still prefers it in the first trimester."
     },
     {
       use: "Malaria partner with quinine, not pregnant and 8 years or over",
@@ -1824,6 +1849,125 @@ window.SUBSTITUTES = {
       use: "Gynaecomastia on spironolactone (ascites or heart failure)",
       none: true,
       note: "No substitute in this app. Amiloride 5–40 mg a day can replace it for ascites (Harrison), and eplerenone (same dose as spironolactone) for heart failure (BMJ), where stocked. Gynaecomastia is dose-related and reversible (BMJ): a lower dose may be enough."
+    }
+  ],
+
+  "dihydroartemisinin-piperaquine": [
+    {
+      use: "Second-line treatment (failure within 28 days, or allergy or intolerance to the first-line drug): DHA-PPQ out of stock",
+      none: true,
+      note: "The Ethiopian manual names no alternative second-line drug. WHO: use another ACT known to work in the region. Refer to a centre that holds DHA-PPQ; atovaquone–proguanil (see Atovaquone) can treat falciparum where it is stocked. WHO no longer generally recommends 7-day quinine or artesunate regimens with doxycycline or clindamycin because adherence is poor; use them only when no ACT is available."
+    },
+    {
+      use: "Follow-on after artesunate when artemether–lumefantrine cannot be taken: DHA-PPQ out of stock",
+      with: "quinine",
+      note: "WHO: when no ACT is available, finish with oral quinine plus clindamycin (pregnancy, under 8) or doxycycline for 7 days (see Clindamycin, Doxycycline). Poorly tolerated; check glucose."
+    },
+    {
+      use: "Patient with a heart rhythm problem, heart failure or an essential QT-prolonging drug",
+      with: "atovaquone",
+      note: "Atovaquone–proguanil does not prolong the QT; once daily for 3 days with fatty food. Expensive, rarely stocked, not part of the Ethiopian protocol, and not in pregnancy. Senior decision."
+    }
+  ],
+
+  dolutegravir: [
+    {
+      use: "First-line ART (adult) when DTG cannot be used",
+      none: true,
+      note: "Ethiopia alternative first line: TDF + 3TC + efavirenz (no efavirenz page in the app). Boosted PI (ATV/r) only in special circumstances when neither DTG nor EFV can be used."
+    },
+    {
+      use: "DTG toxicity (hepatotoxicity, hypersensitivity)",
+      with: "atazanavir-ritonavir",
+      note: "Ethiopia: substitute another class — EFV or a boosted PI — without stopping ART for grade 3."
+    },
+    {
+      use: "Child first line, pDTG out of stock or not tolerated",
+      with: "lopinavir-ritonavir",
+      note: "Ethiopia alternative first line for children: ABC + 3TC + LPV/r by weight band."
+    },
+    {
+      use: "TLD out of stock (adult)",
+      with: "abacavir-lamivudine",
+      note: "DTG 50 mg once daily + ABC/3TC 600/300 mg once daily (Ethiopia special circumstances), or AZT/3TC 300/150 mg twice daily + DTG 50 mg. Never leave the person without ART."
+    }
+  ],
+  "abacavir-lamivudine": [
+    {
+      use: "Paediatric NRTI backbone",
+      with: "zidovudine-lamivudine",
+      note: "Ethiopia alternative: AZT + 3TC + DTG by weight band (AZT/3TC 60/30 mg twice daily). Avoid AZT if haemoglobin is under 7 g/dL."
+    },
+    {
+      use: "Abacavir hypersensitivity",
+      with: "zidovudine-lamivudine",
+      note: "Ethiopia: substitute ABC with TDF (30 kg and over, as TLD) or AZT. Never rechallenge abacavir."
+    }
+  ],
+  "zidovudine-lamivudine": [
+    {
+      use: "AZT anaemia or neutropenia (child under 30 kg)",
+      with: "abacavir-lamivudine",
+      note: "Ethiopia: substitute AZT with TDF or ABC; ABC/3TC by weight band."
+    },
+    {
+      use: "AZT anaemia or neutropenia (30 kg and over)",
+      with: "dolutegravir",
+      note: "TLD if TDF is not contraindicated (eGFR 50 or more) and TDF has not failed; on second line ask an experienced clinician first."
+    }
+  ],
+  "atazanavir-ritonavir": [
+    {
+      use: "Second-line PI (adult)",
+      with: "lopinavir-ritonavir",
+      note: "Ethiopia: LPV/r 400/100 mg twice daily; switch for ATV jaundice that stops adherence, or for kidney stones."
+    },
+    {
+      use: "Boosted PI with rifampicin",
+      with: "dolutegravir",
+      note: "Ethiopia: adjust the PI dose or substitute with DTG (50 mg twice daily with rifampicin), if DTG has not failed."
+    }
+  ],
+  "lopinavir-ritonavir": [
+    {
+      use: "Second-line PI (adult)",
+      with: "atazanavir-ritonavir",
+      note: "Ethiopia: ATV/r 300/100 mg once daily; also the preferred choice for LPV/r diarrhoea or in pregnancy (WHO 2025)."
+    },
+    {
+      use: "Child on LPV/r with toxicity",
+      with: "dolutegravir",
+      note: "Ethiopia: substitute DTG (or EFV from 3 years) according to age; ATV can be used over 6 years."
+    }
+  ],
+
+  flucytosine: [
+    {
+      use: "Cryptococcal meningitis induction (no flucytosine in stock)",
+      with: "liposomal-amphotericin-b",
+      note: "Ethiopia: liposomal amphotericin B 3–4 mg/kg DAILY (not the single 10 mg/kg dose) + fluconazole 1200 mg daily (child 12 mg/kg, max 800 mg) for 2 weeks. Weaker than a flucytosine regimen: report the stock-out the same day."
+    },
+    {
+      use: "Cryptococcal meningitis induction (no flucytosine and no liposomal amphotericin)",
+      with: "amphotericin-b-deoxycholate",
+      note: "Ethiopia: amphotericin B deoxycholate 1 mg/kg daily + fluconazole 1200 mg daily (child 12 mg/kg, max 800 mg) for 2 weeks. Pre-hydrate, replace potassium, check creatinine twice weekly."
+    }
+  ],
+  isoniazid: [
+    {
+      use: "TB preventive therapy when rifapentine (3HP) is out of stock or not allowed",
+      none: true,
+      note: "No other drug is needed: switch the regimen to 6H (daily isoniazid for 6 months) — the Ethiopian alternative for every group, and the only choice with PI- or nevirapine-based ART, in pregnancy and breastfeeding, and under 2 years in children with HIV."
+    },
+    {
+      use: "Child TPT (HIV-negative household contact under 2 years; or 2–14 years when 3HP is not possible)",
+      with: "tb-rhze",
+      note: "3RH: daily rifampicin + isoniazid for 3 months using the child RH 75/50 dispersible tablet (isoniazid 10–15 mg/kg, rifampicin 10–20 mg/kg; Nelson). Ethiopia's preferred regimen under 2 years. Not with PI- or nevirapine-based ART. Never use RHZE (four drugs) for prevention. Dose from the national chart."
+    },
+    {
+      use: "Isoniazid itself out of stock",
+      none: true,
+      note: "No safe home-made substitute: do not use RHZE or loose rifampicin alone without a national-programme decision. Keep screening for TB symptoms, record that TPT is pending, report the stock-out the same day, and start as soon as stock returns. Missed time is not lost: a course can still be completed later."
     }
   ]
 };
