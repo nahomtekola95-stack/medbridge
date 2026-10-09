@@ -123,7 +123,8 @@
         <div class="resus-head"><div>
           <a class="linkbtn" href="#/endemic">${ic("left")}Endemic diseases</a>
           <h1 style="margin:.2rem 0 0">${ic(d.icon || "shield")} ${esc(d.name)}</h1>
-          <p class="text-2" style="margin:.3rem 0 0;max-width:70ch">${esc(d.summary || "")}</p>
+          <p class="text-2 en-summary" style="margin:.3rem 0 0;max-width:70ch">${esc(d.summary || "")}</p>
+          <button type="button" class="linkbtn en-more" id="en-more">More</button>
           <div class="row tags" style="margin-top:.4rem">${(d.basis || []).map(b => `<span class="chip primary">${ic("book")}${esc(b)}</span>`).join("")}
             <span class="chip warn">${ic("alert")}Draft — not clinically verified</span></div></div>
           <div class="row"><span id="en-share"></span><button type="button" class="btn ghost sm" id="en-print">${ic("print")}Print</button></div></div>
@@ -146,6 +147,7 @@
       const share = () => { const s = sid && scenarioById(d, sid); return `MedBridge — ${d.name}${s ? `: ${s.title}\n${s.who}\nGive: ${(s.give || []).map(g => `${g.label}${g.dose ? " — " + g.dose : ""}`).join("; ")}` : ""}${w ? `\nWeight ${fmtW(w)} kg` : ""}\nDraft reference — confirm with the national guideline.`; };
       $("#en-share").innerHTML = shareButton(share(), "Share");
       $("#en-print").onclick = () => window.print();
+      $("#en-more").onclick = (e) => { const p = main.querySelector(".en-summary"); const open = p.classList.toggle("open"); e.target.textContent = open ? "Less" : "More"; };
       const input = $("#en-w");
       input.oninput = () => {
         const v = parseFloat(input.value); w = v > 0 && v < 250 ? v : null;

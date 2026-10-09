@@ -527,6 +527,13 @@
     "Drugs in this pathway": "በዚህ መንገድ ያሉ መድኃኒቶች", "Full cases": "ሙሉ ጉዳዮች", "Other endemic conditions": "ሌሎች የተስፋፉ ሕመሞች",
     "First, look for danger.": "መጀመሪያ የአደጋ ምልክት ይፈልጉ።", "Tap the situation above to see what to give.": "ምን እንደሚሰጥ ለማየት ከላይ ያለውን ሁኔታ ይንኩ።",
     "Enter a weight to see the dose.": "መጠኑን ለማየት ክብደት ያስገቡ።",
+    /* ---- phone navigation: finder, start tiles, text size ---- */
+    "Find": "ፈልግ", "Saved and recent": "የተቀመጡና የቅርብ ጊዜ", "Text size": "የጽሑፍ መጠን", "Disease situations": "የበሽታ ሁኔታዎች",
+    "Clinical cases": "ክሊኒካዊ ጉዳዮች", "Interactions": "መስተጋብሮች", "More": "ተጨማሪ", "Less": "ያነሰ",
+    "Normal": "መደበኛ", "Large": "ትልቅ", "Extra large": "በጣም ትልቅ",
+    "Resus doses for one weight": "ለአንድ ክብደት የማነቃቂያ መጠኖች", "Drips, mg/kg, fluids": "ጠብታ፣ mg/kg፣ ፈሳሽ",
+    "Count the drops": "ጠብታዎችን ይቁጠሩ", "By weight and age": "በክብደትና በዕድሜ", "Malaria · HIV · kala-azar": "ወባ · ኤች አይ ቪ · ካላ-አዛር",
+    "Larger text for small phone screens. Also in the Find panel.": "ለትንሽ የስልክ ማያ ትልቅ ጽሑፍ። በፍለጋ ገጹም ይገኛል።",
     /* ---- catch-up vaccination ---- */
     "Catch-up vaccination": "የክትባት ማሟያ",
     "What to give a child who has missed doses, and when to bring them back.": "ክትባት ያመለጠውን ሕፃን ዛሬ ምን እንደሚሰጡና መቼ እንደሚመለስ።",

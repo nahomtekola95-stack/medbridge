@@ -63,7 +63,7 @@
 
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="#/drugs" aria-label="MedBridge home"><span class="mark"><svg class="icon"><use href="#i-pill"/></svg></span>MedBridge</a>
+      <a class="brand" href="#/drugs" aria-label="MedBridge home"><span class="mark"><svg class="icon"><use href="#i-pill"/></svg></span><span class="brand-text">MedBridge</span></a>
       <nav class="topnav" aria-label="Primary">
         <a href="#/drugs" data-nav="drugs"><svg class="icon"><use href="#i-pill"/></svg>Drugs</a>
         <a href="#/resus" data-nav="resus" class="nav-emerg"><svg class="icon"><use href="#i-zap"/></svg>Emergency</a>
@@ -75,6 +75,7 @@
         <a href="#/admin" data-nav="admin" id="nav-admin" hidden><svg class="icon"><use href="#i-shield"/></svg>Admin</a>
       </nav>
       <div class="tools">
+        <button type="button" class="theme find-btn" data-find aria-label="Find a drug, case or tool" title="Find (/)"><svg class="icon"><use href="#i-search"/></svg><span class="find-label">Find</span></button>
         <button type="button" class="patient-chip" id="patient-chip" aria-haspopup="dialog"></button>
         <span class="status" id="status"><span class="dot"></span><span id="status-text">Online</span></span>
         <a class="theme" id="acct" href="#/account"><svg class="icon"><use href="#i-user"/></svg><span id="acct-label">Sign in</span></a>
@@ -86,7 +87,8 @@
   <main class="layout">
     <div class="notice" id="banner" role="status">
       <svg class="icon"><use href="#i-alert"/></svg>
-      <span><strong>Draft build.</strong> Content is not yet clinically verified. For trained health workers only — always confirm against your national guidelines and formulary.</span>
+      <span class="notice-long"><strong>Draft build.</strong> Content is not yet clinically verified. For trained health workers only — always confirm against your national guidelines and formulary.</span>
+      <span class="notice-short"><strong>Draft</strong> — not clinically verified. Confirm with your national guideline. <a href="#/about">About</a></span>
       <button id="banner-close" aria-label="Dismiss notice"><svg class="icon"><use href="#i-x"/></svg></button>
     </div>
     <div id="app"></div>
@@ -137,6 +139,7 @@
   <script src="js/preop.js"></script>
   <script src="js/endemic-data.js"></script>
   <script src="js/endemic.js"></script>
+  <script src="js/mobile.js"></script>
   <script src="js/app.js"></script>
   <div id="toast" class="toast" hidden></div>
   <dialog id="patient-dialog" class="dialog" aria-label="Patient weight"></dialog>

@@ -1023,3 +1023,188 @@ html[lang="am"] .hero h1 { line-height: 1.25; }
 @media print { .en-weight, .en-picker, .tool-jump { display: none; } .en-bands { display: block; } }
 .en-perkg { font-weight: 750; }
 @media (max-width: 640px) { .en-weight { flex-wrap: nowrap; padding: .5rem .8rem; } .en-weight .row { flex-wrap: nowrap; } .en-weight .small { display: none; } .en-weight input { max-width: 6.5rem; } }
+
+/* =====================================================================
+   Phone usability (js/mobile.js): finder, start tiles, jump bar, compact
+   lists, text size. Placed last so it wins over the component rules above.
+   ===================================================================== */
+html[data-textsize="large"] { font-size: 112.5%; }
+html[data-textsize="xlarge"] { font-size: 125%; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* top bar: a Find button on every page */
+.find-btn { display: inline-flex; align-items: center; gap: .35rem; }
+.notice-short { display: none; }
+
+/* start tiles under the hero */
+.start-grid { display: grid; gap: .6rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 0 1.1rem; }
+@media (min-width: 640px) { .start-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .start-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.start-grid a { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto; column-gap: .6rem; align-items: center; min-height: 72px; padding: .7rem .8rem; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-1); color: var(--text); text-decoration: none; transition: border-color .15s var(--ease), transform .15s var(--ease); }
+.start-grid a:active { transform: scale(.98); }
+.start-grid a:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--border)); }
+.start-grid .icon { grid-row: span 2; width: 38px; height: 38px; padding: 8px; border-radius: 11px; background: var(--primary-soft); color: var(--primary-ink); }
+.start-grid b { font-size: .95rem; line-height: 1.2; }
+.start-grid span { font-size: .76rem; color: var(--muted); line-height: 1.3; }
+.start-grid .st-emerg .icon { background: var(--red-soft); color: var(--red); }
+.start-grid .st-emerg b { color: var(--red); }
+
+/* the finder */
+html.qf-open, html.qf-open body { overflow: hidden; }
+.qf { position: fixed; inset: 0; z-index: 100; background: rgba(4, 12, 16, .55); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); display: flex; justify-content: center; align-items: flex-start; }
+.qf[hidden] { display: none; }
+.qf-panel { width: 100%; max-width: 640px; margin-top: 8vh; max-height: 80vh; display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow-3); overflow: hidden; }
+.qf-bar { display: flex; align-items: center; gap: .5rem; padding: .6rem .7rem .6rem 1rem; border-bottom: 1px solid var(--border); background: var(--surface); }
+.qf-bar > .icon { color: var(--muted); flex: 0 0 auto; }
+.qf-bar input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--text); font: inherit; font-size: 1.1rem; min-height: 48px; outline: none; }
+.qf-close { flex: 0 0 auto; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 12px; background: var(--surface-3); color: var(--text); }
+.qf-body { flex: 1; overflow-y: auto; padding: .4rem .6rem 1rem; overscroll-behavior: contain; }
+.qf-group { display: flex; align-items: center; gap: .35rem; font-size: .7rem; font-weight: 750; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); margin: .9rem .4rem .35rem; }
+.qf-group .icon { width: 14px; height: 14px; }
+.qf-row { display: flex; align-items: center; gap: .7rem; min-height: 58px; padding: .5rem .55rem; border-radius: 12px; color: var(--text); text-decoration: none; }
+.qf-row:hover, .qf-row:focus-visible { background: var(--surface-2); }
+.qf-row:active { background: var(--surface-3); }
+.qf-row > .icon { color: var(--muted); flex: 0 0 auto; }
+.qf-ic { flex: 0 0 auto; width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; background: var(--primary-soft); color: var(--primary-ink); }
+.qf-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .1rem; }
+.qf-text b { font-size: .98rem; line-height: 1.25; }
+.qf-text span { font-size: .8rem; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.qf-quick { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin: .6rem .2rem .3rem; }
+.qf-quick a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .3rem; min-height: 76px; padding: .5rem; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); color: var(--text); text-decoration: none; font-size: .8rem; font-weight: 650; text-align: center; line-height: 1.2; }
+.qf-quick a .icon { width: 22px; height: 22px; color: var(--primary-ink); }
+.qf-hint { margin: 1rem .5rem 0; }
+.qf-foot { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding: .5rem .8rem calc(.5rem + env(safe-area-inset-bottom)); border-top: 1px solid var(--border); background: var(--surface); }
+.qf-size button { min-width: 48px; font-weight: 800; }
+
+/* jump bar for long pages */
+.jumpbar { position: sticky; top: 64px; z-index: 9; display: flex; gap: .35rem; overflow-x: auto; scrollbar-width: none; margin: 0 -.2rem .9rem; padding: .45rem .2rem; background: var(--glass); -webkit-backdrop-filter: saturate(1.5) blur(14px); backdrop-filter: saturate(1.5) blur(14px); border-bottom: 1px solid var(--border); }
+.jumpbar::-webkit-scrollbar { display: none; }
+.jumpbar a { flex: 0 0 auto; min-height: 38px; display: inline-flex; align-items: center; padding: .25rem .85rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--text-2); font-size: .85rem; font-weight: 650; text-decoration: none; white-space: nowrap; }
+.jumpbar a.active { background: var(--primary); border-color: transparent; color: var(--on-primary, #fff); }
+[data-sec] { scroll-margin-top: 124px; }
+
+/* folded sections (textbooks, sources) */
+details.fold { margin: 1.2rem 0 1rem; }
+details.fold > summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: .6rem; min-height: 48px; padding: .3rem .9rem; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); }
+details.fold > summary::-webkit-details-marker { display: none; }
+details.fold > summary h2 { margin: 0; font-size: 1.05rem; }
+details.fold > summary::after { content: "Show"; font-size: .8rem; font-weight: 700; color: var(--primary-ink); }
+details.fold[open] > summary::after { content: "Hide"; }
+details.fold[open] > summary { margin-bottom: .8rem; }
+
+/* back to top */
+.to-top { position: fixed; right: 14px; bottom: calc(96px + env(safe-area-inset-bottom)); z-index: 25; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--text); box-shadow: var(--shadow-2); display: grid; place-items: center; }
+.to-top[hidden] { display: none; }
+.to-top .icon { transform: rotate(90deg); }
+@media (min-width: 760px) { .to-top { bottom: 24px; } }
+
+@media (max-width: 759px) {
+  /* finder fills the phone screen */
+  .qf { align-items: stretch; background: var(--bg); }
+  .qf-panel { margin: 0; max-height: none; height: 100%; max-width: none; border: 0; border-radius: 0; }
+  .qf-bar { padding-top: calc(.6rem + env(safe-area-inset-top)); }
+  .find-label { display: none; }
+  #acct { display: none; }            /* Account is in the bottom bar */
+
+  /* draft notice: one short line */
+  .notice { padding: .45rem .7rem; font-size: .8rem; align-items: center; margin-bottom: .7rem; border-radius: 12px; }
+  .notice-long { display: none; }
+  .notice-short { display: inline; }
+  .notice-short a { color: inherit; font-weight: 700; }
+
+  /* home: the search and the tiles first, not a photo */
+  .hero.has-media { padding-top: 1.1rem; }
+  .hero .hero-media, .hero .hero-stats, .hero > p, .hero-eyebrow { display: none; }
+  .hero { padding: 1rem 1rem .9rem; border-radius: 20px; margin-bottom: .8rem; }
+  .hero h1 { font-size: 1.45rem; max-width: none; margin-bottom: .7rem; }
+  .hero .searchbar input { font-size: 1.05rem; }
+  .hero .quick-label { margin: .8rem 0 .4rem; }
+
+  /* lists: compact rows, about four times more on one screen */
+  .drug-list { gap: .4rem; }
+  .drug-item { padding: .55rem .75rem .55rem .85rem; min-height: 60px; column-gap: .65rem; row-gap: .1rem; border-radius: 14px; box-shadow: none; align-items: center; }
+  .drug-item .mono { width: 34px; height: 34px; font-size: .82rem; border-radius: 10px; grid-row: span 2; align-self: center; }
+  .drug-item .name { font-size: .98rem; }
+  .drug-item .meta { flex-wrap: nowrap; font-size: .76rem; }
+  .drug-item .meta > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+  .drug-item .count { flex: 0 0 auto; }
+  .drug-item.case-item .case-sum { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .82rem; }
+  .group-head { margin-top: .6rem; }
+
+  /* drug and case pages: the clinical content sooner */
+  .head h1 { font-size: 1.55rem; }
+  .head .tags .chip.ward { display: none; }
+  .case-tools { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-left: -.2rem; margin-right: -1rem; padding: .1rem 1rem .3rem .2rem; -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
+  .case-tools::-webkit-scrollbar { display: none; }
+  .case-tools > * { flex: 0 0 auto; }
+  .case-summary { font-size: .95rem !important; }
+  .tabs { position: static; flex-wrap: wrap; overflow: visible; }
+  .tab { flex: 1 1 auto; text-align: center; padding: .45rem .7rem; }
+  .jumpbar { top: 62px; margin-left: -1rem; margin-right: -1rem; padding-left: 1rem; padding-right: 1rem; }
+
+  /* comfortable tap targets everywhere */
+  .btn.sm { min-height: 42px; }
+  .chip { min-height: 26px; }
+}
+@media print { .jumpbar, .to-top, .qf, .start-grid, .find-btn { display: none !important; } details.fold > summary::after { content: ""; } }
+@media (max-width: 759px) {
+  .hero-chips { flex-wrap: nowrap; }
+  .hero-chips .setting-chip { flex: 1 1 auto; min-width: 0; }
+  .hero-chips .setting-chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+  .hero-chips .hero-lang { flex: 0 0 auto; }
+}
+.group-head.foldable { cursor: pointer; min-height: 52px; padding: .4rem .8rem; margin-top: .45rem; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); }
+.group-head.foldable > .icon { margin-left: auto; color: var(--muted); transition: transform .18s var(--ease); }
+.group-head.foldable.open > .icon { transform: rotate(90deg); }
+.group-head.foldable.open { background: var(--surface-2); }
+.drug-list > li[hidden] { display: none; }
+.group-head.foldable::after { display: none; }
+@media (max-width: 759px) {
+  /* drug page: what to give comes straight after the name */
+  .drug-main { display: flex; flex-direction: column; }
+  .drug-main > * { order: 4; }
+  .drug-main > .back, .drug-main > .head { order: 0; }
+  .drug-main > .pdose:not(.empty-pdose) { order: 1; }   /* a weight is set: the patient's dose first */
+  .drug-main > .glance { order: 2; }
+  .drug-main > .empty-pdose { order: 3; }
+  .drug-main > .tabs, .drug-main > #tabpane { order: 5; }
+  .head .tags { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); padding-right: 1.5rem; }
+  .head .tags::-webkit-scrollbar { display: none; }
+  .head .tags > * { flex: 0 0 auto; }
+  .head .tags > span[style*="margin-left:auto"] { margin-left: 0 !important; }
+  .empty-pdose { padding: .7rem .9rem; }
+  .empty-pdose p, .empty-pdose .small { display: none; }
+  .sched-links { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .sched-links > * { flex: 0 0 auto; }
+  .glance { margin-bottom: .6rem; }
+}
+/* the top bar keeps its size whatever the text size, so it never pushes past the screen */
+@media (max-width: 759px) {
+  .topbar-inner { font-size: 16px; gap: .4rem; }
+  .topbar .tools { gap: .35rem; }
+  html[data-textsize="large"] .brand-text, html[data-textsize="xlarge"] .brand-text { display: none; }
+  html[data-textsize="large"] .patient-chip:not(.on) span, html[data-textsize="xlarge"] .patient-chip:not(.on) span { display: none; }
+  .patient-chip, .theme { font-size: 14px; }
+  /* page headers with buttons: stack the buttons under the title */
+  .resus-head { flex-wrap: wrap; }
+  .resus-head > div:first-child { flex: 1 1 100%; min-width: 0; }
+  .resus-head > .row { flex: 1 1 100%; }
+}
+@media (max-width: 360px) { .brand-text { display: none; } }
+.en-more { display: none; }
+@media (max-width: 759px) {
+  .en-summary:not(.open) { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .en-more { display: inline-flex; min-height: 36px; padding: 0; font-weight: 700; color: var(--primary-ink); background: none; border: 0; }
+}
+@media (max-width: 759px) {
+  .tools-grid { gap: .5rem; }
+  .card.tool { padding: .7rem .85rem; gap: .75rem; align-items: center; box-shadow: none; margin-bottom: 0; }
+  .card.tool .tool-ic { width: 40px; height: 40px; border-radius: 12px; }
+  .card.tool .tool-ic .icon { width: 20px; height: 20px; }
+  .card.tool h3 { font-size: 1rem; }
+  .card.tool p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .8rem !important; }
+  .tool-sec { margin: 1rem 0 .45rem; }
+  .resus-head .tags { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+  .resus-head .tags::-webkit-scrollbar { display: none; }
+  .resus-head .tags > * { flex: 0 0 auto; }
+}

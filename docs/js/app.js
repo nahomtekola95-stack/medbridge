@@ -61,7 +61,7 @@
     const parts = path.split("/").filter(Boolean);
     return { view: parts[0] || "drugs", id: parts[1], q: Object.fromEntries(new URLSearchParams(qs || "")) };
   }
-  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null, PP = null, VX = null, TH = null, PR = null, PO = null, EN = null;
+  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null, PP = null, VX = null, TH = null, PR = null, PO = null, EN = null, MB = null;
   const routes = { drugs: viewDrugs, drug: viewDrug, calc: viewCalc, techniques: viewTechniques, local: viewLocal, setup: viewSetup, about: viewAbout,
     case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r),
     resus: (m, r) => FX.views.resus(m, r), drip: (m, r) => FX.views.drip(m, r), schedules: (m, r) => FX.views.schedules(m, r),
@@ -84,6 +84,7 @@
     main.innerHTML = ""; main.onclick = null; main.oninput = null;
     (routes[r.view] || viewDrugs)(main, r);
     main.classList.remove("enter"); void main.offsetWidth; main.classList.add("enter");
+    MB?.afterRender(main, r);
     window.I18N?.afterRender(r.view);
     document.querySelectorAll("[data-nav]").forEach(a => a.classList.toggle("active", a.dataset.nav === (NAV_OF[r.view] || r.view)));
     window.scrollTo(0, 0);
@@ -157,9 +158,17 @@
         <div class="hero-chips"><a class="setting-chip" href="#/local">${ic("globe")}<span>Setting: ${esc(profLabel())}</span>${ic("right")}</a><div class="seg lang-seg hero-lang" id="hero-lang" role="group" aria-label="Language" data-no-i18n><button type="button" data-lang="en" class="${window.I18N?.lang === "am" ? "" : "active"}" lang="en">English</button><button type="button" data-lang="am" class="${window.I18N?.lang === "am" ? "active" : ""}" lang="am">አማርኛ</button></div></div>
         <div class="quick-label">Emergencies</div>
         <div class="quick" id="quick">${QUICK.map(([l, q]) => `<button type="button" data-q="${esc(q)}">${ic("zap")}${esc(l)}</button>`).join("")}</div>
-        ${(window.ENDEMIC || []).length ? `<div class="quick-label">Endemic diseases — pick the situation, get the regimen</div>
+        ${(window.ENDEMIC || []).length ? `<div class="quick-label">Endemic diseases</div>
         <div class="quick endemic-quick">${window.ENDEMIC.map(x => `<a href="#/disease/${x.id}">${ic(x.icon || "shield")}${esc(x.name)}</a>`).join("")}<a href="#/endemic">${ic("grid")}All endemic</a></div>` : ""}
       </section>
+      <nav class="start-grid" aria-label="Start here">
+        <a href="#/resus" class="st-emerg">${ic("zap")}<b>Emergency card</b><span>Resus doses for one weight</span></a>
+        <a href="#/endemic">${ic("globe")}<b>Endemic diseases</b><span>Malaria · HIV · kala-azar</span></a>
+        <a href="#/drugs?mode=case">${ic("clipboard")}<b>Clinical cases</b><span>What to do, in order</span></a>
+        <a href="#/calc">${ic("calc")}<b>Calculators</b><span>Drips, mg/kg, fluids</span></a>
+        <a href="#/drip">${ic("drop")}<b>Drip guide</b><span>Count the drops</span></a>
+        <a href="#/newborn">${ic("baby")}<b>Newborn doses</b><span>By weight and age</span></a>
+      </nav>
       ${FX.shortcutsHtml()}
       <div class="filterbar">
         <div class="seg" id="mode" role="group" aria-label="Group drugs by">
@@ -226,7 +235,15 @@
       else {
         const groups = CAT_ORDER.filter(c => CATEGORIES[c]).concat(Object.keys(CATEGORIES).filter(c => !CAT_ORDER.includes(c)))
           .map(c => [c, items.filter(d => d.cat === c)]).filter(([, arr]) => arr.length);
-        html = groups.map(([c, arr]) => head(c, CATEGORIES[c], arr.length, catStyle(c)) + arr.map(card).join("")).join("");
+        /* on a phone the classes start folded: a screen of class names, tap one to open it */
+        const fold = matchMedia("(max-width: 759px)").matches;
+        listState.open ||= new Set();
+        html = groups.map(([c, arr]) => {
+          const shut = fold && !listState.open.has(c);
+          const h = head(c, CATEGORIES[c], arr.length, catStyle(c));
+          return (fold ? h.replace('<li class="group-head"', `<li class="group-head foldable${shut ? "" : " open"}" data-fold="${c}" role="button" tabindex="0" aria-expanded="${!shut}"`).replace("</b></li>", `</b>${ic("right")}</li>`) : h)
+            + arr.map(d => card(d).replace("<li>", `<li data-g="${c}"${shut ? " hidden" : ""}>`)).join("");
+        }).join("");
       }
       list.innerHTML = html;
       const bar = $("#azbar");
@@ -236,6 +253,14 @@
       $("#also-cases").innerHTML = cs.length ? `<div class="also"><span class="small muted">${ic("clipboard")} Matching cases</span>${cs.map(c => `<a class="sc-chip" href="#/case/${c.id}">${esc(c.name)}</a>`).join("")}</div>` : "";
     };
     q.addEventListener("input", () => { listState.q = q.value; draw(); });
+    const toggleFold = (h) => {
+      const c = h.dataset.fold, open = !listState.open.has(c);
+      open ? listState.open.add(c) : listState.open.delete(c);
+      h.classList.toggle("open", open); h.setAttribute("aria-expanded", open);
+      list.querySelectorAll(`li[data-g="${c}"]`).forEach(li => { li.hidden = !open; });
+    };
+    list.addEventListener("click", e => { const h = e.target.closest("[data-fold]"); if (h) toggleFold(h); });
+    list.addEventListener("keydown", e => { const h = e.target.closest("[data-fold]"); if (h && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); toggleFold(h); } });
     $("#sort").addEventListener("click", e => {
       const b = e.target.closest("[data-sort]"); if (!b) return;
       listState.sort = b.dataset.sort; store.set("sort", listState.sort);
@@ -303,7 +328,7 @@
           <input id="idx-q" type="search" placeholder="Filter…" aria-label="Filter drug index">
           <div id="idx-list">${sortedDrugs().map(x => `<a href="#/drug/${x.id}" class="${x.id === d.id ? "active" : ""}">${esc(x.name)}</a>`).join("")}</div>
         </aside>
-        <div>
+        <div class="drug-main">
           <a class="back" href="#/drugs">${ic("left")}All drugs</a>
           <div class="head">
             <h1>${esc(d.name)}</h1>
@@ -416,12 +441,12 @@
         ${regs.map(g => `<a class="btn ghost sm" href="#/schedules?regimen=${g.id}">${ic("clock")}Schedule: ${esc(g.name.split(" — ")[0])}</a>`).join("")}
         ${EX.shareButton(`MedBridge: ${c.name}\n${c.steps?.length ? "Steps: " + c.steps.slice(0, 4).map((x, i) => `${i + 1}. ${x}`).join(" ") + "\n" : ""}First line: ${c.drugs.filter(x => x.role === "first").map(x => `${(DRUG_DB.find(y => y.id === x.id)?.name || x.id).split(" (")[0]}${x.note ? " (" + x.note + ")" : ""}`).join("; ")}${FX.patient.weight ? `\nWeight ${Calc.round(FX.patient.weight, 1)} kg` : ""}\nDraft reference. Confirm against the national protocol.`)}
       </div>
-      <p class="text-2" style="max-width:70ch;font-size:1.02rem">${esc(c.summary)}</p>
+      <p class="text-2 case-summary" style="max-width:70ch;font-size:1.02rem">${esc(c.summary)}</p>
       <div class="glance">
-        ${c.redflags?.length ? `<div class="card antidote"><h4>${ic("alert")} Red flags</h4><ul>${c.redflags.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
-        ${c.steps?.length ? `<div class="card"><h4>What to do, in order</h4><ol style="padding-left:1.1rem;margin:0;font-size:.93rem">${c.steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol></div>` : ""}
+        ${c.redflags?.length ? `<div class="card antidote" data-sec="Red flags"><h4>${ic("alert")} Red flags</h4><ul>${c.redflags.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
+        ${c.steps?.length ? `<div class="card" data-sec="What to do"><h4>What to do, in order</h4><ol style="padding-left:1.1rem;margin:0;font-size:.93rem">${c.steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol></div>` : ""}
       </div>
-      <h2>Drugs for this case</h2>
+      <h2 data-sec="Drugs">Drugs for this case</h2>
       ${grouped.map(([role, arr]) => `
         <div class="role-block ${ROLES[role].cls}">
           <h4>${ROLES[role].label} <span class="muted">— ${esc(ROLES[role].note)}</span></h4>
@@ -435,9 +460,9 @@
             </a></li>`;
           }).join("")}</ul>
         </div>`).join("")}
-      ${c.textbook?.length ? `<h2>What the textbooks say</h2>${textbookHtml(c.textbook, "case")}` : ""}
-      <div class="card"><h4 style="margin-top:0">Sources</h4><ul class="small">${(c.sources || []).map(x => `<li>${esc(x.name)}</li>`).join("")}</ul>
-      <p class="small muted">Draft. This bundle lists which drugs are used and why; each drug page carries the doses, the no-pump methods and its own sources. Verify against your national protocol before use.</p></div>`;
+      ${c.textbook?.length ? `<details class="fold" data-sec="Textbooks"><summary><h2>What the textbooks say <span class="muted">(${c.textbook.length})</span></h2></summary>${textbookHtml(c.textbook, "case")}</details>` : ""}
+      <details class="fold" data-sec="Sources"><summary><h2>Sources <span class="muted">(${(c.sources || []).length})</span></h2></summary><div class="card"><ul class="small">${(c.sources || []).map(x => `<li>${esc(x.name)}</li>`).join("")}</ul>
+      <p class="small muted">Draft. This bundle lists which drugs are used and why; each drug page carries the doses, the no-pump methods and its own sources. Verify against your national protocol before use.</p></div></details>`;
     $("#print").addEventListener("click", () => window.print());
     FX.bindStars(main);
   }
@@ -713,7 +738,10 @@
           <button type="button" data-theme="" class="${theme.get() ? "" : "active"}">${ic("monitor")}Follow system</button>
           <button type="button" data-theme="light" class="${theme.get() === "light" ? "active" : ""}">${ic("sun")}Light</button>
           <button type="button" data-theme="dark" class="${theme.get() === "dark" ? "active" : ""}">${ic("moon")}Dark</button>
-        </div></div>
+        </div>
+        <h4 style="margin:1rem 0 .4rem">Text size</h4>
+        <p class="small muted" style="margin:-.2rem 0 .5rem">Larger text for small phone screens. Also in the Find panel.</p>
+        <div class="seg" id="seg-textsize" role="group" aria-label="Text size">${Object.entries(MB.SIZES).map(([k, v]) => `<button type="button" data-textsize="${k}" class="${MB.textSize() === k ? "active" : ""}">${esc(v)}</button>`).join("")}</div></div>
       <div class="card"><h4 style="margin-top:0">Language</h4>
         <p class="small muted" style="margin-top:-.2rem">Interface language. Doses and clinical content always stay in English.</p>
         <label class="toggle" style="margin-top:.6rem"><span>${ic("calendar")} Show Ethiopian calendar dates<br><span class="small muted">On schedules, charts, sign-offs and printouts, next to the international date.</span></span><span class="switch"><input type="checkbox" id="ethcal" ${window.EthCal && EthCal.enabled() ? "checked" : ""}><span></span></span></label>
@@ -734,6 +762,7 @@
       if (t.id === "myward") { settings.ward = t.value; settings.filterMode = "ward"; if (listState) { listState.ward = t.value; listState.mode = "ward"; } render(); }
     });
     $("#reset").addEventListener("click", () => { store.del("equipment"); render(); });
+    $("#seg-textsize").addEventListener("click", e => { const b = e.target.closest("[data-textsize]"); if (!b) return; MB.setTextSize(b.dataset.textsize); document.querySelectorAll("#seg-textsize button").forEach(x => x.classList.toggle("active", x === b)); });
     $("#seg-theme").addEventListener("click", e => { const b = e.target.closest("[data-theme]"); if (!b) return; theme.set(b.dataset.theme || null); document.querySelectorAll("#seg-theme button").forEach(x => x.classList.toggle("active", x === b)); });
   }
 
@@ -765,8 +794,9 @@
     theme.apply(theme.get());
     $("#theme").addEventListener("click", () => theme.set(currentIsDark() ? "light" : "dark"));
     const b = $("#banner");
-    try { if (sessionStorage.getItem("mb:banner") === "1") b.hidden = true; } catch {}
-    $("#banner-close").addEventListener("click", () => { b.hidden = true; try { sessionStorage.setItem("mb:banner", "1"); } catch {} });
+    /* dismissed for a week, then shown again: it is a safety notice, not decoration */
+    try { if (Date.now() - (+localStorage.getItem("mb:bannerAt") || 0) < 7 * 864e5) b.hidden = true; } catch {}
+    $("#banner-close").addEventListener("click", () => { b.hidden = true; try { localStorage.setItem("mb:bannerAt", String(Date.now())); } catch {} });
     const st = $("#status"), stt = $("#status-text");
     const upd = () => { stt.textContent = navigator.onLine ? "Online" : "Offline · cached"; st.classList.toggle("off", !navigator.onLine); };
     window.addEventListener("online", upd); window.addEventListener("offline", upd); upd();
@@ -785,6 +815,7 @@
     PR = window.ProceduresView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton, textbookHtml });
     PO = window.PreopView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     EN = window.EndemicView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton, textbookHtml });
+    MB = window.MobileNav.create({ $, esc, ic, FX });
     FX.syncPatientChip(); FX.updateDueBadge(); FX.checkDue();
     $("#patient-chip")?.addEventListener("click", () => FX.openPatientDialog());
     const syncAccount = () => {

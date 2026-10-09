@@ -673,10 +673,9 @@ window.Features = function (ctx) {
   /* =========================================================
      Tools hub
      ========================================================= */
-  function viewTools(main) {
-    const due = scheds.list().reduce((n, s) => n + (schedState(s)?.dueSoon || 0), 0);
-    /* grouped so a physician finds a tool by what they are doing, not by scanning 25 cards */
-    const T = [
+  /* every tool, grouped so a health worker finds it by what they are doing (also indexed by the finder) */
+  function toolList(due = 0) {
+    return [
       ["Emergency", "#/resus", "zap", "Emergency drug card", "Every resuscitation dose and volume for one weight. Printable.", "emergency"],
       ["Emergency", "#/pph", "drop", "PPH first response", "Measured blood loss, the six-part bundle on a 15-minute clock, and the tranexamic acid window.", "emergency"],
       ["Endemic diseases", "#/endemic", "globe", "Endemic disease pathways", "Malaria, HIV and kala-azar: pick the situation, enter the weight, get the regimen (Ethiopian guideline first).", ""],
@@ -704,6 +703,11 @@ window.Features = function (ctx) {
       ["Learn, share and review", "#/community", "chat", "Network", "Practice notes and stock-outs reported by colleagues across Ethiopia.", ""],
       ["Learn, share and review", "#/review", "check", "Clinical sign-off", "For verified reviewers: check each drug entry and sign it off.", ""]
     ];
+  }
+
+  function viewTools(main) {
+    const due = scheds.list().reduce((n, s) => n + (schedState(s)?.dueSoon || 0), 0);
+    const T = toolList(due);
     const sections = [...new Set(T.map(t => t[0]))];
     const card = ([, h, i, t, d, cls]) => `<a class="card tool ${cls}" href="${h}"><span class="tool-ic">${ic(i)}</span><div><h3 style="margin:0 0 .2rem">${t}</h3><p class="small text-2" style="margin:0">${d}</p></div></a>`;
     main.innerHTML = `<h1>Tools</h1>
@@ -724,7 +728,7 @@ window.Features = function (ctx) {
   return {
     patient, syncPatientChip, openPatientDialog, patientDoseCard, caseDoseInline,
     HIGH_ALERT, computeDose, doseLine, unitOf, scheds, schedState, regById, timeStr, untilStr, dayStr,
-    favs, recent, starButton, bindStars, shortcutsHtml, fuzzyMatch, caseText,
+    favs, recent, keyInfo, toolList, starButton, bindStars, shortcutsHtml, fuzzyMatch, caseText,
     alternativesHtml, updateDueBadge, checkDue,
     views: { resus: viewResus, drip: viewDrip, schedules: viewSchedules, compat: viewCompat, tools: viewTools },
     regimensForDrug: (id) => REGIMENS.filter(g => g.drug === id || (g.extra && g.id === "ampi-genta" && id === "gentamicin")),
