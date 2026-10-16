@@ -703,7 +703,10 @@ window.Features = function (ctx) {
       ["Learn, share and review", "#/charts", "print", "Wall charts", "Printable drip-rate tables, case protocols and ward drug cards.", ""],
       ["Learn, share and review", "#/quiz", "help", "Practice quiz", "Dose maths, first-line drugs, never-mix and substitutes, with explanations.", ""],
       ["Learn, share and review", "#/community", "chat", "Network", "Practice notes and stock-outs reported by colleagues across Ethiopia.", ""],
-      ["Learn, share and review", "#/review", "check", "Clinical sign-off", "For verified reviewers: check each drug entry and sign it off.", ""]
+      ["Learn, share and review", "#/review", "check", "Clinical sign-off", "For verified reviewers: check each drug entry and sign it off.", ""],
+      ...(window.API?.state?.serverless ? [] : [["You and this device", "#/account", "user", "Account", "Sign in, your profile and your posts.", ""]]),
+      ["You and this device", "#/setup", "sliders", "Setup", "The equipment you have, theme, text size, language and your ward.", ""],
+      ["You and this device", "#/local", "globe", "Local setting", "Your country profile, facility notes and local substitutions.", ""]
     ];
   }
 

@@ -77,7 +77,7 @@
     "uncomplicated-malaria": ["severe-malaria"], "severe-malaria": ["uncomplicated-malaria"],
     "intracerebral-haemorrhage": ["raised-icp"], "raised-icp": ["intracerebral-haemorrhage"]
   };
-  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", pph: "tools", vaccines: "tools", theatre: "tools", procedures: "tools", procedure: "tools", preop: "tools", endemic: "tools", disease: "tools", opportunities: "opportunities", learning: "tools", handover: "ward" };
+  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", pph: "tools", vaccines: "tools", theatre: "tools", procedures: "tools", procedure: "tools", preop: "tools", endemic: "endemic", disease: "endemic", opportunities: "opportunities", learning: "tools", local: "tools", setup: "tools", community: "tools", account: "tools", handover: "ward" };
   function render() {
     const r = parseHash();
     const main = $("#app");

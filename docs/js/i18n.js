@@ -542,6 +542,11 @@
     "Add to my record": "ወደ መዝገቤ ጨምር", "Grow": "ማደግ", "Apply / read more": "ያመልክቱ / ተጨማሪ ያንብቡ", "Publish": "አትም", "Reject": "ውድቅ አድርግ",
     "Read the whole case": "ሙሉውን ጉዳይ ያንብቡ", "Trainings, courses and conferences": "ሥልጠናዎች፣ ኮርሶችና ጉባኤዎች",
     "Recent activity in MedBridge": "በMedBridge የቅርብ እንቅስቃሴ", "Submit": "ላክ",
+    /* ---- navigation v3 ---- */
+    "Home": "መነሻ", "Diseases": "በሽታዎች", "You and this device": "እርስዎና ይህ መሣሪያ",
+    "Sign in, your profile and your posts.": "ይግቡ፣ መገለጫዎና ልጥፎችዎ።",
+    "The equipment you have, theme, text size, language and your ward.": "ያለዎት መሣሪያ፣ ገጽታ፣ የጽሑፍ መጠን፣ ቋንቋና ክፍልዎ።",
+    "Your country profile, facility notes and local substitutions.": "የአገርዎ መገለጫ፣ የተቋም ማስታወሻዎችና አካባቢያዊ ምትክ።",
     /* ---- catch-up vaccination ---- */
     "Catch-up vaccination": "የክትባት ማሟያ",
     "What to give a child who has missed doses, and when to bring them back.": "ክትባት ያመለጠውን ሕፃን ዛሬ ምን እንደሚሰጡና መቼ እንደሚመለስ።",

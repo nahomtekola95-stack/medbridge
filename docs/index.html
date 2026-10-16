@@ -21,6 +21,7 @@
     <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M16 14v4M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/></symbol>
     <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
     <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></symbol>
     <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
     <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
@@ -65,14 +66,12 @@
     <div class="topbar-inner">
       <a class="brand" href="#/drugs" aria-label="MedBridge home"><span class="mark"><svg class="icon"><use href="#i-pill"/></svg></span><span class="brand-text">MedBridge</span></a>
       <nav class="topnav" aria-label="Primary">
-        <a href="#/drugs" data-nav="drugs"><svg class="icon"><use href="#i-pill"/></svg>Drugs</a>
+        <a href="#/drugs" data-nav="drugs"><svg class="icon"><use href="#i-home"/></svg>Home</a>
         <a href="#/resus" data-nav="resus" class="nav-emerg"><svg class="icon"><use href="#i-zap"/></svg>Emergency</a>
+        <a href="#/endemic" data-nav="endemic"><svg class="icon"><use href="#i-globe"/></svg>Diseases</a>
         <a href="#/ward" data-nav="ward"><svg class="icon"><use href="#i-ward"/></svg>Ward</a>
         <a href="#/tools" data-nav="tools"><svg class="icon"><use href="#i-tool"/></svg>Tools<b class="due-badge" data-due-badge hidden>0</b></a>
         <a href="#/opportunities" data-nav="opportunities"><svg class="icon"><use href="#i-star"/></svg>Jobs</a>
-        <a href="#/local" data-nav="local"><svg class="icon"><use href="#i-globe"/></svg>Local</a>
-        <a href="#/community" data-nav="community"><svg class="icon"><use href="#i-chat"/></svg>Network</a>
-        <a href="#/setup" data-nav="setup"><svg class="icon"><use href="#i-sliders"/></svg>Setup</a>
         <a href="#/admin" data-nav="admin" id="nav-admin" hidden><svg class="icon"><use href="#i-shield"/></svg>Admin</a>
       </nav>
       <div class="tools">
@@ -97,11 +96,11 @@
   </main>
 
   <nav class="bottomnav" aria-label="Primary">
-    <a href="#/drugs" data-nav="drugs"><svg class="icon"><use href="#i-pill"/></svg>Drugs</a>
+    <a href="#/drugs" data-nav="drugs"><svg class="icon"><use href="#i-home"/></svg>Home</a>
+    <button type="button" data-find aria-label="Find a drug, case or tool"><svg class="icon"><use href="#i-search"/></svg>Find</button>
     <a href="#/resus" data-nav="resus" class="nav-emerg"><svg class="icon"><use href="#i-zap"/></svg>Emergency</a>
     <a href="#/ward" data-nav="ward"><svg class="icon"><use href="#i-ward"/></svg>Ward</a>
     <a href="#/tools" data-nav="tools"><svg class="icon"><use href="#i-tool"/></svg>Tools<b class="due-badge" data-due-badge hidden>0</b></a>
-    <a href="#/account" data-nav="account"><svg class="icon"><use href="#i-user"/></svg>Account</a>
   </nav>
 
   <script src="js/i18n.js"></script>
