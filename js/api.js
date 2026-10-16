@@ -78,6 +78,20 @@
     reportStock(drug, status, note) { return call("/stock", { method: "POST", body: { drug, status, note } }); },
     removeStock(id) { return call("/stock/" + id, { method: "DELETE" }); },
 
+    /** Jobs, scholarships and trainings. Cached so the board can be read offline. */
+    async opportunities() {
+      if (state.serverless) return { opportunities: [], serverless: true };
+      try { const r = await call("/opportunities"); cacheSet("opps", r); state.online = true; return { ...r, cached: false }; }
+      catch { const c = cacheGet("opps"); return c ? { ...c, cached: true } : { opportunities: [], offline: true }; }
+    },
+    cachedOpportunities() { return cacheGet("opps")?.opportunities || []; },
+    postOpportunity(f) { return call("/opportunities", { method: "POST", body: f }); },
+    editOpportunity(id, f) { return call("/opportunities/" + id, { method: "PATCH", body: f }); },
+    deleteOpportunity(id) { return call("/opportunities/" + id, { method: "DELETE" }); },
+    reportOpportunity(id, reason) { return call("/opportunities/" + id + "/report", { method: "POST", body: { reason } }); },
+    adminOpportunities() { return call("/admin/opportunities"); },
+    adminModerateOpportunity(id, status, adminNote) { return call("/admin/opportunities/" + id, { method: "PATCH", body: { status, adminNote } }); },
+
     adminOverview() { return call("/admin/overview"); },
     adminSaveMethod(f, id) { return call("/admin/methods" + (id ? "/" + id : ""), { method: id ? "PATCH" : "POST", body: f }); },
     adminDeleteMethod(id) { return call("/admin/methods/" + id, { method: "DELETE" }); },

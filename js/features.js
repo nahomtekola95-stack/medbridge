@@ -698,6 +698,8 @@ window.Features = function (ctx) {
       ["Surgery and theatre", "#/procedures", "tool", "Bedside procedures", "Chest drain, catheters, tracheostomy and stomas: technique, sizes and what to do when the kit is short.", ""],
       ["Surgery and theatre", "#/theatre", "tool", "Theatre packs", "What to have ready for an operation, and what to do when it is missing.", ""],
       ["Eye", "#/optics", "eye", "Optics and refraction", "Transpose a prescription, work out the reading add, convert visual acuity and size a magnifier.", ""],
+      ["Grow", "#/opportunities", "star", "Jobs and scholarships", "Vacancies, scholarships, fellowships, trainings and conferences — posted by colleagues and checked before they appear.", ""],
+      ["Grow", "#/learning", "book", "My learning", "Case of the day, your streak, and a record of trainings and study hours for your licence-renewal file.", ""],
       ["Learn, share and review", "#/charts", "print", "Wall charts", "Printable drip-rate tables, case protocols and ward drug cards.", ""],
       ["Learn, share and review", "#/quiz", "help", "Practice quiz", "Dose maths, first-line drugs, never-mix and substitutes, with explanations.", ""],
       ["Learn, share and review", "#/community", "chat", "Network", "Practice notes and stock-outs reported by colleagues across Ethiopia.", ""],

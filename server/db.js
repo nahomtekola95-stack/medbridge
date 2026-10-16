@@ -124,6 +124,33 @@ CREATE TABLE IF NOT EXISTS stock_reports (
 );
 CREATE INDEX IF NOT EXISTS idx_stock_drug ON stock_reports(drug_id, created_at);
 CREATE INDEX IF NOT EXISTS idx_stock_time ON stock_reports(created_at);
+CREATE TABLE IF NOT EXISTS opportunities (
+  id TEXT PRIMARY KEY,
+  kind TEXT NOT NULL,
+  title TEXT NOT NULL,
+  org TEXT NOT NULL,
+  location TEXT NOT NULL DEFAULT '',
+  mode TEXT NOT NULL DEFAULT 'onsite',
+  cadres TEXT NOT NULL DEFAULT '',
+  deadline TEXT,
+  link TEXT NOT NULL DEFAULT '',
+  contact TEXT NOT NULL DEFAULT '',
+  body TEXT NOT NULL DEFAULT '',
+  status TEXT NOT NULL DEFAULT 'pending',
+  admin_note TEXT NOT NULL DEFAULT '',
+  posted_by TEXT REFERENCES users(id) ON DELETE SET NULL,
+  created_at TEXT NOT NULL,
+  updated_at TEXT NOT NULL,
+  published_at TEXT
+);
+CREATE INDEX IF NOT EXISTS idx_opps_status ON opportunities(status, deadline);
+CREATE TABLE IF NOT EXISTS opp_flags (
+  opp_id TEXT NOT NULL REFERENCES opportunities(id) ON DELETE CASCADE,
+  user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  reason TEXT NOT NULL DEFAULT '',
+  created_at TEXT NOT NULL,
+  PRIMARY KEY (opp_id, user_id)
+);
 CREATE TABLE IF NOT EXISTS login_attempts (
   key TEXT PRIMARY KEY,
   count INTEGER NOT NULL DEFAULT 0,

@@ -61,14 +61,14 @@
     const parts = path.split("/").filter(Boolean);
     return { view: parts[0] || "drugs", id: parts[1], q: Object.fromEntries(new URLSearchParams(qs || "")) };
   }
-  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null, PP = null, VX = null, TH = null, PR = null, PO = null, EN = null, MB = null;
+  let CV = null, FX = null, EX = null, RV = null, OB = null, WD = null, GR = null, OP = null, PP = null, VX = null, TH = null, PR = null, PO = null, EN = null, MB = null, CR = null, LN = null;
   const routes = { drugs: viewDrugs, drug: viewDrug, calc: viewCalc, techniques: viewTechniques, local: viewLocal, setup: viewSetup, about: viewAbout,
     case: viewCase, account: (m, r) => CV.account(m, r), community: (m, r) => CV.community(m, r), admin: (m, r) => CV.admin(m, r),
     resus: (m, r) => FX.views.resus(m, r), drip: (m, r) => FX.views.drip(m, r), schedules: (m, r) => FX.views.schedules(m, r),
     compat: (m, r) => FX.views.compat(m, r), tools: (m, r) => FX.views.tools(m, r),
     newborn: (m, r) => EX.views.newborn(m, r), interactions: (m, r) => EX.views.interactions(m, r), charts: (m, r) => EX.views.charts(m, r),
     quiz: (m, r) => EX.views.quiz(m, r), review: (m, r) => RV.views.review(m, r),
-    pregnancy: (m, r) => OB.view(m, r), growth: (m, r) => GR.view(m, r), optics: (m, r) => OP.view(m, r), pph: (m, r) => PP.view(m, r), vaccines: (m, r) => VX.view(m, r), theatre: (m, r) => TH.view(m, r), procedures: (m, r) => PR.view(m, r), procedure: (m, r) => PR.view(m, r), preop: (m, r) => PO.view(m, r), endemic: (m, r) => EN.view(m, r), disease: (m, r) => EN.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
+    pregnancy: (m, r) => OB.view(m, r), growth: (m, r) => GR.view(m, r), optics: (m, r) => OP.view(m, r), pph: (m, r) => PP.view(m, r), vaccines: (m, r) => VX.view(m, r), theatre: (m, r) => TH.view(m, r), procedures: (m, r) => PR.view(m, r), procedure: (m, r) => PR.view(m, r), preop: (m, r) => PO.view(m, r), endemic: (m, r) => EN.view(m, r), disease: (m, r) => EN.view(m, r), opportunities: (m, r) => CR.view(m, r), learning: (m, r) => LN.view(m, r), ward: (m, r) => WD.views.ward(m, r), handover: (m, r) => WD.views.handover(m, r) };
   /* Cases that cover the same condition from two sides link to each other, so a
      reader who lands on one finds the other. */
   const RELATED = {
@@ -77,7 +77,7 @@
     "uncomplicated-malaria": ["severe-malaria"], "severe-malaria": ["uncomplicated-malaria"],
     "intracerebral-haemorrhage": ["raised-icp"], "raised-icp": ["intracerebral-haemorrhage"]
   };
-  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", pph: "tools", vaccines: "tools", theatre: "tools", procedures: "tools", procedure: "tools", preop: "tools", endemic: "tools", disease: "tools", handover: "ward" };
+  const NAV_OF = { drug: "drugs", case: "drugs", calc: "tools", techniques: "tools", drip: "tools", schedules: "tools", compat: "tools", newborn: "tools", interactions: "tools", charts: "tools", quiz: "tools", review: "tools", pregnancy: "tools", growth: "tools", optics: "tools", pph: "tools", vaccines: "tools", theatre: "tools", procedures: "tools", procedure: "tools", preop: "tools", endemic: "tools", disease: "tools", opportunities: "opportunities", learning: "tools", handover: "ward" };
   function render() {
     const r = parseHash();
     const main = $("#app");
@@ -168,7 +168,10 @@
         <a href="#/calc">${ic("calc")}<b>Calculators</b><span>Drips, mg/kg, fluids</span></a>
         <a href="#/drip">${ic("drop")}<b>Drip guide</b><span>Count the drops</span></a>
         <a href="#/newborn">${ic("baby")}<b>Newborn doses</b><span>By weight and age</span></a>
+        <a href="#/opportunities" class="st-grow">${ic("star")}<b>Jobs & scholarships</b><span>Vacancies, fellowships, trainings</span>${CR.freshCount() ? `<em class="st-badge">${CR.freshCount()} new</em>` : ""}</a>
+        <a href="#/learning" class="st-grow">${ic("book")}<b>My learning</b><span>${LN.streak() ? `${LN.streak()}-day streak · ` : ""}Daily case, CPD record</span></a>
       </nav>
+      ${LN.dailyTile()}
       ${FX.shortcutsHtml()}
       <div class="filterbar">
         <div class="seg" id="mode" role="group" aria-label="Group drugs by">
@@ -419,6 +422,7 @@
     const order = ["first", "adjunct", "alternative", "supportive", "avoid"];
     const grouped = order.map(role => [role, c.drugs.filter(d => d.role === role)]).filter(([, arr]) => arr.length);
     FX.recent.push("case:" + c.id);
+    window.dispatchEvent(new CustomEvent("mb:learn", { detail: { type: "read", ref: c.id, title: c.name } }));
     const regs = FX.regimensForCase(c.id);
     main.innerHTML = `
       <a class="back" href="#/drugs">${ic("left")}All cases</a>
@@ -815,6 +819,8 @@
     PR = window.ProceduresView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton, textbookHtml });
     PO = window.PreopView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
     EN = window.EndemicView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton, textbookHtml });
+    CR = window.CareersView({ $, esc, ic, toast, render, FX, shareButton: EX.shareButton });
+    LN = window.LearningView({ $, esc, ic, toast, render, FX });
     MB = window.MobileNav.create({ $, esc, ic, FX });
     FX.syncPatientChip(); FX.updateDueBadge(); FX.checkDue();
     $("#patient-chip")?.addEventListener("click", () => FX.openPatientDialog());
@@ -828,7 +834,11 @@
       if (nav) nav.hidden = !(u && u.role === "admin");
     };
     API.onChange(syncAccount);
-    API.init().then(() => { syncAccount(); if (["account", "community", "admin", "review"].includes(parseHash().view)) render(); RV.load(); });
+    API.init().then(() => {
+      syncAccount(); if (["account", "community", "admin", "review", "opportunities"].includes(parseHash().view)) render(); RV.load();
+      /* refresh the opportunities copy in the background, so the home tile can say what is new */
+      if (!API.state.serverless) API.opportunities().then(() => { if (parseHash().view === "drugs" && CR.freshCount()) render(); }).catch(() => {});
+    });
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
       const hadController = !!navigator.serviceWorker.controller;
       let reloaded = false;

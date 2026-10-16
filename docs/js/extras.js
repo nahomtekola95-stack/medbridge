@@ -639,6 +639,7 @@ window.Extras = function (ctx) {
       const show = () => {
         if (i >= qs.length) {
           const prev = best[key] || 0; if (score > prev) { best[key] = score; store.set("quizBest", best); }
+          window.dispatchEvent(new CustomEvent("mb:learn", { detail: { type: "quiz", title: "Practice quiz: " + key, score, of: qs.length } }));
           main.innerHTML = `<h1>${ic("help")} Practice quiz</h1><div class="card quiz-end"><div class="big">${score} / ${qs.length}</div>
             <p>${score >= 9 ? "Excellent." : score >= 7 ? "Good. Review the ones you missed." : "Keep practising. Open the linked pages to review."}</p>
             <p class="small muted">Best for this set: ${Math.max(prev, score)} / ${qs.length}</p>

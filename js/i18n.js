@@ -534,6 +534,14 @@
     "Resus doses for one weight": "ለአንድ ክብደት የማነቃቂያ መጠኖች", "Drips, mg/kg, fluids": "ጠብታ፣ mg/kg፣ ፈሳሽ",
     "Count the drops": "ጠብታዎችን ይቁጠሩ", "By weight and age": "በክብደትና በዕድሜ", "Malaria · HIV · kala-azar": "ወባ · ኤች አይ ቪ · ካላ-አዛር",
     "Larger text for small phone screens. Also in the Find panel.": "ለትንሽ የስልክ ማያ ትልቅ ጽሑፍ። በፍለጋ ገጹም ይገኛል።",
+    /* ---- opportunities and my learning ---- */
+    "Opportunities": "ዕድሎች", "Jobs": "ሥራዎች", "Jobs & scholarships": "ሥራና የትምህርት ዕድል", "Jobs and scholarships": "ሥራና የትምህርት ዕድል",
+    "Vacancies, fellowships, trainings": "ክፍት የሥራ ቦታዎች፣ ፌሎውሺፕ፣ ሥልጠናዎች", "My learning": "የእኔ ትምህርት", "Daily case, CPD record": "የዕለቱ ጉዳይ፣ የሙያ ማሻሻያ መዝገብ",
+    "Case of the day": "የዕለቱ ጉዳይ", "Post an opportunity": "ዕድል ይለጥፉ", "Sign in to post": "ለመለጠፍ ይግቡ", "All posts": "ሁሉም ልጥፎች",
+    "Where to look": "የት እንደሚፈለግ", "Everyone": "ሁሉም", "For": "ለ", "Print record": "መዝገቡን ያትሙ", "Download (CSV)": "ያውርዱ (CSV)",
+    "Add to my record": "ወደ መዝገቤ ጨምር", "Grow": "ማደግ", "Apply / read more": "ያመልክቱ / ተጨማሪ ያንብቡ", "Publish": "አትም", "Reject": "ውድቅ አድርግ",
+    "Read the whole case": "ሙሉውን ጉዳይ ያንብቡ", "Trainings, courses and conferences": "ሥልጠናዎች፣ ኮርሶችና ጉባኤዎች",
+    "Recent activity in MedBridge": "በMedBridge የቅርብ እንቅስቃሴ", "Submit": "ላክ",
     /* ---- catch-up vaccination ---- */
     "Catch-up vaccination": "የክትባት ማሟያ",
     "What to give a child who has missed doses, and when to bring them back.": "ክትባት ያመለጠውን ሕፃን ዛሬ ምን እንደሚሰጡና መቼ እንደሚመለስ።",

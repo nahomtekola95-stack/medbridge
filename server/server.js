@@ -55,7 +55,7 @@ async function api(req, res, pathname, query) {
     return json(res, 200, { ok: true, drugs: true, uptime: Math.round(process.uptime()) });
 
   if (pathname === "/api/meta" && method === "GET")
-    return json(res, 200, { professions: PROFESSIONS, levels: LEVELS, signupOpen: true });
+    return json(res, 200, { professions: PROFESSIONS, levels: LEVELS, signupOpen: true, oppKinds: OPP_KINDS, oppModes: OPP_MODES });
 
   /* --- auth --- */
   if (pathname === "/api/auth/register" && method === "POST") {
@@ -270,9 +270,85 @@ async function api(req, res, pathname, query) {
     return json(res, 200, { feed: rows.map(r => shapeComment(r, me)) });
   }
 
+  /* --- opportunities: jobs, scholarships, fellowships, trainings ---
+     Anyone signed in may submit; an administrator's posts go live at once,
+     everyone else's wait for approval. Expired posts drop off by themselves,
+     and three reports take a post down until an administrator looks at it. */
+  if (pathname === "/api/opportunities" && method === "GET") {
+    const today = new Date().toISOString().slice(0, 10);
+    const rows = await D.all(`SELECT o.*, u.full_name, u.profession, u.verified, u.role
+      FROM opportunities o LEFT JOIN users u ON u.id = o.posted_by
+      WHERE (o.status = 'published' AND (o.deadline IS NULL OR o.deadline = '' OR o.deadline >= ?))
+         OR (o.posted_by = ? AND o.status IN ('pending','rejected'))
+      ORDER BY (o.status = 'published') DESC, COALESCE(NULLIF(o.deadline, ''), '9999') ASC, o.published_at DESC LIMIT 300`, today, me ? me.id : "");
+    return json(res, 200, { opportunities: rows.map(r => shapeOpp(r, me)) });
+  }
+  if (pathname === "/api/opportunities" && method === "POST") {
+    if (!me) return bad(res, 401, "Sign in to post an opportunity.");
+    const f = oppFields(body); if (f.error) return bad(res, 400, f.error);
+    if (await D.tooManyAttempts("opp:" + me.id, 10, 24 * 60)) return bad(res, 429, "You have posted a lot today. Try again tomorrow.");
+    const id = D.uid(10), live = me.role === "admin";
+    await D.run(`INSERT INTO opportunities (id, kind, title, org, location, mode, cadres, deadline, link, contact, body, status, posted_by, created_at, updated_at, published_at)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, id, f.kind, f.title, f.org, f.location, f.mode, f.cadres, f.deadline, f.link, f.contact, f.body,
+      live ? "published" : "pending", me.id, D.now(), D.now(), live ? D.now() : null);
+    await D.audit(me.id, "opp_create", id, live ? "published" : "pending");
+    return json(res, 201, { opportunity: shapeOpp(await oppRow(id), me) });
+  }
+  const om = pathname.match(/^\/api\/opportunities\/([A-Za-z0-9_-]{4,24})(\/report)?$/);
+  if (om) {
+    const [, oid, sub] = om;
+    const o = await D.get("SELECT * FROM opportunities WHERE id = ?", oid);
+    if (!o) return bad(res, 404, "Not found.");
+    if (!me) return bad(res, 401, "Sign in first.");
+    if (sub === "/report" && method === "POST") {
+      await D.run("INSERT OR IGNORE INTO opp_flags (opp_id, user_id, reason, created_at) VALUES (?,?,?,?)", oid, me.id, clean(body.reason, MAX.short) || "expired, wrong or a scam", D.now());
+      const n = Number((await D.get("SELECT COUNT(*) AS c FROM opp_flags WHERE opp_id = ?", oid)).c);
+      if (n >= 3 || me.role === "admin") await D.run("UPDATE opportunities SET status = 'flagged', updated_at = ? WHERE id = ? AND status = 'published'", D.now(), oid);
+      await D.audit(me.id, "opp_report", oid, String(n));
+      return json(res, 200, { ok: true, reports: n });
+    }
+    const owner = o.posted_by === me.id, admin = me.role === "admin";
+    if (method === "PATCH") {
+      if (!owner && !admin) return bad(res, 403, "Not allowed.");
+      const f = oppFields(body); if (f.error) return bad(res, 400, f.error);
+      // an edit by the poster goes back for approval, so a checked post cannot be changed into something else
+      const status = admin ? o.status : "pending";
+      await D.run(`UPDATE opportunities SET kind=?, title=?, org=?, location=?, mode=?, cadres=?, deadline=?, link=?, contact=?, body=?, status=?, updated_at=? WHERE id = ?`,
+        f.kind, f.title, f.org, f.location, f.mode, f.cadres, f.deadline, f.link, f.contact, f.body, status, D.now(), oid);
+      await D.audit(me.id, "opp_edit", oid, status);
+      return json(res, 200, { opportunity: shapeOpp(await oppRow(oid), me) });
+    }
+    if (method === "DELETE") {
+      if (!owner && !admin) return bad(res, 403, "Not allowed.");
+      await D.run("DELETE FROM opportunities WHERE id = ?", oid);
+      await D.audit(me.id, "opp_delete", oid, owner ? "own" : "admin");
+      return json(res, 200, { ok: true });
+    }
+  }
+
   /* --- admin --- */
   if (pathname.startsWith("/api/admin/")) {
     if (!me || me.role !== "admin") return bad(res, 403, "Administrator only.");
+
+    if (pathname === "/api/admin/opportunities" && method === "GET") {
+      const rows = await D.all(`SELECT o.*, u.full_name, u.profession, u.verified, u.role,
+          (SELECT GROUP_CONCAT(reason, ' | ') FROM opp_flags f WHERE f.opp_id = o.id) AS reasons
+        FROM opportunities o LEFT JOIN users u ON u.id = o.posted_by
+        WHERE o.status IN ('pending','flagged') ORDER BY o.created_at ASC LIMIT 200`);
+      return json(res, 200, { queue: rows.map(r => ({ ...shapeOpp(r, me), reasons: r.reasons || "" })) });
+    }
+    const aom = pathname.match(/^\/api\/admin\/opportunities\/([A-Za-z0-9_-]{4,24})$/);
+    if (aom && method === "PATCH") {
+      const o = await D.get("SELECT * FROM opportunities WHERE id = ?", aom[1]);
+      if (!o) return bad(res, 404, "Not found.");
+      const status = ["published", "rejected"].includes(body.status) ? body.status : null;
+      if (!status) return bad(res, 400, "Status must be published or rejected.");
+      await D.run("UPDATE opportunities SET status = ?, admin_note = ?, updated_at = ?, published_at = COALESCE(published_at, ?) WHERE id = ?",
+        status, clean(body.adminNote, MAX.short), D.now(), status === "published" ? D.now() : null, aom[1]);
+      if (status === "published") await D.run("DELETE FROM opp_flags WHERE opp_id = ?", aom[1]);
+      await D.audit(me.id, "opp_" + status, aom[1], "");
+      return json(res, 200, { ok: true });
+    }
 
     if (pathname === "/api/admin/overview" && method === "GET") {
       return json(res, 200, {
@@ -359,6 +435,33 @@ async function api(req, res, pathname, query) {
 }
 
 const REVIEW_CHECKS = ["doses", "methods", "paediatric", "safety", "national"];
+const OPP_KINDS = ["job", "scholarship", "fellowship", "training", "conference", "research", "volunteer"];
+const OPP_MODES = ["onsite", "online", "abroad", "mixed"];
+/** Validate and tidy an opportunity from the client. Returns { error } or the clean fields. */
+function oppFields(b) {
+  const kind = OPP_KINDS.includes(b.kind) ? b.kind : null;
+  const title = clean(b.title, 140), org = clean(b.org, MAX.short), location = clean(b.location, MAX.short);
+  const mode = OPP_MODES.includes(b.mode) ? b.mode : "onsite";
+  const cadres = (Array.isArray(b.cadres) ? b.cadres : []).map(x => clean(x, 40)).filter(x => PROFESSIONS.includes(x)).slice(0, 12).join(",");
+  const deadline = /^\d{4}-\d{2}-\d{2}$/.test(b.deadline || "") ? b.deadline : null;
+  const link = clean(b.link, 400), contact = clean(b.contact, MAX.short), body = cleanMultiline(b.body, MAX.text);
+  if (!kind) return { error: "Choose what kind of opportunity this is." };
+  if (title.length < 6) return { error: "Give a title of at least a few words." };
+  if (org.length < 2) return { error: "Name the organisation offering it." };
+  if (link && !/^https?:\/\/[^\s/$.?#].[^\s]*$/i.test(link)) return { error: "The link must start with http:// or https://." };
+  if (!link && contact.length < 5) return { error: "Give a link to the official announcement, or a contact." };
+  if (deadline && deadline < new Date().toISOString().slice(0, 10)) return { error: "The deadline has already passed." };
+  if (body.length < 20) return { error: "Describe it in a sentence or two: who can apply and how." };
+  return { kind, title, org, location, mode, cadres, deadline, link, contact, body };
+}
+const oppRow = (id) => D.get(`SELECT o.*, u.full_name, u.profession, u.verified, u.role FROM opportunities o LEFT JOIN users u ON u.id = o.posted_by WHERE o.id = ?`, id);
+const shapeOpp = (r, me) => ({
+  id: r.id, kind: r.kind, title: r.title, org: r.org, location: r.location, mode: r.mode,
+  cadres: r.cadres ? String(r.cadres).split(",") : [], deadline: r.deadline || null, link: r.link, contact: r.contact, body: r.body,
+  status: r.status, adminNote: me && (me.role === "admin" || me.id === r.posted_by) ? r.admin_note : "",
+  postedBy: r.full_name ? { name: r.full_name, profession: r.profession, verified: !!Number(r.verified), admin: r.role === "admin" } : null,
+  publishedAt: r.published_at, createdAt: r.created_at, mine: !!(me && me.id === r.posted_by)
+});
 const STOCK_DAYS = 30;
 const shapeReview = (r) => ({ id: r.id, drug: r.drug_id, decision: r.decision, hash: r.content_hash, checklist: r.checklist ? r.checklist.split(",") : [], note: r.note,
   reviewer: { name: r.reviewer_name, profession: r.reviewer_profession, facility: r.reviewer_facility }, createdAt: r.created_at });
